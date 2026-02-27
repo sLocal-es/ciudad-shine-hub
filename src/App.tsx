@@ -13,6 +13,7 @@ import PosicionamientoLocal from "@/pages/PosicionamientoLocal";
 import ServicePage from "@/pages/ServicePage";
 import CityPage from "@/pages/CityPage";
 import SectorPage from "@/pages/SectorPage";
+import SectorCityPage from "@/pages/SectorCityPage";
 import NotFound from "@/pages/NotFound";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -59,6 +60,9 @@ const App = () => (
             <Route path="/mas-pacientes-para-fisioterapeutas" element={<SectorPage />} />
             <Route path="/mas-clientes-entrenador-personal" element={<SectorPage />} />
             <Route path="/mas-alumnos-para-yoga" element={<SectorPage />} />
+            <Route path="/mas-clientes-para-:sector/:ciudad" element={<SectorCityPage />} />
+            <Route path="/mas-pacientes-para-:sector/:ciudad" element={<SectorCityPage />} />
+            <Route path="/mas-alumnos-para-:sector/:ciudad" element={<SectorCityPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
