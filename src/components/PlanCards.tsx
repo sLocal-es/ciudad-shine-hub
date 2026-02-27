@@ -30,7 +30,7 @@ const planData: PlanCardProps[] = [
     featured: true,
     features: [
       "Todo lo del Nivel 1",
-      "Web multipágina (hasta 5 páginas)",
+      "Web multipágina (hasta 20 páginas de servicios y áreas)",
       "2 artículos de blog al mes",
       "Optimización mensual de ficha Google",
       "Informe mensual de posiciones",
@@ -43,7 +43,7 @@ const planData: PlanCardProps[] = [
     priceNote: "mínimo 6 meses",
     features: [
       "Todo lo del Nivel 2",
-      "Web completa (hasta 10 páginas)",
+      "Web completa (sin límite de páginas)",
       "4 artículos de blog al mes",
       "Estrategia de reseñas Google",
       "Optimización para IA y búsqueda por voz",

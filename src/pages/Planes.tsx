@@ -6,7 +6,7 @@ const Planes = () => {
   const faqs = [
     { q: "¿Puedo empezar con el Nivel 1 y subir después?", a: "Sí. Muchos clientes empiezan con el Nivel 1 para tener presencia básica y luego pasan al Nivel 2 o 3 cuando ven los primeros resultados y quieren acelerar el crecimiento." },
     { q: "¿Qué pasa si quiero cancelar el servicio mensual?", a: "Los Niveles 2 y 3 tienen un mínimo de 6 meses porque el SEO necesita ese tiempo para consolidar resultados. Después de ese periodo, puedes cancelar cuando quieras. Tu web y tu ficha siguen siendo tuyas." },
-    { q: "¿El precio incluye la creación de la web?", a: "Sí. Todos los niveles incluyen la creación de la web desde cero, optimizada para SEO. En el Nivel 1 es una landing page. En el Nivel 2 hasta 5 páginas. En el Nivel 3 hasta 10 páginas." },
+    { q: "¿El precio incluye la creación de la web?", a: "Sí. Todos los niveles incluyen la creación de la web desde cero, optimizada para SEO. En el Nivel 1 es una landing page. En el Nivel 2 hasta 20 páginas de servicios y áreas. En el Nivel 3 sin límite de páginas." },
     { q: "¿Hay algún coste adicional no incluido en el plan?", a: "No. El precio incluye todo: diseño web, contenido, optimización de ficha de Google, artículos de blog y seguimiento mensual. El único coste adicional sería el dominio y hosting si no los tienes (desde 10€/mes)." },
     { q: "¿Cuándo empiezo a ver resultados?", a: "Los primeros movimientos en Google se ven entre el mes 2 y el 4. A partir del mes 6, las posiciones se consolidan y el tráfico orgánico crece de forma sostenida." },
   ];
@@ -57,7 +57,7 @@ const Planes = () => {
               </thead>
               <tbody className="text-muted-foreground">
                 {[
-                  ["Web optimizada SEO", "1 página", "Hasta 5 páginas", "Hasta 10 páginas"],
+                  ["Web optimizada SEO", "1 página", "Hasta 20 páginas", "Sin límite"],
                   ["Ficha Google Business Profile", "✓", "✓ + optimización mensual", "✓ + optimización mensual"],
                   ["Alta en directorios", "✓", "✓", "✓"],
                   ["Artículos de blog", "—", "2/mes", "4/mes"],
