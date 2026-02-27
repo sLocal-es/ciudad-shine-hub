@@ -125,7 +125,7 @@ const Home = () => {
                 to={`/seo-local-${city.slug}`}
                 className="bg-card border border-border rounded-xl overflow-hidden transition-all duration-200 hover:border-primary hover:-translate-y-[3px] group"
               >
-                <ImagePlaceholder description={`FOTO: ${city.name}`} height="140px" />
+                <img src={city.image} alt={`SEO Local en ${city.name}`} className="w-full h-[140px] object-cover" loading="lazy" />
                 <div className="p-4">
                   <h3 className="font-heading text-base group-hover:text-primary transition-colors">{city.name}</h3>
                   <span className="text-primary text-xs font-heading">SEO Local</span>
