@@ -83,7 +83,7 @@ const CityPage = () => {
               Empezar en {city.name} →
             </Link>
           </div>
-          <ImagePlaceholder description={`FOTO: ciudad de ${city.name}, calle céntrica o panorámica`} height="340px" />
+          <img src={city.image} alt={`Ciudad de ${city.name}`} className="rounded-xl w-full h-[340px] object-cover" loading="lazy" />
         </div>
       </section>
 
