@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { cities } from "@/data/cities";
+import { sectors } from "@/data/sectors";
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [citiesOpen, setCitiesOpen] = useState(false);
+  const [sectorsOpen, setSectorsOpen] = useState(false);
   const location = useLocation();
 
   return (
@@ -34,6 +36,25 @@ const Navbar = () => {
                     onClick={() => setCitiesOpen(false)}
                   >
                     {c.name}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+          <div className="relative" onMouseEnter={() => setSectorsOpen(true)} onMouseLeave={() => setSectorsOpen(false)}>
+            <button className="hover:text-primary transition-colors flex items-center gap-1">
+              Sectores <span className="text-[10px]">▾</span>
+            </button>
+            {sectorsOpen && (
+              <div className="absolute top-full left-0 bg-card border border-border rounded-lg shadow-lg py-2 min-w-[220px]">
+                {sectors.map((s) => (
+                  <Link
+                    key={s.slug}
+                    to={`/${s.slug}`}
+                    className="block px-4 py-2 text-sm hover:bg-secondary hover:text-primary transition-colors"
+                    onClick={() => setSectorsOpen(false)}
+                  >
+                    {s.pillBadge}
                   </Link>
                 ))}
               </div>
@@ -72,6 +93,12 @@ const Navbar = () => {
           {cities.map((c) => (
             <Link key={c.slug} to={`/seo-local-${c.slug}`} className="block text-sm py-1 pl-3 hover:text-primary" onClick={() => setMobileOpen(false)}>
               {c.name}
+            </Link>
+          ))}
+          <p className="text-xs text-muted-foreground mt-2">Sectores</p>
+          {sectors.map((s) => (
+            <Link key={s.slug} to={`/${s.slug}`} className="block text-sm py-1 pl-3 hover:text-primary" onClick={() => setMobileOpen(false)}>
+              {s.pillBadge}
             </Link>
           ))}
           <Link to="/planes" className="block text-sm py-2 hover:text-primary" onClick={() => setMobileOpen(false)}>Planes</Link>

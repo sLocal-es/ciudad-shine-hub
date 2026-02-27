@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
+import { sectors } from "@/data/sectors";
 
 const Footer = () => (
   <footer className="bg-dark-bg text-dark-fg pt-16 pb-8">
     <div className="container">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-10 mb-12">
         {/* Brand */}
         <div>
           <Link to="/" className="font-heading text-xl">
@@ -22,6 +23,20 @@ const Footer = () => (
             <li><Link to="/seo-para-negocios-locales" className="hover:text-primary transition-colors">SEO para negocios locales</Link></li>
             <li><Link to="/ficha-google-mi-negocio" className="hover:text-primary transition-colors">Ficha Google Mi Negocio</Link></li>
             <li><Link to="/como-salir-primero-en-google" className="hover:text-primary transition-colors">Cómo salir primero en Google</Link></li>
+          </ul>
+        </div>
+
+        {/* Sectores */}
+        <div>
+          <h4 className="font-heading text-sm mb-4">Sectores</h4>
+          <ul className="space-y-2 text-sm text-dark-fg/60">
+            {sectors.map((s) => (
+              <li key={s.slug}>
+                <Link to={`/${s.slug}`} className="hover:text-primary transition-colors">
+                  {s.relatedLabel}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 

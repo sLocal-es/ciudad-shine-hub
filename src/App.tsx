@@ -12,6 +12,7 @@ import Contacto from "@/pages/Contacto";
 import PosicionamientoLocal from "@/pages/PosicionamientoLocal";
 import ServicePage from "@/pages/ServicePage";
 import CityPage from "@/pages/CityPage";
+import SectorPage from "@/pages/SectorPage";
 import NotFound from "@/pages/NotFound";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -51,6 +52,13 @@ const App = () => (
             <Route path="/seo-local-zaragoza" element={<CityPage />} />
             <Route path="/seo-local-bilbao" element={<CityPage />} />
             <Route path="/seo-local-murcia" element={<CityPage />} />
+            <Route path="/mas-clientes-para-fontaneros" element={<SectorPage />} />
+            <Route path="/mas-clientes-para-reformas" element={<SectorPage />} />
+            <Route path="/mas-clientes-para-pintores" element={<SectorPage />} />
+            <Route path="/mas-pacientes-para-clinicas" element={<SectorPage />} />
+            <Route path="/mas-pacientes-para-fisioterapeutas" element={<SectorPage />} />
+            <Route path="/mas-clientes-entrenador-personal" element={<SectorPage />} />
+            <Route path="/mas-alumnos-para-yoga" element={<SectorPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
