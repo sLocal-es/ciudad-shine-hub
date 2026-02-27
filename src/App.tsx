@@ -3,10 +3,26 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import Home from "@/pages/Home";
+import ComoFunciona from "@/pages/ComoFunciona";
+import Planes from "@/pages/Planes";
+import Contacto from "@/pages/Contacto";
+import PosicionamientoLocal from "@/pages/PosicionamientoLocal";
+import ServicePage from "@/pages/ServicePage";
+import CityPage from "@/pages/CityPage";
+import NotFound from "@/pages/NotFound";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const queryClient = new QueryClient();
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -14,11 +30,31 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <ScrollToTop />
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/como-funciona" element={<ComoFunciona />} />
+            <Route path="/planes" element={<Planes />} />
+            <Route path="/contacto" element={<Contacto />} />
+            <Route path="/posicionamiento-local" element={<PosicionamientoLocal />} />
+            <Route path="/aparecer-en-google-maps" element={<ServicePage />} />
+            <Route path="/seo-para-negocios-locales" element={<ServicePage />} />
+            <Route path="/ficha-google-mi-negocio" element={<ServicePage />} />
+            <Route path="/como-salir-primero-en-google" element={<ServicePage />} />
+            <Route path="/seo-local-madrid" element={<CityPage />} />
+            <Route path="/seo-local-barcelona" element={<CityPage />} />
+            <Route path="/seo-local-valencia" element={<CityPage />} />
+            <Route path="/seo-local-sevilla" element={<CityPage />} />
+            <Route path="/seo-local-malaga" element={<CityPage />} />
+            <Route path="/seo-local-zaragoza" element={<CityPage />} />
+            <Route path="/seo-local-bilbao" element={<CityPage />} />
+            <Route path="/seo-local-murcia" element={<CityPage />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+        <Footer />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
