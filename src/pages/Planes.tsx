@@ -79,7 +79,7 @@ const Planes = () => {
           </div>
 
           <p className="text-xs text-muted-foreground mt-8 text-center max-w-2xl mx-auto">
-            * La visibilidad en IA depende de la antigüedad y autoridad del dominio. Diseñamos para estar listos — no prometemos posición, prometemos preparación.
+            * Precios sin IVA. La visibilidad en IA depende de la antigüedad y autoridad del dominio. Diseñamos para estar listos — no prometemos posición, prometemos preparación.
           </p>
         </div>
       </section>

@@ -75,6 +75,9 @@ const PlanCards = () => (
             {plan.priceNote}
           </p>
         )}
+        <p className={`text-[11px] mt-1 ${plan.featured ? "text-dark-fg/40" : "text-muted-foreground/70"}`}>
+          * Precios sin IVA
+        </p>
         <ul className="mt-5 space-y-2">
           {plan.features.map((f) => (
             <li key={f} className={`text-sm flex items-start gap-2 ${plan.featured ? "text-dark-fg/80" : "text-foreground/80"}`}>
