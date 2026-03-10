@@ -69,6 +69,8 @@ export const cities: CityData[] = [
     slug: "malaga",
     name: "Málaga",
     image: malagaImg,
+    lat: 36.7213,
+    lng: -4.4214,
     intro: [
       "Málaga combina turismo y residentes en un mercado donde las búsquedas en Google se producen durante todo el año. No es solo verano — los negocios locales reciben búsquedas constantes de personas que necesitan servicios cerca de donde están.",
       "La Costa del Sol atrae búsquedas en múltiples idiomas, pero el núcleo del SEO local en Málaga sigue siendo el cliente de la ciudad: el que busca un fontanero, una gestoría o un restaurante para comer hoy. Aparecer primero en esas búsquedas es lo que genera clientes reales.",
