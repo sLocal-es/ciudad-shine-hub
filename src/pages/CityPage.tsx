@@ -133,15 +133,15 @@ const CityPage = () => {
       <section className="bg-warm-bg py-16">
         <div className="container">
           <h2 className="font-heading text-2xl md:text-3xl mb-6">Encuéntranos</h2>
-          <div
-            role="img"
-            aria-label="Mapa de Google Maps"
-            className="bg-warm-bg border-2 border-dashed border-border rounded-xl flex flex-col items-center justify-center gap-2 text-muted-foreground text-[13px] text-center p-5"
+          <iframe
+            title={`Mapa de ${city.name}`}
+            src={`https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d50000!2d${city.lng}!3d${city.lat}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1`}
+            className="w-full rounded-xl border border-border"
             style={{ height: "280px" }}
-          >
-            <span className="text-[28px]">🗺</span>
-            <span>[MAPA: iframe Google Maps — reemplazar con embed real de slocal.es]</span>
-          </div>
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            allowFullScreen
+          />
           <p className="text-center text-sm text-muted-foreground mt-4">
             hola@slocal.es · Respondemos en menos de 24h
           </p>
