@@ -1,11 +1,11 @@
-import madridImg from "@/assets/cities/madrid.png";
-import barcelonaImg from "@/assets/cities/barcelona.png";
-import valenciaImg from "@/assets/cities/valencia.png";
-import sevillaImg from "@/assets/cities/sevilla.png";
-import malagaImg from "@/assets/cities/malaga.png";
-import zaragozaImg from "@/assets/cities/zaragoza.png";
-import bilbaoImg from "@/assets/cities/bilbao.png";
-import murciaImg from "@/assets/cities/murcia.png";
+import madridImg from "@/assets/cities/madrid.webp";
+import barcelonaImg from "@/assets/cities/barcelona.webp";
+import valenciaImg from "@/assets/cities/valencia.webp";
+import sevillaImg from "@/assets/cities/sevilla.jpg";
+import malagaImg from "@/assets/cities/malaga.webp";
+import zaragozaImg from "@/assets/cities/zaragoza.webp";
+import bilbaoImg from "@/assets/cities/bilbao.webp";
+import murciaImg from "@/assets/cities/murcia.webp";
 
 export interface CityData {
   slug: string;
