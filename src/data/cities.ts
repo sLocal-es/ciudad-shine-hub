@@ -93,6 +93,8 @@ export const cities: CityData[] = [
     slug: "bilbao",
     name: "Bilbao",
     image: bilbaoImg,
+    lat: 43.2630,
+    lng: -2.9350,
     intro: [
       "Bilbao tiene un sector servicios fuerte y una economía activa donde los negocios locales compiten por la atención de clientes que buscan en Google antes de tomar cualquier decisión. Si no estás visible, no existes para ellos.",
       "La transformación digital del comercio en Bilbao avanza rápido. Los negocios que ya trabajan su posicionamiento local están captando clientes que antes iban a la competencia. El SEO local no es una opción — es la forma más rentable de crecer.",
