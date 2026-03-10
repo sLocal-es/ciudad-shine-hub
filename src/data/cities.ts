@@ -11,6 +11,8 @@ export interface CityData {
   slug: string;
   name: string;
   image: string;
+  lat: number;
+  lng: number;
   intro: string[];
 }
 
