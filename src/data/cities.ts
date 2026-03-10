@@ -105,6 +105,8 @@ export const cities: CityData[] = [
     slug: "murcia",
     name: "Murcia",
     image: murciaImg,
+    lat: 37.9922,
+    lng: -1.1307,
     intro: [
       "Murcia es un mercado en crecimiento donde la competencia digital todavía es baja. Eso significa que los negocios que empiecen a trabajar su SEO local ahora tienen menos competencia y más oportunidad de posicionarse rápidamente en Google.",
       "La ciudad y su área metropolitana generan miles de búsquedas diarias de servicios locales. Desde fontaneros hasta clínicas, pasando por restaurantes y talleres — todos esos clientes potenciales están en Google. La pregunta es si te encuentran a ti o a tu competencia.",
