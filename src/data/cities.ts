@@ -45,6 +45,8 @@ export const cities: CityData[] = [
     slug: "valencia",
     name: "Valencia",
     image: valenciaImg,
+    lat: 39.4699,
+    lng: -0.3763,
     intro: [
       "Valencia vive un crecimiento importante del comercio local. Las búsquedas de servicios en Google están en aumento constante, y los negocios que han trabajado su posicionamiento son los que se llevan la mayor parte de los clientes nuevos cada mes.",
       "La ciudad ofrece oportunidades reales para negocios que se posicionen bien en Google. A diferencia de Madrid o Barcelona, la competencia digital en Valencia es más accesible — lo que significa que con un sistema bien ejecutado, los resultados llegan más rápido y son más sostenibles.",
