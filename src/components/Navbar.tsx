@@ -60,6 +60,9 @@ const Navbar = () => {
               </div>
             )}
           </div>
+          <Link to="/como-ve-google-mi-web" className={`hover:text-primary transition-colors ${location.pathname === "/como-ve-google-mi-web" ? "text-primary" : ""}`}>
+            Analiza tu web
+          </Link>
           <Link to="/planes" className={`hover:text-primary transition-colors ${location.pathname === "/planes" ? "text-primary" : ""}`}>
             Planes
           </Link>
@@ -101,6 +104,7 @@ const Navbar = () => {
               {s.pillBadge}
             </Link>
           ))}
+          <Link to="/como-ve-google-mi-web" className="block text-sm py-2 hover:text-primary" onClick={() => setMobileOpen(false)}>Analiza tu web</Link>
           <Link to="/planes" className="block text-sm py-2 hover:text-primary" onClick={() => setMobileOpen(false)}>Planes</Link>
           <Link to="/contacto" className="block text-sm py-2 hover:text-primary" onClick={() => setMobileOpen(false)}>Contacto</Link>
           <Link to="/contacto" className="block bg-primary text-primary-foreground font-heading text-sm rounded-lg px-5 py-2.5 text-center mt-3" onClick={() => setMobileOpen(false)}>

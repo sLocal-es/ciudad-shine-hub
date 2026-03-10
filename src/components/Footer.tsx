@@ -59,6 +59,7 @@ const Footer = () => (
           <h4 className="font-heading text-sm mb-4">Empresa</h4>
           <ul className="space-y-2 text-sm text-dark-fg/60">
             <li><Link to="/como-funciona" className="hover:text-primary transition-colors">Cómo funciona</Link></li>
+            <li><Link to="/como-ve-google-mi-web" className="hover:text-primary transition-colors">Analiza tu web</Link></li>
             <li><Link to="/planes" className="hover:text-primary transition-colors">Planes</Link></li>
             <li><Link to="/contacto" className="hover:text-primary transition-colors">Contacto</Link></li>
           </ul>
