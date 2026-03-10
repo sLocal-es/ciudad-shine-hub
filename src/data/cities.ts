@@ -57,6 +57,8 @@ export const cities: CityData[] = [
     slug: "sevilla",
     name: "Sevilla",
     image: sevillaImg,
+    lat: 37.3891,
+    lng: -5.9845,
     intro: [
       "Sevilla es una ciudad con una fuerte presencia de negocios de hostelería y servicios. La demanda local es alta, pero muchos negocios aún no han trabajado su visibilidad en Google — lo que representa una oportunidad enorme para quienes sí lo hagan.",
       "Los sevillanos buscan restaurantes, clínicas, talleres y todo tipo de servicios directamente en Google. Si tu negocio no aparece en esos resultados, tus competidores se llevan esos clientes. Así de simple. El SEO local te pone donde tus clientes te están buscando.",
