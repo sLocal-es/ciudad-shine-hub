@@ -81,6 +81,8 @@ export const cities: CityData[] = [
     slug: "zaragoza",
     name: "Zaragoza",
     image: zaragozaImg,
+    lat: 41.6488,
+    lng: -0.8891,
     intro: [
       "Zaragoza es una ciudad industrial y comercial con una competencia digital moderada — lo que la convierte en un mercado ideal para posicionarse en Google con resultados rápidos. Los negocios que trabajen su SEO local ahora tienen una ventaja clara.",
       "La ciudad tiene un tejido comercial activo: talleres, comercios, profesionales de servicios que atienden a una población estable y fiel. El problema es que muchos de estos negocios no aparecen en Google cuando alguien busca lo que ofrecen. Eso se soluciona con un sistema de posicionamiento bien ejecutado.",
