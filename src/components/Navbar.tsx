@@ -60,6 +60,9 @@ const Navbar = () => {
               </div>
             )}
           </div>
+          <Link to="/como-ve-google-mi-web" className={`hover:text-primary transition-colors ${location.pathname === "/como-ve-google-mi-web" ? "text-primary" : ""}`}>
+            Analiza tu web
+          </Link>
           <Link to="/planes" className={`hover:text-primary transition-colors ${location.pathname === "/planes" ? "text-primary" : ""}`}>
             Planes
           </Link>
