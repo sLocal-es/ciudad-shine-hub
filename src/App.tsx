@@ -14,6 +14,7 @@ import ServicePage from "@/pages/ServicePage";
 import CityPage from "@/pages/CityPage";
 import SectorPage from "@/pages/SectorPage";
 import SectorCityPage from "@/pages/SectorCityPage";
+import ComoVeGoogleMiWeb from "@/pages/ComoVeGoogleMiWeb";
 import NotFound from "@/pages/NotFound";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -41,6 +42,7 @@ const App = () => (
             <Route path="/planes" element={<Planes />} />
             <Route path="/contacto" element={<Contacto />} />
             <Route path="/posicionamiento-local" element={<PosicionamientoLocal />} />
+            <Route path="/como-ve-google-mi-web" element={<ComoVeGoogleMiWeb />} />
             <Route path="/aparecer-en-google-maps" element={<ServicePage />} />
             <Route path="/seo-para-negocios-locales" element={<ServicePage />} />
             <Route path="/ficha-google-mi-negocio" element={<ServicePage />} />
