@@ -42,6 +42,7 @@ const App = () => (
             <Route path="/planes" element={<Planes />} />
             <Route path="/contacto" element={<Contacto />} />
             <Route path="/posicionamiento-local" element={<PosicionamientoLocal />} />
+            <Route path="/como-ve-google-mi-web" element={<ComoVeGoogleMiWeb />} />
             <Route path="/aparecer-en-google-maps" element={<ServicePage />} />
             <Route path="/seo-para-negocios-locales" element={<ServicePage />} />
             <Route path="/ficha-google-mi-negocio" element={<ServicePage />} />
