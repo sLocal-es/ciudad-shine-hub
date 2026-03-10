@@ -21,6 +21,8 @@ export const cities: CityData[] = [
     slug: "madrid",
     name: "Madrid",
     image: madridImg,
+    lat: 40.4168,
+    lng: -3.7038,
     intro: [
       "Madrid es uno de los mercados más competidos de España. Millones de búsquedas diarias hacen que diferenciarse en Google sea clave para cualquier negocio local. Si tu clínica dental, tu taller o tu restaurante no aparece cuando alguien busca en tu zona, estás perdiendo clientes cada día frente a competidores que sí han trabajado su visibilidad.",
       "El SEO local en Madrid no es opcional — es una necesidad. La capital concentra una enorme densidad de negocios por barrio, lo que significa que Google tiene que elegir a quién mostrar primero. Sin una ficha de Google optimizada y una web preparada para posicionar, tu negocio queda invisible para los miles de personas que buscan tus servicios a diario.",
