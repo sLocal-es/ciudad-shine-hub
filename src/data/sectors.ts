@@ -209,7 +209,7 @@ export const sectors: SectorData[] = [
   {
     slug: "mas-clientes-entrenador-personal",
     metaTitle: "Más Clientes para Entrenadores Personales | Google y Web Local | slocal.es",
-    metaDesc: "Llena tu agenda como entrenador personal sin depender del boca a boca. Ficha de Google, web y posicionamiento local. Desde 197€.",
+    metaDesc: "Llena tu agenda como entrenador personal sin depender del boca a boca. Ficha de Google, web y posicionamiento local. Desde €150/mes.",
     h1: "Más Clientes para tu Negocio como Entrenador Personal",
     pillBadge: "Para entrenadores personales",
     painSubtitle: "El entrenador personal que aparece primero en Google en su ciudad no tiene problema de clientes. El que no aparece, sobrevive del boca a boca — que es inestable.",

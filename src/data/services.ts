@@ -98,7 +98,7 @@ export const services: ServiceData[] = [
     slug: "como-salir-primero-en-google",
     title: "Cómo Salir Primero en Google",
     metaTitle: "Cómo Salir Primero en Google | Negocios Locales | slocal.es",
-    metaDesc: "Descubre cómo hacer que tu negocio local aparezca primero en Google. Sistema de posicionamiento orgánico sin publicidad. Desde 197€.",
+    metaDesc: "Descubre cómo hacer que tu negocio local aparezca primero en Google. Sistema de posicionamiento orgánico sin publicidad. Desde €150/mes.",
     h1: "Cómo Salir Primero en Google con Tu Negocio Local",
     subtitle: "Salir primero en Google no es cuestión de suerte. Es cuestión de sistema. Te mostramos cómo funciona.",
     imagePlaceholder: "FOTO: posición número 1 en resultados de Google",
