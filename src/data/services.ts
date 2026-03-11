@@ -17,7 +17,7 @@ export const services: ServiceData[] = [
     slug: "aparecer-en-google-maps",
     title: "Aparecer en Google Maps",
     metaTitle: "Cómo Aparecer en Google Maps con Tu Negocio | slocal.es",
-    metaDesc: "Haz que tu negocio aparezca en Google Maps cuando tus clientes te buscan. Sistema de visibilidad local sin agencias. Desde 197€.",
+    metaDesc: "Haz que tu negocio aparezca en Google Maps cuando tus clientes te buscan. Sistema de visibilidad local sin agencias. Desde €150/mes.",
     h1: "Cómo Aparecer en Google Maps con Tu Negocio Local",
     subtitle: "Si alguien busca tu servicio en Google Maps y no te encuentra, estás perdiendo clientes cada día. Nosotros lo solucionamos.",
     imagePlaceholder: "FOTO: pantalla móvil con Google Maps y negocio destacado",
