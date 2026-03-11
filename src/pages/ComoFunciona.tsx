@@ -27,9 +27,9 @@ const ComoFunciona = () => (
         {[
           {
             n: "01",
-            title: "Eliges tu nivel",
-            desc: "Tenemos tres niveles diseñados para distintas necesidades. Desde poner tu negocio en el mapa con una web y ficha de Google (197€, pago único) hasta un sistema completo de posicionamiento con contenido mensual, seguimiento de posiciones y optimización continua.",
-            extra: "No necesitas saber nada de SEO. Te explicamos qué incluye cada nivel y cuál encaja mejor con tu negocio."
+            title: "Eliges tu plan",
+            desc: "Dos planes mensuales diseñados para distintas necesidades. Esencial (€150/mes) para ciudades con menos competencia, Pro (€250/mes) para resultados más rápidos en ciudades grandes. Setup inicial con web + ficha incluido.",
+            extra: "No necesitas saber nada de SEO. Te explicamos qué incluye cada plan y cuál encaja mejor con tu negocio."
           },
           {
             n: "02",
@@ -60,7 +60,7 @@ const ComoFunciona = () => (
     <section className="bg-primary py-16">
       <div className="container text-center">
         <h2 className="font-heading text-2xl md:text-3xl text-primary-foreground mb-6">
-          ¿Quieres saber qué nivel encaja con tu negocio?
+          ¿Quieres saber qué plan encaja con tu negocio?
         </h2>
         <div className="flex flex-wrap justify-center gap-4">
           <Link to="/planes" className="bg-card text-primary font-heading text-sm rounded-lg px-8 py-3 hover:bg-card/90 transition-colors">

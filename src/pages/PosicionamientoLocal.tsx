@@ -7,7 +7,7 @@ const PosicionamientoLocal = () => (
   <>
     <SEOHead
       title="Posicionamiento Local en Google | slocal.es"
-      description="Todo lo que necesitas para posicionar tu negocio local en Google. Ficha de Google, SEO local, web optimizada. Sistema completo desde 197€."
+      description="Todo lo que necesitas para posicionar tu negocio local en Google. Ficha de Google, SEO local, web optimizada. Desde €150/mes + setup."
       canonical="/posicionamiento-local"
     />
 

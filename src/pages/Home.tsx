@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
 import PlanCards from "@/components/PlanCards";
 import CTASection from "@/components/CTASection";
 import { cities } from "@/data/cities";
+import heroImg from "@/assets/hero-negocio-local.webp";
 
 const Home = () => {
   const jsonLd = {
@@ -20,7 +20,7 @@ const Home = () => {
     <>
       <SEOHead
         title="slocal.es | Visibilidad en Google para Negocios Locales"
-        description="Sistema de posicionamiento local en Google para negocios españoles. Aparece cuando tus clientes te buscan. Sin agencias, sin humo. Desde 197€."
+        description="Sistema de posicionamiento local en Google para negocios españoles. Aparece cuando tus clientes te buscan. Sin agencias, sin humo. Desde €150/mes."
         canonical="/"
         jsonLd={jsonLd}
       />
@@ -47,7 +47,7 @@ const Home = () => {
               </Link>
             </div>
           </div>
-          <ImagePlaceholder description="FOTO: negocio local en España, calle comercial" height="360px" />
+          <img src={heroImg} alt="Negocio local en España, calle comercial" className="rounded-xl w-full h-[360px] object-cover" loading="lazy" />
         </div>
       </section>
 
@@ -98,7 +98,7 @@ const Home = () => {
       <section className="py-16 md:py-20">
         <div className="container">
           <h2 className="font-heading text-2xl md:text-3xl text-center mb-10">
-            Tres niveles, precios claros
+            Dos planes, precios claros
           </h2>
           <PlanCards />
           <div className="text-center mt-8">

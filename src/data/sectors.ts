@@ -29,7 +29,7 @@ export const sectors: SectorData[] = [
   {
     slug: "mas-clientes-para-fontaneros",
     metaTitle: "Más Clientes para Fontaneros | Aparece en Google en tu Zona | slocal.es",
-    metaDesc: "¿Eres fontanero y quieres más llamadas? Te ponemos en Google Maps y en los primeros resultados de tu ciudad. Sin agencias. Desde 197€.",
+    metaDesc: "¿Eres fontanero y quieres más llamadas? Te ponemos en Google Maps y en los primeros resultados de tu ciudad. Sin agencias. Desde €150/mes.",
     h1: "Más Clientes para tu Negocio de Fontanería desde Google",
     pillBadge: "Para fontaneros",
     painSubtitle: "Cuando una tubería revienta, el cliente busca en Google y llama al primero que aparece. Si no eres tú, es dinero perdido.",
@@ -65,7 +65,7 @@ export const sectors: SectorData[] = [
   {
     slug: "mas-clientes-para-reformas",
     metaTitle: "Más Clientes para Empresas de Reformas | Aparece en Google | slocal.es",
-    metaDesc: "Consigue más solicitudes de presupuesto para tu empresa de reformas desde Google. Ficha, web y posicionamiento local. Sin permanencia en el Nivel 1.",
+    metaDesc: "Consigue más solicitudes de presupuesto para tu empresa de reformas desde Google. Ficha, web y posicionamiento local. Sin permanencia.",
     h1: "Más Presupuestos para tu Empresa de Reformas desde Google",
     pillBadge: "Para reformas",
     painSubtitle: "El cliente que busca 'empresa de reformas en [ciudad]' ya tiene intención de contratar. Si no apareces, ese presupuesto se lo lleva otro.",
@@ -209,7 +209,7 @@ export const sectors: SectorData[] = [
   {
     slug: "mas-clientes-entrenador-personal",
     metaTitle: "Más Clientes para Entrenadores Personales | Google y Web Local | slocal.es",
-    metaDesc: "Llena tu agenda como entrenador personal sin depender del boca a boca. Ficha de Google, web y posicionamiento local. Desde 197€.",
+    metaDesc: "Llena tu agenda como entrenador personal sin depender del boca a boca. Ficha de Google, web y posicionamiento local. Desde €150/mes.",
     h1: "Más Clientes para tu Negocio como Entrenador Personal",
     pillBadge: "Para entrenadores personales",
     painSubtitle: "El entrenador personal que aparece primero en Google en su ciudad no tiene problema de clientes. El que no aparece, sobrevive del boca a boca — que es inestable.",
