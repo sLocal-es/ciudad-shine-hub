@@ -1,0 +1,248 @@
+import { Link } from "react-router-dom";
+import { SEOHead } from "@/components/SEOHead";
+
+const Sistema = () => {
+  return (
+    <>
+      <SEOHead
+        title="El Sistema Anti-Agencia — slocal.es"
+        description="No soy una agencia. Gestiono tu presencia en Google de forma personal — web, ficha y contenido continuo — por lo que una agencia cobra solo por atenderte."
+        canonical="/sistema"
+      />
+
+      {/* Hero */}
+      <section className="py-20 md:py-28 bg-dark-bg text-dark-fg">
+        <div className="container max-w-3xl mx-auto">
+          <div className="inline-block px-4 py-1.5 rounded-full bg-dark-bg border border-primary/30 text-primary text-xs font-medium tracking-wider uppercase mb-8">
+            El Sistema Anti-Agencia
+          </div>
+          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight mb-6">
+            Que Google te mande<br />clientes. <em className="text-primary not-italic">De verdad.</em>
+          </h1>
+          <p className="text-lg text-dark-fg/70 leading-relaxed mb-8 max-w-xl">
+            No soy una agencia. Gestiono tu presencia en Google de forma personal — web, ficha y contenido continuo — por lo que una agencia cobra solo por atenderte.
+          </p>
+          <a
+            href="https://wa.me/34684780063?text=Hola%2C%20quiero%20que%20me%20eches%20un%20ojo%20en%20Google"
+            className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-heading font-medium px-8 py-4 rounded-lg hover:bg-primary/90 transition-all"
+          >
+            Escríbeme y te miro gratis →
+          </a>
+        </div>
+      </section>
+
+      {/* Mi Historia */}
+      <section className="py-16 md:py-20 bg-background">
+        <div className="container max-w-3xl mx-auto">
+          <h2 className="font-heading text-3xl md:text-4xl leading-tight mb-6">
+            Por qué monté esto<br />(y por qué <em className="text-primary not-italic">no soy</em> una agencia)
+          </h2>
+
+          <div className="bg-dark-bg border-l-4 border-primary rounded-r-xl p-8 my-10">
+            <p className="text-dark-fg/80 mb-4">Trabajé en una agencia de marketing. Vi de cerca cómo funciona por dentro.</p>
+            <p className="text-dark-fg/80 mb-4">Para que una agencia te dedique tiempo real, necesitas pagar a partir de €800 o €1.000 al mes. Si pagas menos, eres el último de la lista. Nadie te llama, nadie toca nada, y a final de mes te mandan un informe con números que no sirven para nada.</p>
+            <p className="text-dark-fg/80 mb-4">El problema no es que las agencias sean malas. El problema es que su modelo de negocio no les permite cuidar a un fontanero, a un reformista o a una psicóloga que paga €300 al mes. <strong className="text-dark-fg">No les sale a cuenta.</strong></p>
+            <p className="text-dark-fg/80">Por eso monté slocal.es. Un sistema pensado exactamente para ese tipo de negocio — el que no necesita gastar €1.000 al mes pero sí merece que Google le mande clientes.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Qué hago */}
+      <section className="py-16 md:py-20 bg-secondary/50">
+        <div className="container max-w-3xl mx-auto">
+          <h2 className="font-heading text-3xl md:text-4xl leading-tight mb-4">
+            ¿Qué hago exactamente<br />por tu negocio?
+          </h2>
+          <p className="text-muted-foreground text-lg mb-10">Tres cosas. Sin complicaciones.</p>
+
+          <div className="space-y-4">
+            <div className="flex gap-5 p-6 bg-card rounded-xl border border-border">
+              <div className="text-3xl font-heading font-bold text-primary/40 shrink-0">01</div>
+              <div>
+                <strong className="block font-heading text-lg mb-2">Te hago la web para que Google te entienda</strong>
+                <p className="text-muted-foreground text-sm">Una web estructurada por lo que haces y por las zonas donde trabajas. Google necesita que se lo expliques bien para mostrarte cuando alguien te busca. Sin eso, da igual lo bueno que seas.</p>
+              </div>
+            </div>
+            <div className="flex gap-5 p-6 bg-card rounded-xl border border-border">
+              <div className="text-3xl font-heading font-bold text-primary/40 shrink-0">02</div>
+              <div>
+                <strong className="block font-heading text-lg mb-2">Pongo en marcha y mantengo tu ficha de Google</strong>
+                <p className="text-muted-foreground text-sm">La ficha de Google es lo primero que ve alguien cuando te busca. Si está a medias o sin actualizar, pierdes clientes antes de que te llamen. La configuro bien y la mantengo activa cada mes.</p>
+              </div>
+            </div>
+            <div className="flex gap-5 p-6 bg-card rounded-xl border border-border">
+              <div className="text-3xl font-heading font-bold text-primary/40 shrink-0">03</div>
+              <div>
+                <strong className="block font-heading text-lg mb-2">Publico contenido continuo para que subas en Google</strong>
+                <p className="text-muted-foreground text-sm">Google premia los negocios que están activos. Publico artículos en tu web y posts en tu ficha cada mes para que vayas ganando posiciones de forma sostenida. Sin pagar publicidad.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Prueba Social - Scores */}
+      <section className="py-16 md:py-20 bg-dark-bg text-dark-fg">
+        <div className="container max-w-3xl mx-auto">
+          <h2 className="font-heading text-3xl md:text-4xl leading-tight mb-4">
+            Las webs que construyo<br />están <em className="text-primary not-italic">optimizadas de verdad</em>
+          </h2>
+          <p className="text-dark-fg/70 mb-10">Esto no son palabras. Cualquiera puede comprobarlo en Google PageSpeed Insights ahora mismo.</p>
+
+          <div className="grid md:grid-cols-2 gap-4 mb-6">
+            <div className="bg-dark-bg/50 border border-dark-fg/10 rounded-xl p-6">
+              <div className="text-xs text-primary uppercase tracking-wider font-medium mb-4">slocal.es</div>
+              <div className="flex gap-3 flex-wrap">
+                <div className="text-center">
+                  <div className="w-14 h-14 rounded-full border-[3px] border-green-500 flex items-center justify-center text-green-500 font-heading font-bold text-lg mb-1">100</div>
+                  <div className="text-[10px] text-dark-fg/40 uppercase">Rendimiento</div>
+                </div>
+                <div className="text-center">
+                  <div className="w-14 h-14 rounded-full border-[3px] border-green-500 flex items-center justify-center text-green-500 font-heading font-bold text-lg mb-1">94</div>
+                  <div className="text-[10px] text-dark-fg/40 uppercase">Accesibilidad</div>
+                </div>
+                <div className="text-center">
+                  <div className="w-14 h-14 rounded-full border-[3px] border-green-500 flex items-center justify-center text-green-500 font-heading font-bold text-lg mb-1">100</div>
+                  <div className="text-[10px] text-dark-fg/40 uppercase">SEO</div>
+                </div>
+              </div>
+              <p className="text-xs text-dark-fg/50 italic mt-4">Esta misma web. Compruébalo tú.</p>
+            </div>
+            <div className="bg-dark-bg/50 border border-dark-fg/10 rounded-xl p-6">
+              <div className="text-xs text-primary uppercase tracking-wider font-medium mb-4">obrasenmadrid.com</div>
+              <div className="flex gap-3 flex-wrap">
+                <div className="text-center">
+                  <div className="w-14 h-14 rounded-full border-[3px] border-green-500 flex items-center justify-center text-green-500 font-heading font-bold text-lg mb-1">98</div>
+                  <div className="text-[10px] text-dark-fg/40 uppercase">Rendimiento</div>
+                </div>
+                <div className="text-center">
+                  <div className="w-14 h-14 rounded-full border-[3px] border-green-500 flex items-center justify-center text-green-500 font-heading font-bold text-lg mb-1">95</div>
+                  <div className="text-[10px] text-dark-fg/40 uppercase">Accesibilidad</div>
+                </div>
+                <div className="text-center">
+                  <div className="w-14 h-14 rounded-full border-[3px] border-green-500 flex items-center justify-center text-green-500 font-heading font-bold text-lg mb-1">100</div>
+                  <div className="text-[10px] text-dark-fg/40 uppercase">SEO</div>
+                </div>
+              </div>
+              <p className="text-xs text-dark-fg/50 italic mt-4">Cliente activo. Web montada recientemente.</p>
+            </div>
+          </div>
+          <p className="text-xs text-dark-fg/40">Una web lenta o mal construida penaliza tu posición en Google. Las mías arrancan desde el primer día con todo en verde.</p>
+        </div>
+      </section>
+
+      {/* Comparativa Precio */}
+      <section className="py-16 md:py-20 bg-background">
+        <div className="container max-w-3xl mx-auto">
+          <h2 className="font-heading text-3xl md:text-4xl leading-tight mb-10">
+            Lo que esto te cuesta<br />comparado con <em className="text-primary not-italic">una agencia</em>
+          </h2>
+
+          <div className="grid md:grid-cols-2 gap-4 mb-16">
+            <div className="bg-muted/30 border border-border rounded-xl p-8 opacity-70">
+              <div className="text-xs text-muted-foreground uppercase tracking-wider font-medium mb-3">Agencia tradicional</div>
+              <div className="font-heading text-4xl text-muted-foreground line-through">€800–1.200</div>
+              <div className="text-sm text-muted-foreground/60 mt-2">/mes · y aun así no te llaman</div>
+            </div>
+            <div className="bg-primary text-primary-foreground rounded-xl p-8">
+              <div className="text-xs uppercase tracking-wider font-medium mb-3 opacity-90">slocal.es</div>
+              <div className="font-heading text-4xl">€150–250</div>
+              <div className="text-sm mt-2 opacity-90">/mes · gestión personal real</div>
+            </div>
+          </div>
+
+          <h2 className="font-heading text-2xl md:text-3xl leading-tight mb-4">
+            ¿Cuánto cuesta una web<br />multipágina en una <em className="text-primary not-italic">agencia</em>?
+          </h2>
+          <p className="text-muted-foreground mb-8">Una web bien estructurada para SEO local — con páginas por servicio y por zona — tiene un coste muy concreto según dónde vayas.</p>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-muted/30 border border-border rounded-xl p-8 opacity-70">
+              <div className="text-xs text-muted-foreground uppercase tracking-wider font-medium mb-3">Agencia tradicional</div>
+              <div className="font-heading text-4xl text-muted-foreground">€1.500–3.000</div>
+              <div className="text-sm text-muted-foreground/60 mt-2">web multipágina 50–70 páginas · pago único</div>
+            </div>
+            <div className="bg-primary text-primary-foreground rounded-xl p-8 relative">
+              <div className="absolute -top-3 right-4 bg-green-500 text-white text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full">Este mes: ahorra €100</div>
+              <div className="text-xs uppercase tracking-wider font-medium mb-3 opacity-90">slocal.es</div>
+              <div className="flex items-baseline gap-3">
+                <span className="font-heading text-2xl opacity-50 line-through">€497</span>
+                <span className="font-heading text-4xl">€397</span>
+              </div>
+              <div className="text-sm mt-2 opacity-90">web multipágina · pago único</div>
+            </div>
+          </div>
+
+          <p className="text-sm text-muted-foreground mt-6">La diferencia no es que la web sea peor. Es que no tengo estructura de agencia que mantener. El trabajo lo hago yo, con las herramientas adecuadas, y el resultado técnico habla por sí solo — mira los scores de arriba.</p>
+        </div>
+      </section>
+
+      {/* Planes */}
+      <section className="py-16 md:py-20 bg-dark-bg text-dark-fg">
+        <div className="container max-w-3xl mx-auto">
+          <h2 className="font-heading text-3xl md:text-4xl leading-tight mb-4">
+            Dos planes.<br /><em className="text-primary not-italic">Sin letra pequeña.</em>
+          </h2>
+          <p className="text-dark-fg/70 mb-10">El setup inicial (la web + ficha configurada) se paga una sola vez al empezar. Después eliges el nivel de mantenimiento mensual.</p>
+
+          <div className="grid md:grid-cols-2 gap-4 mb-6">
+            <div className="bg-dark-bg/50 border border-dark-fg/10 rounded-xl p-8">
+              <div className="font-heading text-lg mb-1">Esencial</div>
+              <div className="font-heading text-4xl text-dark-fg mb-1">€150</div>
+              <div className="text-sm text-dark-fg/50 mb-6">+ IVA / mes</div>
+              <ul className="space-y-3 text-sm text-dark-fg/70">
+                <li className="flex items-start gap-2"><span className="text-primary">✓</span> 2 artículos de blog al mes</li>
+                <li className="flex items-start gap-2"><span className="text-primary">✓</span> 4 posts en tu ficha de Google al mes</li>
+                <li className="flex items-start gap-2"><span className="text-primary">✓</span> Gestión continua de tu ficha</li>
+                <li className="flex items-start gap-2"><span className="text-primary">✓</span> Ideal para ciudades con menos competencia</li>
+              </ul>
+            </div>
+            <div className="bg-dark-bg/50 border border-primary rounded-xl p-8 relative">
+              <div className="absolute -top-3 left-6 bg-primary text-primary-foreground text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full">Más elegido</div>
+              <div className="font-heading text-lg mb-1">Pro</div>
+              <div className="font-heading text-4xl text-primary mb-1">€250</div>
+              <div className="text-sm text-dark-fg/50 mb-6">+ IVA / mes</div>
+              <ul className="space-y-3 text-sm text-dark-fg/70">
+                <li className="flex items-start gap-2"><span className="text-primary">✓</span> 4 artículos de blog al mes</li>
+                <li className="flex items-start gap-2"><span className="text-primary">✓</span> 8 posts en tu ficha de Google al mes</li>
+                <li className="flex items-start gap-2"><span className="text-primary">✓</span> Gestión continua de tu ficha</li>
+                <li className="flex items-start gap-2"><span className="text-primary">✓</span> Resultados más rápidos en ciudades grandes</li>
+              </ul>
+            </div>
+          </div>
+
+          <p className="text-sm text-dark-fg/50">* Setup inicial (web + ficha): <span className="line-through text-dark-fg/30">€497</span> <strong className="text-green-400">€397 + IVA</strong> este mes · pago único · sin permanencia mínima.</p>
+        </div>
+      </section>
+
+      {/* CTA Final */}
+      <section className="py-16 md:py-20 bg-background">
+        <div className="container max-w-2xl mx-auto">
+          <div className="bg-dark-bg rounded-2xl p-10 md:p-14 text-center">
+            <h2 className="font-heading text-2xl md:text-3xl mb-4">
+              ¿Quieres saber cómo<br />estás en Google <em className="text-primary not-italic">ahora mismo</em>?
+            </h2>
+            <p className="text-dark-fg/70 mb-8 max-w-md mx-auto">
+              Dime a qué te dedicas y en qué ciudad. Te miro gratis cómo estás y te digo qué se puede mejorar. Sin compromiso y sin llamadas de seguimiento si no te interesa.
+            </p>
+            <a
+              href="https://wa.me/34684780063?text=Hola%2C%20quiero%20que%20me%20eches%20un%20ojo%20en%20Google"
+              className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-heading font-medium px-8 py-4 rounded-lg hover:bg-primary/90 transition-all w-full max-w-sm mb-3"
+            >
+              💬 Escríbeme por WhatsApp
+            </a>
+            <a
+              href="mailto:hola@slocal.es?subject=Quiero que me eches un ojo en Google"
+              className="inline-flex items-center justify-center gap-2 border border-dark-fg/20 text-dark-fg font-heading font-medium px-8 py-4 rounded-lg hover:border-green-500 hover:text-green-500 transition-all w-full max-w-sm mb-3"
+            >
+              O por email
+            </a>
+            <p className="text-xs text-dark-fg/40">Respondo en menos de 24 horas.</p>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default Sistema;
