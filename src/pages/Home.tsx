@@ -47,7 +47,7 @@ const Home = () => {
               </Link>
             </div>
           </div>
-          <ImagePlaceholder description="FOTO: negocio local en España, calle comercial" height="360px" />
+          <img src={heroImg} alt="Negocio local en España, calle comercial" className="rounded-xl w-full h-[360px] object-cover" loading="lazy" />
         </div>
       </section>
 
