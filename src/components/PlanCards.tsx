@@ -1,82 +1,61 @@
 import { Link } from "react-router-dom";
 
 interface PlanCardProps {
-  level: number;
   name: string;
   price: string;
-  priceNote?: string;
+  priceNote: string;
   features: string[];
   featured?: boolean;
 }
 
 const planData: PlanCardProps[] = [
   {
-    level: 1,
-    name: "Ponte en el mapa",
-    price: "197€",
-    priceNote: "pago único",
+    name: "Esencial",
+    price: "€150",
+    priceNote: "+ IVA / mes",
     features: [
-      "Web de 1 página optimizada para SEO",
-      "Ficha de Google Business Profile configurada",
-      "Alta en directorios locales principales",
-      "Entrega en 10 días laborables",
+      "2 artículos de blog al mes",
+      "4 posts en tu ficha de Google al mes",
+      "Gestión continua de tu ficha",
+      "Ideal para ciudades con menos competencia",
     ],
   },
   {
-    level: 2,
-    name: "Que te encuentren primero",
-    price: "247€/mes",
-    priceNote: "mínimo 6 meses",
+    name: "Pro",
+    price: "€250",
+    priceNote: "+ IVA / mes",
     featured: true,
     features: [
-      "Todo lo del Nivel 1",
-      "Web multipágina (hasta 20 páginas de servicios y áreas)",
-      "2 artículos de blog al mes",
-      "Optimización mensual de ficha Google",
-      "Informe mensual de posiciones",
-    ],
-  },
-  {
-    level: 3,
-    name: "El sistema completo",
-    price: "497€/mes",
-    priceNote: "mínimo 6 meses",
-    features: [
-      "Todo lo del Nivel 2",
-      "Web completa (sin límite de páginas)",
       "4 artículos de blog al mes",
-      "Estrategia de reseñas Google",
-      "Optimización para IA y búsqueda por voz",
-      "Informe mensual detallado",
+      "8 posts en tu ficha de Google al mes",
+      "Gestión continua de tu ficha",
+      "Resultados más rápidos en ciudades grandes",
     ],
   },
 ];
 
 const PlanCards = () => (
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
     {planData.map((plan) => (
       <div
-        key={plan.level}
-        className={`rounded-xl p-6 border transition-all duration-200 hover:border-primary hover:-translate-y-[3px] ${
+        key={plan.name}
+        className={`rounded-xl p-6 border transition-all duration-200 hover:border-primary hover:-translate-y-[3px] relative ${
           plan.featured
-            ? "bg-dark-bg text-dark-fg border-dark-bg"
+            ? "bg-dark-bg text-dark-fg border-primary"
             : "bg-card border-border"
         }`}
       >
-        <p className={`text-sm font-body ${plan.featured ? "text-primary" : "text-muted-foreground"}`}>
-          Nivel {plan.level}
-        </p>
+        {plan.featured && (
+          <div className="absolute -top-3 left-6 bg-primary text-primary-foreground text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full">
+            Más elegido
+          </div>
+        )}
         <h3 className="font-heading text-xl mt-1 mb-3">{plan.name}</h3>
-        <p className="font-heading text-3xl">
+        <p className={`font-heading text-3xl ${plan.featured ? "text-primary" : ""}`}>
           {plan.price}
         </p>
-        {plan.priceNote && (
-          <p className={`text-sm mt-1 ${plan.featured ? "text-dark-fg/60" : "text-muted-foreground"}`}>
-            {plan.priceNote}
-          </p>
-        )}
-        <p className={`text-[11px] mt-1 ${plan.featured ? "text-dark-fg/40" : "text-muted-foreground/70"}`}>
-          * Precios sin IVA
+        <p className={`text-sm mt-1 ${plan.featured ? "text-dark-fg/60" : "text-muted-foreground"}`}>
+          {plan.priceNote}
         </p>
         <ul className="mt-5 space-y-2">
           {plan.features.map((f) => (
@@ -98,6 +77,10 @@ const PlanCards = () => (
         </Link>
       </div>
     ))}
+    <p className="md:col-span-2 text-xs text-muted-foreground text-center mt-2">
+      * Setup inicial (web + ficha): <span className="line-through opacity-60">€497</span>{" "}
+      <strong className="text-green-600">€397 + IVA</strong> este mes · pago único · sin permanencia mínima. Precios sin IVA.
+    </p>
   </div>
 );
 

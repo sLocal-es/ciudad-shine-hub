@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { cities } from "@/data/cities";
 import { sectors } from "@/data/sectors";
@@ -9,21 +9,34 @@ const Navbar = () => {
   const [sectorsOpen, setSectorsOpen] = useState(false);
   const location = useLocation();
 
+  const citiesRef = useRef<HTMLDivElement>(null);
+  const sectorsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (citiesRef.current && !citiesRef.current.contains(e.target as Node)) setCitiesOpen(false);
+      if (sectorsRef.current && !sectorsRef.current.contains(e.target as Node)) setSectorsOpen(false);
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
     <header className="sticky top-0 z-50 bg-card border-b border-border">
       <div className="container flex items-center justify-between h-16">
-        {/* Logo */}
         <Link to="/" className="font-heading text-xl" onClick={() => setMobileOpen(false)}>
           s<span className="text-primary">local</span>.es
         </Link>
 
-        {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-6 text-sm font-body">
           <Link to="/como-funciona" className={`hover:text-primary transition-colors ${location.pathname === "/como-funciona" ? "text-primary" : ""}`}>
             Cómo funciona
           </Link>
-          <div className="relative" onMouseEnter={() => setCitiesOpen(true)} onMouseLeave={() => setCitiesOpen(false)}>
-            <button className="hover:text-primary transition-colors flex items-center gap-1">
+          <div className="relative" ref={citiesRef}>
+            <button
+              onClick={() => { setCitiesOpen(!citiesOpen); setSectorsOpen(false); }}
+              className="hover:text-primary transition-colors flex items-center gap-1"
+            >
               Localidades <span className="text-[10px]">▾</span>
             </button>
             {citiesOpen && (
@@ -41,8 +54,11 @@ const Navbar = () => {
               </div>
             )}
           </div>
-          <div className="relative" onMouseEnter={() => setSectorsOpen(true)} onMouseLeave={() => setSectorsOpen(false)}>
-            <button className="hover:text-primary transition-colors flex items-center gap-1">
+          <div className="relative" ref={sectorsRef}>
+            <button
+              onClick={() => { setSectorsOpen(!sectorsOpen); setCitiesOpen(false); }}
+              className="hover:text-primary transition-colors flex items-center gap-1"
+            >
               Sectores <span className="text-[10px]">▾</span>
             </button>
             {sectorsOpen && (
@@ -71,12 +87,10 @@ const Navbar = () => {
           </Link>
         </nav>
 
-        {/* Desktop CTA */}
         <Link to="/contacto" className="hidden md:inline-block bg-primary text-primary-foreground font-heading text-sm rounded-lg px-5 py-2.5 hover:bg-primary/90 transition-colors">
           Hablemos →
         </Link>
 
-        {/* Mobile hamburger */}
         <button
           className="md:hidden flex flex-col gap-1.5 p-2"
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -88,7 +102,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {mobileOpen && (
         <div className="md:hidden border-t border-border bg-card px-6 py-4 space-y-3">
           <Link to="/como-funciona" className="block text-sm py-2 hover:text-primary" onClick={() => setMobileOpen(false)}>Cómo funciona</Link>
