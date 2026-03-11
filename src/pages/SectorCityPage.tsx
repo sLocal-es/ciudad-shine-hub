@@ -35,7 +35,7 @@ const SectorCityPage = () => {
   const h1Text = `Más ${ctaWordCap} para tu ${sector.relatedLabel.endsWith("s") ? `Negocio de ${sector.relatedLabel}` : sector.relatedLabel} en ${city.name}: Cómo Aparecer en Google cuando Te Buscan`;
 
   const metaTitle = `Más ${ctaWordCap} para ${sector.relatedLabel} en ${city.name} | slocal.es`;
-  const metaDesc = `¿Eres ${sectorLabel} en ${city.name} y quieres más ${sector.ctaWord}? Te ponemos en Google Maps y en los primeros resultados de ${city.name}. Sin agencias. Desde 197€.`;
+  const metaDesc = `¿Eres ${sectorLabel} en ${city.name} y quieres más ${sector.ctaWord}? Te ponemos en Google Maps y en los primeros resultados de ${city.name}. Sin agencias. Desde €150/mes.`;
   const canonical = `/${sector.slug}/${city.slug}`;
 
   // JSON-LD schemas
