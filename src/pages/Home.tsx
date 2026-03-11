@@ -22,7 +22,7 @@ const Home = () => {
     <>
       <SEOHead
         title="slocal.es | Visibilidad en Google para Negocios Locales"
-        description="Sistema de posicionamiento local en Google para negocios españoles. Aparece cuando tus clientes te buscan. Sin agencias, sin humo. Desde 197€."
+        description="Sistema de posicionamiento local en Google para negocios españoles. Aparece cuando tus clientes te buscan. Sin agencias, sin humo. Desde €150/mes."
         canonical="/"
         jsonLd={jsonLd}
       />
