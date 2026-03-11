@@ -29,7 +29,7 @@ export const sectors: SectorData[] = [
   {
     slug: "mas-clientes-para-fontaneros",
     metaTitle: "Más Clientes para Fontaneros | Aparece en Google en tu Zona | slocal.es",
-    metaDesc: "¿Eres fontanero y quieres más llamadas? Te ponemos en Google Maps y en los primeros resultados de tu ciudad. Sin agencias. Desde 197€.",
+    metaDesc: "¿Eres fontanero y quieres más llamadas? Te ponemos en Google Maps y en los primeros resultados de tu ciudad. Sin agencias. Desde €150/mes.",
     h1: "Más Clientes para tu Negocio de Fontanería desde Google",
     pillBadge: "Para fontaneros",
     painSubtitle: "Cuando una tubería revienta, el cliente busca en Google y llama al primero que aparece. Si no eres tú, es dinero perdido.",
