@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { SEOHead } from "@/components/SEOHead";
+import SEOHead from "@/components/SEOHead";
 
 const Sistema = () => {
   return (
