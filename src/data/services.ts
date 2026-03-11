@@ -63,7 +63,7 @@ export const services: ServiceData[] = [
       { q: "¿Qué es el SEO local y para qué sirve a mi negocio?", a: "El SEO local optimiza tu presencia en Google para que aparezcas cuando alguien busca servicios como los tuyos en tu ciudad. Sirve para atraer clientes que ya están buscando lo que ofreces." },
       { q: "¿Cuánto tarda en dar resultados el SEO local?", a: "Los primeros resultados se ven entre el mes 2 y el 4. A partir del mes 6, las posiciones se consolidan y el tráfico crece de forma sostenida. Es una inversión a medio plazo, no un gasto puntual." },
       { q: "¿Puede una pequeña empresa posicionarse en Google?", a: "Sí. De hecho, Google favorece a los negocios locales en las búsquedas con intención geográfica. Un negocio pequeño bien optimizado puede superar a grandes cadenas en búsquedas locales." },
-      { q: "¿Necesito una web para hacer SEO local?", a: "Sí, es fundamental. La ficha de Google te da visibilidad en Maps, pero una web optimizada es lo que te posiciona en los resultados orgánicos. En nuestro Nivel 1 ya incluimos la creación de la web." },
+      { q: "¿Necesito una web para hacer SEO local?", a: "Sí, es fundamental. La ficha de Google te da visibilidad en Maps, pero una web optimizada es lo que te posiciona en los resultados orgánicos. Con el setup inicial ya incluimos la creación de la web." },
       { q: "¿En qué se diferencia el SEO local del SEO normal?", a: "El SEO local se centra en posicionarte para búsquedas con intención geográfica: 'servicio + ciudad'. Incluye la optimización de Google Business Profile, contenido local y señales de relevancia geográfica." },
     ],
   },
