@@ -209,7 +209,7 @@ const SectorPage = () => {
       {/* SECTION 6 — PLANS */}
       <section className="py-16">
         <div className="container">
-          <h2 className="font-heading text-2xl md:text-3xl mb-8">Elige tu nivel</h2>
+          <h2 className="font-heading text-2xl md:text-3xl mb-8">Elige tu plan</h2>
           <PlanCards />
           <p className="text-center text-sm text-muted-foreground mt-6">{sector.sectorNote}</p>
         </div>

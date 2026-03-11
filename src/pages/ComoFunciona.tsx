@@ -60,7 +60,7 @@ const ComoFunciona = () => (
     <section className="bg-primary py-16">
       <div className="container text-center">
         <h2 className="font-heading text-2xl md:text-3xl text-primary-foreground mb-6">
-          ¿Quieres saber qué nivel encaja con tu negocio?
+          ¿Quieres saber qué plan encaja con tu negocio?
         </h2>
         <div className="flex flex-wrap justify-center gap-4">
           <Link to="/planes" className="bg-card text-primary font-heading text-sm rounded-lg px-8 py-3 hover:bg-card/90 transition-colors">

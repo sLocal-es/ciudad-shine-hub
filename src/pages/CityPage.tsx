@@ -23,7 +23,7 @@ const CityPage = () => {
     { q: `¿Funciona para cualquier tipo de negocio local en ${city.name}?`, a: `Sí. Trabajamos con fontaneros, clínicas, peluquerías, talleres, restaurantes, asesorías y cualquier negocio que tenga clientes en ${city.name}.` },
     { q: "¿Qué diferencia hay entre SEO local y publicidad en Google?", a: "La publicidad funciona solo mientras pagas — cuando paras, desapareces. El SEO posiciona tu web de forma orgánica: los resultados se acumulan y se mantienen. Es más lento al principio pero mucho más rentable a largo plazo." },
     { q: `¿Cómo sé si mi negocio en ${city.name} está posicionando?`, a: "Cada mes recibes un informe con las posiciones ganadas, las visitas a tu web y qué búsquedas te están trayendo clientes. Sin tecnicismos, en lenguaje normal." },
-    { q: "¿Tengo que firmar un contrato largo?", a: "El Nivel 1 es pago único, sin ningún compromiso. Los Niveles 2 y 3 tienen mínimo 6 meses porque el SEO necesita ese tiempo para mostrar resultados reales. Después puedes continuar o parar cuando quieras." },
+    { q: "¿Tengo que firmar un contrato largo?", a: "No hay permanencia mínima en ningún plan. Puedes cancelar cuando quieras. Tu web y tu ficha siguen siendo tuyas." },
   ];
 
   const breadcrumbSchema = {

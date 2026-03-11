@@ -100,7 +100,7 @@ const Home = () => {
       <section className="py-16 md:py-20">
         <div className="container">
           <h2 className="font-heading text-2xl md:text-3xl text-center mb-10">
-            Tres niveles, precios claros
+            Dos planes, precios claros
           </h2>
           <PlanCards />
           <div className="text-center mt-8">
