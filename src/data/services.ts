@@ -71,7 +71,7 @@ export const services: ServiceData[] = [
     slug: "ficha-google-mi-negocio",
     title: "Ficha de Google Mi Negocio",
     metaTitle: "Ficha de Google Mi Negocio | Optimización Google Business Profile | slocal.es",
-    metaDesc: "Optimiza tu ficha de Google Mi Negocio para atraer más clientes. Configuración profesional de tu Google Business Profile. Desde 197€.",
+    metaDesc: "Optimiza tu ficha de Google Mi Negocio para atraer más clientes. Configuración profesional de tu Google Business Profile. Desde €150/mes.",
     h1: "Ficha de Google Mi Negocio: Cómo Atraer Más Clientes con ella",
     subtitle: "Tu ficha de Google es tu escaparate digital. Si no está optimizada, estás perdiendo clientes que te buscan cada día.",
     imagePlaceholder: "FOTO: ficha de negocio en Google, pantalla ordenador",
