@@ -4,8 +4,6 @@ import PlanCards from "@/components/PlanCards";
 import CTASection from "@/components/CTASection";
 import { cities } from "@/data/cities";
 import heroImg from "@/assets/hero-negocio-local.webp";
-import CTASection from "@/components/CTASection";
-import { cities } from "@/data/cities";
 
 const Home = () => {
   const jsonLd = {
