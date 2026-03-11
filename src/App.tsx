@@ -15,6 +15,7 @@ import CityPage from "@/pages/CityPage";
 import SectorPage from "@/pages/SectorPage";
 import SectorCityPage from "@/pages/SectorCityPage";
 import ComoVeGoogleMiWeb from "@/pages/ComoVeGoogleMiWeb";
+import Sistema from "@/pages/Sistema";
 import NotFound from "@/pages/NotFound";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
