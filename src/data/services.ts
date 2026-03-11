@@ -44,7 +44,7 @@ export const services: ServiceData[] = [
     slug: "seo-para-negocios-locales",
     title: "SEO para Negocios Locales",
     metaTitle: "SEO para Negocios Locales en España | slocal.es",
-    metaDesc: "Posiciona tu negocio local en Google con un sistema de SEO que funciona mes a mes. Sin agencias, sin humo. Desde 197€.",
+    metaDesc: "Posiciona tu negocio local en Google con un sistema de SEO que funciona mes a mes. Sin agencias, sin humo. Desde €150/mes.",
     h1: "SEO para Negocios Locales: Cómo Posicionarse en Google",
     subtitle: "El SEO local es la forma más rentable de atraer clientes a tu negocio. Nosotros lo convertimos en un sistema que funciona solo.",
     imagePlaceholder: "FOTO: resultados de búsqueda Google en pantalla",
