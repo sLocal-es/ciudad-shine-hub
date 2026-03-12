@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Home from "@/pages/Home";
@@ -28,6 +28,14 @@ const ScrollToTop = () => {
   return null;
 };
 
+const MainLayout = () => (
+  <>
+    <Navbar />
+    <main><Outlet /></main>
+    <Footer />
+  </>
+);
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -35,16 +43,18 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <ScrollToTop />
-        <Navbar />
-        <main>
-          <Routes>
+        <Routes>
+          {/* Standalone landing — no navbar/footer */}
+          <Route path="/sistema" element={<Sistema />} />
+
+          {/* Standard layout */}
+          <Route element={<MainLayout />}>
             <Route path="/" element={<Home />} />
             <Route path="/como-funciona" element={<ComoFunciona />} />
             <Route path="/planes" element={<Planes />} />
             <Route path="/contacto" element={<Contacto />} />
             <Route path="/posicionamiento-local" element={<PosicionamientoLocal />} />
             <Route path="/como-ve-google-mi-web" element={<ComoVeGoogleMiWeb />} />
-            <Route path="/sistema" element={<Sistema />} />
             <Route path="/aparecer-en-google-maps" element={<ServicePage />} />
             <Route path="/seo-para-negocios-locales" element={<ServicePage />} />
             <Route path="/ficha-google-mi-negocio" element={<ServicePage />} />
@@ -68,9 +78,8 @@ const App = () => (
             <Route path="/mas-pacientes-para-:sector/:ciudad" element={<SectorCityPage />} />
             <Route path="/mas-alumnos-para-:sector/:ciudad" element={<SectorCityPage />} />
             <Route path="*" element={<NotFound />} />
-          </Routes>
-        </main>
-        <Footer />
+          </Route>
+        </Routes>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
