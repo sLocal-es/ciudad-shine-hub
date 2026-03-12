@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Home from "@/pages/Home";
@@ -28,6 +28,14 @@ const ScrollToTop = () => {
   return null;
 };
 
+const MainLayout = () => (
+  <>
+    <Navbar />
+    <main><Outlet /></main>
+    <Footer />
+  </>
+);
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
@@ -36,49 +44,41 @@ const App = () => (
       <BrowserRouter>
         <ScrollToTop />
         <Routes>
-          {/* Sistema: standalone landing, no navbar/footer */}
+          {/* Standalone landing — no navbar/footer */}
           <Route path="/sistema" element={<Sistema />} />
 
-          {/* All other pages with navbar + footer */}
-          <Route path="*" element={
-            <>
-              <Navbar />
-              <main>
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/como-funciona" element={<ComoFunciona />} />
-                  <Route path="/planes" element={<Planes />} />
-                  <Route path="/contacto" element={<Contacto />} />
-                  <Route path="/posicionamiento-local" element={<PosicionamientoLocal />} />
-                  <Route path="/como-ve-google-mi-web" element={<ComoVeGoogleMiWeb />} />
-                  <Route path="/aparecer-en-google-maps" element={<ServicePage />} />
-                  <Route path="/seo-para-negocios-locales" element={<ServicePage />} />
-                  <Route path="/ficha-google-mi-negocio" element={<ServicePage />} />
-                  <Route path="/como-salir-primero-en-google" element={<ServicePage />} />
-                  <Route path="/seo-local-madrid" element={<CityPage />} />
-                  <Route path="/seo-local-barcelona" element={<CityPage />} />
-                  <Route path="/seo-local-valencia" element={<CityPage />} />
-                  <Route path="/seo-local-sevilla" element={<CityPage />} />
-                  <Route path="/seo-local-malaga" element={<CityPage />} />
-                  <Route path="/seo-local-zaragoza" element={<CityPage />} />
-                  <Route path="/seo-local-bilbao" element={<CityPage />} />
-                  <Route path="/seo-local-murcia" element={<CityPage />} />
-                  <Route path="/mas-clientes-para-fontaneros" element={<SectorPage />} />
-                  <Route path="/mas-clientes-para-reformas" element={<SectorPage />} />
-                  <Route path="/mas-clientes-para-pintores" element={<SectorPage />} />
-                  <Route path="/mas-pacientes-para-clinicas" element={<SectorPage />} />
-                  <Route path="/mas-pacientes-para-fisioterapeutas" element={<SectorPage />} />
-                  <Route path="/mas-clientes-entrenador-personal" element={<SectorPage />} />
-                  <Route path="/mas-alumnos-para-yoga" element={<SectorPage />} />
-                  <Route path="/mas-clientes-para-:sector/:ciudad" element={<SectorCityPage />} />
-                  <Route path="/mas-pacientes-para-:sector/:ciudad" element={<SectorCityPage />} />
-                  <Route path="/mas-alumnos-para-:sector/:ciudad" element={<SectorCityPage />} />
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-              </main>
-              <Footer />
-            </>
-          } />
+          {/* Standard layout */}
+          <Route element={<MainLayout />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/como-funciona" element={<ComoFunciona />} />
+            <Route path="/planes" element={<Planes />} />
+            <Route path="/contacto" element={<Contacto />} />
+            <Route path="/posicionamiento-local" element={<PosicionamientoLocal />} />
+            <Route path="/como-ve-google-mi-web" element={<ComoVeGoogleMiWeb />} />
+            <Route path="/aparecer-en-google-maps" element={<ServicePage />} />
+            <Route path="/seo-para-negocios-locales" element={<ServicePage />} />
+            <Route path="/ficha-google-mi-negocio" element={<ServicePage />} />
+            <Route path="/como-salir-primero-en-google" element={<ServicePage />} />
+            <Route path="/seo-local-madrid" element={<CityPage />} />
+            <Route path="/seo-local-barcelona" element={<CityPage />} />
+            <Route path="/seo-local-valencia" element={<CityPage />} />
+            <Route path="/seo-local-sevilla" element={<CityPage />} />
+            <Route path="/seo-local-malaga" element={<CityPage />} />
+            <Route path="/seo-local-zaragoza" element={<CityPage />} />
+            <Route path="/seo-local-bilbao" element={<CityPage />} />
+            <Route path="/seo-local-murcia" element={<CityPage />} />
+            <Route path="/mas-clientes-para-fontaneros" element={<SectorPage />} />
+            <Route path="/mas-clientes-para-reformas" element={<SectorPage />} />
+            <Route path="/mas-clientes-para-pintores" element={<SectorPage />} />
+            <Route path="/mas-pacientes-para-clinicas" element={<SectorPage />} />
+            <Route path="/mas-pacientes-para-fisioterapeutas" element={<SectorPage />} />
+            <Route path="/mas-clientes-entrenador-personal" element={<SectorPage />} />
+            <Route path="/mas-alumnos-para-yoga" element={<SectorPage />} />
+            <Route path="/mas-clientes-para-:sector/:ciudad" element={<SectorCityPage />} />
+            <Route path="/mas-pacientes-para-:sector/:ciudad" element={<SectorCityPage />} />
+            <Route path="/mas-alumnos-para-:sector/:ciudad" element={<SectorCityPage />} />
+            <Route path="*" element={<NotFound />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
