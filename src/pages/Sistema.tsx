@@ -1,5 +1,10 @@
-import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const Sistema = () => {
   return (
@@ -9,6 +14,19 @@ const Sistema = () => {
         description="No soy una agencia. Gestiono tu presencia en Google de forma personal — web, ficha y contenido continuo — por lo que una agencia cobra solo por atenderte."
         canonical="/sistema"
       />
+
+      {/* Mini nav solo logo + CTA */}
+      <nav className="py-5 px-6 md:px-10 flex justify-between items-center border-b border-dark-fg/10 bg-dark-bg">
+        <div className="font-heading font-bold text-lg text-dark-fg">
+          <span className="text-primary">s</span>local.es
+        </div>
+        <a
+          href="https://wa.me/34684780063?text=Hola%2C%20quiero%20que%20me%20eches%20un%20ojo%20en%20Google"
+          className="text-dark-fg/60 text-sm hover:text-dark-fg transition-colors"
+        >
+          💬 Escríbeme por WhatsApp
+        </a>
+      </nav>
 
       {/* Hero */}
       <section className="py-20 md:py-28 bg-dark-bg text-dark-fg">
@@ -39,6 +57,7 @@ const Sistema = () => {
           </h2>
 
           <div className="bg-dark-bg border-l-4 border-primary rounded-r-xl p-8 my-10">
+            <p className="text-dark-fg/80 mb-4">Soy Javi. Llevo la presencia en Google de negocios locales de forma personal, sin intermediarios, sin letra pequeña.</p>
             <p className="text-dark-fg/80 mb-4">Trabajé en una agencia de marketing. Vi de cerca cómo funciona por dentro.</p>
             <p className="text-dark-fg/80 mb-4">Para que una agencia te dedique tiempo real, necesitas pagar a partir de €800 o €1.000 al mes. Si pagas menos, eres el último de la lista. Nadie te llama, nadie toca nada, y a final de mes te mandan un informe con números que no sirven para nada.</p>
             <p className="text-dark-fg/80 mb-4">El problema no es que las agencias sean malas. El problema es que su modelo de negocio no les permite cuidar a un fontanero, a un reformista o a una psicóloga que paga €300 al mes. <strong className="text-dark-fg">No les sale a cuenta.</strong></p>
@@ -47,7 +66,7 @@ const Sistema = () => {
         </div>
       </section>
 
-      {/* Qué hago */}
+      {/* Qué hago - Accordions */}
       <section className="py-16 md:py-20 bg-secondary/50">
         <div className="container max-w-3xl mx-auto">
           <h2 className="font-heading text-3xl md:text-4xl leading-tight mb-4">
@@ -55,29 +74,44 @@ const Sistema = () => {
           </h2>
           <p className="text-muted-foreground text-lg mb-10">Tres cosas. Sin complicaciones.</p>
 
-          <div className="space-y-4">
-            <div className="flex gap-5 p-6 bg-card rounded-xl border border-border">
-              <div className="text-3xl font-heading font-bold text-primary/40 shrink-0">01</div>
-              <div>
-                <strong className="block font-heading text-lg mb-2">Te hago la web para que Google te entienda</strong>
-                <p className="text-muted-foreground text-sm">Una web estructurada por lo que haces y por las zonas donde trabajas. Google necesita que se lo expliques bien para mostrarte cuando alguien te busca. Sin eso, da igual lo bueno que seas.</p>
-              </div>
-            </div>
-            <div className="flex gap-5 p-6 bg-card rounded-xl border border-border">
-              <div className="text-3xl font-heading font-bold text-primary/40 shrink-0">02</div>
-              <div>
-                <strong className="block font-heading text-lg mb-2">Pongo en marcha y mantengo tu ficha de Google</strong>
-                <p className="text-muted-foreground text-sm">La ficha de Google es lo primero que ve alguien cuando te busca. Si está a medias o sin actualizar, pierdes clientes antes de que te llamen. La configuro bien y la mantengo activa cada mes.</p>
-              </div>
-            </div>
-            <div className="flex gap-5 p-6 bg-card rounded-xl border border-border">
-              <div className="text-3xl font-heading font-bold text-primary/40 shrink-0">03</div>
-              <div>
-                <strong className="block font-heading text-lg mb-2">Publico contenido continuo para que subas en Google</strong>
-                <p className="text-muted-foreground text-sm">Google premia los negocios que están activos. Publico artículos en tu web y posts en tu ficha cada mes para que vayas ganando posiciones de forma sostenida. Sin pagar publicidad.</p>
-              </div>
-            </div>
-          </div>
+          <Accordion type="single" collapsible className="space-y-4">
+            <AccordionItem value="paso-01" className="bg-card rounded-xl border border-border px-6">
+              <AccordionTrigger className="hover:no-underline gap-4">
+                <div className="flex items-center gap-5 text-left">
+                  <span className="text-3xl font-heading font-bold text-primary/40 shrink-0">01</span>
+                  <span className="font-heading text-lg">Te hago la web para que Google te entienda</span>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="pl-16 text-muted-foreground text-sm">
+                <p className="mb-3">Una web estructurada por lo que haces y por las zonas donde trabajas. Google necesita que se lo expliques bien para mostrarte cuando alguien te busca. Sin eso, da igual lo bueno que seas.</p>
+                <p className="italic text-muted-foreground/80">No es una web de 4 páginas como hacen muchos, es una web con una página para cada servicio y cada barrio o zona donde trabajas, para que cuando alguien cerca busque lo que haces aparezcas tú.</p>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="paso-02" className="bg-card rounded-xl border border-border px-6">
+              <AccordionTrigger className="hover:no-underline gap-4">
+                <div className="flex items-center gap-5 text-left">
+                  <span className="text-3xl font-heading font-bold text-primary/40 shrink-0">02</span>
+                  <span className="font-heading text-lg">Pongo en marcha y mantengo tu ficha de Google</span>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="pl-16 text-muted-foreground text-sm">
+                La ficha de Google es lo primero que ve alguien cuando te busca. Si está a medias o sin actualizar, pierdes clientes antes de que te llamen. La configuro bien y la mantengo activa cada mes.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="paso-03" className="bg-card rounded-xl border border-border px-6">
+              <AccordionTrigger className="hover:no-underline gap-4">
+                <div className="flex items-center gap-5 text-left">
+                  <span className="text-3xl font-heading font-bold text-primary/40 shrink-0">03</span>
+                  <span className="font-heading text-lg">Publico contenido continuo para que subas en Google</span>
+                </div>
+              </AccordionTrigger>
+              <AccordionContent className="pl-16 text-muted-foreground text-sm">
+                Google premia los negocios que están activos. Publico artículos en tu web y posts en tu ficha cada mes para que vayas ganando posiciones de forma sostenida. Sin pagar publicidad.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </div>
       </section>
 
@@ -166,8 +200,8 @@ const Sistema = () => {
               <div className="absolute -top-3 right-4 bg-green-500 text-white text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full">Este mes: ahorra €100</div>
               <div className="text-xs uppercase tracking-wider font-medium mb-3 opacity-90">slocal.es</div>
               <div className="flex items-baseline gap-3">
-                <span className="font-heading text-2xl opacity-50 line-through">€497</span>
-                <span className="font-heading text-4xl">€397</span>
+                <span className="font-heading text-2xl opacity-50 line-through">€597</span>
+                <span className="font-heading text-4xl">€497</span>
               </div>
               <div className="text-sm mt-2 opacity-90">web multipágina · pago único</div>
             </div>
@@ -211,7 +245,7 @@ const Sistema = () => {
             </div>
           </div>
 
-          <p className="text-sm text-dark-fg/50">* Setup inicial (web + ficha): <span className="line-through text-dark-fg/30">€497</span> <strong className="text-green-400">€397 + IVA</strong> este mes · pago único · sin permanencia mínima.</p>
+          <p className="text-sm text-dark-fg/50">* Setup inicial (web + ficha): <span className="line-through text-dark-fg/30">€597</span> <strong className="text-green-400">€497 + IVA</strong> este mes · pago único · sin permanencia mínima.</p>
         </div>
       </section>
 
@@ -241,6 +275,13 @@ const Sistema = () => {
           </div>
         </div>
       </section>
+
+      {/* Footer mínimo */}
+      <footer className="border-t border-border/30 py-8 bg-dark-bg">
+        <div className="container max-w-3xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-dark-fg/40">
+          <p>© 2026 slocal.es · Javi Soriano</p>
+        </div>
+      </footer>
     </>
   );
 };
