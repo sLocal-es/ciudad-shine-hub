@@ -78,6 +78,7 @@ const MainLayout = () => (
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <AnalyticsScripts />
       <Toaster />
       <Sonner />
       <BrowserRouter>
