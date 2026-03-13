@@ -22,6 +22,45 @@ import { useLocation } from "react-router-dom";
 
 const queryClient = new QueryClient();
 
+const AnalyticsScripts = () => {
+  useEffect(() => {
+    // Google Analytics 4
+    if (!document.getElementById('ga-script')) {
+      const gaScript = document.createElement('script');
+      gaScript.async = true;
+      gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-FM0CL24HP8';
+      gaScript.id = 'ga-script';
+      document.head.appendChild(gaScript);
+
+      const gaConfig = document.createElement('script');
+      gaConfig.id = 'ga-config';
+      gaConfig.innerHTML = `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-FM0CL24HP8');
+      `;
+      document.head.appendChild(gaConfig);
+    }
+
+    // Microsoft Clarity
+    if (!document.getElementById('clarity-script')) {
+      const clarityScript = document.createElement('script');
+      clarityScript.id = 'clarity-script';
+      clarityScript.innerHTML = `
+        (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "vv3etdqmge");
+      `;
+      document.head.appendChild(clarityScript);
+    }
+  }, []);
+
+  return null;
+};
+
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
@@ -39,6 +78,7 @@ const MainLayout = () => (
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      <AnalyticsScripts />
       <Toaster />
       <Sonner />
       <BrowserRouter>
