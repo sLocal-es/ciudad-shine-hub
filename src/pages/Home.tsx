@@ -140,25 +140,38 @@ const Home = () => {
       {/* RESULTADOS */}
       <ResultadosSection />
 
-      {/* TRUST */}
+      {/* COMPARISON TABLE */}
       <section className="bg-dark-bg text-dark-fg py-16 md:py-20">
-        <div className="container">
+        <div className="container max-w-3xl">
           <h2 className="font-heading text-2xl md:text-3xl text-center mb-10">
-            Por qué no somos una agencia
+            No es solo el precio
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { icon: "📊", title: "Precios visibles", desc: "Sin 'llámanos para presupuesto'. Sabes lo que pagas antes de hablar." },
-              { icon: "🔄", title: "Resultados acumulativos", desc: "El SEO crece mes a mes. Al contrario que la publicidad, no desaparece cuando paras." },
-              { icon: "📋", title: "Informe mensual sin tecnicismos", desc: "Cada mes te contamos qué posiciones has ganado y cuántas visitas has tenido." },
-            ].map((card) => (
-              <div key={card.title} className="border border-dark-fg/10 rounded-xl p-6 transition-all duration-200 hover:border-primary hover:-translate-y-[3px]">
-                <span className="text-2xl mb-3 block">{card.icon}</span>
-                <h3 className="font-heading text-base mb-2">{card.title}</h3>
-                <p className="text-sm text-dark-fg/60 leading-relaxed">{card.desc}</p>
-              </div>
-            ))}
+          <div className="overflow-x-auto rounded-xl border border-dark-fg/10">
+            <table className="w-full text-sm">
+              <thead>
+                <tr>
+                  <th className="text-left p-4 font-heading text-dark-fg/50 text-xs uppercase tracking-wider"></th>
+                  <th className="text-center p-4 font-heading text-dark-fg/50 text-xs uppercase tracking-wider">Agencia tradicional</th>
+                  <th className="text-center p-4 font-heading text-xs uppercase tracking-wider text-primary border-x border-primary/20 bg-primary/5">slocal.es</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { feature: "Hablas con…", agencia: "Account manager", slocal: "Conmigo directo" },
+                  { feature: "Precio mensual", agencia: "€600–850/mes", slocal: "€150–250/mes" },
+                  { feature: "Reportes", agencia: "Informes PDF", slocal: "Métricas reales de Google" },
+                  { feature: "Respuesta", agencia: "48–72 horas", slocal: "WhatsApp · mismo día" },
+                ].map((row) => (
+                  <tr key={row.feature} className="border-t border-dark-fg/10">
+                    <td className="p-4 font-heading text-dark-fg/80">{row.feature}</td>
+                    <td className="p-4 text-center text-dark-fg/40">{row.agencia}</td>
+                    <td className="p-4 text-center font-heading text-primary border-x border-primary/20 bg-primary/5">{row.slocal}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
+          <p className="text-center text-dark-fg/40 text-sm mt-6">Mismos resultados. Sin intermediarios.</p>
         </div>
       </section>
 
