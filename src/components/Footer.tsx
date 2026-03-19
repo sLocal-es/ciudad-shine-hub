@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { sectors } from "@/data/sectors";
+import { cities } from "@/data/cities";
 
 const Footer = () => (
   <footer className="bg-dark-bg text-dark-fg pt-16 pb-8">
@@ -44,10 +45,10 @@ const Footer = () => (
         <div>
           <h4 className="font-heading text-sm mb-4">Ciudades</h4>
           <ul className="space-y-2 text-sm text-dark-fg/60">
-            {["Madrid", "Barcelona", "Valencia", "Sevilla", "Málaga", "Zaragoza", "Bilbao", "Murcia"].map((c) => (
-              <li key={c}>
-                <Link to={`/seo-local-${c.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")}`} className="hover:text-primary transition-colors">
-                  {c}
+            {cities.map((c) => (
+              <li key={c.slug}>
+                <Link to={`/seo-local-${c.slug}`} className="hover:text-primary transition-colors">
+                  {c.name}
                 </Link>
               </li>
             ))}
