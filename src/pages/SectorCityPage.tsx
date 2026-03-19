@@ -118,7 +118,7 @@ const SectorCityPage = () => {
         title={metaTitle}
         description={metaDesc}
         canonical={canonical}
-        jsonLd={[breadcrumbSchema, faqSchema, serviceSchema]}
+        jsonLd={[breadcrumbSchema, faqSchema, serviceSchema, localBusinessSchema]}
       />
 
       {/* HERO */}
