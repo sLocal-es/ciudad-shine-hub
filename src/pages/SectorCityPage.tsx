@@ -87,6 +87,17 @@ const SectorCityPage = () => {
     description: `Sistema de visibilidad en Google para ${sectorLabel} en ${city.name}: ficha de Google Business Profile, web local y posicionamiento orgánico.`,
   };
 
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: `${sector.relatedLabel} en ${city.name} — slocal.es`,
+    description: `Gestión de presencia en Google para ${sectorLabel} en ${city.name}`,
+    areaServed: city.name,
+    serviceType: sectorLabel,
+    url: `https://slocal.es${canonical}`,
+    provider: { "@type": "Organization", name: "slocal.es" },
+  };
+
   const otherCities = cities.filter((c) => c.slug !== city.slug);
   const otherSectors = sectors.filter((s) => s.slug !== sector.slug);
   const mockupText = sector.mockupResult.replace("[Ciudad]", city.name);
@@ -107,7 +118,7 @@ const SectorCityPage = () => {
         title={metaTitle}
         description={metaDesc}
         canonical={canonical}
-        jsonLd={[breadcrumbSchema, faqSchema, serviceSchema]}
+        jsonLd={[breadcrumbSchema, faqSchema, serviceSchema, localBusinessSchema]}
       />
 
       {/* HERO */}
@@ -281,6 +292,23 @@ const SectorCityPage = () => {
           <p className="text-center text-sm text-muted-foreground mt-6">
             Trabajamos con {sectorLabel} de {city.name} y de toda España de forma remota.
           </p>
+        </div>
+      </section>
+
+      {/* MAP */}
+      <section className="py-16">
+        <div className="container">
+          <h2 className="font-heading text-2xl md:text-3xl mb-8">
+            Dónde trabajamos en {city.name}
+          </h2>
+          <iframe
+            title={`Mapa de ${city.name}`}
+            src={`https://maps.google.com/maps?q=${encodeURIComponent(city.name)}&output=embed`}
+            className="w-full rounded-xl"
+            style={{ height: 350, border: 0 }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
       </section>
 
