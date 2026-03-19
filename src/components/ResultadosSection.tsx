@@ -88,7 +88,7 @@ const cases: CaseCard[] = [
       { front: "0", frontLabel: "Clics", backImage: "", backPlaceholder: "Sin datos" },
       { front: "0", frontLabel: "Llamadas", backImage: "", backPlaceholder: "Sin datos" },
     ],
-    isContrast: true,
+    isContrast: false,
     contrastText: "Sin gestión activa, Google no posiciona el negocio. Los resultados hablan solos.",
   },
 ];
