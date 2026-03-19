@@ -96,7 +96,7 @@ const SectorPage = () => {
               <div className="w-3 h-3 rounded-full bg-primary/40" />
               <div className="w-3 h-3 rounded-full bg-green-400/40" />
               <div className="flex-1 bg-muted rounded-full h-6 ml-2 flex items-center px-3">
-                <span className="text-[11px] text-muted-foreground truncate">{sector.mockupResult.toLowerCase().replace("[ciudad]", "tu ciudad")}</span>
+                <span className="text-[11px] text-muted-foreground truncate">{sector.mockupResult.toLowerCase()}</span>
               </div>
             </div>
             <div className="space-y-4">
