@@ -1,3 +1,7 @@
+import gbpViviane from "@/assets/casos/gbp-viviane.png";
+import waViviane from "@/assets/casos/wa-viviane.png";
+import scObras from "@/assets/casos/sc-obras.png";
+
 const Placeholder = ({ text, height = 160 }: { text: string; height?: number }) => (
   <div
     style={{
