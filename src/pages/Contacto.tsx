@@ -15,7 +15,6 @@ const Contacto = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Placeholder for form submission
     alert("Formulario enviado (integración pendiente)");
   };
 

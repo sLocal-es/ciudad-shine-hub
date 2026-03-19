@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { sectors } from "@/data/sectors";
+import { cities } from "@/data/cities";
 
 const Footer = () => (
   <footer className="bg-dark-bg text-dark-fg pt-16 pb-8">
