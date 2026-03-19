@@ -218,22 +218,25 @@ const SectorPage = () => {
       {/* SECTION 7 — FAQ */}
       <FAQSection title="Preguntas frecuentes" items={sector.faqs} />
 
-      {/* SECTION 8 — CITY LINKS */}
+      {/* SECTION 8 — CITY LINKS (level 3) */}
       <section className="py-12">
         <div className="container">
-          <h2 className="font-heading text-xl mb-6">Disponible en toda España</h2>
-          <div className="flex flex-wrap gap-3">
+          <h2 className="font-heading text-xl mb-6">Ciudades donde trabajamos con {sectorLabel}</h2>
+          <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-2xl">
+            El sistema de visibilidad local para {sectorLabel} funciona en toda España. Estas son las ciudades donde ya tenemos páginas dedicadas con contenido específico para posicionar tu negocio en Google. Si tu ciudad no está en la lista, también podemos ayudarte.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {cities.map((c) => (
               <Link
                 key={c.slug}
-                to={`/seo-local-${c.slug}`}
-                className="border border-border bg-card rounded-full px-5 py-2 text-sm font-heading hover:border-primary hover:text-primary transition-colors"
+                to={`/${sector.slug}/${c.slug}`}
+                className="border border-border bg-card rounded-xl px-5 py-3 text-sm font-heading hover:border-primary hover:text-primary transition-colors text-center"
               >
                 {c.name}
               </Link>
             ))}
           </div>
-          <p className="text-sm text-muted-foreground mt-4">¿Tu ciudad no está en la lista? Trabajamos en toda España.</p>
+          <p className="text-xs text-muted-foreground mt-4">¿Tu ciudad no está en la lista? Trabajamos en toda España de forma remota.</p>
         </div>
       </section>
 

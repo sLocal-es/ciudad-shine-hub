@@ -4,7 +4,7 @@
   <url><loc>https://slocal.es/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://slocal.es/como-funciona</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://slocal.es/planes</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://slocal.es/contacto</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://slocal.es/contacto</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://slocal.es/posicionamiento-local</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://slocal.es/como-ve-google-mi-web</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://slocal.es/sistema</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -25,82 +25,82 @@
   <url><loc>https://slocal.es/seo-local-bilbao</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://slocal.es/seo-local-murcia</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-  <!-- Sector pages (Nivel 2) -->
-  <url><loc>https://slocal.es/mas-clientes-para-fontaneros</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-para-reformas</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-para-pintores</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://slocal.es/mas-pacientes-para-clinicas</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://slocal.es/mas-pacientes-para-fisioterapeutas</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-entrenador-personal</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://slocal.es/mas-alumnos-para-yoga</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <!-- Sector pages (Nivel 2) — priority 0.8 -->
+  <url><loc>https://slocal.es/mas-clientes-para-fontaneros</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-para-reformas</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-para-pintores</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://slocal.es/mas-pacientes-para-clinicas</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://slocal.es/mas-pacientes-para-fisioterapeutas</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-entrenador-personal</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://slocal.es/mas-alumnos-para-yoga</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
 
   <!-- Sector + City pages (Nivel 3) — Fontaneros -->
-  <url><loc>https://slocal.es/mas-clientes-para-fontaneros/madrid</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-para-fontaneros/barcelona</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-para-fontaneros/valencia</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-para-fontaneros/sevilla</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-para-fontaneros/malaga</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-para-fontaneros/zaragoza</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-para-fontaneros/bilbao</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-para-fontaneros/murcia</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-para-fontaneros/madrid</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-para-fontaneros/barcelona</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-para-fontaneros/valencia</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-para-fontaneros/sevilla</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-para-fontaneros/malaga</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-para-fontaneros/zaragoza</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-para-fontaneros/bilbao</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-para-fontaneros/murcia</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
   <!-- Sector + City pages (Nivel 3) — Reformas -->
-  <url><loc>https://slocal.es/mas-clientes-para-reformas/madrid</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-para-reformas/barcelona</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-para-reformas/valencia</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-para-reformas/sevilla</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-para-reformas/malaga</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-para-reformas/zaragoza</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-para-reformas/bilbao</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-para-reformas/murcia</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-para-reformas/madrid</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-para-reformas/barcelona</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-para-reformas/valencia</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-para-reformas/sevilla</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-para-reformas/malaga</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-para-reformas/zaragoza</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-para-reformas/bilbao</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-para-reformas/murcia</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
   <!-- Sector + City pages (Nivel 3) — Pintores -->
-  <url><loc>https://slocal.es/mas-clientes-para-pintores/madrid</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-para-pintores/barcelona</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-para-pintores/valencia</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-para-pintores/sevilla</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-para-pintores/malaga</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-para-pintores/zaragoza</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-para-pintores/bilbao</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-para-pintores/murcia</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-para-pintores/madrid</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-para-pintores/barcelona</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-para-pintores/valencia</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-para-pintores/sevilla</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-para-pintores/malaga</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-para-pintores/zaragoza</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-para-pintores/bilbao</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-para-pintores/murcia</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
   <!-- Sector + City pages (Nivel 3) — Clínicas -->
-  <url><loc>https://slocal.es/mas-pacientes-para-clinicas/madrid</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-pacientes-para-clinicas/barcelona</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-pacientes-para-clinicas/valencia</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-pacientes-para-clinicas/sevilla</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-pacientes-para-clinicas/malaga</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-pacientes-para-clinicas/zaragoza</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-pacientes-para-clinicas/bilbao</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-pacientes-para-clinicas/murcia</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://slocal.es/mas-pacientes-para-clinicas/madrid</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-pacientes-para-clinicas/barcelona</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-pacientes-para-clinicas/valencia</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-pacientes-para-clinicas/sevilla</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-pacientes-para-clinicas/malaga</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-pacientes-para-clinicas/zaragoza</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-pacientes-para-clinicas/bilbao</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-pacientes-para-clinicas/murcia</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
   <!-- Sector + City pages (Nivel 3) — Fisioterapeutas -->
-  <url><loc>https://slocal.es/mas-pacientes-para-fisioterapeutas/madrid</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-pacientes-para-fisioterapeutas/barcelona</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-pacientes-para-fisioterapeutas/valencia</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-pacientes-para-fisioterapeutas/sevilla</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-pacientes-para-fisioterapeutas/malaga</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-pacientes-para-fisioterapeutas/zaragoza</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-pacientes-para-fisioterapeutas/bilbao</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-pacientes-para-fisioterapeutas/murcia</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://slocal.es/mas-pacientes-para-fisioterapeutas/madrid</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-pacientes-para-fisioterapeutas/barcelona</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-pacientes-para-fisioterapeutas/valencia</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-pacientes-para-fisioterapeutas/sevilla</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-pacientes-para-fisioterapeutas/malaga</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-pacientes-para-fisioterapeutas/zaragoza</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-pacientes-para-fisioterapeutas/bilbao</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-pacientes-para-fisioterapeutas/murcia</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
   <!-- Sector + City pages (Nivel 3) — Entrenador Personal -->
-  <url><loc>https://slocal.es/mas-clientes-entrenador-personal/madrid</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-entrenador-personal/barcelona</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-entrenador-personal/valencia</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-entrenador-personal/sevilla</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-entrenador-personal/malaga</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-entrenador-personal/zaragoza</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-entrenador-personal/bilbao</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-clientes-entrenador-personal/murcia</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-entrenador-personal/madrid</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-entrenador-personal/barcelona</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-entrenador-personal/valencia</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-entrenador-personal/sevilla</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-entrenador-personal/malaga</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-entrenador-personal/zaragoza</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-entrenador-personal/bilbao</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-clientes-entrenador-personal/murcia</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
   <!-- Sector + City pages (Nivel 3) — Yoga -->
-  <url><loc>https://slocal.es/mas-alumnos-para-yoga/madrid</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-alumnos-para-yoga/barcelona</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-alumnos-para-yoga/valencia</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-alumnos-para-yoga/sevilla</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-alumnos-para-yoga/malaga</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-alumnos-para-yoga/zaragoza</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-alumnos-para-yoga/bilbao</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://slocal.es/mas-alumnos-para-yoga/murcia</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://slocal.es/mas-alumnos-para-yoga/madrid</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-alumnos-para-yoga/barcelona</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-alumnos-para-yoga/valencia</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-alumnos-para-yoga/sevilla</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-alumnos-para-yoga/malaga</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-alumnos-para-yoga/zaragoza</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-alumnos-para-yoga/bilbao</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://slocal.es/mas-alumnos-para-yoga/murcia</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>
