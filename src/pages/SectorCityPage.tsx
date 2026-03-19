@@ -295,6 +295,23 @@ const SectorCityPage = () => {
         </div>
       </section>
 
+      {/* MAP */}
+      <section className="py-16">
+        <div className="container">
+          <h2 className="font-heading text-2xl md:text-3xl mb-8">
+            Dónde trabajamos en {city.name}
+          </h2>
+          <iframe
+            title={`Mapa de ${city.name}`}
+            src={`https://maps.google.com/maps?q=${encodeURIComponent(city.name)}&output=embed`}
+            className="w-full rounded-xl"
+            style={{ height: 350, border: 0 }}
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+      </section>
+
       {/* FAQ */}
       <FAQSection title={`Preguntas frecuentes sobre ${sectorLabel} en ${city.name}`} items={selectedFaqs} />
 
