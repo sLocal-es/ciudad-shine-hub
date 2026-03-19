@@ -157,9 +157,9 @@ const Home = () => {
               </thead>
               <tbody>
                 {[
-                  { feature: "Hablas con…", agencia: "Account manager", slocal: "Conmigo directo" },
-                  { feature: "Precio mensual", agencia: "€600–850/mes", slocal: "€150–250/mes" },
-                  { feature: "Reportes", agencia: "Informes PDF", slocal: "Métricas reales de Google" },
+                  { feature: "Hablas con…", agencia: "Account manager (junior)", slocal: "Conmigo directo" },
+                  { feature: "Precio mensual", agencia: "€500–850/mes", slocal: "€150–250/mes" },
+                  { feature: "Reportes", agencia: "Informes PDF", slocal: "Te explico qué ha pasado y qué hacemos" },
                   { feature: "Respuesta", agencia: "48–72 horas", slocal: "WhatsApp · mismo día" },
                 ].map((row) => (
                   <tr key={row.feature} className="border-t border-dark-fg/10">
