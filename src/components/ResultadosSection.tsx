@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import gbpViviane from "@/assets/casos/gbp-viviane.png";
-import waViviane from "@/assets/casos/wa-viviane.png";
+import waViviane from "@/assets/casos/wa-viviane-social.png";
 import scObras from "@/assets/casos/sc-obras.png";
 
 /* ------------------------------------------------------------------ */
