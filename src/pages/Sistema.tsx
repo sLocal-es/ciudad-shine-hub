@@ -148,48 +148,59 @@ const Sistema = () => {
       <ResultadosSection />
 
       {/* Comparativa Precio */}
-      <section className="py-16 md:py-20 bg-background">
+      <section className="py-16 md:py-20 bg-dark-bg text-dark-fg">
         <div className="container max-w-3xl mx-auto">
-          <h2 className="font-heading text-3xl md:text-4xl leading-tight mb-10">
-            Lo que esto te cuesta<br />comparado con <em className="text-primary not-italic">una agencia</em>
+          <h2 className="font-heading text-2xl md:text-3xl text-center mb-10">
+            No es solo el precio
           </h2>
-
-          <div className="grid md:grid-cols-2 gap-4 mb-16">
-            <div className="bg-muted/30 border border-border rounded-xl p-8 opacity-70">
-              <div className="text-xs text-muted-foreground uppercase tracking-wider font-medium mb-3">Agencia tradicional</div>
-              <div className="font-heading text-4xl text-muted-foreground line-through">€800–1.200</div>
-              <div className="text-sm text-muted-foreground/60 mt-2">/mes · y aun así no te llaman</div>
-            </div>
-            <div className="bg-primary text-primary-foreground rounded-xl p-8">
-              <div className="text-xs uppercase tracking-wider font-medium mb-3 opacity-90">slocal.es</div>
-              <div className="font-heading text-4xl">€150–250</div>
-              <div className="text-sm mt-2 opacity-90">/mes · gestión personal real</div>
-            </div>
+          <div className="overflow-x-auto rounded-xl border border-dark-fg/10">
+            <table className="w-full text-sm">
+              <thead>
+                <tr>
+                  <th className="text-left p-4 font-heading text-dark-fg/50 text-xs uppercase tracking-wider"></th>
+                  <th className="text-center p-4 font-heading text-dark-fg/50 text-xs uppercase tracking-wider">Agencia tradicional</th>
+                  <th className="text-center p-4 font-heading text-xs uppercase tracking-wider text-primary border-x border-primary/20 bg-primary/5">slocal.es</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { feature: "Hablas con…", agencia: "Account manager (junior)", slocal: "Conmigo directo" },
+                  { feature: "Precio mensual", agencia: "€500–850/mes", slocal: "€150–250/mes" },
+                  { feature: "Reportes", agencia: "Informes PDF", slocal: "Te explico qué ha pasado y qué hacemos" },
+                  { feature: "Respuesta", agencia: "48–72 horas", slocal: "WhatsApp · mismo día" },
+                ].map((row) => (
+                  <tr key={row.feature} className="border-t border-dark-fg/10">
+                    <td className="p-4 font-heading text-dark-fg/80">{row.feature}</td>
+                    <td className="p-4 text-center text-dark-fg/40">{row.agencia}</td>
+                    <td className="p-4 text-center font-heading text-primary border-x border-primary/20 bg-primary/5">{row.slocal}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
+          <p className="text-center text-dark-fg/40 text-sm mt-6">Mismos resultados. Sin intermediarios.</p>
 
-          <h2 className="font-heading text-2xl md:text-3xl leading-tight mb-4">
-            ¿Cuánto cuesta una web<br />multipágina en una <em className="text-primary not-italic">agencia</em>?
-          </h2>
-          <p className="text-muted-foreground mb-8">Una web bien estructurada para SEO local — con páginas por servicio y por zona — tiene un coste muy concreto según dónde vayas.</p>
+          <div className="mt-16">
+            <h3 className="font-heading text-2xl md:text-3xl leading-tight mb-4">
+              ¿Cuánto cuesta una web<br />multipágina en una <em className="text-primary not-italic">agencia</em>?
+            </h3>
+            <p className="text-dark-fg/60 mb-8">Una web bien estructurada para SEO local — con páginas por servicio y por zona — tiene un coste muy concreto según dónde vayas.</p>
 
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="bg-muted/30 border border-border rounded-xl p-8 opacity-70">
-              <div className="text-xs text-muted-foreground uppercase tracking-wider font-medium mb-3">Agencia tradicional</div>
-              <div className="font-heading text-4xl text-muted-foreground">€1.500–3.000</div>
-              <div className="text-sm text-muted-foreground/60 mt-2">web multipágina 50–70 páginas · pago único</div>
-            </div>
-            <div className="bg-primary text-primary-foreground rounded-xl p-8 relative">
-              <div className="absolute -top-3 right-4 bg-green-500 text-white text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full">Este mes: ahorra €100</div>
-              <div className="text-xs uppercase tracking-wider font-medium mb-3 opacity-90">slocal.es</div>
-              <div className="flex items-baseline gap-3">
-                <span className="font-heading text-2xl opacity-50 line-through">€597</span>
-                <span className="font-heading text-4xl">€497</span>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="bg-dark-fg/5 border border-dark-fg/10 rounded-xl p-8 opacity-70">
+                <div className="text-xs text-dark-fg/50 uppercase tracking-wider font-medium mb-3">Agencia tradicional</div>
+                <div className="font-heading text-4xl text-dark-fg/50">€1.500–3.000</div>
+                <div className="text-sm text-dark-fg/40 mt-2">web multipágina 50–70 páginas · pago único</div>
               </div>
-              <div className="text-sm mt-2 opacity-90">web multipágina · pago único</div>
+              <div className="bg-primary text-primary-foreground rounded-xl p-8">
+                <div className="text-xs uppercase tracking-wider font-medium mb-3 opacity-90">slocal.es</div>
+                <div className="font-heading text-4xl">€497</div>
+                <div className="text-sm mt-2 opacity-90">web multipágina · pago único</div>
+              </div>
             </div>
-          </div>
 
-          <p className="text-sm text-muted-foreground mt-6">La diferencia no es que la web sea peor. Es que no tengo estructura de agencia que mantener. El trabajo lo hago yo, con las herramientas adecuadas, y el resultado técnico habla por sí solo — mira los scores de arriba.</p>
+            <p className="text-sm text-dark-fg/40 mt-6">La diferencia no es que la web sea peor. Es que no tengo estructura de agencia que mantener. El trabajo lo hago yo, con las herramientas adecuadas, y el resultado técnico habla por sí solo.</p>
+          </div>
         </div>
       </section>
 
