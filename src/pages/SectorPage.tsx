@@ -21,8 +21,7 @@ const SectorPage = () => {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Inicio", item: "https://slocal.es/" },
-      { "@type": "ListItem", position: 2, name: "Sectores", item: "https://slocal.es/" },
-      { "@type": "ListItem", position: 3, name: sector.pillBadge, item: `https://slocal.es/${sector.slug}` },
+      { "@type": "ListItem", position: 2, name: sector.metaTitle.split("|")[0].trim(), item: `https://slocal.es/${sector.slug}` },
     ],
   };
 
@@ -47,6 +46,12 @@ const SectorPage = () => {
   // Derive a sector label for H2s
   const sectorLabel = sector.pillBadge.replace("Para ", "").toLowerCase();
 
+  // Breadcrumb & H1: "SEO para Fontaneros", "SEO para Estudios de Yoga", etc.
+  const breadcrumbLabel = "SEO " + sector.pillBadge.split(" ").map((w, i) =>
+    i === 0 ? w.toLowerCase() : w.charAt(0).toUpperCase() + w.slice(1)
+  ).join(" ");
+  const ctaWordCapitalized = sector.ctaWord.charAt(0).toUpperCase() + sector.ctaWord.slice(1);
+
   return (
     <>
       <SEOHead
@@ -62,14 +67,13 @@ const SectorPage = () => {
           <div>
             <BreadcrumbNav items={[
               { label: "Inicio", href: "/" },
-              { label: "Sectores" },
-              { label: sector.pillBadge },
+              { label: breadcrumbLabel },
             ]} />
             <span className="inline-block border border-primary text-primary text-xs font-heading rounded-full px-4 py-1.5 mb-6">
-              {sector.pillBadge}
+              {breadcrumbLabel}
             </span>
             <h1 className="font-heading text-3xl md:text-4xl leading-tight mb-4">
-              {sector.h1}
+              {breadcrumbLabel} — Consigue {ctaWordCapitalized} en Google
             </h1>
             <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-8 font-body font-light">
               {sector.painSubtitle}
@@ -91,7 +95,7 @@ const SectorPage = () => {
               <div className="w-3 h-3 rounded-full bg-primary/40" />
               <div className="w-3 h-3 rounded-full bg-green-400/40" />
               <div className="flex-1 bg-muted rounded-full h-6 ml-2 flex items-center px-3">
-                <span className="text-[11px] text-muted-foreground truncate">{sector.mockupResult.toLowerCase().replace("[ciudad]", "tu ciudad")}</span>
+                <span className="text-[11px] text-muted-foreground truncate">{sector.mockupResult.toLowerCase()}</span>
               </div>
             </div>
             <div className="space-y-4">
