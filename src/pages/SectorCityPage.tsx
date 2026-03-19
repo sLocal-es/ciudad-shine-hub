@@ -23,11 +23,21 @@ const SectorCityPage = () => {
   }
 
   const sectorLabel = sector.pillBadge.replace("Para ", "").toLowerCase();
+  const sectorLabelSingularMap: Record<string, string> = {
+    "fontaneros": "fontanero",
+    "reformas": "reformista",
+    "pintores": "pintor",
+    "clínicas": "clínica",
+    "fisioterapeutas": "fisioterapeuta",
+    "entrenadores personales": "entrenador personal",
+    "estudios de yoga": "estudio de yoga",
+  };
+  const sectorLabelSingular = sectorLabelSingularMap[sectorLabel] || sectorLabel;
   const ctxData = cityContext[city.slug] || { contextLine1: "", contextLine2: "" };
   const ctaWordCap = sector.ctaWord.charAt(0).toUpperCase() + sector.ctaWord.slice(1);
   const ctaWordSingular = sector.ctaWord === "alumnos" ? "alumno" : sector.ctaWord === "pacientes" ? "paciente" : "cliente";
 
-  const h1Text = `Consigue más clientes como ${sectorLabel} en ${city.name} con Google`;
+  const h1Text = `Consigue más clientes como ${sectorLabelSingular} en ${city.name} con Google`;
   const metaTitle = `SEO para ${sector.relatedLabel} en ${city.name} — slocal.es`;
   const metaDesc = `¿Eres ${sectorLabel} en ${city.name} y quieres más ${sector.ctaWord}? Te ponemos en Google Maps y en los primeros resultados de ${city.name}. Sin agencias. Desde €150/mes.`;
   const canonical = `/${sector.slug}/${city.slug}`;
