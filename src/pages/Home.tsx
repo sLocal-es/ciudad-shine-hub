@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import PlanCards from "@/components/PlanCards";
 import CTASection from "@/components/CTASection";
+import ResultadosSection from "@/components/ResultadosSection";
 import { cities } from "@/data/cities";
 import heroImg from "@/assets/hero-home.webp";
 
