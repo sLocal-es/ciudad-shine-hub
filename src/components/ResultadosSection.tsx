@@ -1,3 +1,7 @@
+import gbpViviane from "@/assets/casos/gbp-viviane.png";
+import waViviane from "@/assets/casos/wa-viviane.png";
+import scObras from "@/assets/casos/sc-obras.png";
+
 const Placeholder = ({ text, height = 160 }: { text: string; height?: number }) => (
   <div
     style={{
@@ -259,7 +263,7 @@ export default function ResultadosSection() {
               { val: "6",     label: "Llamadas directas desde la ficha", featured: true  },
             ]}
             quote="FRASE_OBRAS_AQUI"
-            srcScreenshot1=""
+            srcScreenshot1={scObras}
             srcScreenshot2=""
             labelScreenshot1="Search Console · 28 días"
             labelScreenshot2="Google Business · Llamadas"
@@ -283,13 +287,13 @@ export default function ResultadosSection() {
               { val: "↑",  label: "Mejora constante cada mes",       featured: false },
             ]}
             quote="FRASE_VIVIANE_AQUI — algo como: cuanto más activa está la ficha, más me llega"
-            srcScreenshot1=""
+            srcScreenshot1={gbpViviane}
             srcScreenshot2=""
             labelScreenshot1="Google Business · Rendimiento"
             labelScreenshot2="Search Console · Viviane"
             placeholderSc1={"📊 Sube captura GBP\nrendimiento Viviane"}
             placeholderSc2={"📊 Sube captura Search Console\nViviane"}
-            srcWa=""
+            srcWa={waViviane}
             placeholderWa={"📱 Captura WhatsApp Viviane\n\"cuanto más activa mejor\""}
           />
         </div>
