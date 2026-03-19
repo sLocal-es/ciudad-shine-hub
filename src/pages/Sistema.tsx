@@ -1,4 +1,5 @@
 import SEOHead from "@/components/SEOHead";
+import ResultadosSection from "@/components/ResultadosSection";
 import {
   Accordion,
   AccordionContent,
@@ -126,44 +127,21 @@ const Sistema = () => {
           <div className="grid md:grid-cols-2 gap-4 mb-6">
             <div className="bg-dark-bg/50 border border-dark-fg/10 rounded-xl p-6">
               <div className="text-xs text-primary uppercase tracking-wider font-medium mb-4">slocal.es</div>
-              <div className="flex gap-3 flex-wrap">
-                <div className="text-center">
-                  <div className="w-14 h-14 rounded-full border-[3px] border-green-500 flex items-center justify-center text-green-500 font-heading font-bold text-lg mb-1">100</div>
-                  <div className="text-[10px] text-dark-fg/40 uppercase">Rendimiento</div>
-                </div>
-                <div className="text-center">
-                  <div className="w-14 h-14 rounded-full border-[3px] border-green-500 flex items-center justify-center text-green-500 font-heading font-bold text-lg mb-1">94</div>
-                  <div className="text-[10px] text-dark-fg/40 uppercase">Accesibilidad</div>
-                </div>
-                <div className="text-center">
-                  <div className="w-14 h-14 rounded-full border-[3px] border-green-500 flex items-center justify-center text-green-500 font-heading font-bold text-lg mb-1">100</div>
-                  <div className="text-[10px] text-dark-fg/40 uppercase">SEO</div>
-                </div>
-              </div>
+              <img src="" alt="PageSpeed slocal.es — 100 Rendimiento, 94 Accesibilidad, 100 SEO" className="w-full rounded-lg border border-dark-fg/10" style={{ minHeight: "120px", background: "rgba(255,255,255,0.02)" }} />
               <p className="text-xs text-dark-fg/50 italic mt-4">Esta misma web. Compruébalo tú.</p>
             </div>
             <div className="bg-dark-bg/50 border border-dark-fg/10 rounded-xl p-6">
               <div className="text-xs text-primary uppercase tracking-wider font-medium mb-4">obrasenmadrid.com</div>
-              <div className="flex gap-3 flex-wrap">
-                <div className="text-center">
-                  <div className="w-14 h-14 rounded-full border-[3px] border-green-500 flex items-center justify-center text-green-500 font-heading font-bold text-lg mb-1">98</div>
-                  <div className="text-[10px] text-dark-fg/40 uppercase">Rendimiento</div>
-                </div>
-                <div className="text-center">
-                  <div className="w-14 h-14 rounded-full border-[3px] border-green-500 flex items-center justify-center text-green-500 font-heading font-bold text-lg mb-1">95</div>
-                  <div className="text-[10px] text-dark-fg/40 uppercase">Accesibilidad</div>
-                </div>
-                <div className="text-center">
-                  <div className="w-14 h-14 rounded-full border-[3px] border-green-500 flex items-center justify-center text-green-500 font-heading font-bold text-lg mb-1">100</div>
-                  <div className="text-[10px] text-dark-fg/40 uppercase">SEO</div>
-                </div>
-              </div>
+              <img src="" alt="PageSpeed obrasenmadrid.com — 98 Rendimiento, 95 Accesibilidad, 100 SEO" className="w-full rounded-lg border border-dark-fg/10" style={{ minHeight: "120px", background: "rgba(255,255,255,0.02)" }} />
               <p className="text-xs text-dark-fg/50 italic mt-4">Cliente activo. Web montada recientemente.</p>
             </div>
           </div>
           <p className="text-xs text-dark-fg/40">Una web lenta o mal construida penaliza tu posición en Google. Las mías arrancan desde el primer día con todo en verde.</p>
         </div>
       </section>
+
+      {/* Resultados */}
+      <ResultadosSection />
 
       {/* Comparativa Precio */}
       <section className="py-16 md:py-20 bg-background">
