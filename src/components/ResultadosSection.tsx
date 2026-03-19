@@ -263,7 +263,7 @@ export default function ResultadosSection() {
               { val: "6",     label: "Llamadas directas desde la ficha", featured: true  },
             ]}
             quote="FRASE_OBRAS_AQUI"
-            srcScreenshot1=""
+            srcScreenshot1={scObras}
             srcScreenshot2=""
             labelScreenshot1="Search Console · 28 días"
             labelScreenshot2="Google Business · Llamadas"
