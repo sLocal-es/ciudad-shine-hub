@@ -174,12 +174,10 @@ const SectorCityPage = () => {
           <p className="text-muted-foreground leading-relaxed mb-4">{searchBehavior}</p>
           <p className="text-muted-foreground leading-relaxed mb-4">{competitionParagraph}</p>
           <p className="text-muted-foreground leading-relaxed mb-4">{gbpParagraph}</p>
-          <p className="text-muted-foreground leading-relaxed">
-            {slocalParagraph}{" "}
-            <Link to={`/${sector.slug}`} className="text-primary hover:underline font-heading text-sm">
-              Ver más sobre el sistema para {sectorLabel} →
-            </Link>
-          </p>
+          <p className="text-muted-foreground leading-relaxed mb-4">{slocalParagraph}</p>
+          <Link to={`/${sector.slug}`} className="inline-flex items-center gap-2 text-primary hover:underline font-heading text-sm mt-2">
+            ← Ver todos los servicios para {sectorLabel}
+          </Link>
         </div>
       </section>
 
