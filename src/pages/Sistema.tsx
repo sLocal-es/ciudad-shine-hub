@@ -1,5 +1,7 @@
 import SEOHead from "@/components/SEOHead";
 import ResultadosSection from "@/components/ResultadosSection";
+import PromoBanner from "@/components/sistema/PromoBanner";
+import PromoPopup from "@/components/sistema/PromoPopup";
 import {
   Accordion,
   AccordionContent,
@@ -10,6 +12,8 @@ import {
 const Sistema = () => {
   return (
     <>
+      <PromoBanner />
+      <PromoPopup />
       <SEOHead
         title="El Sistema Anti-Agencia — slocal.es"
         description="No soy una agencia. Gestiono tu presencia en Google de forma personal — web, ficha y contenido continuo — por lo que una agencia cobra solo por atenderte."
