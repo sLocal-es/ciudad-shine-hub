@@ -27,8 +27,8 @@ export interface SectorData {
 
 export const sectors: SectorData[] = [
   {
-    slug: "mas-clientes-para-fontaneros",
-    metaTitle: "Más Clientes para Fontaneros | Aparece en Google en tu Zona | slocal.es",
+    slug: "seo-para-fontaneros",
+    metaTitle: "SEO para Fontaneros | Aparece en Google en tu Zona | slocal.es",
     metaDesc: "¿Eres fontanero y quieres más llamadas? Te ponemos en Google Maps y en los primeros resultados de tu ciudad. Sin agencias. Desde €150/mes.",
     h1: "Más Clientes para tu Negocio de Fontanería desde Google",
     pillBadge: "Para fontaneros",
@@ -63,8 +63,8 @@ export const sectors: SectorData[] = [
     relatedDesc: "Más llamadas de urgencias y reparaciones desde Google.",
   },
   {
-    slug: "mas-clientes-para-reformas",
-    metaTitle: "Más Clientes para Empresas de Reformas | Aparece en Google | slocal.es",
+    slug: "seo-para-reformas",
+    metaTitle: "SEO para Empresas de Reformas | Aparece en Google | slocal.es",
     metaDesc: "Consigue más solicitudes de presupuesto para tu empresa de reformas desde Google. Ficha, web y posicionamiento local. Sin permanencia.",
     h1: "Más Presupuestos para tu Empresa de Reformas desde Google",
     pillBadge: "Para reformas",
@@ -99,8 +99,8 @@ export const sectors: SectorData[] = [
     relatedDesc: "Más solicitudes de presupuesto para tu empresa de reformas.",
   },
   {
-    slug: "mas-clientes-para-pintores",
-    metaTitle: "Más Clientes para Pintores | Aparece en Google en tu Ciudad | slocal.es",
+    slug: "seo-para-pintores",
+    metaTitle: "SEO para Pintores | Aparece en Google en tu Ciudad | slocal.es",
     metaDesc: "¿Eres pintor y quieres llenar tu agenda desde Google? Ficha optimizada, web y posicionamiento local. Sin agencias, sin humo.",
     h1: "Más Clientes para tu Negocio de Pintura desde Google",
     pillBadge: "Para pintores",
@@ -135,8 +135,8 @@ export const sectors: SectorData[] = [
     relatedDesc: "Llena tu agenda de pintura con clientes de Google.",
   },
   {
-    slug: "mas-pacientes-para-clinicas",
-    metaTitle: "Más Pacientes para Clínicas | Aparecer en Google Maps | slocal.es",
+    slug: "seo-para-clinicas",
+    metaTitle: "SEO para Clínicas | Aparecer en Google Maps | slocal.es",
     metaDesc: "Consigue más pacientes para tu clínica dental, médica o veterinaria desde Google. Ficha, web y posicionamiento local. Sin agencias.",
     h1: "Más Pacientes para tu Clínica desde Google",
     pillBadge: "Para clínicas",
@@ -171,8 +171,8 @@ export const sectors: SectorData[] = [
     relatedDesc: "Más pacientes para tu clínica dental, médica o veterinaria.",
   },
   {
-    slug: "mas-pacientes-para-fisioterapeutas",
-    metaTitle: "Más Pacientes para Fisioterapeutas | Google Maps y Web Local | slocal.es",
+    slug: "seo-para-fisioterapeutas",
+    metaTitle: "SEO para Fisioterapeutas | Google Maps y Web Local | slocal.es",
     metaDesc: "¿Eres fisioterapeuta y quieres más pacientes? Te posicionamos en Google cuando alguien busca fisio en tu ciudad. Ficha + web + posicionamiento.",
     h1: "Más Pacientes para tu Clínica de Fisioterapia desde Google",
     pillBadge: "Para fisioterapeutas",
@@ -207,8 +207,8 @@ export const sectors: SectorData[] = [
     relatedDesc: "Más pacientes para tu clínica de fisioterapia.",
   },
   {
-    slug: "mas-clientes-entrenador-personal",
-    metaTitle: "Más Clientes para Entrenadores Personales | Google y Web Local | slocal.es",
+    slug: "seo-para-entrenadores",
+    metaTitle: "SEO para Entrenadores Personales | Google y Web Local | slocal.es",
     metaDesc: "Llena tu agenda como entrenador personal sin depender del boca a boca. Ficha de Google, web y posicionamiento local. Desde €150/mes.",
     h1: "Más Clientes para tu Negocio como Entrenador Personal",
     pillBadge: "Para entrenadores personales",
@@ -243,8 +243,8 @@ export const sectors: SectorData[] = [
     relatedDesc: "Llena tu agenda como entrenador personal desde Google.",
   },
   {
-    slug: "mas-alumnos-para-yoga",
-    metaTitle: "Más Alumnos para tu Estudio de Yoga | Aparecer en Google | slocal.es",
+    slug: "seo-para-yoga",
+    metaTitle: "SEO para Estudios de Yoga | Aparecer en Google | slocal.es",
     metaDesc: "Consigue nuevos alumnos para tu estudio o clases de yoga desde Google. Ficha optimizada, web y posicionamiento local. Sin agencias.",
     h1: "Más Alumnos para tu Estudio de Yoga desde Google",
     pillBadge: "Para estudios de yoga",
