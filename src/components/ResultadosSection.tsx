@@ -78,11 +78,11 @@ const cases: CaseCard[] = [
   },
   {
     id: "fontanero",
-    name: "Fontanero",
-    badge: "Fontanero · Madrid",
-    badgeDetail: "SIN GESTIÓN",
+    name: "MVA Fontanería",
+    badge: "Fontanería · Madrid",
+    badgeDetail: "SOLO FICHA",
     headlineStat: "3 interacciones",
-    headlineLabel: "totales · sin clics · sin llamadas",
+    headlineLabel: "en 2 meses · sin clics · sin llamadas",
     flipCards: [
       { front: "3", frontLabel: "Interacciones", backImage: "", backPlaceholder: "GBP sin gestión" },
       { front: "0", frontLabel: "Clics", backImage: "", backPlaceholder: "Sin datos" },
