@@ -287,7 +287,7 @@ export default function ResultadosSection() {
               { val: "↑",  label: "Mejora constante cada mes",       featured: false },
             ]}
             quote="FRASE_VIVIANE_AQUI — algo como: cuanto más activa está la ficha, más me llega"
-            srcScreenshot1=""
+            srcScreenshot1={gbpViviane}
             srcScreenshot2=""
             labelScreenshot1="Google Business · Rendimiento"
             labelScreenshot2="Search Console · Viviane"
