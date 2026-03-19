@@ -1,348 +1,472 @@
+import { useState, useCallback } from "react";
+import { Link } from "react-router-dom";
 import gbpViviane from "@/assets/casos/gbp-viviane.png";
 import waViviane from "@/assets/casos/wa-viviane.png";
 import scObras from "@/assets/casos/sc-obras.png";
 
-const Placeholder = ({ text, height = 160 }: { text: string; height?: number }) => (
-  <div
-    style={{
-      width: "100%", height, display: "flex", alignItems: "center",
-      justifyContent: "center", background: "rgba(255,255,255,0.02)",
-      border: "1px dashed rgba(255,255,255,0.1)", borderRadius: "10px",
-      color: "rgba(255,255,255,0.2)", fontSize: "11px",
-      textAlign: "center", padding: "16px", lineHeight: 1.6,
-      whiteSpace: "pre-line"
-    }}
-  >{text}</div>
-);
+/* ------------------------------------------------------------------ */
+/*  Types                                                              */
+/* ------------------------------------------------------------------ */
 
-const Screenshot = ({ src, placeholder, label, height = 160 }: { src: string; placeholder: string; label: string; height?: number }) => (
-  <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
-    <div style={{
-      fontSize: "9px", color: "rgba(255,255,255,0.25)",
-      textTransform: "uppercase", letterSpacing: "0.08em"
-    }}>{label}</div>
-    {src
-      ? <img src={src} alt={label} style={{ width: "100%", borderRadius: "10px", display: "block", height: 350, objectFit: "contain" }} />
-      : <Placeholder text={placeholder} height={height} />
-    }
-  </div>
-);
-
-interface Metrica {
-  val: string;
-  label: string;
-  featured?: boolean;
+interface FlipCard {
+  front: string;        // stat number
+  frontLabel: string;   // stat label
+  backImage: string;    // screenshot src (or empty)
+  backPlaceholder: string;
 }
 
-interface CasoPositivoProps {
-  sector: string;
-  ciudad: string;
-  mes: string;
-  inicial: string;
-  nombreCorto: string;
-  metricas: Metrica[];
-  quote: string;
-  srcScreenshot1: string;
-  srcScreenshot2: string;
-  labelScreenshot1: string;
-  labelScreenshot2: string;
-  placeholderSc1: string;
-  placeholderSc2: string;
-  srcWa: string;
-  placeholderWa: string;
+interface CaseCard {
+  id: string;
+  name: string;
+  badge: string;
+  badgeDetail?: string; // e.g. "MES 3 · ACTIVO"
+  headlineStat: string;
+  headlineLabel: string;
+  flipCards: FlipCard[];
+  whatsapp?: {
+    quote: string;
+    thumb: string;       // thumbnail (same image)
+    full: string;        // full-size image
+    placeholder: string;
+  };
+  isContrast?: boolean;
+  contrastText?: string;
 }
 
-const CasoPositivo = ({ sector, ciudad, mes, inicial, nombreCorto, metricas, quote, srcScreenshot1, srcScreenshot2, labelScreenshot1, labelScreenshot2, placeholderSc1, placeholderSc2, srcWa, placeholderWa }: CasoPositivoProps) => (
-  <div style={{
-    background: "rgba(255,255,255,0.03)",
-    border: "1px solid rgba(255,255,255,0.08)",
-    borderRadius: "20px", padding: "32px",
-    display: "flex", flexDirection: "column", gap: "24px"
-  }}>
-    {/* Header */}
-    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "12px" }}>
-      <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
-        <div style={{
-          width: 48, height: 48, borderRadius: "50%",
-          background: "linear-gradient(135deg,#D96A28,#1A1D2E)",
-          display: "flex", alignItems: "center", justifyContent: "center",
-          fontFamily: "'Syne',sans-serif", fontSize: "20px", fontWeight: 800, color: "#fff"
-        }}>{inicial}</div>
-        <div>
-          <div style={{ fontSize: "15px", fontWeight: 600, color: "#fff" }}>{nombreCorto}</div>
-          <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.35)", marginTop: "2px" }}>{sector} · {ciudad}</div>
-        </div>
-      </div>
-      <div style={{
-        background: "rgba(217,106,40,0.1)", border: "1px solid rgba(217,106,40,0.3)",
-        borderRadius: "100px", padding: "4px 14px",
-        fontSize: "10px", fontWeight: 500, color: "#F97316",
-        letterSpacing: "0.08em", textTransform: "uppercase"
-      }}>Mes {mes} · activo</div>
-    </div>
+/* ------------------------------------------------------------------ */
+/*  Data                                                               */
+/* ------------------------------------------------------------------ */
 
-    {/* Métricas */}
-    <div style={{ display: "grid", gridTemplateColumns: `repeat(${metricas.length}, 1fr)`, gap: "10px" }}>
-      {metricas.map((m, i) => (
-        <div key={i} style={{
-          background: m.featured ? "rgba(217,106,40,0.08)" : "rgba(255,255,255,0.03)",
-          border: `1px solid ${m.featured ? "rgba(217,106,40,0.2)" : "rgba(255,255,255,0.06)"}`,
-          borderRadius: "12px", padding: "16px 14px", textAlign: "center"
-        }}>
-          <div style={{
-            fontFamily: "'Syne',sans-serif", fontSize: "32px", fontWeight: 800,
-            color: m.featured ? "#F97316" : "#fff", lineHeight: 1
-          }}>{m.val}</div>
-          <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.35)", marginTop: "6px", lineHeight: 1.4 }}>{m.label}</div>
-        </div>
-      ))}
-    </div>
+const cases: CaseCard[] = [
+  {
+    id: "juancarlos",
+    name: "Juan Carlos",
+    badge: "Reformas · Madrid",
+    badgeDetail: "MES 3 · ACTIVO",
+    headlineStat: "6 llamadas",
+    headlineLabel: "directas desde Google este mes",
+    flipCards: [
+      { front: "6", frontLabel: "Llamadas", backImage: "", backPlaceholder: "GBP 6 llamadas Juan Carlos" },
+      { front: "2.465", frontLabel: "Impresiones", backImage: scObras, backPlaceholder: "Search Console Juan Carlos" },
+      { front: "134", frontLabel: "Clics", backImage: scObras, backPlaceholder: "Search Console Juan Carlos" },
+    ],
+    whatsapp: {
+      quote: "Se va notando los post de la ficha, me han entrado 6 llamadas este mes.",
+      thumb: "",
+      full: "",
+      placeholder: "WhatsApp Juan Carlos",
+    },
+  },
+  {
+    id: "viviane",
+    name: "Viviane",
+    badge: "Psicóloga · Valencia",
+    badgeDetail: "MES 2 · ACTIVO",
+    headlineStat: "6 llamadas",
+    headlineLabel: "directas desde Google este mes",
+    flipCards: [
+      { front: "6", frontLabel: "Llamadas", backImage: gbpViviane, backPlaceholder: "GBP Viviane" },
+      { front: "↑", frontLabel: "Impresiones", backImage: "", backPlaceholder: "Search Console Viviane" },
+      { front: "↑", frontLabel: "Clics", backImage: "", backPlaceholder: "Search Console Viviane" },
+    ],
+    whatsapp: {
+      quote: "Se va notando los post de la ficha, me han entrado 6 llamadas este mes.",
+      thumb: waViviane,
+      full: waViviane,
+      placeholder: "WhatsApp Viviane",
+    },
+  },
+  {
+    id: "fontanero",
+    name: "Fontanero",
+    badge: "Fontanero · Madrid",
+    badgeDetail: "SIN GESTIÓN",
+    headlineStat: "3 interacciones",
+    headlineLabel: "totales · sin clics · sin llamadas",
+    flipCards: [
+      { front: "3", frontLabel: "Interacciones", backImage: "", backPlaceholder: "GBP sin gestión" },
+      { front: "0", frontLabel: "Clics", backImage: "", backPlaceholder: "Sin datos" },
+      { front: "0", frontLabel: "Llamadas", backImage: "", backPlaceholder: "Sin datos" },
+    ],
+    isContrast: true,
+    contrastText: "Sin gestión activa, Google no posiciona el negocio. Los resultados hablan solos.",
+  },
+];
 
-    {/* Screenshots */}
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
-      <Screenshot src={srcScreenshot1} label={labelScreenshot1} placeholder={placeholderSc1} />
-      <Screenshot src={srcScreenshot2} label={labelScreenshot2} placeholder={placeholderSc2} />
-    </div>
+/* ------------------------------------------------------------------ */
+/*  Lightbox                                                           */
+/* ------------------------------------------------------------------ */
 
-    {/* WhatsApp + quote */}
-    <div style={{
-      background: "rgba(255,255,255,0.02)", border: "1px solid rgba(255,255,255,0.06)",
-      borderRadius: "14px", padding: "20px", display: "flex", flexDirection: "column", gap: "14px"
-    }}>
-      <div style={{
-        fontSize: "9px", color: "rgba(255,255,255,0.25)",
-        textTransform: "uppercase", letterSpacing: "0.08em"
-      }}>Conversación real · WhatsApp</div>
-      <div style={{
-        fontSize: "14px", color: "rgba(255,255,255,0.65)", lineHeight: 1.7,
-        fontStyle: "italic", borderLeft: "2px solid rgba(217,106,40,0.35)", paddingLeft: "14px"
-      }}>"{quote}"</div>
-      {srcWa
-        ? <img src={srcWa} alt="WhatsApp" style={{ width: "100%", borderRadius: "8px" }} />
-        : <Placeholder text={placeholderWa} height={100} />
-      }
+function Lightbox({ src, onClose }: { src: string; onClose: () => void }) {
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-sm cursor-pointer"
+      onClick={onClose}
+      onKeyDown={(e) => e.key === "Escape" && onClose()}
+      tabIndex={0}
+      role="dialog"
+    >
+      <img
+        src={src}
+        alt="WhatsApp screenshot"
+        className="max-w-[90vw] max-h-[85vh] rounded-xl shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      />
     </div>
-  </div>
-);
-
-interface CasoContrasteProps {
-  srcGbp: string;
-  placeholderGbp: string;
-  srcWa: string;
-  placeholderWa: string;
+  );
 }
 
-const CasoContraste = ({ srcGbp, placeholderGbp, srcWa, placeholderWa }: CasoContrasteProps) => (
-  <div style={{
-    background: "rgba(255,255,255,0.02)",
-    border: "1px solid rgba(255,255,255,0.06)",
-    borderRadius: "20px", padding: "32px",
-    display: "flex", flexDirection: "column", gap: "24px",
-    position: "relative", overflow: "hidden"
-  }}>
-    <div style={{
-      position: "absolute", top: 0, left: 0, right: 0, height: "3px",
-      background: "rgba(255,255,255,0.08)"
-    }} />
+/* ------------------------------------------------------------------ */
+/*  FlipCardComponent                                                  */
+/* ------------------------------------------------------------------ */
 
-    {/* Header */}
-    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", flexWrap: "wrap", gap: "12px" }}>
-      <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
-        <div style={{
-          width: 48, height: 48, borderRadius: "50%",
-          background: "rgba(255,255,255,0.06)",
-          display: "flex", alignItems: "center", justifyContent: "center",
-          fontFamily: "'Syne',sans-serif", fontSize: "20px", fontWeight: 800,
-          color: "rgba(255,255,255,0.3)"
-        }}>M</div>
-        <div>
-          <div style={{ fontSize: "15px", fontWeight: 600, color: "rgba(255,255,255,0.5)" }}>Cliente · Sector fontanería</div>
-          <div style={{ fontSize: "12px", color: "rgba(255,255,255,0.25)", marginTop: "2px" }}>Madrid · ficha creada, sin gestión mensual</div>
+function FlipCardComponent({ card, isContrast }: { card: FlipCard; isContrast?: boolean }) {
+  const [flipped, setFlipped] = useState(false);
+
+  const hasBack = card.backImage !== "";
+
+  return (
+    <div
+      className="cursor-pointer select-none"
+      style={{ perspective: "600px" }}
+      onClick={() => hasBack && setFlipped(!flipped)}
+    >
+      <div
+        className="relative w-full transition-transform duration-500"
+        style={{
+          transformStyle: "preserve-3d",
+          transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
+          minHeight: "110px",
+        }}
+      >
+        {/* Front */}
+        <div
+          className="absolute inset-0 rounded-xl flex flex-col items-center justify-center p-4 backface-hidden"
+          style={{
+            backfaceVisibility: "hidden",
+            background: isContrast ? "rgba(255,255,255,0.03)" : "rgba(249,115,22,0.08)",
+            border: `1px solid ${isContrast ? "rgba(255,255,255,0.06)" : "rgba(249,115,22,0.2)"}`,
+          }}
+        >
+          <span
+            className="text-3xl md:text-4xl font-bold leading-none"
+            style={{
+              fontFamily: "'DM Serif Display', serif",
+              color: isContrast ? "rgba(255,255,255,0.3)" : "#F97316",
+            }}
+          >
+            {card.front}
+          </span>
+          <span className="text-[10px] mt-2 uppercase tracking-wider" style={{ color: "rgba(255,255,255,0.35)" }}>
+            {card.frontLabel}
+          </span>
+          {hasBack && (
+            <span className="text-[9px] mt-1" style={{ color: "rgba(255,255,255,0.2)" }}>
+              Clic para ver →
+            </span>
+          )}
+        </div>
+
+        {/* Back */}
+        <div
+          className="absolute inset-0 rounded-xl overflow-hidden backface-hidden"
+          style={{
+            backfaceVisibility: "hidden",
+            transform: "rotateY(180deg)",
+            border: "1px solid rgba(249,115,22,0.2)",
+          }}
+        >
+          {hasBack ? (
+            <img
+              src={card.backImage}
+              alt={card.frontLabel}
+              className="w-full h-full object-cover object-top rounded-xl"
+            />
+          ) : (
+            <div
+              className="w-full h-full flex items-center justify-center rounded-xl text-[11px]"
+              style={{
+                background: "rgba(255,255,255,0.02)",
+                color: "rgba(255,255,255,0.2)",
+                border: "1px dashed rgba(255,255,255,0.1)",
+              }}
+            >
+              {card.backPlaceholder}
+            </div>
+          )}
         </div>
       </div>
-      <div style={{
-        background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.1)",
-        borderRadius: "100px", padding: "4px 14px",
-        fontSize: "10px", fontWeight: 500, color: "rgba(255,255,255,0.3)",
-        letterSpacing: "0.08em", textTransform: "uppercase"
-      }}>Sin gestión · 2 meses</div>
     </div>
+  );
+}
 
-    {/* Métrica única */}
-    <div style={{ display: "flex", alignItems: "center", gap: "20px", flexWrap: "wrap" }}>
-      <div style={{
-        background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.06)",
-        borderRadius: "12px", padding: "20px 28px", textAlign: "center", flexShrink: 0
-      }}>
-        <div style={{ fontFamily: "'Syne',sans-serif", fontSize: "48px", fontWeight: 800, color: "rgba(255,255,255,0.3)", lineHeight: 1 }}>3</div>
-        <div style={{ fontSize: "10px", color: "rgba(255,255,255,0.2)", marginTop: "6px" }}>interacciones en 2 meses</div>
-      </div>
-      <div style={{ flex: 1, minWidth: "200px" }}>
-        <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.45)", lineHeight: 1.7 }}>
-          La ficha existe. Está en Google. Pero Google no la mueve porque no ve actividad — sin reseñas nuevas, sin posts, sin respuestas. Para Google, un negocio inactivo es un negocio que no merece visibilidad.
-        </p>
-      </div>
-    </div>
+/* ------------------------------------------------------------------ */
+/*  CaseStudyCard                                                      */
+/* ------------------------------------------------------------------ */
 
-    {/* Screenshots */}
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px" }}>
-      <Screenshot src={srcGbp} label="GBP · 2 meses sin gestión" placeholder={placeholderGbp} />
-      <div style={{ display: "flex", flexDirection: "column", gap: "6px" }}>
-        <div style={{ fontSize: "9px", color: "rgba(255,255,255,0.25)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
-          Conversación · por qué no siguió
+function CaseStudyCard({
+  card,
+  isOpen,
+  onToggle,
+}: {
+  card: CaseCard;
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
+  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
+  const isContrast = card.isContrast;
+
+  return (
+    <>
+      {lightboxSrc && <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />}
+
+      <div
+        className="rounded-2xl transition-all duration-300"
+        style={{
+          background: "#1A1D2E",
+          border: `1px solid ${isContrast ? "rgba(255,255,255,0.08)" : "rgba(249,115,22,0.15)"}`,
+          opacity: isContrast ? 0.85 : 1,
+          filter: isContrast ? "saturate(0.5)" : "none",
+        }}
+      >
+        {/* Closed state — always visible */}
+        <button
+          className="w-full text-left p-6 md:p-8 cursor-pointer focus:outline-none"
+          onClick={onToggle}
+          aria-expanded={isOpen}
+        >
+          {/* Badge */}
+          <span
+            className="inline-block text-[10px] font-medium uppercase tracking-widest rounded-full px-3 py-1 mb-4"
+            style={{
+              background: isContrast ? "rgba(255,255,255,0.05)" : "rgba(249,115,22,0.1)",
+              border: `1px solid ${isContrast ? "rgba(255,255,255,0.1)" : "rgba(249,115,22,0.3)"}`,
+              color: isContrast ? "rgba(255,255,255,0.35)" : "#F97316",
+            }}
+          >
+            {isContrast ? "Sin gestión mensual" : card.badge}
+          </span>
+
+          {card.badgeDetail && !isContrast && (
+            <span
+              className="inline-block ml-2 text-[10px] uppercase tracking-widest rounded-full px-3 py-1 mb-4"
+              style={{
+                background: "rgba(249,115,22,0.1)",
+                border: "1px solid rgba(249,115,22,0.2)",
+                color: "#F97316",
+              }}
+            >
+              {card.badgeDetail}
+            </span>
+          )}
+
+          {isContrast && card.badgeDetail && (
+            <span
+              className="inline-block ml-2 text-[10px] uppercase tracking-widest rounded-full px-3 py-1 mb-4"
+              style={{
+                background: "rgba(255,255,255,0.03)",
+                border: "1px solid rgba(255,255,255,0.08)",
+                color: "rgba(255,255,255,0.3)",
+              }}
+            >
+              {card.badgeDetail}
+            </span>
+          )}
+
+          {/* Headline stat */}
+          <h3
+            className="text-2xl md:text-3xl leading-tight mb-1"
+            style={{
+              fontFamily: "'DM Serif Display', serif",
+              color: isContrast ? "rgba(255,255,255,0.3)" : "#F97316",
+            }}
+          >
+            {card.headlineStat}
+          </h3>
+          <p className="text-xs" style={{ color: "rgba(255,255,255,0.35)" }}>
+            {card.headlineLabel}
+          </p>
+
+          {/* Toggle hint */}
+          <span
+            className="inline-block mt-4 text-xs font-medium transition-colors"
+            style={{ color: isContrast ? "rgba(255,255,255,0.25)" : "#F97316" }}
+          >
+            {isOpen ? "Cerrar ↑" : "Ver resultados →"}
+          </span>
+        </button>
+
+        {/* Expanded state */}
+        <div
+          className="overflow-hidden transition-all duration-500 ease-in-out"
+          style={{
+            maxHeight: isOpen ? "800px" : "0",
+            opacity: isOpen ? 1 : 0,
+          }}
+        >
+          <div className="px-6 md:px-8 pb-6 md:pb-8 space-y-5">
+            {/* Flip cards */}
+            <div className="grid grid-cols-3 gap-3">
+              {card.flipCards.map((fc, i) => (
+                <FlipCardComponent key={i} card={fc} isContrast={isContrast} />
+              ))}
+            </div>
+
+            {/* WhatsApp strip OR contrast text */}
+            {isContrast && card.contrastText ? (
+              <div
+                className="rounded-xl p-5"
+                style={{
+                  background: "rgba(255,255,255,0.03)",
+                  borderLeft: "2px solid rgba(255,255,255,0.1)",
+                }}
+              >
+                <p
+                  className="text-sm leading-relaxed italic"
+                  style={{ color: "rgba(255,255,255,0.4)" }}
+                >
+                  {card.contrastText}
+                </p>
+              </div>
+            ) : card.whatsapp ? (
+              <div
+                className="rounded-xl p-4 flex items-center gap-4 cursor-pointer transition-all hover:border-orange-500/30"
+                style={{
+                  background: "rgba(255,255,255,0.02)",
+                  border: "1px solid rgba(255,255,255,0.06)",
+                }}
+                onClick={() => {
+                  const src = card.whatsapp!.full || card.whatsapp!.thumb;
+                  if (src) setLightboxSrc(src);
+                }}
+              >
+                {/* Thumbnail */}
+                {card.whatsapp.thumb ? (
+                  <img
+                    src={card.whatsapp.thumb}
+                    alt="WhatsApp"
+                    className="w-12 h-12 rounded-lg object-cover object-top flex-shrink-0"
+                  />
+                ) : (
+                  <div
+                    className="w-12 h-12 rounded-lg flex-shrink-0 flex items-center justify-center text-lg"
+                    style={{ background: "rgba(255,255,255,0.04)" }}
+                  >
+                    💬
+                  </div>
+                )}
+
+                {/* Quote */}
+                <p
+                  className="text-xs leading-relaxed italic flex-1"
+                  style={{ color: "rgba(255,255,255,0.55)" }}
+                >
+                  "{card.whatsapp.quote}"
+                </p>
+
+                <span className="text-[10px] flex-shrink-0" style={{ color: "#F97316" }}>
+                  Ver →
+                </span>
+              </div>
+            ) : null}
+          </div>
         </div>
-        {srcWa
-          ? <img src={srcWa} alt="WhatsApp" style={{ width: "100%", borderRadius: "10px" }} />
-          : <Placeholder text={placeholderWa} height={160} />
-        }
       </div>
-    </div>
+    </>
+  );
+}
 
-    {/* Conclusión */}
-    <div style={{
-      background: "rgba(255,255,255,0.03)", borderRadius: "12px", padding: "18px 20px",
-      borderLeft: "2px solid rgba(255,255,255,0.12)"
-    }}>
-      <p style={{ fontSize: "13px", color: "rgba(255,255,255,0.4)", lineHeight: 1.7, fontStyle: "italic" }}>
-        Crear la ficha es el primer paso. Pero sin trabajarla cada mes, Google no te posiciona — y los clientes tampoco llegan solos. Por eso la gestión mensual no es un extra, es la parte que hace que todo funcione.
-      </p>
-    </div>
-  </div>
-);
+/* ------------------------------------------------------------------ */
+/*  Main Section                                                       */
+/* ------------------------------------------------------------------ */
 
 export default function ResultadosSection() {
-  return (
-    <section style={{
-      background: "#0f1524", padding: "96px 24px",
-      position: "relative", fontFamily: "'DM Sans', sans-serif"
-    }}>
-      <div style={{
-        position: "absolute", top: 0, left: 0, right: 0, height: "1px",
-        background: "linear-gradient(90deg, transparent, rgba(217,106,40,0.5), transparent)"
-      }} />
+  const [openId, setOpenId] = useState<string | null>(null);
 
-      <div style={{ maxWidth: "900px", margin: "0 auto", position: "relative" }}>
+  const handleToggle = useCallback(
+    (id: string) => setOpenId((prev) => (prev === id ? null : id)),
+    []
+  );
+
+  return (
+    <section
+      className="py-20 md:py-28"
+      style={{ background: "#0B1120", fontFamily: "'DM Sans', sans-serif" }}
+    >
+      <div className="container">
         {/* Label */}
-        <div style={{
-          display: "inline-flex", alignItems: "center", gap: "8px",
-          background: "rgba(217,106,40,0.1)", border: "1px solid rgba(217,106,40,0.3)",
-          borderRadius: "100px", padding: "5px 16px", fontSize: "11px",
-          fontWeight: 500, letterSpacing: "0.1em", textTransform: "uppercase",
-          color: "#F97316", marginBottom: "28px"
-        }}>
-          <span style={{ width: 6, height: 6, background: "#F97316", borderRadius: "50%", display: "inline-block" }} />
+        <div
+          className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-[11px] font-medium uppercase tracking-widest mb-7"
+          style={{
+            background: "rgba(249,115,22,0.1)",
+            border: "1px solid rgba(249,115,22,0.3)",
+            color: "#F97316",
+          }}
+        >
+          <span
+            className="inline-block w-1.5 h-1.5 rounded-full"
+            style={{ background: "#F97316" }}
+          />
           Casos reales
         </div>
 
         {/* Heading */}
-        <h2 style={{
-          fontFamily: "'Syne', sans-serif", fontSize: "clamp(28px,4vw,42px)",
-          fontWeight: 800, color: "#fff", lineHeight: 1.15, maxWidth: "640px", marginBottom: "12px"
-        }}>
+        <h2
+          className="text-2xl md:text-4xl font-heading font-extrabold leading-tight mb-3 max-w-xl"
+          style={{ color: "#fff" }}
+        >
           Algunos de los negocios{" "}
           <span style={{ color: "#F97316" }}>que gestiono.</span>
         </h2>
-        <p style={{
-          fontSize: "16px", color: "rgba(255,255,255,0.4)", maxWidth: "520px",
-          lineHeight: 1.7, marginBottom: "64px"
-        }}>
-          No son capturas inventadas ni promesas. Son los datos reales de negocios que llevan en el sistema — y uno que no quiso la gestión mensual, para que veas la diferencia.
+        <p
+          className="text-sm md:text-base max-w-lg leading-relaxed mb-14"
+          style={{ color: "rgba(255,255,255,0.4)" }}
+        >
+          No son capturas inventadas ni promesas. Son los datos reales de
+          negocios que llevan en el sistema.
         </p>
 
-        {/* CASO 1: Obrasenmadrid */}
-        <div style={{ marginBottom: "24px" }}>
-          <CasoPositivo
-            sector="Reformas y construcción"
-            ciudad="Madrid"
-            mes="3"
-            inicial="O"
-            nombreCorto="Empresa de reformas · Madrid"
-            metricas={[
-              { val: "2.465", label: "Impresiones en Google · 28 días", featured: false },
-              { val: "134",   label: "Clics al negocio · 28 días",      featured: false },
-              { val: "6",     label: "Llamadas directas desde la ficha", featured: true  },
-            ]}
-            quote="FRASE_OBRAS_AQUI"
-            srcScreenshot1={scObras}
-            srcScreenshot2=""
-            labelScreenshot1="Search Console · 28 días"
-            labelScreenshot2="Google Business · Llamadas"
-            placeholderSc1={"📊 Sube captura recortada\n134 clics · 2.465 impresiones"}
-            placeholderSc2={"📞 Sube captura recortada\n6 llamadas directas"}
-            srcWa=""
-            placeholderWa={"📱 Captura WhatsApp\nJuan Carlos — mensaje positivo"}
-          />
-        </div>
-
-        {/* CASO 2: Viviane */}
-        <div style={{ marginBottom: "24px" }}>
-          <CasoPositivo
-            sector="Psicología"
-            ciudad="Valencia"
-            mes="2"
-            inicial="V"
-            nombreCorto="Viviane C. · Psicóloga"
-            metricas={[
-              { val: "6",  label: "Llamadas este mes desde Google", featured: true  },
-              { val: "↑",  label: "Mejora constante cada mes",       featured: false },
-            ]}
-            quote="FRASE_VIVIANE_AQUI — algo como: cuanto más activa está la ficha, más me llega"
-            srcScreenshot1={gbpViviane}
-            srcScreenshot2=""
-            labelScreenshot1="Google Business · Rendimiento"
-            labelScreenshot2="Search Console · Viviane"
-            placeholderSc1={"📊 Sube captura GBP\nrendimiento Viviane"}
-            placeholderSc2={"📊 Sube captura Search Console\nViviane"}
-            srcWa={waViviane}
-            placeholderWa={"📱 Captura WhatsApp Viviane\n\"cuanto más activa mejor\""}
-          />
-        </div>
-
-        {/* DIVIDER */}
-        <div style={{
-          display: "flex", alignItems: "center", gap: "16px",
-          margin: "16px 0 24px"
-        }}>
-          <div style={{ flex: 1, height: "1px", background: "rgba(255,255,255,0.06)" }} />
-          <div style={{
-            fontSize: "11px", color: "rgba(255,255,255,0.2)",
-            textTransform: "uppercase", letterSpacing: "0.1em", whiteSpace: "nowrap"
-          }}>¿Qué pasa sin gestión mensual?</div>
-          <div style={{ flex: 1, height: "1px", background: "rgba(255,255,255,0.06)" }} />
-        </div>
-
-        {/* CASO 3: Miguel (contraste) */}
-        <div style={{ marginBottom: "64px" }}>
-          <CasoContraste
-            srcGbp=""
-            placeholderGbp={"📊 Sube captura GBP Miguel\n3 interacciones en 2 meses"}
-            srcWa=""
-            placeholderWa={"📱 Captura WhatsApp Miguel\ncuando decide no seguir con mensualidad"}
-          />
+        {/* Cards grid — 2 cols desktop, 1 mobile */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          {cases.map((c) => (
+            <CaseStudyCard
+              key={c.id}
+              card={c}
+              isOpen={openId === c.id}
+              onToggle={() => handleToggle(c.id)}
+            />
+          ))}
         </div>
 
         {/* CTA */}
-        <div style={{
-          background: "rgba(217,106,40,0.08)", border: "1px solid rgba(217,106,40,0.2)",
-          borderRadius: "20px", padding: "36px 40px",
-          display: "flex", justifyContent: "space-between",
-          alignItems: "center", gap: "24px", flexWrap: "wrap"
-        }}>
+        <div
+          className="mt-14 rounded-2xl p-8 md:p-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6"
+          style={{
+            background: "rgba(249,115,22,0.08)",
+            border: "1px solid rgba(249,115,22,0.2)",
+          }}
+        >
           <div>
-            <h3 style={{
-              fontFamily: "'Syne',sans-serif", fontSize: "20px",
-              fontWeight: 800, color: "#fff", marginBottom: "6px"
-            }}>¿Quieres estos resultados para tu negocio?</h3>
-            <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.4)", lineHeight: 1.6 }}>
+            <h3
+              className="font-heading text-lg md:text-xl font-extrabold mb-1"
+              style={{ color: "#fff" }}
+            >
+              ¿Quieres estos resultados para tu negocio?
+            </h3>
+            <p className="text-sm" style={{ color: "rgba(255,255,255,0.4)" }}>
               Empezamos por la ficha de Google — sin contrato, sin permanencia.
             </p>
           </div>
-          <a href="#contacto" style={{
-            background: "linear-gradient(135deg,#D96A28,#F97316)", color: "#fff",
-            fontFamily: "'Syne',sans-serif", fontWeight: 700, fontSize: "14px",
-            padding: "14px 28px", borderRadius: "100px", textDecoration: "none",
-            whiteSpace: "nowrap", letterSpacing: "0.03em"
-          }}>Quiero empezar →</a>
+          <Link
+            to="/contacto"
+            className="inline-block rounded-full px-7 py-3.5 text-sm font-heading font-bold whitespace-nowrap"
+            style={{
+              background: "linear-gradient(135deg,#D96A28,#F97316)",
+              color: "#fff",
+            }}
+          >
+            Quiero empezar →
+          </Link>
         </div>
       </div>
     </section>
