@@ -22,7 +22,7 @@ const Screenshot = ({ src, placeholder, label, height = 160 }: { src: string; pl
       textTransform: "uppercase", letterSpacing: "0.08em"
     }}>{label}</div>
     {src
-      ? <img src={src} alt={label} style={{ width: "100%", borderRadius: "10px", display: "block", height, objectFit: "cover", objectPosition: "center" }} />
+      ? <img src={src} alt={label} style={{ width: "100%", borderRadius: "10px", display: "block", height: 350, objectFit: "contain" }} />
       : <Placeholder text={placeholder} height={height} />
     }
   </div>
