@@ -68,14 +68,13 @@ const SectorPage = () => {
           <div>
             <BreadcrumbNav items={[
               { label: "Inicio", href: "/" },
-              { label: "Sectores" },
-              { label: sector.pillBadge },
+              { label: breadcrumbLabel },
             ]} />
             <span className="inline-block border border-primary text-primary text-xs font-heading rounded-full px-4 py-1.5 mb-6">
-              {sector.pillBadge}
+              {breadcrumbLabel}
             </span>
             <h1 className="font-heading text-3xl md:text-4xl leading-tight mb-4">
-              {sector.h1}
+              {breadcrumbLabel} — Consigue {ctaWordCapitalized} en Google
             </h1>
             <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-8 font-body font-light">
               {sector.painSubtitle}
