@@ -16,6 +16,8 @@ import SectorPage from "@/pages/SectorPage";
 import SectorCityPage from "@/pages/SectorCityPage";
 import ComoVeGoogleMiWeb from "@/pages/ComoVeGoogleMiWeb";
 import Sistema from "@/pages/Sistema";
+import BlogIndex from "@/pages/BlogIndex";
+import BlogPostPage from "@/pages/BlogPost";
 import NotFound from "@/pages/NotFound";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -107,16 +109,19 @@ const App = () => (
             <Route path="/seo-local-zaragoza" element={<CityPage />} />
             <Route path="/seo-local-bilbao" element={<CityPage />} />
             <Route path="/seo-local-murcia" element={<CityPage />} />
-            <Route path="/mas-clientes-para-fontaneros" element={<SectorPage />} />
-            <Route path="/mas-clientes-para-reformas" element={<SectorPage />} />
-            <Route path="/mas-clientes-para-pintores" element={<SectorPage />} />
-            <Route path="/mas-pacientes-para-clinicas" element={<SectorPage />} />
-            <Route path="/mas-pacientes-para-fisioterapeutas" element={<SectorPage />} />
-            <Route path="/mas-clientes-entrenador-personal" element={<SectorPage />} />
-            <Route path="/mas-alumnos-para-yoga" element={<SectorPage />} />
-            <Route path="/mas-clientes-para-:sector/:ciudad" element={<SectorCityPage />} />
-            <Route path="/mas-pacientes-para-:sector/:ciudad" element={<SectorCityPage />} />
-            <Route path="/mas-alumnos-para-:sector/:ciudad" element={<SectorCityPage />} />
+            {/* Sector pages (level 2) — new slugs */}
+            <Route path="/seo-para-fontaneros" element={<SectorPage />} />
+            <Route path="/seo-para-reformas" element={<SectorPage />} />
+            <Route path="/seo-para-pintores" element={<SectorPage />} />
+            <Route path="/seo-para-clinicas" element={<SectorPage />} />
+            <Route path="/seo-para-fisioterapeutas" element={<SectorPage />} />
+            <Route path="/seo-para-entrenadores" element={<SectorPage />} />
+            <Route path="/seo-para-yoga" element={<SectorPage />} />
+            {/* Sector + City pages (level 3) */}
+            <Route path="/seo-para-:sector/:ciudad" element={<SectorCityPage />} />
+            {/* Blog */}
+            <Route path="/blog" element={<BlogIndex />} />
+            <Route path="/blog/:slug" element={<BlogPostPage />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>

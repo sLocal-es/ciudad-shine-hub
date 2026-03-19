@@ -1,5 +1,4 @@
-import { useParams, useLocation, Link } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { useParams, Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import PlanCards from "@/components/PlanCards";
@@ -14,12 +13,10 @@ import { getCompetitionAnswer, getNeighborhoodAnswer } from "@/data/competitionD
 
 const SectorCityPage = () => {
   const { sector: sectorParam, ciudad } = useParams<{ sector: string; ciudad: string }>();
-  const location = useLocation();
 
-  const pathSegments = location.pathname.split("/").filter(Boolean);
-  const parentSlug = pathSegments.length >= 2 ? pathSegments.slice(0, -1).join("/") : "";
-
-  const sector = sectors.find((s) => s.slug === parentSlug);
+  // Build full slug from URL: /seo-para-{sectorParam}/{ciudad}
+  const fullSlug = `seo-para-${sectorParam}`;
+  const sector = sectors.find((s) => s.slug === fullSlug);
   const city = cities.find((c) => c.slug === ciudad);
 
   if (!sector || !city) {
@@ -31,10 +28,8 @@ const SectorCityPage = () => {
   const ctaWordCap = sector.ctaWord.charAt(0).toUpperCase() + sector.ctaWord.slice(1);
   const ctaWordSingular = sector.ctaWord === "alumnos" ? "alumno" : sector.ctaWord === "pacientes" ? "paciente" : "cliente";
 
-  // Anti-cannibalism H1 formula
-  const h1Text = `Más ${ctaWordCap} para tu ${sector.relatedLabel.endsWith("s") ? `Negocio de ${sector.relatedLabel}` : sector.relatedLabel} en ${city.name}: Cómo Aparecer en Google cuando Te Buscan`;
-
-  const metaTitle = `Más ${ctaWordCap} para ${sector.relatedLabel} en ${city.name} | slocal.es`;
+  const h1Text = `Consigue más clientes como ${sectorLabel} en ${city.name} con Google`;
+  const metaTitle = `SEO para ${sector.relatedLabel} en ${city.name} — slocal.es`;
   const metaDesc = `¿Eres ${sectorLabel} en ${city.name} y quieres más ${sector.ctaWord}? Te ponemos en Google Maps y en los primeros resultados de ${city.name}. Sin agencias. Desde €150/mes.`;
   const canonical = `/${sector.slug}/${city.slug}`;
 
@@ -54,7 +49,6 @@ const SectorCityPage = () => {
     a: f.a + ` En ${city.name}, esto aplica especialmente por las características del mercado local.`,
   }));
 
-  // Add Q5 and Q6 (sector+city specific)
   selectedFaqs.push({
     q: `¿Cuánta competencia hay para ${sectorLabel} en ${city.name}?`,
     a: getCompetitionAnswer(sector.slug, city.slug),
@@ -107,7 +101,7 @@ const SectorCityPage = () => {
         jsonLd={[breadcrumbSchema, faqSchema, serviceSchema]}
       />
 
-      {/* SECTION 1+2 — HERO */}
+      {/* HERO */}
       <section className="bg-dark-bg text-dark-fg py-16 md:py-24">
         <div className="container grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div>
@@ -137,7 +131,7 @@ const SectorCityPage = () => {
             </div>
           </div>
 
-          {/* MOCKUP B */}
+          {/* MOCKUP */}
           <div className="bg-card text-card-foreground rounded-xl border border-border p-5 shadow-sm">
             <div className="flex items-center gap-2 mb-4">
               <div className="w-3 h-3 rounded-full bg-destructive/40" />
@@ -165,7 +159,7 @@ const SectorCityPage = () => {
         </div>
       </section>
 
-      {/* SECTION 3 — LOCAL CONTEXT (expanded, ~300 words) */}
+      {/* LOCAL CONTEXT */}
       <section className="py-16">
         <div className="container max-w-3xl">
           <h2 className="font-heading text-2xl md:text-3xl mb-6">
@@ -181,7 +175,7 @@ const SectorCityPage = () => {
         </div>
       </section>
 
-      {/* SECTION 4 — LONGTAIL KEYWORDS */}
+      {/* LONGTAIL KEYWORDS */}
       <section className="bg-warm-bg py-16">
         <div className="container">
           <h2 className="font-heading text-2xl md:text-3xl mb-8">
@@ -201,7 +195,7 @@ const SectorCityPage = () => {
         </div>
       </section>
 
-      {/* SECTION 5 — WHAT WE DO (expanded cards) */}
+      {/* WHAT WE DO */}
       <section className="bg-warm-bg py-16 border-t border-border">
         <div className="container">
           <h2 className="font-heading text-2xl md:text-3xl mb-8">
@@ -229,14 +223,13 @@ const SectorCityPage = () => {
         </div>
       </section>
 
-      {/* SECTION 6 — LOCAL TRUST BLOCK */}
+      {/* LOCAL TRUST */}
       <section className="py-16">
         <div className="container">
           <h2 className="font-heading text-2xl md:text-3xl mb-8">
             Por qué funciona para {sectorLabel} en {city.name}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-            {/* Left: stat cards */}
             <div className="space-y-4">
               {[
                 { number: "8 de cada 10", text: "personas buscan servicios locales en Google antes de llamar" },
@@ -249,7 +242,6 @@ const SectorCityPage = () => {
                 </div>
               ))}
             </div>
-            {/* Right: paragraph */}
             <div>
               <p className="text-muted-foreground leading-relaxed">
                 En {city.name}, la mayoría de {sectorLabel} no tienen su presencia digital bien trabajada.
@@ -272,7 +264,7 @@ const SectorCityPage = () => {
         </div>
       </section>
 
-      {/* SECTION 7 — PLANS */}
+      {/* PLANS */}
       <section className="py-16 bg-warm-bg">
         <div className="container">
           <h2 className="font-heading text-2xl md:text-3xl mb-8">Planes para {sectorLabel} en {city.name}</h2>
@@ -283,10 +275,10 @@ const SectorCityPage = () => {
         </div>
       </section>
 
-      {/* SECTION 8 — FAQ (6 questions) */}
+      {/* FAQ */}
       <FAQSection title={`Preguntas frecuentes sobre ${sectorLabel} en ${city.name}`} items={selectedFaqs} />
 
-      {/* SECTION 9 — SIBLING CITIES */}
+      {/* SIBLING CITIES */}
       <section className="py-12">
         <div className="container">
           <h2 className="font-heading text-xl md:text-2xl mb-3">También trabajamos con {sectorLabel} en otras ciudades</h2>
@@ -307,7 +299,7 @@ const SectorCityPage = () => {
         </div>
       </section>
 
-      {/* SECTION 9b — CROSS-LINKS (sectors + parent pages) */}
+      {/* CROSS-LINKS */}
       <section className="bg-warm-bg py-12">
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -344,7 +336,7 @@ const SectorCityPage = () => {
                   to="/planes"
                   className="border border-border bg-card rounded-lg px-4 py-3 text-sm font-heading hover:border-primary hover:text-primary transition-colors"
                 >
-                  Ver todos los planes →
+                  Ver planes y precios →
                 </Link>
               </div>
             </div>
@@ -352,11 +344,8 @@ const SectorCityPage = () => {
         </div>
       </section>
 
-      {/* SECTION 10 — FINAL CTA */}
-      <CTASection
-        title={`¿Empezamos a posicionar tu negocio de ${sectorLabel} en ${city.name}?`}
-        buttonText="Hablemos →"
-      />
+      {/* CTA */}
+      <CTASection title={`¿Listo para que Google te traiga ${sector.ctaWord} en ${city.name}?`} buttonText="Empezar →" />
     </>
   );
 };

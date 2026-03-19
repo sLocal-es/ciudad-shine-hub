@@ -2,12 +2,11 @@ import { neighborhoods } from "./neighborhoods";
 
 interface SectorKeywordConfig {
   baseKeywords: string[];
-  // These use [barrio] placeholder which gets replaced with real neighborhood names
   barrioKeywords: string[];
 }
 
 const sectorKeywords: Record<string, SectorKeywordConfig> = {
-  "mas-clientes-para-fontaneros": {
+  "seo-para-fontaneros": {
     baseKeywords: [
       "fontanero urgencias [ciudad]",
       "fontanero barato [ciudad]",
@@ -25,7 +24,7 @@ const sectorKeywords: Record<string, SectorKeywordConfig> = {
       "fontanero urgencias [barrio]",
     ],
   },
-  "mas-clientes-para-reformas": {
+  "seo-para-reformas": {
     baseKeywords: [
       "empresa de reformas [ciudad]",
       "reformas integrales [ciudad]",
@@ -43,7 +42,7 @@ const sectorKeywords: Record<string, SectorKeywordConfig> = {
       "empresa reformas [barrio]",
     ],
   },
-  "mas-clientes-para-pintores": {
+  "seo-para-pintores": {
     baseKeywords: [
       "pintor [ciudad]",
       "pintor de pisos [ciudad]",
@@ -61,7 +60,7 @@ const sectorKeywords: Record<string, SectorKeywordConfig> = {
       "pintor pisos [barrio]",
     ],
   },
-  "mas-pacientes-para-clinicas": {
+  "seo-para-clinicas": {
     baseKeywords: [
       "clínica dental [ciudad] centro",
       "dentista barato [ciudad]",
@@ -79,7 +78,7 @@ const sectorKeywords: Record<string, SectorKeywordConfig> = {
       "dentista en [barrio]",
     ],
   },
-  "mas-pacientes-para-fisioterapeutas": {
+  "seo-para-fisioterapeutas": {
     baseKeywords: [
       "fisioterapeuta [ciudad]",
       "fisio deportivo [ciudad]",
@@ -97,7 +96,7 @@ const sectorKeywords: Record<string, SectorKeywordConfig> = {
       "fisioterapia [barrio]",
     ],
   },
-  "mas-clientes-entrenador-personal": {
+  "seo-para-entrenadores": {
     baseKeywords: [
       "entrenador personal [ciudad]",
       "entrenador personal a domicilio [ciudad]",
@@ -115,7 +114,7 @@ const sectorKeywords: Record<string, SectorKeywordConfig> = {
       "entrenamiento personal [barrio]",
     ],
   },
-  "mas-alumnos-para-yoga": {
+  "seo-para-yoga": {
     baseKeywords: [
       "clases de yoga [ciudad]",
       "yoga para principiantes [ciudad]",
@@ -142,12 +141,10 @@ export function getLongtailKeywords(sectorSlug: string, citySlug: string, cityNa
   const cityNeighborhoods = neighborhoods[citySlug] || [];
   const keywords: string[] = [];
 
-  // Add base keywords with city name
   for (const kw of config.baseKeywords) {
     keywords.push(kw.replace("[ciudad]", cityName));
   }
 
-  // Add neighborhood-specific keywords (pick first 2 neighborhoods)
   for (const barrioKw of config.barrioKeywords) {
     for (const barrio of cityNeighborhoods.slice(0, 1)) {
       keywords.push(barrioKw.replace("[barrio]", barrio));

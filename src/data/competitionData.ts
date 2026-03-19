@@ -1,7 +1,3 @@
-// Competition FAQ answers per sector+city and neighborhood answers
-// Q5: "¿Cuánta competencia hay para [sector] en [ciudad]?"
-// Q6: "¿En qué barrios o zonas de [ciudad] posiciona el sistema?"
-
 import { neighborhoods } from "./neighborhoods";
 
 const competitionByCity: Record<string, { high: string; medium: string; low: string }> = {
@@ -50,13 +46,13 @@ const competitionByCity: Record<string, { high: string; medium: string; low: str
 type CompetitionLevel = "high" | "medium" | "low";
 
 const sectorCompetitionLevel: Record<string, Record<string, CompetitionLevel>> = {
-  "mas-clientes-para-fontaneros": { madrid: "high", barcelona: "high", valencia: "medium", sevilla: "medium", malaga: "medium", zaragoza: "low", bilbao: "medium", murcia: "low" },
-  "mas-clientes-para-reformas": { madrid: "high", barcelona: "high", valencia: "medium", sevilla: "medium", malaga: "medium", zaragoza: "low", bilbao: "medium", murcia: "low" },
-  "mas-clientes-para-pintores": { madrid: "medium", barcelona: "medium", valencia: "low", sevilla: "low", malaga: "low", zaragoza: "low", bilbao: "low", murcia: "low" },
-  "mas-pacientes-para-clinicas": { madrid: "high", barcelona: "high", valencia: "high", sevilla: "medium", malaga: "medium", zaragoza: "medium", bilbao: "medium", murcia: "low" },
-  "mas-pacientes-para-fisioterapeutas": { madrid: "high", barcelona: "medium", valencia: "medium", sevilla: "low", malaga: "low", zaragoza: "low", bilbao: "low", murcia: "low" },
-  "mas-clientes-entrenador-personal": { madrid: "medium", barcelona: "medium", valencia: "low", sevilla: "low", malaga: "low", zaragoza: "low", bilbao: "low", murcia: "low" },
-  "mas-alumnos-para-yoga": { madrid: "medium", barcelona: "medium", valencia: "low", sevilla: "low", malaga: "low", zaragoza: "low", bilbao: "low", murcia: "low" },
+  "seo-para-fontaneros": { madrid: "high", barcelona: "high", valencia: "medium", sevilla: "medium", malaga: "medium", zaragoza: "low", bilbao: "medium", murcia: "low" },
+  "seo-para-reformas": { madrid: "high", barcelona: "high", valencia: "medium", sevilla: "medium", malaga: "medium", zaragoza: "low", bilbao: "medium", murcia: "low" },
+  "seo-para-pintores": { madrid: "medium", barcelona: "medium", valencia: "low", sevilla: "low", malaga: "low", zaragoza: "low", bilbao: "low", murcia: "low" },
+  "seo-para-clinicas": { madrid: "high", barcelona: "high", valencia: "high", sevilla: "medium", malaga: "medium", zaragoza: "medium", bilbao: "medium", murcia: "low" },
+  "seo-para-fisioterapeutas": { madrid: "high", barcelona: "medium", valencia: "medium", sevilla: "low", malaga: "low", zaragoza: "low", bilbao: "low", murcia: "low" },
+  "seo-para-entrenadores": { madrid: "medium", barcelona: "medium", valencia: "low", sevilla: "low", malaga: "low", zaragoza: "low", bilbao: "low", murcia: "low" },
+  "seo-para-yoga": { madrid: "medium", barcelona: "medium", valencia: "low", sevilla: "low", malaga: "low", zaragoza: "low", bilbao: "low", murcia: "low" },
 };
 
 export function getCompetitionAnswer(sectorSlug: string, citySlug: string): string {

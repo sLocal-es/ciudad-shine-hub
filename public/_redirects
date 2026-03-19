@@ -1,1 +1,20 @@
+# 301 redirects for renamed sector pages (level 2)
+/mas-clientes-para-fontaneros              /seo-para-fontaneros              301
+/mas-clientes-para-reformas                /seo-para-reformas                301
+/mas-clientes-para-pintores                /seo-para-pintores                301
+/mas-pacientes-para-clinicas               /seo-para-clinicas                301
+/mas-pacientes-para-fisioterapeutas        /seo-para-fisioterapeutas         301
+/mas-clientes-entrenador-personal          /seo-para-entrenadores            301
+/mas-alumnos-para-yoga                     /seo-para-yoga                    301
+
+# 301 redirects for old level 3 patterns (sector+city)
+/mas-clientes-para-fontaneros/*            /seo-para-fontaneros/:splat       301
+/mas-clientes-para-reformas/*              /seo-para-reformas/:splat         301
+/mas-clientes-para-pintores/*              /seo-para-pintores/:splat         301
+/mas-pacientes-para-clinicas/*             /seo-para-clinicas/:splat         301
+/mas-pacientes-para-fisioterapeutas/*      /seo-para-fisioterapeutas/:splat  301
+/mas-clientes-entrenador-personal/*        /seo-para-entrenadores/:splat     301
+/mas-alumnos-para-yoga/*                   /seo-para-yoga/:splat             301
+
+# SPA fallback
 /*    /index.html   200
