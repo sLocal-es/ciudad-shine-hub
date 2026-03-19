@@ -33,7 +33,7 @@ const Footer = () => (
             {sectors.map((s) => (
               <li key={s.slug}>
                 <Link to={`/${s.slug}`} className="hover:text-primary transition-colors">
-                  {s.relatedLabel}
+                  {s.metaTitle.split("|")[0].trim()}
                 </Link>
               </li>
             ))}

@@ -286,27 +286,33 @@ const SectorCityPage = () => {
       {/* SECTION 8 — FAQ (6 questions) */}
       <FAQSection title={`Preguntas frecuentes sobre ${sectorLabel} en ${city.name}`} items={selectedFaqs} />
 
-      {/* SECTION 9 — RELATED PAGES (3-column) */}
+      {/* SECTION 9 — SIBLING CITIES */}
       <section className="py-12">
         <div className="container">
-          <h2 className="font-heading text-xl md:text-2xl mb-8">Explora más opciones</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <h2 className="font-heading text-xl md:text-2xl mb-3">También trabajamos con {sectorLabel} en otras ciudades</h2>
+          <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-2xl">
+            El sistema de visibilidad para {sectorLabel} funciona en las principales ciudades de España. Si buscas posicionar tu negocio en otra ciudad, aquí tienes las opciones disponibles.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            {otherCities.slice(0, 7).map((c) => (
+              <Link
+                key={c.slug}
+                to={`/${sector.slug}/${c.slug}`}
+                className="border border-border bg-card rounded-full px-5 py-2 text-sm font-heading hover:border-primary hover:text-primary transition-colors"
+              >
+                {c.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SECTION 9b — CROSS-LINKS (sectors + parent pages) */}
+      <section className="bg-warm-bg py-12">
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <div>
-              <h3 className="font-heading text-lg mb-4">Mismo sector, otras ciudades</h3>
-              <div className="flex flex-wrap gap-2">
-                {otherCities.map((c) => (
-                  <Link
-                    key={c.slug}
-                    to={`/${sector.slug}/${c.slug}`}
-                    className="border border-border bg-card rounded-full px-4 py-2 text-sm font-heading hover:border-primary hover:text-primary transition-colors"
-                  >
-                    {c.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-            <div>
-              <h3 className="font-heading text-lg mb-4">Misma ciudad, otros sectores</h3>
+              <h3 className="font-heading text-lg mb-4">Otros sectores en {city.name}</h3>
               <div className="flex flex-wrap gap-2">
                 {otherSectors.map((s) => (
                   <Link
@@ -320,13 +326,13 @@ const SectorCityPage = () => {
               </div>
             </div>
             <div>
-              <h3 className="font-heading text-lg mb-4">También puede interesarte</h3>
+              <h3 className="font-heading text-lg mb-4">Páginas relacionadas</h3>
               <div className="flex flex-col gap-2">
                 <Link
                   to={`/${sector.slug}`}
                   className="border border-border bg-card rounded-lg px-4 py-3 text-sm font-heading hover:border-primary hover:text-primary transition-colors"
                 >
-                  {sector.pillBadge} — Página principal →
+                  Ver todos los servicios para {sectorLabel} →
                 </Link>
                 <Link
                   to={`/seo-local-${city.slug}`}
