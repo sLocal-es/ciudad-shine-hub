@@ -47,6 +47,12 @@ const SectorPage = () => {
   // Derive a sector label for H2s
   const sectorLabel = sector.pillBadge.replace("Para ", "").toLowerCase();
 
+  // Breadcrumb & H1: "SEO para Fontaneros", "SEO para Estudios de Yoga", etc.
+  const breadcrumbLabel = "SEO " + sector.pillBadge.split(" ").map((w, i) =>
+    i === 0 ? w.toLowerCase() : w.charAt(0).toUpperCase() + w.slice(1)
+  ).join(" ");
+  const ctaWordCapitalized = sector.ctaWord.charAt(0).toUpperCase() + sector.ctaWord.slice(1);
+
   return (
     <>
       <SEOHead
