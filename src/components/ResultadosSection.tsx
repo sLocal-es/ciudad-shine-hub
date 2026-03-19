@@ -293,7 +293,7 @@ export default function ResultadosSection() {
             labelScreenshot2="Search Console · Viviane"
             placeholderSc1={"📊 Sube captura GBP\nrendimiento Viviane"}
             placeholderSc2={"📊 Sube captura Search Console\nViviane"}
-            srcWa=""
+            srcWa={waViviane}
             placeholderWa={"📱 Captura WhatsApp Viviane\n\"cuanto más activa mejor\""}
           />
         </div>
