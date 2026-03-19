@@ -1,4 +1,5 @@
 import SEOHead from "@/components/SEOHead";
+import ResultadosSection from "@/components/ResultadosSection";
 import {
   Accordion,
   AccordionContent,
