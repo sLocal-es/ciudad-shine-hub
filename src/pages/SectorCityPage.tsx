@@ -87,6 +87,17 @@ const SectorCityPage = () => {
     description: `Sistema de visibilidad en Google para ${sectorLabel} en ${city.name}: ficha de Google Business Profile, web local y posicionamiento orgánico.`,
   };
 
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: `${sector.relatedLabel} en ${city.name} — slocal.es`,
+    description: `Gestión de presencia en Google para ${sectorLabel} en ${city.name}`,
+    areaServed: city.name,
+    serviceType: sectorLabel,
+    url: `https://slocal.es${canonical}`,
+    provider: { "@type": "Organization", name: "slocal.es" },
+  };
+
   const otherCities = cities.filter((c) => c.slug !== city.slug);
   const otherSectors = sectors.filter((s) => s.slug !== sector.slug);
   const mockupText = sector.mockupResult.replace("[Ciudad]", city.name);
