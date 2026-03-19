@@ -140,6 +140,9 @@ const Sistema = () => {
         </div>
       </section>
 
+      {/* Resultados */}
+      <ResultadosSection />
+
       {/* Comparativa Precio */}
       <section className="py-16 md:py-20 bg-background">
         <div className="container max-w-3xl mx-auto">

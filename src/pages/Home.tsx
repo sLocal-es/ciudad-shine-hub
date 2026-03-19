@@ -137,6 +137,9 @@ const Home = () => {
         </div>
       </section>
 
+      {/* RESULTADOS */}
+      <ResultadosSection />
+
       {/* TRUST */}
       <section className="bg-dark-bg text-dark-fg py-16 md:py-20">
         <div className="container">
