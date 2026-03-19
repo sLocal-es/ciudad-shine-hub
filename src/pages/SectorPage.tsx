@@ -22,7 +22,7 @@ const SectorPage = () => {
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Inicio", item: "https://slocal.es/" },
       { "@type": "ListItem", position: 2, name: "Sectores", item: "https://slocal.es/" },
-      { "@type": "ListItem", position: 3, name: sector.pillBadge, item: `https://slocal.es/${sector.slug}` },
+      { "@type": "ListItem", position: 2, name: sector.metaTitle.split("|")[0].trim(), item: `https://slocal.es/${sector.slug}` },
     ],
   };
 
