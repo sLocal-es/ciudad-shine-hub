@@ -55,18 +55,28 @@ const Sistema = () => {
       </section>
 
       {/* Mi Historia */}
-      <section className="py-16 md:py-20 bg-background">
-        <div className="container max-w-3xl mx-auto">
-          <h2 className="font-heading text-3xl md:text-4xl leading-tight mb-6">
+      <section className="py-20 md:py-28 bg-dark-bg">
+        <div className="container max-w-[680px] mx-auto">
+          <h2 className="font-['DM_Serif_Display'] text-3xl md:text-[2.5rem] leading-tight text-dark-fg mb-14">
             Por qué monté esto<br />(y por qué <em className="text-primary not-italic">no soy</em> una agencia)
           </h2>
 
-          <div className="bg-dark-bg border-l-4 border-primary rounded-r-xl p-8 my-10">
-            <p className="text-dark-fg/80 mb-4">Soy Javi. Llevo la presencia en Google de negocios locales de forma personal, sin intermediarios, sin letra pequeña.</p>
-            <p className="text-dark-fg/80 mb-4">Trabajé en una agencia de marketing. Vi de cerca cómo funciona por dentro.</p>
-            <p className="text-dark-fg/80 mb-4">Para que una agencia te dedique tiempo real, necesitas pagar a partir de €800 o €1.000 al mes. Si pagas menos, eres el último de la lista. Nadie te llama, nadie toca nada, y a final de mes te mandan un informe con números que no sirven para nada.</p>
-            <p className="text-dark-fg/80 mb-4">El problema no es que las agencias sean malas. El problema es que su modelo de negocio no les permite cuidar a un fontanero, a un reformista o a una psicóloga que paga €300 al mes. <strong className="text-dark-fg">No les sale a cuenta.</strong></p>
-            <p className="text-dark-fg/80">Por eso monté slocal.es. Un sistema pensado exactamente para ese tipo de negocio — el que no necesita gastar €1.000 al mes pero sí merece que Google le mande clientes.</p>
+          <div className="space-y-10">
+            <p className="text-dark-fg/85 text-lg leading-relaxed">
+              Soy Javi. Llevo la presencia en Google de negocios locales de forma personal, sin intermediarios, sin letra pequeña.
+            </p>
+
+            <p className="text-dark-fg/85 text-lg leading-relaxed">
+              Trabajé en una agencia de marketing. Vi de cerca cómo funciona por dentro.
+            </p>
+
+            <p className="text-dark-fg/85 text-lg leading-relaxed">
+              Para que una agencia te dedique tiempo real, necesitas pagar a partir de €600 o €1.000 al mes. Si pagas menos, eres el último de la lista. Nadie te llama, nadie toca nada, y a final de mes te mandan un informe con números que no sirven para nada.
+            </p>
+
+            <p className="text-dark-fg/85 text-lg leading-relaxed border-l-[3px] border-primary pl-6">
+              Un sistema pensado para el negocio que no necesita gastar €1.000 al mes pero sí merece que Google le mande clientes.
+            </p>
           </div>
         </div>
       </section>
