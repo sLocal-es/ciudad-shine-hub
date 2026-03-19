@@ -12,11 +12,10 @@ import { sectorSearchContent } from "@/data/searchBehaviorContent";
 import { getCompetitionAnswer, getNeighborhoodAnswer } from "@/data/competitionData";
 
 const SectorCityPage = () => {
-  const { sector: sectorParam, ciudad } = useParams<{ sector: string; ciudad: string }>();
+  const { sector: sectorSlug, ciudad } = useParams<{ sector: string; ciudad: string }>();
 
-  // Build full slug from URL: /seo-para-{sectorParam}/{ciudad}
-  const fullSlug = `seo-para-${sectorParam}`;
-  const sector = sectors.find((s) => s.slug === fullSlug);
+  // The route is /:sector/:ciudad — sectorSlug is the full first segment (e.g. "seo-para-fontaneros")
+  const sector = sectors.find((s) => s.slug === sectorSlug);
   const city = cities.find((c) => c.slug === ciudad);
 
   if (!sector || !city) {
