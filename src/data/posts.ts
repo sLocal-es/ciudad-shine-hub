@@ -15,16 +15,18 @@ export interface BlogPost {
 
 export const posts: BlogPost[] = [
   {
-  slug: "como-aparecer-primero-en-google-maps",
-  title: "Cómo Aparecer Primero en Google Maps en 2026 — Guía Práctica",
-  metaDescription: "Guía práctica para aparecer primero en Google Maps en 2026. Optimiza tu ficha, consigue reseñas y domina el Pack de 3 local. Sin agencias, sin humo.",
-  category: "Google Maps",
-  date: "2026-03-20",
-  featuredImage: "/placeholder.svg",
-  altText: "Autónomo español comprobando su posición en Google Maps desde el móvil",
-  excerpt: "El 80% de los clics en búsquedas locales van a los 3 primeros resultados de Google Maps. Aprende exactamente cómo llegar a esos puestos con acciones concretas que puedes implementar esta semana.",
-  relatedSectorSlug: "seo-para-fontaneros",
-  content: `
+    slug: "como-aparecer-primero-en-google-maps",
+    title: "Cómo Aparecer Primero en Google Maps en 2026 — Guía Práctica",
+    metaDescription:
+      "Guía práctica para aparecer primero en Google Maps en 2026. Optimiza tu ficha, consigue reseñas y domina el Pack de 3 local. Sin agencias, sin humo.",
+    category: "Google Maps",
+    date: "2026-03-20",
+    featuredImage: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80",
+    altText: "Autónomo español comprobando su posición en Google Maps desde el móvil",
+    excerpt:
+      "El 80% de los clics en búsquedas locales van a los 3 primeros resultados de Google Maps. Aprende exactamente cómo llegar a esos puestos con acciones concretas que puedes implementar esta semana.",
+    relatedSectorSlug: "seo-para-fontaneros",
+    content: `
     <p>La mayoría de negocios locales en España pierden clientes cada día por una razón simple: no aparecen cuando alguien los busca en Google Maps. Un fontanero en Valencia, una fisioterapeuta en Bilbao o una empresa de reformas en Madrid compiten por los mismos tres puestos que Google muestra antes que cualquier resultado orgánico. Esta guía te explica exactamente cómo llegar a esos tres primeros puestos — el llamado Pack de 3 — con acciones concretas que puedes implementar esta semana.</p>
 
     <h2>Qué es el Pack de 3 y por qué importa tanto</h2>
@@ -98,27 +100,27 @@ export const posts: BlogPost[] = [
     <p>Llevar a cabo todas estas acciones de forma constante mientras gestionas tu negocio es difícil. <a href="/">slocal.es</a> es un sistema de visibilidad local — no una agencia — que gestiona tu ficha de Google Business Profile, publica contenido semanal y monitoriza tus posiciones cada mes.</p>
     <p>Trabajamos con <a href="/seo-para-fontaneros">fontaneros</a>, <a href="/seo-para-fisioterapeutas">fisioterapeutas</a>, <a href="/seo-para-reformas">empresas de reformas</a> y <a href="/seo-para-pintores">pintores</a> en toda España. Sin contratos de permanencia. Sin letra pequeña. <a href="/planes">Ver planes →</a></p>
   `,
-  faqs: [
-    {
-      q: "¿Es gratis aparecer en Google Maps?",
-      a: "Sí, crear y mantener tu ficha de Google Business Profile es completamente gratuito. Lo que marca la diferencia es la optimización — que requiere trabajo y conocimiento, pero no pagas a Google por aparecer."
-    },
-    {
-      q: "¿Cuántas reseñas necesito para posicionar bien?",
-      a: "No hay un número mágico. Lo importante es la frecuencia y la calidad. 5 reseñas nuevas al mes durante 6 meses es mejor que 100 reseñas de hace 3 años. La meta práctica para ciudades medianas es llegar a 20 reseñas con media superior a 4.3 estrellas."
-    },
-    {
-      q: "¿Puedo aparecer en Google Maps sin tener local físico?",
-      a: "Sí. Si ofreces servicios a domicilio puedes configurar tu ficha como negocio en área de servicio sin mostrar dirección física. Fontaneros, electricistas y reformistas trabajan exactamente así."
-    },
-    {
-      q: "¿Funciona igual en todas las ciudades?",
-      a: "El sistema es el mismo, pero la competencia varía. En ciudades más pequeñas es más fácil posicionarse rápido. En ciudades grandes como Madrid o Barcelona, la estrategia por barrio y zona es clave."
-    },
-    {
-      q: "¿Qué pasa si suspenden mi ficha?",
-      a: "Una suspensión significa que Google ha detectado algo que viola sus políticas — dirección no verificable, keywords en el nombre, múltiples perfiles. Puedes solicitar la revisión a través del formulario oficial de Google Business Profile. El proceso puede tardar 2-4 semanas."
-    }
-  ]
-}
+    faqs: [
+      {
+        q: "¿Es gratis aparecer en Google Maps?",
+        a: "Sí, crear y mantener tu ficha de Google Business Profile es completamente gratuito. Lo que marca la diferencia es la optimización — que requiere trabajo y conocimiento, pero no pagas a Google por aparecer.",
+      },
+      {
+        q: "¿Cuántas reseñas necesito para posicionar bien?",
+        a: "No hay un número mágico. Lo importante es la frecuencia y la calidad. 5 reseñas nuevas al mes durante 6 meses es mejor que 100 reseñas de hace 3 años. La meta práctica para ciudades medianas es llegar a 20 reseñas con media superior a 4.3 estrellas.",
+      },
+      {
+        q: "¿Puedo aparecer en Google Maps sin tener local físico?",
+        a: "Sí. Si ofreces servicios a domicilio puedes configurar tu ficha como negocio en área de servicio sin mostrar dirección física. Fontaneros, electricistas y reformistas trabajan exactamente así.",
+      },
+      {
+        q: "¿Funciona igual en todas las ciudades?",
+        a: "El sistema es el mismo, pero la competencia varía. En ciudades más pequeñas es más fácil posicionarse rápido. En ciudades grandes como Madrid o Barcelona, la estrategia por barrio y zona es clave.",
+      },
+      {
+        q: "¿Qué pasa si suspenden mi ficha?",
+        a: "Una suspensión significa que Google ha detectado algo que viola sus políticas — dirección no verificable, keywords en el nombre, múltiples perfiles. Puedes solicitar la revisión a través del formulario oficial de Google Business Profile. El proceso puede tardar 2-4 semanas.",
+      },
+    ],
+  },
 ];
