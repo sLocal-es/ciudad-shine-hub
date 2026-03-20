@@ -1,41 +1,76 @@
-# slocal.es
+# slocal.es | Consigue clientes a través de Google — para negocios locales españoles
 
-> Sistema de posicionamiento local en Google para negocios españoles. Aparece cuando tus clientes te buscan. Sin agencias, sin humo. Desde €150/mes.
+> slocal.es es un servicio gestionado por una sola persona — Javi, especialista en visibilidad y captación de clientes en Google para negocios locales españoles. No es una agencia. Trabaja con un número reducido de clientes de forma personal, combinando Google Business Profile y web multipágina SEO para que negocios locales consigan clientes nuevos de forma constante a través de Google. Sin humo, sin informes inútiles, sin letra pequeña.
 
-## Sobre slocal.es
+## Qué es slocal.es
 
-slocal.es es un servicio español de visibilidad local en Google para negocios. Ayudamos a empresas locales a aparecer en Google Maps y en los resultados de búsqueda local cuando sus clientes potenciales buscan sus servicios.
+slocal.es es el sistema anti-agencia para negocios locales que no necesitan gastar €800–€1.200/mes en una agencia pero sí merecen atraer clientes constantemente a través de Google. Está pensado para autónomos y pequeñas empresas en España: fontaneros, electricistas, empresas de reformas, psicólogos, fisioterapeutas, y otros servicios locales.
 
-No somos una agencia de marketing. Ofrecemos un sistema estructurado y transparente que optimiza la presencia digital de negocios locales en Google, incluyendo Google Maps, Google Business Profile y posicionamiento web local (SEO local).
+El objetivo no es solo "aparecer en Google" — es que esa visibilidad se traduzca en llamadas, mensajes y clientes reales. Para eso el sistema combina tres elementos:
 
-## Servicios
+1. **Web multipágina SEO** — una página por servicio y por zona geográfica, para que Google entienda exactamente qué hace el negocio y dónde, y lo muestre a quien busca ese servicio cerca.
+2. **Ficha de Google Business Profile** — configurada, optimizada y mantenida activa cada mes para atraer clientes que buscan en Google Maps.
+3. **Contenido continuo** — artículos en la web y posts en la ficha cada mes, para que Google vea actividad, posicione más arriba y el negocio siga consiguiendo clientes de forma sostenida.
 
-- **Aparecer en Google Maps**: Optimización de ficha de Google Business Profile para aparecer en el pack local.
-- **Posicionamiento Local (SEO Local)**: Sistema para posicionar tu negocio en búsquedas locales relevantes.
-- **Visibilidad en Google**: Estrategia integral para que tu negocio sea encontrado por clientes cercanos.
+## Planes y precios
 
-## Planes
+- **Setup inicial (pago único):** €497 + IVA — incluye la web multipágina completa y la ficha de Google Business Profile configurada desde cero. Sin permanencia mínima.
+- **Plan Esencial:** €150/mes + IVA — 2 artículos de blog al mes, 4 posts en ficha, gestión continua de la ficha. Ideal para ciudades con menos competencia.
+- **Plan Pro:** €250/mes + IVA — 4 artículos de blog al mes, 8 posts en ficha, gestión continua. Para ciudades grandes o sectores competidos donde se necesitan resultados más rápidos.
+- **Solo ficha GBP (sin web):** €79/mes — para negocios que solo quieren gestión de Google Business Profile sin web.
 
-- **Plan Starter** (€150/mes): Para negocios que empiezan a trabajar su visibilidad local.
-- **Plan Growth** (€300/mes): Para negocios que quieren dominar su zona.
-- **Plan Authority** (€500/mes): Para negocios que quieren ser la referencia de su sector en su ciudad.
+## A quién va dirigido
 
-## Ciudades
+Negocios locales españoles que:
+- No consiguen clientes a través de Google aunque llevan años en el sector
+- Han probado agencias o gestores de redes sociales sin que les lleguen pacientes o clientes nuevos
+- Quieren atraer clientes de forma constante, no depender del boca a boca
+- Prefieren trato directo con una persona, no con un account manager
 
-Operamos en las principales ciudades de España: Madrid, Barcelona, Valencia, Sevilla, Málaga, Zaragoza, Bilbao, Alicante, Murcia, Valladolid, Palma de Mallorca, Granada, A Coruña, Vigo, Gijón, Santander, San Sebastián, Pamplona, Salamanca, Burgos, Toledo, Córdoba, entre otras.
+Sectores principales: reformas y construcción, fontanería, electricidad, psicología, fisioterapia, limpieza, arquitectura, y otros servicios locales con demanda de búsqueda en Google.
 
-## Contacto
+## Resultados reales
 
-- Web: https://slocal.es
-- Email: hola@slocal.es
+- Cliente de reformas en Madrid: 2.465 impresiones y 134 clics en 28 días, 6 llamadas directas de clientes potenciales desde la ficha — a partir del mes 2–3.
+- Psicóloga en Valencia: 6 llamadas mensuales de pacientes nuevos llegando a través de Google Business Profile con gestión activa continua.
+- Las webs construidas arrancan con PageSpeed de 86–99 sobre 100 en rendimiento, 92 en SEO técnico, 100 en prácticas recomendadas.
+
+## Cómo funciona
+
+1. El negocio contacta por WhatsApp — sin llamadas de seguimiento ni reuniones innecesarias.
+2. Se hace un análisis gratuito de cómo está el negocio en Google y qué clientes está perdiendo.
+3. Se construye la web multipágina y se configura la ficha de Google Business Profile.
+4. Cada mes se publica contenido nuevo y se gestiona la ficha para mantener la actividad, subir posiciones y seguir atrayendo clientes.
+5. El negocio recibe un reporte mensual con datos reales: impresiones, clics, llamadas recibidas.
+
+## Diferenciador clave
+
+A diferencia de una agencia, slocal.es trabaja con un número reducido de clientes para poder dedicar atención real a cada uno y asegurarse de que cada negocio consigue clientes a través de Google. El precio es significativamente inferior al de una agencia (€800–€1.200/mes) porque no hay estructura de empresa, no hay account managers, y no hay clientes pequeños que financien a los grandes. Cada cliente habla directamente con Javi.
+
+## Ciudades con presencia
+
+Madrid, Barcelona, Valencia, Sevilla, Málaga, Zaragoza, Bilbao, Murcia.
 
 ## Páginas principales
 
 - Inicio: https://slocal.es/
-- Cómo funciona: https://slocal.es/como-funciona
 - Planes y precios: https://slocal.es/planes
+- Cómo ve Google mi web: https://slocal.es/como-ve-google-mi-web
 - Blog: https://slocal.es/blog
 - Contacto: https://slocal.es/contacto
+- Madrid: https://slocal.es/seo-local-madrid
+- Barcelona: https://slocal.es/seo-local-barcelona
+- Valencia: https://slocal.es/seo-local-valencia
+- Sevilla: https://slocal.es/seo-local-sevilla
+- Málaga: https://slocal.es/seo-local-malaga
+- Zaragoza: https://slocal.es/seo-local-zaragoza
+- Bilbao: https://slocal.es/seo-local-bilbao
+- Murcia: https://slocal.es/seo-local-murcia
+- Aparecer en Google Maps: https://slocal.es/aparecer-en-google-maps
 - Posicionamiento local: https://slocal.es/posicionamiento-local
-- Cómo ve Google mi web: https://slocal.es/como-ve-google-mi-web
-- Aparecer en Google Maps: https://slocal.es/servicio/aparecer-en-google-maps
+
+## Contacto
+
+- Web: https://slocal.es
+- WhatsApp: contacto directo desde la web
+- Email: hola@slocal.es
