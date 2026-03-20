@@ -178,26 +178,28 @@ export const posts: BlogPost[] = [
     <p>Trabajamos con <a href="/seo-para-fontaneros">fontaneros</a>, <a href="/seo-para-fisioterapeutas">fisioterapeutas</a>, <a href="/seo-para-reformas">empresas de reformas</a> y <a href="/seo-para-pintores">pintores</a> en toda España. Sin contratos de permanencia. Sin letra pequeña. <a href="/planes">Ver planes →</a></p>
   `,
   faqs: [
-    {
-      q: "¿Es gratis aparecer en Google Maps?",
-      a: "Sí, crear y mantener tu ficha de Google Business Profile es completamente gratuito. Lo que marca la diferencia es la optimización — que requiere trabajo y conocimiento, pero no pagas a Google por aparecer."
-    },
-    {
-      q: "¿Cuántas reseñas necesito para posicionar bien?",
-      a: "No hay un número mágico. Lo importante es la frecuencia y la calidad. 5 reseñas nuevas al mes durante 6 meses es mejor que 100 reseñas de hace 3 años. La meta práctica para ciudades medianas es llegar a 20 reseñas con media superior a 4.3 estrellas."
-    },
-    {
-      q: "¿Puedo aparecer en Google Maps sin tener local físico?",
-      a: "Sí. Si ofreces servicios a domicilio puedes configurar tu ficha como negocio en área de servicio sin mostrar dirección física. Fontaneros, electricistas y reformistas trabajan exactamente así."
-    },
-    {
-      q: "¿Funciona igual en todas las ciudades?",
-      a: "El sistema es el mismo, pero la competencia varía. En ciudades más pequeñas es más fácil posicionarse rápido. En ciudades grandes como Madrid o Barcelona, la estrategia por barrio y zona es clave."
-    },
-    {
-      q: "¿Qué pasa si suspenden mi ficha?",
-      a: "Una suspensión significa que Google detectó algo que viola sus políticas — dirección no verificable, keywords en el nombre, múltiples perfiles. Puedes solicitar revisión a través del formulario oficial de Google Business Profile. El proceso puede tardar 2-4 semanas."
-    }
-  ]
-}
-];
+  {
+    q: "¿Es gratis aparecer primero en Google Maps?",
+    a: "Crear y optimizar tu ficha de Google Business Profile es completamente gratuito. No pagas a Google por aparecer en Google Maps ni por estar en el Pack de 3. Lo que determina tu posición es la calidad de tu ficha, la frecuencia de tus actualizaciones y el volumen de reseñas recientes — no el dinero. Eso sí, mantener una presencia activa requiere tiempo y conocimiento SEO local. Muchos negocios optan por delegar esta gestión en un especialista para no distraerse de su trabajo real."
+  },
+  {
+    q: "¿Cuántas reseñas necesito para aparecer primero en Google Maps?",
+    a: "No existe un número mínimo oficial, pero la práctica demuestra que con 15-20 reseñas recientes y una media superior a 4.3 estrellas puedes competir en ciudades medianas españolas como Zaragoza, Bilbao o Murcia. En ciudades grandes como Madrid o Barcelona necesitarás más — entre 40 y 80 reseñas activas para entrar en el Pack de 3 en sectores competidos. Lo más importante no es la cantidad total sino la frecuencia: 5 reseñas nuevas al mes durante 6 meses es más poderoso que 100 reseñas acumuladas hace dos años. Google interpreta la actividad reciente como señal de negocio activo y relevante."
+  },
+  {
+    q: "¿Cuánto tiempo tarda en funcionar el posicionamiento en Google Maps?",
+    a: "Los primeros resultados visibles suelen aparecer entre la semana 4 y la semana 8 tras una optimización completa de la ficha. Para entrar en el Pack de 3 en ciudades medianas con competencia normal, el plazo habitual es de 2 a 4 meses con trabajo constante — fotos semanales, publicaciones regulares y reseñas nuevas cada mes. En ciudades grandes o sectores muy competidos como fontaneros en Madrid o reformas en Barcelona, el plazo puede extenderse a 4-6 meses. El SEO local es acumulativo: cada acción suma y no desaparece cuando paras, al contrario que la publicidad de pago."
+  },
+  {
+    q: "¿Puedo aparecer en Google Maps sin tener local físico?",
+    a: "Sí, completamente. Si ofreces servicios a domicilio — fontaneros, electricistas, reformas, entrenadores personales, psicólogos a domicilio — puedes configurar tu ficha como negocio en área de servicio sin mostrar dirección física. Defines las zonas donde operas por código postal o radio en kilómetros y Google te mostrará en las búsquedas locales de esas áreas. Esta configuración es especialmente importante para aparecer en búsquedas como 'fontanero urgencias cerca de mí' o 'reformas en mi barrio' sin necesidad de oficina física."
+  },
+  {
+    q: "¿Qué diferencia hay entre Google Maps y Google Business Profile?",
+    a: "Google Business Profile (antes llamado Google My Business) es el panel de gestión donde configuras y optimizas la información de tu negocio. Google Maps es el mapa donde esa información aparece públicamente cuando alguien te busca. Son la misma infraestructura — cuando optimizas tu perfil en Google Business Profile estás mejorando directamente cómo apareces en Google Maps y en el Pack de 3 de búsquedas locales. También influye en cómo apareces en el panel de conocimiento de Google cuando alguien busca directamente el nombre de tu negocio."
+  },
+  {
+    q: "¿Qué hago si Google suspende mi ficha de Google Maps?",
+    a: "Una suspensión significa que Google detectó una posible violación de sus políticas — dirección no verificable, keywords artificiales en el nombre del negocio, múltiples perfiles para el mismo negocio, o uso de oficina virtual como dirección. El primer paso es identificar la causa revisando las políticas de Google Business Profile. Después puedes solicitar una revisión a través del formulario oficial. El proceso puede tardar entre 2 y 4 semanas. Durante ese tiempo tu negocio desaparece de Google Maps completamente, lo que puede suponer una pérdida significativa de contactos si dependías de ese canal para conseguir clientes."
+  }
+],
