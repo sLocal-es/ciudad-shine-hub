@@ -203,3 +203,4 @@ export const posts: BlogPost[] = [
     a: "Una suspensión significa que Google detectó una posible violación de sus políticas — dirección no verificable, keywords artificiales en el nombre del negocio, múltiples perfiles para el mismo negocio, o uso de oficina virtual como dirección. El primer paso es identificar la causa revisando las políticas de Google Business Profile. Después puedes solicitar una revisión a través del formulario oficial. El proceso puede tardar entre 2 y 4 semanas. Durante ese tiempo tu negocio desaparece de Google Maps completamente, lo que puede suponer una pérdida significativa de contactos si dependías de ese canal para conseguir clientes."
   }
 ],
+}];
