@@ -1,0 +1,41 @@
+# slocal.es
+
+> Sistema de posicionamiento local en Google para negocios españoles. Aparece cuando tus clientes te buscan. Sin agencias, sin humo. Desde €150/mes.
+
+## Sobre slocal.es
+
+slocal.es es un servicio español de visibilidad local en Google para negocios. Ayudamos a empresas locales a aparecer en Google Maps y en los resultados de búsqueda local cuando sus clientes potenciales buscan sus servicios.
+
+No somos una agencia de marketing. Ofrecemos un sistema estructurado y transparente que optimiza la presencia digital de negocios locales en Google, incluyendo Google Maps, Google Business Profile y posicionamiento web local (SEO local).
+
+## Servicios
+
+- **Aparecer en Google Maps**: Optimización de ficha de Google Business Profile para aparecer en el pack local.
+- **Posicionamiento Local (SEO Local)**: Sistema para posicionar tu negocio en búsquedas locales relevantes.
+- **Visibilidad en Google**: Estrategia integral para que tu negocio sea encontrado por clientes cercanos.
+
+## Planes
+
+- **Plan Starter** (€150/mes): Para negocios que empiezan a trabajar su visibilidad local.
+- **Plan Growth** (€300/mes): Para negocios que quieren dominar su zona.
+- **Plan Authority** (€500/mes): Para negocios que quieren ser la referencia de su sector en su ciudad.
+
+## Ciudades
+
+Operamos en las principales ciudades de España: Madrid, Barcelona, Valencia, Sevilla, Málaga, Zaragoza, Bilbao, Alicante, Murcia, Valladolid, Palma de Mallorca, Granada, A Coruña, Vigo, Gijón, Santander, San Sebastián, Pamplona, Salamanca, Burgos, Toledo, Córdoba, entre otras.
+
+## Contacto
+
+- Web: https://slocal.es
+- Email: hola@slocal.es
+
+## Páginas principales
+
+- Inicio: https://slocal.es/
+- Cómo funciona: https://slocal.es/como-funciona
+- Planes y precios: https://slocal.es/planes
+- Blog: https://slocal.es/blog
+- Contacto: https://slocal.es/contacto
+- Posicionamiento local: https://slocal.es/posicionamiento-local
+- Cómo ve Google mi web: https://slocal.es/como-ve-google-mi-web
+- Aparecer en Google Maps: https://slocal.es/servicio/aparecer-en-google-maps
