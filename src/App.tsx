@@ -122,6 +122,14 @@ const App = () => (
             {/* Blog */}
             <Route path="/blog" element={<BlogIndex />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
+            {/* Legacy redirects */}
+            <Route path="/mas-clientes-para-fontaneros" element={<Navigate replace to="/seo-para-fontaneros" />} />
+            <Route path="/mas-clientes-para-reformas" element={<Navigate replace to="/seo-para-reformas" />} />
+            <Route path="/mas-clientes-para-pintores" element={<Navigate replace to="/seo-para-pintores" />} />
+            <Route path="/mas-pacientes-para-clinicas" element={<Navigate replace to="/seo-para-clinicas" />} />
+            <Route path="/mas-pacientes-para-fisioterapeutas" element={<Navigate replace to="/seo-para-fisioterapeutas" />} />
+            <Route path="/mas-clientes-entrenador-personal" element={<Navigate replace to="/seo-para-entrenadores" />} />
+            <Route path="/mas-alumnos-para-yoga" element={<Navigate replace to="/seo-para-yoga" />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
