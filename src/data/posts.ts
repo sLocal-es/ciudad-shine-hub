@@ -120,4 +120,5 @@ export const posts: BlogPost[] = [
       a: "Una suspensión significa que Google ha detectado algo que viola sus políticas — dirección no verificable, keywords en el nombre, múltiples perfiles. Puedes solicitar la revisión a través del formulario oficial de Google Business Profile. El proceso puede tardar 2-4 semanas."
     }
   ]
-},
+}
+];
