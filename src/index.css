@@ -62,3 +62,80 @@
     @apply font-heading;
   }
 }
+
+/* Blog content styles */
+@layer components {
+  .prose .toc {
+    @apply bg-secondary border border-border rounded-xl p-5 mb-8;
+  }
+  .prose .toc p {
+    @apply font-heading font-semibold text-foreground text-sm mb-2;
+  }
+  .prose .toc ol {
+    @apply list-decimal list-inside space-y-1;
+  }
+  .prose .toc ol li,
+  .prose .toc ol li a {
+    @apply text-sm text-primary hover:underline;
+  }
+
+  .prose .key-points {
+    @apply bg-secondary border-l-4 border-primary rounded-xl p-5 mb-8;
+  }
+  .prose .key-points p {
+    @apply font-heading font-semibold text-foreground text-sm mb-2;
+  }
+  .prose .key-points ul {
+    @apply list-disc list-inside space-y-1;
+  }
+  .prose .key-points ul li {
+    @apply text-sm text-muted-foreground;
+  }
+
+  .prose .stat-highlight {
+    @apply bg-[hsl(var(--dark-bg))] text-[hsl(var(--dark-fg))] rounded-xl p-6 my-8 text-center;
+  }
+  .prose .stat-highlight .stat-number {
+    @apply font-heading text-4xl font-bold text-primary block mb-1;
+  }
+  .prose .stat-highlight .stat-label {
+    @apply text-sm text-[hsl(var(--dark-fg)/0.7)];
+  }
+
+  .prose .infographic-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-4 my-8;
+  }
+  .prose .infographic-card {
+    @apply bg-card border border-border rounded-xl p-5 text-center;
+  }
+  .prose .infographic-card strong {
+    @apply font-heading text-lg text-primary block mb-1;
+  }
+  .prose .infographic-card span,
+  .prose .infographic-card p {
+    @apply text-sm text-muted-foreground;
+  }
+
+  .prose .pro-tip {
+    @apply bg-primary/10 border border-primary/20 rounded-xl p-5 my-8;
+  }
+  .prose .pro-tip::before {
+    content: "💡 ";
+  }
+  .prose .pro-tip p {
+    @apply text-sm text-foreground;
+  }
+  .prose .pro-tip strong {
+    @apply text-primary;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-primary bg-secondary rounded-r-xl px-5 py-4 my-8 not-italic;
+  }
+  .prose blockquote p {
+    @apply text-sm text-muted-foreground italic;
+  }
+  .prose blockquote em {
+    @apply text-foreground not-italic font-medium;
+  }
+}
