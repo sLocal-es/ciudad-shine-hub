@@ -1,3 +1,4 @@
+import { useState } from "react";
 import SEOHead from "@/components/SEOHead";
 import ResultadosSection from "@/components/ResultadosSection";
 import PromoBanner from "@/components/sistema/PromoBanner";
