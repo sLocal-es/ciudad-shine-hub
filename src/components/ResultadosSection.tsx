@@ -1,8 +1,10 @@
 import { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import gbpViviane from "@/assets/casos/gbp-viviane.png";
-import waViviane from "@/assets/casos/wa-viviane-social.png";
-import scObras from "@/assets/casos/sc-obras.png";
+import waViviane from "@/assets/casos/wa-viviane-social.webp";
+import waJuanCarlos from "@/assets/casos/wa-juancarlos.webp";
+import gbpLlamadasTei from "@/assets/casos/gbp-llamadas-tei.webp";
+import gscObrasMadrid from "@/assets/casos/gsc-obras-madrid.webp";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -43,17 +45,17 @@ const cases: CaseCard[] = [
     name: "Juan Carlos",
     badge: "Reformas · Madrid",
     badgeDetail: "MES 3 · ACTIVO",
-    headlineStat: "6 llamadas",
+    headlineStat: "8 llamadas",
     headlineLabel: "directas desde Google este mes",
     flipCards: [
-      { front: "6", frontLabel: "Llamadas", backImage: "", backPlaceholder: "GBP 6 llamadas Juan Carlos" },
-      { front: "2.465", frontLabel: "Impresiones", backImage: scObras, backPlaceholder: "Search Console Juan Carlos" },
-      { front: "134", frontLabel: "Clics", backImage: scObras, backPlaceholder: "Search Console Juan Carlos" },
+      { front: "8", frontLabel: "Llamadas", backImage: gbpLlamadasTei, backPlaceholder: "GBP 8 llamadas Juan Carlos" },
+      { front: "2.465", frontLabel: "Impresiones", backImage: gscObrasMadrid, backPlaceholder: "Search Console Juan Carlos" },
+      { front: "134", frontLabel: "Clics", backImage: gscObrasMadrid, backPlaceholder: "Search Console Juan Carlos" },
     ],
     whatsapp: {
-      quote: "Se va notando los post de la ficha, me han entrado 6 llamadas este mes.",
-      thumb: "",
-      full: "",
+      quote: "Confío en ti.",
+      thumb: waJuanCarlos,
+      full: waJuanCarlos,
       placeholder: "WhatsApp Juan Carlos",
     },
   },
