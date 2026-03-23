@@ -6,6 +6,9 @@ import waJuanCarlos from "@/assets/casos/wa-juancarlos.webp";
 import gbpLlamadasTei from "@/assets/casos/gbp-llamadas-tei.webp";
 import gscObrasMadrid from "@/assets/casos/gsc-obras-madrid.webp";
 import gscViviane from "@/assets/casos/gsc-viviane.webp";
+import gbpLlamadasMva from "@/assets/casos/gbp-llamadas-mva.webp";
+import gbpInteraccionesMva from "@/assets/casos/gbp-interacciones-mva.webp";
+import gbpChatsMva from "@/assets/casos/gbp-chats-mva.jpg";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
