@@ -12,6 +12,49 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+
+function PageSpeedLightbox({ src, onClose }: { src: string; onClose: () => void }) {
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-sm cursor-pointer"
+      onClick={onClose}
+      onKeyDown={(e) => e.key === "Escape" && onClose()}
+      tabIndex={0}
+      role="dialog"
+    >
+      <img
+        src={src}
+        alt="PageSpeed screenshot"
+        className="max-w-[90vw] max-h-[85vh] rounded-xl shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      />
+    </div>
+  );
+}
+
+function PageSpeedCard({ site }: { site: { name: string; img: string; alt: string; caption: string } }) {
+  const [lightbox, setLightbox] = useState(false);
+  return (
+    <>
+      {lightbox && <PageSpeedLightbox src={site.img} onClose={() => setLightbox(false)} />}
+      <div
+        className="bg-dark-bg/50 border border-dark-fg/10 rounded-xl p-6 cursor-pointer transition-all hover:border-primary/30"
+        onClick={() => setLightbox(true)}
+      >
+        <div className="text-xs text-primary uppercase tracking-wider font-medium mb-4">{site.name}</div>
+        <img
+          src={site.img}
+          alt={site.alt}
+          className="w-full rounded-lg border border-dark-fg/10"
+          loading="lazy"
+        />
+        <p className="text-xs text-dark-fg/50 italic mt-4">{site.caption}</p>
+        <span className="inline-block mt-2 text-[10px] text-primary">Clic para ampliar 🔍</span>
+      </div>
+    </>
+  );
+}
+
 const Sistema = () => {
   return (
     <>
