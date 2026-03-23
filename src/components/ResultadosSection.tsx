@@ -317,7 +317,7 @@ function CaseStudyCard({
             {/* Flip cards */}
             <div className="grid grid-cols-3 gap-3">
               {card.flipCards.map((fc, i) => (
-                <FlipCardComponent key={i} card={fc} isContrast={isContrast} />
+                <FlipCardComponent key={i} card={fc} isContrast={isContrast} onImageClick={(src) => setLightboxSrc(src)} />
               ))}
             </div>
 
