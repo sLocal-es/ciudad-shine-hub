@@ -5,6 +5,7 @@ import waViviane from "@/assets/casos/wa-viviane-social.webp";
 import waJuanCarlos from "@/assets/casos/wa-juancarlos.webp";
 import gbpLlamadasTei from "@/assets/casos/gbp-llamadas-tei.webp";
 import gscObrasMadrid from "@/assets/casos/gsc-obras-madrid.webp";
+import gscViviane from "@/assets/casos/gsc-viviane.webp";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
