@@ -2,11 +2,23 @@ import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import CTASection from "@/components/CTASection";
+import pagespeedViviane from "@/assets/casos/pagespeed-viviane.webp";
+import pagespeedTei from "@/assets/casos/pagespeed-tei.webp";
 
-const SLOCAL_SCORES = {
-  desktop: { performance: 99, accessibility: 94, bestPractices: 100, seo: 100 },
-  mobile: { performance: 91, accessibility: 94, bestPractices: 100, seo: 100 },
-};
+const CLIENT_SCORES = [
+  {
+    name: "psivivianecustodio.com",
+    label: "Psicóloga · Valencia",
+    screenshot: pagespeedViviane,
+    scores: { performance: 90, accessibility: 91, bestPractices: 100, seo: 100 },
+  },
+  {
+    name: "obrasenmadrid.com",
+    label: "Reformas · Madrid",
+    screenshot: pagespeedTei,
+    scores: { performance: 90, accessibility: 95, bestPractices: 100, seo: 92 },
+  },
+];
 
 const CATEGORIES = [
   { key: "performance" as const, label: "Rendimiento" },
@@ -71,31 +83,28 @@ const ComoVeGoogleMiWeb = () => {
         </div>
       </section>
 
-      {/* SLOCAL SCORES */}
+      {/* CLIENT SCORES */}
       <section className="py-16 bg-background">
         <div className="container max-w-4xl">
-          <h2 className="font-heading text-2xl md:text-3xl text-center mb-10">
-            Así puntúa slocal.es
+          <h2 className="font-heading text-2xl md:text-3xl text-center mb-4">
+            Las webs que construyo están optimizadas
           </h2>
+          <p className="text-center text-muted-foreground mb-10 text-sm">
+            Resultados reales de Google PageSpeed Insights en móvil.
+          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-card rounded-xl p-6 shadow-sm border-2 border-primary">
-              <h3 className="font-heading text-lg mb-6 text-center">🖥️ Escritorio</h3>
-              <div className="grid grid-cols-2 gap-6 justify-items-center">
-                {CATEGORIES.map((c) => (
-                  <ScoreCircle key={c.key} score={SLOCAL_SCORES.desktop[c.key]} label={c.label} />
-                ))}
+            {CLIENT_SCORES.map((client) => (
+              <div key={client.name} className="bg-card rounded-xl p-6 shadow-sm border-2 border-primary">
+                <h3 className="font-heading text-lg mb-1 text-center">{client.name}</h3>
+                <p className="text-xs text-muted-foreground text-center mb-6">{client.label}</p>
+                <div className="grid grid-cols-2 gap-6 justify-items-center">
+                  {CATEGORIES.map((c) => (
+                    <ScoreCircle key={c.key} score={client.scores[c.key]} label={c.label} />
+                  ))}
+                </div>
               </div>
-            </div>
-
-            <div className="bg-card rounded-xl p-6 shadow-sm border-2 border-primary">
-              <h3 className="font-heading text-lg mb-6 text-center">📱 Móvil</h3>
-              <div className="grid grid-cols-2 gap-6 justify-items-center">
-                {CATEGORIES.map((c) => (
-                  <ScoreCircle key={c.key} score={SLOCAL_SCORES.mobile[c.key]} label={c.label} />
-                ))}
-              </div>
-            </div>
+            ))}
           </div>
 
           <div className="text-center mt-10">
