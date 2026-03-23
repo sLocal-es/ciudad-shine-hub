@@ -1,3 +1,4 @@
+import { useState } from "react";
 import SEOHead from "@/components/SEOHead";
 import ResultadosSection from "@/components/ResultadosSection";
 import PromoBanner from "@/components/sistema/PromoBanner";
@@ -10,6 +11,49 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+
+
+function PageSpeedLightbox({ src, onClose }: { src: string; onClose: () => void }) {
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-sm cursor-pointer"
+      onClick={onClose}
+      onKeyDown={(e) => e.key === "Escape" && onClose()}
+      tabIndex={0}
+      role="dialog"
+    >
+      <img
+        src={src}
+        alt="PageSpeed screenshot"
+        className="max-w-[90vw] max-h-[85vh] rounded-xl shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      />
+    </div>
+  );
+}
+
+function PageSpeedCard({ site }: { site: { name: string; img: string; alt: string; caption: string } }) {
+  const [lightbox, setLightbox] = useState(false);
+  return (
+    <>
+      {lightbox && <PageSpeedLightbox src={site.img} onClose={() => setLightbox(false)} />}
+      <div
+        className="bg-dark-bg/50 border border-dark-fg/10 rounded-xl p-6 cursor-pointer transition-all hover:border-primary/30"
+        onClick={() => setLightbox(true)}
+      >
+        <div className="text-xs text-primary uppercase tracking-wider font-medium mb-4">{site.name}</div>
+        <img
+          src={site.img}
+          alt={site.alt}
+          className="w-full rounded-lg border border-dark-fg/10"
+          loading="lazy"
+        />
+        <p className="text-xs text-dark-fg/50 italic mt-4">{site.caption}</p>
+        <span className="inline-block mt-2 text-[10px] text-primary">Clic para ampliar 🔍</span>
+      </div>
+    </>
+  );
+}
 
 const Sistema = () => {
   return (
@@ -141,26 +185,12 @@ const Sistema = () => {
           <p className="text-dark-fg/70 mb-10">Esto no son palabras. Cualquiera puede comprobarlo en Google PageSpeed Insights ahora mismo.</p>
 
           <div className="grid md:grid-cols-2 gap-4 mb-6">
-            <div className="bg-dark-bg/50 border border-dark-fg/10 rounded-xl p-6">
-              <div className="text-xs text-primary uppercase tracking-wider font-medium mb-4">psivivianecustodio.com</div>
-              <img
-                src={pagespeedViviane}
-                alt="PageSpeed psivivianecustodio.com — 90 Rendimiento, 91 Accesibilidad, 100 Prácticas recomendadas, 100 SEO"
-                className="w-full rounded-lg border border-dark-fg/10"
-                loading="lazy"
-              />
-              <p className="text-xs text-dark-fg/50 italic mt-4">Psicóloga en Valencia. Web optimizada y lista para posicionar.</p>
-            </div>
-            <div className="bg-dark-bg/50 border border-dark-fg/10 rounded-xl p-6">
-              <div className="text-xs text-primary uppercase tracking-wider font-medium mb-4">obrasenmadrid.com</div>
-              <img
-                src={pagespeedTei}
-                alt="PageSpeed obrasenmadrid.com — 90 Rendimiento, 95 Accesibilidad, 100 Prácticas recomendadas, 92 SEO"
-                className="w-full rounded-lg border border-dark-fg/10"
-                loading="lazy"
-              />
-              <p className="text-xs text-dark-fg/50 italic mt-4">Cliente activo. Web montada recientemente.</p>
-            </div>
+            {[
+              { name: "psivivianecustodio.com", img: pagespeedViviane, alt: "PageSpeed psivivianecustodio.com", caption: "Psicóloga en Valencia. Web optimizada y lista para posicionar." },
+              { name: "obrasenmadrid.com", img: pagespeedTei, alt: "PageSpeed obrasenmadrid.com", caption: "Cliente activo. Web montada recientemente." },
+            ].map((site) => (
+              <PageSpeedCard key={site.name} site={site} />
+            ))}
           </div>
           <p className="text-xs text-dark-fg/40">Una web lenta o mal construida penaliza tu posición en Google. Las mías arrancan desde el primer día con una base técnica sólida.</p>
         </div>
