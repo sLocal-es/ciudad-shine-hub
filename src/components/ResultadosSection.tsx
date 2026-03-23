@@ -132,13 +132,7 @@ function FlipCardComponent({ card, isContrast, onImageClick }: { card: FlipCard;
     <div
       className="cursor-pointer select-none"
       style={{ perspective: "600px" }}
-      onClick={() => {
-        if (flipped && hasBack && onImageClick) {
-          onImageClick(card.backImage);
-        } else if (hasBack) {
-          setFlipped(!flipped);
-        }
-      }}
+      onClick={() => hasBack && setFlipped(!flipped)}
     >
       <div
         className="relative w-full transition-transform duration-500"
@@ -186,11 +180,22 @@ function FlipCardComponent({ card, isContrast, onImageClick }: { card: FlipCard;
           }}
         >
           {hasBack ? (
-            <img
-              src={card.backImage}
-              alt={card.frontLabel}
-              className="w-full h-full object-cover object-top rounded-xl"
-            />
+            <div className="relative w-full h-full">
+              <img
+                src={card.backImage}
+                alt={card.frontLabel}
+                className="w-full h-full object-cover object-top rounded-xl"
+              />
+              {onImageClick && (
+                <button
+                  className="absolute bottom-1 right-1 text-[9px] rounded-md px-2 py-0.5 font-medium"
+                  style={{ background: "rgba(0,0,0,0.6)", color: "#fff" }}
+                  onClick={(e) => { e.stopPropagation(); onImageClick(card.backImage); }}
+                >
+                  Ampliar 🔍
+                </button>
+              )}
+            </div>
           ) : (
             <div
               className="w-full h-full flex items-center justify-center rounded-xl text-[11px]"
