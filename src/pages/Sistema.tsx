@@ -2,6 +2,8 @@ import SEOHead from "@/components/SEOHead";
 import ResultadosSection from "@/components/ResultadosSection";
 import PromoBanner from "@/components/sistema/PromoBanner";
 import PromoPopup from "@/components/sistema/PromoPopup";
+import pagespeedViviane from "@/assets/casos/pagespeed-viviane.webp";
+import pagespeedTei from "@/assets/casos/pagespeed-tei.webp";
 import {
   Accordion,
   AccordionContent,
@@ -140,17 +142,27 @@ const Sistema = () => {
 
           <div className="grid md:grid-cols-2 gap-4 mb-6">
             <div className="bg-dark-bg/50 border border-dark-fg/10 rounded-xl p-6">
-              <div className="text-xs text-primary uppercase tracking-wider font-medium mb-4">slocal.es</div>
-              <img src="" alt="PageSpeed slocal.es — 100 Rendimiento, 94 Accesibilidad, 100 SEO" className="w-full rounded-lg border border-dark-fg/10" style={{ minHeight: "120px", background: "rgba(255,255,255,0.02)" }} />
-              <p className="text-xs text-dark-fg/50 italic mt-4">Esta misma web. Compruébalo tú.</p>
+              <div className="text-xs text-primary uppercase tracking-wider font-medium mb-4">psivivianecustodio.com</div>
+              <img
+                src={pagespeedViviane}
+                alt="PageSpeed psivivianecustodio.com — 90 Rendimiento, 91 Accesibilidad, 100 Prácticas recomendadas, 100 SEO"
+                className="w-full rounded-lg border border-dark-fg/10"
+                loading="lazy"
+              />
+              <p className="text-xs text-dark-fg/50 italic mt-4">Psicóloga en Valencia. Web optimizada y lista para posicionar.</p>
             </div>
             <div className="bg-dark-bg/50 border border-dark-fg/10 rounded-xl p-6">
               <div className="text-xs text-primary uppercase tracking-wider font-medium mb-4">obrasenmadrid.com</div>
-              <img src="" alt="PageSpeed obrasenmadrid.com — 98 Rendimiento, 95 Accesibilidad, 100 SEO" className="w-full rounded-lg border border-dark-fg/10" style={{ minHeight: "120px", background: "rgba(255,255,255,0.02)" }} />
+              <img
+                src={pagespeedTei}
+                alt="PageSpeed obrasenmadrid.com — 90 Rendimiento, 95 Accesibilidad, 100 Prácticas recomendadas, 92 SEO"
+                className="w-full rounded-lg border border-dark-fg/10"
+                loading="lazy"
+              />
               <p className="text-xs text-dark-fg/50 italic mt-4">Cliente activo. Web montada recientemente.</p>
             </div>
           </div>
-          <p className="text-xs text-dark-fg/40">Una web lenta o mal construida penaliza tu posición en Google. Las mías arrancan desde el primer día con todo en verde.</p>
+          <p className="text-xs text-dark-fg/40">Una web lenta o mal construida penaliza tu posición en Google. Las mías arrancan desde el primer día con una base técnica sólida.</p>
         </div>
       </section>
 
