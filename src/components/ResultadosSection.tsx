@@ -86,16 +86,15 @@ const cases: CaseCard[] = [
     id: "fontanero",
     name: "MVA Fontanería",
     badge: "Fontanería · Madrid",
-    badgeDetail: "SOLO FICHA",
-    headlineStat: "3 interacciones",
-    headlineLabel: "en 2 meses · sin clics · sin llamadas",
+    badgeDetail: "MES 2 · ACTIVO",
+    headlineStat: "8 interacciones",
+    headlineLabel: "en solo 2 meses · sin web",
     flipCards: [
-      { front: "3", frontLabel: "Interacciones", backImage: "", backPlaceholder: "GBP sin gestión" },
-      { front: "0", frontLabel: "Clics", backImage: "", backPlaceholder: "Sin datos" },
-      { front: "0", frontLabel: "Llamadas", backImage: "", backPlaceholder: "Sin datos" },
+      { front: "4", frontLabel: "Llamadas", backImage: gbpLlamadasMva, backPlaceholder: "GBP Llamadas MVA" },
+      { front: "8", frontLabel: "Interacciones", backImage: gbpInteraccionesMva, backPlaceholder: "GBP Interacciones MVA" },
+      { front: "4", frontLabel: "Chats", backImage: gbpChatsMva, backPlaceholder: "GBP Chats MVA" },
     ],
     isContrast: false,
-    contrastText: "Sin gestión activa, Google no posiciona el negocio. Los resultados hablan solos.",
   },
 ];
 
