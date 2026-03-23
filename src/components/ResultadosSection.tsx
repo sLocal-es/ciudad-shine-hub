@@ -5,6 +5,7 @@ import waViviane from "@/assets/casos/wa-viviane-social.webp";
 import waJuanCarlos from "@/assets/casos/wa-juancarlos.webp";
 import gbpLlamadasTei from "@/assets/casos/gbp-llamadas-tei.webp";
 import gscObrasMadrid from "@/assets/casos/gsc-obras-madrid.webp";
+import gscViviane from "@/assets/casos/gsc-viviane.webp";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
@@ -68,8 +69,8 @@ const cases: CaseCard[] = [
     headlineLabel: "directas desde Google este mes",
     flipCards: [
       { front: "6", frontLabel: "Llamadas", backImage: gbpViviane, backPlaceholder: "GBP Viviane" },
-      { front: "↑", frontLabel: "Impresiones", backImage: "", backPlaceholder: "Search Console Viviane" },
-      { front: "↑", frontLabel: "Clics", backImage: "", backPlaceholder: "Search Console Viviane" },
+      { front: "500", frontLabel: "Impresiones", backImage: gscViviane, backPlaceholder: "Search Console Viviane" },
+      { front: "26", frontLabel: "Clics", backImage: gscViviane, backPlaceholder: "Search Console Viviane" },
     ],
     whatsapp: {
       quote: "Se va notando los post de la ficha, me han entrado 6 llamadas este mes.",
@@ -122,7 +123,7 @@ function Lightbox({ src, onClose }: { src: string; onClose: () => void }) {
 /*  FlipCardComponent                                                  */
 /* ------------------------------------------------------------------ */
 
-function FlipCardComponent({ card, isContrast }: { card: FlipCard; isContrast?: boolean }) {
+function FlipCardComponent({ card, isContrast, onImageClick }: { card: FlipCard; isContrast?: boolean; onImageClick?: (src: string) => void }) {
   const [flipped, setFlipped] = useState(false);
 
   const hasBack = card.backImage !== "";
@@ -131,7 +132,13 @@ function FlipCardComponent({ card, isContrast }: { card: FlipCard; isContrast?: 
     <div
       className="cursor-pointer select-none"
       style={{ perspective: "600px" }}
-      onClick={() => hasBack && setFlipped(!flipped)}
+      onClick={() => {
+        if (flipped && hasBack && onImageClick) {
+          onImageClick(card.backImage);
+        } else if (hasBack) {
+          setFlipped(!flipped);
+        }
+      }}
     >
       <div
         className="relative w-full transition-transform duration-500"
@@ -310,7 +317,7 @@ function CaseStudyCard({
             {/* Flip cards */}
             <div className="grid grid-cols-3 gap-3">
               {card.flipCards.map((fc, i) => (
-                <FlipCardComponent key={i} card={fc} isContrast={isContrast} />
+                <FlipCardComponent key={i} card={fc} isContrast={isContrast} onImageClick={(src) => setLightboxSrc(src)} />
               ))}
             </div>
 
