@@ -142,26 +142,12 @@ const Sistema = () => {
           <p className="text-dark-fg/70 mb-10">Esto no son palabras. Cualquiera puede comprobarlo en Google PageSpeed Insights ahora mismo.</p>
 
           <div className="grid md:grid-cols-2 gap-4 mb-6">
-            <div className="bg-dark-bg/50 border border-dark-fg/10 rounded-xl p-6">
-              <div className="text-xs text-primary uppercase tracking-wider font-medium mb-4">psivivianecustodio.com</div>
-              <img
-                src={pagespeedViviane}
-                alt="PageSpeed psivivianecustodio.com — 90 Rendimiento, 91 Accesibilidad, 100 Prácticas recomendadas, 100 SEO"
-                className="w-full rounded-lg border border-dark-fg/10"
-                loading="lazy"
-              />
-              <p className="text-xs text-dark-fg/50 italic mt-4">Psicóloga en Valencia. Web optimizada y lista para posicionar.</p>
-            </div>
-            <div className="bg-dark-bg/50 border border-dark-fg/10 rounded-xl p-6">
-              <div className="text-xs text-primary uppercase tracking-wider font-medium mb-4">obrasenmadrid.com</div>
-              <img
-                src={pagespeedTei}
-                alt="PageSpeed obrasenmadrid.com — 90 Rendimiento, 95 Accesibilidad, 100 Prácticas recomendadas, 92 SEO"
-                className="w-full rounded-lg border border-dark-fg/10"
-                loading="lazy"
-              />
-              <p className="text-xs text-dark-fg/50 italic mt-4">Cliente activo. Web montada recientemente.</p>
-            </div>
+            {[
+              { name: "psivivianecustodio.com", img: pagespeedViviane, alt: "PageSpeed psivivianecustodio.com", caption: "Psicóloga en Valencia. Web optimizada y lista para posicionar." },
+              { name: "obrasenmadrid.com", img: pagespeedTei, alt: "PageSpeed obrasenmadrid.com", caption: "Cliente activo. Web montada recientemente." },
+            ].map((site) => (
+              <PageSpeedCard key={site.name} site={site} />
+            ))}
           </div>
           <p className="text-xs text-dark-fg/40">Una web lenta o mal construida penaliza tu posición en Google. Las mías arrancan desde el primer día con una base técnica sólida.</p>
         </div>
