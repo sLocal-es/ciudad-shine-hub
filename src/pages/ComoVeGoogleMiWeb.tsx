@@ -98,6 +98,12 @@ const ComoVeGoogleMiWeb = () => {
               <div key={client.name} className="bg-card rounded-xl p-6 shadow-sm border-2 border-primary">
                 <h3 className="font-heading text-lg mb-1 text-center">{client.name}</h3>
                 <p className="text-xs text-muted-foreground text-center mb-6">{client.label}</p>
+                <img
+                  src={client.screenshot}
+                  alt={`PageSpeed Insights de ${client.name}`}
+                  className="w-full rounded-lg mb-6 border"
+                  loading="lazy"
+                />
                 <div className="grid grid-cols-2 gap-6 justify-items-center">
                   {CATEGORIES.map((c) => (
                     <ScoreCircle key={c.key} score={client.scores[c.key]} label={c.label} />
