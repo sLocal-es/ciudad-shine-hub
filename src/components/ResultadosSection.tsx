@@ -132,13 +132,7 @@ function FlipCardComponent({ card, isContrast, onImageClick }: { card: FlipCard;
     <div
       className="cursor-pointer select-none"
       style={{ perspective: "600px" }}
-      onClick={() => {
-        if (flipped && hasBack && onImageClick) {
-          onImageClick(card.backImage);
-        } else if (hasBack) {
-          setFlipped(!flipped);
-        }
-      }}
+      onClick={() => hasBack && setFlipped(!flipped)}
     >
       <div
         className="relative w-full transition-transform duration-500"
