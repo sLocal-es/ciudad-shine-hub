@@ -123,7 +123,7 @@ function Lightbox({ src, onClose }: { src: string; onClose: () => void }) {
 /*  FlipCardComponent                                                  */
 /* ------------------------------------------------------------------ */
 
-function FlipCardComponent({ card, isContrast }: { card: FlipCard; isContrast?: boolean }) {
+function FlipCardComponent({ card, isContrast, onImageClick }: { card: FlipCard; isContrast?: boolean; onImageClick?: (src: string) => void }) {
   const [flipped, setFlipped] = useState(false);
 
   const hasBack = card.backImage !== "";
