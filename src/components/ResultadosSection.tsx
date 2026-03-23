@@ -69,8 +69,8 @@ const cases: CaseCard[] = [
     headlineLabel: "directas desde Google este mes",
     flipCards: [
       { front: "6", frontLabel: "Llamadas", backImage: gbpViviane, backPlaceholder: "GBP Viviane" },
-      { front: "↑", frontLabel: "Impresiones", backImage: "", backPlaceholder: "Search Console Viviane" },
-      { front: "↑", frontLabel: "Clics", backImage: "", backPlaceholder: "Search Console Viviane" },
+      { front: "500", frontLabel: "Impresiones", backImage: gscViviane, backPlaceholder: "Search Console Viviane" },
+      { front: "26", frontLabel: "Clics", backImage: gscViviane, backPlaceholder: "Search Console Viviane" },
     ],
     whatsapp: {
       quote: "Se va notando los post de la ficha, me han entrado 6 llamadas este mes.",
