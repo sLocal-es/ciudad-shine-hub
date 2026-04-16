@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { X, Phone, Eye, Smartphone, Search, MapPin, CheckCircle2, Quote, ArrowRight, Shield } from "lucide-react";
+import { X, Phone, Eye, Smartphone, Search, MapPin, CheckCircle2, Quote, ArrowRight, Shield, MessageCircle, Clock } from "lucide-react";
 
 import logoTei from "@/assets/casos/logo-tei.png";
 import logoViviane from "@/assets/casos/logo-viviane.png";
@@ -119,21 +119,21 @@ const cases: CaseStudy[] = [
     name: "Fontaneros Económicos",
     category: "Fontanería",
     city: "Madrid",
-    status: "RECUPERADO",
-    headlineStat: "Ficha activa",
-    headlineLabel: "recuperada tras meses de suspensión",
+    status: "MES 1.5 · ACTIVO",
+    headlineStat: "11 llamadas",
+    headlineLabel: "y 4 contactos por WhatsApp en mes y medio",
     problem: "Ficha de Google suspendida durante meses, bloqueando toda visibilidad online del negocio.",
     actions: [
       "Recuperación y verificación de la ficha suspendida",
       "Corrección de información y cumplimiento de directrices",
-      "Reactivación del perfil para posicionamiento",
+      "Web optimizada + contenido continuo para posicionar",
     ],
     metrics: [
-      { icon: <Shield className="w-4 h-4" />, value: "Activo", label: "Estado actual" },
-      { icon: <CheckCircle2 className="w-4 h-4" />, value: "100%", label: "Verificado" },
-      { icon: <MapPin className="w-4 h-4" />, value: "Listo", label: "Listo para posicionar" },
+      { icon: <Phone className="w-4 h-4" />, value: "11", label: "Llamadas" },
+      { icon: <MessageCircle className="w-4 h-4" />, value: "4", label: "WhatsApp" },
+      { icon: <Clock className="w-4 h-4" />, value: "1.5", label: "Meses" },
     ],
-    testimonial: "Después de meses bloqueados, por fin volvemos a estar visibles.",
+    testimonial: "Después de meses bloqueados, por fin volvemos a estar visibles y recibiendo llamadas.",
   },
 ];
 
