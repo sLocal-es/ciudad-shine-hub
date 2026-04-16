@@ -2,7 +2,7 @@ import { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { X, Phone, Eye, Smartphone, Search, MapPin, CheckCircle2, Quote, ArrowRight, Shield } from "lucide-react";
 
-import logoTei from "@/assets/casos/logo-tei.webp";
+import logoTei from "@/assets/casos/logo-tei.png";
 import logoViviane from "@/assets/casos/logo-viviane.png";
 import logoMva from "@/assets/casos/logo-mva.png";
 import logoFontaneros from "@/assets/casos/logo-fontaneros.png";
