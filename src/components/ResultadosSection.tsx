@@ -41,7 +41,7 @@ const cases: CaseStudy[] = [
   {
     id: "tei",
     logo: logoTei,
-    logoScale: "h-16 md:h-20",
+    logoScale: "90px",
     name: "Grupo TEI",
     category: "Reformas",
     city: "Madrid",
@@ -66,7 +66,7 @@ const cases: CaseStudy[] = [
   {
     id: "viviane",
     logo: logoViviane,
-    logoScale: "h-20 md:h-24",
+    logoScale: "110px",
     name: "Viviane Custodio",
     category: "Psicóloga",
     city: "Valencia",
@@ -90,7 +90,7 @@ const cases: CaseStudy[] = [
   {
     id: "mva",
     logo: logoMva,
-    logoScale: "h-14 md:h-18",
+    logoScale: "80px",
     name: "MVA Fontanería",
     category: "Fontanería",
     city: "Madrid",
@@ -115,7 +115,7 @@ const cases: CaseStudy[] = [
   {
     id: "fontaneros",
     logo: logoFontaneros,
-    logoScale: "h-12 md:h-14",
+    logoScale: "60px",
     name: "Fontaneros Económicos",
     category: "Fontanería",
     city: "Madrid",
