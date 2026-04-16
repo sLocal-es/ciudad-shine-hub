@@ -37,15 +37,15 @@ export default function PromoPopup() {
         </button>
 
         <div className="text-xs font-medium uppercase tracking-widest text-primary mb-4">
-          Oferta hasta el viernes 28 de marzo
+          Oferta hasta el lunes 28 de abril
         </div>
 
         <h3 className="font-heading text-2xl md:text-3xl font-bold text-dark-fg mb-3">
-          El setup baja esta semana
+          El setup baja este mes
         </h3>
 
         <p className="text-dark-fg/50 text-sm leading-relaxed mb-6">
-          La configuración inicial — web SEO + ficha de Google desde cero — está a €297 + IVA esta semana. El viernes 28 vuelve a €497.
+          La configuración inicial — web SEO + ficha de Google desde cero — está a €297 + IVA hasta el 28 de abril. Después vuelve a €497.
         </p>
 
         <div className="flex items-baseline gap-3 mb-6">

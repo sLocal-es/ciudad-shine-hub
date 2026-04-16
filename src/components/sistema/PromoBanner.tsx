@@ -21,7 +21,7 @@ export default function PromoBanner() {
     <div className="sticky top-0 z-50 bg-primary text-primary-foreground py-2.5 px-4">
       <div className="flex items-center justify-center gap-4 text-sm">
         <span className="text-center">
-          ⚡ Setup completo a €297 + IVA — solo hasta el viernes 28 de marzo
+          ⚡ Setup completo a €297 + IVA — solo hasta el lunes 28 de abril
         </span>
         <a
           href="https://wa.me/34684780063"
