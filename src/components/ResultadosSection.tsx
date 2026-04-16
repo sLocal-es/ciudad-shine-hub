@@ -66,6 +66,7 @@ const cases: CaseStudy[] = [
   {
     id: "viviane",
     logo: logoViviane,
+    logoScale: "h-20 md:h-24",
     name: "Viviane Custodio",
     category: "Psicóloga",
     city: "Valencia",
@@ -89,6 +90,7 @@ const cases: CaseStudy[] = [
   {
     id: "mva",
     logo: logoMva,
+    logoScale: "h-14 md:h-18",
     name: "MVA Fontanería",
     category: "Fontanería",
     city: "Madrid",
