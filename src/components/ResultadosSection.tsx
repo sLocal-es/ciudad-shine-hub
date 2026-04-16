@@ -20,7 +20,7 @@ interface MetricCard {
 interface CaseStudy {
   id: string;
   logo: string;
-  logoBg?: string;
+  logoScale?: string;
   name: string;
   category: string;
   city: string;
