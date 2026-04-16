@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 
-const STORAGE_KEY = "slocal_promo_popup_dismissed";
+const STORAGE_KEY = "slocal_promo_popup_dismissed_apr_28";
 
 export default function PromoPopup() {
   const [visible, setVisible] = useState(false);

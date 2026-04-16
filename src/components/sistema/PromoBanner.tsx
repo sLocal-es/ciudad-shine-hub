@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 
-const STORAGE_KEY = "slocal_promo_banner_dismissed";
+const STORAGE_KEY = "slocal_promo_banner_dismissed_apr_28";
 
 export default function PromoBanner() {
   const [visible, setVisible] = useState(false);
