@@ -316,23 +316,18 @@ function CaseCard({ study, onClick }: { study: CaseStudy; onClick: () => void })
         (e.currentTarget as HTMLElement).style.boxShadow = "none";
       }}
     >
-      {/* Logo hero area — unified container */}
+      {/* Logo hero area — unified white container */}
       <div
         className="flex items-center justify-center rounded-t-2xl"
-        style={{ background: "#F5F5F5", height: "160px" }}
+        style={{ background: "#FFFFFF", height: "180px", padding: "16px" }}
       >
-        <div
-          className="flex items-center justify-center rounded-xl"
-          style={{ width: "85%", height: "80%", background: "#F5F5F5" }}
-        >
-          <img
-            src={study.logo}
-            alt={study.name}
-            className="w-auto max-w-[70%] object-contain"
-            style={{ height: study.logoScale || "80px", maxHeight: "75%" }}
-            loading="lazy"
-          />
-        </div>
+        <img
+          src={study.logo}
+          alt={study.name}
+          className="object-contain"
+          style={{ maxWidth: "80%", maxHeight: "80%" }}
+          loading="lazy"
+        />
       </div>
 
       {/* Content */}
