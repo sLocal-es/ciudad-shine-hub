@@ -41,7 +41,7 @@ const cases: CaseStudy[] = [
   {
     id: "tei",
     logo: logoTei,
-    logoBg: "#0068B7",
+    logoScale: "h-16 md:h-20",
     name: "Grupo TEI",
     category: "Reformas",
     city: "Madrid",
@@ -113,7 +113,7 @@ const cases: CaseStudy[] = [
   {
     id: "fontaneros",
     logo: logoFontaneros,
-    logoBg: "#1a1a1a",
+    logoScale: "h-12 md:h-14",
     name: "Fontaneros Económicos",
     category: "Fontanería",
     city: "Madrid",
@@ -169,7 +169,7 @@ function CaseStudyModal({ study, onClose }: { study: CaseStudy; onClose: () => v
           <div className="flex items-center gap-5 mb-6">
             <div
               className="w-16 h-16 rounded-xl flex items-center justify-center overflow-hidden flex-shrink-0"
-              style={{ background: study.logoBg || "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.08)" }}
+              style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.08)" }}
             >
               <img src={study.logo} alt={study.name} className="w-12 h-12 object-contain" loading="lazy" />
             </div>
@@ -314,15 +314,15 @@ function CaseCard({ study, onClick }: { study: CaseStudy; onClick: () => void })
         (e.currentTarget as HTMLElement).style.boxShadow = "none";
       }}
     >
-      {/* Logo hero area */}
+      {/* Logo hero area — unified container */}
       <div
-        className="flex items-center justify-center py-8 px-6"
-        style={{ background: study.logoBg || "rgba(255,255,255,0.04)" }}
+        className="flex items-center justify-center px-6"
+        style={{ background: "rgba(255,255,255,0.04)", minHeight: "160px" }}
       >
         <img
           src={study.logo}
           alt={study.name}
-          className="h-20 md:h-24 w-auto max-w-[85%] object-contain"
+          className={`${study.logoScale || "h-16 md:h-20"} w-auto max-w-[80%] object-contain`}
           loading="lazy"
         />
       </div>
