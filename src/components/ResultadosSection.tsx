@@ -299,7 +299,7 @@ function CaseStudyModal({ study, onClose }: { study: CaseStudy; onClose: () => v
 function CaseCard({ study, onClick }: { study: CaseStudy; onClick: () => void }) {
   return (
     <div
-      className="group rounded-2xl p-6 md:p-7 cursor-pointer transition-all duration-300 hover:-translate-y-1"
+      className="group rounded-2xl cursor-pointer transition-all duration-300 hover:-translate-y-1 flex flex-col overflow-hidden"
       style={{
         background: "#1A1D2E",
         border: "1px solid rgba(249,115,22,0.12)",
@@ -314,55 +314,56 @@ function CaseCard({ study, onClick }: { study: CaseStudy; onClick: () => void })
         (e.currentTarget as HTMLElement).style.boxShadow = "none";
       }}
     >
-      {/* Logo */}
+      {/* Logo hero area */}
       <div
-        className="w-14 h-14 rounded-xl flex items-center justify-center overflow-hidden mb-5"
-        style={{ background: study.logoBg || "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.08)" }}
+        className="flex items-center justify-center py-8 px-6"
+        style={{ background: study.logoBg || "rgba(255,255,255,0.04)" }}
       >
-        <img src={study.logo} alt={study.name} className="w-10 h-10 object-contain" loading="lazy" />
+        <img
+          src={study.logo}
+          alt={study.name}
+          className="h-20 md:h-24 w-auto max-w-[85%] object-contain"
+          loading="lazy"
+        />
       </div>
 
-      {/* Name */}
-      <h3 className="text-lg font-bold mb-3" style={{ color: "#fff", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
-        {study.name}
-      </h3>
+      {/* Content */}
+      <div className="p-5 md:p-6 flex flex-col flex-1">
+        {/* Name */}
+        <h3 className="text-base font-bold mb-2" style={{ color: "#fff", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+          {study.name}
+        </h3>
 
-      {/* Badges */}
-      <div className="flex flex-wrap gap-2 mb-5">
-        <span
-          className="text-[10px] font-medium uppercase tracking-widest rounded-full px-3 py-1"
-          style={{ background: "rgba(249,115,22,0.1)", border: "1px solid rgba(249,115,22,0.25)", color: "#F97316" }}
-        >
-          {study.category} · {study.city}
-        </span>
-        <span
-          className="text-[10px] font-medium uppercase tracking-widest rounded-full px-3 py-1"
-          style={{ background: "rgba(249,115,22,0.06)", border: "1px solid rgba(249,115,22,0.15)", color: "#F97316" }}
-        >
-          {study.status}
-        </span>
-      </div>
+        {/* Badges */}
+        <div className="flex flex-wrap gap-1.5 mb-4">
+          <span
+            className="text-[9px] font-medium uppercase tracking-widest rounded-full px-2.5 py-0.5"
+            style={{ background: "rgba(249,115,22,0.1)", border: "1px solid rgba(249,115,22,0.25)", color: "#F97316" }}
+          >
+            {study.category} · {study.city}
+          </span>
+          <span
+            className="text-[9px] font-medium uppercase tracking-widest rounded-full px-2.5 py-0.5"
+            style={{ background: "rgba(249,115,22,0.06)", border: "1px solid rgba(249,115,22,0.15)", color: "#F97316" }}
+          >
+            {study.status}
+          </span>
+        </div>
 
-      {/* Main stat */}
-      <div className="mb-5">
-        <span
-          className="text-3xl md:text-4xl font-bold leading-none"
-          style={{ fontFamily: "'DM Serif Display', serif", color: "#F97316" }}
-        >
-          {study.headlineStat}
-        </span>
-        <p className="text-xs mt-1.5" style={{ color: "rgba(255,255,255,0.35)" }}>
-          {study.headlineLabel}
+        {/* Subtle metric line */}
+        <p className="text-sm mb-4" style={{ color: "rgba(255,255,255,0.5)" }}>
+          <span className="font-semibold" style={{ color: "#F97316" }}>{study.headlineStat}</span>
+          {" "}{study.headlineLabel}
         </p>
-      </div>
 
-      {/* CTA */}
-      <span
-        className="inline-flex items-center gap-1.5 text-xs font-semibold transition-all group-hover:gap-2.5"
-        style={{ color: "#F97316" }}
-      >
-        Ver caso completo <ArrowRight className="w-3.5 h-3.5" />
-      </span>
+        {/* CTA at bottom */}
+        <span
+          className="inline-flex items-center gap-1.5 text-xs font-semibold transition-all group-hover:gap-2.5 mt-auto"
+          style={{ color: "#F97316" }}
+        >
+          Ver resultados <ArrowRight className="w-3.5 h-3.5" />
+        </span>
+      </div>
     </div>
   );
 }
