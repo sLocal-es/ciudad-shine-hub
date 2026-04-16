@@ -318,16 +318,21 @@ function CaseCard({ study, onClick }: { study: CaseStudy; onClick: () => void })
     >
       {/* Logo hero area — unified container */}
       <div
-        className="flex items-center justify-center px-8 rounded-t-2xl"
-        style={{ background: "#1F2337", minHeight: "180px" }}
+        className="flex items-center justify-center rounded-t-2xl"
+        style={{ background: "#F5F5F5", height: "160px" }}
       >
-        <img
-          src={study.logo}
-          alt={study.name}
-          className="w-auto max-w-[75%] object-contain"
-          style={{ height: study.logoScale || "80px" }}
-          loading="lazy"
-        />
+        <div
+          className="flex items-center justify-center rounded-xl"
+          style={{ width: "85%", height: "80%", background: "#F5F5F5" }}
+        >
+          <img
+            src={study.logo}
+            alt={study.name}
+            className="w-auto max-w-[70%] object-contain"
+            style={{ height: study.logoScale || "80px", maxHeight: "75%" }}
+            loading="lazy"
+          />
+        </div>
       </div>
 
       {/* Content */}
