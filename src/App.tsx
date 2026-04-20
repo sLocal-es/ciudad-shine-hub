@@ -13,6 +13,7 @@ import PosicionamientoLocal from "@/pages/PosicionamientoLocal";
 import ServicePage from "@/pages/ServicePage";
 import CityPage from "@/pages/CityPage";
 import SectorPage from "@/pages/SectorPage";
+import FisioterapeutasPage from "@/pages/FisioterapeutasPage";
 import SectorCityPage from "@/pages/SectorCityPage";
 import ComoVeGoogleMiWeb from "@/pages/ComoVeGoogleMiWeb";
 import Sistema from "@/pages/Sistema";
@@ -114,7 +115,7 @@ const App = () => (
             <Route path="/seo-para-reformas" element={<SectorPage />} />
             <Route path="/seo-para-pintores" element={<SectorPage />} />
             <Route path="/seo-para-clinicas" element={<SectorPage />} />
-            <Route path="/seo-para-fisioterapeutas" element={<SectorPage />} />
+            <Route path="/seo-para-fisioterapeutas" element={<FisioterapeutasPage />} />
             <Route path="/seo-para-entrenadores" element={<SectorPage />} />
             <Route path="/seo-para-yoga" element={<SectorPage />} />
             {/* Sector + City pages (level 3) */}
