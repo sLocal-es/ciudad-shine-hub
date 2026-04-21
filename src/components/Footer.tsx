@@ -77,7 +77,7 @@ const Footer = () => (
 
       <div className="border-t border-dark-fg/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-dark-fg/40">
         <span>© 2025 slocal.es</span>
-        <span>hola@slocal.es</span>
+        <span>info@slocal.es</span>
       </div>
     </div>
   </footer>
