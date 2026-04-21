@@ -52,6 +52,11 @@ const Footer = () => (
                 </Link>
               </li>
             ))}
+            <li>
+              <Link to="/seo-cordoba" className="hover:text-primary transition-colors">
+                Córdoba
+              </Link>
+            </li>
           </ul>
         </div>
 

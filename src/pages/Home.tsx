@@ -134,6 +134,11 @@ const Home = () => {
               </Link>
             ))}
           </div>
+          <div className="text-center mt-8">
+            <Link to="/seo-cordoba" className="text-sm text-primary font-heading hover:underline">
+              SEO en Córdoba →
+            </Link>
+          </div>
         </div>
       </section>
 

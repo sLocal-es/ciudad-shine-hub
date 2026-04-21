@@ -17,6 +17,7 @@ import FisioterapeutasPage from "@/pages/FisioterapeutasPage";
 import SectorCityPage from "@/pages/SectorCityPage";
 import ComoVeGoogleMiWeb from "@/pages/ComoVeGoogleMiWeb";
 import Sistema from "@/pages/Sistema";
+import SeoCordoba from "@/pages/SeoCordoba";
 import BlogIndex from "@/pages/BlogIndex";
 import BlogPostPage from "@/pages/BlogPost";
 import NotFound from "@/pages/NotFound";
@@ -110,6 +111,7 @@ const App = () => (
             <Route path="/seo-local-zaragoza" element={<CityPage />} />
             <Route path="/seo-local-bilbao" element={<CityPage />} />
             <Route path="/seo-local-murcia" element={<CityPage />} />
+            <Route path="/seo-cordoba" element={<SeoCordoba />} />
             {/* Sector pages (level 2) — new slugs */}
             <Route path="/seo-para-fontaneros" element={<SectorPage />} />
             <Route path="/seo-para-reformas" element={<SectorPage />} />
