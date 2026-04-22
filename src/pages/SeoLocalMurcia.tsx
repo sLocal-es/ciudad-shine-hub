@@ -194,15 +194,19 @@ const SeoLocalMurcia = () => {
           <h2 className="font-heading text-2xl md:text-3xl mb-8">
             Cómo posicionamos tu negocio en Murcia
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {pasos.map((p) => (
+          <div className="flex flex-col">
+            {pasos.map((p, i) => (
               <div
                 key={p.n}
-                className="bg-card border border-border rounded-xl p-6 transition-all duration-200 hover:border-primary hover:-translate-y-[3px]"
+                className={`flex flex-col md:flex-row gap-6 md:gap-10 py-8 ${i !== pasos.length - 1 ? "border-b border-border" : ""}`}
               >
-                <div className="text-primary font-heading text-sm mb-2">{p.n}</div>
-                <h3 className="font-heading text-base mb-3">{p.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{p.body}</p>
+                <div className="text-primary font-heading font-light text-5xl md:text-6xl leading-none md:w-32 shrink-0">
+                  {p.n}
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-heading font-bold text-lg md:text-xl mb-3">{p.title}</h3>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{p.body}</p>
+                </div>
               </div>
             ))}
           </div>
