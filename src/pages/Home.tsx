@@ -3,7 +3,13 @@ import SEOHead from "@/components/SEOHead";
 import CTASection from "@/components/CTASection";
 import ResultadosSection from "@/components/ResultadosSection";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import LeadMagnetForm from "@/components/forms/LeadMagnetForm";
+import ContactForm from "@/components/forms/ContactForm";
 import heroImg from "@/assets/hero-home.webp";
+import logoTei from "@/assets/casos/logo-tei.png";
+import logoViviane from "@/assets/casos/logo-viviane.png";
+import logoMva from "@/assets/casos/logo-mva.png";
+import logoFontaneros from "@/assets/casos/logo-fontaneros.png";
 
 const Home = () => {
   const jsonLd = {
@@ -37,11 +43,24 @@ const Home = () => {
     { to: "/seo-local-murcia", label: "SEO local en Murcia" },
   ];
 
+  const casosLogos = [
+    { src: logoTei, alt: "Grupo TEI" },
+    { src: logoViviane, alt: "Viviane Custodio" },
+    { src: logoMva, alt: "MVA Fontanería" },
+    { src: logoFontaneros, alt: "Fontaneros Económicos" },
+  ];
+
+  const dolores = [
+    { n: "01", text: "Tu ficha de Google lleva meses sin tocarse y Google te ignora" },
+    { n: "02", text: "Has pagado a una agencia sin ver resultados ni entender qué hicieron" },
+    { n: "03", text: "Tus clientes te buscan en Google ahora mismo — y encuentran a tu competencia" },
+  ];
+
   return (
     <>
       <SEOHead
-        title="SEO Local para Negocios | Sin agencia, desde 147€/mes | slocal.es"
-        description="Consigue que tus clientes te encuentren en Google Maps y búsquedas locales. Sin agencias, sin contratos, resultados visibles cada mes. Desde 147€/mes + IVA."
+        title="SEO Local para Negocios | slocal.es"
+        description="Posiciona tu negocio en Google Maps y búsquedas locales. Trato directo, sin intermediarios. Desde 147€/mes + IVA."
         canonical="/"
         jsonLd={jsonLd}
       />
@@ -51,11 +70,22 @@ const Home = () => {
         <div className="container grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div>
             <h1 className="font-heading text-3xl md:text-5xl leading-tight mb-5">
-              SEO local para negocios: más clientes desde Google, sin agencias
+              SEO local para que tus clientes te encuentren en Google y Google Maps
             </h1>
-            <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-8 max-w-lg">
-              El sistema que posiciona tu negocio en Google Maps y búsquedas locales. Sin intermediarios, sin contratos largos, con resultados visibles cada mes.
+            <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-6 max-w-lg">
+              Gestionamos tu presencia en Google Maps y búsquedas locales para que cada mes más clientes de tu ciudad te encuentren antes que a tu competencia.
             </p>
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-3 mb-8">
+              {casosLogos.map((l) => (
+                <img
+                  key={l.alt}
+                  src={l.src}
+                  alt={l.alt}
+                  className="h-8 md:h-9 w-auto opacity-70 hover:opacity-100 transition-opacity"
+                  loading="lazy"
+                />
+              ))}
+            </div>
             <div className="flex flex-wrap gap-3">
               <Link to="/planes" className="bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors">
                 Ver planes →
@@ -67,31 +97,27 @@ const Home = () => {
           </div>
           <img
             src={heroImg}
-            alt="Propietario de negocio local revisando resultados en Google Maps desde el móvil"
+            alt="Pantalla de móvil mostrando Google Maps con un negocio apareciendo en el Local Pack"
             className="rounded-xl w-full h-[360px] object-cover"
             loading="lazy"
           />
         </div>
       </section>
 
-      {/* PROBLEM */}
-      <section className="py-16 md:py-20">
-        <div className="container">
-          <h2 className="font-heading text-2xl md:text-3xl text-center mb-10 max-w-2xl mx-auto">
+      {/* DOLOR */}
+      <section className="bg-dark-bg text-dark-fg py-16 md:py-20 border-t border-dark-fg/10">
+        <div className="container grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
+          <h2 className="font-heading text-3xl md:text-5xl leading-tight">
             Por qué tu negocio local no aparece en Google
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { icon: "🔍", text: "Tu ficha de Google lleva meses sin tocarse y pierdes clientes cada día" },
-              { icon: "🏢", text: "Has pagado a una agencia sin entender qué hicieron ni ver resultados" },
-              { icon: "📉", text: "Hay clientes en tu ciudad buscando tu servicio ahora mismo — y encuentran a tu competencia" },
-            ].map((card) => (
-              <div key={card.text} className="bg-warm-bg border border-border rounded-xl p-6 transition-all duration-200 hover:border-primary hover:-translate-y-[3px]">
-                <span className="text-2xl mb-3 block">{card.icon}</span>
-                <p className="text-sm leading-relaxed">{card.text}</p>
-              </div>
+          <ul className="space-y-6">
+            {dolores.map((d) => (
+              <li key={d.n} className="flex gap-4 items-baseline">
+                <span className="font-heading text-2xl md:text-3xl text-primary shrink-0">{d.n}</span>
+                <span className="text-dark-fg/80 text-base md:text-lg leading-relaxed">· {d.text}</span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
@@ -100,14 +126,14 @@ const Home = () => {
         <div className="container grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div>
             <h2 className="font-heading text-2xl md:text-3xl mb-6">
-              ¿Qué es el SEO local y por qué tu negocio lo necesita?
+              Qué es el SEO local y por qué tu negocio lo necesita
             </h2>
             <p className="text-base leading-relaxed text-foreground/80">
-              El SEO local es el conjunto de técnicas que hacen que tu negocio aparezca cuando alguien busca tu servicio en Google Maps o en las búsquedas de Google. Cuando un cliente escribe "fontanero en Madrid" o "fisioterapeuta cerca de mí", Google muestra los tres negocios mejor posicionados — el Local Pack. Aparecer ahí multiplica las llamadas directas. En slocal.es lo gestionamos por ti: optimizamos tu ficha de Google Business Profile, creamos contenido que posiciona y construimos la presencia digital que tu negocio necesita para aparecer antes que tu competencia. Trabajamos con negocios locales de toda España: fontaneros, fisioterapeutas, reformas, entrenadores personales, clínicas y más.
+              El SEO local es el conjunto de técnicas que hacen que tu negocio aparezca cuando alguien busca tu servicio en Google Maps o en Google. Cuando un cliente escribe "fontanero en Madrid" o "fisioterapeuta cerca de mí", Google muestra los tres negocios mejor posicionados en el mapa — el Local Pack. Aparecer ahí multiplica las llamadas directas. En slocal.es lo gestionamos por ti: optimizamos tu ficha de Google Business Profile, creamos el contenido que posiciona y construimos la presencia digital que tu negocio necesita para aparecer antes que tu competencia. Trabajamos con negocios locales de toda España: fontaneros, fisioterapeutas, empresas de reformas, entrenadores personales, clínicas y más.
             </p>
           </div>
           <ImagePlaceholder
-            description="Captura de Google Maps mostrando el Local Pack con 3 negocios destacados"
+            description="Captura de pantalla de Google Maps mostrando el Local Pack con 3 negocios destacados y el mapa"
             height="320px"
           />
         </div>
@@ -117,13 +143,13 @@ const Home = () => {
       <section className="py-16 md:py-20">
         <div className="container">
           <h2 className="font-heading text-2xl md:text-3xl text-center mb-12">
-            Cómo funciona el sistema de posicionamiento local
+            Cómo funciona el posicionamiento local en Google
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { n: "01", title: "Analizamos tu negocio y tu competencia local", desc: "Estudiamos qué buscan tus clientes en tu ciudad y qué hace bien (o mal) tu competencia para definir el plan." },
-              { n: "02", title: "Optimizamos tu ficha, tu web y tu contenido", desc: "Tu ficha de Google, tu web y los artículos que posicionan. Tú sigues con tu negocio, nosotros con lo demás." },
-              { n: "03", title: "Cada mes sabes exactamente qué ha mejorado", desc: "Informe mensual claro: posiciones ganadas, visitas, llamadas y qué está funcionando." },
+              { n: "01", title: "Analizamos tu negocio y la competencia local", desc: "Estudiamos qué buscan tus clientes en tu ciudad y qué hace bien (o mal) tu competencia para definir el plan." },
+              { n: "02", title: "Optimizamos tu ficha de Google, tu web y tu contenido", desc: "Tu ficha de Google, tu web y los artículos que posicionan. Tú sigues con tu negocio, nosotros con lo demás." },
+              { n: "03", title: "Cada mes ves exactamente qué posiciones has ganado", desc: "Informe mensual claro: posiciones ganadas, visitas, llamadas y qué está funcionando." },
             ].map((step) => (
               <div key={step.n} className="text-center">
                 <span className="text-primary font-heading text-4xl">{step.n}</span>
@@ -142,7 +168,7 @@ const Home = () => {
             SEO local para cada tipo de negocio
           </h2>
           <p className="text-center text-muted-foreground text-sm md:text-base max-w-2xl mx-auto mb-10">
-            Cada sector tiene sus propias búsquedas y su propia competencia. Por eso trabajamos con sectores específicos y sabemos exactamente qué funciona en cada uno.
+            Cada sector tiene sus propias búsquedas y su propia competencia local. Por eso trabajamos de forma específica en cada uno.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
             <div className="flex flex-wrap gap-3">
@@ -157,7 +183,7 @@ const Home = () => {
               ))}
             </div>
             <ImagePlaceholder
-              description="Collage de negocios locales: fontanero, fisioterapeuta, obras de reforma"
+              description="Iconos por sector — llave inglesa, corazón con pulso, rodillo de pintura, mancuerna"
               height="280px"
             />
           </div>
@@ -168,7 +194,7 @@ const Home = () => {
       <section className="py-16 md:py-20">
         <div className="container max-w-xl text-center">
           <h2 className="font-heading text-2xl md:text-3xl mb-8">
-            Un plan, precio claro, sin agencia
+            Un plan, precio claro, sin intermediarios
           </h2>
           <div className="bg-card border border-border rounded-xl p-8">
             <div className="font-heading text-4xl md:text-5xl text-primary mb-1">147€<span className="text-lg text-muted-foreground">/mes</span></div>
@@ -182,7 +208,7 @@ const Home = () => {
               </li>
             </ul>
             <a
-              href="https://wa.me/34600000000"
+              href="https://wa.me/34684780063"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-primary text-primary-foreground font-heading text-sm rounded-lg px-8 py-3 hover:bg-primary/90 transition-colors"
@@ -197,7 +223,7 @@ const Home = () => {
       <section>
         <div className="container">
           <h2 className="font-heading text-2xl md:text-3xl text-center mb-2">
-            Resultados reales de negocios locales como el tuyo
+            Resultados reales de negocios locales
           </h2>
         </div>
         <ResultadosSection />
@@ -238,6 +264,27 @@ const Home = () => {
         </div>
       </section>
 
+      {/* LEAD MAGNET */}
+      <section className="bg-warm-bg py-16 md:py-20">
+        <div className="container grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+          <div>
+            <h2 className="font-heading text-2xl md:text-3xl mb-5">
+              Descubre cómo te ve Google ahora mismo — gratis
+            </h2>
+            <p className="text-foreground/80 leading-relaxed mb-6">
+              Analizamos tu ficha de Google Business Profile sin coste y te decimos exactamente qué está fallando y por qué no apareces cuando tus clientes te buscan.
+            </p>
+            <ImagePlaceholder
+              description="Mockup de informe de ficha de Google analizada con anotaciones"
+              height="220px"
+            />
+          </div>
+          <div className="bg-card border border-border rounded-xl p-6 md:p-8">
+            <LeadMagnetForm />
+          </div>
+        </div>
+      </section>
+
       {/* CITIES (compact) */}
       <section className="py-16 md:py-20">
         <div className="container max-w-3xl text-center">
@@ -245,7 +292,7 @@ const Home = () => {
             Posicionamiento local en toda España
           </h2>
           <p className="text-muted-foreground text-sm md:text-base mb-10">
-            Trabajamos con negocios en las principales ciudades españolas. Cada ciudad tiene su competencia y sus búsquedas — y sabemos cómo posicionarte en cada una.
+            Trabajamos con negocios en las principales ciudades españolas. Cada ciudad tiene su propia competencia y sus propias búsquedas.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {ciudades.map((c) => (
@@ -262,6 +309,21 @@ const Home = () => {
             <Link to="/seo-cordoba" className="text-sm text-primary font-heading hover:underline">
               SEO en Córdoba →
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* CONTACTO */}
+      <section className="bg-warm-bg py-16 md:py-20">
+        <div className="container max-w-2xl">
+          <h2 className="font-heading text-2xl md:text-3xl text-center mb-4">
+            ¿Tienes dudas? Escríbenos
+          </h2>
+          <p className="text-center text-muted-foreground mb-10">
+            Si prefieres que te contactemos nosotros, déjanos tus datos y te respondemos en menos de 24 horas.
+          </p>
+          <div className="bg-card border border-border rounded-xl p-6 md:p-8">
+            <ContactForm />
           </div>
         </div>
       </section>
