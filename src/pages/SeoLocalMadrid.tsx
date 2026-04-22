@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import FAQSection from "@/components/FAQSection";
-import CTASection from "@/components/CTASection";
+
 import madridImg from "@/assets/cities/madrid.webp";
 
 const WHATSAPP_URL =
@@ -262,11 +262,21 @@ const SeoLocalMadrid = () => {
       </section>
 
       {/* FINAL CTA */}
-      <CTASection
-        title="¿Tu negocio en Madrid no aparece cuando tus clientes te buscan en Google?"
-        buttonText="Hablemos →"
-        buttonHref={WHATSAPP_URL}
-      />
+      <section className="bg-primary py-16">
+        <div className="container text-center">
+          <h2 className="font-heading text-2xl md:text-3xl text-primary-foreground mb-6">
+            ¿Tu negocio en Madrid no aparece cuando tus clientes te buscan en Google?
+          </h2>
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-card text-primary font-heading text-sm rounded-lg px-8 py-3 hover:bg-card/90 transition-colors"
+          >
+            Hablemos →
+          </a>
+        </div>
+      </section>
     </>
   );
 };

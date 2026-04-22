@@ -15,6 +15,7 @@ import SeoNegociosLocales from "@/pages/SeoNegociosLocales";
 import AparecerEnGoogleMaps from "@/pages/AparecerEnGoogleMaps";
 import FichaGoogleMiNegocio from "@/pages/FichaGoogleMiNegocio";
 import CityPage from "@/pages/CityPage";
+import SeoLocalMadrid from "@/pages/SeoLocalMadrid";
 import SectorPage from "@/pages/SectorPage";
 import FisioterapeutasPage from "@/pages/FisioterapeutasPage";
 import SectorCityPage from "@/pages/SectorCityPage";
@@ -106,7 +107,7 @@ const App = () => (
             <Route path="/seo-para-negocios-locales" element={<SeoNegociosLocales />} />
             <Route path="/ficha-google-mi-negocio" element={<FichaGoogleMiNegocio />} />
             <Route path="/como-salir-primero-en-google" element={<ServicePage />} />
-            <Route path="/seo-local-madrid" element={<CityPage />} />
+            <Route path="/seo-local-madrid" element={<SeoLocalMadrid />} />
             <Route path="/seo-local-barcelona" element={<CityPage />} />
             <Route path="/seo-local-valencia" element={<CityPage />} />
             <Route path="/seo-local-sevilla" element={<CityPage />} />
