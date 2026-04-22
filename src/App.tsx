@@ -12,6 +12,7 @@ import Contacto from "@/pages/Contacto";
 import PosicionamientoLocal from "@/pages/PosicionamientoLocal";
 import ServicePage from "@/pages/ServicePage";
 import SeoNegociosLocales from "@/pages/SeoNegociosLocales";
+import AparecerEnGoogleMaps from "@/pages/AparecerEnGoogleMaps";
 import CityPage from "@/pages/CityPage";
 import SectorPage from "@/pages/SectorPage";
 import FisioterapeutasPage from "@/pages/FisioterapeutasPage";
@@ -100,7 +101,7 @@ const App = () => (
             <Route path="/contacto" element={<Contacto />} />
             <Route path="/posicionamiento-local" element={<PosicionamientoLocal />} />
             <Route path="/como-ve-google-mi-web" element={<ComoVeGoogleMiWeb />} />
-            <Route path="/aparecer-en-google-maps" element={<ServicePage />} />
+            <Route path="/aparecer-en-google-maps" element={<AparecerEnGoogleMaps />} />
             <Route path="/seo-para-negocios-locales" element={<SeoNegociosLocales />} />
             <Route path="/ficha-google-mi-negocio" element={<ServicePage />} />
             <Route path="/como-salir-primero-en-google" element={<ServicePage />} />
