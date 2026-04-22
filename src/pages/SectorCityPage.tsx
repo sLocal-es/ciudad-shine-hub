@@ -118,6 +118,7 @@ const SectorCityPage = () => {
         title={metaTitle}
         description={metaDesc}
         canonical={canonical}
+        noIndex
         jsonLd={[breadcrumbSchema, faqSchema, serviceSchema, localBusinessSchema]}
       />
 

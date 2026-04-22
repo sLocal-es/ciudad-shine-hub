@@ -28,7 +28,7 @@ const SEOHead = ({
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
-      <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow"} />
+      <meta name="robots" content={noIndex ? "noindex, follow" : "index, follow"} />
       <link rel="canonical" href={fullCanonical} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
