@@ -106,8 +106,8 @@ const SeoLocalMadrid = () => {
   return (
     <>
       <SEOHead
-        title="SEO Local en Madrid | Posiciona tu Negocio en Google Maps | slocal.es"
-        description="SEO local para negocios en Madrid. Aparece en Google Maps y búsquedas locales cuando tus clientes te buscan en la capital. Desde 147€/mes + IVA."
+        title="SEO Local en Madrid para Negocios | Aparecer en Google Maps | slocal.es"
+        description="¿Tu negocio en Madrid no aparece en Google Maps? Posicionamos tu ficha y web para que tus clientes te encuentren primero. Sin agencia, desde 147€/mes + IVA."
         canonical="/seo-local-madrid"
         jsonLd={[breadcrumbSchema, faqSchema, localBusinessSchema]}
       />
