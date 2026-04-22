@@ -8,102 +8,66 @@ const WHATSAPP_URL =
   "https://wa.me/34684780063?text=" + encodeURIComponent("Hola, quiero posicionar mi negocio en Valencia");
 
 const sectores = [
-  {
-    "label": "SEO para fontaneros en Valencia",
-    "href": "/seo-para-fontaneros"
-  },
-  {
-    "label": "SEO para fisioterapeutas en Valencia",
-    "href": "/seo-para-fisioterapeutas"
-  },
-  {
-    "label": "SEO para empresas de reformas en Valencia",
-    "href": "/seo-para-reformas"
-  },
-  {
-    "label": "SEO para pintores en Valencia",
-    "href": "/seo-para-pintores"
-  },
-  {
-    "label": "SEO para clínicas en Valencia",
-    "href": "/seo-para-clinicas"
-  },
-  {
-    "label": "SEO para entrenadores personales en Valencia",
-    "href": "/seo-para-entrenadores"
-  }
+  { label: "SEO para fontaneros en Valencia", href: "/seo-para-fontaneros" },
+  { label: "SEO para fisioterapeutas en Valencia", href: "/seo-para-fisioterapeutas" },
+  { label: "SEO para empresas de reformas en Valencia", href: "/seo-para-reformas" },
+  { label: "SEO para pintores en Valencia", href: "/seo-para-pintores" },
+  { label: "SEO para clínicas en Valencia", href: "/seo-para-clinicas" },
+  { label: "SEO para entrenadores personales en Valencia", href: "/seo-para-entrenadores" },
 ];
 
 const otrasCiudades = [
-  {
-    "label": "SEO local en Madrid",
-    "href": "/seo-local-madrid"
-  },
-  {
-    "label": "SEO local en Barcelona",
-    "href": "/seo-local-barcelona"
-  },
-  {
-    "label": "SEO local en Sevilla",
-    "href": "/seo-local-sevilla"
-  },
-  {
-    "label": "SEO local en Málaga",
-    "href": "/seo-local-malaga"
-  },
-  {
-    "label": "SEO local en Zaragoza",
-    "href": "/seo-local-zaragoza"
-  },
-  {
-    "label": "SEO local en Bilbao",
-    "href": "/seo-local-bilbao"
-  },
-  {
-    "label": "SEO local en Murcia",
-    "href": "/seo-local-murcia"
-  }
+  { label: "SEO local en Madrid", href: "/seo-local-madrid" },
+  { label: "SEO local en Barcelona", href: "/seo-local-barcelona" },
+  { label: "SEO local en Sevilla", href: "/seo-local-sevilla" },
+  { label: "SEO local en Málaga", href: "/seo-local-malaga" },
+  { label: "SEO local en Zaragoza", href: "/seo-local-zaragoza" },
+  { label: "SEO local en Bilbao", href: "/seo-local-bilbao" },
+  { label: "SEO local en Murcia", href: "/seo-local-murcia" },
 ];
 
 const pasos = [
   {
-    "n": "01",
-    "title": "Optimizamos tu ficha de Google Business Profile para Valencia",
-    "body": "Configuramos cada campo de tu perfil para las búsquedas de Valencia: categorías correctas, descripción con keywords locales, fotos, horarios y zona de servicio por barrios y distritos. Todo lo que Google necesita para mostrarte en el mapa de la ciudad."
+    n: "01",
+    title: "Optimizamos tu ficha de Google Business Profile para Valencia",
+    body:
+      "Configuramos cada campo de tu perfil para las búsquedas de Valencia: categorías correctas, descripción con keywords locales en castellano, fotos actualizadas, horarios y zona de servicio por barrios. Todo lo que Google necesita para mostrarte en el mapa cuando tus clientes te buscan.",
   },
   {
-    "n": "02",
-    "title": "Creamos contenido que posiciona en búsquedas de Valencia",
-    "body": "Artículos de blog y páginas de servicio optimizadas para las búsquedas que hacen tus clientes en Valencia, por barrio y por tipo de servicio."
+    n: "02",
+    title: "Creamos contenido que posiciona en búsquedas de Valencia",
+    body:
+      "Artículos de blog y páginas de servicio optimizadas para las búsquedas que hacen tus clientes en Valencia, por barrio y por tipo de servicio. Contenido que responde exactamente lo que busca tu cliente potencial.",
   },
   {
-    "n": "03",
-    "title": "Seguimiento mensual de posiciones en Valencia",
-    "body": "Cada mes ves exactamente qué posiciones has ganado en Google Maps para las búsquedas más importantes de tu sector en Valencia."
-  }
+    n: "03",
+    title: "Seguimiento mensual de posiciones en Valencia",
+    body:
+      "Cada mes ves exactamente qué posiciones has ganado en Google Maps para las búsquedas más importantes de tu sector en Valencia. Sin tecnicismos, con datos claros.",
+  },
 ];
 
 const faqs = [
   {
-    "q": "¿Cuánto tarda en posicionarse un negocio en Google en Valencia?",
-    "a": "Los primeros resultados visibles aparecen entre el mes 2 y el mes 4. A partir del mes 6 el crecimiento se acelera."
+    q: "¿Cuánto tarda en posicionarse un negocio en Google en Valencia?",
+    a: "Los primeros resultados visibles aparecen entre el mes 2 y el mes 4: más visitas al perfil de Google, más llamadas y mejora de posiciones en Maps. A partir del mes 6 el crecimiento se acelera.",
   },
   {
-    "q": "¿Hay que trabajar el SEO en castellano y en valenciano?",
-    "a": "El servicio se centra en castellano, donde están la mayoría de las búsquedas de servicios locales en Valencia. Si tu negocio necesita posicionarse en valenciano lo valoramos caso a caso."
+    q: "¿Hay que trabajar el SEO en castellano y en valenciano?",
+    a: "El servicio se centra en castellano, donde están la mayoría de búsquedas de servicios locales en Valencia. Si tu negocio necesita posicionarse también en valenciano lo valoramos caso a caso.",
   },
   {
-    "q": "¿Cuánto cuesta el SEO local en Valencia?",
-    "a": "Los consultores y agencias de Valencia cobran entre 500€ y 1.250€/mes. En slocal.es el servicio completo cuesta 147€/mes + IVA, sin permanencia."
+    q: "¿Cuánto cuesta el SEO local en Valencia?",
+    a: "Los consultores y agencias en Valencia cobran entre 500€ y 1.250€/mes. En slocal.es el servicio completo cuesta 147€/mes + IVA, sin permanencia y sin contratos.",
   },
   {
-    "q": "¿Funciona para cualquier tipo de negocio local en Valencia?",
-    "a": "Sí. Fontaneros, fisioterapeutas, reformas, pintores, clínicas, entrenadores y cualquier negocio local en Valencia."
+    q: "¿Funciona para cualquier tipo de negocio local en Valencia?",
+    a: "Sí. Fontaneros, fisioterapeutas, reformas, pintores, clínicas, entrenadores y cualquier negocio local en Valencia, en cualquier barrio o distrito.",
   },
   {
-    "q": "¿Tengo que firmar un contrato largo?",
-    "a": "No. Sin contratos de permanencia. Cancelas cuando quieras."
-  }
+    q: "¿Tengo que firmar un contrato largo?",
+    a: "No. Sin contratos de permanencia. Cancelas cuando quieras con un aviso previo.",
+  },
 ];
 
 const SeoLocalValencia = () => {
@@ -141,7 +105,7 @@ const SeoLocalValencia = () => {
     <>
       <SEOHead
         title="SEO Local en Valencia para Negocios | Aparecer en Google Maps | slocal.es"
-        description="¿Tu negocio en Valencia no aparece en Google Maps? Posicionamos tu ficha y web para que tus clientes te encuentren primero. Desde 147€/mes + IVA."
+        description="¿Tu negocio en Valencia no aparece en Google Maps? Posicionamos tu ficha y web para que tus clientes te encuentren primero en castellano y valenciano. Desde 147€/mes + IVA."
         canonical="/seo-local-valencia"
         jsonLd={[breadcrumbSchema, faqSchema, localBusinessSchema]}
       />
@@ -161,7 +125,7 @@ const SeoLocalValencia = () => {
               SEO Local en Valencia: Que tus Clientes te Encuentren en Google
             </h1>
             <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-8 font-body font-light">
-              Si tienes un negocio en Valencia y no apareces en Google Maps cuando te buscan, estás perdiendo clientes cada día. Gestionamos tu posicionamiento local para que eso cambie — desde 147€/mes, sin contratos.
+              Si tienes un negocio en Valencia y no apareces en Google Maps cuando te buscan, estás perdiendo clientes cada día. Gestionamos tu posicionamiento local desde 147€/mes, sin contratos y con trato directo.
             </p>
             <a
               href={WHATSAPP_URL}
@@ -188,10 +152,10 @@ const SeoLocalValencia = () => {
             Por qué los negocios en Valencia necesitan SEO local
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-4 text-sm md:text-base">
-            {"Valencia es una ciudad con alta competencia digital y el factor del bilingüismo castellano-valenciano. En barrios como Ruzafa, Ciutat Vella, Benimaclet, El Carmen o Campanar, cada sector tiene negocios compitiendo por los mismos clientes. Cuando alguien busca \"fontanero en Ruzafa\", \"fisioterapeuta en Benimaclet\" o \"empresa de reformes a Campanar\" — en castellano o en valenciano — Google muestra tres negocios en el mapa. Los que están ahí reciben el 40% de todos los clics."}
+            {"Valencia es una ciudad con alta competencia digital y el factor diferencial del bilingüismo castellano-valenciano. En barrios como Ruzafa, Ciutat Vella, Benimaclet, El Carmen, Campanar o La Malva-rosa, cada sector tiene negocios compitiendo por los mismos clientes. Cuando alguien busca \"fontanero en Ruzafa\", \"fisioterapeuta en Benimaclet\" o \"empresa de reformes a Campanar\" — en castellano o en valenciano — Google muestra tres negocios en el mapa. Los que están ahí reciben el 40% de todos los clics. Los que no están no existen para esa persona."}
           </p>
           <p className="text-muted-foreground leading-relaxed mb-4 text-sm md:text-base">
-            {"Los consultores y agencias de SEO local en Valencia cobran entre 500€ y 1.250€/mes. En slocal.es hacemos lo mismo desde 147€/mes, sin intermediarios, con trato directo y sin permanencia. Ya trabajamos con negocios en Valencia — como la psicóloga Viviane Custodio, que recibió 4 llamadas en su segundo mes."}
+            Los consultores y agencias de SEO local en Valencia cobran entre 500€ y 1.250€/mes. En slocal.es gestionamos todo desde 147€/mes sin intermediarios. Ya trabajamos con negocios en Valencia — como Viviane Custodio, psicóloga que recibió 4 llamadas en su segundo mes tras optimizar su ficha de Google.
           </p>
         </div>
       </section>
@@ -224,7 +188,7 @@ const SeoLocalValencia = () => {
             SEO local para negocios en Valencia por sector
           </h2>
           <p className="text-sm text-muted-foreground mb-8 max-w-2xl">
-            Trabajamos con todo tipo de negocios locales en Valencia. Cada sector tiene su propia competencia y sus propias búsquedas en la ciudad.
+            Cada sector tiene sus propias búsquedas y su propia competencia en Valencia. Trabajamos de forma específica en cada uno.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
             {sectores.map((s) => (
