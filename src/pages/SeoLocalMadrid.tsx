@@ -48,27 +48,27 @@ const pasos = [
 const faqs = [
   {
     q: "¿Cuánto tarda en posicionarse un negocio en Google en Madrid?",
-    a: "En Madrid, por la alta competencia, los primeros resultados visibles aparecen entre el mes 2 y el mes 4: más visitas al perfil de Google, más llamadas y mejora de posiciones en Maps. A partir del mes 6 la curva se acelera. Cuanto antes empieces, antes verás resultados frente a tu competencia local.",
+    a: "En Madrid, por la alta competencia, los primeros resultados visibles aparecen entre el mes 2 y el mes 4. A partir del mes 6 el crecimiento se acelera. Cuanto antes empieces, antes ganarás posiciones frente a tu competencia en la ciudad.",
   },
   {
-    q: "¿Necesito ya tener web para empezar con el SEO en Madrid?",
-    a: "No es imprescindible para empezar, pero una web optimizada mejora significativamente los resultados. El servicio de slocal.es incluye la web desde el inicio, por lo que no necesitas tener nada previo para arrancar.",
+    q: "¿Necesito tener web para hacer SEO local en Madrid?",
+    a: "No es imprescindible para empezar, pero mejora significativamente los resultados. El servicio incluye la web desde el inicio, por lo que no necesitas nada previo para arrancar.",
   },
   {
     q: "¿Funciona para cualquier tipo de negocio local en Madrid?",
-    a: "Sí. Trabajamos con fontaneros, fisioterapeutas, empresas de reformas, pintores, clínicas, entrenadores personales y cualquier negocio local que quiera conseguir clientes desde Google en Madrid.",
+    a: "Sí. Trabajamos con fontaneros, fisioterapeutas, empresas de reformas, pintores, clínicas, entrenadores y cualquier negocio local que quiera conseguir clientes desde Google en Madrid, en cualquier barrio o distrito.",
+  },
+  {
+    q: "¿Cuánto cuesta el SEO local en Madrid?",
+    a: "Las agencias de SEO local en Madrid cobran habitualmente entre 300€ y 1.000€/mes. En slocal.es el servicio completo cuesta 147€/mes + IVA, sin permanencia y sin contratos largos.",
   },
   {
     q: "¿Qué diferencia hay entre SEO local y publicidad en Google?",
-    a: "La publicidad en Google (Google Ads) te da visibilidad mientras pagas. El SEO local construye una presencia orgánica que crece mes a mes sin coste por clic. En Madrid, donde el coste por clic en Google Ads es alto, el SEO local tiene un retorno mucho más rentable a medio plazo.",
-  },
-  {
-    q: "¿Cómo sé si mi negocio en Madrid está posicionando?",
-    a: "Cada mes recibes un informe con tus posiciones en Google Maps para las búsquedas más importantes de tu sector en Madrid, el número de visitas a tu perfil de Google, llamadas recibidas y clics al sitio web. Los datos son directos de Google Business Profile y Google Search Console.",
+    a: "La publicidad (Google Ads) te da visibilidad mientras pagas. El SEO local construye una presencia orgánica que crece mes a mes sin coste por clic. En Madrid, donde el coste por clic es elevado, el SEO local tiene mejor retorno a medio plazo.",
   },
   {
     q: "¿Tengo que firmar un contrato largo?",
-    a: "No. No hay contratos de permanencia. Puedes cancelar cuando quieras con un aviso previo. Confiamos en los resultados, no en los contratos.",
+    a: "No. Sin contratos de permanencia. Cancelas cuando quieras con un aviso previo.",
   },
 ];
 
