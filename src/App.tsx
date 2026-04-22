@@ -13,6 +13,7 @@ import PosicionamientoLocal from "@/pages/PosicionamientoLocal";
 import ServicePage from "@/pages/ServicePage";
 import SeoNegociosLocales from "@/pages/SeoNegociosLocales";
 import AparecerEnGoogleMaps from "@/pages/AparecerEnGoogleMaps";
+import FichaGoogleMiNegocio from "@/pages/FichaGoogleMiNegocio";
 import CityPage from "@/pages/CityPage";
 import SectorPage from "@/pages/SectorPage";
 import FisioterapeutasPage from "@/pages/FisioterapeutasPage";
