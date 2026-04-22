@@ -124,10 +124,10 @@ const SeoLocalMadrid = () => {
               ]}
             />
             <h1 className="font-heading text-3xl md:text-4xl leading-tight mb-4">
-              SEO Local en Madrid: Aparece en Google Cuando te Buscan
+              SEO Local en Madrid: Que tus Clientes te Encuentren en Google
             </h1>
             <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-8 font-body font-light">
-              Madrid es el mercado más competido de España. Posicionamos tu negocio en Google Maps y búsquedas locales para que cada mes más clientes en la capital te encuentren antes que a tu competencia.
+              Si tienes un negocio en Madrid y no apareces en Google Maps cuando te buscan, estás perdiendo clientes cada día. Gestionamos tu posicionamiento local para que eso cambie — sin agencias, desde 147€/mes.
             </p>
             <a
               href={WHATSAPP_URL}
@@ -154,10 +154,13 @@ const SeoLocalMadrid = () => {
             Por qué los negocios en Madrid necesitan SEO local
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-4 text-sm md:text-base">
-            Madrid concentra una densidad de negocios por barrio sin igual en España. Miles de búsquedas diarias como "fontanero en Vallecas", "fisioterapeuta en Chamberí" o "empresa de reformas en Carabanchel" generan clientes reales cada día — pero solo para los negocios que aparecen en los primeros resultados de Google Maps.
+            Madrid es el mercado más competido de España. En barrios como Salamanca, Chamberí, Vallecas, Carabanchel, Retiro o Malasaña, cada sector tiene decenas de negocios compitiendo por los mismos clientes. La diferencia entre el que recibe llamadas y el que no suele ser una sola cosa: quién aparece primero en Google Maps.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-4 text-sm md:text-base">
-            El Local Pack de Google — los tres negocios destacados con el mapa — recibe más del 40% de los clics en búsquedas locales. Si tu negocio no aparece ahí, estás perdiendo clientes frente a competidores que sí han trabajado su visibilidad. En Madrid, donde la competencia es máxima, la diferencia entre estar en el top 3 y estar en la posición 8 puede ser de decenas de llamadas al mes.
+            Cuando alguien busca "fontanero en Chamberí", "fisioterapeuta en Salamanca" o "empresa de reformas en Vallecas", Google muestra tres negocios en el mapa. Los que están ahí reciben el 40% de todos los clics. Los que no están, no existen para esa persona.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-4 text-sm md:text-base">
+            La mayoría de agencias de SEO local en Madrid cobran entre 300€ y 1.000€/mes. En slocal.es hacemos lo mismo desde 147€/mes, sin intermediarios y con trato directo. Sin contratos, sin permanencia.
           </p>
         </div>
       </section>
