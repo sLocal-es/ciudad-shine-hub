@@ -222,6 +222,38 @@ const SectorPage = () => {
       {/* SECTION 7 — FAQ */}
       <FAQSection title="Preguntas frecuentes" items={sector.faqs} />
 
+      {/* SECTION 8 — CITIES (Nivel 2 internal linking) */}
+      <section className="py-12">
+        <div className="container max-w-3xl text-center">
+          <h2 className="font-heading text-2xl md:text-3xl mb-4">
+            Trabajamos con negocios en toda España
+          </h2>
+          <p className="text-sm md:text-base text-muted-foreground mb-8 font-body font-light">
+            Gestionamos el posicionamiento local de negocios en toda España. Estas son algunas de las ciudades donde trabajamos actualmente:
+          </p>
+          <div className="flex flex-wrap justify-center gap-2.5">
+            {[
+              { name: "Madrid", slug: "madrid" },
+              { name: "Barcelona", slug: "barcelona" },
+              { name: "Valencia", slug: "valencia" },
+              { name: "Sevilla", slug: "sevilla" },
+              { name: "Málaga", slug: "malaga" },
+              { name: "Zaragoza", slug: "zaragoza" },
+              { name: "Bilbao", slug: "bilbao" },
+              { name: "Murcia", slug: "murcia" },
+            ].map((city) => (
+              <Link
+                key={city.slug}
+                to={`/seo-local-${city.slug}`}
+                className="bg-card border border-border rounded-full px-4 py-2 text-sm font-heading text-foreground transition-all duration-200 hover:border-primary hover:text-primary hover:-translate-y-[2px]"
+              >
+                {city.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* SECTION 9 — RELATED SECTORS */}
       <section className="bg-warm-bg py-12">
         <div className="container">
