@@ -14,7 +14,6 @@ import ServicePage from "@/pages/ServicePage";
 import SeoNegociosLocales from "@/pages/SeoNegociosLocales";
 import AparecerEnGoogleMaps from "@/pages/AparecerEnGoogleMaps";
 import FichaGoogleMiNegocio from "@/pages/FichaGoogleMiNegocio";
-import CityPage from "@/pages/CityPage";
 import SeoLocalMadrid from "@/pages/SeoLocalMadrid";
 import SeoLocalBarcelona from "@/pages/SeoLocalBarcelona";
 import SectorPage from "@/pages/SectorPage";
@@ -110,12 +109,6 @@ const App = () => (
             <Route path="/como-salir-primero-en-google" element={<ServicePage />} />
             <Route path="/seo-local-madrid" element={<SeoLocalMadrid />} />
             <Route path="/seo-local-barcelona" element={<SeoLocalBarcelona />} />
-            <Route path="/seo-local-valencia" element={<CityPage />} />
-            <Route path="/seo-local-sevilla" element={<CityPage />} />
-            <Route path="/seo-local-malaga" element={<CityPage />} />
-            <Route path="/seo-local-zaragoza" element={<CityPage />} />
-            <Route path="/seo-local-bilbao" element={<CityPage />} />
-            <Route path="/seo-local-murcia" element={<CityPage />} />
             <Route path="/seo-cordoba" element={<SeoCordoba />} />
             {/* Sector pages (level 2) — new slugs */}
             <Route path="/seo-para-fontaneros" element={<SectorPage />} />
