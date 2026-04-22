@@ -16,6 +16,12 @@ import AparecerEnGoogleMaps from "@/pages/AparecerEnGoogleMaps";
 import FichaGoogleMiNegocio from "@/pages/FichaGoogleMiNegocio";
 import SeoLocalMadrid from "@/pages/SeoLocalMadrid";
 import SeoLocalBarcelona from "@/pages/SeoLocalBarcelona";
+import SeoLocalValencia from "@/pages/SeoLocalValencia";
+import SeoLocalSevilla from "@/pages/SeoLocalSevilla";
+import SeoLocalMalaga from "@/pages/SeoLocalMalaga";
+import SeoLocalZaragoza from "@/pages/SeoLocalZaragoza";
+import SeoLocalBilbao from "@/pages/SeoLocalBilbao";
+import SeoLocalMurcia from "@/pages/SeoLocalMurcia";
 import SectorPage from "@/pages/SectorPage";
 import FisioterapeutasPage from "@/pages/FisioterapeutasPage";
 import SectorCityPage from "@/pages/SectorCityPage";
@@ -109,6 +115,12 @@ const App = () => (
             <Route path="/como-salir-primero-en-google" element={<ServicePage />} />
             <Route path="/seo-local-madrid" element={<SeoLocalMadrid />} />
             <Route path="/seo-local-barcelona" element={<SeoLocalBarcelona />} />
+            <Route path="/seo-local-valencia" element={<SeoLocalValencia />} />
+            <Route path="/seo-local-sevilla" element={<SeoLocalSevilla />} />
+            <Route path="/seo-local-malaga" element={<SeoLocalMalaga />} />
+            <Route path="/seo-local-zaragoza" element={<SeoLocalZaragoza />} />
+            <Route path="/seo-local-bilbao" element={<SeoLocalBilbao />} />
+            <Route path="/seo-local-murcia" element={<SeoLocalMurcia />} />
             <Route path="/seo-cordoba" element={<SeoCordoba />} />
             {/* Sector pages (level 2) — new slugs */}
             <Route path="/seo-para-fontaneros" element={<SectorPage />} />
