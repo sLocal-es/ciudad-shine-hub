@@ -260,27 +260,6 @@ const FisioterapeutasPage = () => {
       {/* FAQ */}
       <FAQSection title="Preguntas frecuentes sobre SEO para fisioterapeutas" items={faqs} />
 
-      {/* CITY LINKS */}
-      <section className="py-12">
-        <div className="container">
-          <h2 className="font-heading text-xl mb-6">Ciudades donde trabajamos con fisioterapeutas</h2>
-          <p className="text-sm text-muted-foreground leading-relaxed mb-6 max-w-2xl">
-            El sistema de posicionamiento local funciona en toda España. Estas son las ciudades donde ya tenemos páginas dedicadas con contenido específico para clínicas de fisioterapia.
-          </p>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            {cities.map((c) => (
-              <Link
-                key={c.slug}
-                to={`/seo-para-fisioterapeutas/${c.slug}`}
-                className="border border-border bg-card rounded-xl px-5 py-3 text-sm font-heading hover:border-primary hover:text-primary transition-colors text-center"
-              >
-                {c.name}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* RELATED SECTORS */}
       <section className="bg-warm-bg py-12">
         <div className="container">

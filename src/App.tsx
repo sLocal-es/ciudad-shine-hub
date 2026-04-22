@@ -24,7 +24,7 @@ import SeoLocalBilbao from "@/pages/SeoLocalBilbao";
 import SeoLocalMurcia from "@/pages/SeoLocalMurcia";
 import SectorPage from "@/pages/SectorPage";
 import FisioterapeutasPage from "@/pages/FisioterapeutasPage";
-import SectorCityPage from "@/pages/SectorCityPage";
+
 import ComoVeGoogleMiWeb from "@/pages/ComoVeGoogleMiWeb";
 import Sistema from "@/pages/Sistema";
 import SeoCordoba from "@/pages/SeoCordoba";
@@ -130,8 +130,6 @@ const App = () => (
             <Route path="/seo-para-fisioterapeutas" element={<FisioterapeutasPage />} />
             <Route path="/seo-para-entrenadores" element={<SectorPage />} />
             <Route path="/seo-para-yoga" element={<SectorPage />} />
-            {/* Sector + City pages (level 3) */}
-            <Route path="/:sector/:ciudad" element={<SectorCityPage />} />
             {/* Blog */}
             <Route path="/blog" element={<BlogIndex />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
