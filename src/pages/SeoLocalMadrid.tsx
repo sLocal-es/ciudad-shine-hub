@@ -30,18 +30,18 @@ const otrasCiudades = [
 const pasos = [
   {
     n: "01",
-    title: "Analizamos tu ficha y tu competencia real en Madrid",
-    body: "Antes de tocar nada miramos cómo estás posicionado en Google Maps para las búsquedas de tu sector en tu zona de Madrid. Quién te supera, por qué, y qué hace diferente. Ese análisis define el plan de trabajo desde el primer día.",
+    title: "Analizamos tu ficha y la competencia real en tu barrio",
+    body: "Antes de tocar nada analizamos cómo estás posicionado en Google Maps para las búsquedas de tu sector en tu zona concreta de Madrid. No es lo mismo posicionar en Retiro que en Vallecas, ni en Malasaña que en Moratalaz. Cada barrio tiene su propia competencia y sus propias búsquedas. Ese análisis define el plan de trabajo desde el primer día.",
   },
   {
     n: "02",
-    title: "Optimizamos tu Google Business Profile y tu web",
-    body: "Configuramos cada campo de tu ficha con las keywords correctas para Madrid: categorías, descripción, fotos, horarios y zona de servicio por barrios y distritos. Sincronizamos ficha y web para que Google reciba señales coherentes de los dos.",
+    title: "Optimizamos tu Google Business Profile y tu web para Madrid",
+    body: "Configuramos cada campo de tu ficha con las keywords correctas para Madrid: categorías principales y secundarias, descripción optimizada para búsquedas locales, fotos actualizadas, horarios precisos y zona de servicio definida por barrios y distritos. Sincronizamos tu ficha con tu web para que Google reciba señales coherentes y consistentes de los dos. Esto refuerza directamente tu relevancia y tu prominencia — los dos factores que puedes controlar.",
   },
   {
     n: "03",
-    title: "Publicamos contenido mensual y te informamos de resultados",
-    body: "Cada mes publicamos en tu ficha, gestionamos las reseñas y te enviamos un informe claro: posiciones ganadas en Madrid, visitas al perfil y llamadas recibidas. Sin tecnicismos, con datos reales.",
+    title: "Gestionamos tu ficha mes a mes y te informamos de resultados",
+    body: "El SEO local no es algo que se hace una vez — es una gestión continua. Cada mes publicamos en tu ficha, respondemos reseñas de forma estratégica, creamos contenido optimizado para las búsquedas de tu sector en Madrid y ajustamos la estrategia según los datos. Al final del mes recibes un informe claro: posiciones ganadas, visitas al perfil, llamadas recibidas y qué búsquedas te están trayendo clientes. Sin tecnicismos, con datos reales.",
   },
 ];
 
@@ -57,19 +57,23 @@ const planFeatures = [
 const faqs = [
   {
     q: "¿Cuánto tarda en posicionarse un negocio en Madrid?",
-    a: "En Madrid, por la alta competencia, los primeros resultados visibles aparecen entre el mes 2 y el mes 4: más visitas al perfil, más llamadas y mejora de posiciones en Google Maps. A partir del mes 6 los resultados son sostenibles y difíciles de superar por la competencia.",
+    a: "En Madrid, por la alta competencia, los primeros resultados visibles aparecen entre el mes 2 y el mes 4: más visitas al perfil, más llamadas y mejora de posiciones en Google Maps. A partir del mes 6 los resultados son sostenibles. El SEO local es una inversión a medio plazo — no desaparece cuando dejas de pagar como la publicidad.",
   },
   {
     q: "¿Por qué no aparezco en Google Maps si ya tengo ficha de Google?",
-    a: "Tener la ficha creada no es suficiente. Google valora relevancia, prominencia y distancia. Una ficha sin actualizaciones, sin reseñas recientes o con información incompleta pierde posiciones frente a competidores que sí la gestionan activamente.",
+    a: "Tener la ficha creada no es suficiente. Google valora relevancia, prominencia y distancia. Una ficha sin actualizaciones, sin reseñas recientes, con información incompleta o inconsistente con la web pierde posiciones progresivamente frente a competidores que sí la gestionan.",
   },
   {
     q: "¿Necesito web para hacer SEO local en Madrid?",
-    a: "No es imprescindible para empezar, pero mejora significativamente los resultados. El servicio incluye la web desde el inicio — no necesitas nada previo para arrancar.",
+    a: "No es imprescindible para empezar, pero una web optimizada mejora significativamente los resultados. Google cruza la información de tu ficha con tu web — si coinciden y se refuerzan, la visibilidad aumenta. El servicio incluye la web desde el inicio.",
   },
   {
     q: "¿Funciona para cualquier tipo de negocio en Madrid?",
-    a: "Sí. Fontaneros, fisioterapeutas, reformas, pintores, clínicas, entrenadores y cualquier negocio local en Madrid en cualquier barrio o distrito.",
+    a: "Sí. Fontaneros, fisioterapeutas, reformas, pintores, clínicas, entrenadores y cualquier negocio local en Madrid. Si tus clientes te buscan en Google por servicio y ciudad, el SEO local funciona para ti.",
+  },
+  {
+    q: "¿Qué diferencia hay entre SEO local y Google Ads en Madrid?",
+    a: "Google Ads te da visibilidad mientras pagas — cuando paras el presupuesto, desapareces. El SEO local construye una presencia orgánica que crece mes a mes. En Madrid, donde el coste por clic en Google Ads es elevado para servicios locales, el SEO local tiene un retorno mucho más rentable a medio plazo.",
   },
   {
     q: "¿Hay permanencia mínima?",
@@ -159,10 +163,16 @@ const SeoLocalMadrid = () => {
             Por qué tu negocio en Madrid no aparece en Google Maps
           </h2>
           <p className="text-muted-foreground leading-relaxed mb-4 text-sm md:text-base">
-            Google decide en décimas de segundo qué tres negocios mostrar basándose en tres factores: relevancia (qué tan bien encaja tu ficha con lo que buscan), distancia (lo cerca que estás) y prominencia (qué tan activo y reconocido es tu negocio online). La distancia no la puedes controlar. La relevancia y la prominencia sí — y son en las que trabajamos.
+            Madrid es la ciudad más competida de España en búsquedas locales. Más de 3 millones de personas buscan servicios locales en Google cada mes en la capital. Para un fontanero en Carabanchel, una clínica en Hortaleza o un entrenador personal en Arganzuela, aparecer en Google Maps no es opcional — es la diferencia entre el teléfono que suena y el silencio.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-4 text-sm md:text-base">
-            El error más común en Madrid: crear la ficha de Google y abandonarla. Google interpreta la inactividad como falta de relevancia y te baja posiciones. En un mercado tan competido como Madrid, donde cada barrio tiene decenas de negocios del mismo sector, esa diferencia puede ser de 20 llamadas al mes.
+            Google decide qué tres negocios mostrar en el mapa basándose en tres factores concretos. El primero es la relevancia: qué tan bien encaja tu ficha con lo que el cliente está buscando en ese momento. El segundo es la distancia: qué tan cerca estás de quien busca. El tercero es la prominencia: qué tan activo, conocido y valorado es tu negocio en internet. La distancia no la puedes controlar. La relevancia y la prominencia sí — y son exactamente en las que trabajamos.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-4 text-sm md:text-base">
+            El error más común en Madrid: crear la ficha de Google una vez y abandonarla. Google interpreta la inactividad como falta de relevancia y baja posiciones progresivamente. Un negocio con ficha desactualizada, sin fotos recientes, sin respuestas a reseñas y sin publicaciones periódicas compite en desventaja frente a uno que sí la gestiona activamente. En Madrid, donde la competencia por barrio es máxima, esa diferencia puede traducirse en 15 o 20 llamadas al mes que van a otro.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-4 text-sm md:text-base">
+            Otro factor crítico es la coherencia entre la ficha de Google y la web. Si los datos no coinciden — nombre, teléfono, servicios — Google desconfía y reduce la visibilidad. Muchos negocios en Madrid pierden posiciones por inconsistencias que ni saben que tienen.
           </p>
         </div>
       </section>
@@ -192,6 +202,24 @@ const SeoLocalMadrid = () => {
         </div>
       </section>
 
+      {/* BARRIOS */}
+      <section className="py-16 bg-warm-bg">
+        <div className="container max-w-3xl">
+          <h2 className="font-heading text-2xl md:text-3xl mb-6">
+            SEO local en Madrid: cada barrio tiene su propia competencia
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mb-4 text-sm md:text-base">
+            Madrid no es una ciudad uniforme. Las búsquedas en Chamberí tienen patrones distintos a las de Vallecas. Un fontanero en Carabanchel compite con negocios diferentes a uno en el barrio de Salamanca. Un fisioterapeuta en Tetuán tiene una competencia distinta a uno en Arganzuela.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-4 text-sm md:text-base">
+            Por eso el SEO local en Madrid requiere una estrategia específica por zona, no una solución genérica para toda la ciudad. Configuramos tu ficha y tu contenido para las búsquedas reales que hacen los clientes en tu barrio: con el nombre del distrito, con los monumentos y referencias cercanas, con el lenguaje que usan tus clientes cuando buscan desde el móvil.
+          </p>
+          <p className="text-muted-foreground leading-relaxed mb-4 text-sm md:text-base">
+            Trabajamos con negocios en toda la ciudad: Centro, Arganzuela, Retiro, Salamanca, Chamartín, Tetuán, Chamberí, Fuencarral, Moncloa, Latina, Carabanchel, Usera, Puente de Vallecas, Moratalaz, Ciudad Lineal, Hortaleza, Villaverde, Villa de Vallecas, Vicálvaro, San Blas y Barajas.
+          </p>
+        </div>
+      </section>
+
       {/* SECTORES */}
       <section className="py-16">
         <div className="container">
@@ -199,7 +227,7 @@ const SeoLocalMadrid = () => {
             SEO local para negocios en Madrid por sector
           </h2>
           <p className="text-sm text-muted-foreground mb-8 max-w-2xl">
-            Madrid tiene sectores muy competidos en Google Maps. Conocemos las búsquedas específicas de cada uno.
+            Madrid tiene sectores muy competidos en Google Maps. Conocemos las búsquedas específicas de cada uno y trabajamos de forma diferente en cada nicho.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
             {sectores.map((s) => (
