@@ -199,13 +199,20 @@ const Home = () => {
           <div className="bg-card border border-border rounded-xl p-8">
             <div className="font-heading text-4xl md:text-5xl text-primary mb-1">147€<span className="text-lg text-muted-foreground">/mes</span></div>
             <p className="text-xs text-muted-foreground mb-6">+ IVA</p>
-            <ul className="text-left space-y-3 mb-8 max-w-xs mx-auto">
-              <li className="flex items-start gap-2 text-sm">
-                <span className="text-primary font-heading">✓</span> Sin contratos largos
-              </li>
-              <li className="flex items-start gap-2 text-sm">
-                <span className="text-primary font-heading">✓</span> Cancelas cuando quieras
-              </li>
+            <ul className="text-left space-y-3 mb-8 max-w-md mx-auto">
+              {[
+                "Tu negocio aparece cuando tus clientes te buscan en Google",
+                "Más llamadas y contactos directos — sin pagar por cada uno",
+                "Contenido mensual que posiciona para nuevas búsquedas cada mes",
+                "Tu ficha de Google activa — Google te muestra antes que a la competencia",
+                "Cada mes sabes exactamente qué ha generado Google para tu negocio",
+                "Hablas siempre con la misma persona — sin intermediarios",
+              ].map((f) => (
+                <li key={f} className="flex items-start gap-2 text-sm">
+                  <span className="text-primary font-heading shrink-0">✓</span>
+                  <span>{f}</span>
+                </li>
+              ))}
             </ul>
             <a
               href="https://wa.me/34684780063"

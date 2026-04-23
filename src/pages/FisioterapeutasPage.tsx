@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
-import PlanCards from "@/components/PlanCards";
+
 import FAQSection from "@/components/FAQSection";
 import { sectors } from "@/data/sectors";
 import { cities } from "@/data/cities";
@@ -248,12 +248,42 @@ const FisioterapeutasPage = () => {
         </div>
       </section>
 
-      {/* PLANS */}
+      {/* PLAN ÚNICO */}
       <section className="bg-warm-bg py-16">
-        <div className="container">
-          <h2 className="font-heading text-2xl md:text-3xl mb-8 text-center">Elige tu plan</h2>
-          <PlanCards />
-          <p className="text-center text-sm text-muted-foreground mt-6">Ideal para clínicas de fisioterapia y profesionales autónomos.</p>
+        <div className="container max-w-3xl">
+          <h2 className="font-heading text-2xl md:text-3xl mb-3 text-center">Servicio de SEO para fisioterapeutas</h2>
+          <p className="text-base text-muted-foreground font-body font-light text-center mb-10">
+            Todo lo que necesita tu clínica para aparecer cuando alguien busca fisioterapeuta en tu ciudad.
+          </p>
+          <div className="bg-card border border-border rounded-2xl p-8 md:p-10 shadow-sm">
+            <span className="inline-block bg-primary/10 text-primary text-xs font-heading rounded-full px-3 py-1 mb-5">
+              PLAN SLOCAL.ES
+            </span>
+            <p className="font-heading text-4xl md:text-5xl mb-8">
+              147€<span className="text-lg text-muted-foreground font-body font-light">/mes + IVA</span>
+            </p>
+            <ul className="space-y-3 mb-8">
+              {[
+                "Tu clínica aparece cuando alguien busca fisioterapeuta en tu ciudad",
+                "Más citas directas desde Google — sin depender de recomendaciones",
+                "Contenido mensual que posiciona para cada tratamiento y zona",
+                "Tu ficha de Google activa — Google te muestra antes que a la competencia",
+                "Cada mes sabes exactamente cuántas citas ha generado Google",
+                "Hablas siempre con la misma persona — sin intermediarios",
+              ].map((f) => (
+                <li key={f} className="flex items-start gap-3 text-sm md:text-base font-body">
+                  <span className="text-primary font-heading">✓</span>
+                  <span>{f}</span>
+                </li>
+              ))}
+            </ul>
+            <Link
+              to="/contacto"
+              className="inline-block bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors"
+            >
+              Empezar →
+            </Link>
+          </div>
         </div>
       </section>
 
