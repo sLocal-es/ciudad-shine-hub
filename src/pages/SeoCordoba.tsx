@@ -29,19 +29,19 @@ const otrasCiudades = [
 const pasos = [
   {
     n: "01",
-    title: "Optimizamos tu ficha de Google Business Profile para Córdoba",
+    title: "Optimización de Google Business Profile para negocios en Córdoba",
     body:
       "Configuramos cada campo de tu perfil para las búsquedas de Córdoba: categorías correctas, descripción con keywords locales, fotos actualizadas, horarios y zona de servicio por barrios y zonas de la ciudad. Google necesita señales claras de que eres el negocio más relevante de tu zona para mostrarte en el top 3.",
   },
   {
     n: "02",
-    title: "Creamos contenido que posiciona en búsquedas de Córdoba",
+    title: "Contenido SEO local para búsquedas en Córdoba",
     body:
       "Artículos de blog y páginas de servicio optimizadas para las búsquedas que hacen tus clientes en Córdoba. Contenido específico por zona y por tipo de servicio, diseñado para aparecer cuando alguien busca exactamente lo que tú ofreces en la ciudad.",
   },
   {
     n: "03",
-    title: "Cada mes ves exactamente qué posiciones has ganado en Córdoba",
+    title: "Seguimiento mensual de posicionamiento en Córdoba",
     body:
       "Informe mensual con posiciones en Google Maps para las búsquedas más importantes de tu sector en Córdoba, visitas al perfil, llamadas recibidas y qué está funcionando. Sin tecnicismos, con datos reales.",
   },
@@ -54,11 +54,11 @@ const faqs = [
   },
   {
     q: "¿Por qué es buen momento para hacer SEO local en Córdoba?",
-    a: "Porque la competencia digital en Córdoba todavía no está saturada. Los negocios que posicionan ahora ocupan un espacio que después será mucho más difícil y costoso conseguir. Es el momento de establecer autoridad local antes que tu competencia lo haga.",
+    a: "Porque la competencia digital en Córdoba todavía no está saturada. Los negocios que posicionan ahora ocupan un espacio que después será mucho más difícil y costoso conseguir.",
   },
   {
     q: "¿Necesito web para hacer SEO local en Córdoba?",
-    a: "No es imprescindible para empezar, pero mejora significativamente los resultados. El servicio incluye la web desde el inicio — no necesitas nada previo para arrancar.",
+    a: "No es imprescindible para empezar, pero mejora significativamente los resultados. El servicio incluye la web desde el inicio.",
   },
   {
     q: "¿Funciona para cualquier tipo de negocio en Córdoba?",
@@ -66,7 +66,7 @@ const faqs = [
   },
   {
     q: "¿Hay permanencia mínima?",
-    a: "No. El servicio es mes a mes, sin permanencia mínima.",
+    a: "No. El servicio es mes a mes.",
   },
 ];
 
@@ -170,7 +170,7 @@ const SeoCordoba = () => {
       <section className="py-16">
         <div className="container">
           <h2 className="font-heading text-2xl md:text-3xl mb-8 max-w-3xl">
-            Por qué los negocios en Córdoba no aparecen en Google
+            SEO local en Córdoba: por qué tu negocio no aparece en Google Maps
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <div className="space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed">
@@ -197,7 +197,7 @@ const SeoCordoba = () => {
       <section className="bg-warm-bg py-16">
         <div className="container">
           <h2 className="font-heading text-2xl md:text-3xl mb-8">
-            Cómo posicionamos tu negocio en Córdoba
+            Cómo posicionamos tu negocio en Córdoba en Google Maps
           </h2>
           <div className="flex flex-col">
             {pasos.map((p, i) => (
@@ -224,7 +224,7 @@ const SeoCordoba = () => {
       <section className="py-16">
         <div className="container">
           <h2 className="font-heading text-2xl md:text-3xl mb-3">
-            Resultados reales de negocios que trabajan con slocal.es
+            Resultados reales de negocios locales en Córdoba
           </h2>
           <p className="text-sm text-muted-foreground mb-8 max-w-2xl">
             Estos son algunos de los resultados de negocios locales que ya trabajan con el sistema de posicionamiento de slocal.es.
@@ -260,7 +260,7 @@ const SeoCordoba = () => {
       <section className="py-16">
         <div className="container max-w-xl">
           <h2 className="font-heading text-2xl md:text-3xl mb-3 text-center">
-            Servicio de posicionamiento local en Córdoba
+            SEO local en Córdoba: plan y precio
           </h2>
           <p className="text-sm text-muted-foreground text-center mb-8 max-w-md mx-auto">
             Todo lo que necesita tu negocio en Córdoba para aparecer cuando tus clientes te buscan en Google.
@@ -300,10 +300,10 @@ const SeoCordoba = () => {
       <section className="bg-warm-bg py-12">
         <div className="container">
           <h2 className="font-heading text-xl md:text-2xl mb-3">
-            También posicionamos en otras ciudades de España
+            SEO local en otras ciudades de España
           </h2>
           <p className="text-sm text-muted-foreground mb-6 max-w-2xl">
-            Trabajamos con negocios en toda España. Estas son algunas de las ciudades donde operamos.
+            Trabajamos con negocios en toda España.
           </p>
           <div className="flex flex-wrap gap-3">
             {otrasCiudades.map((c) => (
