@@ -30,6 +30,7 @@ import AbogadosPage from "@/pages/AbogadosPage";
 import DentistasPage from "@/pages/DentistasPage";
 import PsicologosPage from "@/pages/PsicologosPage";
 import GimnasiosPage from "@/pages/GimnasiosPage";
+import SeoParaInmobiliarias from "@/pages/SeoParaInmobiliarias";
 
 import ComoVeGoogleMiWeb from "@/pages/ComoVeGoogleMiWeb";
 import Sistema from "@/pages/Sistema";
@@ -135,6 +136,7 @@ const App = () => (
             <Route path="/seo-para-dentistas" element={<DentistasPage />} />
             <Route path="/seo-para-psicologos" element={<PsicologosPage />} />
             <Route path="/seo-para-gimnasios" element={<GimnasiosPage />} />
+            <Route path="/seo-para-inmobiliarias" element={<SeoParaInmobiliarias />} />
             <Route path="/seo-para-pintores" element={<SectorPage />} />
             <Route path="/seo-para-clinicas" element={<SectorPage />} />
             <Route path="/seo-para-fisioterapeutas" element={<FisioterapeutasPage />} />
