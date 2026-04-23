@@ -56,7 +56,7 @@ const SeoCordoba = () => {
       <SEOHead
         title="SEO Córdoba | Consigue clientes desde Google"
         description="SEO en Córdoba para negocios locales. Consigue clientes desde Google con web, ficha optimizada y posicionamiento real."
-        canonical="/seo-cordoba"
+        canonical="/seo-local-cordoba"
         jsonLd={faqSchema}
       />
 

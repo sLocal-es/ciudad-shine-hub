@@ -126,7 +126,7 @@ const App = () => (
             <Route path="/seo-local-zaragoza" element={<SeoLocalZaragoza />} />
             <Route path="/seo-local-bilbao" element={<SeoLocalBilbao />} />
             <Route path="/seo-local-murcia" element={<SeoLocalMurcia />} />
-            <Route path="/seo-cordoba" element={<SeoCordoba />} />
+            <Route path="/seo-local-cordoba" element={<SeoCordoba />} />
             {/* Sector pages (level 2) — new slugs */}
             <Route path="/seo-para-fontaneros" element={<FontanerosPage />} />
             <Route path="/seo-para-reformas" element={<ReformasPage />} />

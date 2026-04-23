@@ -42,7 +42,7 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const cityHref = (slug: string) => slug === "cordoba" ? "/seo-cordoba" : `/seo-local-${slug}`;
+  const cityHref = (slug: string) => `/seo-local-${slug}`;
 
   return (
     <header className="sticky top-0 z-50 bg-card border-b border-border">
