@@ -1,6 +1,29 @@
 import { Link } from "react-router-dom";
-import { sectors } from "@/data/sectors";
-import { cities } from "@/data/cities";
+
+const footerCities = [
+  { slug: "madrid", name: "SEO local en Madrid" },
+  { slug: "barcelona", name: "SEO local en Barcelona" },
+  { slug: "valencia", name: "SEO local en Valencia" },
+  { slug: "sevilla", name: "SEO local en Sevilla" },
+  { slug: "malaga", name: "SEO local en Málaga" },
+  { slug: "zaragoza", name: "SEO local en Zaragoza" },
+  { slug: "bilbao", name: "SEO local en Bilbao" },
+  { slug: "murcia", name: "SEO local en Murcia" },
+  { slug: "cordoba", name: "SEO local en Córdoba" },
+];
+
+const footerSectors = [
+  { path: "/seo-para-fontaneros", label: "SEO para fontaneros" },
+  { path: "/seo-para-fisioterapeutas", label: "SEO para fisioterapeutas" },
+  { path: "/seo-para-reformas", label: "SEO para empresas de reformas" },
+  { path: "/seo-para-abogados", label: "SEO para abogados" },
+  { path: "/seo-para-inmobiliarias", label: "SEO para inmobiliarias" },
+  { path: "/seo-para-dentistas", label: "SEO para dentistas" },
+  { path: "/seo-para-psicologos", label: "SEO para psicólogos" },
+  { path: "/seo-para-gimnasios", label: "SEO para gimnasios" },
+];
+
+const cityHref = (slug: string) => slug === "cordoba" ? "/seo-cordoba" : `/seo-local-${slug}`;
 
 const Footer = () => (
   <footer className="bg-dark-bg text-dark-fg pt-16 pb-8">
@@ -20,9 +43,9 @@ const Footer = () => (
         <div>
           <h4 className="font-heading text-sm mb-4">Servicio</h4>
           <ul className="space-y-2 text-sm text-dark-fg/60">
-            <li><Link to="/aparecer-en-google-maps" className="hover:text-primary transition-colors">Aparecer en Google Maps</Link></li>
             <li><Link to="/seo-para-negocios-locales" className="hover:text-primary transition-colors">SEO para negocios locales</Link></li>
-            <li><Link to="/ficha-google-mi-negocio" className="hover:text-primary transition-colors">Ficha Google Mi Negocio</Link></li>
+            <li><Link to="/aparecer-en-google-maps" className="hover:text-primary transition-colors">Aparecer en Google Maps</Link></li>
+            <li><Link to="/ficha-google-mi-negocio" className="hover:text-primary transition-colors">Ficha de Google Mi Negocio</Link></li>
             <li><Link to="/como-salir-primero-en-google" className="hover:text-primary transition-colors">Cómo salir primero en Google</Link></li>
           </ul>
         </div>
@@ -31,10 +54,10 @@ const Footer = () => (
         <div>
           <h4 className="font-heading text-sm mb-4">Sectores</h4>
           <ul className="space-y-2 text-sm text-dark-fg/60">
-            {sectors.map((s) => (
-              <li key={s.slug}>
-                <Link to={`/${s.slug}`} className="hover:text-primary transition-colors">
-                  {s.metaTitle.split("|")[0].trim()}
+            {footerSectors.map((s) => (
+              <li key={s.path}>
+                <Link to={s.path} className="hover:text-primary transition-colors">
+                  {s.label}
                 </Link>
               </li>
             ))}
@@ -45,18 +68,13 @@ const Footer = () => (
         <div>
           <h4 className="font-heading text-sm mb-4">Ciudades</h4>
           <ul className="space-y-2 text-sm text-dark-fg/60">
-            {cities.map((c) => (
+            {footerCities.map((c) => (
               <li key={c.slug}>
-                <Link to={`/seo-local-${c.slug}`} className="hover:text-primary transition-colors">
+                <Link to={cityHref(c.slug)} className="hover:text-primary transition-colors">
                   {c.name}
                 </Link>
               </li>
             ))}
-            <li>
-              <Link to="/seo-cordoba" className="hover:text-primary transition-colors">
-                Córdoba
-              </Link>
-            </li>
           </ul>
         </div>
 
