@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
-import PlanCards from "@/components/PlanCards";
+
 import FAQSection from "@/components/FAQSection";
 import { sectors } from "@/data/sectors";
 import { cities } from "@/data/cities";
