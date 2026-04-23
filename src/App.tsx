@@ -29,6 +29,7 @@ import ReformasPage from "@/pages/ReformasPage";
 import AbogadosPage from "@/pages/AbogadosPage";
 import DentistasPage from "@/pages/DentistasPage";
 import PsicologosPage from "@/pages/PsicologosPage";
+import GimnasiosPage from "@/pages/GimnasiosPage";
 
 import ComoVeGoogleMiWeb from "@/pages/ComoVeGoogleMiWeb";
 import Sistema from "@/pages/Sistema";
