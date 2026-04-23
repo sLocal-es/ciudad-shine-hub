@@ -46,12 +46,12 @@ const pasos = [
 ];
 
 const planFeatures = [
-  "Google Business Profile — configuración y gestión mensual",
-  "Web local optimizada para búsquedas en Madrid",
-  "2 artículos de blog mensuales posicionados para tu sector",
-  "Posts mensuales en tu ficha de Google",
-  "Informe mensual de posiciones y resultados",
-  "Gestor directo — hablas con quien gestiona tu cuenta",
+  "Tu negocio aparece cuando alguien te busca en Google en tu ciudad",
+  "Más llamadas y contactos directos — sin pagar por cada uno",
+  "Contenido mensual que posiciona para nuevas búsquedas en tu zona",
+  "Tu ficha de Google activa — Google te muestra antes que a la competencia",
+  "Cada mes sabes exactamente cuántos contactos ha generado Google",
+  "Hablas siempre con la misma persona — sin intermediarios",
 ];
 
 const faqs = [
