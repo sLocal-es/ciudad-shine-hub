@@ -27,6 +27,7 @@ import FisioterapeutasPage from "@/pages/FisioterapeutasPage";
 import FontanerosPage from "@/pages/FontanerosPage";
 import ReformasPage from "@/pages/ReformasPage";
 import AbogadosPage from "@/pages/AbogadosPage";
+import DentistasPage from "@/pages/DentistasPage";
 
 import ComoVeGoogleMiWeb from "@/pages/ComoVeGoogleMiWeb";
 import Sistema from "@/pages/Sistema";
