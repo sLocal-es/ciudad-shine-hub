@@ -23,7 +23,7 @@ const footerSectors = [
   { path: "/seo-para-gimnasios", label: "SEO para gimnasios" },
 ];
 
-const cityHref = (slug: string) => slug === "cordoba" ? "/seo-cordoba" : `/seo-local-${slug}`;
+const cityHref = (slug: string) => `/seo-local-${slug}`;
 
 const Footer = () => (
   <footer className="bg-dark-bg text-dark-fg pt-16 pb-8">
