@@ -253,12 +253,12 @@ const SeoLocalBilbao = () => {
               Ficha de Google Business Profile + web + contenido mensual + seguimiento directo.
             </p>
             <ul className="space-y-2 mb-8 text-sm">
-              <li className="flex items-start gap-2">
-                <span className="text-primary">✓</span> Sin contratos largos
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-primary">✓</span> Cancelas cuando quieras
-              </li>
+              <li className="flex items-start gap-2"><span className="text-primary">✓</span><span>Tu negocio aparece cuando alguien te busca en Google en tu ciudad</span></li>
+              <li className="flex items-start gap-2"><span className="text-primary">✓</span><span>Más llamadas y contactos directos — sin pagar por cada uno</span></li>
+              <li className="flex items-start gap-2"><span className="text-primary">✓</span><span>Contenido mensual que posiciona para nuevas búsquedas en tu zona</span></li>
+              <li className="flex items-start gap-2"><span className="text-primary">✓</span><span>Tu ficha de Google activa — Google te muestra antes que a la competencia</span></li>
+              <li className="flex items-start gap-2"><span className="text-primary">✓</span><span>Cada mes sabes exactamente cuántos contactos ha generado Google</span></li>
+              <li className="flex items-start gap-2"><span className="text-primary">✓</span><span>Hablas siempre con la misma persona — sin intermediarios</span></li>
             </ul>
             <a
               href={WHATSAPP_URL}
