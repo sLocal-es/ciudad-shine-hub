@@ -28,11 +28,12 @@
   <!-- Sector pages (Level 2) — priority 0.8 -->
   <url><loc>https://slocal.es/seo-para-fontaneros</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://slocal.es/seo-para-reformas</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://slocal.es/seo-para-pintores</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://slocal.es/seo-para-clinicas</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://slocal.es/seo-para-fisioterapeutas</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://slocal.es/seo-para-entrenadores</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://slocal.es/seo-para-yoga</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://slocal.es/seo-para-abogados</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://slocal.es/seo-para-inmobiliarias</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://slocal.es/seo-para-dentistas</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://slocal.es/seo-para-psicologos</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://slocal.es/seo-para-gimnasios</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- Sector + City (Level 3) — Fontaneros -->
   <url><loc>https://slocal.es/seo-para-fontaneros/madrid</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
