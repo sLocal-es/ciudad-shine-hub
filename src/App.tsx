@@ -26,6 +26,7 @@ import SectorPage from "@/pages/SectorPage";
 import FisioterapeutasPage from "@/pages/FisioterapeutasPage";
 import FontanerosPage from "@/pages/FontanerosPage";
 import ReformasPage from "@/pages/ReformasPage";
+import AbogadosPage from "@/pages/AbogadosPage";
 
 import ComoVeGoogleMiWeb from "@/pages/ComoVeGoogleMiWeb";
 import Sistema from "@/pages/Sistema";
@@ -127,6 +128,7 @@ const App = () => (
             {/* Sector pages (level 2) — new slugs */}
             <Route path="/seo-para-fontaneros" element={<FontanerosPage />} />
             <Route path="/seo-para-reformas" element={<ReformasPage />} />
+            <Route path="/seo-para-abogados" element={<AbogadosPage />} />
             <Route path="/seo-para-pintores" element={<SectorPage />} />
             <Route path="/seo-para-clinicas" element={<SectorPage />} />
             <Route path="/seo-para-fisioterapeutas" element={<FisioterapeutasPage />} />
