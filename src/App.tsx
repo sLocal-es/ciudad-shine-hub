@@ -24,6 +24,7 @@ import SeoLocalBilbao from "@/pages/SeoLocalBilbao";
 import SeoLocalMurcia from "@/pages/SeoLocalMurcia";
 import SectorPage from "@/pages/SectorPage";
 import FisioterapeutasPage from "@/pages/FisioterapeutasPage";
+import FontanerosPage from "@/pages/FontanerosPage";
 
 import ComoVeGoogleMiWeb from "@/pages/ComoVeGoogleMiWeb";
 import Sistema from "@/pages/Sistema";
@@ -123,7 +124,7 @@ const App = () => (
             <Route path="/seo-local-murcia" element={<SeoLocalMurcia />} />
             <Route path="/seo-cordoba" element={<SeoCordoba />} />
             {/* Sector pages (level 2) — new slugs */}
-            <Route path="/seo-para-fontaneros" element={<SectorPage />} />
+            <Route path="/seo-para-fontaneros" element={<FontanerosPage />} />
             <Route path="/seo-para-reformas" element={<SectorPage />} />
             <Route path="/seo-para-pintores" element={<SectorPage />} />
             <Route path="/seo-para-clinicas" element={<SectorPage />} />
