@@ -1,136 +1,218 @@
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
+import BreadcrumbNav from "@/components/BreadcrumbNav";
+import FAQSection from "@/components/FAQSection";
 import ResultadosSection from "@/components/ResultadosSection";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 
-const WA_URL =
-  "https://wa.me/34684780063?text=Hola%2C%20quiero%20SEO%20en%20C%C3%B3rdoba";
+const sectores = [
+  { label: "SEO para fontaneros", href: "/seo-para-fontaneros" },
+  { label: "SEO para fisioterapeutas", href: "/seo-para-fisioterapeutas" },
+  { label: "SEO para empresas de reformas", href: "/seo-para-reformas" },
+  { label: "SEO para abogados", href: "/seo-para-abogados" },
+  { label: "SEO para inmobiliarias", href: "/seo-para-inmobiliarias" },
+  { label: "SEO para dentistas", href: "/seo-para-dentistas" },
+  { label: "SEO para psicólogos", href: "/seo-para-psicologos" },
+  { label: "SEO para gimnasios", href: "/seo-para-gimnasios" },
+];
+
+const otrasCiudades = [
+  { label: "SEO local en Madrid", href: "/seo-local-madrid" },
+  { label: "SEO local en Barcelona", href: "/seo-local-barcelona" },
+  { label: "SEO local en Valencia", href: "/seo-local-valencia" },
+  { label: "SEO local en Sevilla", href: "/seo-local-sevilla" },
+  { label: "SEO local en Málaga", href: "/seo-local-malaga" },
+  { label: "SEO local en Zaragoza", href: "/seo-local-zaragoza" },
+  { label: "SEO local en Bilbao", href: "/seo-local-bilbao" },
+  { label: "SEO local en Murcia", href: "/seo-local-murcia" },
+];
+
+const pasos = [
+  {
+    n: "01",
+    title: "Optimizamos tu ficha de Google Business Profile para Córdoba",
+    body:
+      "Configuramos cada campo de tu perfil para las búsquedas de Córdoba: categorías correctas, descripción con keywords locales, fotos actualizadas, horarios y zona de servicio por barrios y zonas de la ciudad. Google necesita señales claras de que eres el negocio más relevante de tu zona para mostrarte en el top 3.",
+  },
+  {
+    n: "02",
+    title: "Creamos contenido que posiciona en búsquedas de Córdoba",
+    body:
+      "Artículos de blog y páginas de servicio optimizadas para las búsquedas que hacen tus clientes en Córdoba. Contenido específico por zona y por tipo de servicio, diseñado para aparecer cuando alguien busca exactamente lo que tú ofreces en la ciudad.",
+  },
+  {
+    n: "03",
+    title: "Cada mes ves exactamente qué posiciones has ganado en Córdoba",
+    body:
+      "Informe mensual con posiciones en Google Maps para las búsquedas más importantes de tu sector en Córdoba, visitas al perfil, llamadas recibidas y qué está funcionando. Sin tecnicismos, con datos reales.",
+  },
+];
+
+const faqs = [
+  {
+    q: "¿Cuánto tarda en posicionarse un negocio en Córdoba?",
+    a: "En Córdoba, con una competencia digital menor que en Madrid o Barcelona, los primeros resultados visibles suelen aparecer entre el mes 1 y el mes 3. Los resultados se consolidan a partir del mes 4-5. Empezar ahora te da una ventaja real sobre los competidores que todavía no han trabajado su presencia en Google.",
+  },
+  {
+    q: "¿Por qué es buen momento para hacer SEO local en Córdoba?",
+    a: "Porque la competencia digital en Córdoba todavía no está saturada. Los negocios que posicionan ahora ocupan un espacio que después será mucho más difícil y costoso conseguir. Es el momento de establecer autoridad local antes que tu competencia lo haga.",
+  },
+  {
+    q: "¿Necesito web para hacer SEO local en Córdoba?",
+    a: "No es imprescindible para empezar, pero mejora significativamente los resultados. El servicio incluye la web desde el inicio — no necesitas nada previo para arrancar.",
+  },
+  {
+    q: "¿Funciona para cualquier tipo de negocio en Córdoba?",
+    a: "Sí. Fontaneros, fisioterapeutas, reformas, abogados, dentistas, psicólogos, inmobiliarias y cualquier negocio local en Córdoba o en la provincia.",
+  },
+  {
+    q: "¿Hay permanencia mínima?",
+    a: "No. El servicio es mes a mes, sin permanencia mínima.",
+  },
+];
 
 const SeoCordoba = () => {
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: "SEO Local en Córdoba",
+    provider: {
+      "@type": "LocalBusiness",
+      name: "slocal.es",
+      url: "https://slocal.es",
+    },
+    areaServed: "Córdoba",
+    description: "Servicio de SEO local para negocios en Córdoba",
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Inicio", item: "https://slocal.es/" },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "SEO Local en Córdoba",
+        item: "https://slocal.es/seo-local-cordoba",
+      },
+    ],
+  };
+
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "slocal.es",
+    url: "https://slocal.es",
+    description: "SEO local para negocios en Córdoba",
+    areaServed: "Córdoba, España",
+    priceRange: "€€",
+  };
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: [
-      {
-        "@type": "Question",
-        name: "¿Cuánto tarda el SEO en Córdoba?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Las primeras llamadas desde la ficha de Google suelen llegar en el mes 1 o 2. El posicionamiento web sólido tarda entre 2 y 4 meses.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "¿Funciona para cualquier negocio en Córdoba?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Sí, siempre que tu cliente te busque en Google: fontaneros, clínicas, reformas, electricistas, abogados, talleres, estética y más.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "¿Necesito tener web?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "No. Si no tienes, te la monto. Si tienes una web vieja o que no capta clientes, la rehago pensada para posicionar en Córdoba.",
-        },
-      },
-      {
-        "@type": "Question",
-        name: "¿También trabajas fuera de Córdoba?",
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: "Sí. Trabajo con negocios locales en toda España, pero esta página está pensada para negocios que quieren clientes en Córdoba.",
-        },
-      },
-    ],
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
   };
 
   return (
     <>
       <SEOHead
-        title="SEO Córdoba | Consigue clientes desde Google"
-        description="SEO en Córdoba para negocios locales. Consigue clientes desde Google con web, ficha optimizada y posicionamiento real."
+        title="SEO Local en Córdoba para Negocios | Aparecer en Google Maps | slocal.es"
+        description="Haz que tu negocio en Córdoba aparezca cuando tus clientes te buscan en Google. Más llamadas, más clientes locales. Desde 147€/mes + IVA."
         canonical="/seo-local-cordoba"
-        jsonLd={faqSchema}
+        jsonLd={[serviceSchema, breadcrumbSchema, localBusinessSchema, faqSchema]}
       />
 
       {/* HERO */}
-      <section className="py-20 md:py-28 bg-dark-bg text-dark-fg">
-        <div className="container max-w-3xl mx-auto">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-dark-bg border border-primary/30 text-primary text-xs font-medium tracking-wider uppercase mb-8">
-            SEO local en Córdoba
-          </div>
-          <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight mb-6">
-            SEO en Córdoba para conseguir <em className="text-primary not-italic">clientes desde Google</em>
-          </h1>
-          <p className="text-lg text-dark-fg/75 leading-relaxed mb-8 max-w-xl">
-            Ayudo a negocios en Córdoba a conseguir llamadas y contactos desde Google cada mes con web optimizada, ficha de Google y posicionamiento local.
-          </p>
-          <a
-            href={WA_URL}
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-heading font-medium px-8 py-4 rounded-lg hover:bg-primary/90 transition-all"
-          >
-            💬 Escríbeme por WhatsApp
-          </a>
-          <p className="text-sm text-dark-fg/45 mt-5 max-w-md">
-            Solo si quieres clientes desde Google en Córdoba. Si buscas teoría de SEO, esto no es para ti.
-          </p>
-        </div>
-      </section>
-
-      {/* INTRO */}
-      <section className="py-16 md:py-20 bg-dark-bg border-t border-dark-fg/10 text-dark-fg">
-        <div className="container max-w-3xl mx-auto">
-          <h2 className="font-heading text-3xl md:text-4xl leading-tight mb-6">
-            Servicio de SEO en Córdoba para <em className="text-primary not-italic">negocios locales</em>
-          </h2>
-          <p className="text-dark-fg/75 leading-relaxed text-lg">
-            Si tienes un negocio en Córdoba y no te llegan clientes desde Google, el problema no es tu sector. Es que no estás apareciendo cuando te buscan.
-          </p>
-        </div>
-      </section>
-
-      {/* QUÉ INCLUYE */}
-      <section className="py-16 md:py-20 bg-secondary/40">
-        <div className="container max-w-3xl mx-auto">
-          <h2 className="font-heading text-3xl md:text-4xl leading-tight mb-10">
-            Qué incluye el <em className="text-primary not-italic">SEO en Córdoba</em>
-          </h2>
-          <div className="grid md:grid-cols-2 gap-4">
-            {[
-              {
-                t: "Optimización de ficha de Google Business Profile",
-                d: "Configuro y mantengo tu ficha de Google en Córdoba: categorías, servicios, fotos, descripción y publicaciones cada mes.",
-              },
-              {
-                t: "Posicionamiento en Google Maps en Córdoba",
-                d: "Trabajo las señales que Google Maps usa para mostrarte primero cuando alguien busca tu servicio en Córdoba.",
-              },
-              {
-                t: "Creación o mejora de web orientada a clientes",
-                d: "Una web pensada para captar, no para presumir. Una página por servicio y por zona de Córdoba.",
-              },
-              {
-                t: "Seguimiento y mejora continua",
-                d: "Cada mes reviso, ajusto y publico contenido nuevo. Te aviso por WhatsApp cuando hay movimiento.",
-              },
-            ].map((b) => (
-              <div
-                key={b.t}
-                className="bg-card border border-border rounded-xl p-6"
+      <section className="bg-dark-bg text-dark-fg py-16 md:py-24">
+        <div className="container grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          <div>
+            <BreadcrumbNav
+              items={[
+                { label: "Inicio", href: "/" },
+                { label: "SEO Local en Córdoba" },
+              ]}
+            />
+            <h1 className="font-heading text-3xl md:text-4xl leading-tight mb-4">
+              SEO Local en Córdoba: Que tus Clientes te Encuentren en Google
+            </h1>
+            <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-8 font-body font-light">
+              Cuando alguien en Córdoba busca "fontanero en el Casco Histórico", "fisioterapeuta en Ciudad Jardín" o "empresa de reformas en Córdoba", Google muestra tres negocios en el mapa. Esos tres reciben el 40% de todos los contactos. Si no estás tú, está tu competencia. Lo gestionamos desde Córdoba para que eso cambie — desde 147€/mes.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                to="/contacto"
+                className="bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors inline-block"
               >
-                <div className="flex items-start gap-3">
-                  <span className="text-primary text-lg leading-none mt-0.5">✓</span>
-                  <div>
-                    <h3 className="font-heading text-base mb-2">{b.t}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{b.d}</p>
-                  </div>
+                Empezar →
+              </Link>
+              <Link
+                to="/como-funciona"
+                className="border border-dark-fg/30 text-dark-fg font-heading text-sm rounded-lg px-6 py-3 hover:border-primary hover:text-primary transition-colors inline-block"
+              >
+                Ver cómo funciona
+              </Link>
+            </div>
+          </div>
+          <div className="rounded-xl w-full h-[340px] border-2 border-dashed border-[#E4E2DC] bg-[#F0EDE4] flex items-center justify-center p-6 text-center">
+            <span className="text-sm text-muted-foreground font-body">
+              [IMAGEN: Pantalla de móvil mostrando búsqueda "fontanero Córdoba" en Google Maps con Local Pack]
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* WHY — dos columnas sin cards */}
+      <section className="py-16">
+        <div className="container">
+          <h2 className="font-heading text-2xl md:text-3xl mb-8 max-w-3xl">
+            Por qué los negocios en Córdoba no aparecen en Google
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed">
+              <p>
+                Córdoba tiene un mercado local activo con menor competencia digital que Madrid o Barcelona. Eso significa que los negocios que trabajan su posicionamiento en Google Maps ahora tienen una ventaja real sobre los que esperan. En barrios como el Casco Histórico, Ciudad Jardín, El Brillante, Parque Figueroa o Vistalegre, los clientes buscan servicios locales en Google a diario.
+              </p>
+              <p>
+                Cuando alguien busca "electricista en Córdoba", "clínica dental cerca de mí" o "abogado en el centro de Córdoba", Google muestra tres negocios en el mapa. Los que están ahí reciben el 40% de todos los clics. Los que no están no existen para ese cliente.
+              </p>
+            </div>
+            <div className="space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed">
+              <p>
+                El error más común: crear la ficha de Google una vez y abandonarla. Google interpreta la inactividad como falta de relevancia y baja posiciones progresivamente. En Córdoba, donde la competencia digital todavía es menor que en las grandes capitales, optimizar ahora te da una ventaja que después será muy difícil de recuperar para tu competencia.
+              </p>
+              <p>
+                Un negocio en el Casco Histórico de Córdoba bien posicionado en Google Maps recibe búsquedas de residentes, de turistas que buscan servicios locales y de personas de toda la provincia. La combinación de proximidad y relevancia es exactamente lo que gestionamos para tu negocio.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* HOW */}
+      <section className="bg-warm-bg py-16">
+        <div className="container">
+          <h2 className="font-heading text-2xl md:text-3xl mb-8">
+            Cómo posicionamos tu negocio en Córdoba
+          </h2>
+          <div className="flex flex-col">
+            {pasos.map((p, i) => (
+              <div
+                key={p.n}
+                className={`flex flex-col md:flex-row gap-6 md:gap-10 py-8 ${
+                  i !== pasos.length - 1 ? "border-b border-border" : ""
+                }`}
+              >
+                <div className="text-primary font-heading font-light text-5xl md:text-6xl leading-none md:w-32 shrink-0">
+                  {p.n}
+                </div>
+                <div className="flex-1">
+                  <h3 className="font-heading font-bold text-lg md:text-xl mb-3">{p.title}</h3>
+                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{p.body}</p>
                 </div>
               </div>
             ))}
@@ -139,180 +221,116 @@ const SeoCordoba = () => {
       </section>
 
       {/* RESULTADOS */}
-      <section className="py-12 bg-background">
-        <div className="container max-w-3xl mx-auto text-center mb-4">
-          <h2 className="font-heading text-3xl md:text-4xl leading-tight mb-4">
-            Resultados reales en negocios <em className="text-primary not-italic">en Córdoba</em>
+      <section className="py-16">
+        <div className="container">
+          <h2 className="font-heading text-2xl md:text-3xl mb-3">
+            Resultados reales de negocios que trabajan con slocal.es
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Negocios en Córdoba ya están recibiendo llamadas, visitas y contactos desde Google.
+          <p className="text-sm text-muted-foreground mb-8 max-w-2xl">
+            Estos son algunos de los resultados de negocios locales que ya trabajan con el sistema de posicionamiento de slocal.es.
           </p>
         </div>
         <ResultadosSection />
       </section>
 
-      {/* CÓMO FUNCIONA */}
-      <section className="py-16 md:py-20 bg-dark-bg text-dark-fg">
-        <div className="container max-w-3xl mx-auto">
-          <h2 className="font-heading text-3xl md:text-4xl leading-tight mb-10">
-            Cómo funciona el SEO en Córdoba
-          </h2>
-          <ol className="space-y-5">
-            {[
-              {
-                n: "01",
-                t: "Análisis del negocio y del mercado local",
-                d: "Miro tu negocio, tu competencia en Córdoba y qué busca la gente. Te digo si hay recorrido real.",
-              },
-              {
-                n: "02",
-                t: "Optimización de presencia en Google",
-                d: "Monto o reordeno la web y dejo tu ficha de Google trabajando para captar en Córdoba.",
-              },
-              {
-                n: "03",
-                t: "Aumento de visibilidad en Córdoba",
-                d: "Cada mes publico contenido y trabajo señales locales para que aparezcas más arriba en Google y Maps.",
-              },
-              {
-                n: "04",
-                t: "Llegada de clientes",
-                d: "Llamadas, mensajes y rutas a tu negocio. Te aviso por WhatsApp de los movimientos importantes.",
-              },
-            ].map((s) => (
-              <li
-                key={s.n}
-                className="flex gap-5 items-start border-b border-dark-fg/10 pb-5 last:border-0"
-              >
-                <span className="font-heading text-2xl font-bold text-primary/50 shrink-0 w-12">
-                  {s.n}
-                </span>
-                <div>
-                  <h3 className="font-heading text-lg mb-1">{s.t}</h3>
-                  <p className="text-sm text-dark-fg/60 leading-relaxed">{s.d}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-          <p className="text-sm text-dark-fg/60 mt-8">
-            ¿Quieres ver el sistema completo?{" "}
-            <Link to="/sistema" className="text-primary hover:underline">
-              Ver cómo funciona el sistema
-            </Link>
-            .
-          </p>
-        </div>
-      </section>
-
-      {/* PRECIO */}
-      <section className="py-20 md:py-24 bg-dark-bg text-dark-fg border-t border-dark-fg/10">
-        <div className="container max-w-2xl mx-auto text-center">
-          <div className="inline-block px-4 py-1.5 rounded-full bg-dark-bg border border-primary/30 text-primary text-xs font-medium tracking-wider uppercase mb-6">
-            Precio
-          </div>
-          <h2 className="font-heading text-4xl md:text-5xl leading-tight mb-4">
-            Cuánto cuesta el SEO en Córdoba
-          </h2>
-          <p className="text-dark-fg/70 text-lg mb-8 max-w-md mx-auto">
-            Trabajo desde <strong className="text-primary">147€/mes</strong>, incluyendo todo lo necesario para posicionar tu negocio en Google y generar clientes reales.
-          </p>
-          <a
-            href={WA_URL}
-            className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-heading font-medium px-8 py-4 rounded-lg hover:bg-primary/90 transition-all"
-          >
-            💬 Quiero saber más por WhatsApp
-          </a>
-        </div>
-      </section>
-
       {/* SECTORES */}
-      <section className="py-16 md:py-20 bg-secondary/40">
-        <div className="container max-w-3xl mx-auto">
-          <h2 className="font-heading text-3xl md:text-4xl leading-tight mb-8">
-            SEO local en Córdoba para <em className="text-primary not-italic">diferentes negocios</em>
+      <section className="bg-warm-bg py-16">
+        <div className="container">
+          <h2 className="font-heading text-2xl md:text-3xl mb-3">
+            SEO local para negocios en Córdoba por sector
           </h2>
-          <p className="text-muted-foreground mb-8">
-            Trabajo posicionamiento web en Córdoba y posicionamiento Google en Córdoba para negocios como:
+          <p className="text-sm text-muted-foreground mb-8 max-w-2xl">
+            Cada sector tiene sus propias búsquedas en Córdoba. Trabajamos de forma específica en cada uno.
           </p>
-          <ul className="grid md:grid-cols-2 gap-3">
-            {[
-              "Fontaneros en Córdoba",
-              "Empresas de reformas en Córdoba",
-              "Electricistas en Córdoba",
-              "Negocios locales en Córdoba",
-            ].map((s) => (
-              <li
-                key={s}
-                className="bg-card border border-border rounded-xl p-4 flex items-center gap-3"
+          <div className="flex flex-wrap gap-3">
+            {sectores.map((s) => (
+              <Link
+                key={s.href}
+                to={s.href}
+                className="border border-border bg-card rounded-full px-5 py-2 text-sm font-heading hover:border-primary hover:text-primary transition-colors"
               >
-                <span className="text-primary">✓</span>
-                <span className="text-sm">{s}</span>
-              </li>
+                {s.label}
+              </Link>
             ))}
-          </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* PRICING */}
+      <section className="py-16">
+        <div className="container max-w-xl">
+          <h2 className="font-heading text-2xl md:text-3xl mb-3 text-center">
+            Servicio de posicionamiento local en Córdoba
+          </h2>
+          <p className="text-sm text-muted-foreground text-center mb-8 max-w-md mx-auto">
+            Todo lo que necesita tu negocio en Córdoba para aparecer cuando tus clientes te buscan en Google.
+          </p>
+          <div className="bg-card border border-border rounded-xl p-8 shadow-sm">
+            <div className="text-center mb-6">
+              <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold tracking-wider uppercase mb-4">
+                Plan slocal.es
+              </div>
+              <div className="font-heading text-4xl mb-1">
+                147€<span className="text-base text-muted-foreground">/mes</span>
+              </div>
+              <div className="text-xs text-muted-foreground">+ IVA</div>
+            </div>
+            <ul className="space-y-2 mb-8 text-sm">
+              <li className="flex items-start gap-2"><span className="text-primary">✓</span><span>Tu negocio aparece cuando alguien te busca en Google en Córdoba</span></li>
+              <li className="flex items-start gap-2"><span className="text-primary">✓</span><span>Más llamadas y contactos directos — sin pagar por cada uno</span></li>
+              <li className="flex items-start gap-2"><span className="text-primary">✓</span><span>Contenido mensual que posiciona para nuevas búsquedas en tu zona</span></li>
+              <li className="flex items-start gap-2"><span className="text-primary">✓</span><span>Tu ficha de Google activa — Google te muestra antes que a la competencia</span></li>
+              <li className="flex items-start gap-2"><span className="text-primary">✓</span><span>Cada mes sabes exactamente cuántos contactos ha generado Google</span></li>
+              <li className="flex items-start gap-2"><span className="text-primary">✓</span><span>Hablas siempre con la misma persona — sin intermediarios</span></li>
+            </ul>
+            <Link
+              to="/contacto"
+              className="block w-full text-center bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors"
+            >
+              Empezar en Córdoba →
+            </Link>
+          </div>
         </div>
       </section>
 
       {/* FAQ */}
-      <section className="py-16 md:py-20 bg-background">
-        <div className="container max-w-3xl mx-auto">
-          <h2 className="font-heading text-3xl md:text-4xl leading-tight mb-10">
-            Preguntas frecuentes sobre SEO en Córdoba
+      <FAQSection title="Preguntas frecuentes sobre SEO local en Córdoba" items={faqs} />
+
+      {/* OTHER CITIES */}
+      <section className="bg-warm-bg py-12">
+        <div className="container">
+          <h2 className="font-heading text-xl md:text-2xl mb-3">
+            También posicionamos en otras ciudades de España
           </h2>
-          <Accordion type="single" collapsible className="space-y-3">
-            {[
-              {
-                q: "¿Cuánto tarda el SEO en Córdoba?",
-                a: "Las primeras llamadas desde la ficha de Google suelen llegar en el mes 1 o 2. El posicionamiento web sólido tarda entre 2 y 4 meses.",
-              },
-              {
-                q: "¿Funciona para cualquier negocio en Córdoba?",
-                a: "Sí, siempre que tu cliente te busque en Google. Funciona muy bien para fontaneros, clínicas, reformas, electricistas, abogados, talleres y estética.",
-              },
-              {
-                q: "¿Necesito tener web?",
-                a: "No hace falta. Si no tienes, te la monto yo. Si tienes una web vieja o que no capta, la rehago pensada para Córdoba.",
-              },
-              {
-                q: "¿También trabajas fuera de Córdoba?",
-                a: "Sí, trabajo con negocios locales en toda España. Esta página está pensada para quien quiere clientes en Córdoba.",
-              },
-            ].map((f) => (
-              <AccordionItem
-                key={f.q}
-                value={f.q}
-                className="bg-card rounded-xl border border-border px-6"
+          <p className="text-sm text-muted-foreground mb-6 max-w-2xl">
+            Trabajamos con negocios en toda España. Estas son algunas de las ciudades donde operamos.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            {otrasCiudades.map((c) => (
+              <Link
+                key={c.href}
+                to={c.href}
+                className="border border-border bg-card rounded-full px-5 py-2 text-sm font-heading hover:border-primary hover:text-primary transition-colors"
               >
-                <AccordionTrigger className="hover:no-underline font-heading text-base text-left">
-                  {f.q}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground text-sm leading-relaxed">
-                  {f.a}
-                </AccordionContent>
-              </AccordionItem>
+                {c.label}
+              </Link>
             ))}
-          </Accordion>
+          </div>
         </div>
       </section>
 
-      {/* CTA FINAL */}
-      <section className="py-16 md:py-20 bg-background">
-        <div className="container max-w-2xl mx-auto">
-          <div className="bg-dark-bg rounded-2xl p-10 md:p-14 text-center">
-            <h2 className="font-heading text-2xl md:text-3xl text-dark-fg mb-4">
-              Consigue clientes desde Google <em className="text-primary not-italic">en Córdoba</em>
-            </h2>
-            <p className="text-dark-fg/70 mb-8 max-w-md mx-auto">
-              Te miro tu caso gratis y te digo si tiene sentido empezar. Cuanto antes, antes Google te manda clientes.
-            </p>
-            <a
-              href={WA_URL}
-              className="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-heading font-medium px-8 py-4 rounded-lg hover:bg-primary/90 transition-all w-full max-w-sm mb-3"
-            >
-              💬 Escríbeme por WhatsApp
-            </a>
-            <p className="text-xs text-dark-fg/40">Respondo el mismo día.</p>
-          </div>
+      {/* FINAL CTA */}
+      <section className="bg-primary py-16">
+        <div className="container text-center">
+          <h2 className="font-heading text-2xl md:text-3xl text-primary-foreground mb-6">
+            ¿Tu negocio en Córdoba no aparece cuando tus clientes te buscan en Google?
+          </h2>
+          <Link
+            to="/contacto"
+            className="inline-block bg-card text-primary font-heading text-sm rounded-lg px-8 py-3 hover:bg-card/90 transition-colors"
+          >
+            Hablemos →
+          </Link>
         </div>
       </section>
     </>
