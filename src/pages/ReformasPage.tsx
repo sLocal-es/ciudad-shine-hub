@@ -270,12 +270,12 @@ const ReformasPage = () => {
             </p>
             <ul className="space-y-3 mb-8">
               {[
-                "Google Business Profile — configuración y gestión mensual",
-                "Web con páginas por tipo de reforma y zona",
-                "2 artículos de blog mensuales para tu sector",
-                "Posts mensuales en tu ficha de Google",
-                "Informe mensual de posiciones y presupuestos recibidos",
-                "Gestor directo — hablas con quien gestiona tu cuenta",
+                "Tu empresa aparece cuando alguien busca reforma en tu ciudad",
+                "Más presupuestos directos desde Google — sin depender del boca a boca",
+                "Contenido mensual que posiciona para cada tipo de reforma y zona",
+                "Tu ficha de Google activa — Google te muestra antes que a la competencia",
+                "Cada mes sabes exactamente cuántos presupuestos ha generado Google",
+                "Hablas siempre con la misma persona — sin intermediarios",
               ].map((f) => (
                 <li key={f} className="flex items-start gap-3 text-sm md:text-base font-body">
                   <span className="text-primary font-heading">✓</span>

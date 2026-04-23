@@ -248,12 +248,12 @@ const AbogadosPage = () => {
             </p>
             <ul className="space-y-3 mb-8">
               {[
-                "Google Business Profile — configuración y gestión mensual",
-                "Web con páginas por especialidad jurídica y ciudad",
-                "2 artículos de blog mensuales para tu área de práctica",
-                "Posts mensuales en tu ficha de Google",
-                "Informe mensual de consultas y posiciones",
-                "Gestor directo — hablas con quien gestiona tu cuenta",
+                "Tu despacho aparece cuando alguien busca abogado en tu ciudad",
+                "Más consultas directas desde Google — sin pagar por cada lead",
+                "Contenido mensual que posiciona para cada especialidad jurídica y zona",
+                "Tu ficha de Google activa — Google te muestra antes que a la competencia",
+                "Cada mes sabes exactamente cuántas consultas ha generado Google",
+                "Hablas siempre con la misma persona — sin intermediarios",
               ].map((f) => (
                 <li key={f} className="flex items-start gap-3 text-sm md:text-base font-body">
                   <span className="text-primary font-heading">✓</span>

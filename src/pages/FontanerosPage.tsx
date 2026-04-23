@@ -277,12 +277,12 @@ const FontanerosPage = () => {
             </p>
             <ul className="space-y-3 mb-8">
               {[
-                "Google Business Profile — configuración y gestión mensual",
-                "Web con páginas por tipo de servicio y zona",
-                "2 artículos de blog mensuales para tu sector",
-                "Posts mensuales en tu ficha de Google",
-                "Informe mensual de posiciones y llamadas",
-                "Gestor directo — hablas con quien gestiona tu cuenta",
+                "Tu negocio aparece cuando alguien busca fontanero urgente en tu ciudad",
+                "Más llamadas directas desde Google — sin pagar por cada una",
+                "Contenido mensual que posiciona para nuevas búsquedas de averías y servicios",
+                "Tu ficha de Google activa — Google te muestra antes que a la competencia",
+                "Cada mes sabes exactamente cuántas llamadas ha generado Google",
+                "Hablas siempre con la misma persona — sin intermediarios",
               ].map((f) => (
                 <li key={f} className="flex items-start gap-3 text-sm md:text-base font-body">
                   <span className="text-primary font-heading">✓</span>
