@@ -16,5 +16,8 @@
 /mas-clientes-entrenador-personal/*        /seo-para-entrenadores/:splat     301
 /mas-alumnos-para-yoga/*                   /seo-para-yoga/:splat             301
 
+# 301 redirect for renamed Córdoba page
+/seo-cordoba                               /seo-local-cordoba                301
+
 # SPA fallback
 /*    /index.html   200
