@@ -130,6 +130,7 @@ const App = () => (
             <Route path="/seo-para-fontaneros" element={<FontanerosPage />} />
             <Route path="/seo-para-reformas" element={<ReformasPage />} />
             <Route path="/seo-para-abogados" element={<AbogadosPage />} />
+            <Route path="/seo-para-dentistas" element={<DentistasPage />} />
             <Route path="/seo-para-pintores" element={<SectorPage />} />
             <Route path="/seo-para-clinicas" element={<SectorPage />} />
             <Route path="/seo-para-fisioterapeutas" element={<FisioterapeutasPage />} />
