@@ -129,7 +129,7 @@ const Navbar = () => {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden border-t border-border bg-card px-6 py-4 space-y-3">
+        <div className="md:hidden border-t border-border bg-card px-6 py-4 space-y-3 max-h-[calc(100vh-4rem)] overflow-y-auto overscroll-contain">
           <Link to="/como-funciona" className="block text-sm py-2 hover:text-primary" onClick={() => setMobileOpen(false)}>Cómo funciona</Link>
           <Link to="/seo-para-negocios-locales" className="block text-sm py-2 hover:text-primary" onClick={() => setMobileOpen(false)}>SEO Local</Link>
           <p className="text-xs text-muted-foreground mt-2">Localidades</p>

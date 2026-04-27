@@ -10,32 +10,25 @@ interface PlanCardProps {
 
 const planData: PlanCardProps[] = [
   {
-    name: "Esencial",
-    price: "€150",
-    priceNote: "+ IVA / mes",
-    features: [
-      "2 artículos de blog al mes",
-      "4 posts en tu ficha de Google al mes",
-      "Gestión continua de tu ficha",
-      "Ideal para ciudades con menos competencia",
-    ],
-  },
-  {
-    name: "Pro",
-    price: "€250",
-    priceNote: "+ IVA / mes",
+    name: "Plan único",
+    price: "€147",
+    priceNote: "+ IVA / mes · sin setup",
     featured: true,
     features: [
+      "Web multipágina optimizada SEO incluida",
+      "Ficha de Google Business Profile configurada y optimizada",
+      "Alta en directorios locales relevantes",
       "4 artículos de blog al mes",
       "8 posts en tu ficha de Google al mes",
       "Gestión continua de tu ficha",
-      "Resultados más rápidos en ciudades grandes",
+      "Informe mensual de resultados",
+      "Sin permanencia · sin letra pequeña",
     ],
   },
 ];
 
 const PlanCards = () => (
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+  <div className="grid grid-cols-1 gap-6 max-w-md mx-auto">
     {planData.map((plan) => (
       <div
         key={plan.name}
@@ -47,7 +40,7 @@ const PlanCards = () => (
       >
         {plan.featured && (
           <div className="absolute -top-3 left-6 bg-primary text-primary-foreground text-[10px] uppercase font-bold tracking-wider px-3 py-1 rounded-full">
-            Más elegido
+            Todo incluido
           </div>
         )}
         <h3 className="font-heading text-xl mt-1 mb-3">{plan.name}</h3>
@@ -77,9 +70,8 @@ const PlanCards = () => (
         </Link>
       </div>
     ))}
-    <p className="md:col-span-2 text-xs text-muted-foreground text-center mt-2">
-      * Setup inicial (web + ficha): <span className="line-through opacity-60">€497</span>{" "}
-      <strong className="text-green-600">€397 + IVA</strong> este mes · pago único · sin permanencia mínima. Precios sin IVA.
+    <p className="text-xs text-muted-foreground text-center mt-2">
+      Sin setup · sin permanencia · precio sin IVA.
     </p>
   </div>
 );
