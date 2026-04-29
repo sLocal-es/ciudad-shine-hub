@@ -115,7 +115,7 @@ const SeoLocalMadrid = () => {
   return (
     <>
       <SEOHead
-        title="SEO Local Madrid para Negocios | Aparecer en Google Maps | slocal.es"
+        title="SEO Local en Madrid para Negocios | Más Clientes desde Google | slocal.es"
         description="Haz que tu negocio en Madrid aparezca cuando tus clientes te buscan en Google. Más llamadas, más clientes locales. Desde 147€/mes + IVA."
         canonical="/seo-local-madrid"
         jsonLd={[breadcrumbSchema, faqSchema, localBusinessSchema]}
@@ -133,7 +133,7 @@ const SeoLocalMadrid = () => {
               ]}
             />
             <h1 className="font-heading text-3xl md:text-4xl leading-tight mb-4">
-              SEO Local en Madrid: Aparece cuando tus clientes te buscan
+              SEO Local en Madrid: Más Clientes desde Google
             </h1>
             <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-8 font-body font-light">
               Cuando alguien busca "fontanero en Chamberí" o "fisioterapeuta en Salamanca", Google muestra tres negocios en el mapa. Esos tres se llevan el 40% de los clics. El resto no existe para ese cliente. Lo gestionamos para que el tuyo sea uno de ellos.
