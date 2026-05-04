@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { z } from "zod";
-import emailjs from "@emailjs/browser";
 import SEOHead from "@/components/SEOHead";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
-import { EMAILJS_CONFIG } from "@/lib/emailjs";
+import { sendForm } from "@/lib/sendForm";
 import { useToast } from "@/hooks/use-toast";
 
 const schema = z.object({
@@ -43,27 +42,23 @@ const Contacto = () => {
 
     setLoading(true);
     try {
-      await emailjs.send(
-        EMAILJS_CONFIG.serviceId,
-        EMAILJS_CONFIG.templateId,
-        {
-          form_type: "Contacto (página /contacto)",
-          from_name: parsed.data.nombre,
-          from_email: parsed.data.email,
-          phone: parsed.data.telefono ?? "",
-          business: parsed.data.negocio,
-          sector: "",
-          city: parsed.data.ciudad,
-          message: `Tiene web: ${parsed.data.tieneWeb || "No indicado"}\n\n${parsed.data.mensaje ?? ""}`,
-        },
-        { publicKey: EMAILJS_CONFIG.publicKey },
-      );
+      await sendForm({
+        title: "Nuevo contacto desde /contacto",
+        formType: "Contacto (página /contacto)",
+        name: parsed.data.nombre,
+        email: parsed.data.email,
+        phone: parsed.data.telefono,
+        business: parsed.data.negocio,
+        city: parsed.data.ciudad,
+        message: `Tiene web: ${parsed.data.tieneWeb || "No indicado"}\n\n${parsed.data.mensaje ?? ""}`,
+      });
       toast({
         title: "¡Mensaje enviado!",
         description: "Te respondemos en menos de 24 horas.",
       });
       setForm({ nombre: "", negocio: "", ciudad: "", email: "", telefono: "", tieneWeb: "", mensaje: "" });
-    } catch {
+    } catch (err) {
+      console.error("EmailJS error (/contacto):", err);
       toast({
         title: "No hemos podido enviar tu mensaje",
         description: "Inténtalo de nuevo o escríbenos a info@slocal.es",

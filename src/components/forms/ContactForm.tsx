@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { z } from "zod";
-import emailjs from "@emailjs/browser";
-import { EMAILJS_CONFIG } from "@/lib/emailjs";
+import { sendForm } from "@/lib/sendForm";
 import { useToast } from "@/hooks/use-toast";
 
 const schema = z.object({
@@ -33,25 +32,20 @@ const ContactForm = () => {
 
     setLoading(true);
     try {
-      await emailjs.send(
-        EMAILJS_CONFIG.serviceId,
-        EMAILJS_CONFIG.templateId,
-        {
-          form_type: "Contacto",
-          ...parsed.data,
-          phone: "",
-          business: "",
-          sector: "",
-          city: "",
-        },
-        { publicKey: EMAILJS_CONFIG.publicKey },
-      );
+      await sendForm({
+        title: "Nuevo mensaje de contacto",
+        formType: "Contacto",
+        name: parsed.data.from_name,
+        email: parsed.data.from_email,
+        message: parsed.data.message,
+      });
       toast({
         title: "¡Mensaje enviado!",
         description: "Te respondemos en menos de 24 horas.",
       });
       (e.target as HTMLFormElement).reset();
-    } catch {
+    } catch (err) {
+      console.error("EmailJS error (Contact):", err);
       toast({
         title: "No hemos podido enviar tu mensaje",
         description: "Inténtalo de nuevo o escríbenos a info@slocal.es",

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { z } from "zod";
-import emailjs from "@emailjs/browser";
-import { EMAILJS_CONFIG } from "@/lib/emailjs";
+import { sendForm } from "@/lib/sendForm";
 import { useToast } from "@/hooks/use-toast";
 
 const schema = z.object({
@@ -47,22 +46,23 @@ const LeadMagnetForm = () => {
 
     setLoading(true);
     try {
-      await emailjs.send(
-        EMAILJS_CONFIG.serviceId,
-        EMAILJS_CONFIG.templateId,
-        {
-          form_type: "Lead magnet — Análisis gratuito",
-          ...parsed.data,
-          message: "",
-        },
-        { publicKey: EMAILJS_CONFIG.publicKey },
-      );
+      await sendForm({
+        title: "Análisis gratuito solicitado",
+        formType: "Lead magnet — Análisis gratuito",
+        name: parsed.data.from_name,
+        email: parsed.data.from_email,
+        phone: parsed.data.phone,
+        business: parsed.data.business,
+        sector: parsed.data.sector,
+        city: parsed.data.city,
+      });
       toast({
         title: "¡Solicitud enviada!",
         description: "Te contactamos en menos de 24 horas con tu análisis.",
       });
       (e.target as HTMLFormElement).reset();
-    } catch {
+    } catch (err) {
+      console.error("EmailJS error (LeadMagnet):", err);
       toast({
         title: "No hemos podido enviar tu solicitud",
         description: "Inténtalo de nuevo o escríbenos a info@slocal.es",
