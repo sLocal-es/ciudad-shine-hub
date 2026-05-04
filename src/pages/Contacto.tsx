@@ -167,9 +167,10 @@ const Contacto = () => {
                 </div>
                 <button
                   type="submit"
-                  className="bg-primary text-primary-foreground font-heading text-sm rounded-lg px-8 py-3 hover:bg-primary/90 transition-colors"
+                  disabled={loading}
+                  className="bg-primary text-primary-foreground font-heading text-sm rounded-lg px-8 py-3 hover:bg-primary/90 transition-colors disabled:opacity-60"
                 >
-                  Enviar →
+                  {loading ? "Enviando..." : "Enviar →"}
                 </button>
                 <p className="text-xs text-muted-foreground mt-2">
                   Sin compromiso · Respondemos en menos de 24h
