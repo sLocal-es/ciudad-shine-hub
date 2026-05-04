@@ -1,28 +1,44 @@
+## Problema
 
+El formulario de la página **`/contacto`** (`src/pages/Contacto.tsx`) no envía emails. Su `handleSubmit` solo ejecuta:
 
-## Sustituir sección de ciudades en `SectorPage.tsx`
+```
+alert("Formulario enviado (integración pendiente)")
+```
 
-La sección con enlaces a `/seo-para-[sector]/[ciudad]` ya fue eliminada en un paso anterior. Ahora añado en su lugar una nueva sección que enlaza a las páginas de ciudad de Nivel 2 existentes (`/seo-local-[ciudad]`), usando un diseño de chips.
+Es un placeholder antiguo que nunca se conectó. Los formularios del Home (`LeadMagnetForm` y `ContactForm`) sí funcionan correctamente con EmailJS usando la configuración de `src/lib/emailjs.ts`.
 
-### Cambio único en `src/pages/SectorPage.tsx`
+## Solución
 
-Insertar una nueva sección entre la FAQ y "También trabajamos con otros sectores":
+Reemplazar el formulario casero de `Contacto.tsx` para que use EmailJS con la misma configuración que ya funciona en el resto del sitio:
 
-- **H2:** `Trabajamos con negocios en toda España`
-- **Párrafo:** `Gestionamos el posicionamiento local de negocios en toda España. Estas son algunas de las ciudades donde trabajamos actualmente:`
-- **Chips** (8 enlaces): Madrid, Barcelona, Valencia, Sevilla, Málaga, Zaragoza, Bilbao, Murcia → cada uno enlaza a `/seo-local-[ciudad]`.
+- Service ID: `service_v3qydbe`
+- Template ID: `9dh4jtg`
+- Public Key: `1cwUJ3NQK_iwLaJLD`
 
-### Diseño de los chips
-- Estilo coherente con la marca: borde sutil, fondo `bg-card`, padding compacto, hover en color primario (`#E8622A`).
-- Layout flex-wrap centrado.
-- Sin cambios de tipografía ni paleta.
+### Cambios en `src/pages/Contacto.tsx`
 
-### Lo que NO se toca
-- Footer.
-- Resto de secciones de `SectorPage.tsx` (Hero, Problem, How it works, Visual proof, Plans, FAQ, Otros sectores, CTA final).
-- Resto de páginas y componentes.
+1. Importar `emailjs`, `EMAILJS_CONFIG`, `useToast` y `zod` (mismo patrón que `ContactForm.tsx`).
+2. Validar los campos con zod antes de enviar (nombre, email obligatorios; resto opcionales).
+3. En el `handleSubmit`:
+   - Llamar a `emailjs.send(...)` con `form_type: "Contacto (página /contacto)"` y todos los campos del formulario (nombre, negocio, ciudad, email, teléfono, tieneWeb, mensaje).
+   - Mostrar toast de éxito ("¡Mensaje enviado! Te respondemos en menos de 24 horas.") o error.
+   - Limpiar el formulario al enviar con éxito.
+4. Mantener intacto el diseño visual, los labels y los campos actuales — solo cambia la lógica de envío.
+5. Mostrar estado `Enviando...` en el botón mientras se envía.
 
-### Resultado
-- Cero enlaces a URLs 404.
-- Refuerzo de enlazado interno desde las 7 páginas de sector hacia las 8 páginas de ciudad de Nivel 2.
+### Archivos modificados
 
+- `src/pages/Contacto.tsx` — reemplazar `handleSubmit` y añadir imports.
+
+### Sin cambios
+
+- Los formularios del Home siguen igual (ya funcionan).
+- La configuración de EmailJS no se toca.
+- No hace falta tocar ningún otro archivo.
+
+## Verificación tras aplicar
+
+1. Ir a `/contacto`, rellenar el formulario y enviar.
+2. Debe aparecer un toast verde "¡Mensaje enviado!" y llegar el email a la cuenta configurada en EmailJS.
+3. Si hay error de red, debe aparecer toast de error con el email de contacto de respaldo.

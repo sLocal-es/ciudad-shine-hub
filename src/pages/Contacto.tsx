@@ -1,8 +1,24 @@
 import { useState } from "react";
+import { z } from "zod";
+import emailjs from "@emailjs/browser";
 import SEOHead from "@/components/SEOHead";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
+import { EMAILJS_CONFIG } from "@/lib/emailjs";
+import { useToast } from "@/hooks/use-toast";
+
+const schema = z.object({
+  nombre: z.string().trim().min(1, "Indica tu nombre").max(100),
+  negocio: z.string().trim().min(1, "Indica tu negocio").max(255),
+  ciudad: z.string().trim().min(1, "Indica tu ciudad").max(100),
+  email: z.string().trim().email("Email no válido").max(255),
+  telefono: z.string().trim().max(30).optional(),
+  tieneWeb: z.string().max(50).optional(),
+  mensaje: z.string().trim().max(2000).optional(),
+});
 
 const Contacto = () => {
+  const { toast } = useToast();
+  const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({
     nombre: "",
     negocio: "",
@@ -13,9 +29,49 @@ const Contacto = () => {
     mensaje: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Formulario enviado (integración pendiente)");
+    const parsed = schema.safeParse(form);
+    if (!parsed.success) {
+      toast({
+        title: "Revisa el formulario",
+        description: parsed.error.issues[0]?.message ?? "Hay campos no válidos",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setLoading(true);
+    try {
+      await emailjs.send(
+        EMAILJS_CONFIG.serviceId,
+        EMAILJS_CONFIG.templateId,
+        {
+          form_type: "Contacto (página /contacto)",
+          from_name: parsed.data.nombre,
+          from_email: parsed.data.email,
+          phone: parsed.data.telefono ?? "",
+          business: parsed.data.negocio,
+          sector: "",
+          city: parsed.data.ciudad,
+          message: `Tiene web: ${parsed.data.tieneWeb || "No indicado"}\n\n${parsed.data.mensaje ?? ""}`,
+        },
+        { publicKey: EMAILJS_CONFIG.publicKey },
+      );
+      toast({
+        title: "¡Mensaje enviado!",
+        description: "Te respondemos en menos de 24 horas.",
+      });
+      setForm({ nombre: "", negocio: "", ciudad: "", email: "", telefono: "", tieneWeb: "", mensaje: "" });
+    } catch {
+      toast({
+        title: "No hemos podido enviar tu mensaje",
+        description: "Inténtalo de nuevo o escríbenos a info@slocal.es",
+        variant: "destructive",
+      });
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
