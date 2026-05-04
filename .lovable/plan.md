@@ -1,44 +1,66 @@
-## Problema
+## Qué falla
 
-El formulario de la página **`/contacto`** (`src/pages/Contacto.tsx`) no envía emails. Su `handleSubmit` solo ejecuta:
+En la captura se ve que el template de EmailJS usa estas variables:
 
-```
-alert("Formulario enviado (integración pendiente)")
-```
+- `{{title}}` en el asunto
+- `{{name}}` en “From Name”
+- `{{email}}` en “Reply To”
+- En el contenido aparecen `{{FORM_TYPE}}`, `{{from_name}}`, `{{from_email}}`, `{{phone}}`, etc.
 
-Es un placeholder antiguo que nunca se conectó. Los formularios del Home (`LeadMagnetForm` y `ContactForm`) sí funcionan correctamente con EmailJS usando la configuración de `src/lib/emailjs.ts`.
+Pero el código actual de la web no está enviando `title`, `name`, `email` ni `FORM_TYPE`. Envía principalmente `form_type`, `from_name` y `from_email`.
 
-## Solución
+Eso puede romper el envío si EmailJS necesita esas variables en campos críticos como el asunto, From Name o Reply To. En concreto, tu `Reply To` está configurado como `{{email}}`, pero la web envía `from_email`, no `email`.
 
-Reemplazar el formulario casero de `Contacto.tsx` para que use EmailJS con la misma configuración que ya funciona en el resto del sitio:
+## Plan de corrección
 
-- Service ID: `service_v3qydbe`
-- Template ID: `9dh4jtg`
-- Public Key: `1cwUJ3NQK_iwLaJLD`
+1. Crear una función común para enviar formularios a EmailJS
+   - Centralizar el envío en un helper único para evitar que cada formulario tenga variables distintas.
+   - Enviar siempre los aliases que tu template espera:
+     - `title`
+     - `name`
+     - `email`
+     - `FORM_TYPE`
+     - `form_type`
+     - `from_name`
+     - `from_email`
+     - `phone`
+     - `business`
+     - `sector`
+     - `city`
+     - `message`
+   - Mantener `info@slocal.es` como email visible de respaldo en los errores.
 
-### Cambios en `src/pages/Contacto.tsx`
+2. Actualizar los 3 formularios actuales
+   - `src/components/forms/LeadMagnetForm.tsx`
+   - `src/components/forms/ContactForm.tsx`
+   - `src/pages/Contacto.tsx`
 
-1. Importar `emailjs`, `EMAILJS_CONFIG`, `useToast` y `zod` (mismo patrón que `ContactForm.tsx`).
-2. Validar los campos con zod antes de enviar (nombre, email obligatorios; resto opcionales).
-3. En el `handleSubmit`:
-   - Llamar a `emailjs.send(...)` con `form_type: "Contacto (página /contacto)"` y todos los campos del formulario (nombre, negocio, ciudad, email, teléfono, tieneWeb, mensaje).
-   - Mostrar toast de éxito ("¡Mensaje enviado! Te respondemos en menos de 24 horas.") o error.
-   - Limpiar el formulario al enviar con éxito.
-4. Mantener intacto el diseño visual, los labels y los campos actuales — solo cambia la lógica de envío.
-5. Mostrar estado `Enviando...` en el botón mientras se envía.
+   Los tres usarán el mismo helper para que funcionen igual y no haya diferencias entre Home y `/contacto`.
 
-### Archivos modificados
+3. Ajustar los datos enviados según cada formulario
+   - Lead magnet:
+     - `title`: `Análisis gratuito solicitado`
+     - `FORM_TYPE`: `Lead magnet — Análisis gratuito`
+   - Formulario de contacto Home:
+     - `title`: `Nuevo mensaje de contacto`
+     - `FORM_TYPE`: `Contacto`
+   - Formulario `/contacto`:
+     - `title`: `Nuevo contacto desde /contacto`
+     - `FORM_TYPE`: `Contacto (página /contacto)`
 
-- `src/pages/Contacto.tsx` — reemplazar `handleSubmit` y añadir imports.
+4. Mejorar el error para depuración sin exponer datos sensibles
+   - Si EmailJS devuelve error, mostrar en consola solo estado/texto técnico del error, no datos del formulario.
+   - El usuario seguirá viendo el mensaje claro: “Inténtalo de nuevo o escríbenos a info@slocal.es”.
 
-### Sin cambios
+## Qué no voy a tocar
 
-- Los formularios del Home siguen igual (ya funcionan).
-- La configuración de EmailJS no se toca.
-- No hace falta tocar ningún otro archivo.
+- No cambiaré el diseño visual.
+- No cambiaré secciones de la web.
+- No cambiaré el template de EmailJS desde fuera, solo adaptaré la web a lo que ya se ve en tu captura.
+- No cambiaré el destinatario: debe seguir siendo `info@slocal.es` en EmailJS.
 
-## Verificación tras aplicar
+## Nota importante sobre EmailJS
 
-1. Ir a `/contacto`, rellenar el formulario y enviar.
-2. Debe aparecer un toast verde "¡Mensaje enviado!" y llegar el email a la cuenta configurada en EmailJS.
-3. Si hay error de red, debe aparecer toast de error con el email de contacto de respaldo.
+En tu captura el campo “To Email” ya está en `info@slocal.es`, eso está bien.
+
+Lo más probable es que el fallo venga por variables no coincidentes en `From Name`, `Reply To` y asunto. La corrección será hacer que la web mande tanto los nombres antiguos como los que tu template actual está esperando.
