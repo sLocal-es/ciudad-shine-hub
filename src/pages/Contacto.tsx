@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { z } from "zod";
-import emailjs from "@emailjs/browser";
 import SEOHead from "@/components/SEOHead";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
-import { EMAILJS_CONFIG } from "@/lib/emailjs";
+import { sendForm } from "@/lib/sendForm";
 import { useToast } from "@/hooks/use-toast";
 
 const schema = z.object({
