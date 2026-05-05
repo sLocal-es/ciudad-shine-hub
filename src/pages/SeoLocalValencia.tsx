@@ -96,7 +96,7 @@ const SeoLocalValencia = () => {
     "@type": "LocalBusiness",
     name: "slocal.es",
     url: "https://slocal.es/seo-local-valencia",
-    email: "hola@slocal.es",
+    email: "info@slocal.es",
     areaServed: "Valencia, España",
     serviceArea: "Valencia",
   };

@@ -128,7 +128,7 @@ const SeoLocalSevilla = () => {
     "@type": "LocalBusiness",
     name: "slocal.es",
     url: "https://slocal.es/seo-local-sevilla",
-    email: "hola@slocal.es",
+    email: "info@slocal.es",
     areaServed: "Sevilla, España",
     serviceArea: "Sevilla",
   };

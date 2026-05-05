@@ -124,7 +124,7 @@ const SeoLocalZaragoza = () => {
     "@type": "LocalBusiness",
     name: "slocal.es",
     url: "https://slocal.es/seo-local-zaragoza",
-    email: "hola@slocal.es",
+    email: "info@slocal.es",
     areaServed: "Zaragoza, España",
     serviceArea: "Zaragoza",
   };
