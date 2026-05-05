@@ -97,7 +97,7 @@ const SeoLocalBarcelona = () => {
     "@type": "LocalBusiness",
     name: "slocal.es",
     url: "https://slocal.es/seo-local-barcelona",
-    email: "hola@slocal.es",
+    email: "info@slocal.es",
     areaServed: "Barcelona, España",
     serviceArea: "Barcelona",
   };

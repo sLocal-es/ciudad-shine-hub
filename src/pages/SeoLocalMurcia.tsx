@@ -124,7 +124,7 @@ const SeoLocalMurcia = () => {
     "@type": "LocalBusiness",
     name: "slocal.es",
     url: "https://slocal.es/seo-local-murcia",
-    email: "hola@slocal.es",
+    email: "info@slocal.es",
     areaServed: "Murcia, España",
     serviceArea: "Murcia",
   };

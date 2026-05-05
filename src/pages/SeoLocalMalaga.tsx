@@ -124,7 +124,7 @@ const SeoLocalMalaga = () => {
     "@type": "LocalBusiness",
     name: "slocal.es",
     url: "https://slocal.es/seo-local-malaga",
-    email: "hola@slocal.es",
+    email: "info@slocal.es",
     areaServed: "Málaga, España",
     serviceArea: "Málaga",
   };

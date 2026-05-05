@@ -33,10 +33,9 @@ const ContactForm = () => {
     setLoading(true);
     try {
       await sendForm({
-        title: "Nuevo mensaje de contacto",
-        formType: "Contacto",
-        name: parsed.data.from_name,
-        email: parsed.data.from_email,
+        form_type: "Contacto",
+        from_name: parsed.data.from_name,
+        from_email: parsed.data.from_email,
         message: parsed.data.message,
       });
       toast({
