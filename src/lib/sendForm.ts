@@ -2,10 +2,9 @@ import emailjs from "@emailjs/browser";
 import { EMAILJS_CONFIG } from "./emailjs";
 
 export interface SendFormPayload {
-  title: string;
-  formType: string;
-  name: string;
-  email: string;
+  form_type: string;
+  from_name: string;
+  from_email: string;
   phone?: string;
   business?: string;
   sector?: string;
@@ -14,25 +13,14 @@ export interface SendFormPayload {
 }
 
 /**
- * Envía un formulario a EmailJS usando todas las variables que el template
- * actual espera ({{title}}, {{name}}, {{email}}, {{FORM_TYPE}}, etc.) y
- * también los aliases antiguos (from_name, from_email, form_type) para
- * compatibilidad.
+ * Envía todos los formularios a EmailJS con una única configuración y con
+ * los nombres exactos de variables usados por la plantilla.
  */
 export async function sendForm(payload: SendFormPayload) {
   const params = {
-    // Variables que usa el template actual
-    title: payload.title,
-    name: payload.name,
-    email: payload.email,
-    FORM_TYPE: payload.formType,
-
-    // Aliases (compatibilidad)
-    form_type: payload.formType,
-    from_name: payload.name,
-    from_email: payload.email,
-
-    // Resto de campos
+    form_type: payload.form_type,
+    from_name: payload.from_name,
+    from_email: payload.from_email,
     phone: payload.phone ?? "",
     business: payload.business ?? "",
     sector: payload.sector ?? "",
