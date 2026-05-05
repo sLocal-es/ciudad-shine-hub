@@ -47,10 +47,9 @@ const LeadMagnetForm = () => {
     setLoading(true);
     try {
       await sendForm({
-        title: "Análisis gratuito solicitado",
-        formType: "Lead magnet — Análisis gratuito",
-        name: parsed.data.from_name,
-        email: parsed.data.from_email,
+        form_type: "Lead magnet — Análisis gratuito",
+        from_name: parsed.data.from_name,
+        from_email: parsed.data.from_email,
         phone: parsed.data.phone,
         business: parsed.data.business,
         sector: parsed.data.sector,

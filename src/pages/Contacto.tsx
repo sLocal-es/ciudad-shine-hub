@@ -43,10 +43,9 @@ const Contacto = () => {
     setLoading(true);
     try {
       await sendForm({
-        title: "Nuevo contacto desde /contacto",
-        formType: "Contacto (página /contacto)",
-        name: parsed.data.nombre,
-        email: parsed.data.email,
+        form_type: "Contacto (página /contacto)",
+        from_name: parsed.data.nombre,
+        from_email: parsed.data.email,
         phone: parsed.data.telefono,
         business: parsed.data.negocio,
         city: parsed.data.ciudad,
@@ -179,7 +178,7 @@ const Contacto = () => {
               <div className="space-y-2">
                 <p className="text-sm">
                   <span className="text-muted-foreground">Email:</span>{" "}
-                  <a href="mailto:hola@slocal.es" className="text-primary hover:underline">hola@slocal.es</a>
+                  <a href="mailto:info@slocal.es" className="text-primary hover:underline">info@slocal.es</a>
                 </p>
                 <p className="text-sm text-muted-foreground">
                   También por WhatsApp: [número próximamente]
