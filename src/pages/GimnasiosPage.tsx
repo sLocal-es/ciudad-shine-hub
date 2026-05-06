@@ -119,7 +119,7 @@ const GimnasiosPage = () => {
     <>
       <SEOHead
         title="SEO para Gimnasios | Más Socios desde Google | slocal.es"
-        description='Haz que tu gimnasio aparezca cuando alguien busca "gimnasio cerca de mí" en tu ciudad. Más socios, menos dependencia de las grandes cadenas. Desde 147€/mes + IVA.'
+        description="Haz que tu gimnasio aparezca cuando alguien busca gimnasio cerca de mí. Más socios sin depender de las grandes cadenas. Desde 147€/mes + IVA."
         canonical="/seo-para-gimnasios"
         jsonLd={[breadcrumbSchema, faqSchema, serviceSchema, localBusinessSchema]}
       />

@@ -105,7 +105,7 @@ const SeoLocalValencia = () => {
     <>
       <SEOHead
         title="SEO Local en Valencia para Negocios | Aparecer en Google Maps | slocal.es"
-        description="¿Tu negocio en Valencia no aparece en Google Maps? Posicionamos tu ficha y web para que tus clientes te encuentren primero en castellano y valenciano. Desde 147€/mes + IVA."
+        description="¿Tu negocio en Valencia no aparece en Google Maps? Posicionamos tu ficha y web para que tus clientes te encuentren primero. Desde 147€/mes + IVA."
         canonical="/seo-local-valencia"
         jsonLd={[breadcrumbSchema, faqSchema, localBusinessSchema]}
       />
