@@ -4,7 +4,7 @@ import SEOHead from "@/components/SEOHead";
 const ComoFunciona = () => (
   <>
     <SEOHead
-      title="Cómo Funciona | slocal.es"
+      title="Cómo Funciona el Sistema de SEO Local | slocal.es"
       description="Descubre cómo funciona el sistema de visibilidad local de slocal.es. Sin agencias, sin humo. Tres pasos para que tu negocio aparezca en Google."
       canonical="/como-funciona"
     />

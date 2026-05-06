@@ -104,7 +104,7 @@ const SeoNegociosLocales = () => {
     <>
       <SEOHead
         title="SEO para Negocios Locales | Posicionamiento Local en Google | slocal.es"
-        description="Servicio de SEO local para negocios: aparece en Google Maps y búsquedas locales cuando tus clientes te buscan. Sin contratos, desde 147€/mes + IVA."
+        description="Aparece en Google Maps y búsquedas locales cuando tus clientes te buscan. Ficha optimizada, web y contenido mensual. Desde 147€/mes + IVA."
         canonical={PATH}
         jsonLd={[breadcrumbSchema, faqSchema, serviceSchema]}
       />

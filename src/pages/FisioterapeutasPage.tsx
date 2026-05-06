@@ -63,7 +63,7 @@ const FisioterapeutasPage = () => {
     <>
       <SEOHead
         title="SEO para Fisioterapeutas | Google Maps y Web Local"
-        description="SEO local para fisioterapeutas: ficha de Google Mi Negocio, web multipágina y posicionamiento local para captar pacientes desde Google. Desde 150 €/mes."
+        description="Posiciona tu clínica de fisioterapia en Google Maps y búsquedas locales. Más citas sin depender de Doctoralia ni del boca a boca. Desde 147€/mes + IVA."
         canonical="/seo-para-fisioterapeutas"
         jsonLd={[breadcrumbSchema, faqSchema, serviceSchema]}
       />

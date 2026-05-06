@@ -71,7 +71,7 @@ const Contacto = () => {
   return (
     <>
       <SEOHead
-        title="Contacto | slocal.es"
+        title="Contacto | Habla con slocal.es sobre tu negocio"
         description="Cuéntanos tu negocio y te decimos qué nivel encaja mejor contigo. Respondemos en menos de 24h. Sin compromiso."
         canonical="/contacto"
       />
