@@ -15,6 +15,121 @@ export interface BlogPost {
 
 export const posts: BlogPost[] = [
 
+  {
+    slug: "seo-para-fisioterapeutas-mas-pacientes-desde-google",
+    title: "SEO para Fisioterapeutas: Más Pacientes desde Google",
+    metaDescription: "Cómo conseguir más pacientes desde Google si eres fisioterapeuta. Ficha optimizada, web por tratamientos y reseñas gestionadas. Guía práctica 2026.",
+    category: "Por sector",
+    date: "2026-05-07",
+    featuredImage: "/blog/fisio-localpack.svg",
+    altText: "Mockup de Google Maps con Local Pack de tres clínicas de fisioterapia",
+    excerpt: "Muchos fisioterapeutas tienen agenda con huecos no por falta de calidad, sino de visibilidad en Google. Esta guía explica cómo posicionar tu clínica en el Local Pack y atraer más pacientes mes a mes.",
+    relatedSectorSlug: "seo-para-fisioterapeutas",
+    content: `
+      <p>Muchos fisioterapeutas en España tienen consultas con experiencia contrastada y pacientes satisfechos, pero su agenda sigue teniendo huecos cada semana. El motivo casi siempre es el mismo: cuando alguien en su ciudad busca "fisioterapeuta cerca de mí" o "fisioterapia deportiva en Barcelona", no aparecen. Esta guía explica cómo funciona el SEO local para fisioterapeutas, qué factores determinan quién aparece primero en Google Maps y qué puedes hacer para que tu clínica sea la que recibe la llamada.</p>
+
+      <div class="key-points">
+        <h2>Puntos clave</h2>
+        <table>
+          <thead><tr><th>Punto</th><th>Detalle</th></tr></thead>
+          <tbody>
+            <tr><td>Google Maps es el canal principal</td><td>El 60% de las búsquedas de fisioterapeuta incluyen "cerca de mí" o una ciudad concreta</td></tr>
+            <tr><td>La ficha de Google es el primer paso</td><td>Sin Google Business Profile optimizado no apareces en el mapa aunque tengas web</td></tr>
+            <tr><td>Las reseñas deciden la llamada</td><td>El 90% de los pacientes lee las reseñas antes de llamar a una clínica</td></tr>
+            <tr><td>El contenido específico posiciona</td><td>Páginas por tratamiento (deportiva, suelo pélvico, neurológica) capturan búsquedas de alto valor</td></tr>
+            <tr><td>Los resultados tardan 2-4 meses</td><td>El SEO local no es publicidad — construye una presencia que crece mes a mes</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Por qué los fisioterapeutas pierden pacientes en Google sin saberlo</h2>
+      <p>Cuando alguien tiene una lesión de rodilla, busca rehabilitación postoperatoria o necesita fisioterapia para su hijo, lo primero que hace es abrir Google. Escribe "fisioterapeuta en Chamberí", "fisioterapia deportiva Madrid" o simplemente "fisioterapeuta cerca de mí". Google muestra tres clínicas en el mapa — el Local Pack — y esas tres reciben el 60% de todos los clics. Las demás no existen para ese paciente en ese momento.</p>
+      <p>El problema no es la calidad de tu trabajo. Es la visibilidad. Y la visibilidad en Google Maps no llega sola — requiere optimización activa y continua de tres elementos que Google usa para decidir a quién muestra: relevancia, proximidad y prominencia.</p>
+      <p>La relevancia depende de lo bien configurada que esté tu ficha y tu web para las búsquedas de tu especialidad. La proximidad es la distancia entre el buscador y tu clínica — no la puedes controlar. La prominencia depende de tus reseñas, tu actividad online y la autoridad de tu web. Las dos que puedes trabajar son relevancia y prominencia, y son exactamente las que marcan la diferencia entre aparecer o no aparecer.</p>
+
+      <img src="/blog/fisio-localpack.svg" alt="Mockup de Google Maps mostrando el Local Pack con tres clínicas de fisioterapia" />
+
+      <div class="stat-highlight">
+        <strong>Dato real:</strong> Una fisioterapeuta en Valencia empezó a recibir 4 llamadas directas desde Google en su segundo mes tras optimizar su ficha y web con slocal.es. Empezó desde cero, sin presencia digital previa.
+      </div>
+
+      <h2>Cómo funciona el SEO local para fisioterapeutas</h2>
+
+      <h3>Google Business Profile: la base de todo</h3>
+      <p>Tu ficha de Google Business Profile es lo primero que ve un paciente cuando busca fisioterapeuta en tu ciudad. Antes de entrar en tu web, antes de leer tu descripción, ve tu nombre, tus reseñas, tus fotos y si estás abierto ahora mismo.</p>
+      <p>Una ficha bien optimizada para fisioterapeutas incluye categoría principal correcta — "Fisioterapeuta", no "Centro de salud" — categorías secundarias según tus especialidades reales, descripción con keywords locales, fotos actualizadas de sala y equipo, horarios precisos y publicaciones mensuales.</p>
+
+      <h3>La web: aparecer en búsquedas orgánicas además del mapa</h3>
+      <p>Una web optimizada para fisioterapeutas no es una web genérica. Es una web con páginas específicas por tratamiento y por zona: fisioterapia-deportiva-madrid, fisioterapia-suelo-pelvico-barcelona, rehabilitacion-neurologica-valencia. Cada página responde exactamente a lo que busca un paciente concreto y convierte mucho más que una página genérica.</p>
+
+      <div class="pro-tip">
+        <strong>Consejo profesional:</strong> No intentes posicionar todas las especialidades en una sola página. Google prefiere páginas específicas para búsquedas específicas. Una página por tratamiento y por ciudad es la estructura que más pacientes genera a medio plazo.
+      </div>
+
+      <h3>Las reseñas: el factor que decide si llaman o no</h3>
+      <p>Dos clínicas aparecen en el mapa. Una tiene 47 reseñas con una media de 4.9 estrellas, todas respondidas. La otra tiene 8 reseñas de hace dos años sin respuesta. El paciente llama a la primera. Las reseñas no son solo confianza para el paciente — también son una señal directa para Google.</p>
+
+      <table>
+        <thead><tr><th>Situación</th><th>Impacto en Google Maps</th></tr></thead>
+        <tbody>
+          <tr><td>Ficha sin reseñas</td><td>Muy baja visibilidad en búsquedas locales</td></tr>
+          <tr><td>1-10 reseñas</td><td>Visibilidad básica, difícil entrar en top 3</td></tr>
+          <tr><td>10-30 reseñas actuales</td><td>Empieza a competir en el mapa</td></tr>
+          <tr><td>+30 reseñas con respuestas</td><td>Alta probabilidad de aparecer en top 3</td></tr>
+        </tbody>
+      </table>
+
+      <img src="/blog/fisio-gbp.svg" alt="Mockup de ficha de Google Business Profile de un fisioterapeuta con cinco estrellas y 147 reseñas" />
+
+      <h2>SEO para fisioterapeutas según especialidad</h2>
+      <p>Cada especialidad tiene sus propias búsquedas y su propia competencia en Google.</p>
+      <p><strong>Fisioterapia deportiva</strong> — búsquedas de alta intención: "fisioterapeuta deportivo [ciudad]", "fisioterapia lesiones deportivas", "recuperación muscular fisioterapia".</p>
+      <p><strong>Fisioterapia de suelo pélvico</strong> — menos competencia digital que otras especialidades: "fisioterapia suelo pélvico [ciudad]", "fisioterapeuta postparto".</p>
+      <p><strong>Fisioterapia neurológica</strong> — alta demanda y pocos profesionales bien posicionados: "fisioterapia neurológica [ciudad]", "rehabilitación neurológica fisioterapeuta".</p>
+      <p><strong>Fisioterapia pediátrica</strong> — padres con alta urgencia: "fisioterapeuta infantil [ciudad]", "fisioterapia niños [ciudad]".</p>
+
+      <div class="pro-tip">
+        <strong>Consejo profesional:</strong> Si tienes varias especialidades, crea una página específica para cada una en tu web. Una página por especialidad y por ciudad es la estructura que más consultas genera.
+      </div>
+
+      <h2>Errores más comunes de fisioterapeutas en Google</h2>
+      <table>
+        <thead><tr><th>Error</th><th>Impacto</th><th>Solución</th></tr></thead>
+        <tbody>
+          <tr><td>Ficha desactualizada</td><td>Pérdida progresiva de posiciones</td><td>Publicaciones y fotos mensuales</td></tr>
+          <tr><td>Sin web específica</td><td>Solo visible en Maps, no en orgánico</td><td>Web con páginas por tratamiento</td></tr>
+          <tr><td>Reseñas sin responder</td><td>Baja confianza y penalización Google</td><td>Responder en menos de 24h</td></tr>
+          <tr><td>NAP inconsistente</td><td>Confusión para Google</td><td>Documento maestro de datos</td></tr>
+          <tr><td>Expectativas de resultados rápidos</td><td>Abandono prematuro</td><td>Comprometerse con mínimo 6 meses</td></tr>
+        </tbody>
+      </table>
+
+      <h2>Cómo slocal.es ayuda a fisioterapeutas a conseguir más pacientes</h2>
+      <p>En <a href="/">slocal.es</a> gestionamos el posicionamiento local de clínicas de fisioterapia en España. El servicio incluye la optimización y gestión mensual de tu Google Business Profile, una web con páginas específicas por tratamiento y ciudad, contenido mensual posicionado y un informe mensual con los resultados reales. Desde 147€/mes.</p>
+
+      <img src="/blog/fisio-mobile-search.svg" alt="Mockup de móvil mostrando resultados de búsqueda de fisioterapeuta en Google" />
+
+      <p><a href="/como-ve-google-mi-web">Analiza gratis cómo aparece tu clínica en Google →</a></p>
+
+      <h2>Resumen</h2>
+      <ul>
+        <li>Google Business Profile optimizado — categorías correctas, fotos actualizadas, publicaciones mensuales</li>
+        <li>Web con páginas por tratamiento y ciudad — no una sola página genérica</li>
+        <li>Reseñas gestionadas — obtención sistemática y respuesta profesional</li>
+        <li>Contenido mensual — artículos y posts que mantienen tu relevancia</li>
+        <li>Consistencia y tiempo — los resultados llegan entre el mes 2 y el mes 6</li>
+      </ul>
+    `,
+    faqs: [
+      { q: "¿Cuánto tarda en verse el resultado del SEO local para fisioterapeutas?", a: "Los primeros resultados visibles aparecen entre el mes 2 y el mes 4. En especialidades con menos competencia digital los resultados llegan antes. A partir del mes 6 el flujo de pacientes se consolida y crece de forma predecible mes a mes." },
+      { q: "¿Funciona el SEO local para fisioterapeutas autónomos o solo para clínicas grandes?", a: "El SEO local favorece especialmente a los profesionales independientes. Un fisioterapeuta bien posicionado en su barrio aparece antes que un gran centro sin presencia local trabajada. La especialización es tu ventaja competitiva." },
+      { q: "¿Necesito web si ya tengo ficha de Google?", a: "La ficha te da visibilidad en el mapa. Una web optimizada te da visibilidad adicional en los resultados orgánicos para búsquedas específicas como 'fisioterapia deportiva en Madrid'. Los dos canales se complementan." },
+      { q: "¿Cómo compito con clínicas que llevan años en Google?", a: "Con una estrategia de nicho. En lugar de competir por 'fisioterapeuta Madrid' posiciona para búsquedas específicas de tu especialidad y tu barrio. Menos competencia y más intención de consulta." },
+      { q: "¿Es compatible el SEO local con estar en Doctoralia?", a: "Sí, son canales complementarios. La diferencia es que los pacientes que llegan desde Google llegan directamente a ti, sin compararte con otros fisioterapeutas y sin comisión por paciente." },
+      { q: "¿Qué resultados puedo esperar?", a: "Los fisioterapeutas que trabajan con slocal.es empiezan a recibir contactos directos desde Google entre el mes 2 y el mes 4, con crecimiento constante a partir del mes 6." }
+    ],
+  },
+
       {
   slug: "como-aparecer-primero-en-google-maps",
   title: "Cómo Aparecer Primero en Google Maps en 2026 — Guía Práctica",
