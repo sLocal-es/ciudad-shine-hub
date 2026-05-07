@@ -321,6 +321,9 @@ const Home = () => {
         </div>
       </section>
 
+      {/* TECH PARTNERS */}
+      <TechPartnersSection />
+
       {/* CONTACTO */}
       <section className="bg-warm-bg py-16 md:py-20">
         <div className="container max-w-2xl">
