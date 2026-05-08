@@ -60,7 +60,7 @@ const BlogPostPage = () => {
     ],
   };
 
-  const schemas = [articleSchema, breadcrumbSchema];
+  const schemas: any[] = [articleSchema, breadcrumbSchema];
   if (post.faqs && post.faqs.length > 0) {
     schemas.push({
       "@context": "https://schema.org",
@@ -70,7 +70,10 @@ const BlogPostPage = () => {
         name: f.q,
         acceptedAnswer: { "@type": "Answer", text: f.a },
       })),
-    } as any);
+    });
+  }
+  if (post.extraSchema) {
+    schemas.push(post.extraSchema);
   }
 
   return (

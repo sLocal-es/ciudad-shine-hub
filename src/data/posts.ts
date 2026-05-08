@@ -11,6 +11,7 @@ export interface BlogPost {
   faqs?: { q: string; a: string }[];
   relatedSectorSlug?: string;
   relatedCitySlug?: string;
+  extraSchema?: Record<string, any>;
 }
 
 export const posts: BlogPost[] = [
