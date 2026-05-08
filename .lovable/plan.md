@@ -1,66 +1,49 @@
-## Qué falla
+# Add "Ver análisis gratuito" CTA with premium popup modal
 
-En la captura se ve que el template de EmailJS usa estas variables:
+## Goal
+Boost conversion on the Home page by adding a prominent **"Ver análisis gratuito"** button in the hero that opens a branded modal with a short lead-capture form. No redesign — reuse existing tokens, colors, radii, and form patterns.
 
-- `{{title}}` en el asunto
-- `{{name}}` en “From Name”
-- `{{email}}` en “Reply To”
-- En el contenido aparecen `{{FORM_TYPE}}`, `{{from_name}}`, `{{from_email}}`, `{{phone}}`, etc.
+## Changes
 
-Pero el código actual de la web no está enviando `title`, `name`, `email` ni `FORM_TYPE`. Envía principalmente `form_type`, `from_name` y `from_email`.
+### 1. New component: `src/components/AnalisisGratuitoModal.tsx`
+A self-contained modal that renders a trigger button and the popup.
 
-Eso puede romper el envío si EmailJS necesita esas variables en campos críticos como el asunto, From Name o Reply To. En concreto, tu `Reply To` está configurado como `{{email}}`, pero la web envía `from_email`, no `email`.
+- Built on existing shadcn `Dialog` (`src/components/ui/dialog.tsx`) — already supports backdrop, fade/zoom animations, and accessible close button. Adds `backdrop-blur-sm` to the overlay.
+- Custom `DialogContent` styling to match brand: `bg-card`, `border-border`, `rounded-xl`, generous padding, no default shadow override needed.
+- Smooth open/close (Radix transitions already configured in the project).
+- Trap focus, ESC to close, screen-reader labels via `DialogTitle` / `DialogDescription`.
 
-## Plan de corrección
+**Modal content:**
+- Headline (h2, `font-heading`): "Descubre cómo te ve Google ahora mismo"
+- Subheadline (`text-muted-foreground`): "Analizamos gratis tu ficha de Google Business Profile y te mostramos exactamente qué está limitando tu visibilidad."
+- Lightweight form (4 fields, single column on mobile, 2-col on md+):
+  - Nombre
+  - WhatsApp o Email (single field, validated as either valid email OR phone ≥6 digits)
+  - Nombre del negocio
+  - Ciudad
+- Submit button (full width, primary): "Quiero mi análisis gratuito"
+- Below CTA, small muted row with two items: "Sin compromiso" · "Respuesta en menos de 24h"
 
-1. Crear una función común para enviar formularios a EmailJS
-   - Centralizar el envío en un helper único para evitar que cada formulario tenga variables distintas.
-   - Enviar siempre los aliases que tu template espera:
-     - `title`
-     - `name`
-     - `email`
-     - `FORM_TYPE`
-     - `form_type`
-     - `from_name`
-     - `from_email`
-     - `phone`
-     - `business`
-     - `sector`
-     - `city`
-     - `message`
-   - Mantener `info@slocal.es` como email visible de respaldo en los errores.
+**Form behavior:**
+- Reuse `sendForm` from `src/lib/sendForm.ts` and `useToast` (same pattern as `LeadMagnetForm`).
+- Zod schema validates all 4 fields; the contact field uses `z.string().refine(v => isEmail(v) || isPhone(v))`.
+- `form_type: "Análisis gratuito — Modal Home"` so leads are distinguishable in EmailJS.
+- On success: toast confirmation + close modal + reset form.
+- On error: destructive toast pointing to info@slocal.es.
 
-2. Actualizar los 3 formularios actuales
-   - `src/components/forms/LeadMagnetForm.tsx`
-   - `src/components/forms/ContactForm.tsx`
-   - `src/pages/Contacto.tsx`
+### 2. Update hero CTAs in `src/pages/Home.tsx`
+In the hero button row (currently "Ver planes →" + "Cómo funciona"):
 
-   Los tres usarán el mismo helper para que funcionen igual y no haya diferencias entre Home y `/contacto`.
+- Replace the secondary "Cómo funciona" link with the modal trigger button **"Ver análisis gratuito"**, styled identically to the existing outline/ghost CTA (`border border-dark-fg/20 text-dark-fg ... hover:border-primary hover:text-primary`) so it visually matches.
+- Keep "Ver planes →" as the primary CTA exactly as it is.
+- "Cómo funciona" remains accessible via the navbar — no content loss.
 
-3. Ajustar los datos enviados según cada formulario
-   - Lead magnet:
-     - `title`: `Análisis gratuito solicitado`
-     - `FORM_TYPE`: `Lead magnet — Análisis gratuito`
-   - Formulario de contacto Home:
-     - `title`: `Nuevo mensaje de contacto`
-     - `FORM_TYPE`: `Contacto`
-   - Formulario `/contacto`:
-     - `title`: `Nuevo contacto desde /contacto`
-     - `FORM_TYPE`: `Contacto (página /contacto)`
+The modal lives once in `Home.tsx` and is controlled via local `useState` (open/close), with the trigger passed as the styled button.
 
-4. Mejorar el error para depuración sin exponer datos sensibles
-   - Si EmailJS devuelve error, mostrar en consola solo estado/texto técnico del error, no datos del formulario.
-   - El usuario seguirá viendo el mensaje claro: “Inténtalo de nuevo o escríbenos a info@slocal.es”.
+## Out of scope
+- No changes to other pages, navbar, or existing `LeadMagnetForm` further down the Home page.
+- No new design tokens, no new dependencies.
 
-## Qué no voy a tocar
-
-- No cambiaré el diseño visual.
-- No cambiaré secciones de la web.
-- No cambiaré el template de EmailJS desde fuera, solo adaptaré la web a lo que ya se ve en tu captura.
-- No cambiaré el destinatario: debe seguir siendo `info@slocal.es` en EmailJS.
-
-## Nota importante sobre EmailJS
-
-En tu captura el campo “To Email” ya está en `info@slocal.es`, eso está bien.
-
-Lo más probable es que el fallo venga por variables no coincidentes en `From Name`, `Reply To` y asunto. La corrección será hacer que la web mande tanto los nombres antiguos como los que tu template actual está esperando.
+## Files
+- **Create**: `src/components/AnalisisGratuitoModal.tsx`
+- **Edit**: `src/pages/Home.tsx` (hero button row + mount modal)
