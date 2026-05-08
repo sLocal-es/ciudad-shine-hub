@@ -11,6 +11,7 @@ export interface BlogPost {
   faqs?: { q: string; a: string }[];
   relatedSectorSlug?: string;
   relatedCitySlug?: string;
+  extraSchema?: Record<string, any>;
 }
 
 export const posts: BlogPost[] = [
@@ -318,4 +319,140 @@ export const posts: BlogPost[] = [
     a: "Una suspensión significa que Google detectó una posible violación de sus políticas — dirección no verificable, keywords artificiales en el nombre del negocio, múltiples perfiles para el mismo negocio, o uso de oficina virtual como dirección. El primer paso es identificar la causa revisando las políticas de Google Business Profile. Después puedes solicitar una revisión a través del formulario oficial. El proceso puede tardar entre 2 y 4 semanas. Durante ese tiempo tu negocio desaparece de Google Maps completamente, lo que puede suponer una pérdida significativa de contactos si dependías de ese canal para conseguir clientes."
   }
 ],
+},
+
+{
+  slug: "seo-local-cordoba-como-conseguir-mas-clientes-desde-google",
+  title: "SEO Local en Córdoba: Cómo Conseguir Más Clientes desde Google",
+  metaDescription: "Cómo posicionar tu negocio en Google Maps en Córdoba en 2026. Barrios, reseñas, oportunidad real y errores más comunes. Guía práctica.",
+  category: "SEO Local",
+  date: "2026-05-08",
+  featuredImage: "/blog/cordoba-mobile-search.svg",
+  altText: "Mockup de móvil con la búsqueda 'fontanero urgente Córdoba' en Google Maps mostrando el Local Pack",
+  excerpt: "Córdoba es una de las ciudades españolas con menos competencia digital y más oportunidad para negocios locales que sepan posicionar su ficha de Google. Esta guía explica cómo aparecer primero en los barrios donde están tus clientes.",
+  relatedCitySlug: "seo-local-cordoba",
+  extraSchema: {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "SEO Local en Córdoba: Cómo Conseguir Más Clientes desde Google",
+    author: { "@type": "Organization", name: "slocal.es", url: "https://slocal.es" },
+    datePublished: "2026-05-08",
+    inLanguage: "es",
+    about: {
+      "@type": "Place",
+      name: "Córdoba, España",
+      geo: { "@type": "GeoCoordinates", latitude: "37.8882", longitude: "-4.7794" },
+    },
+  },
+  content: `
+    <p>Córdoba tiene 325.000 habitantes, una economía local viva y un volumen de búsquedas en Google que crece cada año. Pero la mayoría de negocios locales — desde fontaneros en el Casco Histórico hasta clínicas en Ciudad Jardín — no aparecen cuando un cliente los busca. La competencia digital es mucho menor que en Madrid o Sevilla, lo que convierte a Córdoba en una de las ciudades con más oportunidad real para posicionarse en Google Maps con un trabajo bien hecho.</p>
+
+    <nav class="toc">
+      <h2>Tabla de Contenidos</h2>
+      <ul>
+        <li><a href="#oportunidad">Por qué Córdoba es una oportunidad real</a></li>
+        <li><a href="#barrios">Los barrios donde están tus clientes</a></li>
+        <li><a href="#mapa">Mapa de Córdoba y zonas con más demanda</a></li>
+        <li><a href="#resenas">Reseñas: el factor que decide la llamada</a></li>
+        <li><a href="#errores">Errores más comunes en Córdoba</a></li>
+        <li><a href="#slocal">Cómo te ayudamos desde slocal.es</a></li>
+        <li><a href="#faq">Preguntas frecuentes</a></li>
+      </ul>
+    </nav>
+
+    <div class="key-points">
+      <h2>Puntos clave</h2>
+      <table>
+        <thead><tr><th>Punto</th><th>Detalle</th></tr></thead>
+        <tbody>
+          <tr><td>Competencia digital baja</td><td>Solo el 38% de los negocios locales en Córdoba tienen su ficha de Google completa</td></tr>
+          <tr><td>El Local Pack es el canal principal</td><td>Más del 70% de las búsquedas locales en Córdoba acaban en una de las 3 fichas del mapa</td></tr>
+          <tr><td>Los barrios marcan la búsqueda</td><td>"Fontanero Casco Histórico" o "fisio Ciudad Jardín" tienen mucha menos competencia que "[servicio] Córdoba"</td></tr>
+          <tr><td>Las reseñas pesan más</td><td>En ciudades medianas como Córdoba, 20-30 reseñas activas suelen bastar para entrar en el Pack de 3</td></tr>
+          <tr><td>Resultados en 2-4 meses</td><td>El plazo medio para ver tráfico real desde Google en Córdoba es más corto que en grandes capitales</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="oportunidad">Por qué Córdoba es una oportunidad real para tu negocio</h2>
+    <p>Córdoba combina dos factores que no coinciden en muchas ciudades españolas: una población suficientemente grande para generar búsquedas constantes — más de 90.000 búsquedas locales mensuales según Google Keyword Planner — y una competencia digital mucho más baja que en Sevilla, Málaga o Madrid. Eso significa que un fontanero, una clínica o una empresa de reformas con la ficha bien optimizada puede entrar en el Local Pack en cuestión de semanas, no meses.</p>
+    <p>El cliente cordobés busca exactamente igual que en cualquier otra ciudad: abre Google, escribe "[servicio] cerca de mí" o "[servicio] Córdoba" y llama directamente al primero o segundo resultado del mapa. Si tu negocio no aparece ahí, no existe para él en ese momento — independientemente de la calidad de tu trabajo o de cuántos años lleves abierto.</p>
+
+    <img src="/blog/cordoba-mobile-search.svg" alt="Móvil mostrando la búsqueda 'fontanero urgente Córdoba' en Google Maps con tres negocios en el Local Pack" />
+
+    <div class="stat-highlight">
+      <strong>Dato real:</strong> Solo el 38% de los negocios locales en Córdoba tiene su ficha de Google Business Profile completamente optimizada. La barrera de entrada al Pack de 3 es más baja que en cualquier capital española.
+    </div>
+
+    <h2 id="barrios">Los barrios de Córdoba donde están tus clientes</h2>
+    <p>Córdoba no se busca como una sola ciudad, se busca por barrios. La gente que vive en El Brillante busca diferente a la que vive en Fátima, y Google lo sabe. Posicionar tu ficha por barrio es una de las palancas más rápidas para conseguir llamadas: hay menos competidores, las búsquedas son más específicas y la intención de contratar es altísima.</p>
+    <p><strong>Casco Histórico</strong> — alta densidad turística y comercial, búsquedas de servicios urgentes (fontanería, cerrajería, climatización) y restauración. Mucho tráfico peatonal, ficha con fotos del local recomendable.</p>
+    <p><strong>Ciudad Jardín</strong> — barrio residencial consolidado, búsquedas habituales de clínicas, fisioterapia, dentistas y servicios para el hogar.</p>
+    <p><strong>El Brillante</strong> — zona residencial de poder adquisitivo medio-alto, alta demanda de reformas, decoración, servicios de bienestar y entrenamiento personal.</p>
+    <p><strong>Parque Figueroa</strong> — barrio familiar con mucha demanda de servicios para el hogar, talleres y comercio de proximidad.</p>
+    <p><strong>Fátima</strong> — zona con mezcla residencial y comercial, búsquedas constantes de fontaneros, electricistas y reformas pequeñas.</p>
+    <p><strong>Levante</strong> — zona en crecimiento con nueva construcción y demanda creciente de servicios para el hogar y comercios locales.</p>
+
+    <h2 id="mapa">Mapa de Córdoba con las zonas de más demanda</h2>
+    <p>Visualizar dónde están tus clientes ayuda a decidir cómo configurar tu área de servicio en la ficha de Google y qué páginas crear en tu web.</p>
+
+    <img src="/blog/cordoba-map-pins.svg" alt="Mapa de Córdoba con pins naranjas marcando los barrios con más demanda local: Casco Histórico, Ciudad Jardín, El Brillante, Parque Figueroa, Fátima y Levante" />
+
+    <div class="map-embed" style="margin: 24px 0;">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d24968!2d-4.7794!3d37.8882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1620000000000!5m2!1ses!2ses" width="100%" height="350" style="border:0;border-radius:8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa de Córdoba"></iframe>
+    </div>
+
+    <div class="pro-tip">
+      <strong>Consejo profesional:</strong> Si trabajas en varios barrios, no intentes posicionar todo en una sola página. Crea una página específica por barrio en tu web — "fontanero El Brillante", "fisioterapeuta Ciudad Jardín" — y enlázalas desde tu ficha. Es la forma más rápida de capturar búsquedas hiperlocales con muy poca competencia.
+    </div>
+
+    <h2 id="resenas">Las reseñas: el factor que decide la llamada en Córdoba</h2>
+    <p>En una ciudad mediana como Córdoba, las reseñas pesan incluso más que en grandes capitales. Cuando un cliente compara dos fichas en el Local Pack, una con 23 reseñas recientes a 4,9 estrellas gana frente a otra con 7 reseñas antiguas casi siempre. Y Google lo sabe: la frecuencia y calidad de tus reseñas es uno de los factores que más mueve tu posición en el mapa.</p>
+
+    <img src="/blog/cordoba-gbp.svg" alt="Mockup de ficha de Google Business Profile de un negocio en Córdoba con 4,9 estrellas y 23 reseñas" />
+
+    <table>
+      <thead><tr><th>Reseñas activas</th><th>Probabilidad de Pack de 3 en Córdoba</th></tr></thead>
+      <tbody>
+        <tr><td>0-5</td><td>Muy baja — apareces solo en búsquedas con tu marca</td></tr>
+        <tr><td>10-20</td><td>Empiezas a competir en búsquedas locales por barrio</td></tr>
+        <tr><td>20-40 con respuesta</td><td>Alta probabilidad de Pack de 3 en tu barrio</td></tr>
+        <tr><td>+40 con respuesta semanal</td><td>Pack de 3 en búsquedas generales "[servicio] Córdoba"</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="errores">Errores más comunes de los negocios cordobeses en Google</h2>
+    <table>
+      <thead><tr><th>Error</th><th>Impacto</th><th>Solución</th></tr></thead>
+      <tbody>
+        <tr><td>Ficha sin barrio en la descripción</td><td>No apareces en búsquedas hiperlocales</td><td>Mencionar barrio y zona de servicio</td></tr>
+        <tr><td>Sin fotos del trabajo o del local</td><td>Menos clics y menos confianza</td><td>Subir 2-3 fotos al mes mínimo</td></tr>
+        <tr><td>Reseñas sin responder</td><td>Penalización Google + menos confianza</td><td>Responder en menos de 24 horas</td></tr>
+        <tr><td>Datos diferentes en web y ficha</td><td>Google duda de tu negocio</td><td>NAP idéntico en todas partes</td></tr>
+        <tr><td>Esperar resultados sin trabajo continuo</td><td>Estancamiento en posición 5-10</td><td>Publicaciones y reseñas mensuales</td></tr>
+      </tbody>
+    </table>
+
+    <h2 id="slocal">Cómo te ayudamos desde slocal.es a posicionar tu negocio en Córdoba</h2>
+    <p>En <a href="/">slocal.es</a> gestionamos el SEO local de negocios cordobeses como un sistema mensual: optimizamos y mantenemos tu ficha de Google Business Profile, creamos páginas por barrio en tu web, gestionamos la obtención y respuesta de reseñas, y publicamos contenido mensual que te posiciona para nuevas búsquedas. Cada mes recibes un informe claro con las posiciones ganadas, las llamadas generadas y qué vamos a hacer el mes siguiente.</p>
+    <p>Trabajamos con fontaneros, fisioterapeutas, clínicas, empresas de reformas y comercios locales en toda <a href="/seo-local-cordoba">Córdoba</a> y su área metropolitana. Sin permanencia, sin intermediarios, hablas siempre con la misma persona. Desde 147€/mes + IVA.</p>
+    <p><a href="/como-ve-google-mi-web">Analiza gratis cómo aparece tu negocio en Google →</a></p>
+
+    <h2>Resumen</h2>
+    <ul>
+      <li>Córdoba tiene baja competencia digital — la oportunidad es real y rápida</li>
+      <li>Posicionar por barrio (Casco Histórico, Ciudad Jardín, El Brillante…) es la palanca más eficaz</li>
+      <li>20-30 reseñas activas con respuesta suelen bastar para entrar en el Pack de 3</li>
+      <li>Una ficha con fotos, publicaciones y datos coherentes posiciona en 2-4 meses</li>
+      <li>El SEO local es acumulativo: cada mes de trabajo suma posiciones que no desaparecen</li>
+    </ul>
+  `,
+  faqs: [
+    { q: "¿Cuánto tarda mi negocio en aparecer primero en Google Maps en Córdoba?", a: "En Córdoba el plazo medio para entrar en el Pack de 3 con una ficha bien optimizada es de 2 a 4 meses. La competencia digital es menor que en Sevilla o Málaga, lo que acelera los resultados frente a grandes capitales. En búsquedas por barrio (por ejemplo 'fontanero El Brillante') es habitual ver resultados en 4-8 semanas." },
+    { q: "¿Cuántas reseñas necesito para competir en Google en Córdoba?", a: "Con 20-30 reseñas recientes y una media superior a 4,5 estrellas suele ser suficiente para entrar en el Pack de 3 de tu barrio. Para búsquedas generales tipo '[servicio] Córdoba' necesitarás 40-60 reseñas activas. Lo decisivo no es el total acumulado, sino la frecuencia: 3-4 reseñas nuevas al mes es una señal muy potente para Google." },
+    { q: "¿Tiene sentido el SEO local en Córdoba si mi competencia no lo hace?", a: "Sí, precisamente por eso es la mejor oportunidad. Solo el 38% de los negocios locales cordobeses tienen su ficha de Google completamente optimizada. Empezar antes que tu competencia significa quedarte con esos puestos del Pack de 3 antes de que el mercado se sature, como ya ha pasado en Madrid o Barcelona." },
+    { q: "¿Funciona el SEO local si no tengo local físico en Córdoba?", a: "Sí. Si ofreces servicios a domicilio — fontaneros, electricistas, reformas, entrenadores personales — puedes configurar tu ficha como negocio en área de servicio y definir las zonas de Córdoba donde operas. Aparecerás en búsquedas locales sin necesidad de mostrar dirección física." },
+    { q: "¿Es mejor posicionar 'Córdoba' o un barrio concreto?", a: "Lo ideal es trabajar ambos a la vez. Las búsquedas por barrio (Casco Histórico, Ciudad Jardín, El Brillante…) tienen menos competencia y conviertes antes. Las búsquedas generales por 'Córdoba' tienen más volumen pero requieren más tiempo y reseñas. Una estrategia bien hecha gana primero los barrios y luego escala a la ciudad." },
+    { q: "¿Cuánto cuesta el SEO local para un negocio en Córdoba?", a: "En slocal.es trabajamos con negocios cordobeses desde 147€/mes + IVA, sin permanencia. El plan incluye gestión mensual de tu ficha de Google, contenido optimizado por barrio, gestión de reseñas e informe mensual de resultados. Hablas siempre con la misma persona, sin intermediarios." }
+  ],
 }];

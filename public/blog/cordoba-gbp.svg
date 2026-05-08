@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Ficha de Google Business Profile con 4.9 estrellas y 23 reseñas">
+  <rect width="800" height="500" fill="#0F1117"/>
+  <rect x="120" y="50" width="560" height="400" rx="16" fill="#ffffff"/>
+  <rect x="120" y="50" width="560" height="120" rx="16" fill="#0F1117"/>
+  <text x="150" y="100" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#ffffff">Tu Negocio en Córdoba</text>
+  <text x="150" y="128" font-family="Arial, sans-serif" font-size="13" fill="#cfd5dd">Servicios profesionales · Córdoba</text>
+  <text x="150" y="152" font-family="Arial, sans-serif" font-size="12" fill="#E8560A">Abierto ahora · Cierra a las 20:00</text>
+  <g transform="translate(150,200)" font-family="Arial, sans-serif">
+    <text x="0" y="0" font-size="38" font-weight="700" fill="#0F1117">4,9</text>
+    <g transform="translate(78,-22)" fill="#E8560A">
+      <polygon points="0,18 6,7 0,0 12,5 22,0 18,9 24,17 14,17 12,26 10,17"/>
+      <polygon transform="translate(28,0)" points="0,18 6,7 0,0 12,5 22,0 18,9 24,17 14,17 12,26 10,17"/>
+      <polygon transform="translate(56,0)" points="0,18 6,7 0,0 12,5 22,0 18,9 24,17 14,17 12,26 10,17"/>
+      <polygon transform="translate(84,0)" points="0,18 6,7 0,0 12,5 22,0 18,9 24,17 14,17 12,26 10,17"/>
+      <polygon transform="translate(112,0)" points="0,18 6,7 0,0 12,5 22,0 18,9 24,17 14,17 12,26 10,17"/>
+    </g>
+    <text x="78" y="14" font-size="13" fill="#5f6368">23 reseñas en Google</text>
+  </g>
+  <g transform="translate(150,260)">
+    <rect width="120" height="40" rx="20" fill="#E8560A"/>
+    <text x="60" y="25" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff" text-anchor="middle">Llamar</text>
+    <rect x="135" width="120" height="40" rx="20" fill="#ffffff" stroke="#0F1117" stroke-width="1.5"/>
+    <text x="195" y="25" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1117" text-anchor="middle">Cómo llegar</text>
+    <rect x="270" width="140" height="40" rx="20" fill="#ffffff" stroke="#0F1117" stroke-width="1.5"/>
+    <text x="340" y="25" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1117" text-anchor="middle">Sitio web</text>
+  </g>
+  <g transform="translate(150,330)" font-family="Arial, sans-serif" font-size="12" fill="#0F1117">
+    <text x="0" y="0" font-weight="700">Reseñas recientes</text>
+    <text x="0" y="24" fill="#E8560A">★★★★★</text>
+    <text x="80" y="24">"Vinieron en menos de una hora, todo perfecto." — María L.</text>
+    <text x="0" y="50" fill="#E8560A">★★★★★</text>
+    <text x="80" y="50">"Profesionales y muy honestos con el precio." — Javier R.</text>
+    <text x="0" y="76" fill="#E8560A">★★★★★</text>
+    <text x="80" y="76">"Recomendado 100% en Córdoba." — Lucía M.</text>
+  </g>
+</svg>
