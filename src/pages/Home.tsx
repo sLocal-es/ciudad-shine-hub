@@ -6,6 +6,7 @@ import ImagePlaceholder from "@/components/ImagePlaceholder";
 import LeadMagnetForm from "@/components/forms/LeadMagnetForm";
 import ContactForm from "@/components/forms/ContactForm";
 import TechPartnersSection from "@/components/TechPartnersSection";
+import AnalisisGratuitoModal from "@/components/AnalisisGratuitoModal";
 import heroImg from "@/assets/hero-home.webp";
 import logoTei from "@/assets/casos/logo-tei.png";
 import logoViviane from "@/assets/casos/logo-viviane.png";
