@@ -92,9 +92,16 @@ const Home = () => {
               <Link to="/planes" className="bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors">
                 Ver planes →
               </Link>
-              <Link to="/como-funciona" className="border border-dark-fg/20 text-dark-fg font-heading text-sm rounded-lg px-6 py-3 hover:border-primary hover:text-primary transition-colors">
-                Cómo funciona
-              </Link>
+              <AnalisisGratuitoModal
+                trigger={
+                  <button
+                    type="button"
+                    className="border border-dark-fg/20 text-dark-fg font-heading text-sm rounded-lg px-6 py-3 hover:border-primary hover:text-primary transition-colors"
+                  >
+                    Ver análisis gratuito
+                  </button>
+                }
+              />
             </div>
           </div>
           <img
