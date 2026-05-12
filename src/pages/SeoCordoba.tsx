@@ -3,7 +3,8 @@ import SEOHead from "@/components/SEOHead";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import FAQSection from "@/components/FAQSection";
 import ResultadosSection from "@/components/ResultadosSection";
-import MiniAuditWidget from "@/components/MiniAuditWidget";
+import HeroAuditForm from "@/components/cordoba/HeroAuditForm";
+import { LocalPackMockup, GBPMockup, PositionChart } from "@/components/cordoba/StepVisuals";
 
 const sectores = [
   { label: "SEO para fontaneros", href: "/seo-para-fontaneros" },
@@ -141,25 +142,8 @@ const SeoCordoba = () => {
             <h1 className="font-heading text-3xl md:text-4xl leading-tight mb-4">
               SEO Local en Córdoba: Que tus Clientes te Encuentren en Google
             </h1>
-            <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-8 font-body font-light">
-              Cuando alguien en Córdoba busca "fontanero en el Casco Histórico", "fisioterapeuta en Ciudad Jardín" o "empresa de reformas en Córdoba", Google muestra tres negocios en el mapa. Esos tres reciben el 40% de todos los contactos. Si no estás tú, está tu competencia. Lo gestionamos desde Córdoba para que eso cambie — desde 147€/mes.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link
-                to="/contacto"
-                className="bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors inline-block"
-              >
-                Empezar →
-              </Link>
-              <Link
-                to="/como-funciona"
-                className="border border-dark-fg/30 text-dark-fg font-heading text-sm rounded-lg px-6 py-3 hover:border-primary hover:text-primary transition-colors inline-block"
-              >
-                Ver cómo funciona
-              </Link>
-            </div>
           </div>
-          <MiniAuditWidget />
+          <HeroAuditForm />
         </div>
       </section>
 
@@ -217,56 +201,45 @@ const SeoCordoba = () => {
         </div>
       </section>
 
-      {/* WHY — dos columnas sin cards */}
-      <section className="py-16">
-        <div className="container">
-          <h2 className="font-heading text-2xl md:text-3xl mb-8 max-w-3xl">
-            SEO local en Córdoba: por qué tu negocio no aparece en Google Maps
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div className="space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed">
-              <p>
-                Córdoba tiene un mercado local activo con menor competencia digital que Madrid o Barcelona. Eso significa que los negocios que trabajan su posicionamiento en Google Maps ahora tienen una ventaja real sobre los que esperan. En barrios como el Casco Histórico, Ciudad Jardín, El Brillante, Parque Figueroa o Vistalegre, los clientes buscan servicios locales en Google a diario.
-              </p>
-              <p>
-                Cuando alguien busca "electricista en Córdoba", "clínica dental cerca de mí" o "abogado en el centro de Córdoba", Google muestra tres negocios en el mapa. Los que están ahí reciben el 40% de todos los clics. Los que no están no existen para ese cliente.
-              </p>
-            </div>
-            <div className="space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed">
-              <p>
-                El error más común: crear la ficha de Google una vez y abandonarla. Google interpreta la inactividad como falta de relevancia y baja posiciones progresivamente. En Córdoba, donde la competencia digital todavía es menor que en las grandes capitales, optimizar ahora te da una ventaja que después será muy difícil de recuperar para tu competencia.
-              </p>
-              <p>
-                Un negocio en el Casco Histórico de Córdoba bien posicionado en Google Maps recibe búsquedas de residentes, de turistas que buscan servicios locales y de personas de toda la provincia. La combinación de proximidad y relevancia es exactamente lo que gestionamos para tu negocio.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* HOW */}
+      {/* HOW — redesigned with visuals */}
       <section className="bg-warm-bg py-16">
         <div className="container">
-          <h2 className="font-heading text-2xl md:text-3xl mb-8">
+          <h2 className="font-heading text-2xl md:text-3xl mb-10">
             Cómo posicionamos tu negocio en Córdoba en Google Maps
           </h2>
           <div className="flex flex-col">
-            {pasos.map((p, i) => (
-              <div
-                key={p.n}
-                className={`flex flex-col md:flex-row gap-6 md:gap-10 py-8 ${
-                  i !== pasos.length - 1 ? "border-b border-border" : ""
-                }`}
-              >
-                <div className="text-primary font-heading font-light text-5xl md:text-6xl leading-none md:w-32 shrink-0">
-                  {p.n}
-                </div>
-                <div className="flex-1">
+            {pasos.map((p, i) => {
+              const visual = i === 0 ? <LocalPackMockup /> : i === 1 ? <GBPMockup /> : <PositionChart />;
+              const textBlock = (
+                <div>
+                  <div className="text-primary font-heading font-light text-5xl md:text-6xl leading-none mb-4">
+                    {p.n}
+                  </div>
                   <h3 className="font-heading font-bold text-lg md:text-xl mb-3">{p.title}</h3>
                   <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{p.body}</p>
                 </div>
-              </div>
-            ))}
+              );
+              const reverse = i === 1;
+              return (
+                <div
+                  key={p.n}
+                  className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center py-12"
+                  style={i !== 0 ? { borderTop: "1px solid rgba(0,0,0,0.06)" } : undefined}
+                >
+                  {reverse ? (
+                    <>
+                      <div className="order-2 md:order-1">{visual}</div>
+                      <div className="order-1 md:order-2">{textBlock}</div>
+                    </>
+                  ) : (
+                    <>
+                      {textBlock}
+                      <div>{visual}</div>
+                    </>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -340,6 +313,33 @@ const SeoCordoba = () => {
             >
               Empezar en Córdoba →
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* WHY — dos columnas sin cards */}
+      <section className="py-16">
+        <div className="container">
+          <h2 className="font-heading text-2xl md:text-3xl mb-8 max-w-3xl">
+            SEO local en Córdoba: por qué tu negocio no aparece en Google Maps
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed">
+              <p>
+                Córdoba tiene un mercado local activo con menor competencia digital que Madrid o Barcelona. Eso significa que los negocios que trabajan su posicionamiento en Google Maps ahora tienen una ventaja real sobre los que esperan. En barrios como el Casco Histórico, Ciudad Jardín, El Brillante, Parque Figueroa o Vistalegre, los clientes buscan servicios locales en Google a diario.
+              </p>
+              <p>
+                Cuando alguien busca "electricista en Córdoba", "clínica dental cerca de mí" o "abogado en el centro de Córdoba", Google muestra tres negocios en el mapa. Los que están ahí reciben el 40% de todos los clics. Los que no están no existen para ese cliente.
+              </p>
+            </div>
+            <div className="space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed">
+              <p>
+                El error más común: crear la ficha de Google una vez y abandonarla. Google interpreta la inactividad como falta de relevancia y baja posiciones progresivamente. En Córdoba, donde la competencia digital todavía es menor que en las grandes capitales, optimizar ahora te da una ventaja que después será muy difícil de recuperar para tu competencia.
+              </p>
+              <p>
+                Un negocio en el Casco Histórico de Córdoba bien posicionado en Google Maps recibe búsquedas de residentes, de turistas que buscan servicios locales y de personas de toda la provincia. La combinación de proximidad y relevancia es exactamente lo que gestionamos para tu negocio.
+              </p>
+            </div>
           </div>
         </div>
       </section>
