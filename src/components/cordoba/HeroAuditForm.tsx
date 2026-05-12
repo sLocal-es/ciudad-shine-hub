@@ -13,7 +13,7 @@ const inputStyle: React.CSSProperties = {
 };
 
 const HeroAuditForm = () => {
-  const [form, setForm] = useState({ nombre: "", email: "", sector: "", telefono: "" });
+  const [form, setForm] = useState({ nombre: "", empresa: "", email: "", sector: "", telefono: "" });
   const [sending, setSending] = useState(false);
   const [done, setDone] = useState(false);
 
@@ -34,8 +34,10 @@ const HeroAuditForm = () => {
           from_email: form.email,
           sector: form.sector,
           phone: form.telefono,
+          business: form.empresa,
           city: "Córdoba",
           nombre: form.nombre,
+          empresa: form.empresa,
           email: form.email,
           telefono: form.telefono,
         },
@@ -71,6 +73,15 @@ const HeroAuditForm = () => {
         className="placeholder:text-white/40"
       />
       <input
+        name="empresa"
+        required
+        placeholder="Nombre de tu empresa"
+        value={form.empresa}
+        onChange={onChange}
+        style={inputStyle}
+        className="placeholder:text-white/40"
+      />
+      <input
         name="email"
         type="email"
         required
@@ -101,7 +112,9 @@ const HeroAuditForm = () => {
       </select>
       <input
         name="telefono"
-        placeholder="Teléfono (opcional)"
+        type="tel"
+        required
+        placeholder="Teléfono móvil"
         value={form.telefono}
         onChange={onChange}
         style={inputStyle}
