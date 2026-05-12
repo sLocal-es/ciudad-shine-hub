@@ -159,10 +159,60 @@ const SeoCordoba = () => {
               </Link>
             </div>
           </div>
-          <div className="rounded-xl w-full h-[340px] border-2 border-dashed border-[#E4E2DC] bg-[#F0EDE4] flex items-center justify-center p-6 text-center">
-            <span className="text-sm text-muted-foreground font-body">
-              [IMAGEN: Pantalla de móvil mostrando búsqueda "fontanero Córdoba" en Google Maps con Local Pack]
-            </span>
+          <MiniAuditWidget />
+        </div>
+      </section>
+
+      {/* MAPA + BARRIOS */}
+      <section className="py-16">
+        <div className="container">
+          <h2 className="font-heading text-2xl md:text-3xl mb-8 max-w-3xl">
+            SEO Local en Córdoba: trabajamos tu zona
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+            <iframe
+              title="Mapa de Córdoba"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50431.2!2d-4.7796!3d37.8882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6d17a27a6be009%3A0x4b3ed89a54f4a3de!2sC%C3%B3rdoba!5e0!3m2!1ses!2ses!4v1234567890"
+              width="100%"
+              height="380"
+              style={{ border: 0, borderRadius: "12px" }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+            <div>
+              <h3 className="font-heading text-xl md:text-2xl mb-5">
+                Barrios y zonas donde posicionamos negocios
+              </h3>
+              <ul className="grid grid-cols-2 gap-x-6 gap-y-2 text-sm md:text-base text-foreground mb-6">
+                {[
+                  "Casco Histórico",
+                  "Ciudad Jardín",
+                  "El Brillante",
+                  "Poniente",
+                  "Sector Sur",
+                  "La Fuensanta",
+                  "Zoco",
+                  "Fátima-Levante",
+                  "El Naranjo",
+                  "Cruz de Juárez",
+                ].map((b) => (
+                  <li key={b} className="flex items-center gap-2">
+                    <span className="text-primary">•</span>
+                    {b}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-6">
+                Si tu negocio está en Córdoba y tus clientes te buscan en Google, te posicionamos donde viven: barrio a barrio, búsqueda a búsqueda.
+              </p>
+              <Link
+                to="/contacto"
+                className="inline-block bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors"
+              >
+                Analiza tu negocio gratis →
+              </Link>
+            </div>
           </div>
         </div>
       </section>
