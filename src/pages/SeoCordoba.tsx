@@ -3,6 +3,7 @@ import SEOHead from "@/components/SEOHead";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import FAQSection from "@/components/FAQSection";
 import ResultadosSection from "@/components/ResultadosSection";
+import MiniAuditWidget from "@/components/MiniAuditWidget";
 
 const sectores = [
   { label: "SEO para fontaneros", href: "/seo-para-fontaneros" },
