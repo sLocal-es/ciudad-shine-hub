@@ -142,25 +142,8 @@ const SeoCordoba = () => {
             <h1 className="font-heading text-3xl md:text-4xl leading-tight mb-4">
               SEO Local en Córdoba: Que tus Clientes te Encuentren en Google
             </h1>
-            <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-8 font-body font-light">
-              Cuando alguien en Córdoba busca "fontanero en el Casco Histórico", "fisioterapeuta en Ciudad Jardín" o "empresa de reformas en Córdoba", Google muestra tres negocios en el mapa. Esos tres reciben el 40% de todos los contactos. Si no estás tú, está tu competencia. Lo gestionamos desde Córdoba para que eso cambie — desde 147€/mes.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link
-                to="/contacto"
-                className="bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors inline-block"
-              >
-                Empezar →
-              </Link>
-              <Link
-                to="/como-funciona"
-                className="border border-dark-fg/30 text-dark-fg font-heading text-sm rounded-lg px-6 py-3 hover:border-primary hover:text-primary transition-colors inline-block"
-              >
-                Ver cómo funciona
-              </Link>
-            </div>
           </div>
-          <MiniAuditWidget />
+          <HeroAuditForm />
         </div>
       </section>
 
