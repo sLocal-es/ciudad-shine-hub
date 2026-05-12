@@ -317,6 +317,33 @@ const SeoCordoba = () => {
         </div>
       </section>
 
+      {/* WHY — dos columnas sin cards */}
+      <section className="py-16">
+        <div className="container">
+          <h2 className="font-heading text-2xl md:text-3xl mb-8 max-w-3xl">
+            SEO local en Córdoba: por qué tu negocio no aparece en Google Maps
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div className="space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed">
+              <p>
+                Córdoba tiene un mercado local activo con menor competencia digital que Madrid o Barcelona. Eso significa que los negocios que trabajan su posicionamiento en Google Maps ahora tienen una ventaja real sobre los que esperan. En barrios como el Casco Histórico, Ciudad Jardín, El Brillante, Parque Figueroa o Vistalegre, los clientes buscan servicios locales en Google a diario.
+              </p>
+              <p>
+                Cuando alguien busca "electricista en Córdoba", "clínica dental cerca de mí" o "abogado en el centro de Córdoba", Google muestra tres negocios en el mapa. Los que están ahí reciben el 40% de todos los clics. Los que no están no existen para ese cliente.
+              </p>
+            </div>
+            <div className="space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed">
+              <p>
+                El error más común: crear la ficha de Google una vez y abandonarla. Google interpreta la inactividad como falta de relevancia y baja posiciones progresivamente. En Córdoba, donde la competencia digital todavía es menor que en las grandes capitales, optimizar ahora te da una ventaja que después será muy difícil de recuperar para tu competencia.
+              </p>
+              <p>
+                Un negocio en el Casco Histórico de Córdoba bien posicionado en Google Maps recibe búsquedas de residentes, de turistas que buscan servicios locales y de personas de toda la provincia. La combinación de proximidad y relevancia es exactamente lo que gestionamos para tu negocio.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <FAQSection title="Preguntas frecuentes sobre SEO local en Córdoba" items={faqs} />
 
