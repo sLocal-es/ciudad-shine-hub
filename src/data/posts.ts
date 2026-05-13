@@ -462,7 +462,7 @@ export const posts: BlogPost[] = [
   metaDescription: "Descubre por qué el SEO local supera a los anuncios cuando inicias un negocio. Datos reales, estrategia paso a paso y auditoría gratuita.",
   category: "SEO Local",
   date: "2026-05-13",
-  featuredImage: "/blog/estrategia-mobile-search.svg",
+  featuredImage: "/blog/estrategia-portada.jpg",
   altText: "Móvil mostrando resultados locales en Google Maps al buscar un servicio cerca",
   excerpt: "Por qué el SEO local supera a los anuncios cuando arrancas un negocio: datos reales, estrategia paso a paso y cómo conseguir tus primeros clientes desde Google sin gastar en publicidad.",
   content: "",
