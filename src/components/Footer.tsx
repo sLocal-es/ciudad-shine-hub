@@ -21,6 +21,7 @@ const footerSectors = [
   { path: "/seo-para-dentistas", label: "SEO para dentistas" },
   { path: "/seo-para-psicologos", label: "SEO para psicólogos" },
   { path: "/seo-para-gimnasios", label: "SEO para gimnasios" },
+  { path: "/seo-para-autonomos", label: "SEO para autónomos" },
 ];
 
 const cityHref = (slug: string) => `/seo-local-${slug}`;
