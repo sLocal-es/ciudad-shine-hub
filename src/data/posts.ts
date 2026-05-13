@@ -455,4 +455,15 @@ export const posts: BlogPost[] = [
     { q: "¿Es mejor posicionar 'Córdoba' o un barrio concreto?", a: "Lo ideal es trabajar ambos a la vez. Las búsquedas por barrio (Casco Histórico, Ciudad Jardín, El Brillante…) tienen menos competencia y conviertes antes. Las búsquedas generales por 'Córdoba' tienen más volumen pero requieren más tiempo y reseñas. Una estrategia bien hecha gana primero los barrios y luego escala a la ciudad." },
     { q: "¿Cuánto cuesta el SEO local para un negocio en Córdoba?", a: "En slocal.es trabajamos con negocios cordobeses desde 147€/mes + IVA, sin permanencia. El plan incluye gestión mensual de tu ficha de Google, contenido optimizado por barrio, gestión de reseñas e informe mensual de resultados. Hablas siempre con la misma persona, sin intermediarios." }
   ],
+},
+{
+  slug: "seo-local-mejor-estrategia-marketing-nuevo-negocio",
+  title: "SEO local: la mejor estrategia para iniciar un negocio",
+  metaDescription: "Descubre por qué el SEO local supera a los anuncios cuando inicias un negocio. Datos reales, estrategia paso a paso y auditoría gratuita.",
+  category: "SEO Local",
+  date: "2026-05-13",
+  featuredImage: "/blog/cordoba-mobile-search.svg",
+  altText: "Búsqueda local en Google desde un móvil mostrando negocios cercanos",
+  excerpt: "Por qué el SEO local supera a los anuncios cuando arrancas un negocio: datos reales, estrategia paso a paso y cómo conseguir tus primeros clientes desde Google sin gastar en publicidad.",
+  content: "",
 }];
