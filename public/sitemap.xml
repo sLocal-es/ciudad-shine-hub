@@ -162,5 +162,10 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://slocal.es/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 
 </urlset>

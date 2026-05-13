@@ -37,6 +37,7 @@ import Sistema from "@/pages/Sistema";
 import SeoCordoba from "@/pages/SeoCordoba";
 import BlogIndex from "@/pages/BlogIndex";
 import BlogPostPage from "@/pages/BlogPost";
+import BlogSeoLocalEstrategia from "@/pages/BlogSeoLocalEstrategia";
 import NotFound from "@/pages/NotFound";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
@@ -144,6 +145,7 @@ const App = () => (
             <Route path="/seo-para-yoga" element={<SectorPage />} />
             {/* Blog */}
             <Route path="/blog" element={<BlogIndex />} />
+            <Route path="/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio" element={<BlogSeoLocalEstrategia />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
             <Route path="*" element={<NotFound />} />
           </Route>
