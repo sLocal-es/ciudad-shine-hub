@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420" role="img" aria-label="Los tres pilares del SEO local: Google Business Profile, reseñas y contenido">
+  <rect width="800" height="420" fill="#FAFAF7"/>
+  <g font-family="'Plus Jakarta Sans', Arial, sans-serif">
+    <!-- Pillar 1: GBP -->
+    <g transform="translate(60,60)">
+      <rect width="200" height="300" rx="16" fill="#ffffff" stroke="#E8E2D5" stroke-width="2"/>
+      <circle cx="100" cy="80" r="38" fill="#E8622A22"/>
+      <path d="M100 56 c-13 0 -24 11 -24 24 c0 18 24 38 24 38 s24 -20 24 -38 c0 -13 -11 -24 -24 -24 z m0 32 a8 8 0 1 1 0 -16 a8 8 0 0 1 0 16 z" fill="#E8622A"/>
+      <text x="100" y="170" text-anchor="middle" font-size="16" font-weight="800" fill="#1A1A24">Google Business</text>
+      <text x="100" y="190" text-anchor="middle" font-size="16" font-weight="800" fill="#1A1A24">Profile</text>
+      <text x="100" y="225" text-anchor="middle" font-size="11" fill="#5A5A66">Tu ficha en Maps</text>
+      <text x="100" y="245" text-anchor="middle" font-size="11" fill="#5A5A66">y en el Local Pack.</text>
+      <text x="100" y="275" text-anchor="middle" font-size="11" fill="#5A5A66">Fotos · horarios · zonas</text>
+    </g>
+    <!-- Pillar 2: Reviews -->
+    <g transform="translate(300,60)">
+      <rect width="200" height="300" rx="16" fill="#ffffff" stroke="#E8E2D5" stroke-width="2"/>
+      <circle cx="100" cy="80" r="38" fill="#E8622A22"/>
+      <path d="M100 52 l8 18 l20 3 l-14 14 l3 20 l-17 -10 l-17 10 l3 -20 l-14 -14 l20 -3 z" fill="#E8622A"/>
+      <text x="100" y="170" text-anchor="middle" font-size="16" font-weight="800" fill="#1A1A24">Reseñas</text>
+      <text x="100" y="205" text-anchor="middle" font-size="11" fill="#5A5A66">Cantidad, frecuencia</text>
+      <text x="100" y="225" text-anchor="middle" font-size="11" fill="#5A5A66">y respuesta activa.</text>
+      <text x="100" y="255" text-anchor="middle" font-size="11" fill="#5A5A66">El factor que decide</text>
+      <text x="100" y="275" text-anchor="middle" font-size="11" fill="#5A5A66">la llamada.</text>
+    </g>
+    <!-- Pillar 3: Content -->
+    <g transform="translate(540,60)">
+      <rect width="200" height="300" rx="16" fill="#ffffff" stroke="#E8E2D5" stroke-width="2"/>
+      <circle cx="100" cy="80" r="38" fill="#E8622A22"/>
+      <rect x="78" y="58" width="44" height="48" rx="4" fill="#E8622A"/>
+      <rect x="84" y="66" width="32" height="3" fill="#ffffff"/>
+      <rect x="84" y="74" width="32" height="3" fill="#ffffff"/>
+      <rect x="84" y="82" width="20" height="3" fill="#ffffff"/>
+      <text x="100" y="170" text-anchor="middle" font-size="16" font-weight="800" fill="#1A1A24">Contenido</text>
+      <text x="100" y="190" text-anchor="middle" font-size="16" font-weight="800" fill="#1A1A24">y páginas locales</text>
+      <text x="100" y="225" text-anchor="middle" font-size="11" fill="#5A5A66">Una página por servicio</text>
+      <text x="100" y="245" text-anchor="middle" font-size="11" fill="#5A5A66">y por zona.</text>
+      <text x="100" y="275" text-anchor="middle" font-size="11" fill="#5A5A66">Le dices a Google qué eres.</text>
+    </g>
+  </g>
+</svg>

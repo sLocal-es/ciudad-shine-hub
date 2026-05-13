@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Infografía con estadísticas de búsquedas locales en Google España">
+  <rect width="800" height="500" fill="#FAFAF7"/>
+  <!-- Spain map silhouette (very simplified) -->
+  <path d="M150 180 Q 200 120 320 130 Q 460 110 560 160 Q 640 180 660 240 Q 680 320 600 360 Q 480 410 360 400 Q 220 390 170 330 Q 120 260 150 180 Z" fill="#E8E2D5" stroke="#D9CFB8" stroke-width="2"/>
+  <!-- Search pin icons over map -->
+  <g fill="#E8622A">
+    <circle cx="240" cy="220" r="9"/>
+    <circle cx="320" cy="190" r="9"/>
+    <circle cx="400" cy="260" r="9"/>
+    <circle cx="500" cy="220" r="9"/>
+    <circle cx="450" cy="330" r="9"/>
+    <circle cx="290" cy="320" r="9"/>
+    <circle cx="560" cy="290" r="9"/>
+  </g>
+  <!-- Stat callouts -->
+  <g font-family="'Plus Jakarta Sans', Arial, sans-serif" fill="#1A1A24">
+    <g transform="translate(30,40)">
+      <rect width="200" height="70" rx="12" fill="#ffffff" stroke="#E8E2D5"/>
+      <text x="16" y="32" font-size="22" font-weight="800" fill="#E8622A">1.500M+</text>
+      <text x="16" y="54" font-size="11" fill="#5A5A66">búsquedas "cerca de mí" / mes</text>
+    </g>
+    <g transform="translate(560,40)">
+      <rect width="200" height="70" rx="12" fill="#ffffff" stroke="#E8E2D5"/>
+      <text x="16" y="32" font-size="22" font-weight="800" fill="#E8622A">46%</text>
+      <text x="16" y="54" font-size="11" fill="#5A5A66">búsquedas con intención local</text>
+    </g>
+    <g transform="translate(30,400)">
+      <rect width="200" height="70" rx="12" fill="#ffffff" stroke="#E8E2D5"/>
+      <text x="16" y="32" font-size="22" font-weight="800" fill="#E8622A">76%</text>
+      <text x="16" y="54" font-size="11" fill="#5A5A66">visitan el negocio en menos de 24h</text>
+    </g>
+    <g transform="translate(560,400)">
+      <rect width="200" height="70" rx="12" fill="#ffffff" stroke="#E8E2D5"/>
+      <text x="16" y="32" font-size="22" font-weight="800" fill="#E8622A">28%</text>
+      <text x="16" y="54" font-size="11" fill="#5A5A66">generan venta en 24h</text>
+    </g>
+  </g>
+</svg>
