@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Móvil mostrando resultados locales en Google Maps al buscar fontanero cerca de mí">
+  <rect width="800" height="500" fill="#0F1117"/>
+  <g transform="translate(260,40)">
+    <rect x="0" y="0" width="280" height="420" rx="28" fill="#1a1d24" stroke="#2a2e38" stroke-width="2"/>
+    <rect x="10" y="10" width="260" height="400" rx="20" fill="#ffffff"/>
+    <rect x="20" y="22" width="240" height="36" rx="18" fill="#f1f3f4"/>
+    <circle cx="40" cy="40" r="8" fill="#E8560A"/>
+    <text x="58" y="44" font-family="Arial, sans-serif" font-size="12" fill="#0F1117">fontanero cerca de mí</text>
+    <rect x="20" y="70" width="240" height="120" rx="8" fill="#e8eef3"/>
+    <circle cx="80" cy="125" r="10" fill="#E8560A"/>
+    <circle cx="140" cy="110" r="10" fill="#E8560A"/>
+    <circle cx="200" cy="140" r="10" fill="#E8560A"/>
+    <path d="M30 160 Q 100 130 250 175" stroke="#9aa5b1" stroke-width="1.5" fill="none"/>
+    <g transform="translate(20,200)">
+      <rect width="240" height="60" rx="8" fill="#ffffff" stroke="#e1e5ea"/>
+      <text x="12" y="22" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#0F1117">Fontanería Express</text>
+      <text x="12" y="40" font-family="Arial, sans-serif" font-size="10" fill="#E8560A">★★★★★ 4.9 (102)</text>
+      <text x="12" y="54" font-family="Arial, sans-serif" font-size="9" fill="#5f6368">A 700 m · Abierto 24h</text>
+    </g>
+    <g transform="translate(20,265)">
+      <rect width="240" height="60" rx="8" fill="#ffffff" stroke="#e1e5ea"/>
+      <text x="12" y="22" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#0F1117">Urgencias Fontanería 24h</text>
+      <text x="12" y="40" font-family="Arial, sans-serif" font-size="10" fill="#E8560A">★★★★★ 4.8 (88)</text>
+      <text x="12" y="54" font-family="Arial, sans-serif" font-size="9" fill="#5f6368">A 1,2 km · Abierto ahora</text>
+    </g>
+    <g transform="translate(20,330)">
+      <rect width="240" height="60" rx="8" fill="#ffffff" stroke="#e1e5ea"/>
+      <text x="12" y="22" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#0F1117">Reparaciones del Sur</text>
+      <text x="12" y="40" font-family="Arial, sans-serif" font-size="10" fill="#E8560A">★★★★☆ 4.6 (47)</text>
+      <text x="12" y="54" font-family="Arial, sans-serif" font-size="9" fill="#5f6368">A 1,8 km · Abierto ahora</text>
+    </g>
+  </g>
+</svg>
