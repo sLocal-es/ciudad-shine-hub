@@ -59,6 +59,20 @@ const CityTemplate = ({ city }: Props) => {
     description: `SEO local para negocios en ${name}`,
     areaServed: `${name}, España`,
     priceRange: "€€",
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
+        opens: "09:00",
+        closes: "20:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Friday"],
+        opens: "09:00",
+        closes: "14:00",
+      },
+    ],
   };
 
   const faqSchema = {

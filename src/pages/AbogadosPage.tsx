@@ -64,6 +64,20 @@ const AbogadosPage = () => {
     description: "SEO local para abogados en España",
     areaServed: "España",
     priceRange: "€€",
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
+        opens: "09:00",
+        closes: "20:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Friday"],
+        opens: "09:00",
+        closes: "14:00",
+      },
+    ],
   };
 
   const practiceAreas = [
