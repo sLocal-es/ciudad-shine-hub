@@ -1,45 +1,218 @@
+import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
-import FAQSection from "@/components/FAQSection";
-import CTASection from "@/components/CTASection";
-import AutonomosAuditForm from "@/components/autonomos/HeroAuditForm";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Input } from "@/components/ui/input";
+
+const WHATSAPP = "https://wa.me/34684780063";
+
+type Sector =
+  | "Fontanero"
+  | "Fisioterapeuta"
+  | "Abogado"
+  | "Dentista"
+  | "Reformas"
+  | "Psicólogo"
+  | "Gimnasio";
+type City =
+  | "Madrid"
+  | "Barcelona"
+  | "Valencia"
+  | "Sevilla"
+  | "Málaga"
+  | "Córdoba"
+  | "Bilbao";
+
+const SEARCH_VOLUME: Record<City, Record<Sector, number>> = {
+  Madrid:    { Fontanero: 1600, Fisioterapeuta: 590, Abogado: 1000, Dentista: 2400, Reformas: 320, Psicólogo: 1600, Gimnasio: 2900 },
+  Barcelona: { Fontanero: 1300, Fisioterapeuta: 880, Abogado: 880,  Dentista: 2400, Reformas: 260, Psicólogo: 590,  Gimnasio: 1900 },
+  Valencia:  { Fontanero: 1000, Fisioterapeuta: 390, Abogado: 720,  Dentista: 1900, Reformas: 140, Psicólogo: 260,  Gimnasio: 1900 },
+  Sevilla:   { Fontanero: 880,  Fisioterapeuta: 210, Abogado: 880,  Dentista: 1300, Reformas: 90,  Psicólogo: 590,  Gimnasio: 2400 },
+  Málaga:    { Fontanero: 170,  Fisioterapeuta: 20,  Abogado: 50,   Dentista: 110,  Reformas: 30,  Psicólogo: 110,  Gimnasio: 110  },
+  Córdoba:   { Fontanero: 30,   Fisioterapeuta: 10,  Abogado: 90,   Dentista: 140,  Reformas: 0,   Psicólogo: 40,   Gimnasio: 260  },
+  Bilbao:    { Fontanero: 260,  Fisioterapeuta: 260, Abogado: 480,  Dentista: 1000, Reformas: 30,  Psicólogo: 260,  Gimnasio: 1300 },
+};
+
+const DEFAULT_TICKET: Record<Sector, number> = {
+  Fontanero: 200,
+  Fisioterapeuta: 400,
+  Abogado: 800,
+  Dentista: 600,
+  Reformas: 8000,
+  Psicólogo: 600,
+  Gimnasio: 240,
+};
+
+const SECTORS: Sector[] = ["Fontanero", "Fisioterapeuta", "Abogado", "Dentista", "Reformas", "Psicólogo", "Gimnasio"];
+const CITIES: City[] = ["Madrid", "Barcelona", "Valencia", "Sevilla", "Málaga", "Córdoba", "Bilbao"];
+
+const SECTOR_LINKS: Partial<Record<Sector, string>> = {
+  Fontanero: "/seo-para-fontaneros",
+  Fisioterapeuta: "/seo-para-fisioterapeutas",
+  Abogado: "/seo-para-abogados",
+  Dentista: "/seo-para-dentistas",
+};
+
+const faqs = [
+  {
+    q: "¿Necesito tener web para aparecer en Google siendo autónomo?",
+    a: "No es obligatorio, pero sí recomendable. Con solo la ficha de Google puedes aparecer en el mapa local. Con ficha y web juntas, apareces en el mapa y en los resultados de búsqueda orgánica al mismo tiempo. El servicio de slocal incluye los dos porque así es como funciona mejor.",
+  },
+  {
+    q: "¿Cuánto tarda en verse resultado con el SEO local?",
+    a: "Entre 6 y 12 semanas para las primeras posiciones en búsquedas locales de baja competencia. En ciudades grandes como Madrid o Barcelona, 3 a 4 meses para posiciones estables. En ciudades medianas o sectores con poca competencia digital, antes.",
+  },
+  {
+    q: "¿Cuánto cuesta el SEO local para autónomos?",
+    a: "El servicio de slocal tiene un precio fijo de 147 €/mes + IVA. Sin permanencia mínima, sin letra pequeña. Incluye ficha de Google, web con SEO local y posicionamiento activo cada mes.",
+  },
+  {
+    q: "¿Qué diferencia hay entre SEO local y Google Ads?",
+    a: "Con Google Ads pagas por cada clic — cuando dejas de pagar, desapareces. Con SEO local posicionas tu negocio de forma orgánica: cuando llegas al top 3, te mantienes ahí aunque pares la inversión. Para un autónomo con presupuesto limitado, el SEO local tiene mejor retorno a medio plazo.",
+  },
+  {
+    q: "¿Funciona el SEO local en ciudades pequeñas?",
+    a: "Mejor que en ciudades grandes. En una ciudad pequeña hay menos competencia digital, lo que significa que posicionas más rápido y con menos esfuerzo. Muchos autónomos en ciudades medianas están en el top 3 de Google en su sector simplemente porque nadie más lo trabaja.",
+  },
+  {
+    q: "¿Qué es el Local Pack de Google y por qué importa?",
+    a: "Es el bloque de tres negocios que Google muestra en el mapa cuando alguien busca un servicio local. Esos tres negocios reciben la mayoría de los contactos de esa búsqueda. El objetivo del SEO local es que tu negocio sea uno de esos tres.",
+  },
+  {
+    q: "¿Puedo cancelar cuando quiera?",
+    a: "Sí. Sin permanencia mínima ni penalización. Avisas con 30 días de antelación y listo.",
+  },
+];
+
+const formatEUR = (n: number) =>
+  new Intl.NumberFormat("es-ES", { maximumFractionDigits: 0 }).format(Math.round(n));
+
+const RoiCalculator = () => {
+  const [sector, setSector] = useState<Sector>("Dentista");
+  const [city, setCity] = useState<City>("Madrid");
+  const [ticket, setTicket] = useState<number>(DEFAULT_TICKET["Dentista"]);
+
+  const onSectorChange = (s: Sector) => {
+    setSector(s);
+    setTicket(DEFAULT_TICKET[s]);
+  };
+
+  const r = useMemo(() => {
+    const searches = SEARCH_VOLUME[city][sector];
+    const views = searches * 0.03;
+    const contacts = views * 0.20;
+    const clients = contacts * 0.40;
+    const revenue = clients * ticket;
+    return { searches, views, contacts, clients, revenue };
+  }, [sector, city, ticket]);
+
+  const sectorLink = SECTOR_LINKS[sector];
+
+  return (
+    <div className="bg-card border border-border rounded-2xl p-6 md:p-10 shadow-sm">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        <div>
+          <label className="block text-xs font-heading uppercase tracking-wide text-muted-foreground mb-2">Sector</label>
+          <Select value={sector} onValueChange={(v) => onSectorChange(v as Sector)}>
+            <SelectTrigger><SelectValue /></SelectTrigger>
+            <SelectContent>
+              {SECTORS.map((s) => <SelectItem key={s} value={s}>{s}</SelectItem>)}
+            </SelectContent>
+          </Select>
+        </div>
+        <div>
+          <label className="block text-xs font-heading uppercase tracking-wide text-muted-foreground mb-2">Ciudad</label>
+          <Select value={city} onValueChange={(v) => setCity(v as City)}>
+            <SelectTrigger><SelectValue /></SelectTrigger>
+            <SelectContent>
+              {CITIES.map((c) => <SelectItem key={c} value={c}>{c}</SelectItem>)}
+            </SelectContent>
+          </Select>
+        </div>
+        <div>
+          <label className="block text-xs font-heading uppercase tracking-wide text-muted-foreground mb-2">Ticket medio (€)</label>
+          <Input
+            type="number"
+            min={0}
+            value={ticket}
+            onChange={(e) => setTicket(Math.max(0, Number(e.target.value) || 0))}
+          />
+        </div>
+      </div>
+
+      <dl className="space-y-3 font-body text-sm md:text-base">
+        <div className="flex justify-between gap-4 border-b border-border pb-3">
+          <dt className="text-muted-foreground">Búsquedas mensuales de {sector.toLowerCase()} en {city}</dt>
+          <dd className="font-heading">{formatEUR(r.searches)}</dd>
+        </div>
+        <div className="flex justify-between gap-4 border-b border-border pb-3">
+          <dt className="text-muted-foreground">Personas que verían tu ficha en top 3</dt>
+          <dd className="font-heading">~{formatEUR(r.views)}</dd>
+        </div>
+        <div className="flex justify-between gap-4 border-b border-border pb-3">
+          <dt className="text-muted-foreground">Contactos estimados al mes</dt>
+          <dd className="font-heading">~{formatEUR(r.contacts)}</dd>
+        </div>
+        <div className="flex justify-between gap-4 border-b border-border pb-3">
+          <dt className="text-muted-foreground">Clientes nuevos estimados</dt>
+          <dd className="font-heading">~{formatEUR(r.clients)}</dd>
+        </div>
+        <div className="flex justify-between gap-4 border-b border-border pb-3">
+          <dt className="text-foreground">Ingresos potenciales</dt>
+          <dd className="font-heading text-primary text-lg">~{formatEUR(r.revenue)} €/mes</dd>
+        </div>
+        <div className="flex justify-between gap-4 pt-1">
+          <dt className="text-muted-foreground">Tu inversión</dt>
+          <dd className="font-heading">147 €/mes + IVA</dd>
+        </div>
+      </dl>
+
+      <p className="text-xs text-muted-foreground mt-6 font-body font-light leading-relaxed">
+        Estimación conservadora basada en datos reales de Semrush. Los resultados varían según la competencia local y el tiempo de posicionamiento.
+        {sectorLink && (
+          <>
+            {" "}
+            Ver detalle del <Link to={sectorLink} className="text-primary underline underline-offset-2">servicio para {sector.toLowerCase()}s</Link>.
+          </>
+        )}
+      </p>
+    </div>
+  );
+};
 
 const AutonomosPage = () => {
-  const faqs = [
-    {
-      q: "¿Vale la pena el SEO si soy autónomo y trabajo solo?",
-      a: "Especialmente si trabajas solo. No tienes equipo comercial ni presupuesto para anuncios. El SEO local te permite que cada cliente potencial de tu zona te encuentre en Google sin pagar por cada clic. Un par de contratos extra al mes ya amortiza el servicio con creces.",
-    },
-    {
-      q: "¿Necesito web o solo con la ficha de Google es suficiente?",
-      a: "La ficha es imprescindible y posiciona en Google Maps, pero tiene techo. Una web con páginas por servicio y zona te permite aparecer también en los resultados orgánicos y te da credibilidad frente a un cliente que duda entre llamarte a ti o a otro. El servicio incluye ambas desde el inicio.",
-    },
-    {
-      q: "¿Cómo compito con empresas más grandes que llevan años en Google?",
-      a: "El SEO local favorece la proximidad y la relevancia, no el tamaño. Un autónomo con ficha bien optimizada, reseñas recientes y contenido específico de su zona aparece antes que una empresa grande con presencia digital descuidada. Hemos visto autónomos superar a competidores con diez veces más antigüedad.",
-    },
-    {
-      q: "¿Funciona el SEO local para autónomos que trabajan en toda España?",
-      a: "Sí, pero la estrategia cambia. En lugar de optimizar por una ciudad, trabajamos por zonas o regiones de servicio. También se puede combinar SEO local en tu ciudad principal con SEO orgánico nacional para servicios que se prestan en remoto.",
-    },
-    {
-      q: "¿Cuándo empiezo a recibir contactos desde Google?",
-      a: "Los primeros contactos suelen llegar entre el mes 2 y el mes 3. Depende de la competencia en tu zona y servicio. En sectores con menos saturación los resultados aparecen antes; en zonas muy competidas se nota a partir del tercer o cuarto mes.",
-    },
-    {
-      q: "¿Qué diferencia hay entre SEO para autónomos y SEO para empresas?",
-      a: "El enfoque y el presupuesto. Las empresas grandes invierten en SEO nacional con equipos enteros. Para autónomos optimizamos lo que de verdad mueve la aguja: ficha de Google, páginas por servicio y zona, reseñas y contenido local. Mismo método, escala adaptada a un autónomo.",
-    },
-  ];
-
-  const breadcrumbSchema = {
+  const serviceSchema = {
     "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Inicio", item: "https://slocal.es/" },
-      { "@type": "ListItem", position: 2, name: "SEO para Autónomos", item: "https://slocal.es/seo-para-autonomos" },
-    ],
+    "@type": "Service",
+    name: "SEO para autónomos",
+    provider: { "@type": "LocalBusiness", name: "slocal.es", url: "https://slocal.es" },
+    description:
+      "SEO local para autónomos: ficha de Google, web y posicionamiento local desde 147 €/mes + IVA sin permanencia.",
+    areaServed: { "@type": "Country", name: "España" },
+    offers: {
+      "@type": "Offer",
+      price: "147",
+      priceCurrency: "EUR",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: "147",
+        priceCurrency: "EUR",
+        unitText: "mes",
+      },
+    },
   };
 
   const faqSchema = {
@@ -52,209 +225,223 @@ const AutonomosPage = () => {
     })),
   };
 
-  const serviceSchema = {
+  const breadcrumbSchema = {
     "@context": "https://schema.org",
-    "@type": "Service",
-    name: "SEO para Autónomos",
-    provider: { "@type": "LocalBusiness", name: "slocal.es", url: "https://slocal.es" },
-    areaServed: "España",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Inicio", item: "https://slocal.es/" },
+      { "@type": "ListItem", position: 2, name: "SEO para autónomos", item: "https://slocal.es/seo-para-autonomos" },
+    ],
   };
 
-  const sectorTypes = [
-    "Autónomos de servicios profesionales (abogados, asesores, consultores)",
-    "Autónomos de oficios (electricistas, pintores, carpinteros)",
-    "Autónomos creativos (fotógrafos, diseñadores, copywriters)",
-    "Autónomos de salud y bienestar (fisios, nutricionistas, entrenadores)",
-    "Autónomos de reformas y construcción",
-    "Autónomos de tecnología e informática",
-    "Autónomos de formación y coaching",
-    "Otros servicios locales",
-  ];
-
-  const cities = [
-    { name: "Madrid", slug: "madrid" },
-    { name: "Barcelona", slug: "barcelona" },
-    { name: "Valencia", slug: "valencia" },
-    { name: "Sevilla", slug: "sevilla" },
-    { name: "Málaga", slug: "malaga" },
-    { name: "Zaragoza", slug: "zaragoza" },
-    { name: "Bilbao", slug: "bilbao" },
-    { name: "Murcia", slug: "murcia" },
-  ];
-
-  const otherSectors = [
-    { label: "SEO para fontaneros", slug: "seo-para-fontaneros" },
-    { label: "SEO para fisioterapeutas", slug: "seo-para-fisioterapeutas" },
-    { label: "SEO para empresas de reformas", slug: "seo-para-reformas" },
-    { label: "SEO para abogados", slug: "seo-para-abogados" },
-    { label: "SEO para dentistas", slug: "seo-para-dentistas" },
-    { label: "SEO para psicólogos", slug: "seo-para-psicologos" },
-  ];
-
-  const steps = [
+  const problems = [
     {
-      n: "01",
-      h: "Optimizamos tu presencia en Google desde el primer día",
-      p: "Configuramos tu ficha de Google Business Profile con las categorías correctas para tu servicio, descripción optimizada con las keywords que usan tus clientes, fotos profesionales y zona de servicio por ciudad y barrio. Google necesita señales claras de que eres el autónomo más relevante de tu zona para mostrarte antes que a la competencia.",
+      icon: "📍",
+      title: "Ficha creada y olvidada",
+      text: "Google interpreta inactividad como irrelevancia. Sin fotos nuevas, sin respuestas a reseñas, sin publicaciones: bajas posiciones cada mes.",
     },
     {
-      n: "02",
-      h: "Creamos páginas específicas para cada servicio y zona",
-      p: 'Una web con una página por servicio y por zona donde trabajas permite aparecer en búsquedas específicas de alta intención: "electricista en Chamberí", "asesor fiscal autónomo Madrid", "fotógrafo de bodas Valencia". Cada página ataca una búsqueda concreta. Los autónomos con una sola página genérica no pueden competir con eso.',
+      icon: "🌐",
+      title: "Web sin señales locales",
+      text: "Una web que no menciona tu ciudad ni tus servicios específicos no le dice a Google dónde operas ni para quién.",
     },
     {
-      n: "03",
-      h: "Gestionamos reseñas y te informamos de resultados reales",
-      p: "Las reseñas son el factor que más influye en que un cliente potencial te contacte a ti y no a otro. Gestionamos la obtención y respuesta de reseñas de forma estratégica. Cada mes recibes un informe claro: posiciones en Google Maps, visitas a tu web y qué búsquedas te están trayendo clientes nuevos.",
+      icon: "⏳",
+      title: "Nadie lo gestiona activamente",
+      text: "El SEO local no se hace una vez. Tu competencia que sí lo gestiona cada mes te va ganando posición sin que te enteres.",
     },
+  ];
+
+  const comparisonRows = [
+    ["Gestión ficha Google: 80–150 €/mes", "Todo incluido: 147 €/mes + IVA"],
+    ["Mantenimiento web: 50–100 €/mes", "Una factura, una persona"],
+    ["SEO local: 300–600 €/mes", "Sin permanencia mínima"],
+    ["3 proveedores, nadie coordinado", "Siempre el mismo consultor"],
+    ["Total: 430–850 €/mes", "147 €/mes + IVA"],
   ];
 
   return (
     <>
       <SEOHead
-        title="SEO para Autónomos | Consigue Clientes desde Google | slocal.es"
-        description="Consultor SEO especializado en autónomos. Aparece en Google cuando tus clientes te buscan. Más contratos, sin pagar anuncios. Desde 147€/mes + IVA."
+        title="SEO para autónomos: consigue clientes desde Google | slocal.es"
+        description="Ficha de Google, web y SEO local gestionados por un consultor. 147 €/mes + IVA, sin permanencia. Más clientes para tu negocio autónomo."
         canonical="/seo-para-autonomos"
-        jsonLd={[breadcrumbSchema, faqSchema, serviceSchema]}
+        jsonLd={[breadcrumbSchema, serviceSchema, faqSchema]}
       />
 
-      {/* HERO */}
+      {/* 1 — HERO */}
       <section className="bg-dark-bg text-dark-fg py-16 md:py-24">
-        <div className="container grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div>
-            <BreadcrumbNav items={[
-              { label: "Inicio", href: "/" },
-              { label: "SEO para Autónomos" },
-            ]} />
-            <span className="inline-block border border-primary text-primary text-xs font-heading rounded-full px-4 py-1.5 mb-6">
-              SEO para Autónomos
-            </span>
-            <h1 className="font-heading text-3xl md:text-4xl leading-tight mb-4">
-              SEO para Autónomos: Que tus Clientes te Encuentren en Google
-            </h1>
-            <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-6 font-body font-light">
-              Aparece cuando te buscan. Sin pagar anuncios. Sin permanencia.
-            </p>
-            <ul className="space-y-2.5 mb-2">
-              {[
-                "Tu ficha de Google optimizada desde el primer mes",
-                "Más contactos sin depender de publicidad de pago",
-                "Informe mensual con resultados reales",
-              ].map((b) => (
-                <li key={b} className="flex items-start gap-2 text-sm md:text-base font-body text-dark-fg/85">
-                  <span className="text-primary mt-0.5">→</span>
-                  <span>{b}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="bg-primary/95 rounded-2xl p-6 md:p-8 shadow-xl">
-            <h2 className="font-heading text-xl md:text-2xl text-primary-foreground mb-2">
-              ¿Apareces cuando tus clientes te buscan?
-            </h2>
-            <p className="text-primary-foreground/85 text-sm font-body font-light mb-5">
-              Analizamos gratis cómo te ve Google ahora mismo
-            </p>
-            <AutonomosAuditForm />
-          </div>
-        </div>
-      </section>
-
-      {/* PROBLEM */}
-      <section className="py-16">
         <div className="container max-w-5xl">
-          <h2 className="font-heading text-2xl md:text-3xl mb-10">
-            Por qué muchos autónomos son invisibles en Google
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div className="space-y-4 text-base leading-relaxed font-body font-light text-foreground">
-              <p>
-                Ser autónomo significa que cada cliente nuevo importa. Pero la mayoría de autónomos en España tienen un problema invisible: cuando alguien busca su servicio en Google, no aparecen. Aparece la competencia.
-              </p>
-              <p>
-                El 46% de todas las búsquedas en Google tienen intención local. El 76% de quienes buscan un servicio localmente contactan con el negocio en menos de 24 horas. Si no estás en los primeros resultados de Google Maps en tu zona, esos contactos van a otro.
-              </p>
-            </div>
-            <div className="space-y-4 text-base leading-relaxed font-body font-light text-foreground">
-              <p>
-                El error más común: no tener presencia en Google o tenerla a medias. Una ficha sin completar, una web genérica que no dice qué haces ni dónde lo haces, y cero reseñas. Google no tiene motivos para mostrarte antes que a tu competencia.
-              </p>
-              <p>
-                El segundo error: intentar posicionarse para todo a la vez. "Diseñador web", "diseñador web freelance Madrid", "diseñador web para empresas" son búsquedas distintas con clientes distintos. Sin una estrategia clara por servicio y zona, Google no sabe cuándo mostrarte.
-              </p>
-            </div>
+          <BreadcrumbNav items={[
+            { label: "Inicio", href: "/" },
+            { label: "SEO para autónomos" },
+          ]} />
+          <span className="inline-block border border-primary text-primary text-xs font-heading rounded-full px-4 py-1.5 mb-6 mt-2">
+            SEO para autónomos
+          </span>
+          <h1 className="font-heading text-3xl md:text-5xl leading-tight mb-5 max-w-3xl">
+            SEO para autónomos: que tus clientes te encuentren en Google
+          </h1>
+          <p className="text-dark-fg/75 text-base md:text-lg leading-relaxed mb-8 font-body font-light max-w-2xl">
+            Consultor SEO para autónomos — ficha de Google, web y posicionamiento local. Una persona, un precio fijo, sin intermediarios.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href={WHATSAPP}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors"
+            >
+              Escríbeme por WhatsApp →
+            </a>
+            <Link
+              to="/como-funciona"
+              className="inline-block border border-dark-fg/30 text-dark-fg font-heading text-sm rounded-lg px-6 py-3 hover:border-primary hover:text-primary transition-colors"
+            >
+              Ver cómo funciona →
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* HOW */}
-      <section className="bg-warm-bg py-16">
-        <div className="container max-w-4xl">
-          <h2 className="font-heading text-2xl md:text-3xl mb-10">
-            Cómo conseguimos que tus clientes te encuentren en Google
+      {/* 2 — PROBLEMA */}
+      <section className="py-16 md:py-20">
+        <div className="container max-w-5xl">
+          <h2 className="font-heading text-2xl md:text-3xl mb-10 max-w-3xl">
+            Por qué tu negocio no aparece cuando te buscan en Google
           </h2>
-          <div>
-            {steps.map((s, i) => (
-              <div
-                key={s.n}
-                className={`grid grid-cols-[auto_1fr] gap-6 md:gap-10 py-8 ${i < steps.length - 1 ? "border-b border-border" : ""}`}
-              >
-                <span className="font-heading text-4xl md:text-5xl text-primary leading-none">{s.n}</span>
-                <div>
-                  <h3 className="font-heading text-lg md:text-xl mb-3">{s.h}</h3>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed font-body font-light">
-                    {s.p}
-                  </p>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {problems.map((p) => (
+              <div key={p.title} className="bg-card border border-border rounded-2xl p-6">
+                <div className="text-3xl mb-4">{p.icon}</div>
+                <h3 className="font-heading text-lg mb-2">{p.title}</h3>
+                <p className="text-sm text-muted-foreground font-body font-light leading-relaxed">{p.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* SECTOR TYPES */}
-      <section className="py-16">
-        <div className="container max-w-5xl">
-          <h2 className="font-heading text-2xl md:text-3xl mb-4">
-            Sectores de autónomos con los que trabajamos
+      {/* 3 — PACK COMPLETO */}
+      <section className="bg-warm-bg py-16 md:py-20">
+        <div className="container max-w-4xl">
+          <h2 className="font-heading text-2xl md:text-3xl mb-5">
+            Ficha de Google + web + SEO local: todo junto porque así funciona
           </h2>
-          <p className="text-base text-muted-foreground font-body font-light mb-10 max-w-2xl">
-            Cada tipo de servicio tiene sus propias búsquedas en Google. Adaptamos la estrategia a tu actividad concreta.
+          <p className="text-base font-body font-light text-foreground leading-relaxed mb-10 max-w-3xl">
+            Google no valora la ficha sola ni la web sola. Los valora juntos, coherentes y activos. Por eso slocal gestiona los tres a la vez — no son tres servicios separados, son tres señales que Google lee como una sola.
           </p>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
-            {sectorTypes.map((t) => (
-              <li key={t} className="flex items-start gap-2 text-sm md:text-base font-body">
-                <span className="text-primary mt-0.5">→</span>
-                <span>{t}</span>
-              </li>
+
+          <div className="overflow-hidden rounded-2xl border border-border bg-card">
+            <div className="grid grid-cols-2 font-heading text-sm md:text-base bg-foreground text-background">
+              <div className="px-5 py-4">Contratando por separado</div>
+              <div className="px-5 py-4 border-l border-background/20">Con slocal</div>
+            </div>
+            {comparisonRows.map(([a, b], i) => (
+              <div
+                key={i}
+                className={`grid grid-cols-2 text-sm md:text-base font-body ${i < comparisonRows.length - 1 ? "border-b border-border" : ""}`}
+              >
+                <div className="px-5 py-4 text-muted-foreground">{a}</div>
+                <div className="px-5 py-4 border-l border-border">{b}</div>
+              </div>
             ))}
-          </ul>
+          </div>
+
+          <p className="mt-6 font-heading text-base md:text-lg text-primary">
+            147 €/mes + IVA · Sin permanencia · Sin letra pequeña
+          </p>
         </div>
       </section>
 
-      {/* PLAN */}
-      <section className="bg-warm-bg py-16">
-        <div className="container max-w-3xl">
-          <h2 className="font-heading text-2xl md:text-3xl mb-3 text-center">El plan SEO para autónomos</h2>
-          <p className="text-base text-muted-foreground font-body font-light text-center mb-10">
-            Todo lo que necesitas como autónomo para aparecer cuando tus clientes te buscan en Google.
+      {/* 4 — CALCULADORA */}
+      <section className="py-16 md:py-20">
+        <div className="container max-w-4xl">
+          <h2 className="font-heading text-2xl md:text-3xl mb-4">
+            ¿Cuánto vale estar en los primeros resultados de Google en tu ciudad?
+          </h2>
+          <p className="text-base font-body font-light text-muted-foreground mb-8 max-w-3xl">
+            Estas son las búsquedas reales que hay cada mes en Google para los sectores más comunes. Selecciona el tuyo y tu ciudad para ver una estimación honesta de lo que puede suponer.
           </p>
-          <div className="bg-card border border-border rounded-2xl p-8 md:p-10 shadow-sm">
-            <span className="inline-block bg-primary/10 text-primary text-xs font-heading rounded-full px-3 py-1 mb-5">
-              PLAN SLOCAL.ES
-            </span>
-            <p className="font-heading text-4xl md:text-5xl mb-8">
-              147€<span className="text-lg text-muted-foreground font-body font-light">/mes + IVA</span>
+          <RoiCalculator />
+        </div>
+      </section>
+
+      {/* 5 — POR QUÉ SLOCAL */}
+      <section className="bg-warm-bg py-16 md:py-20">
+        <div className="container max-w-5xl">
+          <h2 className="font-heading text-2xl md:text-3xl mb-10">
+            Por qué un autónomo elige slocal y no una agencia
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="bg-card border border-border rounded-2xl p-6">
+              <h3 className="font-heading text-lg mb-3">Hacerlo tú solo</h3>
+              <p className="text-sm text-muted-foreground font-body font-light leading-relaxed">
+                Puedes. Pero gestionar la ficha de Google, el SEO de tu web, las reseñas y el contenido mensual son entre 8 y 10 horas al mes que no tienes. Y si algo se hace mal, pierdes posiciones sin saber por qué.
+              </p>
+            </div>
+            <div className="bg-card border border-border rounded-2xl p-6">
+              <h3 className="font-heading text-lg mb-3">Agencia grande</h3>
+              <p className="text-sm text-muted-foreground font-body font-light leading-relaxed">
+                Precio oculto hasta la reunión. Mínimo 400–800 €/mes. Cambias de gestor cada pocos meses. Trabajan con 50 clientes a la vez y no saben lo que es gestionar un negocio como autónomo.
+              </p>
+            </div>
+            <div className="bg-card border-2 border-primary rounded-2xl p-6 shadow-md">
+              <span className="inline-block bg-primary/10 text-primary text-xs font-heading rounded-full px-3 py-1 mb-3">slocal</span>
+              <p className="text-sm text-foreground font-body leading-relaxed">
+                147 €/mes + IVA visible desde el primer segundo. La misma persona siempre. Ficha + web + SEO coordinados. Sin permanencia. Sin intermediarios.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 6 — CASOS REALES */}
+      <section className="py-16 md:py-20">
+        <div className="container max-w-4xl">
+          <h2 className="font-heading text-2xl md:text-3xl mb-8">
+            Autónomos que ya aparecen cuando les buscan
+          </h2>
+          <div className="space-y-3">
+            {[
+              { sector: "Fontanero", city: "Córdoba", link: "/seo-para-fontaneros" },
+              { sector: "Fisioterapeuta", city: "Sevilla", link: "/seo-para-fisioterapeutas" },
+              { sector: "Abogado", city: "Córdoba", link: "/seo-para-abogados" },
+              { sector: "Dentista", city: "Sevilla", link: "/seo-para-dentistas" },
+            ].map((c) => (
+              <div key={`${c.sector}-${c.city}`} className="flex items-center justify-between gap-4 bg-card border border-border rounded-xl px-5 py-4">
+                <div className="font-body text-sm md:text-base">
+                  <Link to={c.link} className="font-heading hover:text-primary transition-colors">{c.sector}</Link>
+                  <span className="text-muted-foreground"> · {c.city} · </span>
+                  <span className="text-muted-foreground italic">caso en seguimiento</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-xs text-muted-foreground font-body font-light mt-5">
+            Resultados reales en cuanto los casos en seguimiento alcancen el primer trimestre completo.
+          </p>
+        </div>
+      </section>
+
+      {/* 7 — PRECIO */}
+      <section className="bg-warm-bg py-16 md:py-20">
+        <div className="container max-w-2xl">
+          <h2 className="font-heading text-2xl md:text-3xl mb-10 text-center">
+            Un precio. Sin sorpresas.
+          </h2>
+          <div className="bg-card border-2 border-primary rounded-2xl p-8 md:p-10 shadow-md text-center">
+            <p className="font-heading text-5xl md:text-6xl mb-2">
+              147 €<span className="text-lg text-muted-foreground font-body font-light">/mes + IVA</span>
             </p>
-            <ul className="space-y-3 mb-8">
+            <ul className="space-y-3 my-8 text-left">
               {[
-                "Tu negocio aparece cuando alguien busca tu servicio en tu ciudad",
-                "Más contactos directos desde Google — sin pagar por cada uno",
-                "Contenido mensual que posiciona para nuevas búsquedas de tu servicio",
-                "Tu ficha de Google activa — Google te muestra antes que a la competencia",
-                "Cada mes sabes exactamente qué clientes ha generado Google",
-                "Hablas siempre con la misma persona — sin intermediarios",
+                "Ficha de Google optimizada y gestionada cada mes",
+                "Web con SEO local incluida",
+                "Posicionamiento activo mes a mes",
+                "Informe mensual con datos reales",
+                "Sin permanencia mínima",
+                "Siempre la misma persona",
               ].map((f) => (
                 <li key={f} className="flex items-start gap-3 text-sm md:text-base font-body">
                   <span className="text-primary font-heading">✓</span>
@@ -262,65 +449,68 @@ const AutonomosPage = () => {
                 </li>
               ))}
             </ul>
-            <Link
-              to="/contacto"
-              className="inline-block bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors"
+            <a
+              href={WHATSAPP}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-primary text-primary-foreground font-heading text-sm rounded-lg px-8 py-3 hover:bg-primary/90 transition-colors"
             >
               Empezar →
-            </Link>
+            </a>
           </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <FAQSection title="Preguntas frecuentes sobre SEO para autónomos" items={faqs} />
-
-      {/* CIUDADES */}
-      <section className="py-12">
-        <div className="container max-w-3xl text-center">
-          <h2 className="font-heading text-2xl md:text-3xl mb-4">
-            Trabajamos con autónomos en toda España
-          </h2>
-          <p className="text-sm md:text-base text-muted-foreground mb-8 font-body font-light">
-            Gestionamos el posicionamiento local de autónomos en toda España.
+          <p className="text-sm text-muted-foreground font-body font-light text-center mt-6">
+            Ninguna agencia te da esto junto por este precio porque no les sale a cuenta. A nosotros sí, porque trabajamos sin intermediarios. Ver detalle en <Link to="/planes" className="text-primary underline underline-offset-2">planes</Link>.
           </p>
-          <div className="flex flex-wrap justify-center gap-2.5">
-            {cities.map((city) => (
-              <Link
-                key={city.slug}
-                to={`/seo-local-${city.slug}`}
-                className="bg-card border border-border rounded-full px-4 py-2 text-sm font-heading text-foreground transition-all duration-200 hover:border-primary hover:text-primary hover:-translate-y-[2px]"
-              >
-                {city.name}
-              </Link>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* OTROS SECTORES */}
-      <section className="bg-warm-bg py-12">
-        <div className="container max-w-4xl text-center">
-          <h2 className="font-heading text-xl md:text-2xl mb-8">También trabajamos con otros sectores</h2>
-          <div className="flex flex-wrap justify-center gap-2.5">
-            {otherSectors.map((s) => (
-              <Link
-                key={s.slug}
-                to={`/${s.slug}`}
-                className="bg-card border border-border rounded-full px-4 py-2 text-sm font-heading text-foreground transition-all duration-200 hover:border-primary hover:text-primary hover:-translate-y-[2px]"
+      {/* 8 — FAQ (visible) */}
+      <section className="py-16 md:py-20">
+        <div className="container max-w-3xl">
+          <h2 className="font-heading text-2xl md:text-3xl mb-8">
+            Preguntas frecuentes sobre SEO local para autónomos
+          </h2>
+          <Accordion type="multiple" defaultValue={faqs.map((_, i) => `faq-${i}`)} className="space-y-3">
+            {faqs.map((item, i) => (
+              <AccordionItem
+                key={i}
+                value={`faq-${i}`}
+                className="border border-border rounded-xl px-5 data-[state=open]:border-primary transition-colors"
               >
-                {s.label}
-              </Link>
+                <AccordionTrigger className="font-heading text-left text-base hover:no-underline [&>svg]:text-primary">
+                  {item.q}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground text-sm md:text-base leading-relaxed font-body font-light">
+                  {item.a}
+                </AccordionContent>
+              </AccordionItem>
             ))}
-          </div>
+          </Accordion>
         </div>
       </section>
 
-      {/* CTA FINAL */}
-      <CTASection
-        title="¿Quieres que tus clientes te encuentren en Google?"
-        buttonText="Hablemos →"
-      />
+      {/* 9 — CTA FINAL */}
+      <section className="bg-primary py-16 md:py-20">
+        <div className="container max-w-3xl text-center">
+          <h2 className="font-heading text-2xl md:text-3xl text-primary-foreground mb-4">
+            ¿Tu negocio no aparece cuando te buscan en Google?
+          </h2>
+          <p className="text-primary-foreground/85 font-body font-light text-base md:text-lg mb-8">
+            Escríbeme y en 24 horas te digo qué está pasando y cómo se resuelve.
+          </p>
+          <a
+            href={WHATSAPP}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-card text-primary font-heading text-sm rounded-lg px-8 py-3 hover:bg-card/90 transition-colors"
+          >
+            Escríbeme por WhatsApp →
+          </a>
+          <p className="text-primary-foreground/75 text-sm font-body font-light mt-5">
+            Sin formularios. Sin reuniones obligatorias. Sin compromiso.
+          </p>
+        </div>
+      </section>
     </>
   );
 };
