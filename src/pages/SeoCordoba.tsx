@@ -27,27 +27,6 @@ const otrasCiudades = [
   { label: "SEO local en Murcia", href: "/seo-local-murcia" },
 ];
 
-const pasos = [
-  {
-    n: "01",
-    title: "Optimización de Google Business Profile para negocios en Córdoba",
-    body:
-      "Configuramos cada campo de tu perfil para las búsquedas de Córdoba: categorías correctas, descripción con keywords locales, fotos actualizadas, horarios y zona de servicio por barrios y zonas de la ciudad. Google necesita señales claras de que eres el negocio más relevante de tu zona para mostrarte en el top 3.",
-  },
-  {
-    n: "02",
-    title: "Contenido SEO local para búsquedas en Córdoba",
-    body:
-      "Artículos de blog y páginas de servicio optimizadas para las búsquedas que hacen tus clientes en Córdoba. Contenido específico por zona y por tipo de servicio, diseñado para aparecer cuando alguien busca exactamente lo que tú ofreces en la ciudad.",
-  },
-  {
-    n: "03",
-    title: "Seguimiento mensual de posicionamiento en Córdoba",
-    body:
-      "Informe mensual con posiciones en Google Maps para las búsquedas más importantes de tu sector en Córdoba, visitas al perfil, llamadas recibidas y qué está funcionando. Sin tecnicismos, con datos reales.",
-  },
-];
-
 const faqs = [
   {
     q: "¿Cuánto tarda en posicionarse un negocio en Córdoba?",
