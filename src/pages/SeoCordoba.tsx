@@ -124,6 +124,42 @@ const SeoCordoba = () => {
     ],
   };
 
+  const localBusinessDetailedSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Seo Local en Córdoba | Slocal",
+    description: "Servicio de SEO local y posicionamiento en Google Maps para autónomos y pymes en Córdoba.",
+    url: "https://slocal.es/seo-local-cordoba",
+    telephone: "+3684780063",
+    email: "info@slocal.es",
+    areaServed: {
+      "@type": "City",
+      name: "Córdoba",
+      sameAs: "https://www.wikidata.org/wiki/Q5818",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 37.8882,
+      longitude: -4.7796,
+    },
+    sameAs: "https://slocal.es/seo-local-cordoba",
+    priceRange: "147€/mes + IVA",
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
+        opens: "09:00",
+        closes: "20:00",
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: "Friday",
+        opens: "09:00",
+        closes: "14:00",
+      },
+    ],
+  };
+
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -140,7 +176,7 @@ const SeoCordoba = () => {
         title="SEO Local en Córdoba para Negocios | Aparecer en Google Maps | slocal.es"
         description="Haz que tu negocio en Córdoba aparezca cuando tus clientes te buscan en Google. Más llamadas, más clientes locales. Desde 147€/mes + IVA."
         canonical="/seo-local-cordoba"
-        jsonLd={[serviceSchema, breadcrumbSchema, localBusinessSchema, faqSchema]}
+        jsonLd={[serviceSchema, breadcrumbSchema, localBusinessSchema, localBusinessDetailedSchema, faqSchema]}
       />
 
       {/* HERO */}
