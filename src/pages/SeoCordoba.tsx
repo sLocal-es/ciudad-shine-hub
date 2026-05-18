@@ -170,9 +170,9 @@ const SeoCordoba = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
             <iframe
               title="Mapa de Córdoba"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d50431.2!2d-4.7796!3d37.8882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6d17a27a6be009%3A0x4b3ed89a54f4a3de!2sC%C3%B3rdoba!5e0!3m2!1ses!2ses!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46931.122258679665!2d-4.837975406111342!3d37.91270327681709!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xac51e84256737de1%3A0xba193d08e9882037!2sSeo%20Local%20en%20C%C3%B3rdoba%20%7C%20Slocal!5e0!3m2!1sen!2ses!4v1779114464348!5m2!1sen!2ses"
               width="100%"
-              height="380"
+              height="450"
               style={{ border: 0, borderRadius: "12px" }}
               allowFullScreen
               loading="lazy"
