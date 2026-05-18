@@ -250,87 +250,90 @@ const SeoCordoba = () => {
         </div>
       </section>
 
-      {/* HOW — redesigned with visuals */}
+      {/* SISTEMA — 3 columnas */}
       <section className="bg-warm-bg py-16">
         <div className="container">
-          <h2 className="font-heading text-2xl md:text-3xl mb-10">
-            Cómo posicionamos tu negocio en Córdoba en Google Maps
+          <h2 className="font-heading text-2xl md:text-3xl mb-10 max-w-3xl">
+            El sistema que hace que te llamen
           </h2>
-          <div className="flex flex-col">
-            {pasos.map((p, i) => {
-              const visual = i === 0 ? <LocalPackMockup /> : i === 1 ? <GBPMockup /> : <PositionChart />;
-              const textBlock = (
-                <div>
-                  <div className="text-primary font-heading font-light text-5xl md:text-6xl leading-none mb-4">
-                    {p.n}
-                  </div>
-                  <h3 className="font-heading font-bold text-lg md:text-xl mb-3">{p.title}</h3>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{p.body}</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                Icon: MapPin,
+                title: "Tu ficha de Google, activa",
+                body:
+                  "Optimizamos cada campo de tu perfil para que aparezcas cuando alguien busca tu servicio cerca. Categorías, fotos, reseñas, zona de servicio — todo trabajado para que Google te muestre antes que a tu competencia en Córdoba.",
+              },
+              {
+                Icon: FileText,
+                title: "Una página para cada servicio y zona",
+                body:
+                  "Creamos páginas específicas para cada servicio que ofreces y cada zona de Córdoba donde quieres trabajar. Cuando alguien busca 'fontanero en el Casco Histórico' o 'fisioterapeuta en Ciudad Jardín', encuentra tu negocio.",
+              },
+              {
+                Icon: TrendingUp,
+                title: "Más clientes cada mes",
+                body:
+                  "El SEO local es acumulativo. Cada mes que trabajamos tu presencia, más búsquedas te encuentran a ti. Y cada cliente que llega de Google tiene coste cero — no pagas por cada llamada.",
+              },
+            ].map(({ Icon, title, body }) => (
+              <div key={title}>
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-5">
+                  <Icon className="text-primary" />
                 </div>
-              );
-              const reverse = i === 1;
-              return (
-                <div
-                  key={p.n}
-                  className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center py-12"
-                  style={i !== 0 ? { borderTop: "1px solid rgba(0,0,0,0.06)" } : undefined}
-                >
-                  {reverse ? (
-                    <>
-                      <div className="order-2 md:order-1">{visual}</div>
-                      <div className="order-1 md:order-2">{textBlock}</div>
-                    </>
-                  ) : (
-                    <>
-                      {textBlock}
-                      <div>{visual}</div>
-                    </>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* RESULTADOS */}
-      <section className="py-16">
-        <div className="container">
-          <h2 className="font-heading text-2xl md:text-3xl mb-3">
-            Resultados reales de negocios locales en Córdoba
-          </h2>
-          <p className="text-sm text-muted-foreground mb-8 max-w-2xl">
-            Estos son algunos de los resultados de negocios locales que ya trabajan con el sistema de posicionamiento de slocal.es.
-          </p>
-        </div>
-        <ResultadosSection />
-      </section>
-
-      {/* SECTORES */}
-      <section className="bg-warm-bg py-16">
-        <div className="container">
-          <h2 className="font-heading text-2xl md:text-3xl mb-3">
-            SEO local para negocios en Córdoba por sector
-          </h2>
-          <p className="text-sm text-muted-foreground mb-8 max-w-2xl">
-            Cada sector tiene sus propias búsquedas en Córdoba. Trabajamos de forma específica en cada uno.
-          </p>
-          <div className="flex flex-wrap gap-3">
-            {sectores.map((s) => (
-              <Link
-                key={s.href}
-                to={s.href}
-                className="border border-border bg-card rounded-full px-5 py-2 text-sm font-heading hover:border-primary hover:text-primary transition-colors"
-              >
-                {s.label}
-              </Link>
+                <h3 className="font-heading font-bold text-lg md:text-xl mb-3">{title}</h3>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{body}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* PRICING */}
+      {/* CASO PRÁCTICO */}
       <section className="py-16">
+        <div className="container">
+          <h2 className="font-heading text-2xl md:text-3xl mb-10 max-w-3xl">
+            Lo que consigue el sistema en la práctica
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
+            <div className="space-y-4 text-sm md:text-base text-muted-foreground leading-relaxed">
+              <p>
+                Grupo TEI no aparecía en Google. Su competencia posicionaba con webs básicas de 4 o 5 páginas y se llevaba todos los clientes.
+              </p>
+              <p>
+                Creamos una página específica para cada servicio en cada barrio de Madrid donde querían trabajar. Optimizamos su ficha de Google con las señales locales correctas.
+              </p>
+              <p>
+                En menos de 2 meses empezaron a aparecer en la primera página de Google para búsquedas como "empresa de reformas en Chamberí" o "instalación de suelos en Salamanca". Las llamadas empezaron a llegar sin pagar por cada una.
+              </p>
+              <p className="text-xs italic">
+                Tu negocio en Córdoba tiene la misma oportunidad. La competencia digital aquí todavía es menor que en Madrid.
+              </p>
+              <Link
+                to="/contacto"
+                className="inline-block mt-2 bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors"
+              >
+                Analiza tu negocio gratis →
+              </Link>
+            </div>
+            <div className="space-y-4">
+              {[
+                { n: "2 meses", d: "hasta primera página de Google" },
+                { n: "0€", d: "coste por cada llamada recibida" },
+                { n: "Barrio a barrio", d: "presencia construida donde querían trabajar" },
+              ].map((m) => (
+                <div key={m.n} className="bg-card border border-border rounded-xl p-6 shadow-sm">
+                  <div className="font-heading text-3xl md:text-4xl text-primary mb-1">{m.n}</div>
+                  <div className="text-sm text-muted-foreground">{m.d}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* PRICING */}
+      <section className="bg-warm-bg py-16">
         <div className="container max-w-xl">
           <h2 className="font-heading text-2xl md:text-3xl mb-3 text-center">
             SEO local en Córdoba: plan y precio
@@ -362,6 +365,29 @@ const SeoCordoba = () => {
             >
               Empezar en Córdoba →
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* SECTORES */}
+      <section className="py-16">
+        <div className="container">
+          <h2 className="font-heading text-2xl md:text-3xl mb-3">
+            SEO local para negocios en Córdoba por sector
+          </h2>
+          <p className="text-sm text-muted-foreground mb-8 max-w-2xl">
+            Cada sector tiene sus propias búsquedas en Córdoba. Trabajamos de forma específica en cada uno.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            {sectores.map((s) => (
+              <Link
+                key={s.href}
+                to={s.href}
+                className="border border-border bg-card rounded-full px-5 py-2 text-sm font-heading hover:border-primary hover:text-primary transition-colors"
+              >
+                {s.label}
+              </Link>
+            ))}
           </div>
         </div>
       </section>
