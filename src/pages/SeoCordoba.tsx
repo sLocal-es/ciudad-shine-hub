@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
+import { MapPin, FileText, TrendingUp } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import FAQSection from "@/components/FAQSection";
-import ResultadosSection from "@/components/ResultadosSection";
 import HeroAuditForm from "@/components/cordoba/HeroAuditForm";
-import { LocalPackMockup, GBPMockup, PositionChart } from "@/components/cordoba/StepVisuals";
 
 const sectores = [
   { label: "SEO para fontaneros", href: "/seo-para-fontaneros" },
