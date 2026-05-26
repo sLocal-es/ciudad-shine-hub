@@ -7,7 +7,7 @@ import LeadMagnetForm from "@/components/forms/LeadMagnetForm";
 import ContactForm from "@/components/forms/ContactForm";
 import TechPartnersSection from "@/components/TechPartnersSection";
 import AnalisisGratuitoModal from "@/components/AnalisisGratuitoModal";
-import heroImg from "@/assets/hero-home.webp";
+import HeroMapsRanking from "@/components/home/HeroMapsRanking";
 import logoTei from "@/assets/casos/logo-tei.png";
 import logoViviane from "@/assets/casos/logo-viviane.png";
 import logoMva from "@/assets/casos/logo-mva.png";
@@ -104,12 +104,7 @@ const Home = () => {
               />
             </div>
           </div>
-          <img
-            src={heroImg}
-            alt="Pantalla de móvil mostrando Google Maps con un negocio apareciendo en el Local Pack"
-            className="rounded-xl w-full h-[360px] object-cover"
-            loading="lazy"
-          />
+          <HeroMapsRanking />
         </div>
       </section>
 
