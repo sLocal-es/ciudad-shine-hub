@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, Globe, FileText, Search, Check } from "lucide-react";
+import { MapPin, Globe, FileText, Search, Check, Star, Phone, Navigation as NavIcon, Globe2, TrendingUp, ArrowUp, Calendar, Tag, HelpCircle, Trophy, PhoneCall, MousePointerClick, Eye, BarChart3, Image as ImageIcon, MessageSquare, ListChecks } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 
 const pieces = [
@@ -20,14 +20,263 @@ const pieces = [
   },
 ];
 
-const ImgPlaceholder = ({ label }: { label: string }) => (
-  <div
-    className="w-full rounded-[var(--radius)] flex items-center justify-center text-sm text-muted-foreground mt-4"
-    style={{ background: "#EEE9E0", aspectRatio: "2 / 1" }}
-  >
-    {label}
-  </div>
-);
+// ---------- Vector / CSS graphics ----------
+
+const GraphicAuditoria = () => {
+  const searches = [
+    "fontanero urgencias Madrid",
+    "fisioterapeuta cerca de mí",
+    "empresa reformas baños Sevilla",
+    "abogado laboralista Valencia",
+  ];
+  return (
+    <div className="mt-4 bg-background border border-border rounded-[var(--radius)] p-4">
+      <div className="space-y-2 mb-4">
+        {searches.map((s) => (
+          <div key={s} className="flex items-center gap-2 bg-secondary/60 border border-border rounded-full px-3 py-1.5 text-xs">
+            <Search className="w-3.5 h-3.5 text-primary shrink-0" />
+            <span className="truncate text-foreground/80">{s}</span>
+          </div>
+        ))}
+      </div>
+      <div
+        className="relative rounded-[var(--radius)] overflow-hidden border border-border"
+        style={{
+          aspectRatio: "16 / 9",
+          background: "linear-gradient(135deg, #efe9dc 0%, #f4eee2 100%)",
+          backgroundImage:
+            "linear-gradient(to right, rgba(0,0,0,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.04) 1px, transparent 1px), linear-gradient(135deg, #efe9dc 0%, #f4eee2 100%)",
+          backgroundSize: "22px 22px, 22px 22px, 100% 100%",
+        }}
+      >
+        <div className="absolute inset-0">
+          <div className="absolute left-0 right-0 top-1/2 h-[3px] bg-background/70" />
+          <div className="absolute top-0 bottom-0 left-1/3 w-[3px] bg-background/70" />
+          <div className="absolute top-0 bottom-0 left-2/3 w-[3px] bg-background/70" />
+        </div>
+        {[
+          { l: "18%", t: "30%" },
+          { l: "55%", t: "22%" },
+          { l: "72%", t: "60%" },
+          { l: "30%", t: "70%" },
+        ].map((p, i) => (
+          <div key={i} className="absolute -translate-x-1/2 -translate-y-full" style={{ left: p.l, top: p.t }}>
+            <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center shadow-md">
+              <MapPin className="w-3.5 h-3.5 text-primary-foreground" />
+            </div>
+          </div>
+        ))}
+        <div className="absolute right-4 bottom-4 w-14 h-14 rounded-full border-[3px] border-primary bg-background/40 flex items-center justify-center">
+          <Search className="w-6 h-6 text-primary" />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const GraphicGBP = () => {
+  const checklist = [
+    { icon: Tag, label: "Categorías" },
+    { icon: ListChecks, label: "Servicios" },
+    { icon: ImageIcon, label: "Fotos" },
+    { icon: MessageSquare, label: "Publicaciones" },
+  ];
+  return (
+    <div className="mt-4 grid grid-cols-1 sm:grid-cols-5 gap-3">
+      <div className="sm:col-span-3 bg-background border border-border rounded-[var(--radius)] p-4">
+        <div className="text-[15px] font-heading text-foreground leading-tight">Tu Negocio Local</div>
+        <div className="flex items-center gap-1.5 mt-1">
+          <div className="flex gap-0.5">
+            {[1, 2, 3, 4, 5].map((i) => (
+              <Star key={i} className="w-3.5 h-3.5 fill-primary text-primary" />
+            ))}
+          </div>
+          <span className="text-xs text-foreground/80 font-medium">4,9</span>
+          <span className="text-xs text-muted-foreground">· 87 reseñas</span>
+        </div>
+        <div className="text-[11px] mt-1.5">
+          <span className="text-green-700 font-medium">Abierto ahora</span>
+          <span className="text-muted-foreground"> · Cierra 20:00</span>
+        </div>
+        <div className="grid grid-cols-3 gap-2 mt-3">
+          {[
+            { icon: Phone, label: "Llamar" },
+            { icon: NavIcon, label: "Cómo llegar" },
+            { icon: Globe2, label: "Web" },
+          ].map((b) => {
+            const Ic = b.icon;
+            return (
+              <div key={b.label} className="flex flex-col items-center gap-1 bg-secondary/60 border border-border rounded-lg py-2">
+                <Ic className="w-4 h-4 text-primary" />
+                <span className="text-[10px] text-foreground/70">{b.label}</span>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      <div className="sm:col-span-2 bg-background border border-border rounded-[var(--radius)] p-4">
+        <div className="text-[11px] font-heading uppercase tracking-wider text-primary mb-3">Optimizado</div>
+        <ul className="space-y-2.5">
+          {checklist.map((c) => {
+            const Ic = c.icon;
+            return (
+              <li key={c.label} className="flex items-center gap-2 text-xs text-foreground/80">
+                <span className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                  <Check className="w-3 h-3 text-primary" strokeWidth={3} />
+                </span>
+                <Ic className="w-3.5 h-3.5 text-muted-foreground" />
+                <span>{c.label}</span>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+const GraphicRanking = () => {
+  const rows = [
+    { n: 1, name: "Tu negocio", meta: "★ 4,9 · 87 reseñas", up: true },
+    { n: 2, name: "Competidor A", meta: "★ 4,1 · 23 reseñas" },
+    { n: 3, name: "Competidor B", meta: "★ 3,8 · 11 reseñas" },
+  ];
+  return (
+    <div className="mt-4 bg-background border border-border rounded-[var(--radius)] p-4 space-y-2">
+      {rows.map((r) => (
+        <div
+          key={r.n}
+          className={`flex items-center gap-3 rounded-lg p-2.5 ${
+            r.up ? "bg-primary/10 border border-primary/30" : "bg-secondary/40 border border-border"
+          }`}
+        >
+          <div
+            className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-heading shrink-0 ${
+              r.up ? "bg-primary text-primary-foreground" : "bg-background text-foreground border border-border"
+            }`}
+          >
+            {r.n}
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className={`text-sm font-heading ${r.up ? "text-foreground" : "text-foreground/80"}`}>{r.name}</div>
+            <div className="text-[11px] text-muted-foreground">{r.meta}</div>
+          </div>
+          {r.up && (
+            <div className="flex items-center gap-1 text-primary text-xs font-heading">
+              <ArrowUp className="w-3.5 h-3.5" strokeWidth={3} />
+              <span>+6</span>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+};
+
+const GraphicCalendario = () => {
+  const items = [
+    { icon: Trophy, tag: "Servicio del mes", title: "Reparación de fugas en cocinas" },
+    { icon: MapPin, tag: "Zona objetivo", title: "Barrio de Salamanca, Madrid" },
+    { icon: HelpCircle, tag: "Pregunta frecuente", title: "¿Cuánto cuesta un fontanero de urgencias?" },
+    { icon: Star, tag: "Caso real", title: "Cómo desatascamos un edificio en 2h" },
+  ];
+  return (
+    <div className="mt-4 bg-background border border-border rounded-[var(--radius)] overflow-hidden">
+      <div className="flex items-center gap-2 px-4 py-2.5 bg-secondary/60 border-b border-border">
+        <Calendar className="w-4 h-4 text-primary" />
+        <span className="text-xs font-heading uppercase tracking-wider text-foreground/80">Calendario editorial</span>
+      </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2">
+        {items.map((it, i) => {
+          const Ic = it.icon;
+          return (
+            <div
+              key={it.title}
+              className={`p-3.5 ${i % 2 === 0 ? "sm:border-r" : ""} ${i < 2 ? "border-b" : ""} border-border`}
+            >
+              <span className="inline-flex items-center gap-1 bg-primary/10 text-primary text-[10px] font-heading uppercase tracking-wide rounded-full px-2 py-0.5 mb-1.5">
+                <Ic className="w-3 h-3" />
+                {it.tag}
+              </span>
+              <div className="text-[13px] text-foreground leading-snug mt-1.5">{it.title}</div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+const GraphicDashboard = () => {
+  const metrics = [
+    { icon: PhoneCall, label: "Llamadas", value: "31" },
+    { icon: MousePointerClick, label: "Clics", value: "412" },
+    { icon: Eye, label: "Visitas", value: "1.240" },
+    { icon: BarChart3, label: "Posición", value: "2,1" },
+  ];
+  return (
+    <div className="mt-4 bg-background border border-border rounded-[var(--radius)] p-4">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-4">
+        {metrics.map((m) => {
+          const Ic = m.icon;
+          return (
+            <div key={m.label} className="bg-secondary/50 border border-border rounded-lg p-2.5">
+              <div className="flex items-center gap-1.5 text-muted-foreground text-[10px] uppercase tracking-wider font-heading">
+                <Ic className="w-3 h-3" />
+                <span className="truncate">{m.label}</span>
+              </div>
+              <div className="text-lg font-heading font-bold text-foreground mt-0.5">{m.value}</div>
+            </div>
+          );
+        })}
+      </div>
+      <div className="relative bg-secondary/40 border border-border rounded-lg p-3" style={{ aspectRatio: "16 / 7" }}>
+        <svg viewBox="0 0 200 80" preserveAspectRatio="none" className="w-full h-full">
+          <defs>
+            <linearGradient id="cf-lineFill" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stopColor="hsl(18, 82%, 54%)" stopOpacity="0.25" />
+              <stop offset="100%" stopColor="hsl(18, 82%, 54%)" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+          {[20, 40, 60].map((y) => (
+            <line key={y} x1="0" x2="200" y1={y} y2={y} stroke="rgba(0,0,0,0.06)" strokeWidth="1" />
+          ))}
+          <path d="M0,70 L33,60 L66,52 L100,40 L133,28 L166,18 L200,8 L200,80 L0,80 Z" fill="url(#cf-lineFill)" />
+          <path
+            d="M0,70 L33,60 L66,52 L100,40 L133,28 L166,18 L200,8"
+            fill="none"
+            stroke="hsl(18, 82%, 54%)"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          {[[0,70],[33,60],[66,52],[100,40],[133,28],[166,18],[200,8]].map(([x,y],i)=>(
+            <circle key={i} cx={x} cy={y} r="2.5" fill="hsl(18, 82%, 54%)" />
+          ))}
+        </svg>
+        <div className="absolute top-2 right-3 flex items-center gap-1 text-primary text-xs font-heading">
+          <TrendingUp className="w-3.5 h-3.5" />
+          <span>+38%</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// Maps each placeholder label to its graphic
+const labelToGraphic: Record<string, React.FC> = {
+  "Imagen: auditoría SEO local": GraphicAuditoria,
+  "Imagen: ficha Google optimizada": GraphicGBP,
+  "Imagen: web multipágina SEO local": GraphicRanking,
+  "Imagen: creación de contenido mensual": GraphicCalendario,
+  "Imagen: informe mensual de resultados": GraphicDashboard,
+};
+
+const ImgPlaceholder = ({ label }: { label: string }) => {
+  const G = labelToGraphic[label];
+  if (G) return <G />;
+  return null;
+};
 
 const Bullet = ({ children }: { children: React.ReactNode }) => (
   <li className="flex gap-3 items-start text-foreground/85 leading-relaxed text-sm md:text-base">
