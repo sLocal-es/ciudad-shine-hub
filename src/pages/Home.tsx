@@ -104,12 +104,7 @@ const Home = () => {
               />
             </div>
           </div>
-          <img
-            src={heroImg}
-            alt="Pantalla de móvil mostrando Google Maps con un negocio apareciendo en el Local Pack"
-            className="rounded-xl w-full h-[360px] object-cover"
-            loading="lazy"
-          />
+          <HeroMapsRanking />
         </div>
       </section>
 
