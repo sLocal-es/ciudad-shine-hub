@@ -120,10 +120,7 @@ const FichaGoogleMiNegocio = () => {
               Hablemos por WhatsApp →
             </a>
           </div>
-          <ImagePlaceholder
-            description="FOTO: ficha de Google Business Profile optimizada con reseñas y fotos"
-            height="340px"
-          />
+          <GBPProfileMockup />
         </div>
       </section>
 
