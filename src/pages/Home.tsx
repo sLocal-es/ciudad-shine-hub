@@ -183,10 +183,7 @@ const Home = () => {
                 </Link>
               ))}
             </div>
-            <ImagePlaceholder
-              description="Iconos por sector — llave inglesa, corazón con pulso, rodillo de pintura, mancuerna"
-              height="280px"
-            />
+            <SectorIconsGrid />
           </div>
         </div>
       </section>
