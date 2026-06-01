@@ -120,10 +120,7 @@ const AparecerEnGoogleMaps = () => {
               Hablemos por WhatsApp →
             </a>
           </div>
-          <ImagePlaceholder
-            description="FOTO: pantalla móvil con Google Maps y negocio destacado en el Local Pack"
-            height="340px"
-          />
+          <MapsMobileMockup />
         </div>
       </section>
 
