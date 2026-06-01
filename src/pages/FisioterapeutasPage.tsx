@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
-import { MapPin, Globe, TrendingUp, ArrowRight } from "lucide-react";
+import { MapPin, Globe, TrendingUp, ArrowRight, Search, Star } from "lucide-react";
 
 import FAQSection from "@/components/FAQSection";
 import { sectors } from "@/data/sectors";
@@ -89,15 +89,15 @@ const FisioterapeutasPage = () => {
           <p className="text-dark-fg/80 text-base md:text-lg leading-relaxed mb-8 font-body font-light">
             En slocal.es montamos un sistema de <strong>seo local fisioterapia</strong> que combina tres piezas: tu ficha de Google Business Profile, una web multipágina optimizada y el posicionamiento local de tu clínica. Sin agencias intermediarias, sin publicidad de pago y con precios fijos.
           </p>
-          <div className="mb-8 rounded-xl border border-dark-fg/15 bg-dark-fg/5 px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:divide-x divide-dark-fg/15">
+          <div className="mb-8 border border-white/15 bg-black/40 px-5 py-5 flex flex-col sm:flex-row sm:items-center sm:divide-x divide-white/15 rounded-lg">
             {[
-              { k: "Primera página", v: "en 2-3 meses" },
+              { k: "Primera página en Google", v: "en 2-3 meses" },
               { k: "+15 llamadas/mes", v: "sin publicidad" },
               { k: "147€/mes", v: "precio fijo" },
             ].map((m) => (
               <div key={m.k} className="flex-1 py-2 sm:py-0 sm:px-5 text-center">
                 <div className="font-heading text-primary text-base md:text-lg leading-tight">{m.k}</div>
-                <div className="text-dark-fg/70 text-xs md:text-sm font-body mt-0.5">{m.v}</div>
+                <div className="text-white text-xs md:text-sm font-body mt-1 opacity-80">{m.v}</div>
               </div>
             ))}
           </div>
@@ -114,7 +114,7 @@ const FisioterapeutasPage = () => {
       </section>
 
       {/* H2 — Cómo conseguir pacientes */}
-      <section className="py-16">
+      <section className="bg-white py-16">
         <div className="container max-w-4xl">
           <h2 className="font-heading text-2xl md:text-3xl mb-8">
             Cómo conseguir pacientes para tu clínica de fisioterapia
@@ -147,7 +147,7 @@ const FisioterapeutasPage = () => {
       </section>
 
       {/* H2 — Cómo posicionar tu clínica en Google */}
-      <section className="bg-warm-bg py-16">
+      <section className="bg-white py-16">
         <div className="container max-w-4xl">
           <h2 className="font-heading text-2xl md:text-3xl mb-8">
             Cómo posicionar tu clínica de fisioterapia en Google
@@ -180,7 +180,7 @@ const FisioterapeutasPage = () => {
       </section>
 
       {/* H2 — Google Maps */}
-      <section className="py-16">
+      <section className="bg-white py-16">
         <div className="container max-w-4xl">
           <h2 className="font-heading text-2xl md:text-3xl mb-8">
             SEO local para fisioterapeutas: aparecer en Google Maps
@@ -240,8 +240,65 @@ const FisioterapeutasPage = () => {
         </div>
       </section>
 
+      {/* MAPS MOCKUP */}
+      <section className="bg-dark-bg text-dark-fg py-16">
+        <div className="container max-w-md">
+          <div className="mx-auto" style={{ width: 280 }}>
+            <div className="rounded-[2rem] border-[10px] border-white/90 bg-black overflow-hidden shadow-2xl">
+              <div className="flex items-center gap-2 px-3 py-2.5 border-b border-white/10 bg-black">
+                <Search size={13} className="text-white/60" />
+                <span className="text-[11px] font-body text-white/90 truncate">fisioterapeuta cerca de mí</span>
+              </div>
+              <div className="relative h-44 bg-[#111418]">
+                <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 260 176" preserveAspectRatio="none">
+                  <path d="M0 40 L260 50" stroke="#fff" strokeWidth="1" fill="none" />
+                  <path d="M0 100 L260 90" stroke="#fff" strokeWidth="1" fill="none" />
+                  <path d="M80 0 L70 176" stroke="#fff" strokeWidth="1" fill="none" />
+                  <path d="M180 0 L190 176" stroke="#fff" strokeWidth="1" fill="none" />
+                </svg>
+                <MapPin size={32} className="absolute top-14 left-1/2 -translate-x-1/2 text-primary fill-primary drop-shadow-lg" />
+                <MapPin size={20} className="absolute top-6 right-7 text-white/35 fill-white/15" />
+                <MapPin size={20} className="absolute bottom-7 left-7 text-white/35 fill-white/15" />
+              </div>
+              <div className="p-3 space-y-1.5 bg-black">
+                <div className="flex items-center gap-2 p-2 rounded bg-primary/15 border border-primary/40">
+                  <div className="w-7 h-7 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-[11px] font-heading">1</div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-1.5 flex-wrap">
+                      <span className="text-[12px] font-heading text-white truncate">Tu clínica</span>
+                      <span className="text-[8px] font-heading uppercase tracking-wide bg-primary text-primary-foreground px-1.5 py-0.5 rounded">Tu negocio</span>
+                    </div>
+                    <div className="flex items-center gap-0.5 mt-0.5">
+                      {[1, 2, 3, 4, 5].map((i) => (
+                        <Star key={i} size={9} className="fill-primary text-primary" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                {[
+                  { n: "Competidor A", p: 2 },
+                  { n: "Competidor B", p: 3 },
+                ].map((b) => (
+                  <div key={b.n} className="flex items-center gap-2 p-2 rounded">
+                    <div className="w-7 h-7 rounded-full bg-white/10 text-white/70 flex items-center justify-center text-[11px] font-heading">{b.p}</div>
+                    <div className="flex-1 min-w-0">
+                      <div className="text-[12px] font-heading text-white/70 truncate">{b.n}</div>
+                      <div className="flex items-center gap-0.5 mt-0.5">
+                        {[1, 2, 3, 4, 5].map((i) => (
+                          <Star key={i} size={9} className="fill-white/30 text-white/30" />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* H2 — Cómo funciona nuestro sistema */}
-      <section className="bg-warm-bg py-16">
+      <section className="bg-white py-16">
 
         <div className="container max-w-4xl">
           <h2 className="font-heading text-2xl md:text-3xl mb-8">
@@ -278,31 +335,31 @@ const FisioterapeutasPage = () => {
       </section>
 
       {/* CASE */}
-      <section className="py-16">
+      <section className="bg-white py-16">
         <div className="container max-w-4xl">
-          <div className="bg-dark-bg text-dark-fg rounded-2xl p-6 md:p-10 shadow-sm">
+          <div className="bg-black text-white rounded-lg border border-primary/60 p-6 md:p-10">
             <span className="inline-block bg-primary text-primary-foreground text-xs font-heading rounded-full px-3 py-1 mb-5">
               Caso real · Valencia
             </span>
-            <h2 className="font-heading text-2xl md:text-3xl mb-8 text-dark-fg">
+            <h2 className="font-heading text-2xl md:text-3xl mb-8 text-white">
               Caso real: clínica de fisioterapia en Valencia
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
               {[
                 { m: "Mes 1", v: "Primeras impresiones en Maps" },
-                { m: "Mes 2", v: "4 llamadas nuevas" },
-                { m: "Mes 4", v: "+15 llamadas/mes" },
+                { m: "Mes 2", v: "4 llamadas nuevas desde Google" },
+                { m: "Mes 4", v: "+15 llamadas mensuales" },
               ].map((s) => (
-                <div key={s.m} className="rounded-xl border border-dark-fg/15 bg-dark-fg/5 p-4">
+                <div key={s.m} className="rounded-lg border border-white/15 bg-white/5 p-4">
                   <div className="font-heading text-primary text-lg">{s.m}</div>
-                  <div className="text-dark-fg/80 text-sm font-body mt-1">{s.v}</div>
+                  <div className="text-white/85 text-sm font-body mt-1">{s.v}</div>
                 </div>
               ))}
             </div>
-            <p className="text-base leading-relaxed mb-4 text-dark-fg/80 font-body font-light">
+            <p className="text-base leading-relaxed mb-4 text-white/85 font-body font-light">
               Una clínica familiar de Valencia llegó a slocal.es con la ficha de Google sin tocar desde 2021 y una web que cargaba en seis segundos. Reorganizamos la ficha, subimos 28 fotos reales y arrancamos con dos publicaciones semanales.
             </p>
-            <p className="text-base leading-relaxed mb-0 text-dark-fg/80 font-body font-light">
+            <p className="text-base leading-relaxed mb-0 text-white/85 font-body font-light">
               Mes 1: primeras impresiones en Google Maps por "fisio cerca de mí" en su barrio. Mes 2: 4 llamadas nuevas atribuidas directamente a Google. Mes 4: más de 15 llamadas mensuales desde Google, sin haber gastado un euro en publicidad.
             </p>
           </div>
@@ -311,7 +368,7 @@ const FisioterapeutasPage = () => {
 
 
       {/* PLAN ÚNICO */}
-      <section className="bg-warm-bg py-16">
+      <section className="bg-white py-16">
         <div className="container max-w-3xl">
           <h2 className="font-heading text-2xl md:text-3xl mb-3 text-center">Servicio de SEO para fisioterapeutas</h2>
           <p className="text-base text-muted-foreground font-body font-light text-center mb-10">
@@ -353,7 +410,7 @@ const FisioterapeutasPage = () => {
       <FAQSection title="Preguntas frecuentes sobre SEO para fisioterapeutas" items={faqs} />
 
       {/* RELATED SECTORS */}
-      <section className="bg-warm-bg py-12">
+      <section className="bg-white py-12">
         <div className="container">
           <h2 className="font-heading text-xl mb-6">También trabajamos con otros sectores</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
