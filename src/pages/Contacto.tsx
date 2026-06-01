@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { z } from "zod";
 import SEOHead from "@/components/SEOHead";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
+import { MetricsDashboard } from "@/components/visuals/SeoVisuals";
 import { sendForm } from "@/lib/sendForm";
 import { useToast } from "@/hooks/use-toast";
 
