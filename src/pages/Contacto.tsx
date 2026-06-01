@@ -174,7 +174,7 @@ const Contacto = () => {
 
             {/* RIGHT */}
             <div className="space-y-6">
-              <ImagePlaceholder description="FOTO: persona trabajando, portátil, ambiente profesional" height="420px" />
+              <MetricsDashboard />
               <div className="space-y-2">
                 <p className="text-sm">
                   <span className="text-muted-foreground">Email:</span>{" "}
