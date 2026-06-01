@@ -335,9 +335,9 @@ const FisioterapeutasPage = () => {
       </section>
 
       {/* CASE */}
-      <section className="py-16">
+      <section className="bg-white py-16">
         <div className="container max-w-4xl">
-          <div className="bg-dark-bg text-dark-fg rounded-2xl p-6 md:p-10 shadow-sm">
+          <div className="bg-black text-white rounded-lg border border-primary/60 p-6 md:p-10">
             <span className="inline-block bg-primary text-primary-foreground text-xs font-heading rounded-full px-3 py-1 mb-5">
               Caso real · Valencia
             </span>
