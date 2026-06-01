@@ -240,8 +240,65 @@ const FisioterapeutasPage = () => {
         </div>
       </section>
 
+      {/* MAPS MOCKUP */}
+      <section className="bg-dark-bg text-dark-fg py-16">
+        <div className="container max-w-md">
+          <div className="mx-auto" style={{ width: 280 }}>
+            <div className="rounded-[2rem] border-[10px] border-white/90 bg-black overflow-hidden shadow-2xl">
+              <div className="flex items-center gap-2 px-3 py-2.5 border-b border-white/10 bg-black">
+                <Search size={13} className="text-white/60" />
+                <span className="text-[11px] font-body text-white/90 truncate">fisioterapeuta cerca de mí</span>
+              </div>
+              <div className="relative h-44 bg-[#111418]">
+                <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 260 176" preserveAspectRatio="none">
+                  <path d="M0 40 L260 50" stroke="#fff" strokeWidth="1" fill="none" />
+                  <path d="M0 100 L260 90" stroke="#fff" strokeWidth="1" fill="none" />
+                  <path d="M80 0 L70 176" stroke="#fff" strokeWidth="1" fill="none" />
+                  <path d="M180 0 L190 176" stroke="#fff" strokeWidth="1" fill="none" />
+                </svg>
+                <MapPin size={32} className="absolute top-14 left-1/2 -translate-x-1/2 text-primary fill-primary drop-shadow-lg" />
+                <MapPin size={20} className="absolute top-6 right-7 text-white/35 fill-white/15" />
+                <MapPin size={20} className="absolute bottom-7 left-7 text-white/35 fill-white/15" />
+              </div>
+              <div className="p-3 space-y-1.5 bg-black">
+                <div className="flex items-center gap-2 p-2 rounded bg-primary/15 border border-primary/40">
+                  <div className="w-7 h-7 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-[11px] font-heading">1</div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-1.5 flex-wrap">
+                      <span className="text-[12px] font-heading text-white truncate">Tu clínica</span>
+                      <span className="text-[8px] font-heading uppercase tracking-wide bg-primary text-primary-foreground px-1.5 py-0.5 rounded">Tu negocio</span>
+                    </div>
+                    <div className="flex items-center gap-0.5 mt-0.5">
+                      {[1, 2, 3, 4, 5].map((i) => (
+                        <Star key={i} size={9} className="fill-primary text-primary" />
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                {[
+                  { n: "Competidor A", p: 2 },
+                  { n: "Competidor B", p: 3 },
+                ].map((b) => (
+                  <div key={b.n} className="flex items-center gap-2 p-2 rounded">
+                    <div className="w-7 h-7 rounded-full bg-white/10 text-white/70 flex items-center justify-center text-[11px] font-heading">{b.p}</div>
+                    <div className="flex-1 min-w-0">
+                      <div className="text-[12px] font-heading text-white/70 truncate">{b.n}</div>
+                      <div className="flex items-center gap-0.5 mt-0.5">
+                        {[1, 2, 3, 4, 5].map((i) => (
+                          <Star key={i} size={9} className="fill-white/30 text-white/30" />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* H2 — Cómo funciona nuestro sistema */}
-      <section className="bg-warm-bg py-16">
+      <section className="bg-white py-16">
 
         <div className="container max-w-4xl">
           <h2 className="font-heading text-2xl md:text-3xl mb-8">
