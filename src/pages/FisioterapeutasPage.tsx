@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
+import { MapPin, Globe, TrendingUp, ArrowRight } from "lucide-react";
 
 import FAQSection from "@/components/FAQSection";
 import { sectors } from "@/data/sectors";
 import { cities } from "@/data/cities";
+
 
 const FisioterapeutasPage = () => {
   const otherSectors = sectors.filter((s) => s.slug !== "seo-para-fisioterapeutas").slice(0, 4);
@@ -87,7 +89,20 @@ const FisioterapeutasPage = () => {
           <p className="text-dark-fg/80 text-base md:text-lg leading-relaxed mb-8 font-body font-light">
             En slocal.es montamos un sistema de <strong>seo local fisioterapia</strong> que combina tres piezas: tu ficha de Google Business Profile, una web multipágina optimizada y el posicionamiento local de tu clínica. Sin agencias intermediarias, sin publicidad de pago y con precios fijos.
           </p>
+          <div className="mb-8 rounded-xl border border-dark-fg/15 bg-dark-fg/5 px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:divide-x divide-dark-fg/15">
+            {[
+              { k: "Primera página", v: "en 2-3 meses" },
+              { k: "+15 llamadas/mes", v: "sin publicidad" },
+              { k: "147€/mes", v: "precio fijo" },
+            ].map((m) => (
+              <div key={m.k} className="flex-1 py-2 sm:py-0 sm:px-5 text-center">
+                <div className="font-heading text-primary text-base md:text-lg leading-tight">{m.k}</div>
+                <div className="text-dark-fg/70 text-xs md:text-sm font-body mt-0.5">{m.v}</div>
+              </div>
+            ))}
+          </div>
           <div className="flex flex-wrap gap-3">
+
             <Link to="/contacto" className="bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors">
               Empezar →
             </Link>
@@ -197,8 +212,37 @@ const FisioterapeutasPage = () => {
         </div>
       </section>
 
+      {/* 3 STEPS VISUAL */}
+      <section className="bg-dark-bg text-dark-fg py-10">
+        <div className="container max-w-4xl">
+          <div className="flex flex-col md:flex-row items-stretch md:items-center gap-4 md:gap-2">
+            {[
+              { I: MapPin, t: "Ficha de Google optimizada" },
+              { I: Globe, t: "Web local multipágina" },
+              { I: TrendingUp, t: "Contenido mensual" },
+            ].map(({ I, t }, i, arr) => (
+              <div key={t} className="flex flex-1 items-center gap-3 md:flex-col md:text-center">
+                <div className="flex items-center gap-3 md:flex-col flex-1">
+                  <div className="w-12 h-12 rounded-full bg-primary/15 border border-primary/30 flex items-center justify-center shrink-0">
+                    <I size={22} className="text-primary" />
+                  </div>
+                  <div>
+                    <div className="text-xs text-dark-fg/60 font-heading uppercase tracking-wide">Paso {i + 1}</div>
+                    <div className="font-heading text-sm md:text-base text-dark-fg">{t}</div>
+                  </div>
+                </div>
+                {i < arr.length - 1 && (
+                  <ArrowRight className="text-primary/60 hidden md:block" size={20} />
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* H2 — Cómo funciona nuestro sistema */}
       <section className="bg-warm-bg py-16">
+
         <div className="container max-w-4xl">
           <h2 className="font-heading text-2xl md:text-3xl mb-8">
             Cómo funciona nuestro sistema: ficha de Google + web + posicionamiento local
@@ -236,17 +280,35 @@ const FisioterapeutasPage = () => {
       {/* CASE */}
       <section className="py-16">
         <div className="container max-w-4xl">
-          <h2 className="font-heading text-2xl md:text-3xl mb-8">
-            Caso real: clínica de fisioterapia en Valencia
-          </h2>
-          <p className="text-base leading-relaxed mb-4 text-foreground/80 font-body font-light">
-            Una clínica familiar de Valencia llegó a slocal.es con la ficha de Google sin tocar desde 2021 y una web que cargaba en seis segundos. Reorganizamos la ficha, subimos 28 fotos reales y arrancamos con dos publicaciones semanales.
-          </p>
-          <p className="text-base leading-relaxed mb-6 text-foreground/80 font-body font-light">
-            Mes 1: primeras impresiones en Google Maps por "fisio cerca de mí" en su barrio. Mes 2: 4 llamadas nuevas atribuidas directamente a Google. Mes 4: más de 15 llamadas mensuales desde Google, sin haber gastado un euro en publicidad.
-          </p>
+          <div className="bg-dark-bg text-dark-fg rounded-2xl p-6 md:p-10 shadow-sm">
+            <span className="inline-block bg-primary text-primary-foreground text-xs font-heading rounded-full px-3 py-1 mb-5">
+              Caso real · Valencia
+            </span>
+            <h2 className="font-heading text-2xl md:text-3xl mb-8 text-dark-fg">
+              Caso real: clínica de fisioterapia en Valencia
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
+              {[
+                { m: "Mes 1", v: "Primeras impresiones en Maps" },
+                { m: "Mes 2", v: "4 llamadas nuevas" },
+                { m: "Mes 4", v: "+15 llamadas/mes" },
+              ].map((s) => (
+                <div key={s.m} className="rounded-xl border border-dark-fg/15 bg-dark-fg/5 p-4">
+                  <div className="font-heading text-primary text-lg">{s.m}</div>
+                  <div className="text-dark-fg/80 text-sm font-body mt-1">{s.v}</div>
+                </div>
+              ))}
+            </div>
+            <p className="text-base leading-relaxed mb-4 text-dark-fg/80 font-body font-light">
+              Una clínica familiar de Valencia llegó a slocal.es con la ficha de Google sin tocar desde 2021 y una web que cargaba en seis segundos. Reorganizamos la ficha, subimos 28 fotos reales y arrancamos con dos publicaciones semanales.
+            </p>
+            <p className="text-base leading-relaxed mb-0 text-dark-fg/80 font-body font-light">
+              Mes 1: primeras impresiones en Google Maps por "fisio cerca de mí" en su barrio. Mes 2: 4 llamadas nuevas atribuidas directamente a Google. Mes 4: más de 15 llamadas mensuales desde Google, sin haber gastado un euro en publicidad.
+            </p>
+          </div>
         </div>
       </section>
+
 
       {/* PLAN ÚNICO */}
       <section className="bg-warm-bg py-16">
@@ -328,7 +390,16 @@ const FisioterapeutasPage = () => {
           </div>
         </div>
       </section>
+
+      {/* STICKY MOBILE CTA */}
+      <Link
+        to="/contacto"
+        className="md:hidden fixed bottom-0 inset-x-0 z-50 bg-primary text-primary-foreground font-heading text-sm py-4 text-center shadow-lg"
+      >
+        Analiza tu clínica gratis →
+      </Link>
     </>
+
   );
 };
 
