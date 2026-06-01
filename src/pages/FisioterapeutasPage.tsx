@@ -180,7 +180,7 @@ const FisioterapeutasPage = () => {
       </section>
 
       {/* H2 — Google Maps */}
-      <section className="py-16">
+      <section className="bg-white py-16">
         <div className="container max-w-4xl">
           <h2 className="font-heading text-2xl md:text-3xl mb-8">
             SEO local para fisioterapeutas: aparecer en Google Maps
