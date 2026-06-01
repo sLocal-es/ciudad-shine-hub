@@ -279,10 +279,7 @@ const Home = () => {
             <p className="text-foreground/80 leading-relaxed mb-6">
               Analizamos tu ficha de Google Business Profile sin coste y te decimos exactamente qué está fallando y por qué no apareces cuando tus clientes te buscan.
             </p>
-            <ImagePlaceholder
-              description="Mockup de informe de ficha de Google analizada con anotaciones"
-              height="220px"
-            />
+            <GBPProfileMockup />
           </div>
           <div className="bg-card border border-border rounded-xl p-6 md:p-8">
             <LeadMagnetForm />
