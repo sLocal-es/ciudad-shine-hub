@@ -280,17 +280,35 @@ const FisioterapeutasPage = () => {
       {/* CASE */}
       <section className="py-16">
         <div className="container max-w-4xl">
-          <h2 className="font-heading text-2xl md:text-3xl mb-8">
-            Caso real: clínica de fisioterapia en Valencia
-          </h2>
-          <p className="text-base leading-relaxed mb-4 text-foreground/80 font-body font-light">
-            Una clínica familiar de Valencia llegó a slocal.es con la ficha de Google sin tocar desde 2021 y una web que cargaba en seis segundos. Reorganizamos la ficha, subimos 28 fotos reales y arrancamos con dos publicaciones semanales.
-          </p>
-          <p className="text-base leading-relaxed mb-6 text-foreground/80 font-body font-light">
-            Mes 1: primeras impresiones en Google Maps por "fisio cerca de mí" en su barrio. Mes 2: 4 llamadas nuevas atribuidas directamente a Google. Mes 4: más de 15 llamadas mensuales desde Google, sin haber gastado un euro en publicidad.
-          </p>
+          <div className="bg-dark-bg text-dark-fg rounded-2xl p-6 md:p-10 shadow-sm">
+            <span className="inline-block bg-primary text-primary-foreground text-xs font-heading rounded-full px-3 py-1 mb-5">
+              Caso real · Valencia
+            </span>
+            <h2 className="font-heading text-2xl md:text-3xl mb-8 text-dark-fg">
+              Caso real: clínica de fisioterapia en Valencia
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-8">
+              {[
+                { m: "Mes 1", v: "Primeras impresiones en Maps" },
+                { m: "Mes 2", v: "4 llamadas nuevas" },
+                { m: "Mes 4", v: "+15 llamadas/mes" },
+              ].map((s) => (
+                <div key={s.m} className="rounded-xl border border-dark-fg/15 bg-dark-fg/5 p-4">
+                  <div className="font-heading text-primary text-lg">{s.m}</div>
+                  <div className="text-dark-fg/80 text-sm font-body mt-1">{s.v}</div>
+                </div>
+              ))}
+            </div>
+            <p className="text-base leading-relaxed mb-4 text-dark-fg/80 font-body font-light">
+              Una clínica familiar de Valencia llegó a slocal.es con la ficha de Google sin tocar desde 2021 y una web que cargaba en seis segundos. Reorganizamos la ficha, subimos 28 fotos reales y arrancamos con dos publicaciones semanales.
+            </p>
+            <p className="text-base leading-relaxed mb-0 text-dark-fg/80 font-body font-light">
+              Mes 1: primeras impresiones en Google Maps por "fisio cerca de mí" en su barrio. Mes 2: 4 llamadas nuevas atribuidas directamente a Google. Mes 4: más de 15 llamadas mensuales desde Google, sin haber gastado un euro en publicidad.
+            </p>
+          </div>
         </div>
       </section>
+
 
       {/* PLAN ÚNICO */}
       <section className="bg-warm-bg py-16">
