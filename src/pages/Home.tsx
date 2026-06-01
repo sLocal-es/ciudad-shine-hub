@@ -136,10 +136,7 @@ const Home = () => {
               El SEO local es el conjunto de técnicas que hacen que tu negocio aparezca cuando alguien busca tu servicio en Google Maps o en Google. Cuando un cliente escribe "fontanero en Madrid" o "fisioterapeuta cerca de mí", Google muestra los tres negocios mejor posicionados en el mapa — el Local Pack. Aparecer ahí multiplica las llamadas directas. En slocal.es lo gestionamos por ti: optimizamos tu ficha de Google Business Profile, creamos el contenido que posiciona y construimos la presencia digital que tu negocio necesita para aparecer antes que tu competencia. Trabajamos con negocios locales de toda España: fontaneros, fisioterapeutas, empresas de reformas, entrenadores personales, clínicas y más.
             </p>
           </div>
-          <ImagePlaceholder
-            description="Captura de pantalla de Google Maps mostrando el Local Pack con 3 negocios destacados y el mapa"
-            height="320px"
-          />
+          <LocalPackCard query="fontanero cerca de mí" city="Madrid" />
         </div>
       </section>
 
