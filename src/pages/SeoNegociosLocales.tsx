@@ -134,10 +134,7 @@ const SeoNegociosLocales = () => {
               Hablemos por WhatsApp →
             </a>
           </div>
-          <ImagePlaceholder
-            description="FOTO: resultados de búsqueda Google con negocio destacado en el Local Pack"
-            height="340px"
-          />
+          <LocalPackCard query="servicio + ciudad" city="tu ciudad" />
         </div>
       </section>
 
