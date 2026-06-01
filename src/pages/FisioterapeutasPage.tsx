@@ -212,8 +212,37 @@ const FisioterapeutasPage = () => {
         </div>
       </section>
 
+      {/* 3 STEPS VISUAL */}
+      <section className="bg-dark-bg text-dark-fg py-10">
+        <div className="container max-w-4xl">
+          <div className="flex flex-col md:flex-row items-stretch md:items-center gap-4 md:gap-2">
+            {[
+              { I: MapPin, t: "Ficha de Google optimizada" },
+              { I: Globe, t: "Web local multipágina" },
+              { I: TrendingUp, t: "Contenido mensual" },
+            ].map(({ I, t }, i, arr) => (
+              <div key={t} className="flex flex-1 items-center gap-3 md:flex-col md:text-center">
+                <div className="flex items-center gap-3 md:flex-col flex-1">
+                  <div className="w-12 h-12 rounded-full bg-primary/15 border border-primary/30 flex items-center justify-center shrink-0">
+                    <I size={22} className="text-primary" />
+                  </div>
+                  <div>
+                    <div className="text-xs text-dark-fg/60 font-heading uppercase tracking-wide">Paso {i + 1}</div>
+                    <div className="font-heading text-sm md:text-base text-dark-fg">{t}</div>
+                  </div>
+                </div>
+                {i < arr.length - 1 && (
+                  <ArrowRight className="text-primary/60 hidden md:block" size={20} />
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* H2 — Cómo funciona nuestro sistema */}
       <section className="bg-warm-bg py-16">
+
         <div className="container max-w-4xl">
           <h2 className="font-heading text-2xl md:text-3xl mb-8">
             Cómo funciona nuestro sistema: ficha de Google + web + posicionamiento local
