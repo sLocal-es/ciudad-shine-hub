@@ -69,7 +69,7 @@ const ServicePage = () => {
               Ver planes →
             </Link>
           </div>
-          <ImagePlaceholder description={service.imagePlaceholder} height="340px" />
+          <ServiceHeroVisual slug={service.slug} />
         </div>
       </section>
 
