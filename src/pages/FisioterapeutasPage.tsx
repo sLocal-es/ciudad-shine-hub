@@ -114,7 +114,7 @@ const FisioterapeutasPage = () => {
       </section>
 
       {/* H2 — Cómo conseguir pacientes */}
-      <section className="py-16">
+      <section className="bg-white py-16">
         <div className="container max-w-4xl">
           <h2 className="font-heading text-2xl md:text-3xl mb-8">
             Cómo conseguir pacientes para tu clínica de fisioterapia
