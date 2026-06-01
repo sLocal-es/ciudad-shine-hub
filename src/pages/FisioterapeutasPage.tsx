@@ -390,7 +390,16 @@ const FisioterapeutasPage = () => {
           </div>
         </div>
       </section>
+
+      {/* STICKY MOBILE CTA */}
+      <Link
+        to="/contacto"
+        className="md:hidden fixed bottom-0 inset-x-0 z-50 bg-primary text-primary-foreground font-heading text-sm py-4 text-center shadow-lg"
+      >
+        Analiza tu clínica gratis →
+      </Link>
     </>
+
   );
 };
 
