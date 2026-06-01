@@ -2,7 +2,7 @@ import { useLocation, Link } from "react-router-dom";
 import { services } from "@/data/services";
 import { cities } from "@/data/cities";
 import SEOHead from "@/components/SEOHead";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
+import { ServiceHeroVisual } from "@/components/visuals/SeoVisuals";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import PlanCards from "@/components/PlanCards";
 import FAQSection from "@/components/FAQSection";
@@ -69,7 +69,7 @@ const ServicePage = () => {
               Ver planes →
             </Link>
           </div>
-          <ImagePlaceholder description={service.imagePlaceholder} height="340px" />
+          <ServiceHeroVisual slug={service.slug} />
         </div>
       </section>
 

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import CTASection from "@/components/CTASection";
 import ResultadosSection from "@/components/ResultadosSection";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
+import { LocalPackCard, SectorIconsGrid, GBPProfileMockup } from "@/components/visuals/SeoVisuals";
 import LeadMagnetForm from "@/components/forms/LeadMagnetForm";
 import ContactForm from "@/components/forms/ContactForm";
 import TechPartnersSection from "@/components/TechPartnersSection";
@@ -136,10 +136,7 @@ const Home = () => {
               El SEO local es el conjunto de técnicas que hacen que tu negocio aparezca cuando alguien busca tu servicio en Google Maps o en Google. Cuando un cliente escribe "fontanero en Madrid" o "fisioterapeuta cerca de mí", Google muestra los tres negocios mejor posicionados en el mapa — el Local Pack. Aparecer ahí multiplica las llamadas directas. En slocal.es lo gestionamos por ti: optimizamos tu ficha de Google Business Profile, creamos el contenido que posiciona y construimos la presencia digital que tu negocio necesita para aparecer antes que tu competencia. Trabajamos con negocios locales de toda España: fontaneros, fisioterapeutas, empresas de reformas, entrenadores personales, clínicas y más.
             </p>
           </div>
-          <ImagePlaceholder
-            description="Captura de pantalla de Google Maps mostrando el Local Pack con 3 negocios destacados y el mapa"
-            height="320px"
-          />
+          <LocalPackCard query="fontanero cerca de mí" city="Madrid" />
         </div>
       </section>
 
@@ -186,10 +183,7 @@ const Home = () => {
                 </Link>
               ))}
             </div>
-            <ImagePlaceholder
-              description="Iconos por sector — llave inglesa, corazón con pulso, rodillo de pintura, mancuerna"
-              height="280px"
-            />
+            <SectorIconsGrid />
           </div>
         </div>
       </section>
@@ -285,10 +279,7 @@ const Home = () => {
             <p className="text-foreground/80 leading-relaxed mb-6">
               Analizamos tu ficha de Google Business Profile sin coste y te decimos exactamente qué está fallando y por qué no apareces cuando tus clientes te buscan.
             </p>
-            <ImagePlaceholder
-              description="Mockup de informe de ficha de Google analizada con anotaciones"
-              height="220px"
-            />
+            <GBPProfileMockup />
           </div>
           <div className="bg-card border border-border rounded-xl p-6 md:p-8">
             <LeadMagnetForm />

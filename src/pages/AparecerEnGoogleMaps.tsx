@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { cities } from "@/data/cities";
 import SEOHead from "@/components/SEOHead";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
+import { MapsMobileMockup } from "@/components/visuals/SeoVisuals";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import FAQSection from "@/components/FAQSection";
 
@@ -120,10 +120,7 @@ const AparecerEnGoogleMaps = () => {
               Hablemos por WhatsApp →
             </a>
           </div>
-          <ImagePlaceholder
-            description="FOTO: pantalla móvil con Google Maps y negocio destacado en el Local Pack"
-            height="340px"
-          />
+          <MapsMobileMockup />
         </div>
       </section>
 

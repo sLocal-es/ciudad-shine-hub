@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { cities } from "@/data/cities";
 import SEOHead from "@/components/SEOHead";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
+import { GBPProfileMockup } from "@/components/visuals/SeoVisuals";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import FAQSection from "@/components/FAQSection";
 
@@ -120,10 +120,7 @@ const FichaGoogleMiNegocio = () => {
               Hablemos por WhatsApp →
             </a>
           </div>
-          <ImagePlaceholder
-            description="FOTO: ficha de Google Business Profile optimizada con reseñas y fotos"
-            height="340px"
-          />
+          <GBPProfileMockup />
         </div>
       </section>
 

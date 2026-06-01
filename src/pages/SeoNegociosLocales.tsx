@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { cities } from "@/data/cities";
 import SEOHead from "@/components/SEOHead";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
+import { LocalPackCard } from "@/components/visuals/SeoVisuals";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import FAQSection from "@/components/FAQSection";
 
@@ -134,10 +134,7 @@ const SeoNegociosLocales = () => {
               Hablemos por WhatsApp →
             </a>
           </div>
-          <ImagePlaceholder
-            description="FOTO: resultados de búsqueda Google con negocio destacado en el Local Pack"
-            height="340px"
-          />
+          <LocalPackCard query="servicio + ciudad" city="tu ciudad" />
         </div>
       </section>
 

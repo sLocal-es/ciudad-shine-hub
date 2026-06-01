@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { z } from "zod";
 import SEOHead from "@/components/SEOHead";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
+import { MetricsDashboard } from "@/components/visuals/SeoVisuals";
 import { sendForm } from "@/lib/sendForm";
 import { useToast } from "@/hooks/use-toast";
 
@@ -174,7 +174,7 @@ const Contacto = () => {
 
             {/* RIGHT */}
             <div className="space-y-6">
-              <ImagePlaceholder description="FOTO: persona trabajando, portátil, ambiente profesional" height="420px" />
+              <MetricsDashboard />
               <div className="space-y-2">
                 <p className="text-sm">
                   <span className="text-muted-foreground">Email:</span>{" "}
