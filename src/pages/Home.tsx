@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import CTASection from "@/components/CTASection";
 import ResultadosSection from "@/components/ResultadosSection";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
+import { LocalPackCard, SectorIconsGrid, GBPProfileMockup } from "@/components/visuals/SeoVisuals";
 import LeadMagnetForm from "@/components/forms/LeadMagnetForm";
 import ContactForm from "@/components/forms/ContactForm";
 import TechPartnersSection from "@/components/TechPartnersSection";
