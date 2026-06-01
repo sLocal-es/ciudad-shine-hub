@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
+import { MapPin, Globe, TrendingUp, ArrowRight } from "lucide-react";
 
 import FAQSection from "@/components/FAQSection";
 import { sectors } from "@/data/sectors";
 import { cities } from "@/data/cities";
+
 
 const FisioterapeutasPage = () => {
   const otherSectors = sectors.filter((s) => s.slug !== "seo-para-fisioterapeutas").slice(0, 4);
