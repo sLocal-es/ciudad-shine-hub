@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
-import { MapPin, Globe, TrendingUp, ArrowRight } from "lucide-react";
+import { MapPin, Globe, TrendingUp, ArrowRight, Search, Star } from "lucide-react";
 
 import FAQSection from "@/components/FAQSection";
 import { sectors } from "@/data/sectors";
