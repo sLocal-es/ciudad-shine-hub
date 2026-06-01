@@ -368,7 +368,7 @@ const FisioterapeutasPage = () => {
 
 
       {/* PLAN ÚNICO */}
-      <section className="bg-warm-bg py-16">
+      <section className="bg-white py-16">
         <div className="container max-w-3xl">
           <h2 className="font-heading text-2xl md:text-3xl mb-3 text-center">Servicio de SEO para fisioterapeutas</h2>
           <p className="text-base text-muted-foreground font-body font-light text-center mb-10">
@@ -410,7 +410,7 @@ const FisioterapeutasPage = () => {
       <FAQSection title="Preguntas frecuentes sobre SEO para fisioterapeutas" items={faqs} />
 
       {/* RELATED SECTORS */}
-      <section className="bg-warm-bg py-12">
+      <section className="bg-white py-12">
         <div className="container">
           <h2 className="font-heading text-xl mb-6">También trabajamos con otros sectores</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
