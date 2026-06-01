@@ -89,7 +89,20 @@ const FisioterapeutasPage = () => {
           <p className="text-dark-fg/80 text-base md:text-lg leading-relaxed mb-8 font-body font-light">
             En slocal.es montamos un sistema de <strong>seo local fisioterapia</strong> que combina tres piezas: tu ficha de Google Business Profile, una web multipágina optimizada y el posicionamiento local de tu clínica. Sin agencias intermediarias, sin publicidad de pago y con precios fijos.
           </p>
+          <div className="mb-8 rounded-xl border border-dark-fg/15 bg-dark-fg/5 px-5 py-4 flex flex-col sm:flex-row sm:items-center sm:divide-x divide-dark-fg/15">
+            {[
+              { k: "Primera página", v: "en 2-3 meses" },
+              { k: "+15 llamadas/mes", v: "sin publicidad" },
+              { k: "147€/mes", v: "precio fijo" },
+            ].map((m) => (
+              <div key={m.k} className="flex-1 py-2 sm:py-0 sm:px-5 text-center">
+                <div className="font-heading text-primary text-base md:text-lg leading-tight">{m.k}</div>
+                <div className="text-dark-fg/70 text-xs md:text-sm font-body mt-0.5">{m.v}</div>
+              </div>
+            ))}
+          </div>
           <div className="flex flex-wrap gap-3">
+
             <Link to="/contacto" className="bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors">
               Empezar →
             </Link>
