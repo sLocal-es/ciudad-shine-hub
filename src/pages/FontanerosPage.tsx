@@ -163,23 +163,6 @@ const FontanerosPage = () => {
     </div>
   );
 
-  const steps = [
-    {
-      n: "01",
-      h: "Optimizamos tu ficha de Google para búsquedas de urgencias",
-      p: "Configuramos las categorías correctas para fontanería y urgencias, la descripción con keywords de alta intención (avería, urgente, 24h, fuga), fotos del trabajo real, horarios de disponibilidad y zona de servicio por barrios. Google necesita señales claras de que eres el fontanero más relevante de tu zona para mostrarte en el top 3 cuando hay una urgencia.",
-    },
-    {
-      n: "02",
-      h: "Creamos páginas específicas para cada tipo de servicio",
-      p: 'Una web con página por tipo de avería y zona permite aparecer en búsquedas específicas de alta conversión: "instalación caldera Madrid", "detección fugas Valencia", "fontanero urgente Chamberí". Cada página ataca una búsqueda concreta. Los competidores con una sola página genérica no pueden competir con eso.',
-    },
-    {
-      n: "03",
-      h: "Gestionamos tu reputación y te informamos de resultados",
-      p: "Las reseñas son el factor que más influye en que alguien te llame o llame a otro. Gestionamos la obtención y respuesta de reseñas de forma estratégica. Cada mes recibes un informe claro: posiciones en Google Maps, llamadas recibidas y qué búsquedas te están trayendo trabajo.",
-    },
-  ];
 
   return (
     <>
