@@ -20,7 +20,7 @@ import {
 } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
-import FAQSection from "@/components/FAQSection";
+
 import CTASection from "@/components/CTASection";
 
 const FontanerosPage = () => {
