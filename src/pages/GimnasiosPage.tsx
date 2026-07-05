@@ -3,6 +3,7 @@ import SEOHead from "@/components/SEOHead";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
+import SectorHeroDark from "@/components/sector/SectorHeroDark";
 
 const GimnasiosPage = () => {
   const faqs = [
@@ -248,44 +249,6 @@ const GimnasiosPage = () => {
         </div>
       </section>
 
-      {/* PLAN */}
-      <section className="bg-warm-bg py-16">
-        <div className="container max-w-3xl">
-          <h2 className="font-heading text-2xl md:text-3xl mb-3 text-center">Servicio de SEO para gimnasios y centros deportivos</h2>
-          <p className="text-base text-muted-foreground font-body font-light text-center mb-10">
-            Todo lo que necesita tu gimnasio para aparecer cuando alguien busca centro deportivo en tu ciudad.
-          </p>
-          <div className="bg-card border border-border rounded-2xl p-8 md:p-10 shadow-sm">
-            <span className="inline-block bg-primary/10 text-primary text-xs font-heading rounded-full px-3 py-1 mb-5">
-              PLAN SLOCAL.ES
-            </span>
-            <p className="font-heading text-4xl md:text-5xl mb-8">
-              147€<span className="text-lg text-muted-foreground font-body font-light">/mes + IVA</span>
-            </p>
-            <ul className="space-y-3 mb-8">
-              {[
-                'Tu gimnasio aparece cuando alguien busca "gimnasio cerca de mí" en tu ciudad',
-                "Más socios directos desde Google — sin pagar por cada inscripción",
-                "Contenido mensual que posiciona para cada actividad y zona",
-                "Tu ficha de Google activa — Google te muestra antes que a las grandes cadenas",
-                "Cada mes sabes exactamente cuántos socios ha generado Google",
-                "Hablas siempre con la misma persona — sin intermediarios",
-              ].map((f) => (
-                <li key={f} className="flex items-start gap-3 text-sm md:text-base font-body">
-                  <span className="text-primary font-heading">✓</span>
-                  <span>{f}</span>
-                </li>
-              ))}
-            </ul>
-            <Link
-              to="/contacto"
-              className="inline-block bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors"
-            >
-              Empezar →
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* MID CTA */}
       <section className="py-14">

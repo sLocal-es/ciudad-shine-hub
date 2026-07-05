@@ -3,6 +3,7 @@ import SEOHead from "@/components/SEOHead";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
+import SectorHeroDark from "@/components/sector/SectorHeroDark";
 
 const DentistasPage = () => {
   const faqs = [
@@ -139,39 +140,20 @@ const DentistasPage = () => {
       />
 
       {/* HERO */}
-      <section className="bg-dark-bg text-dark-fg py-16 md:py-24">
-        <div className="container grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div>
-            <BreadcrumbNav items={[
-              { label: "Inicio", href: "/" },
-              { label: "SEO para Dentistas" },
-            ]} />
-            <span className="inline-block border border-primary text-primary text-xs font-heading rounded-full px-4 py-1.5 mb-6">
-              SEO para Dentistas
-            </span>
-            <h1 className="font-heading text-3xl md:text-4xl leading-tight mb-4">
-              SEO para Dentistas: Llena tu Agenda desde Google
-            </h1>
-            <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-8 font-body font-light">
-              Hay 49.500 búsquedas mensuales de "dentista cerca de mí" solo en España. Cada día, cientos de personas en tu ciudad buscan en Google un dentista y llaman al primero que aparece en el mapa. Si no eres tú, esas citas se las lleva otra clínica. Lo gestionamos para que tu agenda se llene con pacientes que te han elegido a ti — desde 147€/mes.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link to="/contacto" className="bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors">
-                Empezar →
-              </Link>
-              <Link to="/como-funciona" className="border border-dark-fg/20 text-dark-fg font-heading text-sm rounded-lg px-6 py-3 hover:border-primary hover:text-primary transition-colors">
-                Ver cómo funciona
-              </Link>
-            </div>
-          </div>
-
-          <div className="border-2 border-dashed border-border bg-warm-bg rounded-xl aspect-[4/3] flex items-center justify-center p-6 text-center">
-            <p className="text-sm text-muted-foreground font-body">
-              [IMAGEN: Pantalla de móvil mostrando búsqueda "dentista cerca de mí" en Google Maps con 3 clínicas dentales destacadas en el Local Pack]
-            </p>
-          </div>
-        </div>
-      </section>
+      <SectorHeroDark
+        breadcrumbLabel="SEO para Dentistas"
+        eyebrow="SEO para Dentistas"
+        h1={<h1>SEO para Dentistas: Llena tu Agenda desde Google</h1>}
+        subtitle={
+          <>Hay 49.500 búsquedas mensuales de "dentista cerca de mí" solo en España. Cada día, cientos de personas en tu ciudad buscan en Google un dentista y llaman al primero que aparece en el mapa. Si no eres tú, esas citas se las lleva otra clínica. Lo gestionamos para que tu agenda se llene con pacientes que te han elegido a ti.</>
+        }
+        phoneQuery="dentista cerca de mí"
+        phoneResults={[
+          { name: "Clínica Dental Sonrisa", rating: 4.9, reviews: 214, category: "Clínica dental", hours: "Abierto", distance: "a 450 m" },
+          { name: "Ortodoncia Dr. Ruiz", rating: 4.8, reviews: 168, category: "Ortodoncista", hours: "Abierto", distance: "a 900 m" },
+          { name: "Implantes Dentales Vital", rating: 4.7, reviews: 121, category: "Implantes", hours: "Abre a las 10:00", distance: "a 1,3 km" },
+        ]}
+      />
 
       {/* PROBLEM */}
       <section className="py-16">
@@ -252,44 +234,6 @@ const DentistasPage = () => {
         </div>
       </section>
 
-      {/* PLAN */}
-      <section className="bg-warm-bg py-16">
-        <div className="container max-w-3xl">
-          <h2 className="font-heading text-2xl md:text-3xl mb-3 text-center">Servicio de SEO para dentistas y clínicas dentales</h2>
-          <p className="text-base text-muted-foreground font-body font-light text-center mb-10">
-            Todo lo que necesita tu clínica para aparecer cuando alguien busca dentista en tu ciudad.
-          </p>
-          <div className="bg-card border border-border rounded-2xl p-8 md:p-10 shadow-sm">
-            <span className="inline-block bg-primary/10 text-primary text-xs font-heading rounded-full px-3 py-1 mb-5">
-              PLAN SLOCAL.ES
-            </span>
-            <p className="font-heading text-4xl md:text-5xl mb-8">
-              147€<span className="text-lg text-muted-foreground font-body font-light">/mes + IVA</span>
-            </p>
-            <ul className="space-y-3 mb-8">
-              {[
-                "Tu clínica aparece cuando alguien busca dentista en tu ciudad",
-                "Más citas directas desde Google — sin pagar por cada paciente",
-                "Contenido mensual que posiciona para cada tratamiento y zona",
-                "Tu ficha de Google activa — Google te muestra antes que a la competencia",
-                "Cada mes sabes exactamente cuántas citas ha generado Google",
-                "Hablas siempre con la misma persona — sin intermediarios",
-              ].map((f) => (
-                <li key={f} className="flex items-start gap-3 text-sm md:text-base font-body">
-                  <span className="text-primary font-heading">✓</span>
-                  <span>{f}</span>
-                </li>
-              ))}
-            </ul>
-            <Link
-              to="/contacto"
-              className="inline-block bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors"
-            >
-              Empezar →
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* FAQ */}
       <FAQSection title="Preguntas frecuentes sobre SEO para dentistas" items={faqs} />
