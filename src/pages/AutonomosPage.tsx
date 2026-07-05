@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
+import SectorHeroDark from "@/components/sector/SectorHeroDark";
 import {
   Accordion,
   AccordionContent,
@@ -270,39 +271,22 @@ const AutonomosPage = () => {
       />
 
       {/* 1 — HERO */}
-      <section className="bg-dark-bg text-dark-fg py-16 md:py-24">
-        <div className="container max-w-5xl">
-          <BreadcrumbNav items={[
-            { label: "Inicio", href: "/" },
-            { label: "SEO para autónomos" },
-          ]} />
-          <span className="inline-block border border-primary text-primary text-xs font-heading rounded-full px-4 py-1.5 mb-6 mt-2">
-            SEO para autónomos
-          </span>
-          <h1 className="font-heading text-3xl md:text-5xl leading-tight mb-5 max-w-3xl">
-            SEO para autónomos: que tus clientes te encuentren en Google
-          </h1>
-          <p className="text-dark-fg/75 text-base md:text-lg leading-relaxed mb-8 font-body font-light max-w-2xl">
-            Consultor SEO para autónomos — ficha de Google, web y posicionamiento local. Una persona, un precio fijo, sin intermediarios.
-          </p>
-          <div className="flex flex-wrap gap-3">
-            <a
-              href={WHATSAPP}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors"
-            >
-              Escríbeme por WhatsApp →
-            </a>
-            <Link
-              to="/como-funciona"
-              className="inline-block border border-dark-fg/30 text-dark-fg font-heading text-sm rounded-lg px-6 py-3 hover:border-primary hover:text-primary transition-colors"
-            >
-              Ver cómo funciona →
-            </Link>
-          </div>
-        </div>
-      </section>
+      <SectorHeroDark
+        breadcrumbLabel="SEO para autónomos"
+        eyebrow="SEO para autónomos"
+        h1={<h1>SEO para autónomos: que tus clientes te encuentren en Google</h1>}
+        subtitle={
+          <>Consultor SEO para autónomos — ficha de Google, web y posicionamiento local. Una persona, un precio fijo, sin intermediarios.</>
+        }
+        phoneQuery="autónomo cerca de mí"
+        phoneResults={[
+          { name: "Estudio Diseño Marta Ríos", rating: 5.0, reviews: 78, category: "Diseñadora gráfica", hours: "Abierto", distance: "a 600 m" },
+          { name: "Consultoría Autónomos Vega", rating: 4.9, reviews: 112, category: "Asesor fiscal", hours: "Abierto", distance: "a 1,1 km" },
+          { name: "Servicios Técnicos Sanz", rating: 4.8, reviews: 65, category: "Electricista autónomo", hours: "Abre a las 8:00", distance: "a 1,5 km" },
+        ]}
+        primaryCta={{ label: "Escríbeme por WhatsApp →", to: "/contacto" }}
+        secondaryCta={{ label: "Ver cómo funciona →", to: "/como-funciona" }}
+      />
 
       {/* 2 — PROBLEMA */}
       <section className="py-16 md:py-20">
@@ -367,34 +351,6 @@ const AutonomosPage = () => {
         </div>
       </section>
 
-      {/* 5 — POR QUÉ SLOCAL */}
-      <section className="bg-warm-bg py-16 md:py-20">
-        <div className="container max-w-5xl">
-          <h2 className="font-heading text-2xl md:text-3xl mb-10">
-            Por qué un autónomo elige slocal y no una agencia
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            <div className="bg-card border border-border rounded-2xl p-6">
-              <h3 className="font-heading text-lg mb-3">Hacerlo tú solo</h3>
-              <p className="text-sm text-muted-foreground font-body font-light leading-relaxed">
-                Puedes. Pero gestionar la ficha de Google, el SEO de tu web, las reseñas y el contenido mensual son entre 8 y 10 horas al mes que no tienes. Y si algo se hace mal, pierdes posiciones sin saber por qué.
-              </p>
-            </div>
-            <div className="bg-card border border-border rounded-2xl p-6">
-              <h3 className="font-heading text-lg mb-3">Agencia grande</h3>
-              <p className="text-sm text-muted-foreground font-body font-light leading-relaxed">
-                Precio oculto hasta la reunión. Mínimo 400–800 €/mes. Cambias de gestor cada pocos meses. Trabajan con 50 clientes a la vez y no saben lo que es gestionar un negocio como autónomo.
-              </p>
-            </div>
-            <div className="bg-card border-2 border-primary rounded-2xl p-6 shadow-md">
-              <span className="inline-block bg-primary/10 text-primary text-xs font-heading rounded-full px-3 py-1 mb-3">slocal</span>
-              <p className="text-sm text-foreground font-body leading-relaxed">
-                147 €/mes + IVA visible desde el primer segundo. La misma persona siempre. Ficha + web + SEO coordinados. Sin permanencia. Sin intermediarios.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* 6 — CASOS REALES */}
       <section className="py-16 md:py-20">
@@ -424,45 +380,6 @@ const AutonomosPage = () => {
         </div>
       </section>
 
-      {/* 7 — PRECIO */}
-      <section className="bg-warm-bg py-16 md:py-20">
-        <div className="container max-w-2xl">
-          <h2 className="font-heading text-2xl md:text-3xl mb-10 text-center">
-            Un precio. Sin sorpresas.
-          </h2>
-          <div className="bg-card border-2 border-primary rounded-2xl p-8 md:p-10 shadow-md text-center">
-            <p className="font-heading text-5xl md:text-6xl mb-2">
-              147 €<span className="text-lg text-muted-foreground font-body font-light">/mes + IVA</span>
-            </p>
-            <ul className="space-y-3 my-8 text-left">
-              {[
-                "Ficha de Google optimizada y gestionada cada mes",
-                "Web con SEO local incluida",
-                "Posicionamiento activo mes a mes",
-                "Informe mensual con datos reales",
-                "Sin permanencia mínima",
-                "Siempre la misma persona",
-              ].map((f) => (
-                <li key={f} className="flex items-start gap-3 text-sm md:text-base font-body">
-                  <span className="text-primary font-heading">✓</span>
-                  <span>{f}</span>
-                </li>
-              ))}
-            </ul>
-            <a
-              href={WHATSAPP}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-primary text-primary-foreground font-heading text-sm rounded-lg px-8 py-3 hover:bg-primary/90 transition-colors"
-            >
-              Empezar →
-            </a>
-          </div>
-          <p className="text-sm text-muted-foreground font-body font-light text-center mt-6">
-            Ninguna agencia te da esto junto por este precio porque no les sale a cuenta. A nosotros sí, porque trabajamos sin intermediarios. Ver detalle en <Link to="/planes" className="text-primary underline underline-offset-2">planes</Link>.
-          </p>
-        </div>
-      </section>
 
       {/* 8 — FAQ (visible) */}
       <section className="py-16 md:py-20">

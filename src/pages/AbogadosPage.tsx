@@ -3,6 +3,7 @@ import SEOHead from "@/components/SEOHead";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
+import SectorHeroDark from "@/components/sector/SectorHeroDark";
 
 const AbogadosPage = () => {
   const faqs = [
@@ -139,39 +140,20 @@ const AbogadosPage = () => {
       />
 
       {/* HERO */}
-      <section className="bg-dark-bg text-dark-fg py-16 md:py-24">
-        <div className="container grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div>
-            <BreadcrumbNav items={[
-              { label: "Inicio", href: "/" },
-              { label: "SEO para Abogados" },
-            ]} />
-            <span className="inline-block border border-primary text-primary text-xs font-heading rounded-full px-4 py-1.5 mb-6">
-              SEO para Abogados
-            </span>
-            <h1 className="font-heading text-3xl md:text-4xl leading-tight mb-4">
-              SEO para Abogados: Más Consultas y Casos desde Google
-            </h1>
-            <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-8 font-body font-light">
-              Tu despacho tiene años de experiencia y clientes satisfechos. Pero si alguien en tu ciudad busca "abogado laboralista" o "abogado de divorcios" en Google ahora mismo y no apareces tú, esa consulta se la lleva otro despacho. Cada día que no estás en el top 3 de Google Maps son casos que pierdes sin saberlo.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link to="/contacto" className="bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors">
-                Empezar →
-              </Link>
-              <Link to="/como-funciona" className="border border-dark-fg/20 text-dark-fg font-heading text-sm rounded-lg px-6 py-3 hover:border-primary hover:text-primary transition-colors">
-                Ver cómo funciona
-              </Link>
-            </div>
-          </div>
-
-          <div className="border-2 border-dashed border-border bg-warm-bg rounded-xl aspect-[4/3] flex items-center justify-center p-6 text-center">
-            <p className="text-sm text-muted-foreground font-body">
-              [IMAGEN: Pantalla de móvil mostrando búsqueda "abogado laboralista Madrid" en Google Maps con 3 despachos destacados]
-            </p>
-          </div>
-        </div>
-      </section>
+      <SectorHeroDark
+        breadcrumbLabel="SEO para Abogados"
+        eyebrow="SEO para Abogados"
+        h1={<h1>SEO para Abogados: Más Consultas y Casos desde Google</h1>}
+        subtitle={
+          <>Tu despacho tiene años de experiencia y clientes satisfechos. Pero si alguien en tu ciudad busca "abogado laboralista" o "abogado de divorcios" en Google ahora mismo y no apareces tú, esa consulta se la lleva otro despacho. Cada día que no estás en el top 3 de Google Maps son casos que pierdes sin saberlo.</>
+        }
+        phoneQuery="abogado laboralista cerca de mí"
+        phoneResults={[
+          { name: "Bufete Álvarez & Asociados", rating: 4.9, reviews: 142, category: "Abogado laboralista", hours: "Abierto", distance: "a 600 m" },
+          { name: "Despacho Jurídico Central", rating: 4.8, reviews: 98, category: "Abogado", hours: "Abierto", distance: "a 1,1 km" },
+          { name: "Legal Group Familia", rating: 4.7, reviews: 76, category: "Abogado de familia", hours: "Abre a las 9:00", distance: "a 1,5 km" },
+        ]}
+      />
 
       {/* PROBLEM */}
       <section className="py-16">
@@ -246,44 +228,6 @@ const AbogadosPage = () => {
         </div>
       </section>
 
-      {/* PLAN */}
-      <section className="bg-warm-bg py-16">
-        <div className="container max-w-3xl">
-          <h2 className="font-heading text-2xl md:text-3xl mb-3 text-center">Servicio de SEO para despachos de abogados</h2>
-          <p className="text-base text-muted-foreground font-body font-light text-center mb-10">
-            Todo lo que necesita tu despacho para aparecer cuando alguien busca tu especialidad en Google.
-          </p>
-          <div className="bg-card border border-border rounded-2xl p-8 md:p-10 shadow-sm">
-            <span className="inline-block bg-primary/10 text-primary text-xs font-heading rounded-full px-3 py-1 mb-5">
-              PLAN SLOCAL.ES
-            </span>
-            <p className="font-heading text-4xl md:text-5xl mb-8">
-              147€<span className="text-lg text-muted-foreground font-body font-light">/mes + IVA</span>
-            </p>
-            <ul className="space-y-3 mb-8">
-              {[
-                "Tu despacho aparece cuando alguien busca abogado en tu ciudad",
-                "Más consultas directas desde Google — sin pagar por cada lead",
-                "Contenido mensual que posiciona para cada especialidad jurídica y zona",
-                "Tu ficha de Google activa — Google te muestra antes que a la competencia",
-                "Cada mes sabes exactamente cuántas consultas ha generado Google",
-                "Hablas siempre con la misma persona — sin intermediarios",
-              ].map((f) => (
-                <li key={f} className="flex items-start gap-3 text-sm md:text-base font-body">
-                  <span className="text-primary font-heading">✓</span>
-                  <span>{f}</span>
-                </li>
-              ))}
-            </ul>
-            <Link
-              to="/contacto"
-              className="inline-block bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors"
-            >
-              Empezar →
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* FAQ */}
       <FAQSection title="Preguntas frecuentes sobre SEO para abogados" items={faqs} />

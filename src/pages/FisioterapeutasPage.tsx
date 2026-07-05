@@ -4,6 +4,7 @@ import BreadcrumbNav from "@/components/BreadcrumbNav";
 import { MapPin, Globe, TrendingUp, ArrowRight, Search, Star } from "lucide-react";
 
 import FAQSection from "@/components/FAQSection";
+import SectorHeroDark from "@/components/sector/SectorHeroDark";
 import { sectors } from "@/data/sectors";
 import { cities } from "@/data/cities";
 
@@ -71,47 +72,21 @@ const FisioterapeutasPage = () => {
       />
 
       {/* HERO */}
-      <section className="bg-dark-bg text-dark-fg py-16 md:py-24">
-        <div className="container max-w-4xl">
-          <BreadcrumbNav items={[
-            { label: "Inicio", href: "/" },
-            { label: "SEO para Fisioterapeutas" },
-          ]} />
-          <span className="inline-block border border-primary text-primary text-xs font-heading rounded-full px-4 py-1.5 mb-6">
-            SEO para Fisioterapeutas
-          </span>
-          <h1 className="font-heading text-3xl md:text-4xl leading-tight mb-6">
-            SEO para Fisioterapeutas: Consigue Más Pacientes desde Google
-          </h1>
-          <p className="text-dark-fg/80 text-base md:text-lg leading-relaxed mb-4 font-body font-light">
-            El <strong>seo para fisioterapeutas</strong> no va de teoría ni de palabras raras. Va de algo muy concreto: que cuando un paciente de tu ciudad abra Google y busque "fisio cerca de mí", tu clínica aparezca entre las primeras opciones del mapa. Ese es el trabajo.
-          </p>
-          <p className="text-dark-fg/80 text-base md:text-lg leading-relaxed mb-8 font-body font-light">
-            En slocal.es montamos un sistema de <strong>seo local fisioterapia</strong> que combina tres piezas: tu ficha de Google Business Profile, una web multipágina optimizada y el posicionamiento local de tu clínica. Sin agencias intermediarias, sin publicidad de pago y con precios fijos.
-          </p>
-          <div className="mb-8 border border-white/15 bg-black/40 px-5 py-5 flex flex-col sm:flex-row sm:items-center sm:divide-x divide-white/15 rounded-lg">
-            {[
-              { k: "Primera página en Google", v: "en 2-3 meses" },
-              { k: "+15 llamadas/mes", v: "sin publicidad" },
-              { k: "147€/mes", v: "precio fijo" },
-            ].map((m) => (
-              <div key={m.k} className="flex-1 py-2 sm:py-0 sm:px-5 text-center">
-                <div className="font-heading text-primary text-base md:text-lg leading-tight">{m.k}</div>
-                <div className="text-white text-xs md:text-sm font-body mt-1 opacity-80">{m.v}</div>
-              </div>
-            ))}
-          </div>
-          <div className="flex flex-wrap gap-3">
-
-            <Link to="/contacto" className="bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors">
-              Empezar →
-            </Link>
-            <Link to="/planes" className="border border-dark-fg/20 text-dark-fg font-heading text-sm rounded-lg px-6 py-3 hover:border-primary hover:text-primary transition-colors">
-              Ver planes
-            </Link>
-          </div>
-        </div>
-      </section>
+      <SectorHeroDark
+        breadcrumbLabel="SEO para Fisioterapeutas"
+        eyebrow="SEO para Fisioterapeutas"
+        h1={<h1>SEO para Fisioterapeutas: Consigue Más Pacientes desde Google</h1>}
+        subtitle={
+          <>El <strong className="font-body font-normal text-dark-fg">seo para fisioterapeutas</strong> no va de teoría ni de palabras raras. Va de algo muy concreto: que cuando un paciente de tu ciudad abra Google y busque "fisio cerca de mí", tu clínica aparezca entre las primeras opciones del mapa.</>
+        }
+        phoneQuery="fisioterapeuta cerca de mí"
+        phoneResults={[
+          { name: "Clínica Fisioterapia Movimiento", rating: 4.9, reviews: 167, category: "Fisioterapeuta", hours: "Abierto", distance: "a 500 m" },
+          { name: "Fisio Deportiva Cavero", rating: 4.9, reviews: 128, category: "Fisio deportiva", hours: "Abierto", distance: "a 900 m" },
+          { name: "Centro Fisio & Osteopatía", rating: 4.8, reviews: 92, category: "Osteopatía", hours: "Abre a las 9:00", distance: "a 1,4 km" },
+        ]}
+        secondaryCta={{ label: "Ver planes", to: "/planes" }}
+      />
 
       {/* H2 — Cómo conseguir pacientes */}
       <section className="bg-white py-16">
@@ -367,44 +342,6 @@ const FisioterapeutasPage = () => {
       </section>
 
 
-      {/* PLAN ÚNICO */}
-      <section className="bg-white py-16">
-        <div className="container max-w-3xl">
-          <h2 className="font-heading text-2xl md:text-3xl mb-3 text-center">Servicio de SEO para fisioterapeutas</h2>
-          <p className="text-base text-muted-foreground font-body font-light text-center mb-10">
-            Todo lo que necesita tu clínica para aparecer cuando alguien busca fisioterapeuta en tu ciudad.
-          </p>
-          <div className="bg-card border border-border rounded-2xl p-8 md:p-10 shadow-sm">
-            <span className="inline-block bg-primary/10 text-primary text-xs font-heading rounded-full px-3 py-1 mb-5">
-              PLAN SLOCAL.ES
-            </span>
-            <p className="font-heading text-4xl md:text-5xl mb-8">
-              147€<span className="text-lg text-muted-foreground font-body font-light">/mes + IVA</span>
-            </p>
-            <ul className="space-y-3 mb-8">
-              {[
-                "Tu clínica aparece cuando alguien busca fisioterapeuta en tu ciudad",
-                "Más citas directas desde Google — sin depender de recomendaciones",
-                "Contenido mensual que posiciona para cada tratamiento y zona",
-                "Tu ficha de Google activa — Google te muestra antes que a la competencia",
-                "Cada mes sabes exactamente cuántas citas ha generado Google",
-                "Hablas siempre con la misma persona — sin intermediarios",
-              ].map((f) => (
-                <li key={f} className="flex items-start gap-3 text-sm md:text-base font-body">
-                  <span className="text-primary font-heading">✓</span>
-                  <span>{f}</span>
-                </li>
-              ))}
-            </ul>
-            <Link
-              to="/contacto"
-              className="inline-block bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors"
-            >
-              Empezar →
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* FAQ */}
       <FAQSection title="Preguntas frecuentes sobre SEO para fisioterapeutas" items={faqs} />

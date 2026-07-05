@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import CTASection from "@/components/CTASection";
-import heroFontanero from "@/assets/fontaneros/hero-fontanero.jpg";
+import SectorHeroDark from "@/components/sector/SectorHeroDark";
 import movilBusqueda from "@/assets/fontaneros/movil-busqueda.jpg";
 import furgoneta from "@/assets/fontaneros/furgoneta.jpg";
 import herramientas from "@/assets/fontaneros/herramientas.jpg";
@@ -146,58 +146,28 @@ const FontanerosPage = () => {
         jsonLd={[breadcrumbSchema, faqSchema, serviceSchema, localBusinessSchema]}
       />
 
-      {/* HERO EDITORIAL */}
-      <section className="bg-warm-bg pt-10 md:pt-14 pb-20 md:pb-28">
-        <div className="container">
-          <BreadcrumbNav
-            items={[
-              { label: "Inicio", href: "/" },
-              { label: "SEO para Fontaneros" },
-            ]}
-          />
-          <p className="mt-4 mb-8 md:mb-10 font-heading text-xs tracking-[0.2em] uppercase text-primary">
-            — SEO para Fontaneros
-          </p>
-
-          <h1 className="font-heading font-semibold text-warm-fg leading-[0.95] tracking-tight text-[13vw] md:text-[8.5vw] lg:text-[7.5rem] max-w-[16ch]">
+      {/* HERO — dark, phone mockup */}
+      <SectorHeroDark
+        breadcrumbLabel="SEO para Fontaneros"
+        eyebrow="SEO para Fontaneros"
+        h1={
+          <h1>
             Que te llamen cuando <span className="text-primary">haya una avería</span>.
           </h1>
-
-          <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-start">
-            <div className="md:col-span-5 md:col-start-1">
-              <p className="text-lg md:text-xl leading-relaxed font-body font-light text-warm-fg/80">
-                Cuando una tubería revienta o hay una fuga, el cliente busca en Google y llama al primero que aparece. Si no eres tú, ese trabajo se lo lleva otro.
-              </p>
-              <p className="mt-6 text-lg md:text-xl leading-relaxed font-body font-light text-warm-fg/80">
-                Lo gestionamos para que seas el primero. Desde 147&nbsp;€/mes.
-              </p>
-              <div className="mt-10 flex flex-wrap gap-3">
-                <Link
-                  to="/contacto"
-                  className="bg-warm-fg text-warm-bg font-heading text-sm rounded-full px-7 py-3.5 hover:bg-primary hover:text-primary-foreground transition-colors"
-                >
-                  Hablemos →
-                </Link>
-                <Link
-                  to="/como-funciona"
-                  className="border border-warm-fg/25 text-warm-fg font-heading text-sm rounded-full px-7 py-3.5 hover:border-warm-fg hover:bg-warm-fg hover:text-warm-bg transition-colors"
-                >
-                  Ver cómo funciona
-                </Link>
-              </div>
-            </div>
-            <div className="md:col-span-7">
-              <img
-                src={heroFontanero}
-                alt="Fontanero profesional reparando el grifo de una cocina con una llave inglesa"
-                width={1600}
-                height={1200}
-                className="w-full h-auto rounded-sm object-cover aspect-[4/3] md:aspect-[16/11]"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+        }
+        subtitle={
+          <>
+            Cuando una tubería revienta o hay una fuga, el cliente busca en Google y llama al primero que aparece. Si no eres tú, ese trabajo se lo lleva otro. Lo gestionamos para que seas el primero.
+          </>
+        }
+        phoneQuery="fontanero cerca de mí"
+        phoneResults={[
+          { name: "Fontanería García 24h", rating: 4.9, reviews: 187, category: "Fontanero", hours: "Abierto 24 h", distance: "a 800 m" },
+          { name: "Urgencias Fontanero Ya", rating: 4.8, reviews: 132, category: "Fontanero", hours: "Abierto", distance: "a 1,2 km" },
+          { name: "Fontaneros Rápidos SL", rating: 4.7, reviews: 96, category: "Reparación fugas", hours: "Abierto", distance: "a 1,6 km" },
+        ]}
+        secondaryCta={{ label: "Ver cómo funciona", to: "/como-funciona" }}
+      />
 
       {/* MANIFIESTO GIGANTE */}
       <section className="bg-warm-bg py-24 md:py-36 border-t border-warm-fg/10">
@@ -407,46 +377,6 @@ const FontanerosPage = () => {
         </div>
       </section>
 
-      {/* PLAN — editorial, no card oscura */}
-      <section className="bg-warm-bg py-24 md:py-32 border-t border-warm-fg/10">
-        <div className="container max-w-4xl">
-          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Plan slocal.es</p>
-          <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-4">
-            Servicio de SEO para fontaneros.
-          </h2>
-          <p className="text-base md:text-lg font-body font-light text-warm-fg/70 mb-12 max-w-2xl">
-            Todo lo que necesita tu negocio de fontanería para aparecer cuando te buscan en Google.
-          </p>
-
-          <p className="font-heading font-semibold text-warm-fg text-7xl md:text-9xl leading-none tracking-tight mb-2">
-            147&nbsp;€
-          </p>
-          <p className="font-body text-warm-fg/60 mb-12">al mes, + IVA</p>
-
-          <ul className="divide-y divide-warm-fg/15 border-y border-warm-fg/15 mb-12">
-            {[
-              "Tu negocio aparece cuando alguien busca fontanero urgente en tu ciudad",
-              "Más llamadas directas desde Google — sin pagar por cada una",
-              "Contenido mensual que posiciona para nuevas búsquedas de averías y servicios",
-              "Tu ficha de Google activa — Google te muestra antes que a la competencia",
-              "Cada mes sabes exactamente cuántas llamadas ha generado Google",
-              "Hablas siempre con la misma persona — sin intermediarios",
-            ].map((f) => (
-              <li key={f} className="py-5 flex items-start gap-6">
-                <span className="font-heading text-primary text-sm pt-1.5">✓</span>
-                <span className="font-body text-base md:text-lg text-warm-fg/85 leading-relaxed">{f}</span>
-              </li>
-            ))}
-          </ul>
-
-          <Link
-            to="/contacto"
-            className="inline-block bg-warm-fg text-warm-bg font-heading text-sm rounded-full px-8 py-4 hover:bg-primary hover:text-primary-foreground transition-colors"
-          >
-            Empezar →
-          </Link>
-        </div>
-      </section>
 
       {/* FAQ */}
       <section className="bg-warm-bg py-24 md:py-32 border-t border-warm-fg/10">
