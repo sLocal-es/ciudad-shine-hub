@@ -270,39 +270,22 @@ const AutonomosPage = () => {
       />
 
       {/* 1 — HERO */}
-      <section className="bg-dark-bg text-dark-fg py-16 md:py-24">
-        <div className="container max-w-5xl">
-          <BreadcrumbNav items={[
-            { label: "Inicio", href: "/" },
-            { label: "SEO para autónomos" },
-          ]} />
-          <span className="inline-block border border-primary text-primary text-xs font-heading rounded-full px-4 py-1.5 mb-6 mt-2">
-            SEO para autónomos
-          </span>
-          <h1 className="font-heading text-3xl md:text-5xl leading-tight mb-5 max-w-3xl">
-            SEO para autónomos: que tus clientes te encuentren en Google
-          </h1>
-          <p className="text-dark-fg/75 text-base md:text-lg leading-relaxed mb-8 font-body font-light max-w-2xl">
-            Consultor SEO para autónomos — ficha de Google, web y posicionamiento local. Una persona, un precio fijo, sin intermediarios.
-          </p>
-          <div className="flex flex-wrap gap-3">
-            <a
-              href={WHATSAPP}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors"
-            >
-              Escríbeme por WhatsApp →
-            </a>
-            <Link
-              to="/como-funciona"
-              className="inline-block border border-dark-fg/30 text-dark-fg font-heading text-sm rounded-lg px-6 py-3 hover:border-primary hover:text-primary transition-colors"
-            >
-              Ver cómo funciona →
-            </Link>
-          </div>
-        </div>
-      </section>
+      <SectorHeroDark
+        breadcrumbLabel="SEO para autónomos"
+        eyebrow="SEO para autónomos"
+        h1={<h1>SEO para autónomos: que tus clientes te encuentren en Google</h1>}
+        subtitle={
+          <>Consultor SEO para autónomos — ficha de Google, web y posicionamiento local. Una persona, un precio fijo, sin intermediarios.</>
+        }
+        phoneQuery="autónomo cerca de mí"
+        phoneResults={[
+          { name: "Estudio Diseño Marta Ríos", rating: 5.0, reviews: 78, category: "Diseñadora gráfica", hours: "Abierto", distance: "a 600 m" },
+          { name: "Consultoría Autónomos Vega", rating: 4.9, reviews: 112, category: "Asesor fiscal", hours: "Abierto", distance: "a 1,1 km" },
+          { name: "Servicios Técnicos Sanz", rating: 4.8, reviews: 65, category: "Electricista autónomo", hours: "Abre a las 8:00", distance: "a 1,5 km" },
+        ]}
+        primaryCta={{ label: "Escríbeme por WhatsApp →", to: "/contacto" }}
+        secondaryCta={{ label: "Ver cómo funciona →", to: "/como-funciona" }}
+      />
 
       {/* 2 — PROBLEMA */}
       <section className="py-16 md:py-20">
