@@ -13,6 +13,8 @@ interface SectorHeroDarkProps {
   phoneResults: GbpResult[];
   primaryCta?: { label: string; to: string };
   secondaryCta?: { label: string; to: string };
+  /** Optional override of the small trust chips shown under the CTAs. */
+  trustItems?: string[];
 }
 
 /**
