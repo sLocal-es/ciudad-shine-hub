@@ -99,18 +99,12 @@ const SectorHeroDark = ({
 
             {/* Trust row */}
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs font-body text-dark-fg/55">
-              <span className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                Ficha de Google gestionada cada mes
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                Sin permanencia
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                Trabajo local especializado
-              </span>
+              {trustItems.map((item) => (
+                <span key={item} className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
 
