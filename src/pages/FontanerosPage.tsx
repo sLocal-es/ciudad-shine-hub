@@ -1,11 +1,7 @@
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
-import BreadcrumbNav from "@/components/BreadcrumbNav";
 import CTASection from "@/components/CTASection";
 import SectorHeroDark from "@/components/sector/SectorHeroDark";
-import movilBusqueda from "@/assets/fontaneros/movil-busqueda.jpg";
-import furgoneta from "@/assets/fontaneros/furgoneta.jpg";
-import herramientas from "@/assets/fontaneros/herramientas.jpg";
 
 const FontanerosPage = () => {
   const faqs = [
@@ -66,20 +62,6 @@ const FontanerosPage = () => {
     description: "Servicio de SEO local para fontaneros en España",
     areaServed: "España",
     priceRange: "€€",
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
-        opens: "09:00",
-        closes: "20:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Friday"],
-        opens: "09:00",
-        closes: "14:00",
-      },
-    ],
   };
 
   const serviceTypes = [
@@ -123,10 +105,26 @@ const FontanerosPage = () => {
   ];
 
   const processSteps = [
-    { n: "Uno", h: "Descubrimos qué servicios tienen más demanda", d: "Analizamos qué buscan realmente tus clientes potenciales en tu zona: averías, calderas, urgencias, comunidades." },
-    { n: "Dos", h: "Analizamos cómo entiende Google tu empresa", d: "Auditamos tu ficha, tu web y la competencia bien posicionada en tu barrio y en toda la ciudad." },
-    { n: "Tres", h: "Optimizamos tu web y tu ficha para esas búsquedas", d: "Reescribimos categorías, servicios, textos y estructuras para que Google entienda para qué debe mostrarte." },
-    { n: "Cuatro", h: "Empiezas a aparecer cuando te buscan", d: "Tu negocio se cuela en el Local Pack para las búsquedas de mayor intención, sin pagar por cada clic." },
+    {
+      n: "01",
+      h: "Auditoría gratuita",
+      d: "Analizamos tu ficha, tu web y tu competencia local sin coste.",
+    },
+    {
+      n: "02",
+      h: "Detectamos oportunidades",
+      d: "Identificamos las búsquedas con mayor intención en tu zona.",
+    },
+    {
+      n: "03",
+      h: "Optimizamos Google Business + Web",
+      d: "Reescribimos, estructuramos y activamos tu presencia local.",
+    },
+    {
+      n: "04",
+      h: "Seguimiento y crecimiento mensual",
+      d: "Reforzamos posiciones, reseñas y contenido cada mes.",
+    },
   ];
 
   const monthlyReasons = [
@@ -137,16 +135,29 @@ const FontanerosPage = () => {
     { h: "Seguimos reforzando tu presencia", d: "Reseñas, contenido, autoridad. Cuanto más maduro es tu SEO local, más difícil es que te superen." },
   ];
 
+  const tools = [
+    { name: "Google Business Profile", src: "/logos/google-business-profile.svg" },
+    { name: "Google Maps", src: "/logos/google-maps.svg" },
+    { name: "Google Search Console", src: "/logos/google-search-console.svg" },
+    { name: "Google Analytics", src: "/logos/google-analytics.svg" },
+    { name: "ChatGPT", src: "/logos/chatgpt.svg" },
+    { name: "WordPress", src: "/logos/wordpress.svg" },
+    { name: "Semrush", src: "/logos/semrush.svg" },
+  ];
+
+  // Reusable section wrapper — pure white background per brief
+  const sectionCls = "bg-white py-24 md:py-32 border-t border-warm-fg/10";
+
   return (
     <>
       <SEOHead
         title="SEO para Fontaneros | Consigue Más Llamadas desde Google | slocal.es"
-        description="Haz que tu negocio de fontanería aparezca cuando alguien busca fontanero urgente en tu ciudad. Más llamadas, más trabajos. Desde 147€/mes + IVA."
+        description="Haz que tu negocio de fontanería aparezca cuando alguien busca fontanero urgente en tu ciudad. Más llamadas, más trabajos."
         canonical="/seo-para-fontaneros"
         jsonLd={[breadcrumbSchema, faqSchema, serviceSchema, localBusinessSchema]}
       />
 
-      {/* HERO — dark, phone mockup */}
+      {/* HERO — dark, phone mockup. CTA updated + 'Sin permanencia' removido */}
       <SectorHeroDark
         breadcrumbLabel="SEO para Fontaneros"
         eyebrow="SEO para Fontaneros"
@@ -166,11 +177,38 @@ const FontanerosPage = () => {
           { name: "Urgencias Fontanero Ya", rating: 4.8, reviews: 132, category: "Fontanero", hours: "Abierto", distance: "a 1,2 km" },
           { name: "Fontaneros Rápidos SL", rating: 4.7, reviews: 96, category: "Reparación fugas", hours: "Abierto", distance: "a 1,6 km" },
         ]}
+        primaryCta={{ label: "Solicitar auditoría gratuita", to: "/contacto" }}
         secondaryCta={{ label: "Ver cómo funciona", to: "/como-funciona" }}
+        trustItems={[
+          "Ficha de Google gestionada cada mes",
+          "Trabajo local especializado",
+          "Auditoría inicial sin coste",
+        ]}
+        curveClass="bg-white"
       />
 
-      {/* MANIFIESTO GIGANTE */}
-      <section className="bg-warm-bg py-24 md:py-36 border-t border-warm-fg/10">
+      {/* TRUST BAR — herramientas reales usadas por Slocal */}
+      <section className="bg-white py-14 md:py-20 border-t border-warm-fg/10">
+        <div className="container">
+          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8 text-center">
+            — Herramientas con las que trabajamos
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 md:gap-x-14">
+            {tools.map((t) => (
+              <img
+                key={t.name}
+                src={t.src}
+                alt={t.name}
+                loading="lazy"
+                className="h-6 md:h-7 w-auto opacity-70 hover:opacity-100 transition-opacity"
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* MANIFIESTO */}
+      <section className={sectionCls}>
         <div className="container">
           <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— El punto de partida</p>
           <p className="font-heading font-semibold text-warm-fg leading-[1.02] tracking-tight text-[9vw] md:text-[5.5vw] lg:text-[5rem] max-w-[18ch]">
@@ -182,24 +220,20 @@ const FontanerosPage = () => {
         </div>
       </section>
 
-      {/* ASÍ BUSCAN — imagen + listado */}
-      <section className="bg-warm-bg py-24 md:py-32 border-t border-warm-fg/10">
+      {/* ¿CÓMO BUSCAN? — visual GBP + búsqueda */}
+      <section className={sectionCls}>
         <div className="container grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-20 items-center">
           <div className="md:col-span-6">
-            <img
-              src={movilBusqueda}
-              alt="Persona buscando un fontanero local en Google Maps desde su móvil"
-              width={1400}
-              height={1600}
-              loading="lazy"
-              className="w-full h-auto rounded-sm object-cover aspect-[4/5]"
-            />
+            <SearchMockup queries={searchQueries.slice(0, 4)} />
           </div>
           <div className="md:col-span-6">
-            <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Así te buscan</p>
-            <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-10">
-              Así buscan tus clientes.<br />Así te encuentran.
+            <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Comportamiento de búsqueda</p>
+            <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
+              ¿Cómo buscan realmente los clientes a un fontanero en Google?
             </h2>
+            <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed mb-8 max-w-xl">
+              Los clientes buscan en Google frases muy concretas como "fontanero urgente" o "reparación de fugas cerca de mí" y llaman a uno de los tres primeros resultados del mapa. En Slocal optimizamos tu ficha y tu web para aparecer justo en esas búsquedas de alta intención.
+            </p>
             <ul className="divide-y divide-warm-fg/15 border-y border-warm-fg/15">
               {searchQueries.map((q) => (
                 <li key={q} className="py-4 md:py-5 flex items-baseline justify-between gap-6">
@@ -208,90 +242,94 @@ const FontanerosPage = () => {
                 </li>
               ))}
             </ul>
-            <p className="mt-8 font-heading text-xl md:text-2xl leading-snug text-warm-fg max-w-md">
-              La pregunta es: <span className="text-primary">¿apareces tú o tu competencia?</span>
-            </p>
           </div>
         </div>
       </section>
 
-      {/* POR QUÉ SON INVISIBLES — dos columnas grandes */}
-      <section className="bg-warm-bg py-24 md:py-32 border-t border-warm-fg/10">
+      {/* ¿POR QUÉ NO APAREZCO? */}
+      <section className={sectionCls}>
         <div className="container">
-          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— El problema</p>
-          <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight max-w-[18ch] mb-16 md:mb-24">
-            Por qué muchos fontaneros son invisibles en Google.
+          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Visibilidad</p>
+          <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight max-w-[22ch] mb-8">
+            ¿Por qué mi negocio de fontanería no aparece en Google?
           </h2>
+          <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed max-w-3xl mb-16">
+            No apareces porque tu ficha de Google Business está desactualizada o tu web no comunica los servicios reales que ofreces. En Slocal detectamos por qué Google no te muestra, corregimos ficha y web, y activamos tu presencia local para que Google entienda cuándo mostrarte.
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
             <div>
-              <p className="font-heading text-2xl md:text-3xl text-warm-fg leading-snug mb-6">
-                Fichas creadas y nunca más tocadas.
-              </p>
+              <h3 className="font-heading text-2xl md:text-3xl text-warm-fg leading-snug mb-6">
+                ¿Basta con tener la ficha de Google creada?
+              </h3>
               <p className="text-base md:text-lg font-body font-light text-warm-fg/70 leading-relaxed">
-                El error más común: crear la ficha de Google cuando empiezas y no volver a tocarla. Google interpreta eso como inactividad y te baja posiciones progresivamente. Un fontanero con ficha desactualizada, sin fotos recientes y sin reseñas pierde visibilidad cada semana frente a competidores que sí la gestionan.
+                No basta. El error más común es crear la ficha cuando empiezas y no volver a tocarla. Google interpreta la inactividad como abandono y te baja posiciones cada semana frente a fontaneros que sí la gestionan.
               </p>
             </div>
             <div>
-              <p className="font-heading text-2xl md:text-3xl text-warm-fg leading-snug mb-6">
-                Una sola página para todo.
-              </p>
+              <h3 className="font-heading text-2xl md:text-3xl text-warm-fg leading-snug mb-6">
+                ¿Es suficiente una sola página para todos mis servicios?
+              </h3>
               <p className="text-base md:text-lg font-body font-light text-warm-fg/70 leading-relaxed">
-                "Fontanero urgente", "instalación de caldera", "detección de fugas" y "fontanero 24 h" son búsquedas distintas con clientes distintos. Si tienes una sola página genérica, solo apareces para una de ellas — y compites con todos por el mismo hueco.
+                "Fontanero urgente", "instalación de caldera" y "detección de fugas" son búsquedas distintas con clientes distintos. Si tienes una sola página genérica, solo apareces para una — y compites con todos por el mismo hueco.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* PROCESO — grid numerado editorial */}
-      <section className="bg-warm-bg py-24 md:py-32 border-t border-warm-fg/10">
+      {/* PROCESO — timeline horizontal */}
+      <section className={sectionCls}>
         <div className="container">
-          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— El proceso</p>
-          <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight max-w-[16ch] mb-16 md:mb-20">
-            Cómo conseguimos que te llamen más desde Google.
+          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Proceso</p>
+          <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight max-w-[22ch] mb-8">
+            ¿Cómo consigue Slocal que me llamen más clientes desde Google?
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-y-14 md:gap-y-20 gap-x-16 md:gap-x-24">
-            {processSteps.map((s) => (
-              <div key={s.n} className="border-t border-warm-fg/20 pt-6">
-                <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-4">— {s.n}</p>
-                <h3 className="font-heading text-2xl md:text-3xl lg:text-4xl leading-tight tracking-tight text-warm-fg mb-4">
-                  {s.h}
-                </h3>
-                <p className="text-base md:text-lg font-body font-light text-warm-fg/70 leading-relaxed">
-                  {s.d}
-                </p>
-              </div>
-            ))}
+          <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed max-w-3xl mb-20">
+            Slocal parte de una auditoría gratuita, detecta las oportunidades reales en tu zona, optimiza tu ficha de Google Business y tu web, y refuerza tu posicionamiento cada mes. En pocos meses empiezas a recibir llamadas directas desde Google Maps y desde búsquedas de tu ciudad.
+          </p>
+
+          {/* Roadmap horizontal */}
+          <div className="relative">
+            <div className="hidden md:block absolute top-4 left-0 right-0 h-px bg-warm-fg/15" />
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
+              {processSteps.map((s) => (
+                <div key={s.n} className="relative">
+                  <div className="flex items-center gap-3 md:block">
+                    <span className="relative z-10 inline-flex items-center justify-center h-8 w-8 rounded-full bg-primary text-primary-foreground font-heading text-xs">
+                      {s.n}
+                    </span>
+                  </div>
+                  <h3 className="mt-6 font-heading text-xl md:text-2xl text-warm-fg leading-snug">
+                    {s.h}
+                  </h3>
+                  <p className="mt-3 text-sm md:text-base font-body font-light text-warm-fg/70 leading-relaxed max-w-[26ch]">
+                    {s.d}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CASO REAL — imagen full + cita */}
-      <section className="bg-warm-bg py-24 md:py-32 border-t border-warm-fg/10">
+      {/* CASO REAL — dashboard mockup */}
+      <section className={sectionCls}>
         <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-end">
-            <div className="md:col-span-7">
-              <img
-                src={furgoneta}
-                alt="Furgoneta de fontanería aparcada en una calle de España al atardecer"
-                width={1600}
-                height={1100}
-                loading="lazy"
-                className="w-full h-auto rounded-sm object-cover aspect-[16/11]"
-              />
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center">
+            <div className="md:col-span-7 order-2 md:order-1">
+              <ResultsDashboard />
             </div>
-            <div className="md:col-span-5">
+            <div className="md:col-span-5 order-1 md:order-2">
               <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Caso real</p>
-              <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl leading-[1.05] tracking-tight mb-8">
-                De invisible a top 3 en Google Maps.
+              <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
+                ¿Funciona de verdad el SEO Local para fontaneros?
               </h2>
-              <p className="text-base md:text-lg font-body font-light text-warm-fg/70 leading-relaxed">
-                MVA Fontanería en Madrid consiguió <span className="text-warm-fg font-body">60 interacciones</span> desde Google en sus primeros 2 meses. Fontaneros Económicos, también en Madrid, recibió <span className="text-warm-fg font-body">11 llamadas directas y 4 WhatsApp</span> en mes y medio. Ambos empezaron desde cero, sin web ni ficha optimizada.
+              <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed mb-6">
+                Sí, funciona. Con Slocal, MVA Fontanería en Madrid consiguió 60 interacciones desde Google en 2 meses y Fontaneros Económicos recibió 11 llamadas directas y 4 WhatsApp en mes y medio. Ambos partieron desde cero, sin web ni ficha optimizada.
               </p>
             </div>
           </div>
 
-          {/* Números destacados */}
           <div className="mt-16 md:mt-24 grid grid-cols-2 md:grid-cols-3 gap-y-10 gap-x-8 border-t border-warm-fg/15 pt-12">
             {[
               { k: "60", l: "interacciones desde Google en 2 meses" },
@@ -311,22 +349,19 @@ const FontanerosPage = () => {
         </div>
       </section>
 
-      {/* SERVICIOS QUE POSICIONAMOS — tipografía gigante */}
-      <section className="bg-warm-bg py-24 md:py-32 border-t border-warm-fg/10">
+      {/* SERVICIOS */}
+      <section className={sectionCls}>
         <div className="container">
           <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Servicios</p>
-          <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight max-w-[20ch] mb-4">
-            Tipos de fontanería que posicionamos.
+          <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight max-w-[22ch] mb-6">
+            ¿Qué tipos de servicios de fontanería posiciona Slocal?
           </h2>
-          <p className="text-base md:text-lg font-body font-light text-warm-fg/70 max-w-2xl mb-14">
-            Cada tipo de servicio tiene sus propias búsquedas en Google. Creamos contenido específico para cada uno.
+          <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed max-w-3xl mb-14">
+            Slocal posiciona todos los servicios que un fontanero ofrece: urgencias 24 horas, averías, instalación de caldera, detección de fugas, desatascos, comunidades y reformas. Creamos contenido específico para cada servicio para que aparezcas en las búsquedas correctas de tu ciudad.
           </p>
           <ul className="divide-y divide-warm-fg/15 border-y border-warm-fg/15">
             {serviceTypes.map((t, i) => (
-              <li
-                key={t}
-                className="py-6 md:py-7 flex items-baseline justify-between gap-6 group"
-              >
+              <li key={t} className="py-6 md:py-7 flex items-baseline justify-between gap-6 group">
                 <div className="flex items-baseline gap-6 md:gap-10">
                   <span className="font-body text-xs tracking-widest text-warm-fg/40 w-8">
                     {String(i + 1).padStart(2, "0")}
@@ -343,21 +378,16 @@ const FontanerosPage = () => {
       </section>
 
       {/* POR QUÉ CADA MES */}
-      <section className="bg-warm-bg py-24 md:py-32 border-t border-warm-fg/10">
+      <section className={sectionCls}>
         <div className="container grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
           <div className="md:col-span-5">
-            <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Por qué cada mes</p>
-            <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl leading-[1.05] tracking-tight mb-10">
-              Google no es una fotografía. Es una <span className="text-primary">competición continua</span>.
+            <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Trabajo mensual</p>
+            <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
+              ¿Por qué el SEO Local necesita trabajo mes a mes?
             </h2>
-            <img
-              src={herramientas}
-              alt="Herramientas de fontanería sobre una superficie clara"
-              width={1400}
-              height={1000}
-              loading="lazy"
-              className="w-full h-auto rounded-sm object-cover aspect-[4/3] hidden md:block"
-            />
+            <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed">
+              Porque Google no es una fotografía, es una competición continua. En Slocal reforzamos cada mes tu ficha, reseñas, contenido y autoridad local para que tus competidores no te superen y para capturar nuevas búsquedas conforme aparecen en tu zona.
+            </p>
           </div>
           <div className="md:col-span-7">
             <ol className="space-y-10 md:space-y-12">
@@ -377,9 +407,8 @@ const FontanerosPage = () => {
         </div>
       </section>
 
-
       {/* FAQ */}
-      <section className="bg-warm-bg py-24 md:py-32 border-t border-warm-fg/10">
+      <section className={sectionCls}>
         <div className="container grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
             <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— FAQ</p>
@@ -406,14 +435,14 @@ const FontanerosPage = () => {
       </section>
 
       {/* CIUDADES */}
-      <section className="bg-warm-bg py-20 md:py-24 border-t border-warm-fg/10">
+      <section className="bg-white py-20 md:py-24 border-t border-warm-fg/10">
         <div className="container">
           <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Cobertura</p>
-          <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-5xl leading-[1.05] tracking-tight mb-4 max-w-[18ch]">
-            Trabajamos con fontaneros en toda España.
+          <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-5xl leading-[1.05] tracking-tight max-w-[22ch] mb-4">
+            ¿En qué ciudades trabaja Slocal con fontaneros?
           </h2>
-          <p className="text-base font-body font-light text-warm-fg/70 mb-10 max-w-2xl">
-            Gestionamos el posicionamiento local de fontaneros en toda España.
+          <p className="text-base font-body text-warm-fg leading-relaxed mb-10 max-w-2xl">
+            Slocal trabaja con fontaneros en toda España, con clientes activos en Madrid, Barcelona, Valencia, Sevilla, Málaga, Zaragoza, Bilbao y Murcia. Adaptamos la estrategia local a cada ciudad y a cada barrio para captar las búsquedas de máxima intención de tu zona.
           </p>
           <div className="flex flex-wrap gap-2.5">
             {cities.map((city) => (
@@ -430,12 +459,15 @@ const FontanerosPage = () => {
       </section>
 
       {/* OTROS SECTORES */}
-      <section className="bg-warm-bg py-16 md:py-20 border-t border-warm-fg/10">
+      <section className="bg-white py-16 md:py-20 border-t border-warm-fg/10">
         <div className="container">
           <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Otros sectores</p>
-          <h2 className="font-heading font-semibold text-warm-fg text-2xl md:text-3xl mb-8">
-            También trabajamos con otros sectores.
+          <h2 className="font-heading text-2xl md:text-3xl text-warm-fg mb-4">
+            ¿Slocal solo trabaja con fontaneros?
           </h2>
+          <p className="text-base font-body text-warm-fg leading-relaxed max-w-3xl mb-8">
+            No. Slocal trabaja también con fisioterapeutas, empresas de reformas, pintores, clínicas, entrenadores personales y estudios de yoga. Aplicamos la misma metodología de SEO Local especializado a cada sector para que aparezcan cuando sus clientes buscan en Google.
+          </p>
           <div className="flex flex-wrap gap-2.5">
             {otherSectors.map((s) => (
               <Link
@@ -452,9 +484,122 @@ const FontanerosPage = () => {
 
       <CTASection
         title="¿Quieres que tu teléfono suene más gracias a Google?"
-        buttonText="Hablemos →"
+        buttonText="Solicitar auditoría gratuita →"
       />
     </>
+  );
+};
+
+/* -------- Inline visuals (SEO-first, no fontanería imagery) -------- */
+
+const SearchMockup = ({ queries }: { queries: string[] }) => (
+  <div className="rounded-2xl border border-warm-fg/15 bg-white shadow-[0_20px_60px_-30px_rgba(26,26,36,0.25)] overflow-hidden">
+    {/* Browser bar */}
+    <div className="flex items-center gap-2 px-4 py-3 border-b border-warm-fg/10 bg-warm-fg/[0.02]">
+      <span className="h-2.5 w-2.5 rounded-full bg-warm-fg/15" />
+      <span className="h-2.5 w-2.5 rounded-full bg-warm-fg/15" />
+      <span className="h-2.5 w-2.5 rounded-full bg-warm-fg/15" />
+      <div className="ml-4 flex-1 rounded-full bg-white border border-warm-fg/15 px-4 py-1.5 text-xs font-body text-warm-fg/60 truncate">
+        google.com/search?q=fontanero+urgente
+      </div>
+    </div>
+    <div className="p-6 md:p-8">
+      <div className="flex items-center gap-3 border border-warm-fg/15 rounded-full px-4 py-3">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-warm-fg/50">
+          <circle cx="11" cy="11" r="7" />
+          <path d="m21 21-4.3-4.3" />
+        </svg>
+        <span className="font-body text-sm text-warm-fg">fontanero urgente cerca de mí</span>
+      </div>
+      <ul className="mt-6 space-y-3">
+        {queries.map((q) => (
+          <li key={q} className="flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-warm-fg/[0.03]">
+            <span className="h-6 w-6 rounded-full bg-warm-fg/[0.05] flex items-center justify-center text-warm-fg/50">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="11" cy="11" r="7" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+            </span>
+            <span className="font-body text-sm text-warm-fg/80">{q}</span>
+          </li>
+        ))}
+      </ul>
+      <div className="mt-6 grid grid-cols-3 gap-2">
+        {[0.9, 0.65, 0.4].map((h, i) => (
+          <div key={i} className="rounded-md border border-warm-fg/10 p-3">
+            <div className="h-2 w-3/4 rounded-full bg-warm-fg/10 mb-2" />
+            <div className="flex items-center gap-1 text-[10px] text-primary">
+              <span>★</span><span className="text-warm-fg/60">4,{9 - i}</span>
+            </div>
+            <div className="mt-2 h-1 rounded-full bg-warm-fg/10 overflow-hidden">
+              <div className="h-full bg-primary" style={{ width: `${h * 100}%` }} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+);
+
+const ResultsDashboard = () => {
+  // Fake but realistic monthly growth curve
+  const points = [8, 12, 18, 22, 35, 46, 58, 66, 74, 82, 90, 98];
+  const max = Math.max(...points);
+  const w = 560;
+  const h = 220;
+  const step = w / (points.length - 1);
+  const path = points
+    .map((p, i) => `${i === 0 ? "M" : "L"} ${i * step} ${h - (p / max) * h}`)
+    .join(" ");
+  const area = `${path} L ${w} ${h} L 0 ${h} Z`;
+
+  return (
+    <div className="rounded-2xl border border-warm-fg/15 bg-white shadow-[0_20px_60px_-30px_rgba(26,26,36,0.25)] overflow-hidden">
+      <div className="flex items-center justify-between px-6 py-4 border-b border-warm-fg/10">
+        <div className="flex items-center gap-3">
+          <img src="/logos/google-business-profile.svg" alt="Google Business Profile" className="h-5 w-auto" />
+          <span className="font-heading text-sm text-warm-fg">Rendimiento · últimos 12 meses</span>
+        </div>
+        <span className="text-xs font-body text-warm-fg/50">Google Business Insights</span>
+      </div>
+
+      <div className="grid grid-cols-3 divide-x divide-warm-fg/10 border-b border-warm-fg/10">
+        {[
+          { k: "Llamadas", v: "+312 %" },
+          { k: "Clics a web", v: "+248 %" },
+          { k: "Cómo llegar", v: "+189 %" },
+        ].map((s) => (
+          <div key={s.k} className="px-6 py-5">
+            <p className="text-[11px] font-body uppercase tracking-widest text-warm-fg/50">{s.k}</p>
+            <p className="mt-1 font-heading text-2xl md:text-3xl text-warm-fg">{s.v}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="p-6">
+        <svg viewBox={`0 0 ${w} ${h}`} className="w-full h-auto" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="fadeOrange" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.25" />
+              <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+          {[0.25, 0.5, 0.75].map((r) => (
+            <line key={r} x1="0" x2={w} y1={h * r} y2={h * r} stroke="hsl(var(--warm-fg) / 0.08)" strokeDasharray="2 4" />
+          ))}
+          <path d={area} fill="url(#fadeOrange)" />
+          <path d={path} fill="none" stroke="hsl(var(--primary))" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+          {points.map((p, i) => (
+            <circle key={i} cx={i * step} cy={h - (p / max) * h} r={i === points.length - 1 ? 5 : 2.5} fill="hsl(var(--primary))" />
+          ))}
+        </svg>
+        <div className="mt-3 flex justify-between text-[10px] font-body text-warm-fg/40 tracking-widest">
+          {["ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC"].map((m) => (
+            <span key={m}>{m}</span>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 };
 
