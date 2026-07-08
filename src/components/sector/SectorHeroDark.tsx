@@ -38,6 +38,7 @@ const SectorHeroDark = ({
     "Sin permanencia",
     "Trabajo local especializado",
   ],
+  curveClass = "bg-background",
 }: SectorHeroDarkProps) => {
   return (
     <section className="relative overflow-hidden bg-dark-bg text-dark-fg">
