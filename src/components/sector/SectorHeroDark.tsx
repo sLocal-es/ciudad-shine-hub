@@ -120,7 +120,7 @@ const SectorHeroDark = ({
       {/* Curved transition to next (light) section */}
       <div
         aria-hidden
-        className="absolute bottom-0 left-0 right-0 h-16 md:h-24 bg-background"
+        className={`absolute bottom-0 left-0 right-0 h-16 md:h-24 ${curveClass}`}
         style={{
           clipPath: "ellipse(120% 100% at 50% 100%)",
         }}
