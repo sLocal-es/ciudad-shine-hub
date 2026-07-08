@@ -13,6 +13,10 @@ interface SectorHeroDarkProps {
   phoneResults: GbpResult[];
   primaryCta?: { label: string; to: string };
   secondaryCta?: { label: string; to: string };
+  /** Optional override of the small trust chips shown under the CTAs. */
+  trustItems?: string[];
+  /** Tailwind bg-* class used for the curved bottom transition (should match the next section's background). */
+  curveClass?: string;
 }
 
 /**
@@ -29,6 +33,12 @@ const SectorHeroDark = ({
   phoneResults,
   primaryCta = { label: "Empezar →", to: "/contacto" },
   secondaryCta = { label: "Ver cómo funciona", to: "/como-funciona" },
+  trustItems = [
+    "Ficha de Google gestionada cada mes",
+    "Sin permanencia",
+    "Trabajo local especializado",
+  ],
+  curveClass = "bg-background",
 }: SectorHeroDarkProps) => {
   return (
     <section className="relative overflow-hidden bg-dark-bg text-dark-fg">
@@ -92,18 +102,12 @@ const SectorHeroDark = ({
 
             {/* Trust row */}
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs font-body text-dark-fg/55">
-              <span className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                Ficha de Google gestionada cada mes
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                Sin permanencia
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                Trabajo local especializado
-              </span>
+              {trustItems.map((item) => (
+                <span key={item} className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
 
@@ -116,7 +120,7 @@ const SectorHeroDark = ({
       {/* Curved transition to next (light) section */}
       <div
         aria-hidden
-        className="absolute bottom-0 left-0 right-0 h-16 md:h-24 bg-background"
+        className={`absolute bottom-0 left-0 right-0 h-16 md:h-24 ${curveClass}`}
         style={{
           clipPath: "ellipse(120% 100% at 50% 100%)",
         }}
