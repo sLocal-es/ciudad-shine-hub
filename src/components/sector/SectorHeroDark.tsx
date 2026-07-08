@@ -31,6 +31,11 @@ const SectorHeroDark = ({
   phoneResults,
   primaryCta = { label: "Empezar →", to: "/contacto" },
   secondaryCta = { label: "Ver cómo funciona", to: "/como-funciona" },
+  trustItems = [
+    "Ficha de Google gestionada cada mes",
+    "Sin permanencia",
+    "Trabajo local especializado",
+  ],
 }: SectorHeroDarkProps) => {
   return (
     <section className="relative overflow-hidden bg-dark-bg text-dark-fg">
