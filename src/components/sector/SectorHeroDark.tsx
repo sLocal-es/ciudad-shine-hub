@@ -15,6 +15,8 @@ interface SectorHeroDarkProps {
   secondaryCta?: { label: string; to: string };
   /** Optional override of the small trust chips shown under the CTAs. */
   trustItems?: string[];
+  /** Tailwind bg-* class used for the curved bottom transition (should match the next section's background). */
+  curveClass?: string;
 }
 
 /**
