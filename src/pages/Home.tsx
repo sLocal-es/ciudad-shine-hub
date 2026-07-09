@@ -204,7 +204,7 @@ const Home = () => {
         <ResultadosSection />
       </section>
 
-      </section>
+
 
       {/* LEAD MAGNET */}
       <section className="bg-warm-bg py-16 md:py-20">
