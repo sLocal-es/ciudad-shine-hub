@@ -90,7 +90,7 @@ const FichaGoogleMiNegocio = () => {
     <>
       <SEOHead
         title="Ficha de Google Mi Negocio: Optimización Google Business Profile | slocal.es"
-        description="Optimizamos tu ficha de Google Mi Negocio (Google Business Profile) para que aparezcas cuando tus clientes te buscan. Gestión continua desde 147€/mes + IVA."
+        description="Optimizamos tu ficha de Google Mi Negocio (Google Business Profile) para que aparezcas cuando tus clientes te buscan. Gestión continua + IVA."
         canonical={PATH}
         jsonLd={[breadcrumbSchema, faqSchema, serviceSchema]}
       />
@@ -200,7 +200,7 @@ const FichaGoogleMiNegocio = () => {
             Un plan, precio claro
           </h2>
           <div className="max-w-md mx-auto bg-card border border-border rounded-xl p-8 hover:border-primary transition-colors">
-            <p className="font-heading text-4xl text-primary">147€</p>
+            <p className="font-heading text-4xl text-primary">—</p>
             <p className="text-sm text-muted-foreground mt-1">/mes + IVA</p>
             <p className="text-sm text-foreground/80 mt-5 leading-relaxed">
               Optimización y gestión de Google Business Profile + web + contenido mensual + seguimiento directo.

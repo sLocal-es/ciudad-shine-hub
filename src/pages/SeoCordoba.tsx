@@ -121,7 +121,7 @@ const SeoCordoba = () => {
       longitude: -4.7796,
     },
     sameAs: "https://slocal.es/seo-local-cordoba",
-    priceRange: "147€/mes + IVA",
+    priceRange: "consulta condiciones",
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -152,7 +152,7 @@ const SeoCordoba = () => {
     <>
       <SEOHead
         title="SEO Local en Córdoba para Negocios | Aparecer en Google Maps | slocal.es"
-        description="Haz que tu negocio en Córdoba aparezca cuando tus clientes te buscan en Google. Más llamadas, más clientes locales. Desde 147€/mes + IVA."
+        description="Haz que tu negocio en Córdoba aparezca cuando tus clientes te buscan en Google. Más llamadas, más clientes locales."
         canonical="/seo-local-cordoba"
         jsonLd={[serviceSchema, breadcrumbSchema, localBusinessSchema, localBusinessDetailedSchema, faqSchema]}
       />
@@ -326,7 +326,7 @@ const SeoCordoba = () => {
                 Plan slocal.es
               </div>
               <div className="font-heading text-4xl mb-1">
-                147€<span className="text-base text-muted-foreground">/mes</span>
+                —<span className="text-base text-muted-foreground">/mes</span>
               </div>
               <div className="text-xs text-muted-foreground">+ IVA</div>
             </div>

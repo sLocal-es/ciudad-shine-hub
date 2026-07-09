@@ -697,7 +697,7 @@ const ComoFunciona = () => (
           Un solo plan
         </div>
         <h2 className="font-heading text-3xl md:text-5xl text-dark-fg mb-5 leading-tight">
-          147€/mes + IVA. Sin permanencia.
+          consulta condiciones. Sin permanencia.
         </h2>
         <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-8">
           Sin contrato anual. Sin letra pequeña. Si en 3 meses no ves resultados, te lo decimos nosotros antes que tú.

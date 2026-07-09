@@ -21,8 +21,9 @@ const Home = () => {
     url: "https://slocal.es",
     email: "info@slocal.es",
     areaServed: "España",
-    description: "Sistema de SEO local para negocios españoles. Desde 147€/mes.",
+    description: "Agencia SEO Local para negocios españoles.",
   };
+
 
   const sectores = [
     { to: "/seo-para-fontaneros", label: "SEO para fontaneros" },
@@ -61,22 +62,27 @@ const Home = () => {
   return (
     <>
       <SEOHead
-        title="SEO Local para Negocios | slocal.es"
-        description="Posiciona tu negocio en Google Maps y búsquedas locales. Trato directo, sin intermediarios. Desde 147€/mes + IVA."
+        title="Agencia SEO Local | slocal.es"
+        description="Agencia SEO Local especializada en Google Business Profile, SEO Local y posicionamiento para empresas que quieren conseguir más llamadas y clientes desde Google."
         canonical="/"
         jsonLd={jsonLd}
       />
+
 
       {/* HERO */}
       <section className="bg-dark-bg text-dark-fg py-16 md:py-24">
         <div className="container grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div>
             <h1 className="font-heading text-3xl md:text-5xl leading-tight mb-5">
-              SEO local para que tus clientes te encuentren en Google y Google Maps
+              Agencia SEO Local
             </h1>
+            <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-2 max-w-lg">
+              Especializados en Google Business Profile, Google Maps y posicionamiento local.
+            </p>
             <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-6 max-w-lg">
               Gestionamos tu presencia en Google Maps y búsquedas locales para que cada mes más clientes de tu ciudad te encuentren antes que a tu competencia.
             </p>
+
             <div className="flex flex-wrap items-center gap-x-6 gap-y-3 mb-8">
               {casosLogos.map((l) => (
                 <img
@@ -188,86 +194,17 @@ const Home = () => {
         </div>
       </section>
 
-      {/* PRICE */}
-      <section className="py-16 md:py-20">
-        <div className="container max-w-xl text-center">
-          <h2 className="font-heading text-2xl md:text-3xl mb-8">
-            Un plan, precio claro, sin intermediarios
-          </h2>
-          <div className="bg-card border border-border rounded-xl p-8">
-            <div className="font-heading text-4xl md:text-5xl text-primary mb-1">147€<span className="text-lg text-muted-foreground">/mes</span></div>
-            <p className="text-xs text-muted-foreground mb-6">+ IVA</p>
-            <ul className="text-left space-y-3 mb-8 max-w-md mx-auto">
-              {[
-                "Tu negocio aparece cuando tus clientes te buscan en Google",
-                "Más llamadas y contactos directos — sin pagar por cada uno",
-                "Contenido mensual que posiciona para nuevas búsquedas cada mes",
-                "Tu ficha de Google activa — Google te muestra antes que a la competencia",
-                "Cada mes sabes exactamente qué ha generado Google para tu negocio",
-                "Hablas siempre con la misma persona — sin intermediarios",
-              ].map((f) => (
-                <li key={f} className="flex items-start gap-2 text-sm">
-                  <span className="text-primary font-heading shrink-0">✓</span>
-                  <span>{f}</span>
-                </li>
-              ))}
-            </ul>
-            <a
-              href="https://wa.me/34684780063"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-primary text-primary-foreground font-heading text-sm rounded-lg px-8 py-3 hover:bg-primary/90 transition-colors"
-            >
-              Hablar por WhatsApp →
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* RESULTADOS */}
       <section>
         <div className="container">
           <h2 className="font-heading text-2xl md:text-3xl text-center mb-2">
-            Resultados reales de negocios locales
+            ¿Qué resultados consiguen los negocios locales con Slocal?
           </h2>
         </div>
         <ResultadosSection />
       </section>
 
-      {/* COMPARISON TABLE */}
-      <section className="bg-dark-bg text-dark-fg py-16 md:py-20">
-        <div className="container max-w-3xl">
-          <h2 className="font-heading text-2xl md:text-3xl text-center mb-10">
-            No es solo el precio
-          </h2>
-          <div className="overflow-x-auto rounded-xl border border-dark-fg/10">
-            <table className="w-full text-sm">
-              <thead>
-                <tr>
-                  <th className="text-left p-4 font-heading text-dark-fg/50 text-xs uppercase tracking-wider"></th>
-                  <th className="text-center p-4 font-heading text-dark-fg/50 text-xs uppercase tracking-wider">Agencia tradicional</th>
-                  <th className="text-center p-4 font-heading text-xs uppercase tracking-wider text-primary border-x border-primary/20 bg-primary/5">slocal.es</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  { feature: "Hablas con…", agencia: "Account manager (junior)", slocal: "Conmigo directo" },
-                  { feature: "Precio mensual", agencia: "€500–850/mes", slocal: "€150–250/mes" },
-                  { feature: "Reportes", agencia: "Informes PDF", slocal: "Te explico qué ha pasado y qué hacemos" },
-                  { feature: "Respuesta", agencia: "48–72 horas", slocal: "WhatsApp · mismo día" },
-                ].map((row) => (
-                  <tr key={row.feature} className="border-t border-dark-fg/10">
-                    <td className="p-4 font-heading text-dark-fg/80">{row.feature}</td>
-                    <td className="p-4 text-center text-dark-fg/40">{row.agencia}</td>
-                    <td className="p-4 text-center font-heading text-primary border-x border-primary/20 bg-primary/5">{row.slocal}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <p className="text-center text-dark-fg/40 text-sm mt-6">Mismos resultados. Sin intermediarios.</p>
-        </div>
-      </section>
+
 
       {/* LEAD MAGNET */}
       <section className="bg-warm-bg py-16 md:py-20">

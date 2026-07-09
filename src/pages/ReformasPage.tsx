@@ -134,7 +134,7 @@ const ReformasPage = () => {
     <>
       <SEOHead
         title="SEO para Empresas de Reformas | Más Presupuestos desde Google | slocal.es"
-        description="Haz que tu empresa de reformas aparezca cuando alguien busca reforma en tu ciudad. Más presupuestos desde Google. Desde 147€/mes + IVA."
+        description="Haz que tu empresa de reformas aparezca cuando alguien busca reforma en tu ciudad. Más presupuestos desde Google."
         canonical="/seo-para-reformas"
         jsonLd={[breadcrumbSchema, faqSchema, serviceSchema, localBusinessSchema]}
       />
@@ -154,7 +154,7 @@ const ReformasPage = () => {
               SEO para Empresas de Reformas: Más Presupuestos desde Google
             </h1>
             <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-8 font-body font-light">
-              Cuando alguien decide reformar su cocina o su baño, lo primero que hace es buscar en Google. Las empresas que aparecen en el top 3 se llevan la mayoría de los presupuestos. Las que no aparecen, no existen para ese cliente. Lo gestionamos para que seas tú quien aparezca — desde 147€/mes.
+              Cuando alguien decide reformar su cocina o su baño, lo primero que hace es buscar en Google. Las empresas que aparecen en el top 3 se llevan la mayoría de los presupuestos. Las que no aparecen, no existen para ese cliente. Lo gestionamos para que seas tú quien aparezca.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link to="/contacto" className="bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors">
