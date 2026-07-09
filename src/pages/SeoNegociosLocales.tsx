@@ -104,7 +104,7 @@ const SeoNegociosLocales = () => {
     <>
       <SEOHead
         title="SEO para Negocios Locales | Posicionamiento Local en Google | slocal.es"
-        description="Aparece en Google Maps y búsquedas locales cuando tus clientes te buscan. Ficha optimizada, web y contenido mensual. Desde 147€/mes + IVA."
+        description="Aparece en Google Maps y búsquedas locales cuando tus clientes te buscan. Ficha optimizada, web y contenido mensual."
         canonical={PATH}
         jsonLd={[breadcrumbSchema, faqSchema, serviceSchema]}
       />
@@ -204,7 +204,7 @@ const SeoNegociosLocales = () => {
             Un plan, precio claro
           </h2>
           <div className="max-w-md mx-auto bg-card border border-border rounded-xl p-8 hover:border-primary transition-colors">
-            <p className="font-heading text-4xl text-primary">147€</p>
+            <p className="font-heading text-4xl text-primary">—</p>
             <p className="text-sm text-muted-foreground mt-1">/mes + IVA</p>
             <p className="text-sm text-foreground/80 mt-5 leading-relaxed">
               Web optimizada + ficha de Google Business Profile + contenido mensual + seguimiento directo.

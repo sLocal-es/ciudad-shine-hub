@@ -134,7 +134,7 @@ const PsicologosPage = () => {
     <>
       <SEOHead
         title="SEO para Psicólogos | Más Pacientes desde Google | slocal.es"
-        description="Haz que tu consulta aparezca cuando alguien busca psicólogo en tu ciudad. Agenda llena sin depender de plataformas ni del boca a boca. Desde 147€/mes + IVA."
+        description="Haz que tu consulta aparezca cuando alguien busca psicólogo en tu ciudad. Agenda llena sin depender de plataformas ni del boca a boca."
         canonical="/seo-para-psicologos"
         jsonLd={[breadcrumbSchema, faqSchema, serviceSchema, localBusinessSchema]}
       />
@@ -154,7 +154,7 @@ const PsicologosPage = () => {
               SEO para Psicólogos: Agenda Llena desde Google
             </h1>
             <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-8 font-body font-light">
-              Cada semana hay personas en tu ciudad buscando en Google "psicólogo para ansiedad", "terapia de pareja" o "psicólogo infantil". Están eligiendo a quién llamar ahora mismo. Si no apareces entre los tres primeros, esa persona llama a otro psicólogo. Lo gestionamos para que seas tú quien aparece — desde 147€/mes.
+              Cada semana hay personas en tu ciudad buscando en Google "psicólogo para ansiedad", "terapia de pareja" o "psicólogo infantil". Están eligiendo a quién llamar ahora mismo. Si no apareces entre los tres primeros, esa persona llama a otro psicólogo. Lo gestionamos para que seas tú quien aparece.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link to="/contacto" className="bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors">

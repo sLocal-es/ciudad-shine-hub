@@ -134,7 +134,7 @@ const AbogadosPage = () => {
     <>
       <SEOHead
         title="SEO para Abogados | Más Consultas y Casos desde Google | slocal.es"
-        description="Cuando alguien necesita un abogado, busca en Google. Haz que tu despacho aparezca primero — más consultas, más casos firmados. Desde 147€/mes + IVA."
+        description="Cuando alguien necesita un abogado, busca en Google. Haz que tu despacho aparezca primero — más consultas, más casos firmados."
         canonical="/seo-para-abogados"
         jsonLd={[breadcrumbSchema, faqSchema, serviceSchema, localBusinessSchema]}
       />

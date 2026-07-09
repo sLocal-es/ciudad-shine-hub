@@ -78,7 +78,7 @@ const faqs = [
   },
   {
     q: "¿Cuánto cuesta el SEO local para autónomos?",
-    a: "El servicio de slocal tiene un precio fijo de 147 €/mes + IVA. Sin permanencia mínima, sin letra pequeña. Incluye ficha de Google, web con SEO local y posicionamiento activo cada mes.",
+    a: "El servicio de slocal tiene un precio fijo de consulta condiciones. Sin permanencia mínima, sin letra pequeña. Incluye ficha de Google, web con SEO local y posicionamiento activo cada mes.",
   },
   {
     q: "¿Qué diferencia hay entre SEO local y Google Ads?",
@@ -177,7 +177,7 @@ const RoiCalculator = () => {
         </div>
         <div className="flex justify-between gap-4 pt-1">
           <dt className="text-muted-foreground">Tu inversión</dt>
-          <dd className="font-heading">147 €/mes + IVA</dd>
+          <dd className="font-heading">consulta condiciones</dd>
         </div>
       </dl>
 
@@ -201,7 +201,7 @@ const AutonomosPage = () => {
     name: "SEO para autónomos",
     provider: { "@type": "LocalBusiness", name: "slocal.es", url: "https://slocal.es" },
     description:
-      "SEO local para autónomos: ficha de Google, web y posicionamiento local desde 147 €/mes + IVA sin permanencia.",
+      "SEO local para autónomos: ficha de Google, web y posicionamiento local desde consulta condiciones sin permanencia.",
     areaServed: { "@type": "Country", name: "España" },
     offers: {
       "@type": "Offer",
@@ -254,18 +254,18 @@ const AutonomosPage = () => {
   ];
 
   const comparisonRows = [
-    ["Gestión ficha Google: 80–150 €/mes", "Todo incluido: 147 €/mes + IVA"],
+    ["Gestión ficha Google: 80–150 €/mes", "Todo incluido: consulta condiciones"],
     ["Mantenimiento web: 50–100 €/mes", "Una factura, una persona"],
     ["SEO local: 300–600 €/mes", "Sin permanencia mínima"],
     ["3 proveedores, nadie coordinado", "Siempre el mismo consultor"],
-    ["Total: 430–850 €/mes", "147 €/mes + IVA"],
+    ["Total: 430–850 €/mes", "consulta condiciones"],
   ];
 
   return (
     <>
       <SEOHead
         title="SEO para autónomos: consigue clientes desde Google | slocal.es"
-        description="Ficha de Google, web y SEO local gestionados por un consultor. 147 €/mes + IVA, sin permanencia. Más clientes para tu negocio autónomo."
+        description="Ficha de Google, web y SEO local gestionados por un consultor. consulta condiciones, sin permanencia. Más clientes para tu negocio autónomo."
         canonical="/seo-para-autonomos"
         jsonLd={[breadcrumbSchema, serviceSchema, faqSchema]}
       />
@@ -333,7 +333,7 @@ const AutonomosPage = () => {
           </div>
 
           <p className="mt-6 font-heading text-base md:text-lg text-primary">
-            147 €/mes + IVA · Sin permanencia · Sin letra pequeña
+            Sin permanencia · Sin letra pequeña
           </p>
         </div>
       </section>

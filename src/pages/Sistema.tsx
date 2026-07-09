@@ -15,7 +15,7 @@ const Sistema = () => {
     <>
       <SEOHead
         title="Que Google te mande clientes — slocal.es"
-        description="Web + ficha de Google + contenido al mes. Desde 147€/mes. Sin agencias, sin permanencia. Escríbeme por WhatsApp."
+        description="Web + ficha de Google + contenido al mes. Sin agencias, sin permanencia. Escríbeme por WhatsApp."
         canonical="/sistema"
       />
 
@@ -43,7 +43,7 @@ const Sistema = () => {
             <em className="text-primary not-italic">Cada mes.</em>
           </h1>
           <p className="text-lg text-dark-fg/75 leading-relaxed mb-8 max-w-xl">
-            Te monto la web, la ficha de Google y publico contenido cada mes para que aparezcas cuando alguien busca lo que haces en tu ciudad. <strong className="text-dark-fg">Desde 147€/mes.</strong>
+            Te monto la web, la ficha de Google y publico contenido cada mes para que aparezcas cuando alguien busca lo que haces en tu ciudad. <strong className="text-dark-fg">Desde consulta condiciones.</strong>
           </p>
           <a
             href={WA_URL}
@@ -151,7 +151,7 @@ const Sistema = () => {
             Precio
           </div>
           <h2 className="font-heading text-4xl md:text-5xl leading-tight mb-4">
-            Desde <em className="text-primary not-italic">147€/mes</em>
+            Desde <em className="text-primary not-italic">consulta condiciones</em>
           </h2>
           <p className="text-dark-fg/70 text-lg mb-8 max-w-md mx-auto">
             Web + ficha de Google + contenido cada mes + seguimiento directo conmigo. Todo incluido.

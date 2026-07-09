@@ -5,7 +5,7 @@ import FAQSection from "@/components/FAQSection";
 const Planes = () => {
   const faqs = [
     { q: "¿Hay permanencia?", a: "No. Puedes cancelar cuando quieras. Tu web y tu ficha siguen siendo tuyas." },
-    { q: "¿De verdad no hay setup ni alta?", a: "Correcto. Pagas 147€ + IVA al mes y ya está. La web multipágina y la configuración de tu ficha de Google están incluidas dentro del plan, sin pago inicial." },
+    { q: "¿De verdad no hay setup ni alta?", a: "Correcto. Pagas — + IVA al mes y ya está. La web multipágina y la configuración de tu ficha de Google están incluidas dentro del plan, sin pago inicial." },
     { q: "¿Hay algún coste adicional no incluido en el plan?", a: "No. El precio mensual incluye todo: web, contenido, optimización de ficha de Google, artículos de blog y seguimiento mensual. El único coste opcional sería el dominio y hosting si no los tienes (desde 10€/mes)." },
     { q: "¿Cuándo empiezo a ver resultados?", a: "Los primeros movimientos en Google se ven entre el mes 2 y el 4. A partir del mes 6, las posiciones se consolidan y el tráfico orgánico crece de forma sostenida." },
     { q: "¿Funciona para cualquier ciudad?", a: "Sí, trabajamos negocios locales en toda España. En ciudades muy competidas los resultados tardan algo más, pero la metodología es la misma." },
@@ -15,7 +15,7 @@ const Planes = () => {
     <>
       <SEOHead
         title="Planes y Precios | SEO Local para Negocios | slocal.es"
-        description="Un único plan claro para posicionar tu negocio en Google: 147€/mes + IVA. Sin setup, sin permanencia, sin letra pequeña."
+        description="Un único plan claro para posicionar tu negocio en Google: consulta condiciones. Sin setup, sin permanencia, sin letra pequeña."
         canonical="/planes"
         jsonLd={{
           "@context": "https://schema.org",
@@ -34,7 +34,7 @@ const Planes = () => {
             Un plan, todo incluido
           </h1>
           <p className="text-dark-fg/70 text-base md:text-lg">
-            147€/mes + IVA. Sin setup. Sin permanencia. Sin letra pequeña.
+            consulta condiciones. Sin setup. Sin permanencia. Sin letra pequeña.
           </p>
         </div>
       </section>
@@ -61,7 +61,7 @@ const Planes = () => {
                   ["Informe mensual de resultados", "Incluido"],
                   ["Setup / alta inicial", "0€"],
                   ["Permanencia", "Ninguna"],
-                  ["Precio", "147€ + IVA / mes"],
+                  ["Precio", "— + IVA / mes"],
                 ].map(([feature, value], i) => (
                   <tr key={i} className="border-b border-border/50">
                     <td className="py-3 pr-4 text-foreground">{feature}</td>

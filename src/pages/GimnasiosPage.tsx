@@ -134,7 +134,7 @@ const GimnasiosPage = () => {
     <>
       <SEOHead
         title="SEO para Gimnasios | Más Socios desde Google | slocal.es"
-        description="Haz que tu gimnasio aparezca cuando alguien busca gimnasio cerca de mí. Más socios sin depender de las grandes cadenas. Desde 147€/mes + IVA."
+        description="Haz que tu gimnasio aparezca cuando alguien busca gimnasio cerca de mí. Más socios sin depender de las grandes cadenas."
         canonical="/seo-para-gimnasios"
         jsonLd={[breadcrumbSchema, faqSchema, serviceSchema, localBusinessSchema]}
       />
@@ -154,7 +154,7 @@ const GimnasiosPage = () => {
               SEO para Gimnasios: Más Socios desde Google
             </h1>
             <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-8 font-body font-light">
-              El 75% de las inscripciones a gimnasios empiezan con una búsqueda en Google. Cuando alguien busca "gimnasio cerca de mí" o "gimnasio en tu barrio", Google muestra tres centros en el mapa. Los que están ahí consiguen el socio. Los que no están pierden esa inscripción sin saberlo. Lo gestionamos para que tu gimnasio sea uno de los tres — desde 147€/mes.
+              El 75% de las inscripciones a gimnasios empiezan con una búsqueda en Google. Cuando alguien busca "gimnasio cerca de mí" o "gimnasio en tu barrio", Google muestra tres centros en el mapa. Los que están ahí consiguen el socio. Los que no están pierden esa inscripción sin saberlo. Lo gestionamos para que tu gimnasio sea uno de los tres.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link to="/contacto" className="bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors">

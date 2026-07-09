@@ -134,7 +134,7 @@ const SeoParaInmobiliarias = () => {
     <>
       <SEOHead
         title="SEO para Inmobiliarias | Más Contactos desde Google | slocal.es"
-        description="Cuando alguien busca piso en tu zona, busca en Google. Haz que tu inmobiliaria aparezca primero — más contactos, sin depender de portales. Desde 147€/mes + IVA."
+        description="Cuando alguien busca piso en tu zona, busca en Google. Haz que tu inmobiliaria aparezca primero — más contactos, sin depender de portales."
         canonical="/seo-para-inmobiliarias"
         jsonLd={[breadcrumbSchema, faqSchema, serviceSchema, localBusinessSchema]}
       />

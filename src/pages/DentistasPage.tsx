@@ -134,7 +134,7 @@ const DentistasPage = () => {
     <>
       <SEOHead
         title="SEO para Dentistas | Llena tu Agenda desde Google | slocal.es"
-        description="Haz que tu clínica dental aparezca cuando alguien busca dentista en tu ciudad. Más pacientes, más citas. Desde 147€/mes + IVA."
+        description="Haz que tu clínica dental aparezca cuando alguien busca dentista en tu ciudad. Más pacientes, más citas."
         canonical="/seo-para-dentistas"
         jsonLd={[breadcrumbSchema, faqSchema, serviceSchema, localBusinessSchema]}
       />

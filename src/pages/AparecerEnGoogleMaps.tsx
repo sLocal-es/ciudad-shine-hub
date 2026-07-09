@@ -90,7 +90,7 @@ const AparecerEnGoogleMaps = () => {
     <>
       <SEOHead
         title="Cómo Aparecer en Google Maps con tu Negocio Local | slocal.es"
-        description="¿Tu negocio no aparece en Google Maps? Optimizamos tu ficha de Google Business Profile para que aparezcas cuando tus clientes te buscan. Desde 147€/mes + IVA."
+        description="¿Tu negocio no aparece en Google Maps? Optimizamos tu ficha de Google Business Profile para que aparezcas cuando tus clientes te buscan."
         canonical={PATH}
         jsonLd={[breadcrumbSchema, faqSchema, serviceSchema]}
       />
@@ -187,7 +187,7 @@ const AparecerEnGoogleMaps = () => {
             Un plan, precio claro
           </h2>
           <div className="max-w-md mx-auto bg-card border border-border rounded-xl p-8 hover:border-primary transition-colors">
-            <p className="font-heading text-4xl text-primary">147€</p>
+            <p className="font-heading text-4xl text-primary">—</p>
             <p className="text-sm text-muted-foreground mt-1">/mes + IVA</p>
             <p className="text-sm text-foreground/80 mt-5 leading-relaxed">
               Optimización y gestión de ficha Google Business Profile + web + contenido mensual + seguimiento directo.
