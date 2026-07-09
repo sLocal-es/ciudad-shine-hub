@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import CTASection from "@/components/CTASection";
 import SectorHeroDark from "@/components/sector/SectorHeroDark";
+import LogoMarquee from "@/components/LogoMarquee";
+
 
 const FontanerosPage = () => {
   const faqs = [
@@ -151,24 +153,20 @@ const FontanerosPage = () => {
   return (
     <>
       <SEOHead
-        title="SEO para Fontaneros | Consigue Más Llamadas desde Google | slocal.es"
-        description="Haz que tu negocio de fontanería aparezca cuando alguien busca fontanero urgente en tu ciudad. Más llamadas, más trabajos."
+        title="SEO para Fontaneros | Agencia SEO Local | slocal.es"
+        description="Agencia SEO Local para fontaneros: Google Business Profile, Google Maps y posicionamiento local para conseguir más llamadas de urgencias y averías desde Google."
         canonical="/seo-para-fontaneros"
         jsonLd={[breadcrumbSchema, faqSchema, serviceSchema, localBusinessSchema]}
       />
 
-      {/* HERO — dark, phone mockup. CTA updated + 'Sin permanencia' removido */}
+      {/* HERO — H1 orientado a keyword. Badge Google Partner en esquina. */}
       <SectorHeroDark
         breadcrumbLabel="SEO para Fontaneros"
-        eyebrow="SEO para Fontaneros"
-        h1={
-          <h1>
-            Que te llamen cuando <span className="text-primary">haya una avería</span>.
-          </h1>
-        }
+        eyebrow="Agencia SEO Local · Fontaneros"
+        h1={<h1>SEO para <span className="text-primary">Fontaneros</span></h1>}
         subtitle={
           <>
-            Cuando una tubería revienta o hay una fuga, el cliente busca en Google y llama al primero que aparece. Si no eres tú, ese trabajo se lo lleva otro. Lo gestionamos para que seas el primero.
+            Agencia SEO Local especializada en fontaneros. Optimizamos tu ficha de Google Business Profile y tu web para que aparezcas primero cuando alguien busca fontanero urgente en tu ciudad.
           </>
         }
         phoneQuery="fontanero cerca de mí"
@@ -180,45 +178,37 @@ const FontanerosPage = () => {
         primaryCta={{ label: "Solicitar auditoría gratuita", to: "/contacto" }}
         secondaryCta={{ label: "Ver cómo funciona", to: "/como-funciona" }}
         trustItems={[
+          "Google Partner",
           "Ficha de Google gestionada cada mes",
-          "Trabajo local especializado",
           "Auditoría inicial sin coste",
         ]}
         curveClass="bg-white"
       />
 
-      {/* TRUST BAR — herramientas reales usadas por Slocal */}
-      <section className="bg-white py-14 md:py-20 border-t border-warm-fg/10">
+      {/* MARQUEE — barra infinita de logos */}
+      <section className="bg-white border-t border-warm-fg/10">
         <div className="container">
-          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8 text-center">
+          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary py-6 text-center">
             — Herramientas con las que trabajamos
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6 md:gap-x-14">
-            {tools.map((t) => (
-              <img
-                key={t.name}
-                src={t.src}
-                alt={t.name}
-                loading="lazy"
-                className="h-6 md:h-7 w-auto opacity-70 hover:opacity-100 transition-opacity"
-              />
-            ))}
-          </div>
         </div>
+        <LogoMarquee />
       </section>
+
 
       {/* MANIFIESTO */}
       <section className={sectionCls}>
         <div className="container">
           <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— El punto de partida</p>
-          <p className="font-heading font-semibold text-warm-fg leading-[1.02] tracking-tight text-[9vw] md:text-[5.5vw] lg:text-[5rem] max-w-[18ch]">
-            Google Maps solo muestra tres negocios. Esos tres se llevan el <span className="text-primary">40 % de los clics</span>.
-          </p>
-          <p className="mt-10 md:mt-14 max-w-2xl text-lg md:text-xl font-body font-light text-warm-fg/70 leading-relaxed">
-            El cuarto y el quinto apenas existen para ese cliente. La diferencia entre estar en el top 3 y estar fuera puede ser de 15 a 25 llamadas al mes.
+          <h2 className="font-heading font-semibold text-warm-fg leading-[1.05] tracking-tight text-4xl md:text-5xl lg:text-6xl max-w-[22ch]">
+            ¿Cómo conseguir más clientes de fontanería desde <span className="text-primary">Google</span>?
+          </h2>
+          <p className="mt-8 max-w-2xl text-base md:text-lg font-body text-warm-fg leading-relaxed">
+            En Slocal conseguimos que más clientes te llamen optimizando tu ficha de Google Business Profile y posicionando tu web para búsquedas locales de alta intención. Aparecer en el top 3 de Google Maps multiplica las llamadas: esos tres negocios se llevan el 40 % de los clics.
           </p>
         </div>
       </section>
+
 
       {/* ¿CÓMO BUSCAN? — visual GBP + búsqueda */}
       <section className={sectionCls}>
@@ -229,10 +219,10 @@ const FontanerosPage = () => {
           <div className="md:col-span-6">
             <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Comportamiento de búsqueda</p>
             <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
-              ¿Cómo buscan realmente los clientes a un fontanero en Google?
+              ¿Cómo aparecer primero en Google Maps como fontanero?
             </h2>
-            <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed mb-8 max-w-xl">
-              Los clientes buscan en Google frases muy concretas como "fontanero urgente" o "reparación de fugas cerca de mí" y llaman a uno de los tres primeros resultados del mapa. En Slocal optimizamos tu ficha y tu web para aparecer justo en esas búsquedas de alta intención.
+            <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed mb-6 max-w-xl">
+              En Slocal apareces primero en Google Maps optimizando tu ficha de Google Business Profile, categorías, servicios, reseñas y contenido local. Google prioriza fichas activas, con reseñas recientes y coherencia entre ficha, web y citaciones locales de tu ciudad.
             </p>
             <ul className="divide-y divide-warm-fg/15 border-y border-warm-fg/15">
               {searchQueries.map((q) => (
@@ -246,16 +236,18 @@ const FontanerosPage = () => {
         </div>
       </section>
 
+
       {/* ¿POR QUÉ NO APAREZCO? */}
       <section className={sectionCls}>
         <div className="container">
           <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Visibilidad</p>
           <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight max-w-[22ch] mb-8">
-            ¿Por qué mi negocio de fontanería no aparece en Google?
+            ¿Qué errores impiden que un fontanero aparezca en Google?
           </h2>
           <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed max-w-3xl mb-16">
-            No apareces porque tu ficha de Google Business está desactualizada o tu web no comunica los servicios reales que ofreces. En Slocal detectamos por qué Google no te muestra, corregimos ficha y web, y activamos tu presencia local para que Google entienda cuándo mostrarte.
+            En Slocal detectamos dos errores que impiden aparecer: fichas de Google desactualizadas y webs sin páginas específicas por servicio. Los corregimos activando tu ficha, publicando contenido mensual y creando páginas por servicio y por zona para que Google entienda cuándo mostrarte.
           </p>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
             <div>
               <h3 className="font-heading text-2xl md:text-3xl text-warm-fg leading-snug mb-6">
@@ -282,11 +274,12 @@ const FontanerosPage = () => {
         <div className="container">
           <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Proceso</p>
           <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight max-w-[22ch] mb-8">
-            ¿Cómo consigue Slocal que me llamen más clientes desde Google?
+            ¿Qué necesita una empresa de fontanería para posicionarse en Google?
           </h2>
           <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed max-w-3xl mb-20">
-            Slocal parte de una auditoría gratuita, detecta las oportunidades reales en tu zona, optimiza tu ficha de Google Business y tu web, y refuerza tu posicionamiento cada mes. En pocos meses empiezas a recibir llamadas directas desde Google Maps y desde búsquedas de tu ciudad.
+            Necesita una ficha de Google Business Profile optimizada, una web con páginas por servicio y ciudad, reseñas reales y contenido publicado cada mes. En Slocal aplicamos ese proceso en cuatro pasos: auditoría gratuita, plan de crecimiento, optimización de ficha y web, y seguimiento mensual.
           </p>
+
 
           {/* Roadmap horizontal */}
           <div className="relative">
@@ -322,11 +315,12 @@ const FontanerosPage = () => {
             <div className="md:col-span-5 order-1 md:order-2">
               <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Caso real</p>
               <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
-                ¿Funciona de verdad el SEO Local para fontaneros?
+                ¿Cómo ayuda Google Business Profile a un fontanero?
               </h2>
               <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed mb-6">
-                Sí, funciona. Con Slocal, MVA Fontanería en Madrid consiguió 60 interacciones desde Google en 2 meses y Fontaneros Económicos recibió 11 llamadas directas y 4 WhatsApp en mes y medio. Ambos partieron desde cero, sin web ni ficha optimizada.
+                Google Business Profile le da visibilidad al fontanero en Google Maps y en el Local Pack: llamadas directas, indicaciones y clics a la web. Con Slocal, MVA Fontanería consiguió 60 interacciones desde Google en 2 meses y Fontaneros Económicos 11 llamadas directas y 4 WhatsApp en mes y medio.
               </p>
+
             </div>
           </div>
 
