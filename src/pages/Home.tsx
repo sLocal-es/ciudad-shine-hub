@@ -21,8 +21,9 @@ const Home = () => {
     url: "https://slocal.es",
     email: "info@slocal.es",
     areaServed: "España",
-    description: "Sistema de SEO local para negocios españoles. Desde 147€/mes.",
+    description: "Agencia SEO Local para negocios españoles.",
   };
+
 
   const sectores = [
     { to: "/seo-para-fontaneros", label: "SEO para fontaneros" },
@@ -61,19 +62,27 @@ const Home = () => {
   return (
     <>
       <SEOHead
-        title="SEO Local para Negocios | slocal.es"
-        description="Posiciona tu negocio en Google Maps y búsquedas locales. Trato directo, sin intermediarios. Desde 147€/mes + IVA."
+        title="Agencia SEO Local | slocal.es"
+        description="Agencia SEO Local especializada en Google Business Profile, SEO Local y posicionamiento para empresas que quieren conseguir más llamadas y clientes desde Google."
         canonical="/"
         jsonLd={jsonLd}
       />
+
 
       {/* HERO */}
       <section className="bg-dark-bg text-dark-fg py-16 md:py-24">
         <div className="container grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           <div>
             <h1 className="font-heading text-3xl md:text-5xl leading-tight mb-5">
-              SEO local para que tus clientes te encuentren en Google y Google Maps
+              Agencia SEO Local
             </h1>
+            <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-2 max-w-lg">
+              Especializados en Google Business Profile, Google Maps y posicionamiento local.
+            </p>
+            <span className="hidden">
+
+            </h1></span>
+
             <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-6 max-w-lg">
               Gestionamos tu presencia en Google Maps y búsquedas locales para que cada mes más clientes de tu ciudad te encuentren antes que a tu competencia.
             </p>
