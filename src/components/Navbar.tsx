@@ -1,49 +1,11 @@
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-
-const navCities = [
-  { slug: "madrid", name: "SEO local en Madrid" },
-  { slug: "barcelona", name: "SEO local en Barcelona" },
-  { slug: "valencia", name: "SEO local en Valencia" },
-  { slug: "sevilla", name: "SEO local en Sevilla" },
-  { slug: "malaga", name: "SEO local en Málaga" },
-  { slug: "zaragoza", name: "SEO local en Zaragoza" },
-  { slug: "bilbao", name: "SEO local en Bilbao" },
-  { slug: "murcia", name: "SEO local en Murcia" },
-  { slug: "cordoba", name: "SEO local en Córdoba" },
-];
-
-const navSectors = [
-  { path: "/seo-para-fontaneros", label: "SEO para fontaneros" },
-  { path: "/seo-para-fisioterapeutas", label: "SEO para fisioterapeutas" },
-  { path: "/seo-para-reformas", label: "SEO para empresas de reformas" },
-  { path: "/seo-para-abogados", label: "SEO para abogados" },
-  { path: "/seo-para-inmobiliarias", label: "SEO para inmobiliarias" },
-  { path: "/seo-para-dentistas", label: "SEO para dentistas" },
-  { path: "/seo-para-psicologos", label: "SEO para psicólogos" },
-  { path: "/seo-para-gimnasios", label: "SEO para gimnasios" },
-  { path: "/seo-para-autonomos", label: "SEO para autónomos" },
-];
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [citiesOpen, setCitiesOpen] = useState(false);
-  const [sectorsOpen, setSectorsOpen] = useState(false);
   const location = useLocation();
 
-  const citiesRef = useRef<HTMLDivElement>(null);
-  const sectorsRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (citiesRef.current && !citiesRef.current.contains(e.target as Node)) setCitiesOpen(false);
-      if (sectorsRef.current && !sectorsRef.current.contains(e.target as Node)) setSectorsOpen(false);
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  const cityHref = (slug: string) => `/seo-local-${slug}`;
 
   return (
     <header className="sticky top-0 z-50 bg-card border-b border-border">

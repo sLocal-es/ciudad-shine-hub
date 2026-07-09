@@ -1,30 +1,5 @@
 import { Link } from "react-router-dom";
 
-const footerCities = [
-  { slug: "madrid", name: "SEO local en Madrid" },
-  { slug: "barcelona", name: "SEO local en Barcelona" },
-  { slug: "valencia", name: "SEO local en Valencia" },
-  { slug: "sevilla", name: "SEO local en Sevilla" },
-  { slug: "malaga", name: "SEO local en Málaga" },
-  { slug: "zaragoza", name: "SEO local en Zaragoza" },
-  { slug: "bilbao", name: "SEO local en Bilbao" },
-  { slug: "murcia", name: "SEO local en Murcia" },
-  { slug: "cordoba", name: "SEO local en Córdoba" },
-];
-
-const footerSectors = [
-  { path: "/seo-para-fontaneros", label: "SEO para fontaneros" },
-  { path: "/seo-para-fisioterapeutas", label: "SEO para fisioterapeutas" },
-  { path: "/seo-para-reformas", label: "SEO para empresas de reformas" },
-  { path: "/seo-para-abogados", label: "SEO para abogados" },
-  { path: "/seo-para-inmobiliarias", label: "SEO para inmobiliarias" },
-  { path: "/seo-para-dentistas", label: "SEO para dentistas" },
-  { path: "/seo-para-psicologos", label: "SEO para psicólogos" },
-  { path: "/seo-para-gimnasios", label: "SEO para gimnasios" },
-  { path: "/seo-para-autonomos", label: "SEO para autónomos" },
-];
-
-const cityHref = (slug: string) => `/seo-local-${slug}`;
 
 const Footer = () => (
   <footer className="bg-dark-bg text-dark-fg pt-16 pb-8">
