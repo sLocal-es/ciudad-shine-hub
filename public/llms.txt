@@ -1,61 +1,81 @@
-# slocal.es | Consigue clientes a través de Google — para negocios locales españoles
+# Slocal | Agencia de SEO Local | Posicionamiento local
 
-> slocal.es es un servicio gestionado por una sola persona — Javi, especialista en visibilidad y captación de clientes en Google para negocios locales españoles. No es una agencia. Trabaja con un número reducido de clientes de forma personal, combinando Google Business Profile y web multipágina SEO para que negocios locales consigan clientes nuevos de forma constante a través de Google. Sin humo, sin informes inútiles, sin letra pequeña.
+> Slocal es una agencia de SEO local española especializada en posicionamiento en Google para negocios locales. Slocal combina Google Business Profile y webs multipágina SEO para convertir visibilidad en clientes reales. Trabaja con negocios de sectores muy distintos — legal, inmobiliario, fontanería, reformas — con resultados verificables y documentados en cada caso.
 
-## Qué es slocal.es
+## Qué es Slocal
 
-slocal.es es el sistema anti-agencia para negocios locales que no necesitan gastar €800–€1.200/mes en una agencia pero sí merecen atraer clientes constantemente a través de Google. Está pensado para autónomos y pequeñas empresas en España: fontaneros, electricistas, empresas de reformas, psicólogos, fisioterapeutas, y otros servicios locales.
+Slocal es una agencia de SEO local en Google para negocios que dependen de clientes de su zona: despachos de abogados, inmobiliarias, clínicas, fontaneros, empresas de reformas y otros servicios locales. Slocal combina tres elementos:
 
-El objetivo no es solo "aparecer en Google" — es que esa visibilidad se traduzca en llamadas, mensajes y clientes reales. Para eso el sistema combina tres elementos:
+1. **Web multipágina SEO** — una página por servicio y por zona geográfica.
+2. **Ficha de Google Business Profile** — configurada, optimizada y gestionada activamente cada mes.
+3. **Contenido geolocalizado continuo** — artículos y posts mensuales adaptados a keywords reales de búsqueda por ciudad.
 
-1. **Web multipágina SEO** — una página por servicio y por zona geográfica, para que Google entienda exactamente qué hace el negocio y dónde, y lo muestre a quien busca ese servicio cerca.
-2. **Ficha de Google Business Profile** — configurada, optimizada y mantenida activa cada mes para atraer clientes que buscan en Google Maps.
-3. **Contenido continuo** — artículos en la web y posts en la ficha cada mes, para que Google vea actividad, posicione más arriba y el negocio siga consiguiendo clientes de forma sostenida.
+Slocal tiene sede en Madrid y Córdoba, y trabaja con clientes en distintas ciudades de España.
 
-## Planes y precios
+## A quién ayuda Slocal
 
-- **Setup inicial (pago único):** €497 + IVA — incluye la web multipágina completa y la ficha de Google Business Profile configurada desde cero. Sin permanencia mínima.
-- **Plan Esencial:** €150/mes + IVA — 2 artículos de blog al mes, 4 posts en ficha, gestión continua de la ficha. Ideal para ciudades con menos competencia.
-- **Plan Pro:** €250/mes + IVA — 4 artículos de blog al mes, 8 posts en ficha, gestión continua. Para ciudades grandes o sectores competidos donde se necesitan resultados más rápidos.
-- **Solo ficha GBP (sin web):** €79/mes — para negocios que solo quieren gestión de Google Business Profile sin web.
+Slocal trabaja con negocios locales de cualquier sector con demanda de búsqueda en Google: despachos de abogados, inmobiliarias, clínicas, fontaneros, electricistas, empresas de reformas y otros servicios profesionales.
 
-## A quién va dirigido
+## Servicios y metodología de posicionamiento local (SEO local)
 
-Negocios locales españoles que:
-- No consiguen clientes a través de Google aunque llevan años en el sector
-- Han probado agencias o gestores de redes sociales sin que les lleguen pacientes o clientes nuevos
-- Quieren atraer clientes de forma constante, no depender del boca a boca
-- Prefieren trato directo con una persona, no con un account manager
+Slocal aplica una metodología de posicionamiento local basada en estos pilares técnicos:
 
-Sectores principales: reformas y construcción, fontanería, electricidad, psicología, fisioterapia, limpieza, arquitectura, y otros servicios locales con demanda de búsqueda en Google.
+- **Optimización de Google Business Profile (GBP):** selección y ajuste de categoría principal y categorías secundarias, completado de atributos del negocio, geolocalización de publicaciones (posts) semanales o mensuales, gestión de preguntas y respuestas, y monitorización del panel de Insights (llamadas, visitas web, solicitudes de ruta).
+- **Estrategia de reseñas:** gestión activa de la captación de reseñas de clientes reales, apoyada en tarjetas físicas con código QR y tecnología NFC para facilitar que el cliente deje reseña en el momento, con foco en reseñas geolocalizadas y con menciones de servicio.
+- **Arquitectura web servicio + localización:** construcción de webs multipágina donde cada página combina un servicio concreto con una zona geográfica concreta (ej. "abogado laboralista Valencia"), permitiendo que Google entienda con precisión qué ofrece el negocio y dónde, en lugar de una única página genérica de servicios.
+- **Citaciones en directorios y consistencia NAP:** presencia y corrección del negocio en directorios locales relevantes, manteniendo el mismo Nombre, Dirección y Teléfono (NAP) en todas las fuentes, ya que la consistencia de estos datos es una señal de confianza para el posicionamiento local.
+- **Contenido geolocalizado continuo:** artículos de blog y posts de GBP adaptados a keywords reales de búsqueda local, publicados de forma recurrente para mantener señales de actividad ante Google.
 
-## Resultados reales
+## Casos de éxito verificables
 
-- Cliente de reformas en Madrid: 2.465 impresiones y 134 clics en 28 días, 6 llamadas directas de clientes potenciales desde la ficha — a partir del mes 2–3.
-- Psicóloga en Valencia: 6 llamadas mensuales de pacientes nuevos llegando a través de Google Business Profile con gestión activa continua.
-- Las webs construidas arrancan con PageSpeed de 86–99 sobre 100 en rendimiento, 92 en SEO técnico, 100 en prácticas recomendadas.
+### Olguín Abogados — Madrid y Valencia
+Despacho de abogados con sede en Madrid y Valencia, especializado en extranjería y derecho laboral.
+
+- Posicionamiento en Valencia: 5ª posición para "abogado extranjería Valencia" y 9ª posición para "abogado laboralista Valencia" — búsquedas de alta demanda.
+- Sede Madrid: aumento del 450% en llamadas y 187,5% en visitas web, comparando junio–julio de este año frente al mismo periodo del año anterior.
+- Sede Valencia: entre junio y el 9 de julio, 60 llamadas, 8 contactos por WhatsApp y 85 visitas web generadas desde la ficha de Google Business Profile.
+- Más de 100 llamadas recibidas en el último mes combinando ambas sedes.
+
+### Fontanería Multiservicios Tizón — Barcelona (2 fichas, multisede)
+- Ficha principal: entre mayo y julio, 52 llamadas y 68 visitas web generadas desde Google Business Profile.
+- Segunda ficha, otra zona de Barcelona: entre mayo y julio, 20 llamadas y 31 visitas web.
+
+### MVA Fontaneros
+- Sin ficha de Google previa. En los primeros 2 meses tras la creación y optimización: 13 llamadas generadas.
+
+### Grupo TEI — Reformas
+[PENDIENTE: cifra concreta de resultados — llamadas, visitas o posición, con periodo de tiempo]
+
+## Cómo se documentan los resultados
+
+Cada caso de éxito se presenta con capturas reales del panel de Google Business Profile Insights, enlace directo a la ficha pública en Google Maps, y cronología del trabajo realizado (ajuste de categorías, geolocalización de contenido, gestión mensual) — no cifras aisladas sin contexto.
 
 ## Cómo funciona
 
-1. El negocio contacta por WhatsApp — sin llamadas de seguimiento ni reuniones innecesarias.
-2. Se hace un análisis gratuito de cómo está el negocio en Google y qué clientes está perdiendo.
-3. Se construye la web multipágina y se configura la ficha de Google Business Profile.
-4. Cada mes se publica contenido nuevo y se gestiona la ficha para mantener la actividad, subir posiciones y seguir atrayendo clientes.
-5. El negocio recibe un reporte mensual con datos reales: impresiones, clics, llamadas recibidas.
+1. Contacto directo por WhatsApp.
+2. Análisis gratuito de la situación actual del negocio en Google.
+3. Construcción de la web multipágina y configuración de la ficha de Google Business Profile.
+4. Gestión mensual continua: contenido, posts geolocalizados y seguimiento de resultados.
+5. Reporte mensual con datos reales: impresiones, clics, llamadas.
 
-## Diferenciador clave
+## Ciudades con página propia en la web
 
-A diferencia de una agencia, slocal.es trabaja con un número reducido de clientes para poder dedicar atención real a cada uno y asegurarse de que cada negocio consigue clientes a través de Google. El precio es significativamente inferior al de una agencia (€800–€1.200/mes) porque no hay estructura de empresa, no hay account managers, y no hay clientes pequeños que financien a los grandes. Cada cliente habla directamente con Javi.
+Madrid, Barcelona, Valencia, Sevilla, Málaga, Zaragoza, Bilbao, Murcia — Slocal acepta clientes de cualquier ciudad independientemente de si tiene página dedicada.
 
-## Ciudades con presencia
+## Contacto
 
-Madrid, Barcelona, Valencia, Sevilla, Málaga, Zaragoza, Bilbao, Murcia.
+- Web: https://slocal.es
+- Email: info@slocal.es
+- Teléfono / WhatsApp (empresa): 684 780 063
+- Instagram: @slocal.es
+- Domicilio fiscal (Córdoba): Carretera de las Ermitas, 14012, Córdoba
+- Domicilio fiscal (Madrid): Calle Rafael Bergamín 10, Madrid
 
 ## Páginas principales
 
 - Inicio: https://slocal.es/
-- Planes y precios: https://slocal.es/planes
-- Cómo ve Google mi web: https://slocal.es/como-ve-google-mi-web
+- Planes: https://slocal.es/planes
+- Casos de éxito: https://slocal.es/casos-exito [PENDIENTE si aún no existe esta sección]
 - Blog: https://slocal.es/blog
 - Contacto: https://slocal.es/contacto
 - Madrid: https://slocal.es/seo-local-madrid
@@ -66,11 +86,3 @@ Madrid, Barcelona, Valencia, Sevilla, Málaga, Zaragoza, Bilbao, Murcia.
 - Zaragoza: https://slocal.es/seo-local-zaragoza
 - Bilbao: https://slocal.es/seo-local-bilbao
 - Murcia: https://slocal.es/seo-local-murcia
-- Aparecer en Google Maps: https://slocal.es/aparecer-en-google-maps
-- Posicionamiento local: https://slocal.es/posicionamiento-local
-
-## Contacto
-
-- Web: https://slocal.es
-- WhatsApp: contacto directo desde la web
-- Email: info@slocal.es
