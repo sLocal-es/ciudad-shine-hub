@@ -29,14 +29,14 @@ const cityHref = (slug: string) => `/seo-local-${slug}`;
 const Footer = () => (
   <footer className="bg-dark-bg text-dark-fg pt-16 pb-8">
     <div className="container">
-      <div className="grid grid-cols-1 md:grid-cols-6 gap-10 mb-12">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
         {/* Brand */}
         <div>
           <Link to="/" className="font-heading text-xl">
             s<span className="text-primary">local</span>.es
           </Link>
           <p className="text-sm text-dark-fg/60 mt-3 leading-relaxed">
-            El sistema de visibilidad local para negocios españoles.
+            Agencia SEO Local para negocios españoles.
           </p>
         </div>
 
@@ -48,34 +48,6 @@ const Footer = () => (
             <li><Link to="/aparecer-en-google-maps" className="hover:text-primary transition-colors">Aparecer en Google Maps</Link></li>
             <li><Link to="/ficha-google-mi-negocio" className="hover:text-primary transition-colors">Ficha de Google Mi Negocio</Link></li>
             <li><Link to="/como-salir-primero-en-google" className="hover:text-primary transition-colors">Cómo salir primero en Google</Link></li>
-          </ul>
-        </div>
-
-        {/* Sectores */}
-        <div>
-          <h4 className="font-heading text-sm mb-4">Sectores</h4>
-          <ul className="space-y-2 text-sm text-dark-fg/60">
-            {footerSectors.map((s) => (
-              <li key={s.path}>
-                <Link to={s.path} className="hover:text-primary transition-colors">
-                  {s.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Ciudades */}
-        <div>
-          <h4 className="font-heading text-sm mb-4">Ciudades</h4>
-          <ul className="space-y-2 text-sm text-dark-fg/60">
-            {footerCities.map((c) => (
-              <li key={c.slug}>
-                <Link to={cityHref(c.slug)} className="hover:text-primary transition-colors">
-                  {c.name}
-                </Link>
-              </li>
-            ))}
           </ul>
         </div>
 

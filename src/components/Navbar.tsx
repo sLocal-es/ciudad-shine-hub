@@ -59,50 +59,6 @@ const Navbar = () => {
           <Link to="/seo-para-negocios-locales" className={`hover:text-primary transition-colors ${location.pathname === "/seo-para-negocios-locales" ? "text-primary" : ""}`}>
             SEO Local
           </Link>
-          <div className="relative" ref={citiesRef}>
-            <button
-              onClick={() => { setCitiesOpen(!citiesOpen); setSectorsOpen(false); }}
-              className="hover:text-primary transition-colors flex items-center gap-1"
-            >
-              Localidades <span className="text-[10px]">▾</span>
-            </button>
-            {citiesOpen && (
-              <div className="absolute top-full left-0 bg-card border border-border rounded-lg shadow-lg py-2 min-w-[220px]">
-                {navCities.map((c) => (
-                  <Link
-                    key={c.slug}
-                    to={cityHref(c.slug)}
-                    className="block px-4 py-2 text-sm hover:bg-secondary hover:text-primary transition-colors"
-                    onClick={() => setCitiesOpen(false)}
-                  >
-                    {c.name}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
-          <div className="relative" ref={sectorsRef}>
-            <button
-              onClick={() => { setSectorsOpen(!sectorsOpen); setCitiesOpen(false); }}
-              className="hover:text-primary transition-colors flex items-center gap-1"
-            >
-              Sectores <span className="text-[10px]">▾</span>
-            </button>
-            {sectorsOpen && (
-              <div className="absolute top-full left-0 bg-card border border-border rounded-lg shadow-lg py-2 min-w-[260px]">
-                {navSectors.map((s) => (
-                  <Link
-                    key={s.path}
-                    to={s.path}
-                    className="block px-4 py-2 text-sm hover:bg-secondary hover:text-primary transition-colors"
-                    onClick={() => setSectorsOpen(false)}
-                  >
-                    {s.label}
-                  </Link>
-                ))}
-              </div>
-            )}
-          </div>
           <Link to="/como-ve-google-mi-web" className={`hover:text-primary transition-colors ${location.pathname === "/como-ve-google-mi-web" ? "text-primary" : ""}`}>
             Analiza tu web
           </Link>
@@ -133,18 +89,6 @@ const Navbar = () => {
         <div className="md:hidden border-t border-border bg-card px-6 py-4 space-y-3 max-h-[calc(100vh-4rem)] overflow-y-auto overscroll-contain">
           <Link to="/como-funciona" className="block text-sm py-2 hover:text-primary" onClick={() => setMobileOpen(false)}>Cómo funciona</Link>
           <Link to="/seo-para-negocios-locales" className="block text-sm py-2 hover:text-primary" onClick={() => setMobileOpen(false)}>SEO Local</Link>
-          <p className="text-xs text-muted-foreground mt-2">Localidades</p>
-          {navCities.map((c) => (
-            <Link key={c.slug} to={cityHref(c.slug)} className="block text-sm py-1 pl-3 hover:text-primary" onClick={() => setMobileOpen(false)}>
-              {c.name}
-            </Link>
-          ))}
-          <p className="text-xs text-muted-foreground mt-2">Sectores</p>
-          {navSectors.map((s) => (
-            <Link key={s.path} to={s.path} className="block text-sm py-1 pl-3 hover:text-primary" onClick={() => setMobileOpen(false)}>
-              {s.label}
-            </Link>
-          ))}
           <Link to="/como-ve-google-mi-web" className="block text-sm py-2 hover:text-primary" onClick={() => setMobileOpen(false)}>Analiza tu web</Link>
           <Link to="/planes" className="block text-sm py-2 hover:text-primary" onClick={() => setMobileOpen(false)}>Planes</Link>
           <Link to="/contacto" className="block text-sm py-2 hover:text-primary" onClick={() => setMobileOpen(false)}>Contacto</Link>
