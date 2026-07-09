@@ -79,13 +79,10 @@ const Home = () => {
             <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-2 max-w-lg">
               Especializados en Google Business Profile, Google Maps y posicionamiento local.
             </p>
-            <span className="hidden">
-
-            </h1></span>
-
             <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-6 max-w-lg">
               Gestionamos tu presencia en Google Maps y búsquedas locales para que cada mes más clientes de tu ciudad te encuentren antes que a tu competencia.
             </p>
+
             <div className="flex flex-wrap items-center gap-x-6 gap-y-3 mb-8">
               {casosLogos.map((l) => (
                 <img
