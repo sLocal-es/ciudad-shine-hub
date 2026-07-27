@@ -5,6 +5,110 @@ import SectorHeroDark from "@/components/sector/SectorHeroDark";
 import LogoMarquee from "@/components/LogoMarquee";
 
 
+const GbpSkeletonMockup = () => (
+  <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-warm-fg/[0.03] via-warm-fg/[0.02] to-primary/[0.06] p-6 md:p-8 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.25)] ring-1 ring-warm-fg/5">
+    <div aria-hidden className="absolute inset-0 pointer-events-none opacity-60" style={{ backgroundImage: "radial-gradient(circle at 80% 10%, hsl(var(--primary) / 0.10), transparent 50%)" }} />
+    <div className="relative grid grid-cols-6 gap-4">
+      {/* Map block */}
+      <div className="col-span-6 h-40 md:h-52 rounded-2xl bg-warm-fg/[0.06] relative overflow-hidden">
+        <div className="absolute inset-0" style={{ backgroundImage: "linear-gradient(to right, hsl(var(--warm-fg) / 0.05) 1px, transparent 1px), linear-gradient(to bottom, hsl(var(--warm-fg) / 0.05) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
+        <div className="absolute left-[22%] top-[35%] h-3 w-3 rounded-full bg-warm-fg/30" />
+        <div className="absolute left-[55%] top-[55%] h-4 w-4 rounded-full bg-primary shadow-[0_0_0_6px_hsl(var(--primary)/0.15)]" />
+        <div className="absolute left-[75%] top-[28%] h-3 w-3 rounded-full bg-warm-fg/30" />
+      </div>
+      {/* Local pack row */}
+      <div className="col-span-6 space-y-2">
+        {[0,1,2].map(i => (
+          <div key={i} className="flex items-center gap-3 rounded-xl bg-warm-fg/[0.04] px-3 py-2.5">
+            <div className={`h-8 w-8 rounded-lg ${i===0 ? "bg-primary/80" : "bg-warm-fg/15"}`} />
+            <div className="flex-1 space-y-1.5">
+              <div className={`h-2 rounded-full ${i===0 ? "bg-warm-fg/40" : "bg-warm-fg/20"}`} style={{ width: `${70 - i*10}%` }} />
+              <div className="h-1.5 rounded-full bg-warm-fg/10 w-1/3" />
+            </div>
+            <div className="h-2 w-8 rounded-full bg-warm-fg/15" />
+          </div>
+        ))}
+      </div>
+      {/* Metric cards */}
+      <div className="col-span-3 rounded-xl bg-warm-fg/[0.04] p-3">
+        <div className="h-1.5 w-1/2 rounded-full bg-warm-fg/15 mb-3" />
+        <div className="font-heading text-2xl text-warm-fg">248</div>
+        <div className="mt-2 h-8 rounded-md bg-gradient-to-t from-primary/25 to-transparent" />
+      </div>
+      <div className="col-span-3 rounded-xl bg-warm-fg/[0.04] p-3">
+        <div className="h-1.5 w-1/2 rounded-full bg-warm-fg/15 mb-3" />
+        <div className="font-heading text-2xl text-warm-fg">4,9<span className="text-primary">★</span></div>
+        <div className="mt-2 flex gap-1">
+          {[0,1,2,3,4].map(i => <div key={i} className="h-1.5 flex-1 rounded-full bg-warm-fg/15" />)}
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+const WebSkeletonMockup = () => (
+  <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary/[0.05] via-warm-fg/[0.02] to-warm-fg/[0.04] p-6 md:p-8 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.25)] ring-1 ring-warm-fg/5">
+    <div aria-hidden className="absolute inset-0 pointer-events-none opacity-60" style={{ backgroundImage: "radial-gradient(circle at 15% 90%, hsl(var(--primary) / 0.10), transparent 50%)" }} />
+    <div className="relative grid grid-cols-6 gap-4">
+      {/* Hero placeholder */}
+      <div className="col-span-6 rounded-2xl bg-warm-fg/[0.05] p-4">
+        <div className="flex items-center justify-between mb-4">
+          <div className="h-2 w-16 rounded-full bg-warm-fg/20" />
+          <div className="flex gap-1.5">
+            <div className="h-1.5 w-6 rounded-full bg-warm-fg/15" />
+            <div className="h-1.5 w-6 rounded-full bg-warm-fg/15" />
+            <div className="h-1.5 w-6 rounded-full bg-primary/60" />
+          </div>
+        </div>
+        <div className="h-3 w-2/3 rounded-full bg-warm-fg/25 mb-2" />
+        <div className="h-3 w-1/2 rounded-full bg-warm-fg/20 mb-4" />
+        <div className="h-6 w-24 rounded-full bg-primary/80" />
+      </div>
+      {/* Form */}
+      <div className="col-span-3 rounded-xl bg-warm-fg/[0.04] p-3 space-y-2">
+        <div className="h-6 rounded-md bg-warm-fg/10" />
+        <div className="h-6 rounded-md bg-warm-fg/10" />
+        <div className="h-6 rounded-md bg-primary/70" />
+      </div>
+      {/* Ranking cards */}
+      <div className="col-span-3 space-y-2">
+        <div className="rounded-xl bg-warm-fg/[0.04] p-2.5 flex items-center gap-2">
+          <div className="h-6 w-6 rounded-md bg-primary/80 grid place-items-center text-[10px] font-heading text-primary-foreground">1</div>
+          <div className="flex-1 h-1.5 rounded-full bg-warm-fg/20" />
+        </div>
+        <div className="rounded-xl bg-warm-fg/[0.04] p-2.5 flex items-center gap-2">
+          <div className="h-6 w-6 rounded-md bg-warm-fg/15 grid place-items-center text-[10px] font-heading text-warm-fg/60">3</div>
+          <div className="flex-1 h-1.5 rounded-full bg-warm-fg/15" />
+        </div>
+        <div className="rounded-xl bg-warm-fg/[0.04] p-2.5 flex items-center gap-2">
+          <div className="h-6 w-6 rounded-md bg-warm-fg/15 grid place-items-center text-[10px] font-heading text-warm-fg/60">7</div>
+          <div className="flex-1 h-1.5 rounded-full bg-warm-fg/10" />
+        </div>
+      </div>
+      {/* Speed / analytics */}
+      <div className="col-span-3 rounded-xl bg-warm-fg/[0.04] p-3">
+        <div className="h-1.5 w-1/2 rounded-full bg-warm-fg/15 mb-3" />
+        <div className="flex items-end gap-1 h-14">
+          {[30,55,42,70,60,85,72].map((h,i) => (
+            <div key={i} className="flex-1 rounded-t-sm bg-gradient-to-t from-primary/70 to-primary/20" style={{ height: `${h}%` }} />
+          ))}
+        </div>
+      </div>
+      <div className="col-span-3 rounded-xl bg-warm-fg/[0.04] p-3 flex items-center gap-3">
+        <div className="relative h-14 w-14">
+          <div className="absolute inset-0 rounded-full border-4 border-warm-fg/10" />
+          <div className="absolute inset-0 rounded-full border-4 border-primary border-r-transparent border-b-transparent rotate-45" />
+          <div className="absolute inset-0 grid place-items-center font-heading text-sm text-warm-fg">98</div>
+        </div>
+        <div className="flex-1 space-y-1.5">
+          <div className="h-1.5 w-3/4 rounded-full bg-warm-fg/20" />
+          <div className="h-1.5 w-1/2 rounded-full bg-warm-fg/15" />
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
 
 const FontanerosPage = () => {
   const faqs = [
@@ -201,6 +305,75 @@ const FontanerosPage = () => {
           <p className="mt-8 max-w-2xl text-base md:text-lg font-body text-warm-fg leading-relaxed">
             En Slocal conseguimos que más clientes te llamen optimizando tu ficha de Google Business Profile y posicionando tu web para búsquedas locales de alta intención. Aparecer en el top 3 de Google Maps multiplica las llamadas: esos tres negocios se llevan el 40 % de los clics.
           </p>
+
+          {/* Editorial split — GBP */}
+          <div className="mt-24 md:mt-32 grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center animate-in fade-in slide-in-from-bottom-4 duration-700">
+            <div>
+              <p className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary mb-6">Google Business Profile</p>
+              <h3 className="font-heading font-semibold text-warm-fg leading-[1.1] tracking-tight text-3xl md:text-4xl lg:text-5xl max-w-[18ch]">
+                Tu ficha de Google es la que hace sonar el teléfono
+              </h3>
+              <p className="mt-6 max-w-lg text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed">
+                Google Business Profile es lo que genera las llamadas: es donde el cliente decide llamarte antes incluso de entrar en tu web. La web viene después, para convertir a quien sí necesita más información.
+              </p>
+              <ul className="mt-8 space-y-3 max-w-md">
+                {[
+                  "Categorías optimizadas",
+                  "Servicios correctamente estructurados",
+                  "Publicaciones",
+                  "Gestión de reseñas",
+                  "Geolocalización",
+                  "Seguimiento de llamadas",
+                ].map((f) => (
+                  <li key={f} className="flex items-center gap-3 font-body text-warm-fg/85">
+                    <svg width="14" height="14" viewBox="0 0 20 20" fill="none" className="text-primary shrink-0" aria-hidden>
+                      <path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <span className="text-[15px] md:text-base">{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <a href="#caso-real" className="mt-10 inline-flex items-center gap-1 font-heading text-sm text-primary hover:gap-2 transition-all">
+                Ver caso real →
+              </a>
+            </div>
+            <div className="order-first md:order-last">
+              <GbpSkeletonMockup />
+            </div>
+          </div>
+
+          {/* Editorial split — Web */}
+          <div className="mt-24 md:mt-32 grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center animate-in fade-in slide-in-from-bottom-4 duration-700">
+            <div>
+              <WebSkeletonMockup />
+            </div>
+            <div>
+              <p className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary mb-6">Web optimizada</p>
+              <h3 className="font-heading font-semibold text-warm-fg leading-[1.1] tracking-tight text-3xl md:text-4xl lg:text-5xl max-w-[18ch]">
+                Una web preparada para convertir visitas en clientes
+              </h3>
+              <p className="mt-6 max-w-lg text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed">
+                La ficha de Google te da la visibilidad y las llamadas directas. La web se encarga del resto: transforma en cliente a quien busca comparar, revisar servicios o pedir presupuesto antes de decidir.
+              </p>
+              <ul className="mt-8 space-y-3 max-w-md">
+                {[
+                  "SEO Local",
+                  "Landing por servicio",
+                  "Landing por ciudad",
+                  "Formularios optimizados",
+                  "WhatsApp",
+                  "Google Analytics",
+                ].map((f) => (
+                  <li key={f} className="flex items-center gap-3 font-body text-warm-fg/85">
+                    <svg width="14" height="14" viewBox="0 0 20 20" fill="none" className="text-primary shrink-0" aria-hidden>
+                      <path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <span className="text-[15px] md:text-base">{f}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
