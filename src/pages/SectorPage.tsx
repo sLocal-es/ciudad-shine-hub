@@ -1,7 +1,7 @@
 import { useLocation, Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
-import PlanCards from "@/components/PlanCards";
+
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import { sectors } from "@/data/sectors";
@@ -207,14 +207,6 @@ const SectorPage = () => {
         </div>
       </section>
 
-      {/* SECTION 6 — PLANS */}
-      <section className="py-16">
-        <div className="container">
-          <h2 className="font-heading text-2xl md:text-3xl mb-8">Elige tu plan</h2>
-          <PlanCards />
-          <p className="text-center text-sm text-muted-foreground mt-6">{sector.sectorNote}</p>
-        </div>
-      </section>
 
       {/* SECTION 7 — FAQ */}
       <FAQSection title="Preguntas frecuentes" items={sector.faqs} />

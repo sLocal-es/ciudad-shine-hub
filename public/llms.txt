@@ -74,7 +74,6 @@ Madrid, Barcelona, Valencia, Sevilla, Málaga, Zaragoza, Bilbao, Murcia — Sloc
 ## Páginas principales
 
 - Inicio: https://slocal.es/
-- Planes: https://slocal.es/planes
 - Casos de éxito: https://slocal.es/casos-exito [PENDIENTE si aún no existe esta sección]
 - Blog: https://slocal.es/blog
 - Contacto: https://slocal.es/contacto
