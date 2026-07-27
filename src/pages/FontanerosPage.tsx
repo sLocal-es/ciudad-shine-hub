@@ -471,7 +471,7 @@ const FontanerosPage = () => {
               Cómo trabajamos
             </span>
             <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
-              ¿Cómo conseguimos que aparezcas por delante de tu competencia en Google?
+              ¿Cómo conseguimos que aparezcas <span className="text-primary">por delante</span> de tu competencia en Google?
             </h2>
             <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed max-w-3xl">
               En Slocal apareces primero en Google Maps optimizando tu ficha de Google Business Profile, categorías, servicios, reseñas y contenido local. Google prioriza fichas activas, con reseñas recientes y coherencia entre ficha, web y citaciones locales de tu ciudad.
