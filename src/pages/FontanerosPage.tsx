@@ -202,28 +202,6 @@ const FontanerosPage = () => {
     "Fontanero cerca de mí",
   ];
 
-  const processSteps = [
-    {
-      n: "01",
-      h: "Auditoría gratuita",
-      d: "Analizamos tu ficha y tu web",
-    },
-    {
-      n: "02",
-      h: "Detectamos oportunidades",
-      d: "Identificamos las búsquedas con mayor intención en tu zona.",
-    },
-    {
-      n: "03",
-      h: "Optimizamos Google Business + Web",
-      d: "Reescribimos, estructuramos y activamos tu presencia local.",
-    },
-    {
-      n: "04",
-      h: "Seguimiento y crecimiento mensual",
-      d: "Reforzamos posiciones, reseñas y contenido cada mes.",
-    },
-  ];
 
   const howWeWorkSteps = [
     {
