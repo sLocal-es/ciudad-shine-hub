@@ -579,6 +579,8 @@ const FontanerosPage = () => {
                 title: "ESTRATEGIA SLOCAL",
                 text: "Optimizamos Google Business Profile, desarrollamos una web SEO Local y creamos páginas específicas para cada servicio.",
                 label: "Ilustración: estrategia Slocal",
+                image: casoIntermedioImg.url,
+                imageAlt: "Estrategia Slocal: optimización de Google Business Profile, web SEO Local y páginas específicas por servicio",
               },
               {
                 title: "RESULTADO",
