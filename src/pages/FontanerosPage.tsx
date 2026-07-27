@@ -659,17 +659,17 @@ const FontanerosPage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {/* Left intro card */}
-            <div className="bg-white border border-warm-fg/10 rounded-2xl p-8 md:p-10 lg:p-12 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] flex flex-col">
-              <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1.5 text-[11px] font-heading tracking-[0.18em] uppercase text-primary mb-6">
-                Servicios complementarios
-              </span>
-              <h3 className="font-heading font-semibold text-warm-fg text-2xl md:text-3xl lg:text-4xl leading-[1.1] tracking-tight mb-4">
-                Haz crecer tu negocio más allá del SEO Local
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+            {/* Left featured card — orange */}
+            <div className="bg-primary text-primary-foreground rounded-2xl p-8 md:p-10 lg:p-12 shadow-[0_20px_50px_-20px_rgba(232,84,26,0.5)] flex flex-col">
+              <Link to="/" className="font-heading text-xl text-primary-foreground mb-10 inline-block">
+                s<span className="text-primary-foreground/70">local</span>.es
+              </Link>
+              <h3 className="font-heading font-semibold text-4xl md:text-5xl lg:text-6xl leading-[0.95] tracking-tight mb-6">
+                SERVICIOS<br />COMPLEMENTARIOS
               </h3>
-              <p className="text-base md:text-lg font-body font-light text-warm-fg/70 leading-relaxed mb-8">
-                No todos los negocios necesitan los mismos servicios. Añade solo aquello que aporte más clientes a tu estrategia.
+              <p className="text-base md:text-lg font-body font-light text-primary-foreground/85 leading-relaxed mb-10">
+                Además de optimizar tu Google Business Profile y tu web, puedes potenciar tu crecimiento con servicios especializados.
               </p>
               <ul className="space-y-3 mt-auto">
                 {[
@@ -678,9 +678,9 @@ const FontanerosPage = () => {
                   "Google Ads",
                   "SEO Multisede",
                 ].map((item) => (
-                  <li key={item} className="flex items-center gap-3 font-body text-warm-fg/85">
-                    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" className="text-primary shrink-0" aria-hidden>
-                      <path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  <li key={item} className="flex items-center gap-3 font-body text-primary-foreground">
+                    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" className="shrink-0" aria-hidden>
+                      <path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                     <span className="text-[15px] md:text-base">{item}</span>
                   </li>
@@ -692,61 +692,53 @@ const FontanerosPage = () => {
             <div className="grid grid-cols-1 gap-6">
               {[
                 {
-                  icon: <img src="/logos/chatgpt.png" alt="ChatGPT" className="h-8 w-auto" />,
-                  title: (
-                    <>
-                      Posicionamiento <span className="text-primary">GEO</span>
-                    </>
-                  ),
+                  icon: <img src="/logos/chatgpt.png" alt="ChatGPT" className="h-9 w-auto object-contain group-hover:brightness-0 group-hover:invert transition-[filter] duration-250" />,
+                  title: (<>Posicionamiento <span className="text-primary group-hover:text-white transition-colors duration-250">GEO</span></>),
                   desc: "Haz que tu empresa aparezca en ChatGPT, Gemini y otras plataformas de IA cuando los clientes busquen empresas como la tuya.",
+                  features: ["Presencia en ChatGPT y Gemini", "Contenido optimizado para IA", "Autoridad y menciones"],
                   link: "/posicionamiento-geo",
                 },
                 {
-                  icon: (
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
-                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                    </svg>
-                  ),
-                  title: (
-                    <>
-                      Gestión de <span className="text-primary">reseñas</span>
-                    </>
-                  ),
+                  icon: <img src="/logos/google-business-profile.png" alt="Google Business Profile" className="h-9 w-auto object-contain group-hover:brightness-0 group-hover:invert transition-[filter] duration-250" />,
+                  title: (<>Gestión de <span className="text-primary group-hover:text-white transition-colors duration-250">reseñas</span></>),
                   desc: "Consigue más reseñas de calidad, mejora tu reputación online y aumenta la confianza antes de que el cliente te llame.",
+                  features: ["Sistema para pedir reseñas", "Respuestas profesionales", "Reputación online sólida"],
                   link: "/gestion-resenas",
                 },
                 {
-                  icon: (
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-primary">
-                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" fill="none" stroke="currentColor" strokeWidth="1.8" />
-                      <path d="M12 7v6l4 2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
-                    </svg>
-                  ),
-                  title: (
-                    <>
-                      Google <span className="text-primary">Ads</span>
-                    </>
-                  ),
+                  icon: <img src="/logos/google-search-console.png" alt="Google Ads" className="h-9 w-auto object-contain group-hover:brightness-0 group-hover:invert transition-[filter] duration-250" />,
+                  title: (<>Google <span className="text-primary group-hover:text-white transition-colors duration-250">Ads</span></>),
                   desc: "Genera llamadas desde el primer día con campañas optimizadas para búsquedas de alta intención.",
+                  features: ["Campañas de alta intención", "Optimización de conversión", "Resultados desde el día 1"],
                   link: "/google-ads",
                 },
               ].map((service) => (
                 <div
                   key={service.link}
-                  className="bg-white border border-warm-fg/10 rounded-2xl p-6 md:p-8 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] flex flex-col"
+                  className="group bg-white border border-warm-fg/10 rounded-2xl p-6 md:p-8 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] flex flex-col transition-all duration-[250ms] ease-out hover:bg-primary hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(232,84,26,0.5)]"
                 >
-                  <div className="mb-4">{service.icon}</div>
-                  <h3 className="font-heading font-semibold text-warm-fg text-xl md:text-2xl leading-snug tracking-tight mb-3">
+                  <div className="mb-5">{service.icon}</div>
+                  <h3 className="font-heading font-semibold text-warm-fg group-hover:text-white transition-colors duration-[250ms] text-xl md:text-2xl leading-snug tracking-tight mb-3">
                     {service.title}
                   </h3>
-                  <p className="text-sm md:text-base font-body font-light text-warm-fg/70 leading-relaxed mb-6">
+                  <p className="text-sm md:text-base font-body font-light text-warm-fg/70 group-hover:text-white/85 transition-colors duration-[250ms] leading-relaxed mb-5">
                     {service.desc}
                   </p>
+                  <ul className="space-y-2 mb-6">
+                    {service.features.map((f) => (
+                      <li key={f} className="flex items-center gap-2.5 text-sm font-body text-warm-fg/80 group-hover:text-white/90 transition-colors duration-[250ms]">
+                        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" className="text-primary group-hover:text-white transition-colors duration-[250ms] shrink-0" aria-hidden>
+                          <path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                        <span>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
                   <Link
                     to={service.link}
-                    className="mt-auto inline-flex items-center gap-1 font-heading text-sm text-primary hover:gap-2 transition-all"
+                    className="mt-auto inline-flex items-center gap-1 font-heading text-sm text-primary group-hover:text-white hover:gap-2 transition-all duration-[250ms]"
                   >
-                    Más información →
+                    Ver servicio →
                   </Link>
                 </div>
               ))}
