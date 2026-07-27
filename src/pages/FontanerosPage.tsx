@@ -536,40 +536,60 @@ const FontanerosPage = () => {
       </section>
 
 
-      {/* CASO REAL — dashboard mockup */}
+      {/* CASO REAL */}
       <section className={sectionCls}>
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center">
             <div className="md:col-span-7 order-2 md:order-1">
-              <ResultsDashboard />
+              <div className="w-full aspect-[4/5] md:aspect-square rounded-[2rem] bg-[hsl(var(--warm-bg))] border-2 border-dashed border-warm-fg/15 flex flex-col items-center justify-center text-center p-8">
+                <span className="text-4xl mb-4">🖼</span>
+                <span className="font-heading text-sm tracking-[0.2em] uppercase text-warm-fg/40">
+                  CASE STUDY ILLUSTRATION
+                </span>
+              </div>
             </div>
             <div className="md:col-span-5 order-1 md:order-2">
-              <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Caso real</p>
+              <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1.5 text-[11px] font-heading tracking-[0.18em] uppercase text-primary mb-6">
+                Caso real
+              </span>
               <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
-                ¿Cómo ayuda <span className="text-primary">Google Business Profile</span> a un fontanero?
+                Cómo esta <span className="text-primary">fontanería de Vigo</span> pasó de no tener presencia en Google a dominar su zona
               </h2>
-              <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed mb-6">
-                Google Business Profile le da visibilidad al fontanero en Google Maps y en el Local Pack: llamadas directas, indicaciones y clics a la web. Con Slocal, MVA Fontanería consiguió 60 interacciones desde Google en 2 meses y Fontaneros Económicos 11 llamadas directas y 4 WhatsApp en mes y medio.
+              <p className="text-base md:text-lg font-body font-light text-warm-fg/70 leading-relaxed mb-10">
+                Cuando comenzamos a trabajar con esta empresa apenas recibía clientes desde Google. Tras optimizar su Google Business Profile, desarrollar una web orientada al SEO Local y crear páginas específicas para cada servicio, comenzó a aparecer entre los primeros resultados de Google Maps y a generar llamadas de forma constante.
               </p>
 
-            </div>
-          </div>
-
-          <div className="mt-16 md:mt-24 grid grid-cols-2 md:grid-cols-3 gap-y-10 gap-x-8 border-t border-warm-fg/15 pt-12">
-            {[
-              { k: "60", l: "interacciones desde Google en 2 meses" },
-              { k: "11", l: "llamadas directas en mes y medio" },
-              { k: "3×", l: "más visibilidad en el Local Pack" },
-            ].map((m) => (
-              <div key={m.l}>
-                <p className="font-heading font-semibold text-warm-fg text-5xl md:text-7xl leading-none tracking-tight">
-                  {m.k}
-                </p>
-                <p className="mt-4 font-body font-light text-sm md:text-base text-warm-fg/60 max-w-[22ch]">
-                  {m.l}
-                </p>
+              <div className="grid grid-cols-3 gap-4 mb-10">
+                {[
+                  { k: "+30", l: "Llamadas al mes" },
+                  { k: "TOP 3", l: "Google Maps" },
+                  { k: "x8", l: "Retorno de la inversión" },
+                ].map((m) => (
+                  <div key={m.l} className="bg-white border border-warm-fg/10 rounded-2xl p-5 md:p-6">
+                    <p className="font-heading font-semibold text-4xl md:text-5xl leading-none tracking-tight text-primary">
+                      {m.k}
+                    </p>
+                    <p className="mt-3 font-body text-sm text-warm-fg/60">
+                      {m.l}
+                    </p>
+                  </div>
+                ))}
               </div>
-            ))}
+
+              <div className="flex items-center gap-3 md:gap-5 text-[13px] md:text-sm font-body text-warm-fg/60">
+                <span className="font-heading font-medium text-warm-fg">ANTES</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden className="text-primary">
+                  <path d="M5 12h14" />
+                  <path d="M12 5l7 7-7 7" />
+                </svg>
+                <span className="font-heading font-medium text-warm-fg">OPTIMIZACIÓN</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden className="text-primary">
+                  <path d="M5 12h14" />
+                  <path d="M12 5l7 7-7 7" />
+                </svg>
+                <span className="font-heading font-medium text-warm-fg">RESULTADOS</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -855,67 +875,5 @@ const SearchMockup = ({ queries }: { queries: string[] }) => (
     </div>
   </div>
 );
-
-const ResultsDashboard = () => {
-  // Fake but realistic monthly growth curve
-  const points = [8, 12, 18, 22, 35, 46, 58, 66, 74, 82, 90, 98];
-  const max = Math.max(...points);
-  const w = 560;
-  const h = 220;
-  const step = w / (points.length - 1);
-  const path = points
-    .map((p, i) => `${i === 0 ? "M" : "L"} ${i * step} ${h - (p / max) * h}`)
-    .join(" ");
-  const area = `${path} L ${w} ${h} L 0 ${h} Z`;
-
-  return (
-    <div className="rounded-2xl border border-warm-fg/15 bg-white shadow-[0_20px_60px_-30px_rgba(26,26,36,0.25)] overflow-hidden">
-      <div className="flex items-center justify-between px-6 py-4 border-b border-warm-fg/10">
-        <div className="flex items-center gap-3">
-          <img src="/logos/google-business-profile.svg" alt="Google Business Profile" className="h-5 w-auto" />
-          <span className="font-heading text-sm text-warm-fg">Rendimiento · últimos 12 meses</span>
-        </div>
-        <span className="text-xs font-body text-warm-fg/50">Google Business Insights</span>
-      </div>
-
-      <div className="grid grid-cols-3 divide-x divide-warm-fg/10 border-b border-warm-fg/10">
-        {[
-          { k: "Llamadas", v: "+312 %" },
-          { k: "Clics a web", v: "+248 %" },
-          { k: "Cómo llegar", v: "+189 %" },
-        ].map((s) => (
-          <div key={s.k} className="px-6 py-5">
-            <p className="text-[11px] font-body uppercase tracking-widest text-warm-fg/50">{s.k}</p>
-            <p className="mt-1 font-heading text-2xl md:text-3xl text-warm-fg">{s.v}</p>
-          </div>
-        ))}
-      </div>
-
-      <div className="p-6">
-        <svg viewBox={`0 0 ${w} ${h}`} className="w-full h-auto" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="fadeOrange" x1="0" x2="0" y1="0" y2="1">
-              <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.25" />
-              <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
-            </linearGradient>
-          </defs>
-          {[0.25, 0.5, 0.75].map((r) => (
-            <line key={r} x1="0" x2={w} y1={h * r} y2={h * r} stroke="hsl(var(--warm-fg) / 0.08)" strokeDasharray="2 4" />
-          ))}
-          <path d={area} fill="url(#fadeOrange)" />
-          <path d={path} fill="none" stroke="hsl(var(--primary))" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-          {points.map((p, i) => (
-            <circle key={i} cx={i * step} cy={h - (p / max) * h} r={i === points.length - 1 ? 5 : 2.5} fill="hsl(var(--primary))" />
-          ))}
-        </svg>
-        <div className="mt-3 flex justify-between text-[10px] font-body text-warm-fg/40 tracking-widest">
-          {["ENE", "FEB", "MAR", "ABR", "MAY", "JUN", "JUL", "AGO", "SEP", "OCT", "NOV", "DIC"].map((m) => (
-            <span key={m}>{m}</span>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
 
 export default FontanerosPage;
