@@ -800,7 +800,7 @@ const FontanerosPage = () => {
         <div className="container">
           <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Otros sectores</p>
           <h2 className="font-heading text-2xl md:text-3xl text-warm-fg mb-4">
-            ¿Slocal solo trabaja con fontaneros?
+            ¿Slocal solo trabaja con <span className="text-primary">fontaneros</span>?
           </h2>
           <p className="text-base font-body text-warm-fg leading-relaxed max-w-3xl mb-8">
             No. Slocal trabaja también con fisioterapeutas, empresas de reformas, pintores, clínicas, entrenadores personales y estudios de yoga. Aplicamos la misma metodología de SEO Local especializado a cada sector para que aparezcan cuando sus clientes buscan en Google.
