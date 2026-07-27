@@ -568,7 +568,7 @@ const FontanerosPage = () => {
             <div className="md:col-span-5 order-1 md:order-2">
               <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Caso real</p>
               <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
-                ¿Cómo ayuda Google Business Profile a un fontanero?
+                ¿Cómo ayuda <span className="text-primary">Google Business Profile</span> a un fontanero?
               </h2>
               <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed mb-6">
                 Google Business Profile le da visibilidad al fontanero en Google Maps y en el Local Pack: llamadas directas, indicaciones y clics a la web. Con Slocal, MVA Fontanería consiguió 60 interacciones desde Google en 2 meses y Fontaneros Económicos 11 llamadas directas y 4 WhatsApp en mes y medio.
