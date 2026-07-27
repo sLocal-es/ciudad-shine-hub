@@ -49,6 +49,8 @@ export type SectorTemplateContent = {
   gbpH3: ReactNode;
   gbpBody: ReactNode;
   gbpFeatures: string[];
+  gbpImage?: { src: string; alt: string };
+
 
   // Web editorial split
   webH3: ReactNode;
