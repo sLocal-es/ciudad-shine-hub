@@ -8,7 +8,7 @@ import { sendForm } from "@/lib/sendForm";
 import { toast } from "@/hooks/use-toast";
 
 const AuditoriaLeadForm = () => {
-  const [form, setForm] = useState({ name: "", phone: "", email: "" });
+  const [form, setForm] = useState({ name: "", business: "", phone: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
 
   const onSubmit = async (e: React.FormEvent) => {
@@ -20,10 +20,12 @@ const AuditoriaLeadForm = () => {
         from_name: form.name,
         from_email: form.email,
         phone: form.phone,
+        business: form.business,
+        message: form.message,
         sector: "Fontaneros",
       });
       toast({ title: "Solicitud enviada", description: "Te enviaremos tu auditoría en menos de 24 horas." });
-      setForm({ name: "", phone: "", email: "" });
+      setForm({ name: "", business: "", phone: "", email: "", message: "" });
     } catch {
       toast({ title: "Error al enviar", description: "Inténtalo de nuevo en unos minutos.", variant: "destructive" });
     } finally {
@@ -32,14 +34,22 @@ const AuditoriaLeadForm = () => {
   };
 
   const inputCls =
-    "w-full rounded-xl bg-white text-warm-fg placeholder:text-warm-fg/50 px-4 py-3.5 text-[15px] font-body outline-none border border-transparent focus:border-warm-fg/20 focus:ring-2 focus:ring-white/40 transition";
+    "w-full rounded-xl bg-white text-warm-fg placeholder:text-warm-fg/50 px-4 py-3.5 text-[15px] font-body outline-none border border-transparent focus:border-warm-fg/20 focus:ring-2 focus:ring-white/40 transition resize-none";
 
   return (
     <form onSubmit={onSubmit} className="w-full rounded-2xl bg-white/10 p-5 md:p-6 backdrop-blur-sm">
       <div className="space-y-3">
         <input required type="text" placeholder="Nombre" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className={inputCls} />
+        <input required type="text" placeholder="Nombre de tu empresa" value={form.business} onChange={(e) => setForm({ ...form, business: e.target.value })} className={inputCls} />
         <input required type="tel" placeholder="Teléfono" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className={inputCls} />
-        <input required type="email" placeholder="Email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className={inputCls} />
+        <input required type="email" placeholder="Correo electrónico" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className={inputCls} />
+        <textarea
+          rows={3}
+          placeholder="Ej. Conseguir más llamadas, aparecer primero en Google, mejorar mi web..."
+          value={form.message}
+          onChange={(e) => setForm({ ...form, message: e.target.value })}
+          className={inputCls}
+        />
         <button
           type="submit"
           disabled={loading}
@@ -47,6 +57,9 @@ const AuditoriaLeadForm = () => {
         >
           {loading ? "Enviando..." : "Quiero mi auditoría gratuita"}
         </button>
+        <p className="pt-1 text-center text-white/80 text-[13px] font-body">
+          🔒 Tus datos están seguros. Te responderemos en menos de 24 horas.
+        </p>
       </div>
     </form>
   );
