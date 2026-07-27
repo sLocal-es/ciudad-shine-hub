@@ -732,7 +732,10 @@ const FontanerosPage = () => {
             {[
               {
                 logo: <img src="/logos/chatgpt.png" alt="ChatGPT" className="h-8 w-auto object-contain" />,
-                title: <>Posicionamiento <span className="text-primary group-hover:text-white transition-colors duration-[250ms]">GEO</span></>,
+                title: <>
+                  <span className="block leading-[1.1] mb-1">Posicionamiento</span>
+                  <span className="block leading-[1.1] text-primary group-hover:text-white transition-colors duration-[250ms]">GEO</span>
+                </>,
                 desc: "Haz que tu empresa aparezca en ChatGPT, Gemini, AI Overviews y otros buscadores basados en IA cuando los clientes busquen empresas como la tuya.",
                 features: ["ChatGPT y Gemini", "AI Overviews", "Optimización para IA"],
                 link: "/posicionamiento-local",
@@ -778,7 +781,7 @@ const FontanerosPage = () => {
                     {service.logo}
                   </div>
                 </div>
-                <h3 className="font-heading font-bold text-warm-fg text-2xl md:text-[26px] leading-[1.1] tracking-tight mb-5 group-hover:text-white transition-colors duration-[250ms]">
+                <h3 className="font-heading font-bold text-warm-fg text-2xl md:text-[26px] leading-[1.15] tracking-tight mb-5 group-hover:text-white transition-colors duration-[250ms]">
                   {service.title}
                 </h3>
                 <p className="text-[15px] font-body font-light text-warm-fg/70 leading-relaxed mb-8 group-hover:text-white/90 transition-colors duration-[250ms]">
