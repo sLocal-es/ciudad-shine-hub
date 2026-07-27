@@ -123,6 +123,14 @@ const FontanerosPage = () => {
       q: "¿Cuándo empiezo a recibir más llamadas?",
       a: "Los primeros contactos desde Google suelen aparecer entre el mes 2 y el mes 3. Las urgencias se captan antes porque la intención de búsqueda es inmediata y la competencia bien posicionada es menor en esas queries específicas.",
     },
+    {
+      q: "¿Basta con tener la ficha de Google creada?",
+      a: "No basta. El error más común es crear la ficha cuando empiezas y no volver a tocarla. Google interpreta la inactividad como abandono y te baja posiciones cada semana frente a fontaneros que sí la gestionan.",
+    },
+    {
+      q: "¿Es suficiente una sola página para todos mis servicios?",
+      a: "No. 'Fontanero urgente', 'instalación de caldera' y 'detección de fugas' son búsquedas distintas con clientes distintos. Si tienes una sola página genérica, solo apareces para una — y compites con todos por el mismo hueco.",
+    },
   ];
 
   const breadcrumbSchema = {
