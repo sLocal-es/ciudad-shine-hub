@@ -649,12 +649,41 @@ const FontanerosPage = () => {
           <div className="max-w-[1200px] mx-auto text-center">
             <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Reseñas</p>
             <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
-              ¿Por qué tantas <span className="text-primary">empresas de fontanería</span> confían en Slocal?
+              ¿Por qué tantas <span className="text-primary">empresas</span> confían en Slocal?
             </h2>
             <p className="text-base md:text-lg font-body font-light text-warm-fg/70 leading-relaxed max-w-3xl mx-auto mb-14">
-              La mejor forma de demostrar nuestro trabajo es con la opinión de quienes ya han confiado en nosotros. Descubre cómo empresas de fontanería y otros negocios locales han mejorado su visibilidad y conseguido más clientes gracias al SEO Local.
+              La mejor forma de demostrar nuestro trabajo es con la opinión de quienes ya han confiado en nosotros. Estas son algunas reseñas de empresas locales que han mejorado su visibilidad y conseguido más clientes con Slocal.
             </p>
-            <div id="trustindex-container" className="min-h-[200px] mb-14" />
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left mb-14">
+              {googleReviews.map((review) => (
+                <div
+                  key={review.name}
+                  className="flex flex-col bg-white rounded-2xl border border-warm-fg/10 p-6 shadow-[0_10px_40px_-30px_rgba(0,0,0,0.08)] transition-all duration-300 hover:shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)] hover:-translate-y-1"
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 rounded-full bg-warm-fg/10 flex items-center justify-center font-heading text-sm text-warm-fg">
+                      {review.name.charAt(0)}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <p className="font-heading text-sm font-medium text-warm-fg truncate">{review.name}</p>
+                      <p className="text-xs text-warm-fg/60 font-body truncate">{review.business}</p>
+                    </div>
+                    <img src="/logos/google.svg" alt="Google" className="h-5 w-auto opacity-80" />
+                  </div>
+                  <div className="flex items-center gap-1 mb-3">
+                    {Array.from({ length: review.rating }).map((_, i) => (
+                      <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#FABB05">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                      </svg>
+                    ))}
+                    <span className="ml-2 text-xs text-warm-fg/50 font-body">{review.date}</span>
+                  </div>
+                  <p className="text-sm font-body text-warm-fg/80 leading-relaxed flex-1">{review.text}</p>
+                </div>
+              ))}
+            </div>
+
             <button
               onClick={() => {
                 const el = document.getElementById("contacto");
