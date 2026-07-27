@@ -720,7 +720,7 @@ const FontanerosPage = () => {
           <div className="md:col-span-5">
             <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Trabajo mensual</p>
             <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
-              ¿Por qué el SEO Local necesita trabajo mes a mes?
+              ¿Por qué el SEO Local necesita trabajo <span className="text-primary">mes a mes</span>?
             </h2>
             <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed">
               Porque Google no es una fotografía, es una competición continua. En Slocal reforzamos cada mes tu ficha, reseñas, contenido y autoridad local para que tus competidores no te superen y para capturar nuevas búsquedas conforme aparecen en tu zona.
