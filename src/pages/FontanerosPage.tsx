@@ -773,7 +773,11 @@ const FontanerosPage = () => {
                 key={idx}
                 className="group bg-white border border-warm-fg/10 rounded-2xl p-7 md:p-8 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] flex flex-col min-h-[520px] transition-all duration-[250ms] ease-out hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(26,26,36,0.15)] hover:border-primary hover:bg-primary"
               >
-                <div className="mb-8 h-9 flex items-center text-warm-fg group-hover:text-white group-hover:brightness-0 group-hover:invert transition-all duration-[250ms]">{service.logo}</div>
+                <div className="mb-8 h-14 flex items-center">
+                  <div className="inline-flex items-center justify-center h-14 w-14 rounded-xl bg-transparent group-hover:bg-white group-hover:shadow-sm transition-all duration-[250ms] text-warm-fg">
+                    {service.logo}
+                  </div>
+                </div>
                 <h3 className="font-heading font-bold text-warm-fg text-2xl md:text-[26px] leading-[1.1] tracking-tight mb-5 group-hover:text-white transition-colors duration-[250ms]">
                   {service.title}
                 </h3>
