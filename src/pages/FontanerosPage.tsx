@@ -521,60 +521,79 @@ const FontanerosPage = () => {
 
       {/* CASO REAL */}
       <section className={sectionCls}>
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center">
-            <div className="md:col-span-7 order-2 md:order-1">
-              <div className="w-full rounded-[2rem] bg-[hsl(var(--warm-bg))] border border-warm-fg/10 overflow-hidden">
-                <img
-                  src="/images/caso_de_exito_fontanero_vigo.webp"
-                  alt="Caso de éxito: fontanería de Vigo que pasó de no aparecer en Google a recibir más de 30 llamadas al mes gracias a Slocal"
-                  className="w-full h-auto object-cover"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-            <div className="md:col-span-5 order-1 md:order-2">
-              <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1.5 text-[11px] font-heading tracking-[0.18em] uppercase text-primary mb-6">
-                Caso real
-              </span>
-              <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
-                ¿Cómo consiguió Slocal que esta <span className="text-primary">fontanería de Vigo</span> pasara de no tener presencia en Google a dominar su zona?
-              </h2>
-              <p className="text-base md:text-lg font-body font-light text-warm-fg/70 leading-relaxed mb-10">
-                Slocal transformó la presencia digital de esta empresa optimizando su Google Business Profile, desarrollando una web orientada al SEO Local y creando páginas específicas para cada uno de sus servicios. Como resultado, comenzó a aparecer entre los primeros resultados de Google Maps para las búsquedas más importantes de Vigo, superó las 30 llamadas mensuales y consiguió un retorno superior a 8 veces la inversión realizada.
-              </p>
+        <div className="container max-w-6xl">
+          <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1.5 text-[11px] font-heading tracking-[0.18em] uppercase text-primary mb-6">
+            Caso real
+          </span>
+          <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6 max-w-[22ch]">
+            ¿Cómo consiguió Slocal que esta <span className="text-primary">fontanería de Vigo</span> pasara de no tener presencia en Google a dominar su zona?
+          </h2>
+          <p className="text-base md:text-lg font-body font-light text-warm-fg/70 leading-relaxed mb-20 max-w-3xl">
+            Slocal transformó la presencia digital de esta empresa optimizando su Google Business Profile, desarrollando una web orientada al SEO Local y creando páginas específicas para cada uno de sus servicios. Como resultado, comenzó a aparecer entre los primeros resultados de Google Maps para las búsquedas más importantes de Vigo, superó las 30 llamadas mensuales y consiguió un retorno superior a 8 veces la inversión realizada.
+          </p>
 
-              <div className="grid grid-cols-3 gap-4 mb-10">
-                {[
-                  { k: "+30", l: "Llamadas al mes" },
-                  { k: "TOP 3", l: "Google Maps" },
-                  { k: "x8", l: "Retorno de la inversión" },
-                ].map((m) => (
-                  <div key={m.l} className="bg-white border border-warm-fg/10 rounded-2xl p-5 md:p-6">
-                    <p className="font-heading font-semibold text-4xl md:text-5xl leading-none tracking-tight text-primary">
-                      {m.k}
-                    </p>
-                    <p className="mt-3 font-body text-sm text-warm-fg/60">
-                      {m.l}
-                    </p>
-                  </div>
-                ))}
+          {/* Three stage cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10 mb-20">
+            {[
+              {
+                title: "ANTES",
+                text: "Sin presencia en Google, una ficha poco optimizada y una web que apenas generaba clientes.",
+                label: "Ilustración: situación inicial",
+              },
+              {
+                title: "ESTRATEGIA SLOCAL",
+                text: "Optimizamos Google Business Profile, desarrollamos una web SEO Local y creamos páginas específicas para cada servicio.",
+                label: "Ilustración: estrategia Slocal",
+              },
+              {
+                title: "RESULTADO",
+                text: "Top 3 en Google Maps, más de 30 llamadas mensuales y un retorno superior a ocho veces la inversión.",
+                label: "Ilustración: resultados",
+              },
+            ].map((card, i) => (
+              <div
+                key={card.title}
+                className="group flex flex-col bg-white rounded-3xl border border-warm-fg/10 p-6 lg:p-8 transition-all duration-300 hover:shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)] hover:border-warm-fg/20"
+              >
+                <p className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary mb-6">
+                  {card.title}
+                </p>
+                <div
+                  className="w-full aspect-[4/3] rounded-2xl bg-[hsl(var(--warm-bg))] border-2 border-dashed border-warm-fg/15 flex flex-col items-center justify-center gap-3 mb-6"
+                  role="img"
+                  aria-label={card.label}
+                >
+                  <span className="text-[28px] opacity-40">🖼</span>
+                  <span className="font-body text-[13px] text-warm-fg/40 text-center px-4">
+                    {card.label}
+                  </span>
+                </div>
+                <p className="text-base font-body font-light text-warm-fg/80 leading-relaxed">
+                  {card.text}
+                </p>
               </div>
+            ))}
+          </div>
 
-              <div className="flex items-center gap-3 md:gap-5 text-[13px] md:text-sm font-body text-warm-fg/60">
-                <span className="font-heading font-medium text-warm-fg">ANTES</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden className="text-primary">
-                  <path d="M5 12h14" />
-                  <path d="M12 5l7 7-7 7" />
-                </svg>
-                <span className="font-heading font-medium text-warm-fg">OPTIMIZACIÓN</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden className="text-primary">
-                  <path d="M5 12h14" />
-                  <path d="M12 5l7 7-7 7" />
-                </svg>
-                <span className="font-heading font-medium text-warm-fg">RESULTADOS</span>
+          {/* KPI cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6">
+            {[
+              { k: "+30", l: "Llamadas al mes" },
+              { k: "TOP 3", l: "Google Maps" },
+              { k: "x8", l: "Retorno de la inversión" },
+            ].map((m) => (
+              <div
+                key={m.l}
+                className="bg-white border border-warm-fg/10 rounded-2xl p-6 md:p-8 text-center transition-all duration-300 hover:border-warm-fg/20 hover:shadow-[0_12px_40px_-20px_rgba(0,0,0,0.1)]"
+              >
+                <p className="font-heading font-semibold text-4xl md:text-5xl lg:text-6xl leading-none tracking-tight text-primary">
+                  {m.k}
+                </p>
+                <p className="mt-4 font-body text-sm text-warm-fg/60">
+                  {m.l}
+                </p>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
