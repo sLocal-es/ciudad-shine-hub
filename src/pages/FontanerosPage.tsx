@@ -511,7 +511,10 @@ const FontanerosPage = () => {
               <div className="w-full aspect-[4/5] md:aspect-square rounded-[2rem] bg-[hsl(var(--warm-bg))] border-2 border-dashed border-warm-fg/15 flex flex-col items-center justify-center text-center p-8">
                 <span className="text-4xl mb-4">🖼</span>
                 <span className="font-heading text-sm tracking-[0.2em] uppercase text-warm-fg/40">
-                  CASE STUDY ILLUSTRATION
+                  SLOCAL CASE STUDY
+                </span>
+                <span className="font-heading text-sm tracking-[0.2em] uppercase text-warm-fg/40">
+                  ILLUSTRATION
                 </span>
               </div>
             </div>
@@ -520,10 +523,10 @@ const FontanerosPage = () => {
                 Caso real
               </span>
               <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
-                Cómo esta <span className="text-primary">fontanería de Vigo</span> pasó de no tener presencia en Google a dominar su zona
+                ¿Cómo consiguió Slocal que esta <span className="text-primary">fontanería de Vigo</span> pasara de no tener presencia en Google a dominar su zona?
               </h2>
               <p className="text-base md:text-lg font-body font-light text-warm-fg/70 leading-relaxed mb-10">
-                Cuando comenzamos a trabajar con esta empresa apenas recibía clientes desde Google. Tras optimizar su Google Business Profile, desarrollar una web orientada al SEO Local y crear páginas específicas para cada servicio, comenzó a aparecer entre los primeros resultados de Google Maps y a generar llamadas de forma constante.
+                Slocal transformó la presencia digital de esta empresa optimizando su Google Business Profile, desarrollando una web orientada al SEO Local y creando páginas específicas para cada uno de sus servicios. Como resultado, comenzó a aparecer entre los primeros resultados de Google Maps para las búsquedas más importantes de Vigo, superó las 30 llamadas mensuales y consiguió un retorno superior a 8 veces la inversión realizada.
               </p>
 
               <div className="grid grid-cols-3 gap-4 mb-10">
