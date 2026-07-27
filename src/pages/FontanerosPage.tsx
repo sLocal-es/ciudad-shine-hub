@@ -655,35 +655,28 @@ const FontanerosPage = () => {
               ¿Qué otros servicios pueden ayudarte a conseguir más clientes desde Google?
             </h2>
             <p className="text-base md:text-lg font-body font-light text-warm-fg/70 leading-relaxed max-w-3xl">
-              Además de optimizar tu web y Google Business Profile, podemos ayudarte con otros servicios para seguir creciendo.
+              Además de optimizar tu web y Google Business Profile, podemos ayudarte con servicios especializados para aumentar tu visibilidad, generar más confianza y acelerar el crecimiento de tu negocio.
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
             {/* Featured card — orange */}
             <div className="bg-primary text-primary-foreground rounded-2xl p-7 md:p-8 shadow-[0_20px_50px_-20px_rgba(232,84,26,0.5)] flex flex-col min-h-[520px]">
-              <div className="flex items-center gap-3 mb-8">
-                <svg width="36" height="36" viewBox="0 0 40 40" fill="none" aria-hidden>
-                  <path d="M10 6h20l-6 12h10L14 34l4-14H6l4-14z" fill="currentColor" />
-                </svg>
-                <div className="leading-tight">
-                  <div className="font-heading text-[11px] tracking-[0.15em] uppercase text-primary-foreground/80">Agencia</div>
-                  <div className="font-heading font-bold text-lg tracking-tight">SEO LOCAL</div>
-                </div>
-              </div>
+              <p className="font-heading text-[11px] tracking-[0.15em] uppercase text-primary-foreground/80 mb-8">
+                SLOCAL.ES
+              </p>
               <h3 className="font-heading font-bold text-2xl md:text-[26px] leading-[1.1] tracking-tight mb-5">
-                SISTEMA DE<br />CRECIMIENTO 360º
+                POTENCIA<br />TUS<br />RESULTADOS
               </h3>
               <p className="text-[15px] font-body font-light text-primary-foreground/90 leading-relaxed mb-8">
-                Todos los canales trabajando juntos en un único sistema orientado a que escales tus ventas.
+                Tu web y Google Business Profile son la base del SEO Local. Estos servicios complementarios potencian tu estrategia para conseguir todavía más clientes.
               </p>
               <ul className="space-y-3 mt-auto">
                 {[
-                  "Gestión de Perfiles de Empresa en Google",
-                  "SEO (Posicionamiento Web)",
-                  "GEO (Posicionamiento IA)",
+                  "Posicionamiento GEO",
+                  "Gestión de reseñas PRO",
                   "Google Ads",
-                  "META Ads",
+                  "Backlinks Locales",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2.5 font-body text-[14px] text-primary-foreground">
                     <svg width="16" height="16" viewBox="0 0 20 20" fill="none" className="shrink-0 mt-0.5" aria-hidden>
@@ -699,42 +692,59 @@ const FontanerosPage = () => {
             {/* Service cards */}
             {[
               {
-                logo: <img src="/logos/google-business-profile.png" alt="Google Business Profile" className="h-8 w-auto object-contain" />,
-                title: <>GOOGLE MY<br />BUSINESS</>,
-                desc: "Posiciona tus ubicaciones de Google en los primeros puestos y aumenta clientes, llamadas, leads, visitas…",
-                features: ["Gestión y optimización de Perfiles de Empresa", "Notas de Prensa y Citaciones", "Auditoría GBP", "Reputación Online", "Creación y Verificación GBP"],
-                link: "/ficha-google-mi-negocio",
-              },
-              {
                 logo: <img src="/logos/chatgpt.png" alt="ChatGPT" className="h-8 w-auto object-contain" />,
-                title: <>SEO & GEO<br />(POSICIONAMIENTO)</>,
-                desc: "Consigue clientes de forma constante liderando los primeros puestos de Google y Chat GPT.",
-                features: ["SEO Local", "SEO Avanzado", "SEO Internacional", "GEO (Chat GPT y Gemini)", "Auditoría SEO", "Linkbuilding"],
+                title: <>Posicionamiento <span className="text-primary group-hover:text-white transition-colors duration-[250ms]">GEO</span></>,
+                desc: "Haz que tu empresa aparezca en ChatGPT, Gemini, AI Overviews y otros buscadores basados en IA cuando los clientes busquen empresas como la tuya.",
+                features: ["ChatGPT y Gemini", "AI Overviews", "Optimización para IA"],
                 link: "/posicionamiento-local",
               },
               {
-                logo: <img src="/logos/google-search-console.png" alt="Paid Media" className="h-8 w-auto object-contain" />,
-                title: <>PAID MEDIA<br />(ANUNCIOS ONLINE)</>,
-                desc: "Multiplica tus ventas desde el primer día a través de anuncios en canales digitales.",
-                features: ["Google Ads", "Google Maps Ads", "Anuncios de Servicios Locales", "Google Shopping", "META Ads", "LinkedIn Ads"],
+                logo: <img src="/logos/google-business-profile.png" alt="Google Business Profile" className="h-8 w-auto object-contain" />,
+                title: <>Gestión de <span className="text-primary group-hover:text-white transition-colors duration-[250ms]">reseñas PRO</span></>,
+                desc: "Consigue más reseñas reales y mejora tu reputación online con una estrategia diseñada para aumentar la confianza de nuevos clientes.",
+                features: ["Tarjeta NFC o QR", "Automatización de solicitudes", "Respuesta profesional"],
+                link: "/ficha-google-mi-negocio",
+              },
+              {
+                logo: (
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden>
+                    <rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" strokeWidth="1.5" />
+                    <text x="12" y="16.5" textAnchor="middle" fontSize="9" fontWeight="bold" fill="currentColor" fontFamily="sans-serif">Ads</text>
+                  </svg>
+                ),
+                title: <>Google <span className="text-primary group-hover:text-white transition-colors duration-[250ms]">Ads</span></>,
+                desc: "Genera llamadas desde el primer día mientras el SEO Local sigue creciendo de forma orgánica.",
+                features: ["Campañas de búsqueda", "Optimización mensual", "Seguimiento de conversiones"],
+                link: "/contacto",
+              },
+              {
+                logo: (
+                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                  </svg>
+                ),
+                title: <><span className="text-primary group-hover:text-white transition-colors duration-[250ms]">Backlinks</span> Locales</>,
+                desc: "Consigue enlaces y menciones locales para aumentar la autoridad de tu web y reforzar tu posicionamiento.",
+                features: ["Citaciones locales", "Directorios de calidad", "Link Building Local"],
                 link: "/contacto",
               },
             ].map((service, idx) => (
               <div
                 key={idx}
-                className="group bg-white border border-warm-fg/10 rounded-2xl p-7 md:p-8 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] flex flex-col min-h-[520px] transition-all duration-[250ms] ease-out hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(26,26,36,0.15)] hover:border-primary/30"
+                className="group bg-white border border-warm-fg/10 rounded-2xl p-7 md:p-8 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] flex flex-col min-h-[520px] transition-all duration-[250ms] ease-out hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(26,26,36,0.15)] hover:border-primary hover:bg-primary"
               >
-                <div className="mb-8 h-9 flex items-center">{service.logo}</div>
-                <h3 className="font-heading font-bold text-warm-fg text-2xl md:text-[26px] leading-[1.1] tracking-tight mb-5">
+                <div className="mb-8 h-9 flex items-center text-warm-fg group-hover:text-white group-hover:brightness-0 group-hover:invert transition-all duration-[250ms]">{service.logo}</div>
+                <h3 className="font-heading font-bold text-warm-fg text-2xl md:text-[26px] leading-[1.1] tracking-tight mb-5 group-hover:text-white transition-colors duration-[250ms]">
                   {service.title}
                 </h3>
-                <p className="text-[15px] font-body font-light text-warm-fg/70 leading-relaxed mb-8">
+                <p className="text-[15px] font-body font-light text-warm-fg/70 leading-relaxed mb-8 group-hover:text-white/90 transition-colors duration-[250ms]">
                   {service.desc}
                 </p>
                 <ul className="space-y-3 mt-auto">
                   {service.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5 text-[14px] font-body text-warm-fg/85">
-                      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" className="text-primary shrink-0 mt-0.5" aria-hidden>
+                    <li key={f} className="flex items-start gap-2.5 text-[14px] font-body text-warm-fg/85 group-hover:text-white transition-colors duration-[250ms]">
+                      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" className="text-primary shrink-0 mt-0.5 group-hover:text-white transition-colors duration-[250ms]" aria-hidden>
                         <circle cx="10" cy="10" r="9" stroke="currentColor" strokeWidth="1.5" />
                         <path d="M8 6.5l3.5 3.5L8 13.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
@@ -744,7 +754,7 @@ const FontanerosPage = () => {
                 </ul>
                 <Link
                   to={service.link}
-                  className="mt-6 inline-flex items-center gap-1 font-heading text-sm text-primary hover:gap-2 transition-all duration-[250ms]"
+                  className="mt-6 inline-flex items-center gap-1 font-heading text-sm text-primary hover:gap-2 transition-all duration-[250ms] group-hover:text-white"
                 >
                   Más información →
                 </Link>
