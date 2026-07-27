@@ -530,7 +530,7 @@ const FontanerosPage = () => {
         <div className="container">
           <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Visibilidad</p>
           <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight max-w-[22ch] mb-8">
-            ¿Qué errores impiden que un fontanero aparezca en Google?
+            ¿Qué <span className="text-primary">errores</span> impiden que un fontanero aparezca en Google?
           </h2>
           <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed max-w-3xl mb-16">
             En Slocal detectamos dos errores que impiden aparecer: fichas de Google desactualizadas y webs sin páginas específicas por servicio. Los corregimos activando tu ficha, publicando contenido mensual y creando páginas por servicio y por zona para que Google entienda cuándo mostrarte.
