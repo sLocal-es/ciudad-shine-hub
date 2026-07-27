@@ -776,7 +776,7 @@ const FontanerosPage = () => {
         <div className="container">
           <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Cobertura</p>
           <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-5xl leading-[1.05] tracking-tight max-w-[22ch] mb-4">
-            ¿En qué ciudades trabaja Slocal con fontaneros?
+            ¿En qué <span className="text-primary">ciudades</span> trabaja Slocal con fontaneros?
           </h2>
           <p className="text-base font-body text-warm-fg leading-relaxed mb-10 max-w-2xl">
             Slocal trabaja con fontaneros en toda España, con clientes activos en Madrid, Barcelona, Valencia, Sevilla, Málaga, Zaragoza, Bilbao y Murcia. Adaptamos la estrategia local a cada ciudad y a cada barrio para captar las búsquedas de máxima intención de tu zona.
