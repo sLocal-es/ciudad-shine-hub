@@ -170,4 +170,25 @@ export const seoLocalCities: Record<string, SeoLocalCity> = {
       "En 2-3 meses los primeros resultados son visibles. Es uno de los mercados con la mejor ventana de oportunidad de toda España para posicionarse antes que la competencia.",
     ],
   },
+  cordoba: {
+    slug: "cordoba",
+    name: "Córdoba",
+    population: "325.000 habitantes",
+    competition: "Baja",
+    plazo: "2-3 meses",
+    mapQuery: "Córdoba, España",
+    barriosBusquedas: [
+      { barrio: "Centro", busqueda: "abogado en Córdoba centro" },
+      { barrio: "Poniente", busqueda: "fontanero en Poniente Córdoba" },
+      { barrio: "Levante", busqueda: "clínica dental en Levante" },
+      { barrio: "Ciudad Jardín", busqueda: "fisioterapeuta en Ciudad Jardín" },
+      { barrio: "Fátima", busqueda: "reformas en Fátima Córdoba" },
+      { barrio: "Sector Sur", busqueda: "psicólogo en Sector Sur Córdoba" },
+    ],
+    oportunidad: [
+      "Córdoba tiene 325.000 habitantes y una competencia digital local baja en la mayoría de sectores. Es uno de los mercados con mejor ventana de oportunidad de España para posicionarse antes que la competencia.",
+      "En 2-3 meses los primeros resultados son visibles y en 4-6 meses la ficha se consolida en el top 3 de Google Maps para las búsquedas locales más relevantes de la ciudad.",
+    ],
+  },
 };
+
