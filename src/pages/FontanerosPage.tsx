@@ -636,35 +636,8 @@ const FontanerosPage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
-            {/* Featured card — orange */}
-            <div className="bg-primary text-primary-foreground rounded-2xl p-7 md:p-8 shadow-[0_20px_50px_-20px_rgba(232,84,26,0.5)] flex flex-col min-h-[520px]">
-              <p className="font-heading text-[11px] tracking-[0.15em] uppercase text-primary-foreground/80 mb-8">
-                SLOCAL.ES
-              </p>
-              <h3 className="font-heading font-bold text-2xl md:text-[26px] leading-[1.1] tracking-tight mb-5">
-                POTENCIA<br />TUS<br />RESULTADOS
-              </h3>
-              <p className="text-[15px] font-body font-light text-primary-foreground/90 leading-relaxed mb-8">
-                Tu web y Google Business Profile son la base del SEO Local. Estos servicios complementarios potencian tu estrategia para conseguir todavía más clientes.
-              </p>
-              <ul className="space-y-3 mt-auto">
-                {[
-                  "Posicionamiento GEO",
-                  "Gestión de reseñas PRO",
-                  "Google Ads",
-                  "Backlinks Locales",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2.5 font-body text-[14px] text-primary-foreground">
-                    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" className="shrink-0 mt-0.5" aria-hidden>
-                      <circle cx="10" cy="10" r="9" stroke="currentColor" strokeWidth="1.5" />
-                      <path d="M7 10l2.2 2.2L13.5 7.8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+
 
             {/* Service cards */}
             {[
