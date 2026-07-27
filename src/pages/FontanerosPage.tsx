@@ -254,10 +254,10 @@ const FontanerosPage = () => {
             <div>
               <p className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary mb-6">Web optimizada</p>
               <h3 className="font-heading font-semibold text-warm-fg leading-[1.1] tracking-tight text-3xl md:text-4xl lg:text-5xl max-w-[18ch]">
-                Una web preparada para convertir visitas en clientes
+                Una web que <span className="text-primary">convierte</span> visitas en clientes
               </h3>
               <p className="mt-6 max-w-lg text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed">
-                La ficha de Google te da la visibilidad y las llamadas directas. La web se encarga del resto: transforma en cliente a quien busca comparar, revisar servicios o pedir presupuesto antes de decidir.
+                Mientras Google Business Profile genera las llamadas, tu web se encarga de convertir las visitas en presupuestos y nuevos clientes.
               </p>
               <ul className="mt-8 space-y-3 max-w-md">
                 {[
