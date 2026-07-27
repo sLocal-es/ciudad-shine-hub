@@ -95,8 +95,8 @@ const Home = () => {
               ))}
             </div>
             <div className="flex flex-wrap gap-3">
-              <Link to="/planes" className="bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors">
-                Ver planes →
+              <Link to="/contacto" className="bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors">
+                Hablemos →
               </Link>
               <AnalisisGratuitoModal
                 trigger={

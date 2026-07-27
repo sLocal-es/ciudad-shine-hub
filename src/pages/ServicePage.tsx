@@ -65,8 +65,8 @@ const ServicePage = () => {
             <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-8 font-body font-light">
               {service.subtitle}
             </p>
-            <Link to="/planes" className="bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors inline-block">
-              Ver planes →
+            <Link to="/contacto" className="bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors inline-block">
+              Hablemos →
             </Link>
           </div>
           <ServiceHeroVisual slug={service.slug} />

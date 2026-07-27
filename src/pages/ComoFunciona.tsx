@@ -709,12 +709,6 @@ const ComoFunciona = () => (
           >
             Hablemos →
           </Link>
-          <Link
-            to="/planes"
-            className="border border-dark-fg/30 text-dark-fg font-heading text-sm rounded-lg px-8 py-3 hover:bg-dark-fg/10 transition-colors"
-          >
-            Ver qué incluye
-          </Link>
         </div>
         <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-dark-fg/80">
           {["Sin permanencia", "Precio fijo visible", "Siempre la misma persona"].map((item) => (

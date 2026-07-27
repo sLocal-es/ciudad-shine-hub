@@ -106,7 +106,7 @@ export const posts: BlogPost[] = [
       </table>
 
       <h2>Cómo slocal.es ayuda a fisioterapeutas a conseguir más pacientes</h2>
-      <p>En <a href="/">slocal.es</a> gestionamos el posicionamiento local de clínicas de fisioterapia en España. El servicio incluye la optimización y gestión mensual de tu Google Business Profile, una web con páginas específicas por tratamiento y ciudad, contenido mensual posicionado y un informe mensual con los resultados reales. Desde 147€/mes.</p>
+      <p>En <a href="/">slocal.es</a> gestionamos el posicionamiento local de clínicas de fisioterapia en España. El servicio incluye la optimización y gestión mensual de tu Google Business Profile, una web con páginas específicas por tratamiento y ciudad, contenido mensual posicionado y un informe mensual con los resultados reales.</p>
 
       <img src="/blog/fisio-mobile-search.svg" alt="Mockup de móvil mostrando resultados de búsqueda de fisioterapeuta en Google" />
 
@@ -291,7 +291,7 @@ export const posts: BlogPost[] = [
 
     <h2 id="slocal">Potencia tu visibilidad en Google Maps con slocal.es</h2>
     <p>Llevar a cabo todas estas acciones de forma constante mientras gestionas tu negocio es difícil. <a href="/">slocal.es</a> es un sistema de visibilidad local — no una agencia — que gestiona tu ficha de Google Business Profile, publica contenido semanal y monitoriza tus posiciones cada mes.</p>
-    <p>Trabajamos con <a href="/seo-para-fontaneros">fontaneros</a>, <a href="/seo-para-fisioterapeutas">fisioterapeutas</a>, <a href="/seo-para-reformas">empresas de reformas</a> y <a href="/seo-para-pintores">pintores</a> en toda España. Sin contratos de permanencia. Sin letra pequeña. <a href="/planes">Ver planes →</a></p>
+    <p>Trabajamos con <a href="/seo-para-fontaneros">fontaneros</a>, <a href="/seo-para-fisioterapeutas">fisioterapeutas</a>, <a href="/seo-para-reformas">empresas de reformas</a> y <a href="/seo-para-pintores">pintores</a> en toda España. Sin contratos de permanencia. Sin letra pequeña. <a href="/contacto">Hablemos →</a></p>
   `,
   faqs: [
   {
@@ -435,7 +435,7 @@ export const posts: BlogPost[] = [
 
     <h2 id="slocal">Cómo te ayudamos desde slocal.es a posicionar tu negocio en Córdoba</h2>
     <p>En <a href="/">slocal.es</a> gestionamos el SEO local de negocios cordobeses como un sistema mensual: optimizamos y mantenemos tu ficha de Google Business Profile, creamos páginas por barrio en tu web, gestionamos la obtención y respuesta de reseñas, y publicamos contenido mensual que te posiciona para nuevas búsquedas. Cada mes recibes un informe claro con las posiciones ganadas, las llamadas generadas y qué vamos a hacer el mes siguiente.</p>
-    <p>Trabajamos con fontaneros, fisioterapeutas, clínicas, empresas de reformas y comercios locales en toda <a href="/seo-local-cordoba">Córdoba</a> y su área metropolitana. Sin permanencia, sin intermediarios, hablas siempre con la misma persona. Desde 147€/mes + IVA.</p>
+    <p>Trabajamos con fontaneros, fisioterapeutas, clínicas, empresas de reformas y comercios locales en toda <a href="/seo-local-cordoba">Córdoba</a> y su área metropolitana. Sin permanencia, sin intermediarios, hablas siempre con la misma persona.</p>
     <p><a href="/como-ve-google-mi-web">Analiza gratis cómo aparece tu negocio en Google →</a></p>
 
     <h2>Resumen</h2>
@@ -453,7 +453,7 @@ export const posts: BlogPost[] = [
     { q: "¿Tiene sentido el SEO local en Córdoba si mi competencia no lo hace?", a: "Sí, precisamente por eso es la mejor oportunidad. Solo el 38% de los negocios locales cordobeses tienen su ficha de Google completamente optimizada. Empezar antes que tu competencia significa quedarte con esos puestos del Pack de 3 antes de que el mercado se sature, como ya ha pasado en Madrid o Barcelona." },
     { q: "¿Funciona el SEO local si no tengo local físico en Córdoba?", a: "Sí. Si ofreces servicios a domicilio — fontaneros, electricistas, reformas, entrenadores personales — puedes configurar tu ficha como negocio en área de servicio y definir las zonas de Córdoba donde operas. Aparecerás en búsquedas locales sin necesidad de mostrar dirección física." },
     { q: "¿Es mejor posicionar 'Córdoba' o un barrio concreto?", a: "Lo ideal es trabajar ambos a la vez. Las búsquedas por barrio (Casco Histórico, Ciudad Jardín, El Brillante…) tienen menos competencia y conviertes antes. Las búsquedas generales por 'Córdoba' tienen más volumen pero requieren más tiempo y reseñas. Una estrategia bien hecha gana primero los barrios y luego escala a la ciudad." },
-    { q: "¿Cuánto cuesta el SEO local para un negocio en Córdoba?", a: "En slocal.es trabajamos con negocios cordobeses desde 147€/mes + IVA, sin permanencia. El plan incluye gestión mensual de tu ficha de Google, contenido optimizado por barrio, gestión de reseñas e informe mensual de resultados. Hablas siempre con la misma persona, sin intermediarios." }
+    { q: "¿Cuánto cuesta el SEO local para un negocio en Córdoba?", a: "En slocal.es trabajamos con negocios cordobeses sin permanencia. El plan incluye gestión mensual de tu ficha de Google, contenido optimizado por barrio, gestión de reseñas e informe mensual de resultados. Hablas siempre con la misma persona, sin intermediarios. Consulta condiciones sin compromiso." }
   ],
 },
 {

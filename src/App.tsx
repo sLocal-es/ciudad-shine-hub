@@ -7,7 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Home from "@/pages/Home";
 import ComoFunciona from "@/pages/ComoFunciona";
-import Planes from "@/pages/Planes";
+
 import Contacto from "@/pages/Contacto";
 import PosicionamientoLocal from "@/pages/PosicionamientoLocal";
 import ServicePage from "@/pages/ServicePage";
@@ -114,7 +114,7 @@ const App = () => (
           <Route element={<MainLayout />}>
             <Route path="/" element={<Home />} />
             <Route path="/como-funciona" element={<ComoFunciona />} />
-            <Route path="/planes" element={<Planes />} />
+            
             <Route path="/contacto" element={<Contacto />} />
             <Route path="/posicionamiento-local" element={<PosicionamientoLocal />} />
             <Route path="/como-ve-google-mi-web" element={<ComoVeGoogleMiWeb />} />

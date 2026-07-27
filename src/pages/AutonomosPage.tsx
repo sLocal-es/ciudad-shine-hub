@@ -203,17 +203,6 @@ const AutonomosPage = () => {
     description:
       "SEO local para autónomos: ficha de Google, web y posicionamiento local desde consulta condiciones sin permanencia.",
     areaServed: { "@type": "Country", name: "España" },
-    offers: {
-      "@type": "Offer",
-      price: "147",
-      priceCurrency: "EUR",
-      priceSpecification: {
-        "@type": "UnitPriceSpecification",
-        price: "147",
-        priceCurrency: "EUR",
-        unitText: "mes",
-      },
-    },
   };
 
   const faqSchema = {

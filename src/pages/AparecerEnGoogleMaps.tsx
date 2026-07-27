@@ -83,7 +83,7 @@ const AparecerEnGoogleMaps = () => {
     name: "Optimización de ficha en Google Maps",
     provider: { "@type": "LocalBusiness", name: "slocal.es", url: "https://slocal.es" },
     areaServed: "España",
-    offers: { "@type": "Offer", price: "147", priceCurrency: "EUR" },
+    
   };
 
   return (

@@ -82,9 +82,6 @@ const SectorPage = () => {
               <Link to="/contacto" className="bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors">
                 Empezar →
               </Link>
-              <Link to="/planes" className="border border-dark-fg/20 text-dark-fg font-heading text-sm rounded-lg px-6 py-3 hover:border-primary hover:text-primary transition-colors">
-                Ver planes
-              </Link>
             </div>
           </div>
 
