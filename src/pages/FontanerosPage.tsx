@@ -92,12 +92,24 @@ const WebSkeletonMockup = () => (
 const FontanerosPage = () => {
   const faqs = [
     {
-      q: "¿Vale la pena el SEO para un fontanero autónomo?",
-      a: "Sí. La mayoría de nuestros clientes son autónomos o empresas de 2-3 personas. El SEO local es especialmente rentable para fontaneros porque cada trabajo puede valer entre 80€ y varios miles en instalaciones grandes. Una llamada adicional al mes ya amortiza el servicio.",
+      q: "¿Qué necesita una empresa de fontanería para posicionarse en Google?",
+      a: "Necesita una ficha de Google Business Profile optimizada, una web con páginas por servicio y ciudad, reseñas reales y contenido publicado cada mes. En Slocal aplicamos ese proceso en cuatro pasos: auditoría gratuita, plan de crecimiento, optimización de ficha y web, y seguimiento mensual para reforzar posiciones, reseñas y contenido.",
     },
     {
-      q: "¿Necesito web si ya tengo ficha de Google?",
-      a: "La ficha sola posiciona en Maps, pero una web refuerza la autoridad y te permite aparecer también en los resultados orgánicos. El servicio incluye ambas desde el inicio.",
+      q: "¿Basta con tener una ficha de Google Business Profile?",
+      a: "No. La ficha sola posiciona en Google Maps, pero una web específica de fontanería refuerza la autoridad y te permite aparecer también en los resultados orgánicos. Ficha y web trabajan juntas: la ficha capta las búsquedas locales inmediatas y la web posiciona búsquedas más específicas por servicio y por zona.",
+    },
+    {
+      q: "¿Es suficiente una sola página para todos mis servicios?",
+      a: "No. Google necesita páginas específicas por servicio (urgencias, calderas, fugas, desatascos, reformas) y por zona para entender cuándo mostrarte. Una sola página genérica compite peor que una web con contenido especializado por cada búsqueda con intención real en tu ciudad.",
+    },
+    {
+      q: "¿Qué tipos de servicios de fontanería posiciona Slocal?",
+      a: "Slocal posiciona todos los servicios que ofrece un fontanero: urgencias 24 horas, averías, instalación y cambio de caldera, detección de fugas, desatascos, comunidades y reformas. Creamos contenido específico para cada servicio para que aparezcas en las búsquedas correctas de tu ciudad.",
+    },
+    {
+      q: "¿Vale la pena el SEO para un fontanero autónomo?",
+      a: "Sí. La mayoría de nuestros clientes son autónomos o empresas de 2-3 personas. El SEO local es especialmente rentable para fontaneros porque cada trabajo puede valer entre 80€ y varios miles en instalaciones grandes. Una llamada adicional al mes ya amortiza el servicio.",
     },
     {
       q: "¿Cómo compito con fontaneros que llevan años en Google?",
