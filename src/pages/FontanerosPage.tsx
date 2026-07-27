@@ -123,6 +123,14 @@ const FontanerosPage = () => {
       q: "¿Cuándo empiezo a recibir más llamadas?",
       a: "Los primeros contactos desde Google suelen aparecer entre el mes 2 y el mes 3. Las urgencias se captan antes porque la intención de búsqueda es inmediata y la competencia bien posicionada es menor en esas queries específicas.",
     },
+    {
+      q: "¿Basta con tener la ficha de Google creada?",
+      a: "No basta. El error más común es crear la ficha cuando empiezas y no volver a tocarla. Google interpreta la inactividad como abandono y te baja posiciones cada semana frente a fontaneros que sí la gestionan.",
+    },
+    {
+      q: "¿Es suficiente una sola página para todos mis servicios?",
+      a: "No. 'Fontanero urgente', 'instalación de caldera' y 'detección de fugas' son búsquedas distintas con clientes distintos. Si tienes una sola página genérica, solo apareces para una — y compites con todos por el mismo hueco.",
+    },
   ];
 
   const breadcrumbSchema = {
@@ -503,37 +511,6 @@ const FontanerosPage = () => {
       </section>
 
 
-      {/* ¿POR QUÉ NO APAREZCO? */}
-      <section className={sectionCls}>
-        <div className="container">
-          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Visibilidad</p>
-          <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight max-w-[22ch] mb-8">
-            ¿Qué <span className="text-primary">errores</span> impiden que un fontanero aparezca en Google?
-          </h2>
-          <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed max-w-3xl mb-16">
-            En Slocal detectamos dos errores que impiden aparecer: fichas de Google desactualizadas y webs sin páginas específicas por servicio. Los corregimos activando tu ficha, publicando contenido mensual y creando páginas por servicio y por zona para que Google entienda cuándo mostrarte.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
-            <div>
-              <h3 className="font-heading text-2xl md:text-3xl text-warm-fg leading-snug mb-6">
-                ¿Basta con tener la ficha de Google creada?
-              </h3>
-              <p className="text-base md:text-lg font-body font-light text-warm-fg/70 leading-relaxed">
-                No basta. El error más común es crear la ficha cuando empiezas y no volver a tocarla. Google interpreta la inactividad como abandono y te baja posiciones cada semana frente a fontaneros que sí la gestionan.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-heading text-2xl md:text-3xl text-warm-fg leading-snug mb-6">
-                ¿Es suficiente una sola página para todos mis servicios?
-              </h3>
-              <p className="text-base md:text-lg font-body font-light text-warm-fg/70 leading-relaxed">
-                "Fontanero urgente", "instalación de caldera" y "detección de fugas" son búsquedas distintas con clientes distintos. Si tienes una sola página genérica, solo apareces para una — y compites con todos por el mismo hueco.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
 
       {/* CASO REAL */}
