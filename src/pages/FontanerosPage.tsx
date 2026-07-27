@@ -629,7 +629,7 @@ const FontanerosPage = () => {
         <div className="container">
           <div className="max-w-3xl mb-16">
             <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
-              ¿Qué otros servicios pueden ayudarte a conseguir más clientes desde Google?
+              ¿Qué otros servicios pueden ayudarte a conseguir <span className="text-primary">más clientes</span> desde Google?
             </h2>
             <p className="text-base md:text-lg font-body font-light text-warm-fg/70 leading-relaxed max-w-3xl">
               Además de optimizar tu web y Google Business Profile, podemos ayudarte con servicios especializados para aumentar tu visibilidad, generar más confianza y acelerar el crecimiento de tu negocio.
