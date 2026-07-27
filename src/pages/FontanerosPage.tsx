@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import CTASection from "@/components/CTASection";
@@ -282,6 +282,21 @@ const FontanerosPage = () => {
   // Reusable section wrapper — pure white background per brief
   const sectionCls = "bg-white py-24 md:py-32 border-t border-warm-fg/10";
 
+  // Trustindex widget loader — injected once into the reviews section
+  useEffect(() => {
+    const container = document.getElementById("trustindex-container");
+    if (!container || container.querySelector("script")) return;
+    const script = document.createElement("script");
+    script.defer = true;
+    script.async = true;
+    script.src = "https://cdn.trustindex.io/loader.js?a21933477c0d8486ec6613b6509";
+    container.appendChild(script);
+    return () => {
+      const existing = container.querySelector("script");
+      if (existing) existing.remove();
+    };
+  }, []);
+
   return (
     <>
       <SEOHead
@@ -564,6 +579,31 @@ const FontanerosPage = () => {
         </div>
       </section>
 
+      {/* RESEÑAS */}
+      <section className={sectionCls}>
+        <div className="container">
+          <div className="max-w-[1200px] mx-auto text-center">
+            <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Reseñas</p>
+            <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
+              ¿Por qué tantas <span className="text-primary">empresas de fontanería</span> confían en Slocal?
+            </h2>
+            <p className="text-base md:text-lg font-body font-light text-warm-fg/70 leading-relaxed max-w-3xl mx-auto mb-14">
+              La mejor forma de demostrar nuestro trabajo es con la opinión de quienes ya han confiado en nosotros. Descubre cómo empresas de fontanería y otros negocios locales han mejorado su visibilidad y conseguido más clientes gracias al SEO Local.
+            </p>
+            <div id="trustindex-container" className="min-h-[200px] mb-14" />
+            <button
+              onClick={() => {
+                const el = document.getElementById("contacto");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="inline-flex items-center justify-center rounded-xl bg-primary text-primary-foreground font-heading text-sm px-8 py-4 hover:bg-primary/90 transition-colors"
+            >
+              Solicita tu auditoría gratuita
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* SERVICIOS */}
       <section className={sectionCls}>
         <div className="container">
@@ -825,6 +865,7 @@ const FontanerosPage = () => {
       </section>
 
       <CTASection
+        id="contacto"
         title="¿Quieres que tu teléfono suene más gracias a Google?"
         buttonText="Solicitar auditoría gratuita →"
       />

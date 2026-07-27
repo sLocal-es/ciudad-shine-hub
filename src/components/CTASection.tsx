@@ -4,10 +4,11 @@ interface CTASectionProps {
   title: string;
   buttonText?: string;
   buttonTo?: string;
+  id?: string;
 }
 
-const CTASection = ({ title, buttonText = "Hablemos →", buttonTo = "/contacto" }: CTASectionProps) => (
-  <section className="bg-primary py-16">
+const CTASection = ({ title, buttonText = "Hablemos →", buttonTo = "/contacto", id }: CTASectionProps) => (
+  <section id={id} className="bg-primary py-16">
     <div className="container text-center">
       <h2 className="font-heading text-2xl md:text-3xl text-primary-foreground mb-6">{title}</h2>
       <Link
