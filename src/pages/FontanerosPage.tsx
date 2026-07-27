@@ -508,14 +508,13 @@ const FontanerosPage = () => {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center">
             <div className="md:col-span-7 order-2 md:order-1">
-              <div className="w-full aspect-[4/5] md:aspect-square rounded-[2rem] bg-[hsl(var(--warm-bg))] border-2 border-dashed border-warm-fg/15 flex flex-col items-center justify-center text-center p-8">
-                <span className="text-4xl mb-4">🖼</span>
-                <span className="font-heading text-sm tracking-[0.2em] uppercase text-warm-fg/40">
-                  SLOCAL CASE STUDY
-                </span>
-                <span className="font-heading text-sm tracking-[0.2em] uppercase text-warm-fg/40">
-                  ILLUSTRATION
-                </span>
+              <div className="w-full rounded-[2rem] bg-[hsl(var(--warm-bg))] border border-warm-fg/10 overflow-hidden">
+                <img
+                  src="/images/caso_de_exito_fontanero_vigo.webp"
+                  alt="Caso de éxito: fontanería de Vigo que pasó de no aparecer en Google a recibir más de 30 llamadas al mes gracias a Slocal"
+                  className="w-full h-auto object-cover"
+                  loading="lazy"
+                />
               </div>
             </div>
             <div className="md:col-span-5 order-1 md:order-2">
