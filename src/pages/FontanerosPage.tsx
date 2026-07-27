@@ -781,7 +781,7 @@ const FontanerosPage = () => {
                     {service.logo}
                   </div>
                 </div>
-                <h3 className="font-heading font-bold text-warm-fg text-2xl md:text-[26px] leading-[1.1] tracking-tight mb-5 group-hover:text-white transition-colors duration-[250ms]">
+                <h3 className="font-heading font-bold text-warm-fg text-2xl md:text-[26px] leading-[1.15] tracking-tight mb-5 group-hover:text-white transition-colors duration-[250ms]">
                   {service.title}
                 </h3>
                 <p className="text-[15px] font-body font-light text-warm-fg/70 leading-relaxed mb-8 group-hover:text-white/90 transition-colors duration-[250ms]">
