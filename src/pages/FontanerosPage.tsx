@@ -1,8 +1,56 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import CTASection from "@/components/CTASection";
 import SectorHeroDark from "@/components/sector/SectorHeroDark";
 import LogoMarquee from "@/components/LogoMarquee";
+import { sendForm } from "@/lib/sendForm";
+import { toast } from "@/hooks/use-toast";
+
+const AuditoriaLeadForm = () => {
+  const [form, setForm] = useState({ name: "", phone: "", email: "" });
+  const [loading, setLoading] = useState(false);
+
+  const onSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      await sendForm({
+        form_type: "auditoria_fontaneros",
+        from_name: form.name,
+        from_email: form.email,
+        phone: form.phone,
+        sector: "Fontaneros",
+      });
+      toast({ title: "Solicitud enviada", description: "Te enviaremos tu auditoría en menos de 24 horas." });
+      setForm({ name: "", phone: "", email: "" });
+    } catch {
+      toast({ title: "Error al enviar", description: "Inténtalo de nuevo en unos minutos.", variant: "destructive" });
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const inputCls =
+    "w-full rounded-xl bg-white text-warm-fg placeholder:text-warm-fg/50 px-4 py-3.5 text-[15px] font-body outline-none border border-transparent focus:border-warm-fg/20 focus:ring-2 focus:ring-white/40 transition";
+
+  return (
+    <form onSubmit={onSubmit} className="w-full rounded-2xl bg-white/10 p-5 md:p-6 backdrop-blur-sm">
+      <div className="space-y-3">
+        <input required type="text" placeholder="Nombre" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className={inputCls} />
+        <input required type="tel" placeholder="Teléfono" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className={inputCls} />
+        <input required type="email" placeholder="Email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className={inputCls} />
+        <button
+          type="submit"
+          disabled={loading}
+          className="w-full rounded-xl bg-warm-fg text-white px-5 py-3.5 text-[15px] font-heading font-medium hover:bg-warm-fg/90 transition disabled:opacity-60"
+        >
+          {loading ? "Enviando..." : "Quiero mi auditoría gratuita"}
+        </button>
+      </div>
+    </form>
+  );
+};
 
 
 const GbpSkeletonMockup = () => (
@@ -294,6 +342,41 @@ const FontanerosPage = () => {
           </div>
         </div>
       </section>
+
+      {/* CTA AUDITORÍA GRATUITA */}
+      <section className="bg-white py-12 md:py-20">
+        <div className="container">
+          <div className="rounded-3xl bg-primary text-primary-foreground px-6 py-14 md:px-14 md:py-20 lg:px-20 lg:py-24">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+              <div>
+                <span className="inline-flex items-center rounded-full bg-white/15 px-3 py-1 text-[11px] font-heading tracking-[0.18em] uppercase text-white">
+                  Auditoría gratuita
+                </span>
+                <h2 className="mt-6 font-heading font-semibold leading-[1.1] tracking-tight text-3xl md:text-4xl lg:text-5xl text-white max-w-[20ch]">
+                  Descubre por qué tu competencia recibe más llamadas que tú
+                </h2>
+                <p className="mt-6 max-w-xl text-base md:text-lg font-body font-light text-white/85 leading-relaxed">
+                  Analizamos gratis tu ficha de Google Business Profile y tu web. Te mostraremos los principales errores que están impidiendo que aparezcas por delante de tu competencia.
+                </p>
+                <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm md:text-base font-body text-white/90">
+                  {["Sin compromiso", "Vídeo personalizado", "En menos de 24 horas"].map((b) => (
+                    <li key={b} className="flex items-center gap-2">
+                      <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden>
+                        <path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <AuditoriaLeadForm />
+            </div>
+          </div>
+        </div>
+      </section>
+
+
 
 
       {/* ¿CÓMO BUSCAN? — visual GBP + búsqueda */}
