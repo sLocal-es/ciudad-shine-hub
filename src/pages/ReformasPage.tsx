@@ -1,326 +1,90 @@
-import { Link } from "react-router-dom";
-import SEOHead from "@/components/SEOHead";
-import BreadcrumbNav from "@/components/BreadcrumbNav";
-import FAQSection from "@/components/FAQSection";
-import CTASection from "@/components/CTASection";
-import SectorHeroDark from "@/components/sector/SectorHeroDark";
+import SectorMasterTemplate, { SectorTemplateContent } from "@/components/sector/SectorMasterTemplate";
 
 const ReformasPage = () => {
   const faqs = [
-    {
-      q: "¿Cuándo empieza a llegar el primer presupuesto desde Google?",
-      a: "En reformas el proceso es más largo que en otros sectores — el cliente compara y valora antes de decidir. Los primeros contactos cualificados suelen aparecer entre el mes 3 y el mes 5. A partir del mes 6 el flujo se consolida. El SEO local trabaja mientras tú estás en la obra.",
-    },
-    {
-      q: "¿Funciona para autónomos de reformas o solo para empresas grandes?",
-      a: "Especialmente para autónomos y empresas pequeñas. El SEO local favorece la proximidad y la especialización. Una empresa bien posicionada en su zona aparece antes que una grande sin ficha optimizada. La mayoría de nuestros clientes de reformas son autónomos o empresas de 2 a 10 personas.",
-    },
-    {
-      q: "¿Necesito fotos de mis proyectos para empezar?",
-      a: "Ayudan mucho, especialmente en reformas. Las fotos de antes y después en Google son el factor que más aumenta los clics. Si no tienes, te decimos exactamente qué fotografiar para maximizar el impacto.",
-    },
-    {
-      q: "¿Cómo me diferencio de otras empresas de reformas en Google?",
-      a: "Con páginas específicas por tipo de reforma y por zona, reseñas gestionadas estratégicamente y contenido que muestra tu experiencia real. La mayoría de empresas de reformas tienen una sola página genérica — eso es exactamente la oportunidad para quien trabaja bien el SEO.",
-    },
-    {
-      q: "¿El SEO funciona mejor que Google Ads para reformas?",
-      a: "Dependen de objetivos distintos. Google Ads da visibilidad inmediata pagando por cada clic. El SEO local construye una presencia que genera presupuestos a coste cero a medio plazo. Para reformas, donde el ticket es alto, el retorno del SEO local a 6-12 meses es muy superior.",
-    },
+    { q: "¿Cuándo empieza a llegar el primer presupuesto desde Google?", a: "En reformas el proceso es más largo. Los primeros contactos cualificados suelen aparecer entre el mes 3 y el mes 5. A partir del mes 6 el flujo se consolida." },
+    { q: "¿Funciona para autónomos de reformas o solo para empresas grandes?", a: "Especialmente para autónomos y empresas pequeñas. La proximidad y especialización son tu ventaja frente a grandes empresas sin ficha optimizada." },
+    { q: "¿Necesito fotos de mis proyectos para empezar?", a: "Ayudan mucho. Las fotos de antes y después son el factor que más aumenta los clics. Si no tienes, te decimos qué fotografiar." },
+    { q: "¿Cómo me diferencio de otras empresas de reformas en Google?", a: "Con páginas específicas por tipo de reforma y zona, reseñas gestionadas y contenido que muestra tu experiencia real." },
+    { q: "¿El SEO funciona mejor que Google Ads para reformas?", a: "Para reformas, donde el ticket es alto, el retorno del SEO local a 6-12 meses es muy superior. Ads da visibilidad inmediata pero desaparece cuando dejas de pagar." },
+    { q: "¿Basta con tener la ficha de Google creada?", a: "No. Sin fotos de proyectos recientes, reseñas y publicaciones, Google interpreta la ficha como abandonada." },
+    { q: "¿Puedo posicionar por tipo de reforma (cocina, baño, integral)?", a: "Sí. Creamos páginas específicas por tipo de reforma y ciudad para captar cada búsqueda de alta intención." },
   ];
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Inicio", item: "https://slocal.es/" },
-      { "@type": "ListItem", position: 2, name: "SEO para Empresas de Reformas", item: "https://slocal.es/seo-para-reformas" },
+  const breadcrumbSchema = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://slocal.es/" },
+    { "@type": "ListItem", position: 2, name: "SEO para Empresas de Reformas", item: "https://slocal.es/seo-para-reformas" },
+  ]};
+  const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
+  const serviceSchema = { "@context": "https://schema.org", "@type": "Service", name: "SEO para Empresas de Reformas", provider: { "@type": "LocalBusiness", name: "slocal.es", url: "https://slocal.es" }, areaServed: "España" };
+  const localBusinessSchema = { "@context": "https://schema.org", "@type": "LocalBusiness", name: "slocal.es", url: "https://slocal.es", description: "SEO local para empresas de reformas en España", areaServed: "España", priceRange: "€€", openingHoursSpecification: [
+    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday"], opens: "09:00", closes: "20:00" },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Friday"], opens: "09:00", closes: "14:00" },
+  ]};
+
+  const content: SectorTemplateContent = {
+    seoTitle: "SEO para Empresas de Reformas | Agencia SEO Local | slocal.es",
+    seoDescription: "Agencia SEO Local para empresas de reformas: Google Business Profile, Google Maps y posicionamiento local para conseguir más presupuestos desde Google.",
+    canonical: "/seo-para-reformas",
+    sectorLabel: "Empresas de Reformas", sectorSlug: "seo-para-reformas", sectorLower: "empresas de reformas", clientWord: "clientes",
+    heroEyebrow: "Agencia SEO Local · Reformas",
+    heroH1: <h1>SEO para <span className="text-primary">Empresas de Reformas</span></h1>,
+    heroSubtitle: <>Agencia SEO Local especializada en empresas de reformas. Optimizamos tu ficha de Google Business Profile y tu web para que aparezcas primero cuando alguien busca reforma integral, de cocina o de baño en tu ciudad.</>,
+    heroTrust: ["Google Partner", "Ficha de Google gestionada cada mes", "Auditoría inicial sin coste"],
+    manifestoEyebrow: "— El punto de partida",
+    manifestoH2: <>¿Cómo conseguir <span className="text-primary">más presupuestos</span> de reforma desde Google?</>,
+    manifestoBody: <>En Slocal conseguimos que más clientes te pidan presupuesto optimizando tu ficha de Google Business Profile y posicionando tu web para búsquedas locales de alta intención. Aparecer en el top 3 de Google Maps multiplica los contactos cualificados.</>,
+    gbpH3: <>Tu ficha de <span className="text-primary">Google Business Profile</span> genera presupuestos</>,
+    gbpBody: <>Google Business Profile es donde el cliente decide llamarte para pedir presupuesto. Optimizamos tu ficha para aparecer antes que otras empresas y convertir búsquedas en solicitudes reales.</>,
+    gbpFeatures: ["Categorías de reformas y construcción", "Servicios estructurados por tipo", "Publicaciones con proyectos", "Gestión de reseñas", "Geolocalización", "Seguimiento de llamadas"],
+    webH3: <>Una web que <span className="text-primary">convierte</span> visitas en presupuestos</>,
+    webBody: <>Mientras la ficha genera la llamada, tu web transmite confianza con proyectos reales y convierte visitas en solicitudes de presupuesto.</>,
+    webFeatures: ["SEO Local", "Landing por tipo de reforma", "Landing por ciudad", "Formularios optimizados", "WhatsApp", "Google Analytics"],
+    auditoriaFormType: "auditoria_reformas",
+    howH2: <>¿Cómo conseguimos que aparezcas <span className="text-primary">por delante</span> de otras empresas de reformas en Google?</>,
+    howIntro: <>En Slocal apareces primero en Google Maps optimizando tu ficha, servicios, reseñas y contenido local. Google prioriza fichas activas y coherencia entre ficha, web y citaciones.</>,
+    howSteps: [
+      { h: "Auditoría", d: "Analizamos tu Google Business Profile, tu web y a las empresas de reformas competidoras." },
+      { h: "Estrategia", d: "Definimos búsquedas de alta intención (tipo de reforma + ciudad) y diseñamos el plan." },
+      { h: "Optimización", d: "Optimizamos ficha y web para que trabajen juntas y mejoren tu posicionamiento local." },
+      { h: "Autoridad Local", d: "Reforzamos reseñas, fotos de proyectos y señales de confianza." },
+      { h: "Seguimiento", d: "Medimos presupuestos, llamadas y posiciones cada mes." },
     ],
-  };
-
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((f) => ({
-      "@type": "Question",
-      name: f.q,
-      acceptedAnswer: { "@type": "Answer", text: f.a },
-    })),
-  };
-
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "SEO para Empresas de Reformas",
-    provider: { "@type": "LocalBusiness", name: "slocal.es", url: "https://slocal.es" },
-    areaServed: "España",
-    description: "Servicio de SEO local para empresas de reformas en España",
-  };
-
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: "slocal.es",
-    url: "https://slocal.es",
-    description: "SEO local para empresas de reformas en España",
-    areaServed: "España",
-    priceRange: "€€",
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
-        opens: "09:00",
-        closes: "20:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Friday"],
-        opens: "09:00",
-        closes: "14:00",
-      },
+    caseH2: <>¿Cómo consiguió Slocal que una <span className="text-primary">empresa de reformas</span> pasara del boca a boca a presupuestos constantes desde Google?</>,
+    caseIntro: <>Slocal transformó la presencia digital de esta empresa optimizando su Google Business Profile, desarrollando una web SEO Local y creando páginas específicas por tipo de reforma y ciudad.</>,
+    caseStages: [
+      { title: "ANTES", text: "Ficha sin gestionar, sin fotos de proyectos y dependiendo exclusivamente del boca a boca.", label: "Situación inicial: sin visibilidad para búsquedas de reforma local" },
+      { title: "ESTRATEGIA SLOCAL", text: "Optimizamos Google Business Profile, creamos web SEO Local y páginas por cada tipo de reforma.", label: "Estrategia Slocal: ficha, web y páginas por tipo de reforma" },
+      { title: "RESULTADO", text: "Top 3 en Google Maps y flujo constante de presupuestos cualificados cada semana.", label: "Resultados: top 3 en Maps y presupuestos constantes" },
     ],
+    caseKpis: [{ k: "+15", l: "Presupuestos al mes" }, { k: "TOP 3", l: "Google Maps" }, { k: "x12", l: "Retorno de la inversión" }],
+    monthlyH2: <>¿Por qué el SEO Local necesita trabajo <span className="text-primary">mes a mes</span>?</>,
+    monthlyBody: <>Porque Google no es una fotografía, es una competición continua. Reforzamos cada mes tu ficha, reseñas y contenido para mantener las primeras posiciones.</>,
+    monthlyReasons: [
+      { h: "Otras empresas siguen trabajando", d: "Otras reformistas publican proyectos y piden reseñas. Si te detienes, ellas avanzan." },
+      { h: "Google cambia constantemente", d: "El algoritmo se actualiza cada mes." },
+      { h: "Tu ficha necesita actividad", d: "Fotos de proyectos nuevos y respuestas a reseñas mantienen tu ficha viva." },
+      { h: "Aparecen nuevas búsquedas", d: "Cada mes surgen consultas nuevas por tipo de reforma o zona." },
+      { h: "Seguimos reforzando tu autoridad", d: "Cuanto más maduro es tu SEO local, más difícil es que te superen." },
+    ],
+    faqs,
+    citiesH2: <>¿En qué <span className="text-primary">ciudades</span> trabaja Slocal con empresas de reformas?</>,
+    citiesBody: <>Slocal trabaja con empresas de reformas en toda España, con clientes activos en Madrid, Barcelona, Valencia, Sevilla, Málaga, Zaragoza, Bilbao y Murcia.</>,
+    otherSectorsH2: <>¿Slocal solo trabaja con <span className="text-primary">empresas de reformas</span>?</>,
+    otherSectorsBody: <>No. Trabajamos también con fontaneros, fisioterapeutas, abogados, dentistas, psicólogos y gimnasios.</>,
+    otherSectors: [
+      { label: "SEO para fontaneros", slug: "seo-para-fontaneros" },
+      { label: "SEO para fisioterapeutas", slug: "seo-para-fisioterapeutas" },
+      { label: "SEO para abogados", slug: "seo-para-abogados" },
+      { label: "SEO para dentistas", slug: "seo-para-dentistas" },
+      { label: "SEO para psicólogos", slug: "seo-para-psicologos" },
+      { label: "SEO para gimnasios", slug: "seo-para-gimnasios" },
+    ],
+    finalCtaTitle: "¿Quieres que tu empresa de reformas reciba más presupuestos gracias a Google?",
+    jsonLd: [breadcrumbSchema, faqSchema, serviceSchema, localBusinessSchema],
   };
 
-  const serviceTypes = [
-    "Reformas integrales de vivienda",
-    "Reforma de cocina",
-    "Reforma de baño",
-    "Reforma de local comercial",
-    "Reformas para comunidades de vecinos",
-    "Rehabilitación de fachadas",
-    "Reformas de oficinas",
-    "Pintura y acabados interiores",
-  ];
-
-  const cities = [
-    { name: "Madrid", slug: "madrid" },
-    { name: "Barcelona", slug: "barcelona" },
-    { name: "Valencia", slug: "valencia" },
-    { name: "Sevilla", slug: "sevilla" },
-    { name: "Málaga", slug: "malaga" },
-    { name: "Zaragoza", slug: "zaragoza" },
-    { name: "Bilbao", slug: "bilbao" },
-    { name: "Murcia", slug: "murcia" },
-  ];
-
-  const otherSectors = [
-    { label: "SEO para fontaneros", slug: "seo-para-fontaneros" },
-    { label: "SEO para fisioterapeutas", slug: "seo-para-fisioterapeutas" },
-    { label: "SEO para pintores", slug: "seo-para-pintores" },
-    { label: "SEO para clínicas", slug: "seo-para-clinicas" },
-    { label: "SEO para entrenadores personales", slug: "seo-para-entrenadores" },
-    { label: "SEO para yoga y pilates", slug: "seo-para-yoga" },
-  ];
-
-  const steps = [
-    {
-      n: "01",
-      h: "Optimizamos tu ficha de Google para búsquedas de reforma local",
-      p: "Configuramos las categorías correctas para reformas y construcción, la descripción con keywords de intención de compra (reforma integral, reforma baño, reforma cocina), fotos de proyectos terminados, horarios y zona de servicio por ciudades y barrios. Las fotos de antes y después son el factor que más aumenta los clics en fichas de reforma — te guiamos en qué fotografiar.",
-    },
-    {
-      n: "02",
-      h: "Creamos páginas específicas para cada tipo de reforma",
-      p: 'Una web con página por tipo de reforma y por zona permite aparecer en búsquedas de alta intención: "reforma integral cocina Madrid", "reforma baño Valencia presupuesto", "empresa reformas locales comerciales Barcelona". Cada página ataca una búsqueda con intención de contratar. Los competidores con una sola página genérica no pueden posicionar para todas estas búsquedas a la vez.',
-    },
-    {
-      n: "03",
-      h: "Generamos confianza con contenido y reseñas estratégicas",
-      p: "En reformas, la confianza es el factor decisivo. Un cliente que pide tres presupuestos va a elegir a quien más confianza le transmita online. Gestionamos las reseñas de Google, creamos contenido que muestra tu experiencia y expertise, y construimos el perfil digital que convierte visitas en solicitudes de presupuesto.",
-    },
-  ];
-
-  return (
-    <>
-      <SEOHead
-        title="SEO para Empresas de Reformas | Más Presupuestos desde Google | slocal.es"
-        description="Haz que tu empresa de reformas aparezca cuando alguien busca reforma en tu ciudad. Más presupuestos desde Google."
-        canonical="/seo-para-reformas"
-        jsonLd={[breadcrumbSchema, faqSchema, serviceSchema, localBusinessSchema]}
-      />
-
-      {/* HERO */}
-      <section className="bg-dark-bg text-dark-fg py-16 md:py-24">
-        <div className="container grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div>
-            <BreadcrumbNav items={[
-              { label: "Inicio", href: "/" },
-              { label: "SEO para Empresas de Reformas" },
-            ]} />
-            <span className="inline-block border border-primary text-primary text-xs font-heading rounded-full px-4 py-1.5 mb-6">
-              SEO para Empresas de Reformas
-            </span>
-            <h1 className="font-heading text-3xl md:text-4xl leading-tight mb-4">
-              SEO para Empresas de Reformas: Más Presupuestos desde Google
-            </h1>
-            <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-8 font-body font-light">
-              Cuando alguien decide reformar su cocina o su baño, lo primero que hace es buscar en Google. Las empresas que aparecen en el top 3 se llevan la mayoría de los presupuestos. Las que no aparecen, no existen para ese cliente. Lo gestionamos para que seas tú quien aparezca.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link to="/contacto" className="bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors">
-                Empezar →
-              </Link>
-              <Link to="/como-funciona" className="border border-dark-fg/20 text-dark-fg font-heading text-sm rounded-lg px-6 py-3 hover:border-primary hover:text-primary transition-colors">
-                Ver cómo funciona
-              </Link>
-            </div>
-          </div>
-
-          <div className="border-2 border-dashed border-border bg-warm-bg rounded-xl aspect-[4/3] flex items-center justify-center p-6 text-center">
-            <p className="text-sm text-muted-foreground font-body">
-              [IMAGEN: Pantalla de móvil mostrando búsqueda "empresa de reformas Madrid" en Google Maps con Local Pack]
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* PROBLEM */}
-      <section className="py-16">
-        <div className="container max-w-5xl">
-          <h2 className="font-heading text-2xl md:text-3xl mb-10">
-            Por qué muchas empresas de reformas no aparecen en Google
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div className="space-y-4 text-base leading-relaxed font-body font-light text-foreground">
-              <p>
-                Las reformas son una de las búsquedas con mayor intención de compra en Google. Quien busca "empresa de reformas integrales en Madrid" o "reforma de baño en Barcelona" ya tiene presupuesto y está eligiendo a quién llamar. El problema es que Google Maps solo muestra tres empresas. Esas tres reciben el 40% de todos los contactos.
-              </p>
-              <p>
-                El sector de las reformas tiene un ciclo de venta más largo que otros — el cliente compara, pide varios presupuestos y valora la confianza. Por eso, aparecer primero en Google no solo genera más contactos, sino que posiciona tu empresa como la referencia de confianza en tu zona antes de que el cliente llame a nadie.
-              </p>
-            </div>
-            <div className="space-y-4 text-base leading-relaxed font-body font-light text-foreground">
-              <p>
-                El error más común en empresas de reformas: depender del boca a boca y no trabajar la visibilidad digital. El boca a boca es irregular — unos meses van bien y otros mal. El SEO local genera un flujo constante de presupuestos sin depender de referencias.
-              </p>
-              <p>
-                El segundo error: tener una sola página genérica. "Reforma integral", "reforma de baño", "reforma de cocina" y "reforma de local comercial" son búsquedas distintas con clientes distintos. Cada tipo de reforma necesita su propia página para posicionar en esa búsqueda específica. Las empresas que lo hacen bien reciben presupuestos cualificados cada semana.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* HOW */}
-      <section className="bg-warm-bg py-16">
-        <div className="container max-w-4xl">
-          <h2 className="font-heading text-2xl md:text-3xl mb-10">
-            Cómo conseguimos más presupuestos para tu empresa de reformas
-          </h2>
-          <div>
-            {steps.map((s, i) => (
-              <div
-                key={s.n}
-                className={`grid grid-cols-[auto_1fr] gap-6 md:gap-10 py-8 ${i < steps.length - 1 ? "border-b border-border" : ""}`}
-              >
-                <span className="font-heading text-4xl md:text-5xl text-primary leading-none">{s.n}</span>
-                <div>
-                  <h3 className="font-heading text-lg md:text-xl mb-3">{s.h}</h3>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed font-body font-light">
-                    {s.p}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SERVICE TYPES */}
-      <section className="py-16">
-        <div className="container max-w-5xl">
-          <h2 className="font-heading text-2xl md:text-3xl mb-4">
-            Tipos de reforma que posicionamos
-          </h2>
-          <p className="text-base text-muted-foreground font-body font-light mb-10 max-w-2xl">
-            Cada tipo de reforma tiene sus propias búsquedas en Google. Creamos páginas específicas para cada servicio.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
-              {serviceTypes.map((t) => (
-                <li key={t} className="flex items-start gap-2 text-sm font-body">
-                  <span className="text-primary mt-0.5">→</span>
-                  <span>{t}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="border-2 border-dashed border-border bg-warm-bg rounded-xl aspect-[4/3] flex items-center justify-center p-6 text-center">
-              <p className="text-sm text-muted-foreground font-body">
-                [IMAGEN: Collage de proyectos de reforma: cocina reformada, baño nuevo, fachada rehabilitada]
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* RESULTADOS */}
-      <section className="bg-warm-bg py-16">
-        <div className="container max-w-3xl">
-          <h2 className="font-heading text-2xl md:text-3xl mb-4">Resultados reales con empresas de reformas</h2>
-          <p className="text-base text-muted-foreground font-body font-light mb-10">
-            Grupo TEI, empresa de reformas en Madrid, consiguió 8 llamadas directas desde Google en sus primeros 3 meses con slocal.es. Empezaron sin web ni ficha optimizada — solo con el sistema de posicionamiento local activado.
-          </p>
-          <div className="bg-card border border-border rounded-xl p-6 md:p-8">
-            <p className="text-xs font-heading text-primary mb-2">MADRID · REFORMAS</p>
-            <h3 className="font-heading text-xl mb-4">Grupo TEI</h3>
-            <p className="text-3xl md:text-4xl font-heading text-foreground mb-1">8 llamadas directas</p>
-            <p className="text-sm text-muted-foreground font-body">en los primeros 3 meses, empezando desde cero</p>
-          </div>
-        </div>
-      </section>
-
-
-      {/* FAQ */}
-      <FAQSection title="Preguntas frecuentes sobre SEO para empresas de reformas" items={faqs} />
-
-      {/* CIUDADES */}
-      <section className="py-12">
-        <div className="container max-w-3xl text-center">
-          <h2 className="font-heading text-2xl md:text-3xl mb-4">
-            Trabajamos con empresas de reformas en toda España
-          </h2>
-          <p className="text-sm md:text-base text-muted-foreground mb-8 font-body font-light">
-            Gestionamos el posicionamiento local de empresas de reformas en toda España.
-          </p>
-          <div className="flex flex-wrap justify-center gap-2.5">
-            {cities.map((city) => (
-              <Link
-                key={city.slug}
-                to={`/seo-local-${city.slug}`}
-                className="bg-card border border-border rounded-full px-4 py-2 text-sm font-heading text-foreground transition-all duration-200 hover:border-primary hover:text-primary hover:-translate-y-[2px]"
-              >
-                {city.name}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* OTROS SECTORES */}
-      <section className="bg-warm-bg py-12">
-        <div className="container max-w-4xl text-center">
-          <h2 className="font-heading text-xl md:text-2xl mb-8">También trabajamos con otros sectores</h2>
-          <div className="flex flex-wrap justify-center gap-2.5">
-            {otherSectors.map((s) => (
-              <Link
-                key={s.slug}
-                to={`/${s.slug}`}
-                className="bg-card border border-border rounded-full px-4 py-2 text-sm font-heading text-foreground transition-all duration-200 hover:border-primary hover:text-primary hover:-translate-y-[2px]"
-              >
-                {s.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <CTASection
-        title="¿Tu empresa de reformas no aparece cuando alguien busca reforma en tu ciudad?"
-        buttonText="Hablemos →"
-      />
-    </>
-  );
+  return <SectorMasterTemplate content={content} />;
 };
 
 export default ReformasPage;

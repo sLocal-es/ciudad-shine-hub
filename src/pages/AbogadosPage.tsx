@@ -1,279 +1,90 @@
-import { Link } from "react-router-dom";
-import SEOHead from "@/components/SEOHead";
-import BreadcrumbNav from "@/components/BreadcrumbNav";
-import FAQSection from "@/components/FAQSection";
-import CTASection from "@/components/CTASection";
-import SectorHeroDark from "@/components/sector/SectorHeroDark";
+import SectorMasterTemplate, { SectorTemplateContent } from "@/components/sector/SectorMasterTemplate";
 
 const AbogadosPage = () => {
   const faqs = [
-    {
-      q: "¿Cuándo empieza a recibir más consultas mi despacho?",
-      a: "Los primeros resultados visibles aparecen entre el mes 2 y el mes 4: más visitas al perfil de Google, más llamadas directas y mejora de posiciones en Maps. A partir del mes 6 el flujo se consolida. En especialidades con menos competencia digital los resultados llegan antes.",
-    },
-    {
-      q: "¿Funciona el SEO local para despachos pequeños o solo para grandes firmas?",
-      a: "El SEO local favorece precisamente a los despachos pequeños y especializados. Un despacho de derecho laboral bien posicionado en su ciudad aparece antes que una gran firma generalista sin presencia local trabajada. La especialización es una ventaja, no un handicap.",
-    },
-    {
-      q: "¿Necesito tener web para hacer SEO local como abogado?",
-      a: "Una web optimizada por área de práctica y ciudad es lo que permite aparecer en los resultados orgánicos además de en Google Maps. El servicio incluye la web desde el inicio — no necesitas nada previo para arrancar.",
-    },
-    {
-      q: "¿Puedo posicionarme para varias especialidades jurídicas?",
-      a: "Sí. Creamos páginas específicas para cada área de práctica — derecho laboral, familia, herencias, penal, mercantil — optimizadas para las búsquedas reales de cada especialidad. Cada página ataca búsquedas distintas y suma tráfico cualificado.",
-    },
-    {
-      q: "¿Qué diferencia hay entre SEO local y Google Ads para abogados?",
-      a: "Google Ads te da visibilidad inmediata pagando por cada clic. En derecho, el coste por clic puede ser de 5 a 15€. El SEO local construye una presencia que genera consultas de forma orgánica, sin coste por clic, con retorno creciente mes a mes.",
-    },
+    { q: "¿Cuándo empieza a recibir más consultas mi despacho?", a: "Los primeros resultados visibles aparecen entre el mes 2 y el mes 4: más visitas al perfil de Google y más llamadas directas. A partir del mes 6 el flujo se consolida." },
+    { q: "¿Funciona el SEO local para despachos pequeños o solo para grandes firmas?", a: "El SEO local favorece precisamente a los despachos pequeños y especializados. Un despacho de derecho laboral bien posicionado en su ciudad aparece antes que una gran firma generalista sin presencia local." },
+    { q: "¿Necesito tener web para hacer SEO local como abogado?", a: "Una web optimizada por área de práctica y ciudad permite aparecer en resultados orgánicos además de en Google Maps. El servicio incluye la web desde el inicio." },
+    { q: "¿Puedo posicionarme para varias especialidades jurídicas?", a: "Sí. Creamos páginas específicas para cada área — laboral, familia, herencias, penal, mercantil — optimizadas para las búsquedas reales de cada especialidad." },
+    { q: "¿Qué diferencia hay entre SEO local y Google Ads para abogados?", a: "Google Ads da visibilidad inmediata pagando por cada clic (5-15€ en derecho). El SEO local construye presencia orgánica con retorno creciente y sin coste por clic." },
+    { q: "¿Basta con tener la ficha de Google creada?", a: "No. Sin fotos recientes, sin reseñas respondidas y sin publicaciones, Google interpreta que el despacho no es relevante y lo baja del ranking." },
+    { q: "¿Es suficiente una sola página para todas las especialidades?", a: "No. 'Abogado laboralista', 'divorcios' o 'herencias' son búsquedas distintas con clientes distintos. Cada especialidad necesita su propia página." },
   ];
 
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Inicio", item: "https://slocal.es/" },
-      { "@type": "ListItem", position: 2, name: "SEO para Abogados", item: "https://slocal.es/seo-para-abogados" },
+  const breadcrumbSchema = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://slocal.es/" },
+    { "@type": "ListItem", position: 2, name: "SEO para Abogados", item: "https://slocal.es/seo-para-abogados" },
+  ]};
+  const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
+  const serviceSchema = { "@context": "https://schema.org", "@type": "Service", name: "SEO para Abogados", provider: { "@type": "LocalBusiness", name: "slocal.es", url: "https://slocal.es" }, areaServed: "España" };
+  const localBusinessSchema = { "@context": "https://schema.org", "@type": "LocalBusiness", name: "slocal.es", url: "https://slocal.es", description: "SEO local para abogados en España", areaServed: "España", priceRange: "€€", openingHoursSpecification: [
+    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday"], opens: "09:00", closes: "20:00" },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Friday"], opens: "09:00", closes: "14:00" },
+  ]};
+
+  const content: SectorTemplateContent = {
+    seoTitle: "SEO para Abogados | Agencia SEO Local | slocal.es",
+    seoDescription: "Agencia SEO Local para despachos de abogados: Google Business Profile, Google Maps y posicionamiento local para conseguir más consultas y casos desde Google.",
+    canonical: "/seo-para-abogados",
+    sectorLabel: "Abogados", sectorSlug: "seo-para-abogados", sectorLower: "abogados", clientWord: "clientes",
+    heroEyebrow: "Agencia SEO Local · Abogados",
+    heroH1: <h1>SEO para <span className="text-primary">Abogados</span></h1>,
+    heroSubtitle: <>Agencia SEO Local especializada en despachos de abogados. Optimizamos tu ficha de Google Business Profile y tu web para que aparezcas primero cuando alguien busca abogado en tu ciudad.</>,
+    heroTrust: ["Google Partner", "Ficha de Google gestionada cada mes", "Auditoría inicial sin coste"],
+    manifestoEyebrow: "— El punto de partida",
+    manifestoH2: <>¿Cómo conseguir <span className="text-primary">más consultas</span> para tu despacho desde Google?</>,
+    manifestoBody: <>En Slocal conseguimos que más clientes contacten con tu despacho optimizando tu ficha de Google Business Profile y posicionando tu web para búsquedas locales de alta intención. Aparecer en el top 3 de Google Maps multiplica las consultas: esos tres despachos se llevan la mayoría de los contactos.</>,
+    gbpH3: <>Tu ficha de <span className="text-primary">Google Business Profile</span> genera consultas</>,
+    gbpBody: <>Google Business Profile es donde el cliente decide llamarte cuando tiene un problema legal. Optimizamos tu ficha para aparecer antes que otros despachos y convertir búsquedas en consultas reales.</>,
+    gbpFeatures: ["Categorías jurídicas optimizadas", "Áreas de práctica estructuradas", "Publicaciones", "Gestión de reseñas", "Geolocalización", "Seguimiento de llamadas"],
+    webH3: <>Una web que <span className="text-primary">convierte</span> visitas en clientes</>,
+    webBody: <>Mientras Google Business Profile genera la llamada, tu web convierte las visitas en consultas cualificadas y casos firmados.</>,
+    webFeatures: ["SEO Local", "Landing por especialidad", "Landing por ciudad", "Formularios optimizados", "WhatsApp", "Google Analytics"],
+    auditoriaFormType: "auditoria_abogados",
+    howH2: <>¿Cómo conseguimos que aparezcas <span className="text-primary">por delante</span> de otros abogados en Google?</>,
+    howIntro: <>En Slocal apareces primero en Google Maps optimizando tu ficha, especialidades, reseñas y contenido local. Google prioriza fichas activas, con reseñas recientes y coherencia entre ficha, web y citaciones locales.</>,
+    howSteps: [
+      { h: "Auditoría", d: "Analizamos tu Google Business Profile, tu web y a los despachos competidores de tu ciudad." },
+      { h: "Estrategia", d: "Definimos las búsquedas con mayor intención (especialidad + ciudad) y diseñamos el plan." },
+      { h: "Optimización", d: "Optimizamos ficha y web para que trabajen juntas y mejoren tu posicionamiento local." },
+      { h: "Autoridad Local", d: "Reforzamos reseñas, contenido especializado y señales de confianza." },
+      { h: "Seguimiento", d: "Medimos llamadas, formularios y posiciones cada mes." },
     ],
-  };
-
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((f) => ({
-      "@type": "Question",
-      name: f.q,
-      acceptedAnswer: { "@type": "Answer", text: f.a },
-    })),
-  };
-
-  const serviceSchema = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    name: "SEO para Abogados",
-    provider: { "@type": "LocalBusiness", name: "slocal.es", url: "https://slocal.es" },
-    areaServed: "España",
-    description: "Servicio de SEO local para despachos de abogados en España",
-  };
-
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: "slocal.es",
-    url: "https://slocal.es",
-    description: "SEO local para abogados en España",
-    areaServed: "España",
-    priceRange: "€€",
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
-        opens: "09:00",
-        closes: "20:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Friday"],
-        opens: "09:00",
-        closes: "14:00",
-      },
+    caseH2: <>¿Cómo consiguió Slocal que un <span className="text-primary">despacho de abogados</span> triplicara sus consultas desde Google?</>,
+    caseIntro: <>Slocal transformó la presencia digital de este despacho optimizando su Google Business Profile, desarrollando una web SEO Local y creando páginas específicas para cada área de práctica y ciudad.</>,
+    caseStages: [
+      { title: "ANTES", text: "Sin presencia en Google Maps, ficha poco optimizada y web genérica sin páginas por especialidad.", label: "Situación inicial: sin visibilidad en búsquedas jurídicas locales" },
+      { title: "ESTRATEGIA SLOCAL", text: "Optimizamos Google Business Profile, creamos web SEO Local y páginas específicas por área de práctica.", label: "Estrategia Slocal: ficha, web y páginas por especialidad" },
+      { title: "RESULTADO", text: "Top 3 en Google Maps, aumento constante de consultas y casos firmados desde Google.", label: "Resultados: top 3 en Maps y agenda de consultas llena" },
     ],
+    caseKpis: [{ k: "x3", l: "Consultas al mes" }, { k: "TOP 3", l: "Google Maps" }, { k: "x9", l: "Retorno de la inversión" }],
+    monthlyH2: <>¿Por qué el SEO Local necesita trabajo <span className="text-primary">mes a mes</span>?</>,
+    monthlyBody: <>Porque Google no es una fotografía, es una competición continua. Reforzamos cada mes tu ficha, reseñas y contenido para mantener las primeras posiciones.</>,
+    monthlyReasons: [
+      { h: "Otros despachos siguen trabajando", d: "La competencia legal es alta. Si tú te detienes, otros avanzan y ganan posiciones." },
+      { h: "Google cambia constantemente", d: "El algoritmo se actualiza cada mes; especialmente en sector legal (E-E-A-T)." },
+      { h: "Tu ficha necesita actividad", d: "Publicaciones, respuestas a reseñas y contenido nuevo mantienen tu ficha viva." },
+      { h: "Aparecen nuevas búsquedas", d: "Cada mes surgen consultas nuevas por especialidad o zona. Las capturamos con contenido." },
+      { h: "Seguimos reforzando tu autoridad", d: "Reseñas, contenido y señales E-E-A-T que Google valora especialmente en el sector legal." },
+    ],
+    faqs,
+    citiesH2: <>¿En qué <span className="text-primary">ciudades</span> trabaja Slocal con abogados?</>,
+    citiesBody: <>Slocal trabaja con despachos de abogados en toda España, con clientes activos en Madrid, Barcelona, Valencia, Sevilla, Málaga, Zaragoza, Bilbao y Murcia.</>,
+    otherSectorsH2: <>¿Slocal solo trabaja con <span className="text-primary">abogados</span>?</>,
+    otherSectorsBody: <>No. Trabajamos también con fontaneros, fisioterapeutas, dentistas, psicólogos, gimnasios y empresas de reformas.</>,
+    otherSectors: [
+      { label: "SEO para fontaneros", slug: "seo-para-fontaneros" },
+      { label: "SEO para fisioterapeutas", slug: "seo-para-fisioterapeutas" },
+      { label: "SEO para dentistas", slug: "seo-para-dentistas" },
+      { label: "SEO para psicólogos", slug: "seo-para-psicologos" },
+      { label: "SEO para gimnasios", slug: "seo-para-gimnasios" },
+      { label: "SEO para empresas de reformas", slug: "seo-para-reformas" },
+    ],
+    finalCtaTitle: "¿Quieres que tu despacho reciba más consultas gracias a Google?",
+    jsonLd: [breadcrumbSchema, faqSchema, serviceSchema, localBusinessSchema],
   };
 
-  const practiceAreas = [
-    "Derecho laboral y despidos",
-    "Derecho de familia y divorcios",
-    "Herencias y sucesiones",
-    "Derecho penal",
-    "Derecho civil",
-    "Derecho mercantil",
-    "Extranjería e inmigración",
-    "Arrendamientos e inmobiliario",
-  ];
-
-  const cities = [
-    { name: "Madrid", slug: "madrid" },
-    { name: "Barcelona", slug: "barcelona" },
-    { name: "Valencia", slug: "valencia" },
-    { name: "Sevilla", slug: "sevilla" },
-    { name: "Málaga", slug: "malaga" },
-    { name: "Zaragoza", slug: "zaragoza" },
-    { name: "Bilbao", slug: "bilbao" },
-    { name: "Murcia", slug: "murcia" },
-  ];
-
-  const otherSectors = [
-    { label: "SEO para fontaneros", slug: "seo-para-fontaneros" },
-    { label: "SEO para fisioterapeutas", slug: "seo-para-fisioterapeutas" },
-    { label: "SEO para empresas de reformas", slug: "seo-para-reformas" },
-    { label: "SEO para inmobiliarias", slug: "seo-para-inmobiliarias" },
-    { label: "SEO para dentistas", slug: "seo-para-dentistas" },
-    { label: "SEO para psicólogos", slug: "seo-para-psicologos" },
-  ];
-
-  const steps = [
-    {
-      n: "01",
-      h: "Tu despacho aparece cuando alguien busca tu especialidad en tu ciudad",
-      p: 'Optimizamos tu ficha de Google Business Profile con las categorías legales correctas, descripción con las keywords que usan tus clientes ("abogado de familia", "abogado penal", "asesoría laboral"), fotos del despacho y zona de servicio por ciudad y barrio. Cuando alguien busca "abogado divorcio Valencia" o "laboralista cerca de mí", tu despacho aparece en el mapa con botón de llamada directo.',
-    },
-    {
-      n: "02",
-      h: "Una web con página por especialidad jurídica y ciudad",
-      p: 'Creamos páginas específicas para cada área de práctica. "Abogado de herencias en Sevilla", "abogado laboral en Bilbao", "divorcios de mutuo acuerdo en Barcelona" — cada búsqueda con intención de contratar tiene su propia página. El visitante que llega sabe exactamente para qué te necesita y tú eres la respuesta obvia.',
-    },
-    {
-      n: "03",
-      h: "Informe mensual de consultas y posiciones en Google",
-      p: "Cada mes sabes cuántas personas han visto tu ficha, cuántas han llamado y qué posiciones has ganado en Google Maps para las búsquedas más importantes de tu especialidad. Sin tecnicismos. Solo los datos que importan.",
-    },
-  ];
-
-  return (
-    <>
-      <SEOHead
-        title="SEO para Abogados | Más Consultas y Casos desde Google | slocal.es"
-        description="Cuando alguien necesita un abogado, busca en Google. Haz que tu despacho aparezca primero — más consultas, más casos firmados."
-        canonical="/seo-para-abogados"
-        jsonLd={[breadcrumbSchema, faqSchema, serviceSchema, localBusinessSchema]}
-      />
-
-      {/* HERO */}
-      <SectorHeroDark
-        breadcrumbLabel="SEO para Abogados"
-        eyebrow="SEO para Abogados"
-        h1={<h1>SEO para Abogados: Más Consultas y Casos desde Google</h1>}
-        subtitle={
-          <>Tu despacho tiene años de experiencia y clientes satisfechos. Pero si alguien en tu ciudad busca "abogado laboralista" o "abogado de divorcios" en Google ahora mismo y no apareces tú, esa consulta se la lleva otro despacho. Cada día que no estás en el top 3 de Google Maps son casos que pierdes sin saberlo.</>
-        }
-      />
-
-      {/* PROBLEM */}
-      <section className="py-16">
-        <div className="container max-w-5xl">
-          <h2 className="font-heading text-2xl md:text-3xl mb-10">
-            Por qué tu despacho de abogados no aparece en Google
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            <div className="space-y-4 text-base leading-relaxed font-body font-light text-foreground">
-              <p>
-                El 78% de quienes necesitan un abogado empieza buscando en Google. Cuando alguien tiene un despido, un divorcio o un problema de herencia, busca "abogado laboralista en Madrid" o "abogado de divorcios en Barcelona" y llama a uno de los tres primeros que aparecen en el mapa. El 90% de esas personas contacta con alguno de esos tres. El resto de despachos no existe para ese cliente en ese momento.
-              </p>
-            </div>
-            <div className="space-y-4 text-base leading-relaxed font-body font-light text-foreground">
-              <p>
-                El error más común: tener ficha de Google creada pero sin gestionar. Sin fotos recientes, sin respuestas a reseñas, sin publicaciones periódicas, Google interpreta que el despacho no es relevante y lo baja en el ranking. En el sector legal, donde la competencia es alta, esa diferencia puede ser de 10 a 15 consultas al mes que van a otro despacho. La especialización y la proximidad son tus ventajas — pero solo si Google las conoce.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* HOW */}
-      <section className="bg-warm-bg py-16">
-        <div className="container max-w-4xl">
-          <h2 className="font-heading text-2xl md:text-3xl mb-10">
-            Cómo posicionamos tu despacho de abogados en Google
-          </h2>
-          <div>
-            {steps.map((s, i) => (
-              <div
-                key={s.n}
-                className={`grid grid-cols-[auto_1fr] gap-6 md:gap-10 py-8 ${i < steps.length - 1 ? "border-b border-border" : ""}`}
-              >
-                <span className="font-heading text-4xl md:text-5xl text-primary leading-none">{s.n}</span>
-                <div>
-                  <h3 className="font-heading text-lg md:text-xl mb-3">{s.h}</h3>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed font-body font-light">
-                    {s.p}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* PRACTICE AREAS */}
-      <section className="py-16">
-        <div className="container max-w-5xl">
-          <h2 className="font-heading text-2xl md:text-3xl mb-4">
-            Áreas de práctica de abogados que posicionamos en Google
-          </h2>
-          <p className="text-base text-muted-foreground font-body font-light mb-10 max-w-2xl">
-            Cada especialidad jurídica tiene sus propias búsquedas. Creamos páginas específicas para cada área de práctica y ciudad.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
-              {practiceAreas.map((t) => (
-                <li key={t} className="flex items-start gap-2 text-sm font-body">
-                  <span className="text-primary mt-0.5">→</span>
-                  <span>{t}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="border-2 border-dashed border-border bg-warm-bg rounded-xl aspect-[4/3] flex items-center justify-center p-6 text-center">
-              <p className="text-sm text-muted-foreground font-body">
-                [IMAGEN: Despacho de abogados profesional — sala de reuniones con libros jurídicos]
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-      {/* FAQ */}
-      <FAQSection title="Preguntas frecuentes sobre SEO para abogados" items={faqs} />
-
-      {/* CIUDADES */}
-      <section className="py-12">
-        <div className="container max-w-3xl text-center">
-          <h2 className="font-heading text-2xl md:text-3xl mb-4">
-            SEO local para abogados en toda España
-          </h2>
-          <p className="text-sm md:text-base text-muted-foreground mb-8 font-body font-light">
-            Posicionamos despachos de abogados en toda España — en ciudades con alta competencia y en mercados locales donde todavía hay oportunidad real.
-          </p>
-          <div className="flex flex-wrap justify-center gap-2.5">
-            {cities.map((city) => (
-              <Link
-                key={city.slug}
-                to={`/seo-local-${city.slug}`}
-                className="bg-card border border-border rounded-full px-4 py-2 text-sm font-heading text-foreground transition-all duration-200 hover:border-primary hover:text-primary hover:-translate-y-[2px]"
-              >
-                {city.name}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* OTROS SECTORES */}
-      <section className="bg-warm-bg py-12">
-        <div className="container max-w-4xl text-center">
-          <h2 className="font-heading text-xl md:text-2xl mb-8">SEO local para otros negocios</h2>
-          <div className="flex flex-wrap justify-center gap-2.5">
-            {otherSectors.map((s) => (
-              <Link
-                key={s.slug}
-                to={`/${s.slug}`}
-                className="bg-card border border-border rounded-full px-4 py-2 text-sm font-heading text-foreground transition-all duration-200 hover:border-primary hover:text-primary hover:-translate-y-[2px]"
-              >
-                {s.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <CTASection
-        title="¿Tu despacho no aparece cuando alguien busca un abogado en tu ciudad?"
-        buttonText="Hablemos →"
-      />
-    </>
-  );
+  return <SectorMasterTemplate content={content} />;
 };
 
 export default AbogadosPage;
