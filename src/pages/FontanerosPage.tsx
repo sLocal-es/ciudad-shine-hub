@@ -6,6 +6,7 @@ import SectorHeroDark from "@/components/sector/SectorHeroDark";
 import LogoMarquee from "@/components/LogoMarquee";
 import { sendForm } from "@/lib/sendForm";
 import { toast } from "@/hooks/use-toast";
+import casoAntesImg from "@/assets/caso-antes-vigo.webp.asset.json";
 
 
 const AuditoriaLeadForm = () => {
