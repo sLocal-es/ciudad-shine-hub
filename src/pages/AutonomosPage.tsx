@@ -278,12 +278,6 @@ const AutonomosPage = () => {
         subtitle={
           <>Consultor SEO para autónomos — ficha de Google, web y posicionamiento local. Una persona, un precio fijo, sin intermediarios.</>
         }
-        phoneQuery="autónomo cerca de mí"
-        phoneResults={[
-          { name: "Estudio Diseño Marta Ríos", rating: 5.0, reviews: 78, category: "Diseñadora gráfica", hours: "Abierto", distance: "a 600 m" },
-          { name: "Consultoría Autónomos Vega", rating: 4.9, reviews: 112, category: "Asesor fiscal", hours: "Abierto", distance: "a 1,1 km" },
-          { name: "Servicios Técnicos Sanz", rating: 4.8, reviews: 65, category: "Electricista autónomo", hours: "Abre a las 8:00", distance: "a 1,5 km" },
-        ]}
         primaryCta={{ label: "Escríbeme por WhatsApp →", to: "/contacto" }}
         secondaryCta={{ label: "Ver cómo funciona →", to: "/como-funciona" }}
       />
