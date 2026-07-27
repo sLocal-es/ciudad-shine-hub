@@ -1,14 +1,9 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
-import BreadcrumbNav from "@/components/BreadcrumbNav";
+import CTASection from "@/components/CTASection";
 import SectorHeroDark from "@/components/sector/SectorHeroDark";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import LogoMarquee from "@/components/LogoMarquee";
 import {
   Select,
   SelectContent,
@@ -17,8 +12,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
-
-const WHATSAPP = "https://wa.me/34684780063";
 
 type Sector =
   | "Fontanero"
@@ -68,35 +61,28 @@ const SECTOR_LINKS: Partial<Record<Sector, string>> = {
 };
 
 const faqs = [
-  {
-    q: "¿Necesito tener web para aparecer en Google siendo autónomo?",
-    a: "No es obligatorio, pero sí recomendable. Con solo la ficha de Google puedes aparecer en el mapa local. Con ficha y web juntas, apareces en el mapa y en los resultados de búsqueda orgánica al mismo tiempo. El servicio de slocal incluye los dos porque así es como funciona mejor.",
-  },
-  {
-    q: "¿Cuánto tarda en verse resultado con el SEO local?",
-    a: "Entre 6 y 12 semanas para las primeras posiciones en búsquedas locales de baja competencia. En ciudades grandes como Madrid o Barcelona, 3 a 4 meses para posiciones estables. En ciudades medianas o sectores con poca competencia digital, antes.",
-  },
-  {
-    q: "¿Cuánto cuesta el SEO local para autónomos?",
-    a: "El servicio de slocal tiene un precio fijo de consulta condiciones. Sin permanencia mínima, sin letra pequeña. Incluye ficha de Google, web con SEO local y posicionamiento activo cada mes.",
-  },
-  {
-    q: "¿Qué diferencia hay entre SEO local y Google Ads?",
-    a: "Con Google Ads pagas por cada clic — cuando dejas de pagar, desapareces. Con SEO local posicionas tu negocio de forma orgánica: cuando llegas al top 3, te mantienes ahí aunque pares la inversión. Para un autónomo con presupuesto limitado, el SEO local tiene mejor retorno a medio plazo.",
-  },
-  {
-    q: "¿Funciona el SEO local en ciudades pequeñas?",
-    a: "Mejor que en ciudades grandes. En una ciudad pequeña hay menos competencia digital, lo que significa que posicionas más rápido y con menos esfuerzo. Muchos autónomos en ciudades medianas están en el top 3 de Google en su sector simplemente porque nadie más lo trabaja.",
-  },
-  {
-    q: "¿Qué es el Local Pack de Google y por qué importa?",
-    a: "Es el bloque de tres negocios que Google muestra en el mapa cuando alguien busca un servicio local. Esos tres negocios reciben la mayoría de los contactos de esa búsqueda. El objetivo del SEO local es que tu negocio sea uno de esos tres.",
-  },
-  {
-    q: "¿Puedo cancelar cuando quiera?",
-    a: "Sí. Sin permanencia mínima ni penalización. Avisas con 30 días de antelación y listo.",
-  },
+  { q: "¿Necesito tener web para aparecer en Google siendo autónomo?", a: "No es obligatorio, pero sí recomendable. Con solo la ficha de Google puedes aparecer en el mapa local. Con ficha y web juntas, apareces en el mapa y en los resultados de búsqueda orgánica al mismo tiempo. Slocal incluye los dos porque así es como funciona mejor." },
+  { q: "¿Cuánto tarda en verse resultado con el SEO local?", a: "Entre 6 y 12 semanas para las primeras posiciones en búsquedas locales de baja competencia. En ciudades grandes como Madrid o Barcelona, 3 a 4 meses para posiciones estables. En ciudades medianas o sectores con poca competencia digital, antes." },
+  { q: "¿Qué diferencia hay entre SEO local y Google Ads?", a: "Con Google Ads pagas por cada clic — cuando dejas de pagar, desapareces. Con SEO local posicionas tu negocio de forma orgánica: cuando llegas al top 3, te mantienes ahí aunque pares la inversión. Para un autónomo con presupuesto limitado, el SEO local tiene mejor retorno a medio plazo." },
+  { q: "¿Funciona el SEO local en ciudades pequeñas?", a: "Mejor que en ciudades grandes. En una ciudad pequeña hay menos competencia digital, lo que significa que posicionas más rápido y con menos esfuerzo. Muchos autónomos en ciudades medianas están en el top 3 de Google en su sector simplemente porque nadie más lo trabaja." },
+  { q: "¿Qué es el Local Pack de Google y por qué importa?", a: "Es el bloque de tres negocios que Google muestra en el mapa cuando alguien busca un servicio local. Esos tres negocios reciben la mayoría de los contactos de esa búsqueda. El objetivo del SEO local es que tu negocio sea uno de esos tres." },
+  { q: "¿Puedo cancelar cuando quiera?", a: "Sí. Sin permanencia mínima ni penalización. Avisas con 30 días de antelación y listo." },
 ];
+
+const sectionCls = "bg-white py-24 md:py-32 border-t border-warm-fg/10";
+
+const IllustrationPlaceholder = ({ label, aspect = "aspect-[1/1]" }: { label: string; aspect?: string }) => (
+  <div
+    className={`w-full ${aspect} rounded-3xl border-2 border-dashed border-warm-fg/20 bg-[hsl(var(--warm-bg))] flex flex-col items-center justify-center gap-3 p-8 text-center`}
+    role="img"
+    aria-label={label}
+  >
+    <span className="font-heading text-[10px] tracking-[0.28em] uppercase text-warm-fg/50">
+      Illustration placeholder
+    </span>
+    <span className="font-body text-[13px] text-warm-fg/45 max-w-[28ch]">{label}</span>
+  </div>
+);
 
 const formatEUR = (n: number) =>
   new Intl.NumberFormat("es-ES", { maximumFractionDigits: 0 }).format(Math.round(n));
@@ -123,10 +109,10 @@ const RoiCalculator = () => {
   const sectorLink = SECTOR_LINKS[sector];
 
   return (
-    <div className="bg-card border border-border rounded-2xl p-6 md:p-10 shadow-sm">
+    <div className="bg-white border border-warm-fg/10 rounded-3xl p-6 md:p-10 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)]">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
         <div>
-          <label className="block text-xs font-heading uppercase tracking-wide text-muted-foreground mb-2">Sector</label>
+          <label className="block text-[11px] font-heading tracking-[0.22em] uppercase text-primary mb-2">Sector</label>
           <Select value={sector} onValueChange={(v) => onSectorChange(v as Sector)}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -135,7 +121,7 @@ const RoiCalculator = () => {
           </Select>
         </div>
         <div>
-          <label className="block text-xs font-heading uppercase tracking-wide text-muted-foreground mb-2">Ciudad</label>
+          <label className="block text-[11px] font-heading tracking-[0.22em] uppercase text-primary mb-2">Ciudad</label>
           <Select value={city} onValueChange={(v) => setCity(v as City)}>
             <SelectTrigger><SelectValue /></SelectTrigger>
             <SelectContent>
@@ -144,7 +130,7 @@ const RoiCalculator = () => {
           </Select>
         </div>
         <div>
-          <label className="block text-xs font-heading uppercase tracking-wide text-muted-foreground mb-2">Ticket medio (€)</label>
+          <label className="block text-[11px] font-heading tracking-[0.22em] uppercase text-primary mb-2">Ticket medio (€)</label>
           <Input
             type="number"
             min={0}
@@ -155,38 +141,33 @@ const RoiCalculator = () => {
       </div>
 
       <dl className="space-y-3 font-body text-sm md:text-base">
-        <div className="flex justify-between gap-4 border-b border-border pb-3">
-          <dt className="text-muted-foreground">Búsquedas mensuales de {sector.toLowerCase()} en {city}</dt>
-          <dd className="font-heading">{formatEUR(r.searches)}</dd>
+        <div className="flex justify-between gap-4 border-b border-warm-fg/15 pb-3">
+          <dt className="text-warm-fg/70">Búsquedas mensuales de {sector.toLowerCase()} en {city}</dt>
+          <dd className="font-heading text-warm-fg">{formatEUR(r.searches)}</dd>
         </div>
-        <div className="flex justify-between gap-4 border-b border-border pb-3">
-          <dt className="text-muted-foreground">Personas que verían tu ficha en top 3</dt>
-          <dd className="font-heading">~{formatEUR(r.views)}</dd>
+        <div className="flex justify-between gap-4 border-b border-warm-fg/15 pb-3">
+          <dt className="text-warm-fg/70">Personas que verían tu ficha en top 3</dt>
+          <dd className="font-heading text-warm-fg">~{formatEUR(r.views)}</dd>
         </div>
-        <div className="flex justify-between gap-4 border-b border-border pb-3">
-          <dt className="text-muted-foreground">Contactos estimados al mes</dt>
-          <dd className="font-heading">~{formatEUR(r.contacts)}</dd>
+        <div className="flex justify-between gap-4 border-b border-warm-fg/15 pb-3">
+          <dt className="text-warm-fg/70">Contactos estimados al mes</dt>
+          <dd className="font-heading text-warm-fg">~{formatEUR(r.contacts)}</dd>
         </div>
-        <div className="flex justify-between gap-4 border-b border-border pb-3">
-          <dt className="text-muted-foreground">Clientes nuevos estimados</dt>
-          <dd className="font-heading">~{formatEUR(r.clients)}</dd>
+        <div className="flex justify-between gap-4 border-b border-warm-fg/15 pb-3">
+          <dt className="text-warm-fg/70">Clientes nuevos estimados</dt>
+          <dd className="font-heading text-warm-fg">~{formatEUR(r.clients)}</dd>
         </div>
-        <div className="flex justify-between gap-4 border-b border-border pb-3">
-          <dt className="text-foreground">Ingresos potenciales</dt>
-          <dd className="font-heading text-primary text-lg">~{formatEUR(r.revenue)} €/mes</dd>
-        </div>
-        <div className="flex justify-between gap-4 pt-1">
-          <dt className="text-muted-foreground">Tu inversión</dt>
-          <dd className="font-heading">consulta condiciones</dd>
+        <div className="flex justify-between gap-4 pt-2">
+          <dt className="text-warm-fg">Ingresos potenciales</dt>
+          <dd className="font-heading text-primary text-2xl md:text-3xl">~{formatEUR(r.revenue)} €/mes</dd>
         </div>
       </dl>
 
-      <p className="text-xs text-muted-foreground mt-6 font-body font-light leading-relaxed">
+      <p className="text-xs text-warm-fg/60 mt-6 font-body font-light leading-relaxed">
         Estimación conservadora basada en datos reales de Semrush. Los resultados varían según la competencia local y el tiempo de posicionamiento.
         {sectorLink && (
           <>
-            {" "}
-            Ver detalle del <Link to={sectorLink} className="text-primary underline underline-offset-2">servicio para {sector.toLowerCase()}s</Link>.
+            {" "}Ver detalle del <Link to={sectorLink} className="text-primary underline underline-offset-2">servicio para {sector.toLowerCase()}s</Link>.
           </>
         )}
       </p>
@@ -200,8 +181,7 @@ const AutonomosPage = () => {
     "@type": "Service",
     name: "SEO para autónomos",
     provider: { "@type": "LocalBusiness", name: "slocal.es", url: "https://slocal.es" },
-    description:
-      "SEO local para autónomos: ficha de Google, web y posicionamiento local desde consulta condiciones sin permanencia.",
+    description: "SEO local para autónomos: ficha de Google, web y posicionamiento local sin permanencia.",
     areaServed: { "@type": "Country", name: "España" },
   };
 
@@ -225,192 +205,174 @@ const AutonomosPage = () => {
   };
 
   const problems = [
-    {
-      icon: "📍",
-      title: "Ficha creada y olvidada",
-      text: "Google interpreta inactividad como irrelevancia. Sin fotos nuevas, sin respuestas a reseñas, sin publicaciones: bajas posiciones cada mes.",
-    },
-    {
-      icon: "🌐",
-      title: "Web sin señales locales",
-      text: "Una web que no menciona tu ciudad ni tus servicios específicos no le dice a Google dónde operas ni para quién.",
-    },
-    {
-      icon: "⏳",
-      title: "Nadie lo gestiona activamente",
-      text: "El SEO local no se hace una vez. Tu competencia que sí lo gestiona cada mes te va ganando posición sin que te enteres.",
-    },
+    { n: "01", title: "Ficha creada y olvidada", text: "Google interpreta la inactividad como irrelevancia. Sin fotos nuevas, sin respuestas a reseñas, sin publicaciones: bajas posiciones cada mes." },
+    { n: "02", title: "Web sin señales locales", text: "Una web que no menciona tu ciudad ni tus servicios específicos no le dice a Google dónde operas ni para quién." },
+    { n: "03", title: "Nadie lo gestiona activamente", text: "El SEO local no se hace una vez. Tu competencia que sí lo gestiona cada mes te va ganando posición sin que te enteres." },
   ];
 
-  const comparisonRows = [
-    ["Gestión ficha Google: 80–150 €/mes", "Todo incluido: consulta condiciones"],
-    ["Mantenimiento web: 50–100 €/mes", "Una factura, una persona"],
-    ["SEO local: 300–600 €/mes", "Sin permanencia mínima"],
-    ["3 proveedores, nadie coordinado", "Siempre el mismo consultor"],
-    ["Total: 430–850 €/mes", "consulta condiciones"],
+  const casos = [
+    { sector: "Fontanero", city: "Córdoba", link: "/seo-para-fontaneros" },
+    { sector: "Fisioterapeuta", city: "Sevilla", link: "/seo-para-fisioterapeutas" },
+    { sector: "Abogado", city: "Córdoba", link: "/seo-para-abogados" },
+    { sector: "Dentista", city: "Sevilla", link: "/seo-para-dentistas" },
   ];
 
   return (
     <>
       <SEOHead
         title="SEO para autónomos: consigue clientes desde Google | slocal.es"
-        description="Ficha de Google, web y SEO local gestionados por un consultor. consulta condiciones, sin permanencia. Más clientes para tu negocio autónomo."
+        description="Agencia SEO Local para autónomos: ficha de Google, web y SEO local gestionados por un consultor. Sin permanencia. Más clientes para tu negocio."
         canonical="/seo-para-autonomos"
         jsonLd={[breadcrumbSchema, serviceSchema, faqSchema]}
       />
 
-      {/* 1 — HERO */}
+      {/* HERO */}
       <SectorHeroDark
         breadcrumbLabel="SEO para autónomos"
-        eyebrow="SEO para autónomos"
-        h1={<h1>SEO para autónomos: que tus clientes te encuentren en Google</h1>}
-        subtitle={
-          <>Consultor SEO para autónomos — ficha de Google, web y posicionamiento local. Una persona, un precio fijo, sin intermediarios.</>
-        }
-        primaryCta={{ label: "Escríbeme por WhatsApp →", to: "/contacto" }}
-        secondaryCta={{ label: "Ver cómo funciona →", to: "/como-funciona" }}
+        eyebrow="Agencia SEO Local · Autónomos"
+        h1={<h1>SEO para <span className="text-primary">autónomos</span></h1>}
+        subtitle={<>Consultor SEO Local para autónomos: ficha de Google, web y posicionamiento local. Una persona, un servicio completo, sin intermediarios.</>}
+        primaryCta={{ label: "Solicitar auditoría gratuita", to: "/contacto" }}
+        secondaryCta={{ label: "Ver cómo funciona", to: "/como-funciona" }}
+        trustItems={["Sin permanencia", "Un consultor dedicado", "Auditoría inicial sin coste"]}
+        curveClass="bg-white"
       />
 
-      {/* 2 — PROBLEMA */}
-      <section className="py-16 md:py-20">
-        <div className="container max-w-5xl">
-          <h2 className="font-heading text-2xl md:text-3xl mb-10 max-w-3xl">
-            Por qué tu negocio no aparece cuando te buscan en Google
+      {/* MARQUEE */}
+      <section className="bg-white border-t border-warm-fg/10">
+        <div className="container">
+          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary py-6 text-center">
+            — Herramientas con las que trabajamos
+          </p>
+        </div>
+        <LogoMarquee />
+      </section>
+
+      {/* MANIFIESTO */}
+      <section className={sectionCls}>
+        <div className="container">
+          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— El punto de partida</p>
+          <h2 className="font-heading font-semibold text-warm-fg leading-[1.05] tracking-tight text-4xl md:text-5xl lg:text-6xl max-w-[22ch]">
+            ¿Por qué tu negocio no aparece cuando <span className="text-primary">te buscan</span> en Google?
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <p className="mt-8 max-w-2xl text-base md:text-lg font-body text-warm-fg leading-relaxed">
+            Como autónomo compites en Google contra empresas, franquicias y agencias. La diferencia entre aparecer o no aparecer no es el tamaño: es tener una ficha de Google trabajada, una web coherente y a alguien que lo mantenga cada mes.
+          </p>
+
+          <div className="mt-20 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10">
             {problems.map((p) => (
-              <div key={p.title} className="bg-card border border-border rounded-2xl p-6">
-                <div className="text-3xl mb-4">{p.icon}</div>
-                <h3 className="font-heading text-lg mb-2">{p.title}</h3>
-                <p className="text-sm text-muted-foreground font-body font-light leading-relaxed">{p.text}</p>
+              <div key={p.n} className="bg-white rounded-3xl border border-warm-fg/10 p-8 hover:shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)] transition-all">
+                <span className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary">{p.n}</span>
+                <h3 className="mt-6 font-heading text-xl md:text-2xl text-warm-fg leading-snug">{p.title}</h3>
+                <p className="mt-4 font-body font-light text-warm-fg/70 leading-relaxed">{p.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 3 — PACK COMPLETO */}
-      <section className="bg-warm-bg py-16 md:py-20">
-        <div className="container max-w-4xl">
-          <h2 className="font-heading text-2xl md:text-3xl mb-5">
-            Ficha de Google + web + SEO local: todo junto porque así funciona
-          </h2>
-          <p className="text-base font-body font-light text-foreground leading-relaxed mb-10 max-w-3xl">
-            Google no valora la ficha sola ni la web sola. Los valora juntos, coherentes y activos. Por eso slocal gestiona los tres a la vez — no son tres servicios separados, son tres señales que Google lee como una sola.
-          </p>
-
-          <div className="overflow-hidden rounded-2xl border border-border bg-card">
-            <div className="grid grid-cols-2 font-heading text-sm md:text-base bg-foreground text-background">
-              <div className="px-5 py-4">Contratando por separado</div>
-              <div className="px-5 py-4 border-l border-background/20">Con slocal</div>
+      {/* PACK EDITORIAL SPLIT */}
+      <section className={sectionCls}>
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center">
+            <div>
+              <p className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary mb-6">Todo junto</p>
+              <h2 className="font-heading font-semibold text-warm-fg leading-[1.1] tracking-tight text-3xl md:text-4xl lg:text-5xl max-w-[18ch]">
+                Ficha de Google + web + SEO local: <span className="text-primary">todo junto</span>
+              </h2>
+              <p className="mt-6 max-w-lg text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed">
+                Google no valora la ficha sola ni la web sola. Los valora juntos, coherentes y activos. Por eso Slocal gestiona los tres a la vez — no son tres servicios separados, son tres señales que Google lee como una sola.
+              </p>
+              <ul className="mt-8 space-y-3 max-w-md">
+                {["Ficha de Google Business Profile", "Web con SEO Local", "Posicionamiento activo cada mes", "Un solo interlocutor", "Sin permanencia mínima", "Informe mensual claro"].map((f) => (
+                  <li key={f} className="flex items-center gap-3 font-body text-warm-fg/85">
+                    <svg width="14" height="14" viewBox="0 0 20 20" fill="none" className="text-primary shrink-0" aria-hidden>
+                      <path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <span className="text-[15px] md:text-base">{f}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-            {comparisonRows.map(([a, b], i) => (
-              <div
-                key={i}
-                className={`grid grid-cols-2 text-sm md:text-base font-body ${i < comparisonRows.length - 1 ? "border-b border-border" : ""}`}
-              >
-                <div className="px-5 py-4 text-muted-foreground">{a}</div>
-                <div className="px-5 py-4 border-l border-border">{b}</div>
-              </div>
-            ))}
+            <div className="order-first md:order-last">
+              <IllustrationPlaceholder label="Pack completo Slocal: ficha + web + SEO Local" />
+            </div>
           </div>
-
-          <p className="mt-6 font-heading text-base md:text-lg text-primary">
-            Sin permanencia · Sin letra pequeña
-          </p>
         </div>
       </section>
 
-      {/* 4 — CALCULADORA */}
-      <section className="py-16 md:py-20">
-        <div className="container max-w-4xl">
-          <h2 className="font-heading text-2xl md:text-3xl mb-4">
-            ¿Cuánto vale estar en los primeros resultados de Google en tu ciudad?
+      {/* CALCULADORA */}
+      <section className={sectionCls}>
+        <div className="container max-w-5xl">
+          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Calculadora</p>
+          <h2 className="font-heading font-semibold text-warm-fg leading-[1.05] tracking-tight text-4xl md:text-5xl lg:text-6xl max-w-[22ch] mb-6">
+            ¿Cuánto vale estar en los <span className="text-primary">primeros resultados</span> de Google en tu ciudad?
           </h2>
-          <p className="text-base font-body font-light text-muted-foreground mb-8 max-w-3xl">
+          <p className="text-base md:text-lg font-body font-light text-warm-fg/70 leading-relaxed max-w-3xl mb-12">
             Estas son las búsquedas reales que hay cada mes en Google para los sectores más comunes. Selecciona el tuyo y tu ciudad para ver una estimación honesta de lo que puede suponer.
           </p>
           <RoiCalculator />
         </div>
       </section>
 
-
-      {/* 6 — CASOS REALES */}
-      <section className="py-16 md:py-20">
-        <div className="container max-w-4xl">
-          <h2 className="font-heading text-2xl md:text-3xl mb-8">
-            Autónomos que ya aparecen cuando les buscan
+      {/* CASOS */}
+      <section className={sectionCls}>
+        <div className="container">
+          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Casos reales</p>
+          <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight max-w-[22ch] mb-14">
+            Autónomos que ya aparecen cuando les <span className="text-primary">buscan</span>
           </h2>
-          <div className="space-y-3">
-            {[
-              { sector: "Fontanero", city: "Córdoba", link: "/seo-para-fontaneros" },
-              { sector: "Fisioterapeuta", city: "Sevilla", link: "/seo-para-fisioterapeutas" },
-              { sector: "Abogado", city: "Córdoba", link: "/seo-para-abogados" },
-              { sector: "Dentista", city: "Sevilla", link: "/seo-para-dentistas" },
-            ].map((c) => (
-              <div key={`${c.sector}-${c.city}`} className="flex items-center justify-between gap-4 bg-card border border-border rounded-xl px-5 py-4">
-                <div className="font-body text-sm md:text-base">
-                  <Link to={c.link} className="font-heading hover:text-primary transition-colors">{c.sector}</Link>
-                  <span className="text-muted-foreground"> · {c.city} · </span>
-                  <span className="text-muted-foreground italic">caso en seguimiento</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {casos.map((c) => (
+              <Link
+                key={`${c.sector}-${c.city}`}
+                to={c.link}
+                className="group bg-white rounded-2xl border border-warm-fg/10 px-6 py-5 flex items-center justify-between gap-4 hover:border-primary hover:shadow-[0_10px_40px_-25px_rgba(0,0,0,0.15)] transition-all"
+              >
+                <div>
+                  <p className="font-heading text-warm-fg group-hover:text-primary transition-colors">{c.sector}</p>
+                  <p className="text-sm font-body text-warm-fg/60">{c.city} · caso en seguimiento</p>
                 </div>
-              </div>
+                <span className="text-primary font-heading text-lg">→</span>
+              </Link>
             ))}
           </div>
-          <p className="text-xs text-muted-foreground font-body font-light mt-5">
-            Resultados reales en cuanto los casos en seguimiento alcancen el primer trimestre completo.
+          <p className="text-xs text-warm-fg/60 font-body font-light mt-6">
+            Resultados detallados en cuanto los casos alcancen el primer trimestre completo.
           </p>
         </div>
       </section>
 
-
-      {/* 8 — FAQ (visible) */}
-      <section className="py-16 md:py-20">
-        <div className="container max-w-3xl">
-          <h2 className="font-heading text-2xl md:text-3xl mb-8">
-            Preguntas frecuentes sobre SEO local para autónomos
-          </h2>
-          <Accordion type="multiple" defaultValue={faqs.map((_, i) => `faq-${i}`)} className="space-y-3">
-            {faqs.map((item, i) => (
-              <AccordionItem
-                key={i}
-                value={`faq-${i}`}
-                className="border border-border rounded-xl px-5 data-[state=open]:border-primary transition-colors"
-              >
-                <AccordionTrigger className="font-heading text-left text-base hover:no-underline [&>svg]:text-primary">
-                  {item.q}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground text-sm md:text-base leading-relaxed font-body font-light">
-                  {item.a}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+      {/* FAQ */}
+      <section className={sectionCls}>
+        <div className="container grid grid-cols-1 md:grid-cols-12 gap-12">
+          <div className="md:col-span-4">
+            <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— FAQ</p>
+            <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl leading-[1.05] tracking-tight">
+              Preguntas frecuentes.
+            </h2>
+          </div>
+          <div className="md:col-span-8">
+            <div className="divide-y divide-warm-fg/15 border-y border-warm-fg/15">
+              {faqs.map((item, i) => (
+                <details key={i} className="group py-6">
+                  <summary className="cursor-pointer list-none flex items-start justify-between gap-6 font-heading text-lg md:text-xl text-warm-fg">
+                    <span>{item.q}</span>
+                    <span className="text-primary shrink-0 text-2xl leading-none transition-transform group-open:rotate-45">+</span>
+                  </summary>
+                  <p className="mt-4 text-base font-body font-light text-warm-fg/70 leading-relaxed max-w-2xl">{item.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* 9 — CTA FINAL */}
-      <section className="bg-primary py-16 md:py-20">
-        <div className="container max-w-3xl text-center">
-          <h2 className="font-heading text-2xl md:text-3xl text-primary-foreground mb-4">
-            ¿Tu negocio no aparece cuando te buscan en Google?
-          </h2>
-          <p className="text-primary-foreground/85 font-body font-light text-base md:text-lg mb-8">
-            Escríbeme y en 24 horas te digo qué está pasando y cómo se resuelve.
-          </p>
-          <a
-            href={WHATSAPP}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-card text-primary font-heading text-sm rounded-lg px-8 py-3 hover:bg-card/90 transition-colors"
-          >
-            Escríbeme por WhatsApp →
-          </a>
-          <p className="text-primary-foreground/75 text-sm font-body font-light mt-5">
-            Sin formularios. Sin reuniones obligatorias. Sin compromiso.
-          </p>
-        </div>
-      </section>
+      <CTASection
+        id="contacto"
+        title="¿Tu negocio no aparece cuando te buscan en Google?"
+        buttonText="Solicitar auditoría gratuita →"
+      />
     </>
   );
 };
