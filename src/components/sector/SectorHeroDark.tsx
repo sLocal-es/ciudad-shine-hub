@@ -1,7 +1,8 @@
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
-import SectorPhoneMockup, { GbpResult } from "./SectorPhoneMockup";
+import HeroVisual from "./HeroVisual";
+import { HeroTrustBar } from "./herotrustbar";
 
 interface SectorHeroDarkProps {
   breadcrumbLabel: string;
@@ -9,8 +10,6 @@ interface SectorHeroDarkProps {
   /** Rendered <h1>. Passed as children to preserve exact SEO wording per page. */
   h1: ReactNode;
   subtitle: ReactNode;
-  phoneQuery: string;
-  phoneResults: GbpResult[];
   primaryCta?: { label: string; to: string };
   secondaryCta?: { label: string; to: string };
   /** Optional override of the small trust chips shown under the CTAs. */
@@ -29,19 +28,12 @@ const SectorHeroDark = ({
   eyebrow,
   h1,
   subtitle,
-  phoneQuery,
-  phoneResults,
   primaryCta = { label: "Empezar →", to: "/contacto" },
   secondaryCta = { label: "Ver cómo funciona", to: "/como-funciona" },
-  trustItems = [
-    "Ficha de Google gestionada cada mes",
-    "Sin permanencia",
-    "Trabajo local especializado",
-  ],
   curveClass = "bg-background",
 }: SectorHeroDarkProps) => {
   return (
-    <section className="relative overflow-hidden bg-dark-bg text-dark-fg">
+    <section className="relative overflow-hidden bg-white text-foreground">
       {/* Ambient background accents */}
       <div
         aria-hidden
@@ -71,17 +63,17 @@ const SectorHeroDark = ({
         />
 
         <div className="mt-10 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-10 items-center">
-          <div className="md:col-span-6 lg:col-span-7">
+          <div className="relative z-20 md:col-span-6 lg:col-span-7">
             <p className="font-heading text-xs tracking-[0.22em] uppercase text-primary mb-6">
               — {eyebrow}
             </p>
 
             {/* h1 slot — parent supplies element to preserve SEO */}
-            <div className="[&_h1]:font-heading [&_h1]:font-semibold [&_h1]:text-dark-fg [&_h1]:leading-[1.05] [&_h1]:tracking-tight [&_h1]:text-4xl [&_h1]:md:text-5xl [&_h1]:lg:text-6xl [&_h1]:max-w-[18ch]">
+            <div className="[&_h1]:font-heading [&_h1]:font-semibold [&_h1]:leading-[1.05] [&_h1]:tracking-tight [&_h1]:text-4xl [&_h1]:md:text-5xl [&_h1]:lg:text-6xl [&_h1]:max-w-[18ch]">
               {h1}
             </div>
 
-            <div className="mt-6 max-w-xl text-base md:text-lg font-body font-light leading-relaxed text-dark-fg/75">
+            <div className="mt-6 max-w-xl text-base md:text-lg font-body font-light leading-relaxed text-black">
               {subtitle}
             </div>
 
@@ -94,25 +86,19 @@ const SectorHeroDark = ({
               </Link>
               <Link
                 to={secondaryCta.to}
-                className="inline-flex items-center rounded-full border border-dark-fg/25 px-7 py-3.5 text-sm font-heading text-dark-fg transition-colors hover:border-dark-fg hover:bg-dark-fg hover:text-dark-bg"
+                className="inline-flex items-center rounded-full bg-slate-100 px-7 py-3.5 text-sm font-heading font-medium text-slate-800 transition-all duration-200 hover:bg-slate-200"
               >
                 {secondaryCta.label}
               </Link>
             </div>
 
             {/* Trust row */}
-            <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs font-body text-dark-fg/55">
-              {trustItems.map((item) => (
-                <span key={item} className="flex items-center gap-2">
-                  <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                  {item}
-                </span>
-              ))}
+            <div  className="mt-10">
+                <HeroTrustBar />
             </div>
           </div>
-
-          <div className="md:col-span-6 lg:col-span-5">
-            <SectorPhoneMockup query={phoneQuery} results={phoneResults} />
+                    <div className="relative z-10 md:col-span-6 lg:col-span-5 flex justify-end">
+            <HeroVisual />
           </div>
         </div>
       </div>

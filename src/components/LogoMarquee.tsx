@@ -1,11 +1,12 @@
 const logos = [
-  { name: "Google Business Profile", src: "/logos/google-business-profile.svg" },
-  { name: "Google Maps", src: "/logos/google-maps.svg" },
-  { name: "Google Search Console", src: "/logos/google-search-console.svg" },
-  { name: "Google Analytics", src: "/logos/google-analytics.svg" },
-  { name: "ChatGPT", src: "/logos/chatgpt.svg" },
-  { name: "WordPress", src: "/logos/wordpress.svg" },
-  { name: "Semrush", src: "/logos/semrush.svg" },
+  { name: "Google Business Profile", src: "/logos/google-business-profile.png" },
+  { name: "Google Maps", src: "/logos/google-maps.png" },
+  { name: "Google Search Console", src: "/logos/google-search-console.png" },
+  { name: "Google Analytics", src: "/logos/google-analytics.png" },
+  { name: "Semrush", src: "/logos/semrush.png" },
+  { name: "WordPress", src: "/logos/wordpress.png" },
+  { name: "ChatGPT", src: "/logos/chatgpt.png" },
+  { name: "Claude", src: "/logos/claude.png" },
 ];
 
 /**
@@ -35,7 +36,7 @@ const LogoMarquee = ({ dark = false }: { dark?: boolean }) => {
             src={l.src}
             alt={l.name}
             loading="lazy"
-            className={`h-8 md:h-10 w-auto shrink-0 ${dark ? "opacity-80 brightness-0 invert" : "opacity-70"} hover:opacity-100 transition-opacity`}
+            className={`h-14 md:h-20 w-auto shrink-0 ${dark ? "opacity-80 brightness-0 invert" : "opacity-70"} hover:opacity-100 transition-opacity`}
           />
         ))}
       </div>

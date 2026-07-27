@@ -5,6 +5,7 @@ import SectorHeroDark from "@/components/sector/SectorHeroDark";
 import LogoMarquee from "@/components/LogoMarquee";
 
 
+
 const FontanerosPage = () => {
   const faqs = [
     {
@@ -110,7 +111,7 @@ const FontanerosPage = () => {
     {
       n: "01",
       h: "Auditoría gratuita",
-      d: "Analizamos tu ficha, tu web y tu competencia local sin coste.",
+      d: "Analizamos tu ficha y tu web",
     },
     {
       n: "02",
@@ -169,12 +170,6 @@ const FontanerosPage = () => {
             Agencia SEO Local especializada en fontaneros. Optimizamos tu ficha de Google Business Profile y tu web para que aparezcas primero cuando alguien busca fontanero urgente en tu ciudad.
           </>
         }
-        phoneQuery="fontanero cerca de mí"
-        phoneResults={[
-          { name: "Fontanería García 24h", rating: 4.9, reviews: 187, category: "Fontanero", hours: "Abierto 24 h", distance: "a 800 m" },
-          { name: "Urgencias Fontanero Ya", rating: 4.8, reviews: 132, category: "Fontanero", hours: "Abierto", distance: "a 1,2 km" },
-          { name: "Fontaneros Rápidos SL", rating: 4.7, reviews: 96, category: "Reparación fugas", hours: "Abierto", distance: "a 1,6 km" },
-        ]}
         primaryCta={{ label: "Solicitar auditoría gratuita", to: "/contacto" }}
         secondaryCta={{ label: "Ver cómo funciona", to: "/como-funciona" }}
         trustItems={[
