@@ -647,6 +647,114 @@ const FontanerosPage = () => {
         </div>
       </section>
 
+      {/* SERVICIOS COMPLEMENTARIOS */}
+      <section className={sectionCls}>
+        <div className="container">
+          <div className="max-w-3xl mb-16">
+            <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
+              ¿Qué otros servicios pueden ayudarte a conseguir más clientes desde Google?
+            </h2>
+            <p className="text-base md:text-lg font-body font-light text-warm-fg/70 leading-relaxed max-w-3xl">
+              Además de optimizar tu web y Google Business Profile, podemos ayudarte con otros servicios para seguir creciendo.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {/* Left intro card */}
+            <div className="bg-white border border-warm-fg/10 rounded-2xl p-8 md:p-10 lg:p-12 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] flex flex-col">
+              <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1.5 text-[11px] font-heading tracking-[0.18em] uppercase text-primary mb-6">
+                Servicios complementarios
+              </span>
+              <h3 className="font-heading font-semibold text-warm-fg text-2xl md:text-3xl lg:text-4xl leading-[1.1] tracking-tight mb-4">
+                Haz crecer tu negocio más allá del SEO Local
+              </h3>
+              <p className="text-base md:text-lg font-body font-light text-warm-fg/70 leading-relaxed mb-8">
+                No todos los negocios necesitan los mismos servicios. Añade solo aquello que aporte más clientes a tu estrategia.
+              </p>
+              <ul className="space-y-3 mt-auto">
+                {[
+                  "Posicionamiento GEO",
+                  "Gestión de reseñas",
+                  "Google Ads",
+                  "SEO Multisede",
+                ].map((item) => (
+                  <li key={item} className="flex items-center gap-3 font-body text-warm-fg/85">
+                    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" className="text-primary shrink-0" aria-hidden>
+                      <path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <span className="text-[15px] md:text-base">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Right service cards */}
+            <div className="grid grid-cols-1 gap-6">
+              {[
+                {
+                  icon: <img src="/logos/chatgpt.png" alt="ChatGPT" className="h-8 w-auto" />,
+                  title: (
+                    <>
+                      Posicionamiento <span className="text-primary">GEO</span>
+                    </>
+                  ),
+                  desc: "Haz que tu empresa aparezca en ChatGPT, Gemini y otras plataformas de IA cuando los clientes busquen empresas como la tuya.",
+                  link: "/posicionamiento-geo",
+                },
+                {
+                  icon: (
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="text-primary">
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                  ),
+                  title: (
+                    <>
+                      Gestión de <span className="text-primary">reseñas</span>
+                    </>
+                  ),
+                  desc: "Consigue más reseñas de calidad, mejora tu reputación online y aumenta la confianza antes de que el cliente te llame.",
+                  link: "/gestion-resenas",
+                },
+                {
+                  icon: (
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" className="text-primary">
+                      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" fill="none" stroke="currentColor" strokeWidth="1.8" />
+                      <path d="M12 7v6l4 2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+                    </svg>
+                  ),
+                  title: (
+                    <>
+                      Google <span className="text-primary">Ads</span>
+                    </>
+                  ),
+                  desc: "Genera llamadas desde el primer día con campañas optimizadas para búsquedas de alta intención.",
+                  link: "/google-ads",
+                },
+              ].map((service) => (
+                <div
+                  key={service.link}
+                  className="bg-white border border-warm-fg/10 rounded-2xl p-6 md:p-8 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] flex flex-col"
+                >
+                  <div className="mb-4">{service.icon}</div>
+                  <h3 className="font-heading font-semibold text-warm-fg text-xl md:text-2xl leading-snug tracking-tight mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm md:text-base font-body font-light text-warm-fg/70 leading-relaxed mb-6">
+                    {service.desc}
+                  </p>
+                  <Link
+                    to={service.link}
+                    className="mt-auto inline-flex items-center gap-1 font-heading text-sm text-primary hover:gap-2 transition-all"
+                  >
+                    Más información →
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* POR QUÉ CADA MES */}
       <section className={sectionCls}>
         <div className="container grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
