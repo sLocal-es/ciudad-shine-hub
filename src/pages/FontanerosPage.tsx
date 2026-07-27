@@ -295,6 +295,41 @@ const FontanerosPage = () => {
         </div>
       </section>
 
+      {/* CTA AUDITORÍA GRATUITA */}
+      <section className="bg-white py-12 md:py-20">
+        <div className="container">
+          <div className="rounded-3xl bg-primary text-primary-foreground px-6 py-14 md:px-14 md:py-20 lg:px-20 lg:py-24">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+              <div>
+                <span className="inline-flex items-center rounded-full bg-white/15 px-3 py-1 text-[11px] font-heading tracking-[0.18em] uppercase text-white">
+                  Auditoría gratuita
+                </span>
+                <h2 className="mt-6 font-heading font-semibold leading-[1.1] tracking-tight text-3xl md:text-4xl lg:text-5xl text-white max-w-[20ch]">
+                  Descubre por qué tu competencia recibe más llamadas que tú
+                </h2>
+                <p className="mt-6 max-w-xl text-base md:text-lg font-body font-light text-white/85 leading-relaxed">
+                  Analizamos gratis tu ficha de Google Business Profile y tu web. Te mostraremos los principales errores que están impidiendo que aparezcas por delante de tu competencia.
+                </p>
+                <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm md:text-base font-body text-white/90">
+                  {["Sin compromiso", "Vídeo personalizado", "En menos de 24 horas"].map((b) => (
+                    <li key={b} className="flex items-center gap-2">
+                      <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden>
+                        <path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <AuditoriaLeadForm />
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
 
       {/* ¿CÓMO BUSCAN? — visual GBP + búsqueda */}
       <section className={sectionCls}>
