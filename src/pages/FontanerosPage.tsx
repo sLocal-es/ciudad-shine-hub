@@ -6,7 +6,7 @@ import SectorHeroDark from "@/components/sector/SectorHeroDark";
 import LogoMarquee from "@/components/LogoMarquee";
 import { sendForm } from "@/lib/sendForm";
 import { toast } from "@/hooks/use-toast";
-import pagXServicioImg from "@/assets/pag_x_servicio.webp.asset.json";
+
 
 const AuditoriaLeadForm = () => {
   const [form, setForm] = useState({ name: "", business: "", phone: "", email: "", message: "" });
@@ -623,70 +623,6 @@ const FontanerosPage = () => {
         </div>
       </section>
 
-      {/* SERVICIOS */}
-      <section className={sectionCls}>
-        <div className="container">
-          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Servicios</p>
-          <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight max-w-[22ch] mb-6">
-            ¿Qué tipos de <span className="text-primary">servicios de fontanería</span> posiciona Slocal?
-          </h2>
-          <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed max-w-3xl mb-14">
-            Slocal posiciona todos los servicios que un fontanero ofrece: urgencias 24 horas, averías, instalación de caldera, detección de fugas, desatascos, comunidades y reformas. Creamos contenido específico para cada servicio para que aparezcas en las búsquedas correctas de tu ciudad.
-          </p>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-stretch mt-20 md:mt-28">
-            {/* LEFT: Service page diagram */}
-            <div className="order-2 lg:order-1">
-              <div className="w-full h-full rounded-[2.5rem] border border-warm-fg/10 bg-white overflow-hidden shadow-[0_20px_60px_-30px_rgba(0,0,0,0.08)]">
-                <img
-                  src={pagXServicioImg.url}
-                  alt="Diagrama de una página web principal de fontanero que ramifica páginas individuales por servicio, cada una posicionada para una búsqueda local en Vigo"
-                  className="w-full h-full object-contain"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-
-            {/* RIGHT: Premium information card */}
-            <div className="order-1 lg:order-2">
-              <div className="h-full rounded-[2rem] bg-white border border-warm-fg/10 p-8 md:p-12 lg:p-14 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.08)] flex flex-col justify-center">
-                <h3 className="font-heading font-semibold text-warm-fg text-2xl md:text-3xl lg:text-4xl leading-[1.15] tracking-tight mb-6">
-                  ¿Por qué funciona esta estrategia?
-                </h3>
-                <p className="text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed mb-10">
-                  Google posiciona páginas individuales, no una única página para todos los servicios. Por eso desarrollamos una página optimizada para cada búsqueda importante.
-                </p>
-
-                <div className="flex flex-wrap gap-3 mb-10">
-                  {[
-                    "Fontanero urgente",
-                    "Instalación de caldera",
-                    "Detección de fugas",
-                    "Desatascos",
-                    "Fontanero 24 horas",
-                    "Comunidades",
-                    "Averías",
-                    "Reformas",
-                  ].map((chip) => (
-                    <span
-                      key={chip}
-                      className="inline-flex items-center rounded-full border border-warm-fg/15 px-4 py-2 text-sm font-body text-warm-fg/80 bg-warm-fg/[0.02]"
-                    >
-                      {chip}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="rounded-2xl bg-primary/10 border border-primary/20 p-6 md:p-8">
-                  <p className="text-base md:text-lg font-body font-medium text-warm-fg leading-relaxed">
-                    Cuantas más búsquedas relevantes cubra tu web, más oportunidades tendrá Google de mostrar tu empresa cuando un cliente necesite exactamente ese servicio.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* SERVICIOS COMPLEMENTARIOS */}
       <section className={sectionCls}>
