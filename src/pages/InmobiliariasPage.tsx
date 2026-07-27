@@ -1,4 +1,6 @@
 import SectorMasterTemplate, { SectorTemplateContent } from "@/components/sector/SectorMasterTemplate";
+import gbpInmobiliariaAsset from "@/assets/gbp_inmobiliaria.webp.asset.json";
+
 
 const InmobiliariasPage = () => {
   const faqs = [
@@ -37,6 +39,8 @@ const InmobiliariasPage = () => {
     gbpH3: <>Tu ficha de <span className="text-primary">Google Business Profile</span> genera contactos</>,
     gbpBody: <>Google Business Profile es donde el cliente decide llamarte cuando busca comprar o alquilar. Optimizamos tu ficha para aparecer antes que otras inmobiliarias y convertir búsquedas en contactos reales.</>,
     gbpFeatures: ["Categorías inmobiliarias optimizadas", "Zonas de servicio por barrios", "Publicaciones de inmuebles", "Gestión de reseñas", "Geolocalización", "Seguimiento de llamadas"],
+    gbpImage: { src: gbpInmobiliariaAsset.url, alt: "Ficha de Google Business Profile optimizada para una inmobiliaria en Córdoba" },
+
     webH3: <>Una web que <span className="text-primary">convierte</span> visitas en clientes</>,
     webBody: <>Mientras Google Business Profile genera la llamada, tu web convierte las visitas en contactos cualificados y visitas a inmuebles.</>,
     webFeatures: ["SEO Local", "Landing por zona", "Landing por tipo de operación", "Formularios optimizados", "WhatsApp", "Google Analytics"],
