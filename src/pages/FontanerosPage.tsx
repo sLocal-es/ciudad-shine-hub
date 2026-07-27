@@ -510,7 +510,7 @@ const FontanerosPage = () => {
             <div className="md:col-span-7 order-2 md:order-1">
               <div className="w-full rounded-[2rem] bg-[hsl(var(--warm-bg))] border border-warm-fg/10 overflow-hidden">
                 <img
-                  src={casoVigoAsset.url}
+                  src="/images/caso_de_exito_fontanero_vigo.webp"
                   alt="Caso de éxito: fontanería de Vigo que pasó de no aparecer en Google a recibir más de 30 llamadas al mes gracias a Slocal"
                   className="w-full h-auto object-cover"
                   loading="lazy"
