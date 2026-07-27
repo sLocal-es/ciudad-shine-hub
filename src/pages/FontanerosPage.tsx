@@ -201,6 +201,75 @@ const FontanerosPage = () => {
           <p className="mt-8 max-w-2xl text-base md:text-lg font-body text-warm-fg leading-relaxed">
             En Slocal conseguimos que más clientes te llamen optimizando tu ficha de Google Business Profile y posicionando tu web para búsquedas locales de alta intención. Aparecer en el top 3 de Google Maps multiplica las llamadas: esos tres negocios se llevan el 40 % de los clics.
           </p>
+
+          {/* Editorial split — GBP */}
+          <div className="mt-24 md:mt-32 grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center animate-in fade-in slide-in-from-bottom-4 duration-700">
+            <div>
+              <p className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary mb-6">Google Business Profile</p>
+              <h3 className="font-heading font-semibold text-warm-fg leading-[1.1] tracking-tight text-3xl md:text-4xl lg:text-5xl max-w-[18ch]">
+                Tu ficha de Google es la que hace sonar el teléfono
+              </h3>
+              <p className="mt-6 max-w-lg text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed">
+                Google Business Profile es lo que genera las llamadas: es donde el cliente decide llamarte antes incluso de entrar en tu web. La web viene después, para convertir a quien sí necesita más información.
+              </p>
+              <ul className="mt-8 space-y-3 max-w-md">
+                {[
+                  "Categorías optimizadas",
+                  "Servicios correctamente estructurados",
+                  "Publicaciones",
+                  "Gestión de reseñas",
+                  "Geolocalización",
+                  "Seguimiento de llamadas",
+                ].map((f) => (
+                  <li key={f} className="flex items-center gap-3 font-body text-warm-fg/85">
+                    <svg width="14" height="14" viewBox="0 0 20 20" fill="none" className="text-primary shrink-0" aria-hidden>
+                      <path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <span className="text-[15px] md:text-base">{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <a href="#caso-real" className="mt-10 inline-flex items-center gap-1 font-heading text-sm text-primary hover:gap-2 transition-all">
+                Ver caso real →
+              </a>
+            </div>
+            <div className="order-first md:order-last">
+              <GbpSkeletonMockup />
+            </div>
+          </div>
+
+          {/* Editorial split — Web */}
+          <div className="mt-24 md:mt-32 grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center animate-in fade-in slide-in-from-bottom-4 duration-700">
+            <div>
+              <WebSkeletonMockup />
+            </div>
+            <div>
+              <p className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary mb-6">Web optimizada</p>
+              <h3 className="font-heading font-semibold text-warm-fg leading-[1.1] tracking-tight text-3xl md:text-4xl lg:text-5xl max-w-[18ch]">
+                Una web preparada para convertir visitas en clientes
+              </h3>
+              <p className="mt-6 max-w-lg text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed">
+                La ficha de Google te da la visibilidad y las llamadas directas. La web se encarga del resto: transforma en cliente a quien busca comparar, revisar servicios o pedir presupuesto antes de decidir.
+              </p>
+              <ul className="mt-8 space-y-3 max-w-md">
+                {[
+                  "SEO Local",
+                  "Landing por servicio",
+                  "Landing por ciudad",
+                  "Formularios optimizados",
+                  "WhatsApp",
+                  "Google Analytics",
+                ].map((f) => (
+                  <li key={f} className="flex items-center gap-3 font-body text-warm-fg/85">
+                    <svg width="14" height="14" viewBox="0 0 20 20" fill="none" className="text-primary shrink-0" aria-hidden>
+                      <path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <span className="text-[15px] md:text-base">{f}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
