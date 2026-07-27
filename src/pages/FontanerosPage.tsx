@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import CTASection from "@/components/CTASection";
@@ -825,6 +825,7 @@ const FontanerosPage = () => {
       </section>
 
       <CTASection
+        id="contacto"
         title="¿Quieres que tu teléfono suene más gracias a Google?"
         buttonText="Solicitar auditoría gratuita →"
       />
