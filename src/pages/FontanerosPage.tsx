@@ -6,44 +6,7 @@ import LogoMarquee from "@/components/LogoMarquee";
 
 
 const GbpSkeletonMockup = () => (
-  <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-warm-fg/[0.03] via-warm-fg/[0.02] to-primary/[0.06] p-6 md:p-8 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.25)] ring-1 ring-warm-fg/5">
-    <div aria-hidden className="absolute inset-0 pointer-events-none opacity-60" style={{ backgroundImage: "radial-gradient(circle at 80% 10%, hsl(var(--primary) / 0.10), transparent 50%)" }} />
-    <div className="relative grid grid-cols-6 gap-4">
-      {/* Map block */}
-      <div className="col-span-6 h-40 md:h-52 rounded-2xl bg-warm-fg/[0.06] relative overflow-hidden">
-        <div className="absolute inset-0" style={{ backgroundImage: "linear-gradient(to right, hsl(var(--warm-fg) / 0.05) 1px, transparent 1px), linear-gradient(to bottom, hsl(var(--warm-fg) / 0.05) 1px, transparent 1px)", backgroundSize: "28px 28px" }} />
-        <div className="absolute left-[22%] top-[35%] h-3 w-3 rounded-full bg-warm-fg/30" />
-        <div className="absolute left-[55%] top-[55%] h-4 w-4 rounded-full bg-primary shadow-[0_0_0_6px_hsl(var(--primary)/0.15)]" />
-        <div className="absolute left-[75%] top-[28%] h-3 w-3 rounded-full bg-warm-fg/30" />
-      </div>
-      {/* Local pack row */}
-      <div className="col-span-6 space-y-2">
-        {[0,1,2].map(i => (
-          <div key={i} className="flex items-center gap-3 rounded-xl bg-warm-fg/[0.04] px-3 py-2.5">
-            <div className={`h-8 w-8 rounded-lg ${i===0 ? "bg-primary/80" : "bg-warm-fg/15"}`} />
-            <div className="flex-1 space-y-1.5">
-              <div className={`h-2 rounded-full ${i===0 ? "bg-warm-fg/40" : "bg-warm-fg/20"}`} style={{ width: `${70 - i*10}%` }} />
-              <div className="h-1.5 rounded-full bg-warm-fg/10 w-1/3" />
-            </div>
-            <div className="h-2 w-8 rounded-full bg-warm-fg/15" />
-          </div>
-        ))}
-      </div>
-      {/* Metric cards */}
-      <div className="col-span-3 rounded-xl bg-warm-fg/[0.04] p-3">
-        <div className="h-1.5 w-1/2 rounded-full bg-warm-fg/15 mb-3" />
-        <div className="font-heading text-2xl text-warm-fg">248</div>
-        <div className="mt-2 h-8 rounded-md bg-gradient-to-t from-primary/25 to-transparent" />
-      </div>
-      <div className="col-span-3 rounded-xl bg-warm-fg/[0.04] p-3">
-        <div className="h-1.5 w-1/2 rounded-full bg-warm-fg/15 mb-3" />
-        <div className="font-heading text-2xl text-warm-fg">4,9<span className="text-primary">★</span></div>
-        <div className="mt-2 flex gap-1">
-          {[0,1,2,3,4].map(i => <div key={i} className="h-1.5 flex-1 rounded-full bg-warm-fg/15" />)}
-        </div>
-      </div>
-    </div>
-  </div>
+  <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden bg-white border border-warm-fg/10 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)]" />
 );
 
 const WebSkeletonMockup = () => (
