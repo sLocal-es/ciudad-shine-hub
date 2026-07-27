@@ -10,66 +10,7 @@ const GbpSkeletonMockup = () => (
 );
 
 const WebSkeletonMockup = () => (
-  <div className="relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary/[0.05] via-warm-fg/[0.02] to-warm-fg/[0.04] p-6 md:p-8 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.25)] ring-1 ring-warm-fg/5">
-    <div aria-hidden className="absolute inset-0 pointer-events-none opacity-60" style={{ backgroundImage: "radial-gradient(circle at 15% 90%, hsl(var(--primary) / 0.10), transparent 50%)" }} />
-    <div className="relative grid grid-cols-6 gap-4">
-      {/* Hero placeholder */}
-      <div className="col-span-6 rounded-2xl bg-warm-fg/[0.05] p-4">
-        <div className="flex items-center justify-between mb-4">
-          <div className="h-2 w-16 rounded-full bg-warm-fg/20" />
-          <div className="flex gap-1.5">
-            <div className="h-1.5 w-6 rounded-full bg-warm-fg/15" />
-            <div className="h-1.5 w-6 rounded-full bg-warm-fg/15" />
-            <div className="h-1.5 w-6 rounded-full bg-primary/60" />
-          </div>
-        </div>
-        <div className="h-3 w-2/3 rounded-full bg-warm-fg/25 mb-2" />
-        <div className="h-3 w-1/2 rounded-full bg-warm-fg/20 mb-4" />
-        <div className="h-6 w-24 rounded-full bg-primary/80" />
-      </div>
-      {/* Form */}
-      <div className="col-span-3 rounded-xl bg-warm-fg/[0.04] p-3 space-y-2">
-        <div className="h-6 rounded-md bg-warm-fg/10" />
-        <div className="h-6 rounded-md bg-warm-fg/10" />
-        <div className="h-6 rounded-md bg-primary/70" />
-      </div>
-      {/* Ranking cards */}
-      <div className="col-span-3 space-y-2">
-        <div className="rounded-xl bg-warm-fg/[0.04] p-2.5 flex items-center gap-2">
-          <div className="h-6 w-6 rounded-md bg-primary/80 grid place-items-center text-[10px] font-heading text-primary-foreground">1</div>
-          <div className="flex-1 h-1.5 rounded-full bg-warm-fg/20" />
-        </div>
-        <div className="rounded-xl bg-warm-fg/[0.04] p-2.5 flex items-center gap-2">
-          <div className="h-6 w-6 rounded-md bg-warm-fg/15 grid place-items-center text-[10px] font-heading text-warm-fg/60">3</div>
-          <div className="flex-1 h-1.5 rounded-full bg-warm-fg/15" />
-        </div>
-        <div className="rounded-xl bg-warm-fg/[0.04] p-2.5 flex items-center gap-2">
-          <div className="h-6 w-6 rounded-md bg-warm-fg/15 grid place-items-center text-[10px] font-heading text-warm-fg/60">7</div>
-          <div className="flex-1 h-1.5 rounded-full bg-warm-fg/10" />
-        </div>
-      </div>
-      {/* Speed / analytics */}
-      <div className="col-span-3 rounded-xl bg-warm-fg/[0.04] p-3">
-        <div className="h-1.5 w-1/2 rounded-full bg-warm-fg/15 mb-3" />
-        <div className="flex items-end gap-1 h-14">
-          {[30,55,42,70,60,85,72].map((h,i) => (
-            <div key={i} className="flex-1 rounded-t-sm bg-gradient-to-t from-primary/70 to-primary/20" style={{ height: `${h}%` }} />
-          ))}
-        </div>
-      </div>
-      <div className="col-span-3 rounded-xl bg-warm-fg/[0.04] p-3 flex items-center gap-3">
-        <div className="relative h-14 w-14">
-          <div className="absolute inset-0 rounded-full border-4 border-warm-fg/10" />
-          <div className="absolute inset-0 rounded-full border-4 border-primary border-r-transparent border-b-transparent rotate-45" />
-          <div className="absolute inset-0 grid place-items-center font-heading text-sm text-warm-fg">98</div>
-        </div>
-        <div className="flex-1 space-y-1.5">
-          <div className="h-1.5 w-3/4 rounded-full bg-warm-fg/20" />
-          <div className="h-1.5 w-1/2 rounded-full bg-warm-fg/15" />
-        </div>
-      </div>
-    </div>
-  </div>
+  <div className="w-full aspect-[1/1] rounded-3xl overflow-hidden bg-white border border-warm-fg/10 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)]" />
 );
 
 
