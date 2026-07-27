@@ -213,6 +213,65 @@ const FontanerosPage = () => {
     },
   ];
 
+  const howWeWorkSteps = [
+    {
+      h: "Auditoría",
+      d: "Analizamos tu Google Business Profile, tu web y a tus principales competidores para detectar oportunidades de mejora.",
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="11" cy="11" r="7" />
+          <path d="m21 21-4.3-4.3" />
+        </svg>
+      ),
+    },
+    {
+      h: "Estrategia",
+      d: "Definimos las búsquedas con mayor intención de compra y diseñamos una estrategia SEO Local adaptada a tu negocio.",
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <circle cx="12" cy="12" r="3" />
+        </svg>
+      ),
+    },
+    {
+      h: "Optimización",
+      d: "Optimizamos tu Google Business Profile y tu web para que trabajen conjuntamente y mejoren tu posicionamiento.",
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 20h9" />
+          <path d="M12 14h6" />
+          <path d="M12 8h3" />
+          <path d="M3 20h.01" />
+          <path d="M3 14h.01" />
+          <path d="M3 8h.01" />
+          <path d="M3 2h.01" />
+        </svg>
+      ),
+    },
+    {
+      h: "Autoridad Local",
+      d: "Potenciamos reseñas, contenido local y señales de confianza para superar a la competencia.",
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+      ),
+    },
+    {
+      h: "Seguimiento",
+      d: "Medimos llamadas, formularios y posiciones para seguir optimizando los resultados mes a mes.",
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M3 3v18h18" />
+          <path d="M18 17V9" />
+          <path d="M13 17V5" />
+          <path d="M8 17v-3" />
+        </svg>
+      ),
+    },
+  ];
+
   const monthlyReasons = [
     { h: "Tus competidores siguen trabajando", d: "Otros fontaneros publican, piden reseñas y mueven su ficha. Si tú te detienes, ellos avanzan." },
     { h: "Google cambia constantemente", d: "El algoritmo se actualiza cada mes. Lo que hoy te posiciona mañana puede necesitar ajustes." },
