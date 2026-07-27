@@ -4,7 +4,7 @@ import { cities } from "@/data/cities";
 import SEOHead from "@/components/SEOHead";
 import { ServiceHeroVisual } from "@/components/visuals/SeoVisuals";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
-import PlanCards from "@/components/PlanCards";
+
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 
@@ -65,8 +65,8 @@ const ServicePage = () => {
             <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-8 font-body font-light">
               {service.subtitle}
             </p>
-            <Link to="/planes" className="bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors inline-block">
-              Ver planes →
+            <Link to="/contacto" className="bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors inline-block">
+              Hablemos →
             </Link>
           </div>
           <ServiceHeroVisual slug={service.slug} />
@@ -98,13 +98,6 @@ const ServicePage = () => {
         </div>
       </section>
 
-      {/* PLANS */}
-      <section className="py-16">
-        <div className="container">
-          <h2 className="font-heading text-2xl md:text-3xl mb-8">Elige tu plan</h2>
-          <PlanCards />
-        </div>
-      </section>
 
       {/* FAQ */}
       <FAQSection title={`Preguntas frecuentes`} items={service.faqs} />

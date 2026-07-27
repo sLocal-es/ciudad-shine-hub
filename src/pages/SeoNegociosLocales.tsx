@@ -93,11 +93,6 @@ const SeoNegociosLocales = () => {
     name: TITLE,
     provider: { "@type": "LocalBusiness", name: "slocal.es", url: "https://slocal.es" },
     areaServed: "España",
-    offers: {
-      "@type": "Offer",
-      price: "147",
-      priceCurrency: "EUR",
-    },
   };
 
   return (
