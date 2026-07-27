@@ -92,12 +92,24 @@ const WebSkeletonMockup = () => (
 const FontanerosPage = () => {
   const faqs = [
     {
-      q: "¿Vale la pena el SEO para un fontanero autónomo?",
-      a: "Sí. La mayoría de nuestros clientes son autónomos o empresas de 2-3 personas. El SEO local es especialmente rentable para fontaneros porque cada trabajo puede valer entre 80€ y varios miles en instalaciones grandes. Una llamada adicional al mes ya amortiza el servicio.",
+      q: "¿Qué necesita una empresa de fontanería para posicionarse en Google?",
+      a: "Necesita una ficha de Google Business Profile optimizada, una web con páginas por servicio y ciudad, reseñas reales y contenido publicado cada mes. En Slocal aplicamos ese proceso en cuatro pasos: auditoría gratuita, plan de crecimiento, optimización de ficha y web, y seguimiento mensual para reforzar posiciones, reseñas y contenido.",
     },
     {
-      q: "¿Necesito web si ya tengo ficha de Google?",
-      a: "La ficha sola posiciona en Maps, pero una web refuerza la autoridad y te permite aparecer también en los resultados orgánicos. El servicio incluye ambas desde el inicio.",
+      q: "¿Basta con tener una ficha de Google Business Profile?",
+      a: "No. La ficha sola posiciona en Google Maps, pero una web específica de fontanería refuerza la autoridad y te permite aparecer también en los resultados orgánicos. Ficha y web trabajan juntas: la ficha capta las búsquedas locales inmediatas y la web posiciona búsquedas más específicas por servicio y por zona.",
+    },
+    {
+      q: "¿Es suficiente una sola página para todos mis servicios?",
+      a: "No. Google necesita páginas específicas por servicio (urgencias, calderas, fugas, desatascos, reformas) y por zona para entender cuándo mostrarte. Una sola página genérica compite peor que una web con contenido especializado por cada búsqueda con intención real en tu ciudad.",
+    },
+    {
+      q: "¿Qué tipos de servicios de fontanería posiciona Slocal?",
+      a: "Slocal posiciona todos los servicios que ofrece un fontanero: urgencias 24 horas, averías, instalación y cambio de caldera, detección de fugas, desatascos, comunidades y reformas. Creamos contenido específico para cada servicio para que aparezcas en las búsquedas correctas de tu ciudad.",
+    },
+    {
+      q: "¿Vale la pena el SEO para un fontanero autónomo?",
+      a: "Sí. La mayoría de nuestros clientes son autónomos o empresas de 2-3 personas. El SEO local es especialmente rentable para fontaneros porque cada trabajo puede valer entre 80€ y varios miles en instalaciones grandes. Una llamada adicional al mes ya amortiza el servicio.",
     },
     {
       q: "¿Cómo compito con fontaneros que llevan años en Google?",
@@ -190,28 +202,6 @@ const FontanerosPage = () => {
     "Fontanero cerca de mí",
   ];
 
-  const processSteps = [
-    {
-      n: "01",
-      h: "Auditoría gratuita",
-      d: "Analizamos tu ficha y tu web",
-    },
-    {
-      n: "02",
-      h: "Detectamos oportunidades",
-      d: "Identificamos las búsquedas con mayor intención en tu zona.",
-    },
-    {
-      n: "03",
-      h: "Optimizamos Google Business + Web",
-      d: "Reescribimos, estructuramos y activamos tu presencia local.",
-    },
-    {
-      n: "04",
-      h: "Seguimiento y crecimiento mensual",
-      d: "Reforzamos posiciones, reseñas y contenido cada mes.",
-    },
-  ];
 
   const howWeWorkSteps = [
     {
@@ -338,7 +328,7 @@ const FontanerosPage = () => {
         <div className="container">
           <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— El punto de partida</p>
           <h2 className="font-heading font-semibold text-warm-fg leading-[1.05] tracking-tight text-4xl md:text-5xl lg:text-6xl max-w-[22ch]">
-            ¿Cómo conseguir más clientes de fontanería desde <span className="text-primary">Google</span>?
+            ¿Cómo conseguir <span className="text-primary">más clientes</span> de fontanería desde Google?
           </h2>
           <p className="mt-8 max-w-2xl text-base md:text-lg font-body text-warm-fg leading-relaxed">
             En Slocal conseguimos que más clientes te llamen optimizando tu ficha de Google Business Profile y posicionando tu web para búsquedas locales de alta intención. Aparecer en el top 3 de Google Maps multiplica las llamadas: esos tres negocios se llevan el 40 % de los clics.
@@ -459,7 +449,7 @@ const FontanerosPage = () => {
               Cómo trabajamos
             </span>
             <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
-              ¿Cómo conseguimos que aparezcas por delante de tu competencia en Google?
+              ¿Cómo conseguimos que aparezcas <span className="text-primary">por delante</span> de tu competencia en Google?
             </h2>
             <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed max-w-3xl">
               En Slocal apareces primero en Google Maps optimizando tu ficha de Google Business Profile, categorías, servicios, reseñas y contenido local. Google prioriza fichas activas, con reseñas recientes y coherencia entre ficha, web y citaciones locales de tu ciudad.
@@ -518,7 +508,7 @@ const FontanerosPage = () => {
         <div className="container">
           <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Visibilidad</p>
           <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight max-w-[22ch] mb-8">
-            ¿Qué errores impiden que un fontanero aparezca en Google?
+            ¿Qué <span className="text-primary">errores</span> impiden que un fontanero aparezca en Google?
           </h2>
           <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed max-w-3xl mb-16">
             En Slocal detectamos dos errores que impiden aparecer: fichas de Google desactualizadas y webs sin páginas específicas por servicio. Los corregimos activando tu ficha, publicando contenido mensual y creando páginas por servicio y por zona para que Google entienda cuándo mostrarte.
@@ -545,41 +535,6 @@ const FontanerosPage = () => {
         </div>
       </section>
 
-      {/* PROCESO — timeline horizontal */}
-      <section className={sectionCls}>
-        <div className="container">
-          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Proceso</p>
-          <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight max-w-[22ch] mb-8">
-            ¿Qué necesita una empresa de fontanería para posicionarse en Google?
-          </h2>
-          <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed max-w-3xl mb-20">
-            Necesita una ficha de Google Business Profile optimizada, una web con páginas por servicio y ciudad, reseñas reales y contenido publicado cada mes. En Slocal aplicamos ese proceso en cuatro pasos: auditoría gratuita, plan de crecimiento, optimización de ficha y web, y seguimiento mensual.
-          </p>
-
-
-          {/* Roadmap horizontal */}
-          <div className="relative">
-            <div className="hidden md:block absolute top-4 left-0 right-0 h-px bg-warm-fg/15" />
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
-              {processSteps.map((s) => (
-                <div key={s.n} className="relative">
-                  <div className="flex items-center gap-3 md:block">
-                    <span className="relative z-10 inline-flex items-center justify-center h-8 w-8 rounded-full bg-primary text-primary-foreground font-heading text-xs">
-                      {s.n}
-                    </span>
-                  </div>
-                  <h3 className="mt-6 font-heading text-xl md:text-2xl text-warm-fg leading-snug">
-                    {s.h}
-                  </h3>
-                  <p className="mt-3 text-sm md:text-base font-body font-light text-warm-fg/70 leading-relaxed max-w-[26ch]">
-                    {s.d}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CASO REAL — dashboard mockup */}
       <section className={sectionCls}>
@@ -591,7 +546,7 @@ const FontanerosPage = () => {
             <div className="md:col-span-5 order-1 md:order-2">
               <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Caso real</p>
               <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
-                ¿Cómo ayuda Google Business Profile a un fontanero?
+                ¿Cómo ayuda <span className="text-primary">Google Business Profile</span> a un fontanero?
               </h2>
               <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed mb-6">
                 Google Business Profile le da visibilidad al fontanero en Google Maps y en el Local Pack: llamadas directas, indicaciones y clics a la web. Con Slocal, MVA Fontanería consiguió 60 interacciones desde Google en 2 meses y Fontaneros Económicos 11 llamadas directas y 4 WhatsApp en mes y medio.
@@ -624,7 +579,7 @@ const FontanerosPage = () => {
         <div className="container">
           <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Servicios</p>
           <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight max-w-[22ch] mb-6">
-            ¿Qué tipos de servicios de fontanería posiciona Slocal?
+            ¿Qué tipos de <span className="text-primary">servicios de fontanería</span> posiciona Slocal?
           </h2>
           <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed max-w-3xl mb-14">
             Slocal posiciona todos los servicios que un fontanero ofrece: urgencias 24 horas, averías, instalación de caldera, detección de fugas, desatascos, comunidades y reformas. Creamos contenido específico para cada servicio para que aparezcas en las búsquedas correctas de tu ciudad.
@@ -652,42 +607,15 @@ const FontanerosPage = () => {
         <div className="container">
           <div className="max-w-3xl mb-16">
             <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
-              ¿Qué otros servicios pueden ayudarte a conseguir más clientes desde Google?
+              ¿Qué otros servicios pueden ayudarte a conseguir <span className="text-primary">más clientes</span> desde Google?
             </h2>
             <p className="text-base md:text-lg font-body font-light text-warm-fg/70 leading-relaxed max-w-3xl">
               Además de optimizar tu web y Google Business Profile, podemos ayudarte con servicios especializados para aumentar tu visibilidad, generar más confianza y acelerar el crecimiento de tu negocio.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
-            {/* Featured card — orange */}
-            <div className="bg-primary text-primary-foreground rounded-2xl p-7 md:p-8 shadow-[0_20px_50px_-20px_rgba(232,84,26,0.5)] flex flex-col min-h-[520px]">
-              <p className="font-heading text-[11px] tracking-[0.15em] uppercase text-primary-foreground/80 mb-8">
-                SLOCAL.ES
-              </p>
-              <h3 className="font-heading font-bold text-2xl md:text-[26px] leading-[1.1] tracking-tight mb-5">
-                POTENCIA<br />TUS<br />RESULTADOS
-              </h3>
-              <p className="text-[15px] font-body font-light text-primary-foreground/90 leading-relaxed mb-8">
-                Tu web y Google Business Profile son la base del SEO Local. Estos servicios complementarios potencian tu estrategia para conseguir todavía más clientes.
-              </p>
-              <ul className="space-y-3 mt-auto">
-                {[
-                  "Posicionamiento GEO",
-                  "Gestión de reseñas PRO",
-                  "Google Ads",
-                  "Backlinks Locales",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2.5 font-body text-[14px] text-primary-foreground">
-                    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" className="shrink-0 mt-0.5" aria-hidden>
-                      <circle cx="10" cy="10" r="9" stroke="currentColor" strokeWidth="1.5" />
-                      <path d="M7 10l2.2 2.2L13.5 7.8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+
 
             {/* Service cards */}
             {[
@@ -770,7 +698,7 @@ const FontanerosPage = () => {
           <div className="md:col-span-5">
             <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Trabajo mensual</p>
             <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
-              ¿Por qué el SEO Local necesita trabajo mes a mes?
+              ¿Por qué el SEO Local necesita trabajo <span className="text-primary">mes a mes</span>?
             </h2>
             <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed">
               Porque Google no es una fotografía, es una competición continua. En Slocal reforzamos cada mes tu ficha, reseñas, contenido y autoridad local para que tus competidores no te superen y para capturar nuevas búsquedas conforme aparecen en tu zona.
@@ -826,7 +754,7 @@ const FontanerosPage = () => {
         <div className="container">
           <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Cobertura</p>
           <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-5xl leading-[1.05] tracking-tight max-w-[22ch] mb-4">
-            ¿En qué ciudades trabaja Slocal con fontaneros?
+            ¿En qué <span className="text-primary">ciudades</span> trabaja Slocal con fontaneros?
           </h2>
           <p className="text-base font-body text-warm-fg leading-relaxed mb-10 max-w-2xl">
             Slocal trabaja con fontaneros en toda España, con clientes activos en Madrid, Barcelona, Valencia, Sevilla, Málaga, Zaragoza, Bilbao y Murcia. Adaptamos la estrategia local a cada ciudad y a cada barrio para captar las búsquedas de máxima intención de tu zona.
@@ -850,7 +778,7 @@ const FontanerosPage = () => {
         <div className="container">
           <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Otros sectores</p>
           <h2 className="font-heading text-2xl md:text-3xl text-warm-fg mb-4">
-            ¿Slocal solo trabaja con fontaneros?
+            ¿Slocal solo trabaja con <span className="text-primary">fontaneros</span>?
           </h2>
           <p className="text-base font-body text-warm-fg leading-relaxed max-w-3xl mb-8">
             No. Slocal trabaja también con fisioterapeutas, empresas de reformas, pintores, clínicas, entrenadores personales y estudios de yoga. Aplicamos la misma metodología de SEO Local especializado a cada sector para que aparezcan cuando sus clientes buscan en Google.
