@@ -8,6 +8,7 @@ import { sendForm } from "@/lib/sendForm";
 import { toast } from "@/hooks/use-toast";
 import casoAntesImg from "@/assets/caso-antes-vigo.webp.asset.json";
 import casoIntermedioImg from "@/assets/situacion-intermedia-caso-fontanero.webp.asset.json";
+import casoFinalImg from "@/assets/situacion-final-vigo-fontaneria.webp.asset.json";
 
 
 const AuditoriaLeadForm = () => {
@@ -586,6 +587,8 @@ const FontanerosPage = () => {
                 title: "RESULTADO",
                 text: "Top 3 en Google Maps, más de 30 llamadas mensuales y un retorno superior a ocho veces la inversión.",
                 label: "Ilustración: resultados",
+                image: casoFinalImg.url,
+                imageAlt: "Resultados del caso de éxito: fontanería de Vigo en top 3 de Google Maps con más de 30 llamadas mensuales",
               },
             ].map((card) => (
               <div
