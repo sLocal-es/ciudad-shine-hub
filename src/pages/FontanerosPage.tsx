@@ -601,7 +601,7 @@ const FontanerosPage = () => {
         <div className="container">
           <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Servicios</p>
           <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight max-w-[22ch] mb-6">
-            ¿Qué tipos de servicios de fontanería posiciona Slocal?
+            ¿Qué tipos de <span className="text-primary">servicios de fontanería</span> posiciona Slocal?
           </h2>
           <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed max-w-3xl mb-14">
             Slocal posiciona todos los servicios que un fontanero ofrece: urgencias 24 horas, averías, instalación de caldera, detección de fugas, desatascos, comunidades y reformas. Creamos contenido específico para cada servicio para que aparezcas en las búsquedas correctas de tu ciudad.
