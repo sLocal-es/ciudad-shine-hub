@@ -170,16 +170,6 @@ const FontanerosPage = () => {
     priceRange: "€€",
   };
 
-  const serviceTypes = [
-    "Fontanero urgente y averías",
-    "Fontanero 24 horas",
-    "Instalación y cambio de caldera",
-    "Detección y reparación de fugas",
-    "Fontanero para comunidades",
-    "Instalaciones de fontanería",
-    "Desatascos y tuberías",
-    "Fontanero para reformas",
-  ];
 
   const cities = [
     { name: "Madrid", slug: "madrid" },
@@ -581,21 +571,53 @@ const FontanerosPage = () => {
           <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed max-w-3xl mb-14">
             Slocal posiciona todos los servicios que un fontanero ofrece: urgencias 24 horas, averías, instalación de caldera, detección de fugas, desatascos, comunidades y reformas. Creamos contenido específico para cada servicio para que aparezcas en las búsquedas correctas de tu ciudad.
           </p>
-          <ul className="divide-y divide-warm-fg/15 border-y border-warm-fg/15">
-            {serviceTypes.map((t, i) => (
-              <li key={t} className="py-6 md:py-7 flex items-baseline justify-between gap-6 group">
-                <div className="flex items-baseline gap-6 md:gap-10">
-                  <span className="font-body text-xs tracking-widest text-warm-fg/40 w-8">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="font-heading text-2xl md:text-3xl lg:text-4xl tracking-tight text-warm-fg group-hover:text-primary transition-colors">
-                    {t}
-                  </span>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-stretch mt-20 md:mt-28">
+            {/* LEFT: Large illustration placeholder */}
+            <div className="order-2 lg:order-1">
+              <div className="w-full h-full min-h-[420px] md:min-h-[520px] rounded-[2.5rem] border-2 border-dashed border-warm-fg/15 bg-warm-fg/[0.02] flex items-center justify-center">
+                <span className="text-sm font-heading tracking-[0.2em] uppercase text-warm-fg/30">Ilustración</span>
+              </div>
+            </div>
+
+            {/* RIGHT: Premium information card */}
+            <div className="order-1 lg:order-2">
+              <div className="h-full rounded-[2rem] bg-white border border-warm-fg/10 p-8 md:p-12 lg:p-14 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.08)] flex flex-col justify-center">
+                <h3 className="font-heading font-semibold text-warm-fg text-2xl md:text-3xl lg:text-4xl leading-[1.15] tracking-tight mb-6">
+                  ¿Por qué funciona esta estrategia?
+                </h3>
+                <p className="text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed mb-10">
+                  Google posiciona páginas individuales, no una única página para todos los servicios. Por eso desarrollamos una página optimizada para cada búsqueda importante.
+                </p>
+
+                <div className="flex flex-wrap gap-3 mb-10">
+                  {[
+                    "Fontanero urgente",
+                    "Instalación de caldera",
+                    "Detección de fugas",
+                    "Desatascos",
+                    "Fontanero 24 horas",
+                    "Comunidades",
+                    "Averías",
+                    "Reformas",
+                  ].map((chip) => (
+                    <span
+                      key={chip}
+                      className="inline-flex items-center rounded-full border border-warm-fg/15 px-4 py-2 text-sm font-body text-warm-fg/80 bg-warm-fg/[0.02]"
+                    >
+                      {chip}
+                    </span>
+                  ))}
                 </div>
-                <span className="font-heading text-primary text-2xl shrink-0">↗</span>
-              </li>
-            ))}
-          </ul>
+
+                <div className="rounded-2xl bg-primary/10 border border-primary/20 p-6 md:p-8">
+                  <p className="text-base md:text-lg font-body font-medium text-warm-fg leading-relaxed">
+                    Cuantas más búsquedas relevantes cubra tu web, más oportunidades tendrá Google de mostrar tu empresa cuando un cliente necesite exactamente ese servicio.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
