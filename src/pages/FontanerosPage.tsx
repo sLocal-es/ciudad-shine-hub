@@ -6,7 +6,7 @@ import SectorHeroDark from "@/components/sector/SectorHeroDark";
 import LogoMarquee from "@/components/LogoMarquee";
 import { sendForm } from "@/lib/sendForm";
 import { toast } from "@/hooks/use-toast";
-import pagXServicioImg from "@/assets/pag_x_servicio.webp.asset.json";
+
 
 const AuditoriaLeadForm = () => {
   const [form, setForm] = useState({ name: "", business: "", phone: "", email: "", message: "" });
