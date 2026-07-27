@@ -6,6 +6,7 @@ import SectorHeroDark from "@/components/sector/SectorHeroDark";
 import LogoMarquee from "@/components/LogoMarquee";
 import { sendForm } from "@/lib/sendForm";
 import { toast } from "@/hooks/use-toast";
+import casoVigoAsset from "@/assets/caso_de_exito_fontanero_vigo.webp.asset.json";
 
 const AuditoriaLeadForm = () => {
   const [form, setForm] = useState({ name: "", business: "", phone: "", email: "", message: "" });
