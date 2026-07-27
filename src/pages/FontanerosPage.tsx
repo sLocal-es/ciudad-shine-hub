@@ -213,6 +213,65 @@ const FontanerosPage = () => {
     },
   ];
 
+  const howWeWorkSteps = [
+    {
+      h: "Auditoría",
+      d: "Analizamos tu Google Business Profile, tu web y a tus principales competidores para detectar oportunidades de mejora.",
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="11" cy="11" r="7" />
+          <path d="m21 21-4.3-4.3" />
+        </svg>
+      ),
+    },
+    {
+      h: "Estrategia",
+      d: "Definimos las búsquedas con mayor intención de compra y diseñamos una estrategia SEO Local adaptada a tu negocio.",
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <circle cx="12" cy="12" r="3" />
+        </svg>
+      ),
+    },
+    {
+      h: "Optimización",
+      d: "Optimizamos tu Google Business Profile y tu web para que trabajen conjuntamente y mejoren tu posicionamiento.",
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 20h9" />
+          <path d="M12 14h6" />
+          <path d="M12 8h3" />
+          <path d="M3 20h.01" />
+          <path d="M3 14h.01" />
+          <path d="M3 8h.01" />
+          <path d="M3 2h.01" />
+        </svg>
+      ),
+    },
+    {
+      h: "Autoridad Local",
+      d: "Potenciamos reseñas, contenido local y señales de confianza para superar a la competencia.",
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+      ),
+    },
+    {
+      h: "Seguimiento",
+      d: "Medimos llamadas, formularios y posiciones para seguir optimizando los resultados mes a mes.",
+      icon: (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M3 3v18h18" />
+          <path d="M18 17V9" />
+          <path d="M13 17V5" />
+          <path d="M8 17v-3" />
+        </svg>
+      ),
+    },
+  ];
+
   const monthlyReasons = [
     { h: "Tus competidores siguen trabajando", d: "Otros fontaneros publican, piden reseñas y mueven su ficha. Si tú te detienes, ellos avanzan." },
     { h: "Google cambia constantemente", d: "El algoritmo se actualiza cada mes. Lo que hoy te posiciona mañana puede necesitar ajustes." },
@@ -392,28 +451,63 @@ const FontanerosPage = () => {
 
 
 
-      {/* ¿CÓMO BUSCAN? — visual GBP + búsqueda */}
+      {/* CÓMO TRABAJAMOS — timeline */}
       <section className={sectionCls}>
-        <div className="container grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-20 items-center">
-          <div className="md:col-span-6">
-            <SearchMockup queries={searchQueries.slice(0, 4)} />
-          </div>
-          <div className="md:col-span-6">
-            <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Comportamiento de búsqueda</p>
+        <div className="container">
+          <div className="max-w-3xl">
+            <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1.5 text-[11px] font-heading tracking-[0.18em] uppercase text-primary mb-8">
+              Cómo trabajamos
+            </span>
             <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
-              ¿Cómo aparecer primero en Google Maps como fontanero?
+              ¿Cómo conseguimos que aparezcas por delante de tu competencia en Google?
             </h2>
-            <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed mb-6 max-w-xl">
+            <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed max-w-3xl">
               En Slocal apareces primero en Google Maps optimizando tu ficha de Google Business Profile, categorías, servicios, reseñas y contenido local. Google prioriza fichas activas, con reseñas recientes y coherencia entre ficha, web y citaciones locales de tu ciudad.
             </p>
-            <ul className="divide-y divide-warm-fg/15 border-y border-warm-fg/15">
-              {searchQueries.map((q) => (
-                <li key={q} className="py-4 md:py-5 flex items-baseline justify-between gap-6">
-                  <span className="font-heading text-xl md:text-2xl text-warm-fg">{q}</span>
-                  <span className="font-body text-xs tracking-widest text-warm-fg/40">GOOGLE</span>
-                </li>
-              ))}
-            </ul>
+          </div>
+
+          {/* Timeline desktop — horizontal */}
+          <div className="hidden md:block mt-20 md:mt-24">
+            <div className="relative">
+              <div className="absolute top-6 left-[10%] right-[10%] h-px bg-primary/25" />
+              <div className="grid grid-cols-5 gap-6">
+                {howWeWorkSteps.map((step, i) => (
+                  <div key={step.h} className="relative flex flex-col items-center text-center">
+                    <div className="relative z-10 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-heading text-lg shadow-sm">
+                      {i + 1}
+                    </div>
+                    <div className="mt-8 bg-white border border-warm-fg/10 rounded-2xl p-6 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] w-full">
+                      <div className="mb-3 text-primary flex justify-center">
+                        {step.icon}
+                      </div>
+                      <h3 className="font-heading text-lg text-warm-fg mb-2">{step.h}</h3>
+                      <p className="text-sm font-body text-warm-fg/70 leading-relaxed">{step.d}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Timeline mobile — vertical */}
+          <div className="md:hidden mt-20">
+            <div className="relative">
+              <div className="absolute left-6 top-0 bottom-0 w-px bg-primary/25" />
+              <div className="space-y-8">
+                {howWeWorkSteps.map((step, i) => (
+                  <div key={step.h} className="relative flex gap-6">
+                    <div className="relative z-10 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-heading text-lg shadow-sm shrink-0">
+                      {i + 1}
+                    </div>
+                    <div className="flex-1 bg-white border border-warm-fg/10 rounded-2xl p-5 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)]">
+                      <div className="mb-2 text-primary">{step.icon}</div>
+                      <h3 className="font-heading text-lg text-warm-fg mb-2">{step.h}</h3>
+                      <p className="text-sm font-body text-warm-fg/70 leading-relaxed">{step.d}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
