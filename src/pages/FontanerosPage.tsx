@@ -6,6 +6,7 @@ import SectorHeroDark from "@/components/sector/SectorHeroDark";
 import LogoMarquee from "@/components/LogoMarquee";
 import { sendForm } from "@/lib/sendForm";
 import { toast } from "@/hooks/use-toast";
+import casoAntesImg from "@/assets/caso-antes-vigo.webp.asset.json";
 
 
 const AuditoriaLeadForm = () => {
@@ -539,6 +540,8 @@ const FontanerosPage = () => {
                 title: "ANTES",
                 text: "Sin presencia en Google, una ficha poco optimizada y una web que apenas generaba clientes.",
                 label: "Ilustración: situación inicial",
+                image: casoAntesImg.url,
+                imageAlt: "Situación inicial del negocio: sin presencia en Google, ficha sin optimizar y web sin clientes",
               },
               {
                 title: "ESTRATEGIA SLOCAL",
@@ -550,7 +553,7 @@ const FontanerosPage = () => {
                 text: "Top 3 en Google Maps, más de 30 llamadas mensuales y un retorno superior a ocho veces la inversión.",
                 label: "Ilustración: resultados",
               },
-            ].map((card, i) => (
+            ].map((card) => (
               <div
                 key={card.title}
                 className="group flex flex-col bg-white rounded-3xl border border-warm-fg/10 p-6 lg:p-8 transition-all duration-300 hover:shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)] hover:border-warm-fg/20"
@@ -558,16 +561,27 @@ const FontanerosPage = () => {
                 <p className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary mb-6">
                   {card.title}
                 </p>
-                <div
-                  className="w-full aspect-[4/3] rounded-2xl bg-[hsl(var(--warm-bg))] border-2 border-dashed border-warm-fg/15 flex flex-col items-center justify-center gap-3 mb-6"
-                  role="img"
-                  aria-label={card.label}
-                >
-                  <span className="text-[28px] opacity-40">🖼</span>
-                  <span className="font-body text-[13px] text-warm-fg/40 text-center px-4">
-                    {card.label}
-                  </span>
-                </div>
+                {card.image ? (
+                  <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[hsl(var(--warm-bg))] border border-warm-fg/10 mb-6">
+                    <img
+                      src={card.image}
+                      alt={card.imageAlt}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                ) : (
+                  <div
+                    className="w-full aspect-[4/3] rounded-2xl bg-[hsl(var(--warm-bg))] border-2 border-dashed border-warm-fg/15 flex flex-col items-center justify-center gap-3 mb-6"
+                    role="img"
+                    aria-label={card.label}
+                  >
+                    <span className="text-[28px] opacity-40">🖼</span>
+                    <span className="font-body text-[13px] text-warm-fg/40 text-center px-4">
+                      {card.label}
+                    </span>
+                  </div>
+                )}
                 <p className="text-base font-body font-light text-warm-fg/80 leading-relaxed">
                   {card.text}
                 </p>
