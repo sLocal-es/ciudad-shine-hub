@@ -1,5 +1,5 @@
-import CityTemplate from "@/components/cityseo/CityTemplate";
+import CityMasterTemplate from "@/components/cityseo/CityMasterTemplate";
 import { seoLocalCities } from "@/data/seoLocalCities";
 
-const SeoLocalSevilla = () => <CityTemplate city={seoLocalCities.sevilla} />;
+const SeoLocalSevilla = () => <CityMasterTemplate city={seoLocalCities.sevilla} />;
 export default SeoLocalSevilla;
