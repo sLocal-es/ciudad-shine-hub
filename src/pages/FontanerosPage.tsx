@@ -557,41 +557,6 @@ const FontanerosPage = () => {
         </div>
       </section>
 
-      {/* PROCESO — timeline horizontal */}
-      <section className={sectionCls}>
-        <div className="container">
-          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Proceso</p>
-          <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight max-w-[22ch] mb-8">
-            ¿Qué necesita una empresa de fontanería para posicionarse en Google?
-          </h2>
-          <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed max-w-3xl mb-20">
-            Necesita una ficha de Google Business Profile optimizada, una web con páginas por servicio y ciudad, reseñas reales y contenido publicado cada mes. En Slocal aplicamos ese proceso en cuatro pasos: auditoría gratuita, plan de crecimiento, optimización de ficha y web, y seguimiento mensual.
-          </p>
-
-
-          {/* Roadmap horizontal */}
-          <div className="relative">
-            <div className="hidden md:block absolute top-4 left-0 right-0 h-px bg-warm-fg/15" />
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
-              {processSteps.map((s) => (
-                <div key={s.n} className="relative">
-                  <div className="flex items-center gap-3 md:block">
-                    <span className="relative z-10 inline-flex items-center justify-center h-8 w-8 rounded-full bg-primary text-primary-foreground font-heading text-xs">
-                      {s.n}
-                    </span>
-                  </div>
-                  <h3 className="mt-6 font-heading text-xl md:text-2xl text-warm-fg leading-snug">
-                    {s.h}
-                  </h3>
-                  <p className="mt-3 text-sm md:text-base font-body font-light text-warm-fg/70 leading-relaxed max-w-[26ch]">
-                    {s.d}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CASO REAL — dashboard mockup */}
       <section className={sectionCls}>
