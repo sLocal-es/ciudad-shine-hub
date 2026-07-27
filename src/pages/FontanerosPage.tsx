@@ -466,224 +466,46 @@ const FontanerosPage = () => {
             </p>
           </div>
 
-          {/* Timeline */}
-          <div className="mt-20 md:mt-24">
-            {[
-              {
-                h: "Auditoría",
-                d: "Analizamos tu Google Business Profile, tu web y a tus principales competidores para detectar oportunidades de mejora.",
-                icon: (
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="11" cy="11" r="7" />
-                    <path d="m21 21-4.3-4.3" />
-                  </svg>
-                ),
-              },
-              {
-                h: "Estrategia",
-                d: "Definimos las búsquedas con mayor intención de compra y diseñamos una estrategia SEO Local adaptada a tu negocio.",
-                icon: (
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10" />
-                    <circle cx="12" cy="12" r="3" />
-                  </svg>
-                ),
-              },
-              {
-                h: "Optimización",
-                d: "Optimizamos tu Google Business Profile y tu web para que trabajen conjuntamente y mejoren tu posicionamiento.",
-                icon: (
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 20h9" />
-                    <path d="M12 14h6" />
-                    <path d="M12 8h3" />
-                    <path d="M3 20h.01" />
-                    <path d="M3 14h.01" />
-                    <path d="M3 8h.01" />
-                    <path d="M3 2h.01" />
-                  </svg>
-                ),
-              },
-              {
-                h: "Autoridad Local",
-                d: "Potenciamos reseñas, contenido local y señales de confianza para superar a la competencia.",
-                icon: (
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                  </svg>
-                ),
-              },
-              {
-                h: "Seguimiento",
-                d: "Medimos llamadas, formularios y posiciones para seguir optimizando los resultados mes a mes.",
-                icon: (
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M3 3v18h18" />
-                    <path d="M18 17V9" />
-                    <path d="M13 17V5" />
-                    <path d="M8 17v-3" />
-                  </svg>
-                ),
-              },
-            ].map((step, i) => (
-              <div key={step.h} />
-            ))}
-
-            {/* Desktop — horizontal */}
-            <div className="hidden md:block">
-              <div className="relative">
-                <div className="absolute top-6 left-[10%] right-[10%] h-px bg-primary/25" />
-                <div className="grid grid-cols-5 gap-6">
-                  {[
-                    {
-                      h: "Auditoría",
-                      d: "Analizamos tu Google Business Profile, tu web y a tus principales competidores para detectar oportunidades de mejora.",
-                      icon: (
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <circle cx="11" cy="11" r="7" />
-                          <path d="m21 21-4.3-4.3" />
-                        </svg>
-                      ),
-                    },
-                    {
-                      h: "Estrategia",
-                      d: "Definimos las búsquedas con mayor intención de compra y diseñamos una estrategia SEO Local adaptada a tu negocio.",
-                      icon: (
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <circle cx="12" cy="12" r="10" />
-                          <circle cx="12" cy="12" r="3" />
-                        </svg>
-                      ),
-                    },
-                    {
-                      h: "Optimización",
-                      d: "Optimizamos tu Google Business Profile y tu web para que trabajen conjuntamente y mejoren tu posicionamiento.",
-                      icon: (
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M12 20h9" />
-                          <path d="M12 14h6" />
-                          <path d="M12 8h3" />
-                          <path d="M3 20h.01" />
-                          <path d="M3 14h.01" />
-                          <path d="M3 8h.01" />
-                          <path d="M3 2h.01" />
-                        </svg>
-                      ),
-                    },
-                    {
-                      h: "Autoridad Local",
-                      d: "Potenciamos reseñas, contenido local y señales de confianza para superar a la competencia.",
-                      icon: (
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                        </svg>
-                      ),
-                    },
-                    {
-                      h: "Seguimiento",
-                      d: "Medimos llamadas, formularios y posiciones para seguir optimizando los resultados mes a mes.",
-                      icon: (
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M3 3v18h18" />
-                          <path d="M18 17V9" />
-                          <path d="M13 17V5" />
-                          <path d="M8 17v-3" />
-                        </svg>
-                      ),
-                    },
-                  ].map((step, i) => (
-                    <div key={step.h} className="relative flex flex-col items-center text-center">
-                      <div className="relative z-10 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-heading text-lg shadow-sm">
-                        {i + 1}
-                      </div>
-                      <div className="mt-8 bg-white border border-warm-fg/10 rounded-2xl p-6 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] w-full">
-                        <div className="mb-3 text-primary flex justify-center">
-                          {step.icon}
-                        </div>
-                        <h3 className="font-heading text-lg text-warm-fg mb-2">{step.h}</h3>
-                        <p className="text-sm font-body text-warm-fg/70 leading-relaxed">{step.d}</p>
-                      </div>
+          {/* Timeline desktop — horizontal */}
+          <div className="hidden md:block mt-20 md:mt-24">
+            <div className="relative">
+              <div className="absolute top-6 left-[10%] right-[10%] h-px bg-primary/25" />
+              <div className="grid grid-cols-5 gap-6">
+                {howWeWorkSteps.map((step, i) => (
+                  <div key={step.h} className="relative flex flex-col items-center text-center">
+                    <div className="relative z-10 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-heading text-lg shadow-sm">
+                      {i + 1}
                     </div>
-                  ))}
-                </div>
+                    <div className="mt-8 bg-white border border-warm-fg/10 rounded-2xl p-6 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] w-full">
+                      <div className="mb-3 text-primary flex justify-center">
+                        {step.icon}
+                      </div>
+                      <h3 className="font-heading text-lg text-warm-fg mb-2">{step.h}</h3>
+                      <p className="text-sm font-body text-warm-fg/70 leading-relaxed">{step.d}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
+          </div>
 
-            {/* Mobile — vertical */}
-            <div className="md:hidden">
-              <div className="relative">
-                <div className="absolute left-6 top-0 bottom-0 w-px bg-primary/25" />
-                <div className="space-y-8">
-                  {[
-                    {
-                      h: "Auditoría",
-                      d: "Analizamos tu Google Business Profile, tu web y a tus principales competidores para detectar oportunidades de mejora.",
-                      icon: (
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <circle cx="11" cy="11" r="7" />
-                          <path d="m21 21-4.3-4.3" />
-                        </svg>
-                      ),
-                    },
-                    {
-                      h: "Estrategia",
-                      d: "Definimos las búsquedas con mayor intención de compra y diseñamos una estrategia SEO Local adaptada a tu negocio.",
-                      icon: (
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <circle cx="12" cy="12" r="10" />
-                          <circle cx="12" cy="12" r="3" />
-                        </svg>
-                      ),
-                    },
-                    {
-                      h: "Optimización",
-                      d: "Optimizamos tu Google Business Profile y tu web para que trabajen conjuntamente y mejoren tu posicionamiento.",
-                      icon: (
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M12 20h9" />
-                          <path d="M12 14h6" />
-                          <path d="M12 8h3" />
-                          <path d="M3 20h.01" />
-                          <path d="M3 14h.01" />
-                          <path d="M3 8h.01" />
-                          <path d="M3 2h.01" />
-                        </svg>
-                      ),
-                    },
-                    {
-                      h: "Autoridad Local",
-                      d: "Potenciamos reseñas, contenido local y señales de confianza para superar a la competencia.",
-                      icon: (
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                        </svg>
-                      ),
-                    },
-                    {
-                      h: "Seguimiento",
-                      d: "Medimos llamadas, formularios y posiciones para seguir optimizando los resultados mes a mes.",
-                      icon: (
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M3 3v18h18" />
-                          <path d="M18 17V9" />
-                          <path d="M13 17V5" />
-                          <path d="M8 17v-3" />
-                        </svg>
-                      ),
-                    },
-                  ].map((step, i) => (
-                    <div key={step.h} className="relative flex gap-6">
-                      <div className="relative z-10 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-heading text-lg shadow-sm shrink-0">
-                        {i + 1}
-                      </div>
-                      <div className="flex-1 bg-white border border-warm-fg/10 rounded-2xl p-5 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)]">
-                        <div className="mb-2 text-primary">{step.icon}</div>
-                        <h3 className="font-heading text-lg text-warm-fg mb-2">{step.h}</h3>
-                        <p className="text-sm font-body text-warm-fg/70 leading-relaxed">{step.d}</p>
-                      </div>
+          {/* Timeline mobile — vertical */}
+          <div className="md:hidden mt-20">
+            <div className="relative">
+              <div className="absolute left-6 top-0 bottom-0 w-px bg-primary/25" />
+              <div className="space-y-8">
+                {howWeWorkSteps.map((step, i) => (
+                  <div key={step.h} className="relative flex gap-6">
+                    <div className="relative z-10 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-heading text-lg shadow-sm shrink-0">
+                      {i + 1}
                     </div>
-                  ))}
-                </div>
+                    <div className="flex-1 bg-white border border-warm-fg/10 rounded-2xl p-5 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)]">
+                      <div className="mb-2 text-primary">{step.icon}</div>
+                      <h3 className="font-heading text-lg text-warm-fg mb-2">{step.h}</h3>
+                      <p className="text-sm font-body text-warm-fg/70 leading-relaxed">{step.d}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
