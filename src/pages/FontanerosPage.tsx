@@ -274,10 +274,10 @@ const FontanerosPage = () => {
             <div>
               <p className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary mb-6">Google Business Profile</p>
               <h3 className="font-heading font-semibold text-warm-fg leading-[1.1] tracking-tight text-3xl md:text-4xl lg:text-5xl max-w-[18ch]">
-                Tu ficha de Google es la que hace sonar el teléfono
+                Tu ficha de <span className="text-primary">Google Business Profile</span> genera llamadas
               </h3>
               <p className="mt-6 max-w-lg text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed">
-                Google Business Profile es lo que genera las llamadas: es donde el cliente decide llamarte antes incluso de entrar en tu web. La web viene después, para convertir a quien sí necesita más información.
+                Google Business Profile es donde el cliente decide llamarte. Nosotros optimizamos tu ficha para aparecer antes que tu competencia y convertir búsquedas locales en llamadas reales.
               </p>
               <ul className="mt-8 space-y-3 max-w-md">
                 {[

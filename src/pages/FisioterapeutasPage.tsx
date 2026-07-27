@@ -79,12 +79,6 @@ const FisioterapeutasPage = () => {
         subtitle={
           <>El <strong className="font-body font-normal text-dark-fg">seo para fisioterapeutas</strong> no va de teoría ni de palabras raras. Va de algo muy concreto: que cuando un paciente de tu ciudad abra Google y busque "fisio cerca de mí", tu clínica aparezca entre las primeras opciones del mapa.</>
         }
-        phoneQuery="fisioterapeuta cerca de mí"
-        phoneResults={[
-          { name: "Clínica Fisioterapia Movimiento", rating: 4.9, reviews: 167, category: "Fisioterapeuta", hours: "Abierto", distance: "a 500 m" },
-          { name: "Fisio Deportiva Cavero", rating: 4.9, reviews: 128, category: "Fisio deportiva", hours: "Abierto", distance: "a 900 m" },
-          { name: "Centro Fisio & Osteopatía", rating: 4.8, reviews: 92, category: "Osteopatía", hours: "Abre a las 9:00", distance: "a 1,4 km" },
-        ]}
         secondaryCta={{ label: "Ver planes", to: "/planes" }}
       />
 

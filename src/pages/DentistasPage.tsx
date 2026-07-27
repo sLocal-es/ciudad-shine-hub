@@ -147,12 +147,6 @@ const DentistasPage = () => {
         subtitle={
           <>Hay 49.500 búsquedas mensuales de "dentista cerca de mí" solo en España. Cada día, cientos de personas en tu ciudad buscan en Google un dentista y llaman al primero que aparece en el mapa. Si no eres tú, esas citas se las lleva otra clínica. Lo gestionamos para que tu agenda se llene con pacientes que te han elegido a ti.</>
         }
-        phoneQuery="dentista cerca de mí"
-        phoneResults={[
-          { name: "Clínica Dental Sonrisa", rating: 4.9, reviews: 214, category: "Clínica dental", hours: "Abierto", distance: "a 450 m" },
-          { name: "Ortodoncia Dr. Ruiz", rating: 4.8, reviews: 168, category: "Ortodoncista", hours: "Abierto", distance: "a 900 m" },
-          { name: "Implantes Dentales Vital", rating: 4.7, reviews: 121, category: "Implantes", hours: "Abre a las 10:00", distance: "a 1,3 km" },
-        ]}
       />
 
       {/* PROBLEM */}

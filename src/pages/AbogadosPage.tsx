@@ -147,12 +147,6 @@ const AbogadosPage = () => {
         subtitle={
           <>Tu despacho tiene años de experiencia y clientes satisfechos. Pero si alguien en tu ciudad busca "abogado laboralista" o "abogado de divorcios" en Google ahora mismo y no apareces tú, esa consulta se la lleva otro despacho. Cada día que no estás en el top 3 de Google Maps son casos que pierdes sin saberlo.</>
         }
-        phoneQuery="abogado laboralista cerca de mí"
-        phoneResults={[
-          { name: "Bufete Álvarez & Asociados", rating: 4.9, reviews: 142, category: "Abogado laboralista", hours: "Abierto", distance: "a 600 m" },
-          { name: "Despacho Jurídico Central", rating: 4.8, reviews: 98, category: "Abogado", hours: "Abierto", distance: "a 1,1 km" },
-          { name: "Legal Group Familia", rating: 4.7, reviews: 76, category: "Abogado de familia", hours: "Abre a las 9:00", distance: "a 1,5 km" },
-        ]}
       />
 
       {/* PROBLEM */}
