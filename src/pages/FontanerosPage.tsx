@@ -6,7 +6,7 @@ import LogoMarquee from "@/components/LogoMarquee";
 
 
 const GbpSkeletonMockup = () => (
-  <div className="w-full aspect-[4/3] rounded-3xl overflow-hidden bg-white border border-warm-fg/10 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)]" />
+  <div className="w-full aspect-[1/1] rounded-3xl overflow-hidden bg-white border border-warm-fg/10 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)]" />
 );
 
 const WebSkeletonMockup = () => (
