@@ -6,11 +6,25 @@ import LogoMarquee from "@/components/LogoMarquee";
 
 
 const GbpSkeletonMockup = () => (
-  <div className="w-full aspect-[1/1] rounded-3xl overflow-hidden bg-white border border-warm-fg/10 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)]" />
+  <div className="w-full aspect-[1/1] rounded-3xl overflow-hidden bg-white border border-warm-fg/10 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)]">
+    <img
+      src="/images/seo-fontaneros/gbp-fontaneros.webp"
+      alt="Ficha de Google Business Profile de un fontanero con llamadas, visualizaciones y valoración"
+      className="w-full h-full object-cover"
+      loading="lazy"
+    />
+  </div>
 );
 
 const WebSkeletonMockup = () => (
-  <div className="w-full aspect-[1/1] rounded-3xl overflow-hidden bg-white border border-warm-fg/10 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)]" />
+  <div className="w-full aspect-[1/1] rounded-3xl overflow-hidden bg-white border border-warm-fg/10 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)]">
+    <img
+      src="/images/seo-fontaneros/web-fontaneros.webp"
+      alt="Web optimizada de un fontanero con formulario, servicios y métricas de conversión"
+      className="w-full h-full object-cover"
+      loading="lazy"
+    />
+  </div>
 );
 
 
