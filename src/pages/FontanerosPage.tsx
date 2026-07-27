@@ -576,10 +576,15 @@ const FontanerosPage = () => {
           </p>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-stretch mt-20 md:mt-28">
-            {/* LEFT: Large illustration placeholder */}
+            {/* LEFT: Service page diagram */}
             <div className="order-2 lg:order-1">
-              <div className="w-full h-full min-h-[420px] md:min-h-[520px] rounded-[2.5rem] border-2 border-dashed border-warm-fg/15 bg-warm-fg/[0.02] flex items-center justify-center">
-                <span className="text-sm font-heading tracking-[0.2em] uppercase text-warm-fg/30">Ilustración</span>
+              <div className="w-full h-full rounded-[2.5rem] border border-warm-fg/10 bg-white overflow-hidden shadow-[0_20px_60px_-30px_rgba(0,0,0,0.08)]">
+                <img
+                  src={pagXServicioImg.url}
+                  alt="Diagrama de una página web principal de fontanero que ramifica páginas individuales por servicio, cada una posicionada para una búsqueda local en Vigo"
+                  className="w-full h-full object-contain"
+                  loading="lazy"
+                />
               </div>
             </div>
 
