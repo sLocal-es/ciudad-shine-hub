@@ -199,20 +199,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CLIENTES / CASOS LOGOS */}
-      <section className={sectionCls}>
-        <div className="container">
-          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Clientes que confían en Slocal</p>
-          <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl leading-[1.05] tracking-tight max-w-[22ch] mb-14">
-            Negocios locales que ya aparecen <span className="text-primary">primero</span> en Google
-          </h2>
-          <div className="flex flex-wrap items-center gap-x-12 gap-y-8">
-            {casosLogos.map((l) => (
-              <img key={l.alt} src={l.src} alt={l.alt} className="h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" loading="lazy" />
-            ))}
-          </div>
-        </div>
-      </section>
+
+
 
       {/* SECTORES */}
       <section className={sectionCls}>
