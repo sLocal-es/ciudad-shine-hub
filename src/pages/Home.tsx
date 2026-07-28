@@ -5,10 +5,8 @@ import SectorHeroDark from "@/components/sector/SectorHeroDark";
 import LogoMarquee from "@/components/LogoMarquee";
 import LeadMagnetForm from "@/components/forms/LeadMagnetForm";
 import ContactForm from "@/components/forms/ContactForm";
-import logoTei from "@/assets/casos/logo-tei.png";
-import logoViviane from "@/assets/casos/logo-viviane.png";
-import logoMva from "@/assets/casos/logo-mva.png";
-import logoFontaneros from "@/assets/casos/logo-fontaneros.png";
+import gbpHomeAsset from "@/assets/gbp_home_despacho.webp.asset.json";
+import webHomeAsset from "@/assets/web_home.webp.asset.json";
 
 const sectionCls = "bg-white py-24 md:py-32 border-t border-warm-fg/10";
 
