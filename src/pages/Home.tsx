@@ -148,8 +148,14 @@ const Home = () => {
               </ul>
             </div>
             <div className="order-first md:order-last">
-              <IllustrationPlaceholder label="Ficha de Google Business Profile optimizada por Slocal" />
+              <img
+                src={gbpHomeAsset.url}
+                alt="Ficha de Google Business Profile optimizada por Slocal"
+                className="w-full rounded-3xl border border-warm-fg/10 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)] object-cover"
+                loading="lazy"
+              />
             </div>
+
           </div>
 
           {/* Editorial split — Web */}
