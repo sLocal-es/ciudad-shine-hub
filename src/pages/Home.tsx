@@ -5,10 +5,8 @@ import SectorHeroDark from "@/components/sector/SectorHeroDark";
 import LogoMarquee from "@/components/LogoMarquee";
 import LeadMagnetForm from "@/components/forms/LeadMagnetForm";
 import ContactForm from "@/components/forms/ContactForm";
-import logoTei from "@/assets/casos/logo-tei.png";
-import logoViviane from "@/assets/casos/logo-viviane.png";
-import logoMva from "@/assets/casos/logo-mva.png";
-import logoFontaneros from "@/assets/casos/logo-fontaneros.png";
+import gbpHomeAsset from "@/assets/gbp_home_despacho.webp.asset.json";
+import webHomeAsset from "@/assets/web_home.webp.asset.json";
 
 const sectionCls = "bg-white py-24 md:py-32 border-t border-warm-fg/10";
 
@@ -68,12 +66,7 @@ const Home = () => {
     { to: "/seo-local-cordoba", label: "Córdoba" },
   ];
 
-  const casosLogos = [
-    { src: logoTei, alt: "Grupo TEI" },
-    { src: logoViviane, alt: "Viviane Custodio" },
-    { src: logoMva, alt: "MVA Fontanería" },
-    { src: logoFontaneros, alt: "Fontaneros Económicos" },
-  ];
+
 
   const dolores = [
     { n: "01", h: "Tu ficha lleva meses sin tocarse", d: "Google interpreta la inactividad como irrelevancia y va bajando tu posición cada semana." },
@@ -155,15 +148,27 @@ const Home = () => {
               </ul>
             </div>
             <div className="order-first md:order-last">
-              <IllustrationPlaceholder label="Ficha de Google Business Profile optimizada por Slocal" />
+              <img
+                src={gbpHomeAsset.url}
+                alt="Ficha de Google Business Profile optimizada por Slocal"
+                className="w-full rounded-3xl border border-warm-fg/10 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)] object-cover"
+                loading="lazy"
+              />
             </div>
+
           </div>
 
           {/* Editorial split — Web */}
           <div className="mt-24 md:mt-32 grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center">
             <div>
-              <IllustrationPlaceholder label="Web optimizada para negocios locales" />
+              <img
+                src={webHomeAsset.url}
+                alt="Web optimizada para negocios locales por Slocal"
+                className="w-full rounded-3xl border border-warm-fg/10 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)] object-cover"
+                loading="lazy"
+              />
             </div>
+
             <div>
               <p className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary mb-6">Web optimizada</p>
               <h3 className="font-heading font-semibold text-warm-fg leading-[1.1] tracking-tight text-3xl md:text-4xl lg:text-5xl max-w-[18ch]">
@@ -206,20 +211,8 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CLIENTES / CASOS LOGOS */}
-      <section className={sectionCls}>
-        <div className="container">
-          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Clientes que confían en Slocal</p>
-          <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl leading-[1.05] tracking-tight max-w-[22ch] mb-14">
-            Negocios locales que ya aparecen <span className="text-primary">primero</span> en Google
-          </h2>
-          <div className="flex flex-wrap items-center gap-x-12 gap-y-8">
-            {casosLogos.map((l) => (
-              <img key={l.alt} src={l.src} alt={l.alt} className="h-10 md:h-12 w-auto opacity-70 hover:opacity-100 transition-opacity" loading="lazy" />
-            ))}
-          </div>
-        </div>
-      </section>
+
+
 
       {/* SECTORES */}
       <section className={sectionCls}>
