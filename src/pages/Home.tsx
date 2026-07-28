@@ -161,8 +161,14 @@ const Home = () => {
           {/* Editorial split — Web */}
           <div className="mt-24 md:mt-32 grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center">
             <div>
-              <IllustrationPlaceholder label="Web optimizada para negocios locales" />
+              <img
+                src={webHomeAsset.url}
+                alt="Web optimizada para negocios locales por Slocal"
+                className="w-full rounded-3xl border border-warm-fg/10 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)] object-cover"
+                loading="lazy"
+              />
             </div>
+
             <div>
               <p className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary mb-6">Web optimizada</p>
               <h3 className="font-heading font-semibold text-warm-fg leading-[1.1] tracking-tight text-3xl md:text-4xl lg:text-5xl max-w-[18ch]">
