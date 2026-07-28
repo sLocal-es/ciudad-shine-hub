@@ -66,12 +66,7 @@ const Home = () => {
     { to: "/seo-local-cordoba", label: "Córdoba" },
   ];
 
-  const casosLogos = [
-    { src: logoTei, alt: "Grupo TEI" },
-    { src: logoViviane, alt: "Viviane Custodio" },
-    { src: logoMva, alt: "MVA Fontanería" },
-    { src: logoFontaneros, alt: "Fontaneros Económicos" },
-  ];
+
 
   const dolores = [
     { n: "01", h: "Tu ficha lleva meses sin tocarse", d: "Google interpreta la inactividad como irrelevancia y va bajando tu posición cada semana." },
