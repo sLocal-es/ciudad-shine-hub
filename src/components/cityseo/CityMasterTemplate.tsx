@@ -1,5 +1,14 @@
 import SectorMasterTemplate, { SectorTemplateContent } from "@/components/sector/SectorMasterTemplate";
 import { SeoLocalCity } from "@/data/seoLocalCities";
+import gbpSevilla from "@/assets/gbp_sevilla.webp.asset.json";
+import webSevilla from "@/assets/web_sevilla.webp.asset.json";
+
+const cityImages: Record<string, { gbp?: { src: string; alt: string }; web?: { src: string; alt: string } }> = {
+  sevilla: {
+    gbp: { src: gbpSevilla.url, alt: "Ficha de Google Business Profile posicionada en Sevilla" },
+    web: { src: webSevilla.url, alt: "Web optimizada para negocios locales en Sevilla" },
+  },
+};
 
 /**
  * CityMasterTemplate
