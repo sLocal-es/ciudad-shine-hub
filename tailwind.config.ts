@@ -59,6 +59,7 @@ export default {
         "dark-bg": "hsl(var(--dark-bg))",
         "dark-fg": "hsl(var(--dark-fg))",
         "warm-bg": "hsl(var(--warm-bg))",
+        "warm-fg": "hsl(var(--warm-fg))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
