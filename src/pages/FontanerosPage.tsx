@@ -38,7 +38,7 @@ const AuditoriaLeadForm = () => {
   };
 
   const inputCls =
-    "w-full rounded-xl bg-white text-warm-fg placeholder:text-warm-fg/50 px-4 py-3.5 text-[15px] font-body outline-none border border-transparent focus:border-warm-fg/20 focus:ring-2 focus:ring-white/40 transition resize-none";
+    "w-full rounded-xl bg-white text-foreground placeholder:text-foreground/50 px-4 py-3.5 text-[15px] font-body outline-none border border-transparent focus:border-foreground/20 focus:ring-2 focus:ring-white/40 transition resize-none";
 
   return (
     <form onSubmit={onSubmit} className="w-full rounded-2xl bg-white/10 p-5 md:p-6 backdrop-blur-sm">
