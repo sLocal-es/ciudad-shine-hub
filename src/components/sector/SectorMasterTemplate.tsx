@@ -56,6 +56,7 @@ export type SectorTemplateContent = {
   webH3: ReactNode;
   webBody: ReactNode;
   webFeatures: string[];
+  webImage?: { src: string; alt: string };
 
   // Auditoria CTA (form) — keep master copy by default
   auditoriaH2?: ReactNode;
