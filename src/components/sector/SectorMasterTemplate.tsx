@@ -80,6 +80,11 @@ export type SectorTemplateContent = {
   monthlyBody: ReactNode;
   monthlyReasons: { h: string; d: string }[];
 
+  // Mapa de presencia local (opcional)
+  mapTitle?: ReactNode;
+  mapSubtitle?: ReactNode;
+  mapQuery?: string;
+
   // FAQ
   faqs: { q: string; a: string }[];
 
