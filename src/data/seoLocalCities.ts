@@ -5,9 +5,11 @@ export interface SeoLocalCity {
   competition: string;
   plazo: string;
   mapQuery: string;
+  mapEmbed?: string;
   barriosBusquedas: { barrio: string; busqueda: string }[];
   oportunidad: string[];
 }
+
 
 export const seoLocalCities: Record<string, SeoLocalCity> = {
   madrid: {
