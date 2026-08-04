@@ -2,11 +2,17 @@ import SectorMasterTemplate, { SectorTemplateContent } from "@/components/sector
 import { SeoLocalCity } from "@/data/seoLocalCities";
 import gbpSevilla from "@/assets/gbp_sevilla.webp.asset.json";
 import webSevilla from "@/assets/web_sevilla.webp.asset.json";
+import gbpMadrid from "@/assets/gbp_madrid.webp.asset.json";
+import webMadrid from "@/assets/web_madrid.webp.asset.json";
 
 const cityImages: Record<string, { gbp?: { src: string; alt: string }; web?: { src: string; alt: string } }> = {
   sevilla: {
     gbp: { src: gbpSevilla.url, alt: "Ficha de Google Business Profile posicionada en Sevilla" },
     web: { src: webSevilla.url, alt: "Web optimizada para negocios locales en Sevilla" },
+  },
+  madrid: {
+    gbp: { src: gbpMadrid.url, alt: "Ficha de Google Business Profile posicionada en Madrid" },
+    web: { src: webMadrid.url, alt: "Web optimizada para negocios locales en Madrid" },
   },
 };
 
