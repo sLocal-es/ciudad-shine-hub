@@ -5,9 +5,11 @@ export interface SeoLocalCity {
   competition: string;
   plazo: string;
   mapQuery: string;
+  mapEmbed?: string;
   barriosBusquedas: { barrio: string; busqueda: string }[];
   oportunidad: string[];
 }
+
 
 export const seoLocalCities: Record<string, SeoLocalCity> = {
   madrid: {
@@ -17,6 +19,7 @@ export const seoLocalCities: Record<string, SeoLocalCity> = {
     competition: "Alta",
     plazo: "3-6 meses",
     mapQuery: "Madrid, España",
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13352763.221484222!2d-17.4244815!3d35.2076656!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x265bd1e86a2be5d%3A0x395d0d44909518d9!2sAgencia%20SEO%20Local%20%7C%20Slocal!5e0!3m2!1ses!2ses!4v1785864658619!5m2!1ses!2ses",
     barriosBusquedas: [
       { barrio: "Chamberí", busqueda: "fisioterapeuta en Chamberí" },
       { barrio: "Salamanca", busqueda: "clínica dental Salamanca Madrid" },
@@ -77,6 +80,7 @@ export const seoLocalCities: Record<string, SeoLocalCity> = {
     competition: "Media",
     plazo: "2-4 meses",
     mapQuery: "Sevilla, España",
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25356.592576118426!2d-5.997945136561545!3d37.39990388773537!2m3!1f0!2f0!2f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2de139a76968cde1%3A0xeb81bf4c2e568f22!2sAgencia%20SEO%20Local%20%7C%20Slocal!5e0!3m2!1ses!2ses!4v1785864698880!5m2!1ses!2ses",
     barriosBusquedas: [
       { barrio: "Triana", busqueda: "fisioterapeuta en Triana" },
       { barrio: "Los Remedios", busqueda: "clínica dental Los Remedios" },
@@ -177,6 +181,7 @@ export const seoLocalCities: Record<string, SeoLocalCity> = {
     competition: "Baja",
     plazo: "2-3 meses",
     mapQuery: "Córdoba, España",
+    mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d811430.806100093!2d-6.6367644726445185!3d37.39807113471488!2m3!1f0!2f0!2f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xac51e84256737de1%3A0xba193d08e9882037!2sSlocal!5e0!3m2!1ses!2ses!4v1785864736626!5m2!1ses!2ses",
     barriosBusquedas: [
       { barrio: "Centro", busqueda: "abogado en Córdoba centro" },
       { barrio: "Poniente", busqueda: "fontanero en Poniente Córdoba" },

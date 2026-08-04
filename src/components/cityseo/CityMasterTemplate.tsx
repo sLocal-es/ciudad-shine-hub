@@ -110,6 +110,7 @@ const CityMasterTemplate = ({ city }: { city: SeoLocalCity }) => {
     ],
     mapTitle: <>Nuestra presencia local en <span className="text-primary">{name}</span></>,
     mapSubtitle: <>Trabajamos con empresas de {name} para mejorar su visibilidad en Google Maps y aumentar las llamadas, solicitudes y clientes desde las búsquedas locales.</>,
+    mapEmbed: city.mapEmbed,
     mapQuery: city.mapQuery,
     faqs,
     citiesH2: <>¿En qué otras <span className="text-primary">ciudades</span> trabaja Slocal?</>,

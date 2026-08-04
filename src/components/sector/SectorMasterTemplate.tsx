@@ -84,6 +84,7 @@ export type SectorTemplateContent = {
   mapTitle?: ReactNode;
   mapSubtitle?: ReactNode;
   mapQuery?: string;
+  mapEmbed?: string;
 
   // FAQ
   faqs: { q: string; a: string }[];
@@ -659,7 +660,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       </section>
 
       {/* PRESENCIA LOCAL — MAPA */}
-      {c.mapQuery && (
+      {(c.mapEmbed || c.mapQuery) && (
         <section className={sectionCls}>
           <div className="container">
             <div className="max-w-3xl mb-12">
@@ -672,8 +673,8 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
             </div>
             <div className="w-full rounded-2xl overflow-hidden border border-warm-fg/10 shadow-[0_10px_40px_-30px_rgba(0,0,0,0.12)]">
               <iframe
-                title={`Mapa de ${c.mapQuery}`}
-                src={`https://www.google.com/maps?q=${encodeURIComponent(c.mapQuery)}&output=embed`}
+                title={`Mapa de ${c.mapEmbed ? "Slocal" : c.mapQuery}`}
+                src={c.mapEmbed || `https://www.google.com/maps?q=${encodeURIComponent(c.mapQuery ?? "")}&output=embed`}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="w-full h-[320px] md:h-[440px] border-0 block"
