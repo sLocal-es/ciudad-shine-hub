@@ -80,6 +80,11 @@ export type SectorTemplateContent = {
   monthlyBody: ReactNode;
   monthlyReasons: { h: string; d: string }[];
 
+  // Mapa de presencia local (opcional)
+  mapTitle?: ReactNode;
+  mapSubtitle?: ReactNode;
+  mapQuery?: string;
+
   // FAQ
   faqs: { q: string; a: string }[];
 
@@ -652,6 +657,31 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
           </div>
         </div>
       </section>
+
+      {/* PRESENCIA LOCAL — MAPA */}
+      {c.mapQuery && (
+        <section className={sectionCls}>
+          <div className="container">
+            <div className="max-w-3xl mb-12">
+              <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
+                {c.mapTitle}
+              </h2>
+              <p className="text-base md:text-lg font-body font-light text-warm-fg/70 leading-relaxed">
+                {c.mapSubtitle}
+              </p>
+            </div>
+            <div className="w-full rounded-2xl overflow-hidden border border-warm-fg/10 shadow-[0_10px_40px_-30px_rgba(0,0,0,0.12)]">
+              <iframe
+                title={`Mapa de ${c.mapQuery}`}
+                src={`https://www.google.com/maps?q=${encodeURIComponent(c.mapQuery)}&output=embed`}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-[320px] md:h-[440px] border-0 block"
+              />
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* FAQ */}
       <section className={sectionCls}>
