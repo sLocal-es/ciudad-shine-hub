@@ -84,6 +84,7 @@ export type SectorTemplateContent = {
   mapTitle?: ReactNode;
   mapSubtitle?: ReactNode;
   mapQuery?: string;
+  mapEmbed?: string;
 
   // FAQ
   faqs: { q: string; a: string }[];
