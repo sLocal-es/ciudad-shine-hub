@@ -110,7 +110,7 @@ const CityMasterTemplate = ({ city }: { city: SeoLocalCity }) => {
     ],
     mapTitle: <>Nuestra presencia local en <span className="text-primary">{name}</span></>,
     mapSubtitle: <>Trabajamos con empresas de {name} para mejorar su visibilidad en Google Maps y aumentar las llamadas, solicitudes y clientes desde las búsquedas locales.</>,
-    mapQuery: city.mapQuery,
+    mapEmbed: city.mapEmbed,
     faqs,
     citiesH2: <>¿En qué otras <span className="text-primary">ciudades</span> trabaja Slocal?</>,
     citiesBody: <>Slocal trabaja con negocios locales en toda España, con clientes activos en Madrid, Barcelona, Valencia, Sevilla, Málaga, Zaragoza, Bilbao y Murcia.</>,
