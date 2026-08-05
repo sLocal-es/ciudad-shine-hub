@@ -1,11 +1,16 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
+const links = [
+  { to: "/seo-para-negocios-locales", label: "Servicios" },
+  { to: "/seo-para-fontaneros#caso-real", label: "Casos de éxito" },
+  { to: "/blog", label: "Blog" },
+  { to: "/contacto", label: "Contacto" },
+];
+
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
-
-
 
   return (
     <header className="sticky top-0 z-50 bg-card border-b border-border">
@@ -15,22 +20,22 @@ const Navbar = () => {
         </Link>
 
         <nav className="hidden md:flex items-center gap-6 text-sm font-body">
-          <Link to="/como-funciona" className={`hover:text-primary transition-colors ${location.pathname === "/como-funciona" ? "text-primary" : ""}`}>
-            Cómo funciona
-          </Link>
-          <Link to="/seo-para-negocios-locales" className={`hover:text-primary transition-colors ${location.pathname === "/seo-para-negocios-locales" ? "text-primary" : ""}`}>
-            SEO Local
-          </Link>
-          <Link to="/como-ve-google-mi-web" className={`hover:text-primary transition-colors ${location.pathname === "/como-ve-google-mi-web" ? "text-primary" : ""}`}>
-            Analiza tu web
-          </Link>
-          <Link to="/contacto" className={`hover:text-primary transition-colors ${location.pathname === "/contacto" ? "text-primary" : ""}`}>
-            Contacto
-          </Link>
+          {links.map((l) => (
+            <Link
+              key={l.to}
+              to={l.to}
+              className={`hover:text-primary transition-colors ${location.pathname === l.to ? "text-primary" : ""}`}
+            >
+              {l.label}
+            </Link>
+          ))}
         </nav>
 
-        <Link to="/contacto" className="hidden md:inline-block bg-primary text-primary-foreground font-heading text-sm rounded-lg px-5 py-2.5 hover:bg-primary/90 transition-colors">
-          Hablemos →
+        <Link
+          to="/como-ve-google-mi-web"
+          className="hidden md:inline-flex items-center gap-2 bg-primary text-primary-foreground font-heading text-sm font-medium rounded-lg px-5 py-2.5 shadow-[0_10px_30px_-14px_hsl(var(--primary))] hover:bg-primary/90 transition-colors"
+        >
+          Solicitar análisis gratuito
         </Link>
 
         <button
@@ -46,13 +51,17 @@ const Navbar = () => {
 
       {mobileOpen && (
         <div className="md:hidden border-t border-border bg-card px-6 py-4 space-y-3 max-h-[calc(100vh-4rem)] overflow-y-auto overscroll-contain">
-          <Link to="/como-funciona" className="block text-sm py-2 hover:text-primary" onClick={() => setMobileOpen(false)}>Cómo funciona</Link>
-          <Link to="/seo-para-negocios-locales" className="block text-sm py-2 hover:text-primary" onClick={() => setMobileOpen(false)}>SEO Local</Link>
-          <Link to="/como-ve-google-mi-web" className="block text-sm py-2 hover:text-primary" onClick={() => setMobileOpen(false)}>Analiza tu web</Link>
-          
-          <Link to="/contacto" className="block text-sm py-2 hover:text-primary" onClick={() => setMobileOpen(false)}>Contacto</Link>
-          <Link to="/contacto" className="block bg-primary text-primary-foreground font-heading text-sm rounded-lg px-5 py-2.5 text-center mt-3" onClick={() => setMobileOpen(false)}>
-            Hablemos →
+          {links.map((l) => (
+            <Link key={l.to} to={l.to} className="block text-sm py-2 hover:text-primary" onClick={() => setMobileOpen(false)}>
+              {l.label}
+            </Link>
+          ))}
+          <Link
+            to="/como-ve-google-mi-web"
+            className="block bg-primary text-primary-foreground font-heading text-sm rounded-lg px-5 py-2.5 text-center mt-3"
+            onClick={() => setMobileOpen(false)}
+          >
+            Solicitar análisis gratuito
           </Link>
         </div>
       )}
