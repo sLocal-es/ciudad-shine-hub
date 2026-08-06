@@ -73,7 +73,7 @@ const LeadMagnetForm = () => {
   };
 
   const inputCls =
-    "w-full bg-card border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors";
+    "w-full bg-white text-black border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors placeholder:text-gray-600 caret-black";
 
   return (
     <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-4" noValidate>
