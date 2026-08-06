@@ -149,7 +149,7 @@ const Contacto = () => {
               </a>
               <a
                 href="mailto:info@slocal.es"
-                className="inline-flex items-center gap-2 rounded-xl border border-[#E5E7EB] px-6 py-3.5 font-heading text-[15px] font-medium text-black hover:border-[#E5E7EB] transition"
+                className="inline-flex items-center gap-2 rounded-xl border border-[#E5E7EB] px-6 py-3.5 font-heading text-[15px] font-medium text-black hover:border-[#D1D5DB] transition"
               >
                 info@slocal.es
               </a>
@@ -281,7 +281,7 @@ const Contacto = () => {
                         className={`cursor-pointer rounded-full border px-4 py-2 text-[14px] font-body transition ${
                           form.tieneWeb === opt
                             ? "border-primary bg-primary text-primary-foreground"
-                            : "border-[#E5E7EB] bg-white text-[#4B5563] hover:border-[#E5E7EB]"
+                            : "border-[#E5E7EB] bg-white text-[#4B5563] hover:border-[#D1D5DB]"
                         }`}
                       >
                         <input
