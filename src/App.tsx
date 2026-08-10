@@ -9,6 +9,7 @@ import Home from "@/pages/Home";
 import ComoFunciona from "@/pages/ComoFunciona";
 
 import Contacto from "@/pages/Contacto";
+import Servicios from "@/pages/Servicios";
 import PosicionamientoLocal from "@/pages/PosicionamientoLocal";
 import ServicePage from "@/pages/ServicePage";
 import SeoNegociosLocales from "@/pages/SeoNegociosLocales";
@@ -116,6 +117,7 @@ const App = () => (
             <Route path="/como-funciona" element={<ComoFunciona />} />
             
             <Route path="/contacto" element={<Contacto />} />
+            <Route path="/servicios" element={<Servicios />} />
             <Route path="/posicionamiento-local" element={<PosicionamientoLocal />} />
             <Route path="/como-ve-google-mi-web" element={<ComoVeGoogleMiWeb />} />
             <Route path="/aparecer-en-google-maps" element={<AparecerEnGoogleMaps />} />
