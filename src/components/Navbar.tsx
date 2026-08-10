@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const links = [
-  { to: "/seo-para-negocios-locales", label: "Servicios" },
+  { to: "/servicios", label: "Servicios" },
   { to: "/seo-para-fontaneros#caso-real", label: "Casos de éxito" },
   { to: "/blog", label: "Blog" },
   { to: "/contacto", label: "Contacto" },

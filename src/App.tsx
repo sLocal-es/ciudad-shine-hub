@@ -116,6 +116,7 @@ const App = () => (
             <Route path="/como-funciona" element={<ComoFunciona />} />
             
             <Route path="/contacto" element={<Contacto />} />
+            <Route path="/servicios" element={<Servicios />} />
             <Route path="/posicionamiento-local" element={<PosicionamientoLocal />} />
             <Route path="/como-ve-google-mi-web" element={<ComoVeGoogleMiWeb />} />
             <Route path="/aparecer-en-google-maps" element={<AparecerEnGoogleMaps />} />
