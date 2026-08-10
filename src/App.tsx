@@ -9,6 +9,7 @@ import Home from "@/pages/Home";
 import ComoFunciona from "@/pages/ComoFunciona";
 
 import Contacto from "@/pages/Contacto";
+import Servicios from "@/pages/Servicios";
 import PosicionamientoLocal from "@/pages/PosicionamientoLocal";
 import ServicePage from "@/pages/ServicePage";
 import SeoNegociosLocales from "@/pages/SeoNegociosLocales";
