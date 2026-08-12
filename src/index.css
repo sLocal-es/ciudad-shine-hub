@@ -140,3 +140,155 @@
     @apply text-foreground not-italic font-medium;
   }
 }
+
+/* Blog article typography — Slocal design system */
+@layer components {
+  .blog-article {
+    @apply text-warm-fg/75 text-[17px] md:text-[18px] font-light leading-[1.75];
+  }
+  .blog-article > * + * {
+    @apply mt-6;
+  }
+  .blog-article p {
+    @apply leading-[1.8];
+  }
+  .blog-article h2 {
+    @apply font-heading font-semibold text-warm-fg text-[28px] md:text-[34px] leading-[1.15] tracking-tight mt-14 mb-5;
+  }
+  .blog-article h3 {
+    @apply font-heading font-semibold text-warm-fg text-[21px] md:text-[24px] leading-[1.25] tracking-tight mt-10 mb-4;
+  }
+  .blog-article h4 {
+    @apply font-heading font-semibold text-warm-fg text-[18px] leading-snug mt-8 mb-3;
+  }
+  .blog-article strong {
+    @apply text-warm-fg font-semibold;
+  }
+  .blog-article a {
+    @apply text-primary underline decoration-primary/30 underline-offset-[3px] hover:decoration-primary transition-colors;
+  }
+  .blog-article ul,
+  .blog-article ol {
+    @apply my-6 space-y-3 pl-1;
+  }
+  .blog-article ul > li {
+    @apply relative pl-6;
+  }
+  .blog-article ul > li::before {
+    content: "";
+    @apply absolute left-0 top-[0.7em] w-2 h-2 rounded-full bg-primary;
+  }
+  .blog-article ol {
+    @apply list-decimal pl-6;
+  }
+  .blog-article ol > li::marker {
+    @apply font-heading text-primary font-semibold;
+  }
+  .blog-article img {
+    @apply my-10 w-full rounded-2xl border border-warm-fg/10;
+  }
+  .blog-article figure figcaption {
+    @apply mt-3 text-center text-[13px] text-warm-fg/50;
+  }
+  .blog-article hr {
+    @apply my-12 border-warm-fg/10;
+  }
+  .blog-article code {
+    @apply bg-warm-fg/5 text-warm-fg rounded-md px-1.5 py-0.5 text-[0.9em] font-mono;
+  }
+  .blog-article pre {
+    @apply my-8 overflow-x-auto rounded-2xl bg-[hsl(var(--dark-bg))] p-5 text-[13px] leading-relaxed text-[hsl(var(--dark-fg))];
+  }
+  .blog-article pre code {
+    @apply bg-transparent p-0 text-inherit;
+  }
+
+  /* Tables */
+  .blog-article table {
+    @apply my-8 block w-full max-w-full overflow-x-auto border-collapse rounded-2xl border border-warm-fg/10 text-left text-[15px];
+  }
+  @media (min-width: 768px) {
+    .blog-article table {
+      @apply table;
+    }
+  }
+  .blog-article thead th {
+    @apply bg-warm-fg/[0.04] font-heading text-[13px] font-semibold uppercase tracking-[0.1em] text-warm-fg px-4 py-3;
+  }
+  .blog-article tbody td {
+    @apply border-t border-warm-fg/10 px-4 py-3 align-top text-warm-fg/75 font-light;
+  }
+  .blog-article tbody tr:hover td {
+    @apply bg-warm-fg/[0.02];
+  }
+
+  /* Rich blocks */
+  .blog-article .toc {
+    @apply rounded-2xl border border-warm-fg/10 bg-white p-6 my-8 shadow-[0_18px_50px_-40px_rgba(0,0,0,0.35)];
+  }
+  .blog-article .toc p,
+  .blog-article .toc h2 {
+    @apply font-heading text-[11px] tracking-[0.22em] uppercase text-primary mt-0 mb-4;
+  }
+  .blog-article .toc ol {
+    @apply my-0;
+  }
+  .blog-article .toc ol li a {
+    @apply text-[15px] no-underline hover:underline;
+  }
+
+  .blog-article .key-points {
+    @apply rounded-2xl border border-warm-fg/10 border-l-4 border-l-primary bg-white p-6 md:p-7 my-8;
+  }
+  .blog-article .key-points p,
+  .blog-article .key-points h2 {
+    @apply font-heading text-[11px] tracking-[0.22em] uppercase text-primary mt-0 mb-4 border-0;
+  }
+  .blog-article .key-points table {
+    @apply my-0 border-0;
+  }
+
+  .blog-article .stat-highlight {
+    @apply rounded-3xl bg-[hsl(var(--dark-bg))] text-[hsl(var(--dark-fg))] p-8 my-10 text-center;
+  }
+  .blog-article .stat-highlight .stat-number {
+    @apply font-heading text-5xl font-semibold text-primary block mb-2 tracking-tight;
+  }
+  .blog-article .stat-highlight .stat-label {
+    @apply text-sm text-[hsl(var(--dark-fg)/0.7)];
+  }
+
+  .blog-article .infographic-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-5 my-10;
+  }
+  .blog-article .infographic-card {
+    @apply rounded-2xl border border-warm-fg/10 bg-white p-6 text-center shadow-[0_18px_50px_-42px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/40;
+  }
+  .blog-article .infographic-card strong {
+    @apply font-heading text-xl text-primary block mb-1;
+  }
+  .blog-article .infographic-card span,
+  .blog-article .infographic-card p {
+    @apply text-[15px] text-warm-fg/70;
+  }
+
+  .blog-article .pro-tip {
+    @apply rounded-2xl border border-primary/20 bg-primary/[0.06] p-6 my-10;
+  }
+  .blog-article .pro-tip p {
+    @apply text-[16px] text-warm-fg/80 m-0;
+  }
+  .blog-article .pro-tip strong {
+    @apply text-primary;
+  }
+
+  .blog-article blockquote {
+    @apply my-10 rounded-2xl border-l-4 border-primary bg-warm-fg/[0.03] px-6 py-5 not-italic;
+  }
+  .blog-article blockquote p {
+    @apply text-[17px] text-warm-fg/80 italic m-0;
+  }
+  .blog-article blockquote em {
+    @apply text-warm-fg not-italic font-medium;
+  }
+}
