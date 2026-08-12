@@ -205,7 +205,12 @@
 
   /* Tables */
   .blog-article table {
-    @apply my-8 w-full border-collapse overflow-hidden rounded-2xl border border-warm-fg/10 text-left text-[15px];
+    @apply my-8 block w-full max-w-full overflow-x-auto border-collapse rounded-2xl border border-warm-fg/10 text-left text-[15px];
+  }
+  @media (min-width: 768px) {
+    .blog-article table {
+      @apply table;
+    }
   }
   .blog-article thead th {
     @apply bg-warm-fg/[0.04] font-heading text-[13px] font-semibold uppercase tracking-[0.1em] text-warm-fg px-4 py-3;
