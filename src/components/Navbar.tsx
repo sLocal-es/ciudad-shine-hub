@@ -32,7 +32,7 @@ const Navbar = () => {
         </nav>
 
         <Link
-          to="/como-ve-google-mi-web"
+          to="/contacto#formulario"
           className="hidden md:inline-flex items-center gap-2 bg-primary text-primary-foreground font-heading text-sm font-medium rounded-lg px-5 py-2.5 shadow-[0_10px_30px_-14px_hsl(var(--primary))] hover:bg-primary/90 transition-colors"
         >
           Solicitar análisis gratuito
@@ -57,7 +57,7 @@ const Navbar = () => {
             </Link>
           ))}
           <Link
-            to="/como-ve-google-mi-web"
+            to="/contacto#formulario"
             className="block bg-primary text-primary-foreground font-heading text-sm rounded-lg px-5 py-2.5 text-center mt-3"
             onClick={() => setMobileOpen(false)}
           >
