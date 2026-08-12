@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import Navbar from "@/components/Navbar";
+import AnalisisGratuitoPopup from "@/components/AnalisisGratuitoPopup";
 import Footer from "@/components/Footer";
 import Home from "@/pages/Home";
 import ComoFunciona from "@/pages/ComoFunciona";
@@ -86,8 +87,19 @@ const AnalyticsScripts = () => {
 };
 
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
-  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  const { pathname, hash } = useLocation();
+  useEffect(() => {
+    if (hash) {
+      const id = hash.slice(1);
+      const scroll = () => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+      };
+      const t = setTimeout(scroll, 120);
+      return () => clearTimeout(t);
+    }
+    window.scrollTo(0, 0);
+  }, [pathname, hash]);
   return null;
 };
 
@@ -96,6 +108,7 @@ const MainLayout = () => (
     <Navbar />
     <main><Outlet /></main>
     <Footer />
+    <AnalisisGratuitoPopup />
   </>
 );
 
