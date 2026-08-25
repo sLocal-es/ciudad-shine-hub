@@ -135,7 +135,24 @@ const FontanerosPage = () => {
       q: "¿Es suficiente una sola página para todos mis servicios?",
       a: "No. 'Fontanero urgente', 'instalación de caldera' y 'detección de fugas' son búsquedas distintas con clientes distintos. Si tienes una sola página genérica, solo apareces para una — y compites con todos por el mismo hueco.",
     },
+    {
+      q: "¿Cómo conseguir más llamadas de fontanería desde Google?",
+      a: "Las llamadas llegan sobre todo desde Google Maps y desde las búsquedas de alta intención tipo 'fontanero urgente' o 'fontanero 24 horas'. Para captarlas trabajamos la ficha de Google Business Profile (categoría, servicios, zonas, fotos y reseñas) junto con páginas de servicio en la web, de forma que el negocio gane relevancia en las búsquedas locales donde el usuario quiere contratar ya.",
+    },
+    {
+      q: "¿Cuánto tarda el SEO Local para un fontanero?",
+      a: "Depende de cada caso: la competencia de la ciudad, la autoridad actual del dominio y su historial, el estado de la ficha, la calidad de la web y los servicios que se quieran posicionar. Normalmente los primeros movimientos se observan en los primeros meses, pero no trabajamos con plazos garantizados: medimos posiciones y contactos cada mes y ajustamos el plan con esos datos.",
+    },
+    {
+      q: "¿Funciona el SEO Local para fontaneros urgentes?",
+      a: "Sí, es uno de los escenarios con mayor intención comercial: quien busca 'fontanero urgente' o 'fontanero 24 horas' quiere contratar en minutos y suele llamar desde Google Maps. Una ficha bien configurada con horario, zonas de servicio, teléfono y reseñas, más una página de urgencias clara en la web, ayudan a que el negocio aparezca y sea elegido en ese tipo de búsquedas.",
+    },
+    {
+      q: "¿Es mejor SEO Local o Google Ads para un fontanero?",
+      a: "Son estrategias distintas y pueden complementarse. Google Ads permite generar demanda de forma inmediata pagando por cada clic, mientras que el SEO Local busca construir visibilidad orgánica sostenida a medio y largo plazo en Google Maps y en los resultados de búsqueda. En Slocal el foco es el SEO Local, y los anuncios se plantean solo como apoyo puntual.",
+    },
   ];
+
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
