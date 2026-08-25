@@ -135,7 +135,24 @@ const FontanerosPage = () => {
       q: "¿Es suficiente una sola página para todos mis servicios?",
       a: "No. 'Fontanero urgente', 'instalación de caldera' y 'detección de fugas' son búsquedas distintas con clientes distintos. Si tienes una sola página genérica, solo apareces para una — y compites con todos por el mismo hueco.",
     },
+    {
+      q: "¿Cómo conseguir más llamadas de fontanería desde Google?",
+      a: "Las llamadas llegan sobre todo desde Google Maps y desde las búsquedas de alta intención tipo 'fontanero urgente' o 'fontanero 24 horas'. Para captarlas trabajamos la ficha de Google Business Profile (categoría, servicios, zonas, fotos y reseñas) junto con páginas de servicio en la web, de forma que el negocio gane relevancia en las búsquedas locales donde el usuario quiere contratar ya.",
+    },
+    {
+      q: "¿Cuánto tarda el SEO Local para un fontanero?",
+      a: "Depende de cada caso: la competencia de la ciudad, la autoridad actual del dominio y su historial, el estado de la ficha, la calidad de la web y los servicios que se quieran posicionar. Normalmente los primeros movimientos se observan en los primeros meses, pero no trabajamos con plazos garantizados: medimos posiciones y contactos cada mes y ajustamos el plan con esos datos.",
+    },
+    {
+      q: "¿Funciona el SEO Local para fontaneros urgentes?",
+      a: "Sí, es uno de los escenarios con mayor intención comercial: quien busca 'fontanero urgente' o 'fontanero 24 horas' quiere contratar en minutos y suele llamar desde Google Maps. Una ficha bien configurada con horario, zonas de servicio, teléfono y reseñas, más una página de urgencias clara en la web, ayudan a que el negocio aparezca y sea elegido en ese tipo de búsquedas.",
+    },
+    {
+      q: "¿Es mejor SEO Local o Google Ads para un fontanero?",
+      a: "Son estrategias distintas y pueden complementarse. Google Ads permite generar demanda de forma inmediata pagando por cada clic, mientras que el SEO Local busca construir visibilidad orgánica sostenida a medio y largo plazo en Google Maps y en los resultados de búsqueda. En Slocal el foco es el SEO Local, y los anuncios se plantean solo como apoyo puntual.",
+    },
   ];
+
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -839,6 +856,153 @@ const FontanerosPage = () => {
           </div>
         </div>
       </section>
+
+      {/* GOOGLE MAPS — cobertura semántica */}
+      <section className={sectionCls}>
+        <div className="container grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
+          <div className="md:col-span-5">
+            <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Google Maps</p>
+            <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl leading-[1.05] tracking-tight">
+              ¿Cómo aparecer en <span className="text-primary">Google Maps</span> como fontanero?
+            </h2>
+          </div>
+          <div className="md:col-span-7 space-y-6">
+            <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed">
+              Para mejorar la visibilidad de una empresa de fontanería en Google Maps hay que trabajar de forma conjunta la ficha de Google Business Profile, la web y las señales locales del negocio.
+            </p>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
+              {[
+                "Categoría principal y secundarias",
+                "Servicios de fontanería estructurados",
+                "Información del negocio y zonas",
+                "Reseñas reales y respuestas",
+                "Fotografías del trabajo real",
+                "Contenido local y relevancia de la web",
+              ].map((item) => (
+                <li key={item} className="flex gap-3 font-body text-base text-warm-fg/80 leading-relaxed">
+                  <span className="text-primary">—</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p className="font-body font-light text-base text-warm-fg/70 leading-relaxed">
+              En Slocal trabajamos estos elementos para aumentar la visibilidad de empresas de fontanería en las búsquedas locales y mejorar las posibilidades de aparecer entre los primeros resultados de Google Maps.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ERRORES HABITUALES */}
+      <section className={sectionCls}>
+        <div className="container">
+          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Errores habituales</p>
+          <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl leading-[1.05] tracking-tight max-w-[24ch] mb-12">
+            ¿Qué errores impiden que un fontanero <span className="text-primary">aparezca en Google</span>?
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              "Ficha de Google Business Profile incompleta o mal configurada",
+              "Categoría principal incorrecta",
+              "Servicios sin estructurar",
+              "Una única página genérica para todos los servicios",
+              "Ausencia de contenido específico de fontanería",
+              "Poca relevancia local",
+              "Falta de señales de confianza y reseñas",
+              "Inconsistencias entre la web y Google Business Profile",
+              "No trabajar las zonas donde realmente se presta servicio",
+            ].map((item, i) => (
+              <div
+                key={item}
+                className="border border-warm-fg/15 rounded-2xl p-6 transition-all duration-[250ms] hover:border-primary hover:-translate-y-[3px]"
+              >
+                <span className="font-heading text-xs tracking-widest text-warm-fg/40">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <p className="font-body text-base text-warm-fg leading-relaxed mt-3">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICIOS POSICIONABLES */}
+      <section className={sectionCls}>
+        <div className="container grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
+          <div className="md:col-span-5">
+            <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Servicios</p>
+            <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
+              ¿Qué servicios de fontanería se pueden <span className="text-primary">posicionar</span>?
+            </h2>
+            <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed">
+              Cada servicio responde a una búsqueda y a una intención distinta: una urgencia no se busca igual que una instalación planificada.
+            </p>
+          </div>
+          <div className="md:col-span-7 space-y-8">
+            <div className="flex flex-wrap gap-2.5">
+              {[
+                "Fontanero urgente",
+                "Fontanero 24 horas",
+                "Desatascos",
+                "Detección de fugas",
+                "Reparación de tuberías",
+                "Instalación de calderas",
+                "Reparación de calderas",
+                "Reparación de termos",
+                "Instalación de sanitarios",
+                "Reparación de grifos",
+                "Fontanería para comunidades",
+                "Reformas de fontanería",
+              ].map((s) => (
+                <span
+                  key={s}
+                  className="border border-warm-fg/15 rounded-full px-4 py-2 font-heading text-sm text-warm-fg transition-colors duration-[250ms] hover:border-primary hover:text-primary"
+                >
+                  {s}
+                </span>
+              ))}
+            </div>
+            <p className="font-body font-light text-base text-warm-fg/70 leading-relaxed">
+              La estrategia depende de los servicios que realmente ofrece cada empresa y de la demanda que existe en su zona. Priorizamos primero los servicios con búsquedas reales y margen suficiente, y desde ahí ampliamos la cobertura.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* CIUDAD Y ZONA */}
+      <section className={sectionCls}>
+        <div className="container grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
+          <div className="md:col-span-5">
+            <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Ciudad y zona</p>
+            <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl leading-[1.05] tracking-tight">
+              ¿Cómo posicionar un fontanero por <span className="text-primary">ciudad y zona</span>?
+            </h2>
+          </div>
+          <div className="md:col-span-7 space-y-6">
+            <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed">
+              El SEO Local permite trabajar distintas áreas geográficas siempre que el negocio preste servicio realmente en ellas. Las búsquedas cambian según el punto desde el que se hacen, y también según cómo el usuario nombra su zona.
+            </p>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
+              {[
+                "Ciudad principal",
+                "Barrios y distritos",
+                "Zonas de servicio de la ficha",
+                "Servicio + ubicación",
+                "Búsquedas locales del día a día",
+              ].map((item) => (
+                <li key={item} className="flex gap-3 font-body text-base text-warm-fg/80 leading-relaxed">
+                  <span className="text-primary">—</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <p className="font-body font-light text-base text-warm-fg/70 leading-relaxed">
+              Las páginas de servicio y ubicación solo se crean cuando aportan información útil y existe una necesidad real detrás. No generamos contenido repetitivo ni páginas artificiales para introducir nombres de ciudades: el objetivo es que cada página tenga sentido para quien la lee.
+            </p>
+          </div>
+        </div>
+      </section>
+
+
 
       {/* FAQ */}
       <section className={sectionCls}>
