@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 import { Link } from "react-router-dom";
 import SEOHead from "@/components/SEOHead";
 import CTASection from "@/components/CTASection";
@@ -1043,9 +1043,8 @@ const FontanerosPage = () => {
                 { l: "Ciudad", v: "Córdoba" },
                 { l: "Zona", v: "Centro" },
               ].map((step, i) => (
-                <>
+                <Fragment key={step.l}>
                   <div
-                    key={step.l}
                     className={`rounded-2xl border px-6 py-6 ${
                       i === 2 ? "border-primary/50" : "border-warm-fg/15"
                     }`}
@@ -1059,7 +1058,6 @@ const FontanerosPage = () => {
                   </div>
                   {i < 2 && (
                     <span
-                      key={`${step.l}-arrow`}
                       className="flex items-center justify-center text-primary font-heading text-lg"
                       aria-hidden
                     >
@@ -1067,7 +1065,7 @@ const FontanerosPage = () => {
                       <span className="hidden md:inline">→</span>
                     </span>
                   )}
-                </>
+                </Fragment>
               ))}
             </div>
 
