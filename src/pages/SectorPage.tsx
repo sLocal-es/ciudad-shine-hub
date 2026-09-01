@@ -86,7 +86,7 @@ const SectorPage = () => {
           </div>
 
           {/* MOCKUP B — Google Search Results */}
-          <div className="bg-card text-card-foreground rounded-xl border border-border p-5 shadow-sm">
+          <div className="bg-card text-card-foreground rounded-xl border border-border p-5 shadow-xs">
             <div className="flex items-center gap-2 mb-4">
               <div className="w-3 h-3 rounded-full bg-destructive/40" />
               <div className="w-3 h-3 rounded-full bg-primary/40" />

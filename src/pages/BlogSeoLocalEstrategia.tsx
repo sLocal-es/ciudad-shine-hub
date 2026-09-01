@@ -87,7 +87,7 @@ const AuditForm = () => {
   }
 
   const inputCls =
-    "w-full rounded-lg px-4 py-3 text-sm bg-white/[0.07] border border-white/15 text-dark-fg placeholder:text-white/40 outline-none focus:border-primary";
+    "w-full rounded-lg px-4 py-3 text-sm bg-white/[0.07] border border-white/15 text-dark-fg placeholder:text-white/40 outline-hidden focus:border-primary";
 
   return (
     <form onSubmit={onSubmit} className="space-y-3 max-w-md mx-auto">

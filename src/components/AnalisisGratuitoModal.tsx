@@ -74,12 +74,12 @@ const AnalisisGratuitoModal = ({ trigger }: Props) => {
   };
 
   const inputCls =
-    "w-full bg-background border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors";
+    "w-full bg-background border border-border rounded-lg px-4 py-3 text-sm focus:outline-hidden focus:border-primary transition-colors";
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>{trigger}</DialogTrigger>
-      <DialogContent className="max-w-lg bg-card border-border rounded-xl p-6 md:p-8 backdrop-blur-sm">
+      <DialogContent className="max-w-lg bg-card border-border rounded-xl p-6 md:p-8 backdrop-blur-xs">
         <DialogHeader>
           <DialogTitle className="font-heading text-2xl md:text-3xl leading-tight text-foreground">
             Descubre cómo te ve Google ahora mismo
