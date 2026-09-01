@@ -81,7 +81,7 @@ const BlogIndex = () => {
                 role="tab"
                 aria-selected={activeCategory === cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`font-heading text-[13px] font-medium rounded-full px-5 py-2.5 border transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
+                className={`font-heading text-[13px] font-medium rounded-full px-5 py-2.5 border transition-all duration-200 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
                   activeCategory === cat
                     ? "border-primary bg-primary text-primary-foreground shadow-[0_14px_36px_-20px_hsl(var(--primary))]"
                     : "border-warm-fg/15 bg-white text-warm-fg/80 hover:border-primary hover:text-primary"
@@ -142,7 +142,7 @@ export const PostCard = ({ post }: { post: BlogPost }) => {
     <article className="h-full">
       <Link
         to={`/blog/${post.slug}`}
-        className="group h-full flex flex-col rounded-3xl border border-warm-fg/10 bg-white overflow-hidden shadow-[0_18px_50px_-38px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_28px_70px_-40px_rgba(0,0,0,0.35)] hover:border-primary/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+        className="group h-full flex flex-col rounded-3xl border border-warm-fg/10 bg-white overflow-hidden shadow-[0_18px_50px_-38px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_28px_70px_-40px_rgba(0,0,0,0.35)] hover:border-primary/40 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
       >
         <div className="aspect-[16/10] w-full overflow-hidden bg-white border-b border-warm-fg/10">
           <img

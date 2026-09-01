@@ -56,7 +56,7 @@ const ContactForm = () => {
   };
 
   const inputCls =
-    "w-full bg-card border border-border rounded-lg px-4 py-3 text-sm focus:outline-none focus:border-primary transition-colors";
+    "w-full bg-card border border-border rounded-lg px-4 py-3 text-sm focus:outline-hidden focus:border-primary transition-colors";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4" noValidate>

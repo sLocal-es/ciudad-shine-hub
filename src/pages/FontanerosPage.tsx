@@ -38,10 +38,10 @@ const AuditoriaLeadForm = () => {
   };
 
   const inputCls =
-    "w-full rounded-xl bg-white text-foreground placeholder:text-foreground/50 px-4 py-3.5 text-[15px] font-body outline-none border border-transparent focus:border-foreground/20 focus:ring-2 focus:ring-white/40 transition resize-none";
+    "w-full rounded-xl bg-white text-foreground placeholder:text-foreground/50 px-4 py-3.5 text-[15px] font-body outline-hidden border border-transparent focus:border-foreground/20 focus:ring-2 focus:ring-white/40 transition resize-none";
 
   return (
-    <form onSubmit={onSubmit} className="w-full rounded-2xl bg-white/10 p-5 md:p-6 backdrop-blur-sm">
+    <form onSubmit={onSubmit} className="w-full rounded-2xl bg-white/10 p-5 md:p-6 backdrop-blur-xs">
       <div className="space-y-3">
         <input required type="text" placeholder="Nombre" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className={inputCls} />
         <input required type="text" placeholder="Nombre de tu empresa" value={form.business} onChange={(e) => setForm({ ...form, business: e.target.value })} className={inputCls} />
@@ -528,7 +528,7 @@ const FontanerosPage = () => {
               <div className="grid grid-cols-5 gap-6">
                 {howWeWorkSteps.map((step, i) => (
                   <div key={step.h} className="relative flex flex-col items-center text-center">
-                    <div className="relative z-10 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-heading text-lg shadow-sm">
+                    <div className="relative z-10 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-heading text-lg shadow-xs">
                       {i + 1}
                     </div>
                     <div className="mt-8 bg-white border border-warm-fg/10 rounded-2xl p-6 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] w-full">
@@ -551,7 +551,7 @@ const FontanerosPage = () => {
               <div className="space-y-8">
                 {howWeWorkSteps.map((step, i) => (
                   <div key={step.h} className="relative flex gap-6">
-                    <div className="relative z-10 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-heading text-lg shadow-sm shrink-0">
+                    <div className="relative z-10 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-heading text-lg shadow-xs shrink-0">
                       {i + 1}
                     </div>
                     <div className="flex-1 bg-white border border-warm-fg/10 rounded-2xl p-5 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)]">
@@ -794,7 +794,7 @@ const FontanerosPage = () => {
                 className="group bg-white border border-warm-fg/10 rounded-2xl p-7 md:p-8 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] flex flex-col min-h-[520px] transition-all duration-[250ms] ease-out hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(26,26,36,0.15)] hover:border-primary hover:bg-primary"
               >
                 <div className="mb-8 h-14 flex items-center">
-                  <div className="inline-flex items-center justify-center h-14 w-14 rounded-xl bg-transparent group-hover:bg-white group-hover:shadow-sm transition-all duration-[250ms] text-warm-fg">
+                  <div className="inline-flex items-center justify-center h-14 w-14 rounded-xl bg-transparent group-hover:bg-white group-hover:shadow-xs transition-all duration-[250ms] text-warm-fg">
                     {service.logo}
                   </div>
                 </div>

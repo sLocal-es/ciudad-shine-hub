@@ -30,7 +30,7 @@ export const LocalPackCard = ({
     { name: "Asistencia 24h", category: "Servicio profesional", rating: 4, reviews: 41, distance: "1,8 km" },
   ];
   return (
-    <div className="w-full max-w-md mx-auto bg-card border border-border rounded-2xl shadow-sm overflow-hidden">
+    <div className="w-full max-w-md mx-auto bg-card border border-border rounded-2xl shadow-xs overflow-hidden">
       <div className="flex items-center gap-2 px-4 py-3 border-b border-border bg-background">
         <Search size={14} className="text-muted-foreground" />
         <span className="text-xs font-body text-foreground/80 truncate">{query} · {city}</span>
@@ -115,7 +115,7 @@ export const GBPProfileMockup = ({
   rating = 4.9,
   reviews = 128,
 }: { name?: string; category?: string; city?: string; rating?: number; reviews?: number }) => (
-  <div className="w-full max-w-md mx-auto bg-card border border-border rounded-2xl overflow-hidden shadow-sm">
+  <div className="w-full max-w-md mx-auto bg-card border border-border rounded-2xl overflow-hidden shadow-xs">
     <div className="h-20 bg-gradient-to-r from-primary/20 via-secondary to-primary/10" />
     <div className="p-5">
       <h4 className="font-heading text-lg text-foreground">{name}</h4>
@@ -177,7 +177,7 @@ export const ReviewsWidget = ({ rating = 4.9, total = 184 }: { rating?: number; 
     { s: 1, p: 1 },
   ];
   return (
-    <div className="w-full max-w-md mx-auto bg-card border border-border rounded-2xl p-6 shadow-sm">
+    <div className="w-full max-w-md mx-auto bg-card border border-border rounded-2xl p-6 shadow-xs">
       <div className="flex items-center gap-5">
         <div className="text-center">
           <div className="font-heading text-5xl text-primary leading-none">{rating.toFixed(1).replace(".", ",")}</div>
@@ -225,7 +225,7 @@ const trend = [
 ];
 
 export const MetricsDashboard = () => (
-  <div className="w-full max-w-md mx-auto bg-card border border-border rounded-2xl p-6 shadow-sm">
+  <div className="w-full max-w-md mx-auto bg-card border border-border rounded-2xl p-6 shadow-xs">
     <div className="flex items-center justify-between mb-4">
       <div>
         <div className="text-xs text-muted-foreground">Informe mensual</div>

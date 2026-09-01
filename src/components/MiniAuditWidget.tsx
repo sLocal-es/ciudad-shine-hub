@@ -45,7 +45,7 @@ const MiniAuditWidget = () => {
   };
 
   return (
-    <div className="bg-card border border-border rounded-xl shadow-sm overflow-hidden w-full">
+    <div className="bg-card border border-border rounded-xl shadow-xs overflow-hidden w-full">
       <div className="h-1 bg-border">
         <div
           className="h-full bg-primary transition-all duration-500"
@@ -121,7 +121,7 @@ const MiniAuditWidget = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="tu@email.com"
-                className="w-full h-11 px-4 rounded-lg border border-border bg-background text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary"
+                className="w-full h-11 px-4 rounded-lg border border-border bg-background text-sm text-foreground placeholder:text-muted-foreground focus:outline-hidden focus:border-primary"
               />
               <button
                 type="submit"

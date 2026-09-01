@@ -101,7 +101,7 @@ const AnalisisGratuitoPopup = () => {
   if (!open) return null;
 
   const inputCls =
-    "w-full rounded-xl bg-white text-black placeholder:text-gray-600 caret-black px-4 py-3.5 text-[15px] font-body outline-none border border-[#E5E7EB] focus:border-primary focus:ring-2 focus:ring-primary/15 transition";
+    "w-full rounded-xl bg-white text-black placeholder:text-gray-600 caret-black px-4 py-3.5 text-[15px] font-body outline-hidden border border-[#E5E7EB] focus:border-primary focus:ring-2 focus:ring-primary/15 transition";
 
   return (
     <div

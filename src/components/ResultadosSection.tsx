@@ -115,7 +115,7 @@ function CaseStudyModal({ study, onClose }: { study: CaseStudy; onClose: () => v
       onClick={onClose}
       role="dialog"
     >
-      <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-black/80 backdrop-blur-xs" />
 
       <div
         className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-2xl animate-in fade-in zoom-in-95 duration-300"

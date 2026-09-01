@@ -264,7 +264,7 @@ const Home = () => {
                   ))}
                 </ul>
               </div>
-              <div className="w-full rounded-2xl bg-white/10 p-5 md:p-6 backdrop-blur-sm">
+              <div className="w-full rounded-2xl bg-white/10 p-5 md:p-6 backdrop-blur-xs">
                 <LeadMagnetForm />
               </div>
             </div>

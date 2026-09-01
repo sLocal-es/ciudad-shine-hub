@@ -95,7 +95,7 @@ const ComoVeGoogleMiWeb = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {CLIENT_SCORES.map((client) => (
-              <div key={client.name} className="bg-card rounded-xl p-6 shadow-sm border-2 border-primary">
+              <div key={client.name} className="bg-card rounded-xl p-6 shadow-xs border-2 border-primary">
                 <h3 className="font-heading text-lg mb-1 text-center">{client.name}</h3>
                 <p className="text-xs text-muted-foreground text-center mb-6">{client.label}</p>
                 <img

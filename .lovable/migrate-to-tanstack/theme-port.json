@@ -1,0 +1,24 @@
+{
+  "customizations": [
+    { "token": "--background / --foreground (48 15% 97% / 240 17% 12%)", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--card / --card-foreground", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--popover / --popover-foreground", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--primary / --primary-foreground (18 82% 54% orange)", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--secondary / --secondary-foreground", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--muted / --muted-foreground", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--accent / --accent-foreground", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--destructive / --destructive-foreground", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--border / --input / --ring", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--radius: 0.75rem (+ v3 rounded-xl/2xl/3xl scale preserved)", "source": "src/index.css + tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "--dark-bg / --dark-fg", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--warm-bg / --warm-fg", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "--sidebar-* (8 tokens)", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": "font-heading (Plus Jakarta Sans)", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "font-body (DM Sans)", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "container utility (centered, 1.5rem padding, max 1080px)", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "accordion-down / accordion-up keyframes + animations", "source": "tailwind.config.ts", "reappliedIn": "src/styles.css" },
+    { "token": "@layer base body/headings font + border-color rules", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": ".prose blog content component layer", "source": "src/index.css", "reappliedIn": "src/styles.css" },
+    { "token": ".blog-article typography component layer", "source": "src/index.css", "reappliedIn": "src/styles.css" }
+  ]
+}
