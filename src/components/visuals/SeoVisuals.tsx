@@ -283,7 +283,7 @@ export const SectorIconsGrid = () => (
 );
 
 export const ServiceHeroVisual = ({ slug }: { slug: string }) => {
-  const map: Record<string, JSX.Element> = {
+  const map: Record<string, ReactElement> = {
     "aparecer-en-google-maps": <MapsMobileMockup query="servicio cerca de mí" city="tu ciudad" />,
     "ficha-google-mi-negocio": <GBPProfileMockup />,
     "seo-para-negocios-locales": <LocalPackCard query="negocio local" city="tu ciudad" />,
