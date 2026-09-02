@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 import { MapPin, Globe, FileText, Search, Check, Star, Phone, Navigation as NavIcon, Globe2, TrendingUp, ArrowUp, Calendar, Tag, HelpCircle, Trophy, PhoneCall, MousePointerClick, Eye, BarChart3, Image as ImageIcon, MessageSquare, ListChecks } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 

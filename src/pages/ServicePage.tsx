@@ -1,4 +1,4 @@
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link } from "@/lib/router-compat";
 import { services } from "@/data/services";
 import { cities } from "@/data/cities";
 import SEOHead from "@/components/SEOHead";
