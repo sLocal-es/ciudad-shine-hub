@@ -1,4 +1,14 @@
-import { Helmet } from "react-helmet-async";
+/**
+ * SEOHead — server-rendered head metadata.
+ *
+ * Uses React 19's native support for rendering <title>, <meta> and <link>
+ * anywhere in the tree: React hoists them into <head> during SSR, so the very
+ * first server response already carries the page-specific title, description,
+ * canonical, og/twitter tags and JSON-LD — no client hydration required.
+ *
+ * Every page owns its own metadata here. `src/routes/__root.tsx` deliberately
+ * emits NO title/description/og fallbacks, so nothing is duplicated.
+ */
 
 interface SEOHeadProps {
   title: string;
@@ -25,7 +35,7 @@ const SEOHead = ({
   const schemas = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 
   return (
-    <Helmet>
+    <>
       <title>{title}</title>
       <meta name="description" content={description} />
       <meta name="robots" content={noIndex ? "noindex, follow" : "index, follow"} />
@@ -40,11 +50,13 @@ const SEOHead = ({
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
       {schemas.map((schema, i) => (
-        <script key={i} type="application/ld+json">
-          {JSON.stringify(schema)}
-        </script>
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
       ))}
-    </Helmet>
+    </>
   );
 };
 
