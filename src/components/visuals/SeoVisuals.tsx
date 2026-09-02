@@ -1,3 +1,4 @@
+import type { ReactElement } from "react";
 import { Star, MapPin, Phone, Navigation, Globe, Bookmark, Wrench, HeartPulse, Hammer, PaintRoller, Scale, Dumbbell, Stethoscope, Brain, Search, TrendingUp, Quote } from "lucide-react";
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from "recharts";
 

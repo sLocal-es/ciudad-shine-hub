@@ -14,8 +14,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { reportLovableError } from "@/lib/lovable-error-reporting";
 
-import "@fontsource-variable/dm-sans";
-import "@fontsource-variable/plus-jakarta-sans";
+import "@fontsource-variable/dm-sans/index.css";
+import "@fontsource-variable/plus-jakarta-sans/index.css";
 import "@fontsource/dm-serif-display/400.css";
 import appCss from "@/styles.css?url";
 
