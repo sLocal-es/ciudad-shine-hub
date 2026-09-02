@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import HeroVisual from "./HeroVisual";
 import { HeroTrustBar } from "./herotrustbar";

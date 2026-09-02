@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation } from "@/lib/router-compat";
 import SEOHead from "@/components/SEOHead";
 
 const NotFound = () => {

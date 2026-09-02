@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "@/lib/router-compat";
 import { cities } from "@/data/cities";
 import SEOHead from "@/components/SEOHead";
 import { LocalPackCard } from "@/components/visuals/SeoVisuals";
