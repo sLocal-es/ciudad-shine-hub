@@ -3,11 +3,13 @@
 @layer theme, base, components, utilities;
 
 @import "tailwindcss" source(none);
-@source "../src";
 @import "tw-animate-css";
 @import "@fontsource-variable/dm-sans";
 @import "@fontsource-variable/plus-jakarta-sans";
 @import "@fontsource/dm-serif-display/400.css";
+
+@source "../src";
+
 
 
 @custom-variant dark (&:is(.dark *));
