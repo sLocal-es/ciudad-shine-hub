@@ -1,8 +1,11 @@
 import { Link } from "@/lib/router-compat";
 
 
-const Footer = () => (
-  <footer className="bg-dark-bg text-dark-fg pt-16 pb-8">
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="bg-dark-bg text-dark-fg pt-16 pb-8">
     <div className="container">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
         {/* Brand */}
@@ -47,11 +50,12 @@ const Footer = () => (
       </div>
 
       <div className="border-t border-dark-fg/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-dark-fg/40">
-        <span>© 2025 slocal.es</span>
+        <span>© {currentYear} slocal.es</span>
         <span>info@slocal.es</span>
       </div>
     </div>
-  </footer>
-);
+    </footer>
+  );
+};
 
 export default Footer;

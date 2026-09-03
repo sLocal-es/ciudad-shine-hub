@@ -3,8 +3,9 @@ import { X } from "lucide-react";
 import { z } from "zod";
 import { sendForm } from "@/lib/sendForm";
 
-const STORAGE_KEY = "slocal_analisis_popup";
-const SEVEN_DAYS = 7 * 24 * 60 * 60 * 1000;
+const DISMISSED_KEY = "analysisModalDismissed";
+const SUBMITTED_KEY = "analysisModalSubmitted";
+const MINIMUM_DELAY_MS = 3500;
 
 const schema = z.object({
   nombre: z.string().trim().min(2, "Indica tu nombre").max(100),
@@ -20,19 +21,6 @@ const schema = z.object({
 
 type Fields = z.infer<typeof schema>;
 
-const shouldShow = () => {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return true;
-    const data = JSON.parse(raw) as { status?: string; ts?: number };
-    if (data.status === "submitted") return false;
-    if (data.status === "dismissed" && data.ts && Date.now() - data.ts < SEVEN_DAYS) return false;
-    return data.status !== "dismissed";
-  } catch {
-    return true;
-  }
-};
-
 const AnalisisGratuitoPopup = () => {
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -43,23 +31,39 @@ const AnalisisGratuitoPopup = () => {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
-    if (sessionStorage.getItem("slocal_analisis_popup_session")) return;
-    if (!shouldShow()) return;
-    const t = setTimeout(() => {
+    if (sessionStorage.getItem(DISMISSED_KEY) || sessionStorage.getItem(SUBMITTED_KEY)) return;
+
+    let delayElapsed = false;
+    let triggered = false;
+
+    const hasReachedHalfway = () => {
+      const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+      return scrollableHeight > 0 && window.scrollY >= scrollableHeight * 0.5;
+    };
+
+    const tryToOpen = () => {
+      if (!delayElapsed || triggered || !hasReachedHalfway()) return;
+      triggered = true;
+      window.removeEventListener("scroll", tryToOpen);
       setOpen(true);
-      sessionStorage.setItem("slocal_analisis_popup_session", "1");
-    }, 1500);
-    return () => clearTimeout(t);
+    };
+
+    window.addEventListener("scroll", tryToOpen, { passive: true });
+    const minimumDelay = window.setTimeout(() => {
+      delayElapsed = true;
+      tryToOpen();
+    }, MINIMUM_DELAY_MS);
+
+    return () => {
+      window.clearTimeout(minimumDelay);
+      window.removeEventListener("scroll", tryToOpen);
+    };
   }, []);
 
   const close = () => {
     setOpen(false);
     try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      const prev = raw ? (JSON.parse(raw) as { status?: string }) : null;
-      if (prev?.status !== "submitted") {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify({ status: "dismissed", ts: Date.now() }));
-      }
+      sessionStorage.setItem(DISMISSED_KEY, "true");
     } catch {
       /* noop */
     }
@@ -90,7 +94,7 @@ const AnalisisGratuitoPopup = () => {
         message: "Solicitud de análisis gratuito desde el pop-up global.",
       });
       setSent(true);
-      localStorage.setItem(STORAGE_KEY, JSON.stringify({ status: "submitted", ts: Date.now() }));
+      sessionStorage.setItem(SUBMITTED_KEY, "true");
     } catch {
       setGlobalError("Ha ocurrido un error. Inténtalo de nuevo.");
     } finally {
