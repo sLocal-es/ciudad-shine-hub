@@ -5,6 +5,7 @@ import SectorHeroDark from "@/components/sector/SectorHeroDark";
 import LogoMarquee from "@/components/LogoMarquee";
 import LeadMagnetForm from "@/components/forms/LeadMagnetForm";
 import ContactForm from "@/components/forms/ContactForm";
+import ElfsightReviews from "@/components/ElfsightReviews";
 import webHomeAsset from "@/assets/web_home.webp.asset.json";
 import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisual";
 
@@ -266,6 +267,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* RESEÑAS */}
+      <ElfsightReviews className="bg-white py-24 md:py-32 border-t border-warm-fg/10" />
 
       {/* FAQ */}
       <section className={sectionCls}>
