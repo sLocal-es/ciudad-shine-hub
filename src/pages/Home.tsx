@@ -268,6 +268,9 @@ const Home = () => {
         </div>
       </section>
 
+      {/* RESEÑAS */}
+      <ElfsightReviews className="bg-white py-24 md:py-32 border-t border-warm-fg/10" />
+
       {/* FAQ */}
       <section className={sectionCls}>
         <div className="container grid grid-cols-1 md:grid-cols-12 gap-12">
