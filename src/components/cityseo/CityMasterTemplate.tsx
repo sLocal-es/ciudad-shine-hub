@@ -1,17 +1,13 @@
 import SectorMasterTemplate, { SectorTemplateContent } from "@/components/sector/SectorMasterTemplate";
 import { SeoLocalCity } from "@/data/seoLocalCities";
-import gbpSevilla from "@/assets/gbp_sevilla.webp.asset.json";
 import webSevilla from "@/assets/web_sevilla.webp.asset.json";
-import gbpMadrid from "@/assets/gbp_madrid.webp.asset.json";
 import webMadrid from "@/assets/web_madrid.webp.asset.json";
 
 const cityImages: Record<string, { gbp?: { src: string; alt: string }; web?: { src: string; alt: string } }> = {
   sevilla: {
-    gbp: { src: gbpSevilla.url, alt: "Ficha de Google Business Profile posicionada en Sevilla" },
     web: { src: webSevilla.url, alt: "Web optimizada para negocios locales en Sevilla" },
   },
   madrid: {
-    gbp: { src: gbpMadrid.url, alt: "Ficha de Google Business Profile posicionada en Madrid" },
     web: { src: webMadrid.url, alt: "Web optimizada para negocios locales en Madrid" },
   },
 };
@@ -76,7 +72,6 @@ const CityMasterTemplate = ({ city }: { city: SeoLocalCity }) => {
     gbpH3: <>Tu ficha de <span className="text-primary">Google Business Profile</span> genera llamadas en {name}</>,
     gbpBody: <>Google Business Profile es donde el cliente de {name} decide llamarte. Optimizamos tu ficha para aparecer antes que otros negocios de tu zona y convertir búsquedas en contactos reales.</>,
     gbpFeatures: ["Categorías optimizadas", "Zona de servicio por barrios", "Publicaciones semanales", "Gestión de reseñas", "Geolocalización", "Seguimiento de llamadas"],
-    gbpImage: cityImages[slug]?.gbp,
     webH3: <>Una web que <span className="text-primary">convierte</span> visitas en clientes</>,
     webBody: <>Mientras Google Business Profile genera la llamada, tu web convierte las visitas en contactos cualificados. Trabajamos páginas específicas por servicio y por barrio de {name}.</>,
     webFeatures: ["SEO Local", "Landing por servicio", "Landing por barrio", "Formularios optimizados", "WhatsApp", "Google Analytics"],
