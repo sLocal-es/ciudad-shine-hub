@@ -9,6 +9,7 @@ import {
   ServiceCard,
   type ExtraService,
 } from "@/components/servicios/ServiciosUI";
+import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisual";
 
 const sectionCls = "bg-white py-24 md:py-32 border-t border-warm-fg/10";
 
@@ -242,9 +243,8 @@ const Servicios = () => {
           </Reveal>
 
           <Reveal delay={120}>
-            <IllustrationPlaceholder
-              label="Ilustración isométrica: Google Maps, página web, SEO Local, clientes llegando, Google Business Profile y gráficas creciendo"
-              aspect="aspect-[5/4]"
+            <GoogleBusinessProfileVisual
+              alt="Ilustración de Google Business Profile con ubicación, reseñas y versión móvil"
             />
           </Reveal>
         </div>

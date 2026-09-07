@@ -1,6 +1,7 @@
 import type { ReactElement } from "react";
-import { Star, MapPin, Phone, Navigation, Globe, Bookmark, Wrench, HeartPulse, Hammer, PaintRoller, Scale, Dumbbell, Stethoscope, Brain, Search, TrendingUp, Quote } from "lucide-react";
+import { Star, MapPin, Wrench, HeartPulse, Hammer, PaintRoller, Scale, Dumbbell, Stethoscope, Brain, Search, TrendingUp, Quote } from "lucide-react";
 import { LineChart, Line, XAxis, YAxis, ResponsiveContainer } from "recharts";
+import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisual";
 
 const Stars = ({ value = 5, size = 12 }: { value?: number; size?: number }) => (
   <div className="flex items-center gap-0.5">
@@ -116,57 +117,10 @@ export const GBPProfileMockup = ({
   rating = 4.9,
   reviews = 128,
 }: { name?: string; category?: string; city?: string; rating?: number; reviews?: number }) => (
-  <div className="w-full max-w-md mx-auto bg-card border border-border rounded-2xl overflow-hidden shadow-xs">
-    <div className="h-20 bg-gradient-to-r from-primary/20 via-secondary to-primary/10" />
-    <div className="p-5">
-      <h4 className="font-heading text-lg text-foreground">{name}</h4>
-      <p className="text-xs text-muted-foreground mt-0.5">{category} · {city}</p>
-      <div className="flex items-center gap-2 mt-2">
-        <span className="font-heading text-primary">{rating.toFixed(1).replace(".", ",")}</span>
-        <Stars value={Math.round(rating)} />
-        <span className="text-xs text-muted-foreground">({reviews})</span>
-      </div>
-      <div className="flex items-center gap-2 mt-3 text-xs text-muted-foreground">
-        <span className="text-emerald-600 font-heading">Abierto</span>
-        <span>· Cierra a las 20:00</span>
-      </div>
-      <div className="grid grid-cols-4 gap-2 mt-4">
-        {[
-          { i: Phone, l: "Llamar" },
-          { i: Navigation, l: "Ruta" },
-          { i: Globe, l: "Web" },
-          { i: Bookmark, l: "Guardar" },
-        ].map(({ i: Icon, l }) => (
-          <div key={l} className="flex flex-col items-center gap-1 py-2 rounded-lg bg-secondary text-foreground">
-            <Icon size={16} className="text-primary" />
-            <span className="text-[10px] font-heading">{l}</span>
-          </div>
-        ))}
-      </div>
-      <div className="grid grid-cols-3 gap-1.5 mt-4">
-        {[0, 1, 2].map((i) => (
-          <div key={i} className="aspect-square rounded bg-gradient-to-br from-secondary to-background border border-border" />
-        ))}
-      </div>
-      <div className="mt-4 pt-4 border-t border-border space-y-3">
-        {[
-          { n: "María G.", t: "Rápidos y muy profesionales. Recomiendo 100%." },
-          { n: "Carlos R.", t: "Mejor servicio de la zona. Volveré seguro." },
-        ].map((r) => (
-          <div key={r.n} className="flex gap-2">
-            <div className="w-7 h-7 rounded-full bg-secondary shrink-0 flex items-center justify-center text-[10px] font-heading">{r.n.charAt(0)}</div>
-            <div className="flex-1">
-              <div className="flex items-center gap-1.5">
-                <span className="text-xs font-heading">{r.n}</span>
-                <Stars value={5} size={9} />
-              </div>
-              <p className="text-[11px] text-muted-foreground leading-snug mt-0.5">{r.t}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </div>
+  <GoogleBusinessProfileVisual
+    className="mx-auto max-w-md"
+    alt={`Ilustración de una ficha de Google Business Profile de ${name}, ${category}, en ${city}, con valoración de ${rating.toFixed(1).replace(".", ",")} sobre 5 y ${reviews} reseñas`}
+  />
 );
 
 export const ReviewsWidget = ({ rating = 4.9, total = 184 }: { rating?: number; total?: number }) => {

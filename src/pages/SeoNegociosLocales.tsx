@@ -1,7 +1,7 @@
 import { Link } from "@/lib/router-compat";
 import { cities } from "@/data/cities";
 import SEOHead from "@/components/SEOHead";
-import { LocalPackCard } from "@/components/visuals/SeoVisuals";
+import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisual";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import FAQSection from "@/components/FAQSection";
 
@@ -129,7 +129,11 @@ const SeoNegociosLocales = () => {
               Hablemos por WhatsApp →
             </a>
           </div>
-          <LocalPackCard query="servicio + ciudad" city="tu ciudad" />
+          <GoogleBusinessProfileVisual
+            className="mx-auto max-w-xl"
+            alt="Ilustración de Google Business Profile para un negocio local"
+            eager
+          />
         </div>
       </section>
 

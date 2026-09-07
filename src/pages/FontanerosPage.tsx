@@ -9,6 +9,7 @@ import { toast } from "@/hooks/use-toast";
 import casoAntesImg from "@/assets/caso-antes-vigo.webp.asset.json";
 import casoIntermedioImg from "@/assets/situacion-intermedia-caso-fontanero.webp.asset.json";
 import casoFinalImg from "@/assets/situacion-final-vigo-fontaneria.webp.asset.json";
+import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisual";
 
 
 const AuditoriaLeadForm = () => {
@@ -69,17 +70,6 @@ const AuditoriaLeadForm = () => {
   );
 };
 
-
-const GbpSkeletonMockup = () => (
-  <div className="w-full aspect-[1/1] rounded-3xl overflow-hidden bg-white border border-warm-fg/10 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)]">
-    <img
-      src="/images/seo-fontaneros/gbp-fontaneros.webp"
-      alt="Ficha de Google Business Profile de un fontanero con llamadas, visualizaciones y valoración"
-      className="w-full h-full object-cover"
-      loading="lazy"
-    />
-  </div>
-);
 
 const WebSkeletonMockup = () => (
   <div className="w-full aspect-[1/1] rounded-3xl overflow-hidden bg-white border border-warm-fg/10 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)]">
@@ -431,7 +421,7 @@ const FontanerosPage = () => {
               </a>
             </div>
             <div className="order-first md:order-last">
-              <GbpSkeletonMockup />
+              <GoogleBusinessProfileVisual alt="Ilustración de una ficha de Google Business Profile para una empresa de fontanería" />
             </div>
           </div>
 
