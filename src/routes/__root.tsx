@@ -55,11 +55,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         src: "https://cdn-cookieyes.com/client_data/a29533ddc2a32e0fbfde7eb0a4ce2620/script.js",
         async: true,
       },
-      {
-        id: "elfsight-platform",
-        src: "https://elfsightcdn.com/platform.js",
-        async: true,
-      },
     ],
   }),
   errorComponent: RootErrorComponent,

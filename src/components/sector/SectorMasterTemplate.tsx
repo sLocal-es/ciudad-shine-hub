@@ -9,6 +9,9 @@ import { sendForm } from "@/lib/sendForm";
 import { toast } from "@/hooks/use-toast";
 import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisual";
 import OptimizedWebsiteVisual from "@/components/OptimizedWebsiteVisual";
+import caseBeforeAsset from "@/assets/caso-exito-antes.webp.asset.json";
+import caseStrategyAsset from "@/assets/caso-exito-estrategia.webp.asset.json";
+import caseResultAsset from "@/assets/caso-exito-resultado.webp.asset.json";
 
 /**
  * SectorMasterTemplate
@@ -123,6 +126,12 @@ const cities = [
 ];
 
 const sectionCls = "bg-white py-24 md:py-32 border-t border-warm-fg/10";
+
+const caseStageImages = [
+  { src: caseBeforeAsset.url, alt: "Situación inicial de un negocio sin visibilidad local en Google" },
+  { src: caseStrategyAsset.url, alt: "Estrategia que conecta Google Business Profile, la página web y el posicionamiento local" },
+  { src: caseResultAsset.url, alt: "Resultado del posicionamiento local con mayor presencia y actividad constante" },
+];
 
 /* ---------- Illustration placeholder (per master template rules) --------- */
 const IllustrationPlaceholder = ({
@@ -487,13 +496,21 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10 mb-20">
-            {c.caseStages.map((card) => (
+            {c.caseStages.map((card, index) => (
               <div
                 key={card.title}
                 className="group flex flex-col bg-white rounded-3xl border border-warm-fg/10 p-6 lg:p-8 transition-all duration-300 hover:shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)] hover:border-warm-fg/20"
               >
                 <p className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary mb-6">{card.title}</p>
-                <IllustrationPlaceholder label={card.label} aspect="aspect-[4/3]" className="mb-6" />
+                <div className="mb-6 aspect-[4/3] w-full overflow-hidden rounded-2xl border border-warm-fg/10 bg-white">
+                  <img
+                    src={caseStageImages[index]?.src}
+                    alt={caseStageImages[index]?.alt ?? card.label}
+                    className="h-full w-full object-contain"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
                 <p className="text-base font-body font-light text-warm-fg/80 leading-relaxed">{card.text}</p>
               </div>
             ))}
