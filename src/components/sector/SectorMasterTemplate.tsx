@@ -30,7 +30,8 @@ export type SectorTemplateContent = {
   canonical: string; // e.g. "/seo-para-abogados"
 
   // Sector identity
-  sectorLabel: string;         // "Fontaneros" (used in badges, breadcrumbs, links)
+  sectorLabel: string;
+  breadcrumbLabel?: string;         // "Fontaneros" (used in badges, breadcrumbs, links)
   sectorSlug: string;          // "seo-para-fontaneros"
   sectorLower: string;         // "fontaneros" / "abogados"
   clientWord: string;          // "clientes" | "pacientes" | "alumnos"
@@ -293,7 +294,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
 
       {/* HERO */}
       <SectorHeroDark
-        breadcrumbLabel={`SEO para ${c.sectorLabel}`}
+        breadcrumbLabel={c.breadcrumbLabel ?? `SEO para ${c.sectorLabel}`}
         eyebrow={c.heroEyebrow}
         h1={c.heroH1}
         subtitle={c.heroSubtitle}

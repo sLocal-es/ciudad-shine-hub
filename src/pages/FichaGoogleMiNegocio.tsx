@@ -153,6 +153,7 @@ const FichaGoogleMiNegocio = () => {
       "Agencia SEO Local: optimizamos y gestionamos tu ficha de Google Mi Negocio (Google Business Profile) para que aparezcas en Google Maps cuando tus clientes te buscan.",
     canonical: PATH,
     sectorLabel: TITLE,
+    breadcrumbLabel: TITLE,
     sectorSlug: "ficha-google-mi-negocio",
     sectorLower: "tu negocio local",
     clientWord: "clientes",
