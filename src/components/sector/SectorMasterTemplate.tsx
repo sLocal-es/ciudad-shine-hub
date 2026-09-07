@@ -75,6 +75,10 @@ export type SectorTemplateContent = {
   caseIntro: ReactNode;
   caseStages: { title: string; text: string; label: string }[]; // 3 items (label = placeholder text)
   caseKpis: { k: string; l: string }[];                         // 3 items
+  hideCase?: boolean;           // omit the case-study section when no real data exists
+
+  // Optional editorial block rendered right after "Cómo trabajamos"
+  extraSection?: ReactNode;
 
   // Monthly reasons block
   monthlyH2: ReactNode;
@@ -340,7 +344,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
                   </li>
                 ))}
               </ul>
-              <a href="#caso-real" className="mt-10 inline-flex items-center gap-1 font-heading text-sm text-primary hover:gap-2 transition-all">
+              {!c.hideCase && <a href="#caso-real" className="mt-10 inline-flex items-center gap-1 font-heading text-sm text-primary hover:gap-2 transition-all">
                 Ver caso real →
               </a>
             </div>
@@ -480,7 +484,10 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
         </div>
       </section>
 
+      {c.extraSection}
+
       {/* CASO REAL */}
+      {!c.hideCase && (
       <section id="caso-real" className={sectionCls}>
         <div className="container max-w-6xl">
           <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1.5 text-[11px] font-heading tracking-[0.18em] uppercase text-primary mb-6">
@@ -519,6 +526,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
           </div>
         </div>
       </section>
+      )}
 
       {/* RESEÑAS */}
       <section className={sectionCls}>
