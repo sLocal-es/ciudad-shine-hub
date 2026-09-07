@@ -8,6 +8,7 @@ import LogoMarquee from "@/components/LogoMarquee";
 import { sendForm } from "@/lib/sendForm";
 import { toast } from "@/hooks/use-toast";
 import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisual";
+import OptimizedWebsiteVisual from "@/components/OptimizedWebsiteVisual";
 
 /**
  * SectorMasterTemplate
@@ -351,16 +352,9 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
           {/* Editorial split — Web */}
           <div className="mt-24 md:mt-32 grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center">
             <div>
-              {c.webImage ? (
-                <img
-                  src={c.webImage.src}
-                  alt={c.webImage.alt}
-                  className="w-full rounded-3xl border border-warm-fg/10 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)] object-cover"
-                  loading="lazy"
-                />
-              ) : (
-                <IllustrationPlaceholder label={`Web optimizada para ${c.sectorLower}`} />
-              )}
+              <OptimizedWebsiteVisual
+                alt={`Ilustración de una página web optimizada para ${c.sectorLower}`}
+              />
             </div>
             <div>
               <p className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary mb-6">Web optimizada</p>

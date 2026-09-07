@@ -1,16 +1,5 @@
 import SectorMasterTemplate, { SectorTemplateContent } from "@/components/sector/SectorMasterTemplate";
 import { SeoLocalCity } from "@/data/seoLocalCities";
-import webSevilla from "@/assets/web_sevilla.webp.asset.json";
-import webMadrid from "@/assets/web_madrid.webp.asset.json";
-
-const cityImages: Record<string, { gbp?: { src: string; alt: string }; web?: { src: string; alt: string } }> = {
-  sevilla: {
-    web: { src: webSevilla.url, alt: "Web optimizada para negocios locales en Sevilla" },
-  },
-  madrid: {
-    web: { src: webMadrid.url, alt: "Web optimizada para negocios locales en Madrid" },
-  },
-};
 
 /**
  * CityMasterTemplate
@@ -75,7 +64,6 @@ const CityMasterTemplate = ({ city }: { city: SeoLocalCity }) => {
     webH3: <>Una web que <span className="text-primary">convierte</span> visitas en clientes</>,
     webBody: <>Mientras Google Business Profile genera la llamada, tu web convierte las visitas en contactos cualificados. Trabajamos páginas específicas por servicio y por barrio de {name}.</>,
     webFeatures: ["SEO Local", "Landing por servicio", "Landing por barrio", "Formularios optimizados", "WhatsApp", "Google Analytics"],
-    webImage: cityImages[slug]?.web,
     auditoriaFormType: `auditoria_${slug}`,
     howH2: <>¿Cómo conseguimos que aparezcas <span className="text-primary">por delante</span> de tu competencia en {name}?</>,
     howIntro: <>En Slocal apareces primero en Google Maps en {name} optimizando tu ficha, servicios, reseñas y contenido local. Google prioriza fichas activas, con reseñas recientes y coherencia entre ficha, web y citaciones locales de la ciudad.</>,

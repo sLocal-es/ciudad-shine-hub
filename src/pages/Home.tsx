@@ -6,8 +6,8 @@ import LogoMarquee from "@/components/LogoMarquee";
 import LeadMagnetForm from "@/components/forms/LeadMagnetForm";
 import ContactForm from "@/components/forms/ContactForm";
 import ElfsightReviews from "@/components/ElfsightReviews";
-import webHomeAsset from "@/assets/web_home.webp.asset.json";
 import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisual";
+import OptimizedWebsiteVisual from "@/components/OptimizedWebsiteVisual";
 
 const sectionCls = "bg-white py-24 md:py-32 border-t border-warm-fg/10";
 
@@ -157,12 +157,7 @@ const Home = () => {
           {/* Editorial split — Web */}
           <div className="mt-24 md:mt-32 grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center">
             <div>
-              <img
-                src={webHomeAsset.url}
-                alt="Web optimizada para negocios locales por Slocal"
-                className="w-full rounded-3xl border border-warm-fg/10 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)] object-cover"
-                loading="lazy"
-              />
+              <OptimizedWebsiteVisual alt="Ilustración de una página web optimizada para negocios locales por Slocal" />
             </div>
 
             <div>
