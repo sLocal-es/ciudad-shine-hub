@@ -100,6 +100,9 @@ export type SectorTemplateContent = {
   // FAQ
   faqs: { q: string; a: string }[];
 
+  // Verified reviews rendered as crawlable HTML before the JS widget
+  verifiedReviews?: { author: string; text: string }[];
+
   // Cities & other sectors
   citiesH2: ReactNode;
   citiesBody: ReactNode;
@@ -531,7 +534,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       </section>
       )}
 
-      <ElfsightReviews className={sectionCls} />
+      <ElfsightReviews className={sectionCls} verifiedReviews={c.verifiedReviews} />
 
       {/* SERVICIOS COMPLEMENTARIOS */}
       <section className={sectionCls}>
