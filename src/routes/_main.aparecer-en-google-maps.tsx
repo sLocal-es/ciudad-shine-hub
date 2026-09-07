@@ -1,6 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
-import AparecerEnGoogleMaps from "@/pages/AparecerEnGoogleMaps";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/_main/aparecer-en-google-maps")({
-  component: AparecerEnGoogleMaps,
+  beforeLoad: () => {
+    throw redirect({ to: "/ficha-google-mi-negocio", statusCode: 301 });
+  },
 });

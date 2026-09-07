@@ -14,33 +14,6 @@ export interface ServiceData {
 
 export const services: ServiceData[] = [
   {
-    slug: "aparecer-en-google-maps",
-    title: "Aparecer en Google Maps",
-    metaTitle: "Cómo Aparecer en Google Maps con Tu Negocio | slocal.es",
-    metaDesc: "Haz que tu negocio aparezca en Google Maps cuando tus clientes te buscan. Sistema de visibilidad local sin agencias. Desde €150/mes.",
-    h1: "Cómo Aparecer en Google Maps con Tu Negocio Local",
-    subtitle: "Si alguien busca tu servicio en Google Maps y no te encuentra, estás perdiendo clientes cada día. Nosotros lo solucionamos.",
-    imagePlaceholder: "FOTO: pantalla móvil con Google Maps y negocio destacado",
-    explainerH2: "¿Por qué tu negocio no aparece en Google Maps?",
-    explainerText: [
-      "Google Maps muestra los negocios que considera más relevantes para cada búsqueda. Si tu negocio no aparece, no es porque Google no sepa que existes — es porque tu ficha no está optimizada para competir. Categorías incorrectas, descripciones vacías, fotos antiguas o inexistentes, horarios sin actualizar… cada detalle cuenta.",
-      "El algoritmo de Google Maps prioriza tres factores: relevancia, distancia y prominencia. La distancia no la puedes controlar, pero la relevancia y la prominencia sí. Una ficha completa, con reseñas recientes y una web que la respalde, es lo que necesitas para aparecer en las primeras posiciones del mapa.",
-      "Muchos negocios crean su ficha de Google y la abandonan. Eso es peor que no tenerla, porque Google interpreta la inactividad como falta de relevancia. Un negocio que actualiza su ficha regularmente, responde reseñas y mantiene información coherente entre su web y su perfil tiene muchas más probabilidades de aparecer en el pack local de Google Maps."
-    ],
-    howCards: [
-      { title: "Optimizamos tu ficha de Google completa", body: "Revisamos y configuramos cada campo de tu Google Business Profile: categorías, atributos, descripción, fotos, horarios, zona de servicio. Todo lo que Google necesita para mostrarte en el mapa." },
-      { title: "Creamos coherencia web-ficha", body: "Google cruza la información de tu ficha con tu web. Si hay inconsistencias, te penaliza. Nos aseguramos de que tu nombre, dirección, teléfono y servicios coincidan en todas partes." },
-      { title: "Seguimiento mensual de posiciones en Maps", body: "Cada mes te mostramos en qué posición apareces en Google Maps para las búsquedas más importantes de tu negocio. Sin tecnicismos, con datos claros." },
-    ],
-    faqs: [
-      { q: "¿Cómo puedo aparecer en Google Maps con mi negocio?", a: "Necesitas crear y verificar tu ficha de Google Business Profile, optimizarla con toda la información relevante y mantenerla activa. Nosotros nos encargamos de todo el proceso para que tú no tengas que preocuparte." },
-      { q: "¿Cuánto tarda en aparecer mi negocio en Google Maps?", a: "La verificación de la ficha puede tardar entre 1 y 3 semanas. Una vez verificada, las mejoras de posición empiezan a notarse entre el mes 2 y el mes 4, dependiendo de la competencia en tu zona." },
-      { q: "¿Por qué mi negocio no aparece en Google Maps aunque esté registrado?", a: "Tener una ficha creada no garantiza visibilidad. Si está incompleta, sin reseñas o con información desactualizada, Google la considera irrelevante. La optimización continua es lo que marca la diferencia." },
-      { q: "¿Qué información necesita mi ficha para aparecer bien posicionado?", a: "Categorías correctas, descripción con palabras clave, fotos reales y recientes, horarios actualizados, zona de servicio definida y reseñas con respuestas. Todo esto influye en tu posición." },
-      { q: "¿Las reseñas de Google Maps afectan al posicionamiento?", a: "Sí, son uno de los factores más importantes. La cantidad, la frecuencia y la calidad de las reseñas influyen directamente en tu posición en el mapa. Responder a cada reseña también cuenta." },
-    ],
-  },
-  {
     slug: "seo-para-negocios-locales",
     title: "SEO para Negocios Locales",
     metaTitle: "SEO para Negocios Locales en España | slocal.es",
