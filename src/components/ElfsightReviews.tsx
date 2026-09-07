@@ -4,7 +4,18 @@ import { useEffect } from "react";
  * Sección de reseñas reales de Google (widget Elfsight).
  * El script de la plataforma se carga UNA sola vez en src/routes/__root.tsx.
  */
-const ElfsightReviews = ({ className = "" }: { className?: string }) => {
+type VerifiedReview = {
+  author: string;
+  text: string;
+};
+
+const ElfsightReviews = ({
+  className = "",
+  verifiedReviews = [],
+}: {
+  className?: string;
+  verifiedReviews?: VerifiedReview[];
+}) => {
   useEffect(() => {
     if (document.getElementById("elfsight-platform")) return;
 
@@ -25,6 +36,23 @@ const ElfsightReviews = ({ className = "" }: { className?: string }) => {
         <p className="text-base md:text-lg font-body font-light text-warm-fg/70 leading-relaxed max-w-3xl mx-auto mb-14">
           Reseñas verificadas directamente desde Google Business Profile
         </p>
+
+        {verifiedReviews.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 text-left">
+            {verifiedReviews.map((review) => (
+              <blockquote
+                key={review.author}
+                className="border border-warm-fg/10 rounded-2xl bg-white p-7 md:p-8"
+              >
+                <div className="text-primary text-lg mb-4" aria-label="5 de 5 estrellas">★★★★★</div>
+                <p className="font-body text-base text-warm-fg/75 leading-relaxed">“{review.text}”</p>
+                <footer className="mt-5 font-heading text-sm font-semibold text-warm-fg">
+                  {review.author} · Reseña de Google
+                </footer>
+              </blockquote>
+            ))}
+          </div>
+        )}
 
         <div
           className="elfsight-app-88d6019a-b34b-4cd2-b610-75a84de97f02"

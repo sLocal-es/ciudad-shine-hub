@@ -21,6 +21,7 @@ const sectorChips = [
 const CityMasterTemplate = ({ city }: { city: SeoLocalCity }) => {
   const { name, slug, population, competition, plazo } = city;
   const url = `https://slocal.es/seo-local-${slug}`;
+  const isValencia = slug === "valencia";
 
   const faqs = [
     { q: `¿Cuándo empezaré a ver resultados de SEO local en ${name}?`, a: `En ${name}, con una competencia digital ${competition.toLowerCase()}, los primeros resultados visibles llegan en ${plazo}: más visitas al perfil de Google Business Profile, más llamadas y mejora de posiciones en Google Maps. A partir del mes 6 el flujo se consolida.` },
@@ -38,14 +39,23 @@ const CityMasterTemplate = ({ city }: { city: SeoLocalCity }) => {
   ]};
   const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
   const serviceSchema = { "@context": "https://schema.org", "@type": "Service", name: `SEO Local en ${name}`, provider: { "@type": "LocalBusiness", name: "slocal.es", url: "https://slocal.es" }, areaServed: `${name}, España` };
-  const localBusinessSchema = { "@context": "https://schema.org", "@type": "LocalBusiness", name: "slocal.es", url, description: `SEO local para negocios en ${name}`, areaServed: `${name}, España`, priceRange: "€€", openingHoursSpecification: [
+  const localBusinessSchema = { "@context": "https://schema.org", "@type": "LocalBusiness", name: "slocal.es", url, description: `SEO local para negocios en ${name}`, areaServed: isValencia ? { "@type": "City", name: "Valencia" } : `${name}, España`, ...(isValencia ? {
+    telephone: "+34684780063",
+    sameAs: [
+      "https://www.facebook.com/slocal.es",
+      "https://www.instagram.com/slocal.es/?hl=es",
+      "https://www.linkedin.com/company/slocal-es/",
+    ],
+  } : {}), priceRange: "€€", openingHoursSpecification: [
     { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday"], opens: "09:00", closes: "20:00" },
     { "@type": "OpeningHoursSpecification", dayOfWeek: ["Friday"], opens: "09:00", closes: "14:00" },
   ]};
 
   const content: SectorTemplateContent = {
     seoTitle: `SEO Local en ${name} | Agencia SEO Local | slocal.es`,
-    seoDescription: `Agencia SEO Local en ${name}: Google Business Profile, Google Maps y posicionamiento local para que tus clientes te encuentren primero en Google.`,
+    seoDescription: isValencia
+      ? "Agencia SEO Local en Valencia: Google Maps, Google Business Profile y visibilidad en ChatGPT, Gemini y AI Overviews para negocios locales."
+      : `Agencia SEO Local en ${name}: Google Business Profile, Google Maps y posicionamiento local para que tus clientes te encuentren primero en Google.`,
     canonical: `/seo-local-${slug}`,
     sectorLabel: name,
     sectorSlug: `seo-local-${slug}`,
@@ -57,7 +67,7 @@ const CityMasterTemplate = ({ city }: { city: SeoLocalCity }) => {
     heroTrust: ["Google Partner", "Ficha de Google gestionada cada mes", "Auditoría inicial sin coste"],
     manifestoEyebrow: "— El punto de partida",
     manifestoH2: <>¿Cómo conseguir <span className="text-primary">más clientes</span> desde Google en {name}?</>,
-    manifestoBody: <>En Slocal conseguimos que más clientes contacten con tu negocio en {name} optimizando tu ficha de Google Business Profile y posicionando tu web para búsquedas locales de alta intención. {name} tiene {population} y una competencia digital {competition.toLowerCase()}: aparecer en el top 3 de Google Maps multiplica los contactos porque esos tres negocios se llevan la mayoría de las llamadas.</>,
+    manifestoBody: <>En Slocal conseguimos que más clientes contacten con tu negocio en {name} optimizando tu ficha de Google Business Profile y posicionando tu web para búsquedas locales de alta intención. {name} tiene {population} y una competencia digital {competition.toLowerCase()}: aparecer en el top 3 de Google Maps multiplica los contactos porque esos tres negocios se llevan la mayoría de las llamadas. {isValencia && <>La optimización también contempla cómo aparece y se entiende tu negocio en respuestas de ChatGPT, Gemini y AI Overviews, una línea de posicionamiento GEO que Slocal ya integra en su trabajo.</>}</>,
     gbpH3: <>Tu ficha de <span className="text-primary">Google Business Profile</span> genera llamadas en {name}</>,
     gbpBody: <>Google Business Profile es donde el cliente de {name} decide llamarte. Optimizamos tu ficha para aparecer antes que otros negocios de tu zona y convertir búsquedas en contactos reales.</>,
     gbpFeatures: ["Categorías optimizadas", "Zona de servicio por barrios", "Publicaciones semanales", "Gestión de reseñas", "Geolocalización", "Seguimiento de llamadas"],
@@ -92,10 +102,22 @@ const CityMasterTemplate = ({ city }: { city: SeoLocalCity }) => {
       { h: "Seguimos reforzando tu autoridad", d: "Reseñas, contenido y señales locales que Google valora especialmente." },
     ],
     mapTitle: <>Nuestra presencia local en <span className="text-primary">{name}</span></>,
-    mapSubtitle: <>Trabajamos con empresas de {name} para mejorar su visibilidad en Google Maps y aumentar las llamadas, solicitudes y clientes desde las búsquedas locales.</>,
+    mapSubtitle: isValencia
+      ? <>Ofrecemos cobertura en toda la ciudad de Valencia y su área metropolitana. Analizamos la demanda y la competencia de cada negocio por servicio y zona, sin afirmar una presencia física de Slocal en barrios donde no dispone de oficina abierta al público.</>
+      : <>Trabajamos con empresas de {name} para mejorar su visibilidad en Google Maps y aumentar las llamadas, solicitudes y clientes desde las búsquedas locales.</>,
     mapEmbed: city.mapEmbed,
     mapQuery: city.mapQuery,
     faqs,
+    verifiedReviews: isValencia ? [
+      {
+        author: "Angel Pérez",
+        text: "Si buscas una agencia SEO local, los recomiendo totalmente. Nos ayudaron a mejorar nuestra presencia en Google, optimizar la ficha de Google Business Profile y la web. Desde que trabajamos con ellos hemos notado muchas más consultas de clientes.",
+      },
+      {
+        author: "Kevin Jose",
+        text: "Estábamos buscando alguien que nos ayudara con el SEO local porque en Google nos costaba bastante aparecer cuando la gente buscaba inmobiliarias por la zona. Nos recomendaron SLOCAL y decidimos probar. La verdad es que estamos bastante contentos. Nos han ido explicando las cosas sin complicarnos demasiado y poco a poco hemos empezado a notar más movimiento y más consultas desde Google. El trato además ha sido muy bueno y siempre han estado pendientes. En nuestro caso, totalmente recomendables.",
+      },
+    ] : undefined,
     citiesH2: <>¿En qué otras <span className="text-primary">ciudades</span> trabaja Slocal?</>,
     citiesBody: <>Slocal trabaja con negocios locales en toda España, con clientes activos en Madrid, Barcelona, Valencia, Sevilla, Málaga, Zaragoza, Bilbao y Murcia.</>,
     otherSectorsH2: <>¿Con qué <span className="text-primary">sectores</span> trabaja Slocal en {name}?</>,
