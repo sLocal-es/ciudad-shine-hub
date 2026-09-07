@@ -1,3 +1,4 @@
+import ElfsightReviews from "@/components/ElfsightReviews";
 import { useState, ReactNode } from "react";
 import { Link } from "@/lib/router-compat";
 import SEOHead from "@/components/SEOHead";
@@ -203,16 +204,6 @@ const AuditoriaLeadForm = ({ formType }: { formType: string }) => {
     </form>
   );
 };
-
-/* ---------- Google-style reviews (identical to master) ---------- */
-const googleReviews = [
-  { name: "Antonio R.", business: "Fontanero en Vigo", rating: 5, date: "Hace 2 meses", text: "En tres meses pasamos de no aparecer en Google a recibir más llamadas de las que podíamos atender. La ficha de Google Business Profile y la web trabajan perfectamente juntas." },
-  { name: "María G.", business: "Clínica dental en Valencia", rating: 5, date: "Hace 1 mes", text: "Profesionales, transparentes y con resultados medibles. Cada mes recibimos un informe de llamadas y posiciones. El SEO local ha sido clave para crecer sin depender de anuncios." },
-  { name: "Luis M.", business: "Abogado en Madrid", rating: 5, date: "Hace 3 semanas", text: "Por fin una agencia que entiende el negocio local. No venden humo: auditan, proponen y ejecutan. Las primeras consultas llegaron en la segunda semana." },
-  { name: "Carmen P.", business: "Fisioterapeuta en Sevilla", rating: 5, date: "Hace 2 meses", text: "La ficha de Google quedó mucho más completa y empezaron a llegar pacientes nuevos de barrios que ni siquiera habíamos pensado. Muy recomendable." },
-  { name: "David S.", business: "Empresa de reformas en Málaga", rating: 5, date: "Hace 1 mes", text: "El retorno superó con creces lo esperado. Cada obra mediana nos cuesta cientos de euros, así que una sola llamada extra al mes ya rentabiliza el servicio." },
-  { name: "Elena T.", business: "Clínica estética en Barcelona", rating: 5, date: "Hace 3 semanas", text: "Nos ayudaron a entender qué buscaban realmente nuestros clientes. Ahora aparecemos por tratamientos concretos y la agenda se llena más rápido." },
-];
 
 /* ---------- Complementary services (identical to master) ---------- */
 const complementaryServices = [
@@ -529,58 +520,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       </section>
       )}
 
-      {/* RESEÑAS */}
-      <section className={sectionCls}>
-        <div className="container">
-          <div className="max-w-[1200px] mx-auto text-center">
-            <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Reseñas</p>
-            <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
-              ¿Por qué tantas <span className="text-primary">empresas</span> confían en Slocal?
-            </h2>
-            <p className="text-base md:text-lg font-body font-light text-warm-fg/70 leading-relaxed max-w-3xl mx-auto mb-14">
-              La mejor forma de demostrar nuestro trabajo es con la opinión de quienes ya han confiado en nosotros.
-            </p>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left mb-14">
-              {googleReviews.map((review) => (
-                <div
-                  key={review.name}
-                  className="flex flex-col bg-white rounded-2xl border border-warm-fg/10 p-6 shadow-[0_10px_40px_-30px_rgba(0,0,0,0.08)] transition-all duration-300 hover:shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)] hover:-translate-y-1"
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 rounded-full bg-warm-fg/10 flex items-center justify-center font-heading text-sm text-warm-fg">
-                      {review.name.charAt(0)}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="font-heading text-sm font-medium text-warm-fg truncate">{review.name}</p>
-                      <p className="text-xs text-warm-fg/60 font-body truncate">{review.business}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-1 mb-3">
-                    {Array.from({ length: review.rating }).map((_, i) => (
-                      <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#FABB05">
-                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                      </svg>
-                    ))}
-                    <span className="ml-2 text-xs text-warm-fg/50 font-body">{review.date}</span>
-                  </div>
-                  <p className="text-sm font-body text-warm-fg/80 leading-relaxed flex-1">{review.text}</p>
-                </div>
-              ))}
-            </div>
-
-            <button
-              onClick={() => {
-                const el = document.getElementById("contacto");
-                if (el) el.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="inline-flex items-center justify-center rounded-xl bg-primary text-primary-foreground font-heading text-sm px-8 py-4 hover:bg-primary/90 transition-colors"
-            >
-              Solicita tu auditoría gratuita
-            </button>
-          </div>
-        </div>
-      </section>
+      <ElfsightReviews className={sectionCls} />
 
       {/* SERVICIOS COMPLEMENTARIOS */}
       <section className={sectionCls}>
