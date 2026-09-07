@@ -346,7 +346,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
               </ul>
               {!c.hideCase && <a href="#caso-real" className="mt-10 inline-flex items-center gap-1 font-heading text-sm text-primary hover:gap-2 transition-all">
                 Ver caso real →
-              </a>
+              </a>}
             </div>
             <div className="order-first md:order-last">
               <GoogleBusinessProfileVisual
