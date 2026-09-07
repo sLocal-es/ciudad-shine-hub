@@ -12,6 +12,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
+import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisual";
 
 type Sector =
   | "Fontanero"
@@ -295,7 +296,7 @@ const AutonomosPage = () => {
               </ul>
             </div>
             <div className="order-first md:order-last">
-              <IllustrationPlaceholder label="Pack completo Slocal: ficha + web + SEO Local" />
+              <GoogleBusinessProfileVisual alt="Ilustración de Google Business Profile para autónomos" />
             </div>
           </div>
         </div>
