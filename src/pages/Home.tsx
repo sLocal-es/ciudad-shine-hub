@@ -5,8 +5,8 @@ import SectorHeroDark from "@/components/sector/SectorHeroDark";
 import LogoMarquee from "@/components/LogoMarquee";
 import LeadMagnetForm from "@/components/forms/LeadMagnetForm";
 import ContactForm from "@/components/forms/ContactForm";
-import gbpHomeAsset from "@/assets/gbp_home_despacho.webp.asset.json";
 import webHomeAsset from "@/assets/web_home.webp.asset.json";
+import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisual";
 
 const sectionCls = "bg-white py-24 md:py-32 border-t border-warm-fg/10";
 
@@ -148,12 +148,7 @@ const Home = () => {
               </ul>
             </div>
             <div className="order-first md:order-last">
-              <img
-                src={gbpHomeAsset.url}
-                alt="Ficha de Google Business Profile optimizada por Slocal"
-                className="w-full rounded-3xl border border-warm-fg/10 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)] object-cover"
-                loading="lazy"
-              />
+              <GoogleBusinessProfileVisual alt="Ilustración de una ficha de Google Business Profile optimizada por Slocal" />
             </div>
 
           </div>
