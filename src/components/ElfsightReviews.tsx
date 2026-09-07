@@ -1,9 +1,21 @@
+import { useEffect } from "react";
+
 /**
  * Sección de reseñas reales de Google (widget Elfsight).
  * El script de la plataforma se carga UNA sola vez en src/routes/__root.tsx.
  */
-const ElfsightReviews = ({ className = "" }: { className?: string }) => (
-  <section className={className}>
+const ElfsightReviews = ({ className = "" }: { className?: string }) => {
+  useEffect(() => {
+    if (document.getElementById("elfsight-platform")) return;
+
+    const script = document.createElement("script");
+    script.id = "elfsight-platform";
+    script.src = "https://elfsightcdn.com/platform.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
+  return <section className={className}>
     <div className="container">
       <div className="max-w-[1200px] mx-auto text-center">
         <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Reseñas</p>
@@ -30,7 +42,7 @@ const ElfsightReviews = ({ className = "" }: { className?: string }) => (
         </button>
       </div>
     </div>
-  </section>
-);
+  </section>;
+};
 
 export default ElfsightReviews;

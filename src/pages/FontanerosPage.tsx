@@ -7,9 +7,9 @@ import SectorHeroDark from "@/components/sector/SectorHeroDark";
 import LogoMarquee from "@/components/LogoMarquee";
 import { sendForm } from "@/lib/sendForm";
 import { toast } from "@/hooks/use-toast";
-import casoAntesImg from "@/assets/caso-antes-vigo.webp.asset.json";
-import casoIntermedioImg from "@/assets/situacion-intermedia-caso-fontanero.webp.asset.json";
-import casoFinalImg from "@/assets/situacion-final-vigo-fontaneria.webp.asset.json";
+import casoAntesImg from "@/assets/caso-exito-antes.webp.asset.json";
+import casoIntermedioImg from "@/assets/caso-exito-estrategia.webp.asset.json";
+import casoFinalImg from "@/assets/caso-exito-resultado.webp.asset.json";
 import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisual";
 import OptimizedWebsiteVisual from "@/components/OptimizedWebsiteVisual";
 
@@ -561,7 +561,7 @@ const FontanerosPage = () => {
                     <img
                       src={card.image}
                       alt={card.imageAlt}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-contain"
                       loading="lazy"
                     />
                   </div>
