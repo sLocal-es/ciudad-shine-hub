@@ -92,7 +92,6 @@ const CityMasterTemplate = ({ city }: { city: SeoLocalCity }) => {
       { title: "RESULTADO", text: `Top 3 en Google Maps de ${name}, aumento constante de llamadas y menos dependencia de publicidad de pago.`, label: `Resultados: top 3 en Google Maps de ${name} y agenda llena` },
     ],
     caseKpis: [{ k: "x3", l: "Contactos al mes" }, { k: "TOP 3", l: "Google Maps" }, { k: "x9", l: "Retorno de la inversión" }],
-    hideCase: isValencia,
     monthlyH2: <>¿Por qué el SEO Local en {name} necesita trabajo <span className="text-primary">mes a mes</span>?</>,
     monthlyBody: <>Porque Google no es una fotografía, es una competición continua. En {name} reforzamos cada mes tu ficha, reseñas y contenido para mantener las primeras posiciones.</>,
     monthlyReasons: [
