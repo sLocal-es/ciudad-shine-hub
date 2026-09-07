@@ -10,6 +10,7 @@ import {
   type ExtraService,
 } from "@/components/servicios/ServiciosUI";
 import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisual";
+import OptimizedWebsiteVisual from "@/components/OptimizedWebsiteVisual";
 
 const sectionCls = "bg-white py-24 md:py-32 border-t border-warm-fg/10";
 
@@ -367,10 +368,7 @@ const Servicios = () => {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
             <Reveal>
-              <IllustrationPlaceholder
-                label="Ilustración isométrica: página web conectada con la ficha de Google Maps del negocio"
-                aspect="aspect-[4/3]"
-              />
+              <OptimizedWebsiteVisual alt="Ilustración de una página web conectada con la ficha de Google Maps del negocio" />
             </Reveal>
             <Reveal delay={110}>
               <Eyebrow>— Nuestro método</Eyebrow>

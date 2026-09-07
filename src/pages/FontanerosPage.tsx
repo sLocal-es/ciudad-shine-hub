@@ -11,6 +11,7 @@ import casoAntesImg from "@/assets/caso-antes-vigo.webp.asset.json";
 import casoIntermedioImg from "@/assets/situacion-intermedia-caso-fontanero.webp.asset.json";
 import casoFinalImg from "@/assets/situacion-final-vigo-fontaneria.webp.asset.json";
 import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisual";
+import OptimizedWebsiteVisual from "@/components/OptimizedWebsiteVisual";
 
 
 const AuditoriaLeadForm = () => {
@@ -73,14 +74,7 @@ const AuditoriaLeadForm = () => {
 
 
 const WebSkeletonMockup = () => (
-  <div className="w-full aspect-[1/1] rounded-3xl overflow-hidden bg-white border border-warm-fg/10 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)]">
-    <img
-      src="/images/seo-fontaneros/web-fontaneros.webp"
-      alt="Web optimizada de un fontanero con formulario, servicios y métricas de conversión"
-      className="w-full h-full object-cover"
-      loading="lazy"
-    />
-  </div>
+  <OptimizedWebsiteVisual alt="Ilustración de una página web optimizada para una empresa de fontanería" />
 );
 
 
