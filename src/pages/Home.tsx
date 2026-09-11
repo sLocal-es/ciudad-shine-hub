@@ -8,6 +8,7 @@ import ContactForm from "@/components/forms/ContactForm";
 import ElfsightReviews from "@/components/ElfsightReviews";
 import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisual";
 import OptimizedWebsiteVisual from "@/components/OptimizedWebsiteVisual";
+import queEsSeoLocalAsset from "@/assets/que-es-seo-local.webp.asset.json";
 
 const sectionCls = "bg-white py-24 md:py-32 border-t border-warm-fg/10";
 
