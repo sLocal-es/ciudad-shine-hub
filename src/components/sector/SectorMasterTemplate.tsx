@@ -89,6 +89,9 @@ export type SectorTemplateContent = {
   // Optional CTA block rendered after the main services section and before the audit form
   servicesCta?: ReactNode;
 
+  // Optional "why us" authority block rendered after "Cómo trabajamos" and before the case study
+  whyUsSection?: ReactNode;
+
   // Monthly reasons block
   monthlyH2: ReactNode;
   monthlyBody: ReactNode;
