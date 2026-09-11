@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import SectorMasterTemplate, { SectorTemplateContent } from "@/components/sector/SectorMasterTemplate";
 import { SeoLocalCity } from "@/data/seoLocalCities";
 
@@ -125,6 +126,7 @@ const CityMasterTemplate = ({ city, servicesCta }: { city: SeoLocalCity; service
     otherSectors: sectorChips,
     finalCtaTitle: `¿Quieres que tu negocio en ${name} reciba más contactos gracias a Google?`,
     jsonLd: [breadcrumbSchema, faqSchema, serviceSchema, localBusinessSchema],
+    servicesCta,
   };
 
   return <SectorMasterTemplate content={content} />;
