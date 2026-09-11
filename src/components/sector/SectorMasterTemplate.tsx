@@ -492,6 +492,8 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
 
       {c.extraSection}
 
+      {c.whyUsSection}
+
       {/* CASO REAL */}
       {!c.hideCase && (
       <section id="caso-real" className={sectionCls}>
