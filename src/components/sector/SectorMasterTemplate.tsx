@@ -86,6 +86,9 @@ export type SectorTemplateContent = {
   // Optional editorial block rendered right after "Cómo trabajamos"
   extraSection?: ReactNode;
 
+  // Optional CTA block rendered after the main services section and before the audit form
+  servicesCta?: ReactNode;
+
   // Monthly reasons block
   monthlyH2: ReactNode;
   monthlyBody: ReactNode;
@@ -390,6 +393,8 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
           </div>
         </div>
       </section>
+
+      {c.servicesCta}
 
       {/* CTA AUDITORÍA GRATUITA */}
       <section className="bg-white py-12 md:py-20">

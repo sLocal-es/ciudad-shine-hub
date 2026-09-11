@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import SectorMasterTemplate, { SectorTemplateContent } from "@/components/sector/SectorMasterTemplate";
 import { SeoLocalCity } from "@/data/seoLocalCities";
 
@@ -18,7 +19,7 @@ const sectorChips = [
   { label: "SEO para empresas de reformas", slug: "seo-para-reformas" },
 ];
 
-const CityMasterTemplate = ({ city }: { city: SeoLocalCity }) => {
+const CityMasterTemplate = ({ city, servicesCta }: { city: SeoLocalCity; servicesCta?: ReactNode }) => {
   const { name, slug, population, competition, plazo } = city;
   const url = `https://slocal.es/seo-local-${slug}`;
   const isValencia = slug === "valencia";
@@ -125,6 +126,7 @@ const CityMasterTemplate = ({ city }: { city: SeoLocalCity }) => {
     otherSectors: sectorChips,
     finalCtaTitle: `¿Quieres que tu negocio en ${name} reciba más contactos gracias a Google?`,
     jsonLd: [breadcrumbSchema, faqSchema, serviceSchema, localBusinessSchema],
+    servicesCta,
   };
 
   return <SectorMasterTemplate content={content} />;
