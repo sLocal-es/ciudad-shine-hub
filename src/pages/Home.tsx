@@ -106,6 +106,17 @@ const Home = () => {
         curveClass="bg-white"
       />
 
+
+      {/* MARQUEE */}
+      <section className="bg-white border-t border-warm-fg/10">
+        <div className="container">
+          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary py-6 text-center">
+            — Herramientas con las que trabajamos
+          </p>
+        </div>
+        <LogoMarquee />
+      </section>
+
       {/* ¿QUÉ ES EL SEO LOCAL? */}
       <section className={sectionCls}>
         <div className="container">
@@ -129,31 +140,12 @@ const Home = () => {
               <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-5xl leading-[1.1] tracking-tight mb-6">
                 ¿Qué es el SEO local?
               </h2>
-              <p className="text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed mb-8">
-                El SEO local es la estrategia para aparecer en resultados geolocalizados como el Mapa de Google, las búsquedas de "cerca de mí" y el Local Pack. Su objetivo no es solo conseguir visitas: es atraer clientes reales de tu zona que buscan exactamente lo que ofreces.
+              <p className="text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed">
+                El SEO local es la estrategia de posicionamiento orgánico que hace que un negocio aparezca en resultados geolocalizados de Google: el Mapa, el Local Pack y las búsquedas con intención de "cerca de mí". Se compone de cuatro pilares principales: una ficha de Google Business Profile completa y activa, reseñas reales y respondidas, citaciones consistentes del nombre, dirección y teléfono (NAP) en directorios relevantes, y contenido de la web geolocalizado por ciudad, barrio y servicio. A diferencia del SEO tradicional, que persigue posicionar términos nacionales o genéricos sin ubicación, el SEO local vincula cada búsqueda a una dirección física y a un área de servicio concreta, de modo que quien busca recibe una respuesta local y puede contactar o visitar el negocio.
               </p>
-              <Link
-                to="/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio"
-                className="inline-flex items-center gap-2 font-heading text-sm tracking-wide text-primary hover:text-primary/80 transition-colors"
-              >
-                Leer la guía completa
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </Link>
             </div>
           </div>
         </div>
-      </section>
-
-      {/* MARQUEE */}
-      <section className="bg-white border-t border-warm-fg/10">
-        <div className="container">
-          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary py-6 text-center">
-            — Herramientas con las que trabajamos
-          </p>
-        </div>
-        <LogoMarquee />
       </section>
 
       {/* MANIFIESTO */}
