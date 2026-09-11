@@ -117,6 +117,37 @@ const Home = () => {
         <LogoMarquee />
       </section>
 
+      {/* ¿QUÉ ES EL SEO LOCAL? */}
+      <section className={sectionCls}>
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 lg:gap-20 items-center">
+            <div className="md:col-span-7">
+              <div
+                className="w-full aspect-[4/3] rounded-3xl border-2 border-dashed border-warm-fg/20 bg-[hsl(var(--warm-bg))] flex flex-col items-center justify-center gap-3 p-8 text-center"
+                role="img"
+                aria-label="Mockup de una ficha de Google Business Profile optimizada"
+              >
+                <span className="font-heading text-[10px] tracking-[0.28em] uppercase text-warm-fg/50">
+                  ILLUSTRATION PLACEHOLDER
+                </span>
+                <span className="font-body text-[13px] text-warm-fg/45 max-w-[28ch]">
+                  Mockup de una ficha de Google Business Profile
+                </span>
+              </div>
+            </div>
+            <div className="md:col-span-5">
+              <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-5">— Concepto clave</p>
+              <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-5xl leading-[1.1] tracking-tight mb-6">
+                ¿Qué es el SEO local?
+              </h2>
+              <p className="text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed">
+                El SEO local es la estrategia de posicionamiento orgánico que hace que un negocio aparezca en resultados geolocalizados de Google: el Mapa, el Local Pack y las búsquedas con intención de "cerca de mí". Se compone de cuatro pilares principales: una ficha de Google Business Profile completa y activa, reseñas reales y respondidas, citaciones consistentes del nombre, dirección y teléfono (NAP) en directorios relevantes, y contenido de la web geolocalizado por ciudad, barrio y servicio. A diferencia del SEO tradicional, que persigue posicionar términos nacionales o genéricos sin ubicación, el SEO local vincula cada búsqueda a una dirección física y a un área de servicio concreta, de modo que quien busca recibe una respuesta local y puede contactar o visitar el negocio.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* MANIFIESTO */}
       <section className={sectionCls}>
         <div className="container">
