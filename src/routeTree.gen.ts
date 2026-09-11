@@ -47,6 +47,7 @@ import { Route as MainServiciosRouteImport } from './routes/_main.servicios'
 import { Route as MainBlogIndexRouteImport } from './routes/_main.blog.index'
 import { Route as MainBlogSlugRouteImport } from './routes/_main.blog.$slug'
 import { Route as MainBlogSeoLocalMejorEstrategiaMarketingNuevoNegocioRouteImport } from './routes/_main.blog.seo-local-mejor-estrategia-marketing-nuevo-negocio'
+import { Route as ApiPublicSubmitIndexnowRouteImport } from './routes/api/public/submit-indexnow'
 
 const MainRoute = MainRouteImport.update({
   id: '/_main',
@@ -245,6 +246,11 @@ const MainBlogSeoLocalMejorEstrategiaMarketingNuevoNegocioRoute =
     path: '/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio',
     getParentRoute: () => MainRoute,
   } as any)
+const ApiPublicSubmitIndexnowRoute = ApiPublicSubmitIndexnowRouteImport.update({
+  id: '/api/public/submit-indexnow',
+  path: '/api/public/submit-indexnow',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof MainIndexRoute
@@ -283,6 +289,7 @@ export interface FileRoutesByFullPath {
   '/servicios': typeof MainServiciosRoute
   '/blog/$slug': typeof MainBlogSlugRoute
   '/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio': typeof MainBlogSeoLocalMejorEstrategiaMarketingNuevoNegocioRoute
+  '/api/public/submit-indexnow': typeof ApiPublicSubmitIndexnowRoute
   '/blog/': typeof MainBlogIndexRoute
 }
 export interface FileRoutesByTo {
@@ -322,6 +329,7 @@ export interface FileRoutesByTo {
   '/': typeof MainIndexRoute
   '/blog/$slug': typeof MainBlogSlugRoute
   '/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio': typeof MainBlogSeoLocalMejorEstrategiaMarketingNuevoNegocioRoute
+  '/api/public/submit-indexnow': typeof ApiPublicSubmitIndexnowRoute
   '/blog': typeof MainBlogIndexRoute
 }
 export interface FileRoutesById {
@@ -363,6 +371,7 @@ export interface FileRoutesById {
   '/_main/': typeof MainIndexRoute
   '/_main/blog/$slug': typeof MainBlogSlugRoute
   '/_main/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio': typeof MainBlogSeoLocalMejorEstrategiaMarketingNuevoNegocioRoute
+  '/api/public/submit-indexnow': typeof ApiPublicSubmitIndexnowRoute
   '/_main/blog/': typeof MainBlogIndexRoute
 }
 export interface FileRouteTypes {
@@ -404,6 +413,7 @@ export interface FileRouteTypes {
     | '/servicios'
     | '/blog/$slug'
     | '/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio'
+    | '/api/public/submit-indexnow'
     | '/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -443,6 +453,7 @@ export interface FileRouteTypes {
     | '/'
     | '/blog/$slug'
     | '/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio'
+    | '/api/public/submit-indexnow'
     | '/blog'
   id:
     | '__root__'
@@ -483,12 +494,14 @@ export interface FileRouteTypes {
     | '/_main/'
     | '/_main/blog/$slug'
     | '/_main/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio'
+    | '/api/public/submit-indexnow'
     | '/_main/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   MainRoute: typeof MainRouteWithChildren
   SistemaRoute: typeof SistemaRoute
+  ApiPublicSubmitIndexnowRoute: typeof ApiPublicSubmitIndexnowRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -759,6 +772,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MainBlogSeoLocalMejorEstrategiaMarketingNuevoNegocioRouteImport
       parentRoute: typeof MainRoute
     }
+    '/api/public/submit-indexnow': {
+      id: '/api/public/submit-indexnow'
+      path: '/api/public/submit-indexnow'
+      fullPath: '/api/public/submit-indexnow'
+      preLoaderRoute: typeof ApiPublicSubmitIndexnowRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -846,6 +866,7 @@ const MainRouteWithChildren = MainRoute._addFileChildren(MainRouteChildren)
 const rootRouteChildren: RootRouteChildren = {
   MainRoute: MainRouteWithChildren,
   SistemaRoute: SistemaRoute,
+  ApiPublicSubmitIndexnowRoute: ApiPublicSubmitIndexnowRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
