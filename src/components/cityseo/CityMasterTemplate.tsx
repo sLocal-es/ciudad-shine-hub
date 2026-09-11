@@ -19,7 +19,7 @@ const sectorChips = [
   { label: "SEO para empresas de reformas", slug: "seo-para-reformas" },
 ];
 
-const CityMasterTemplate = ({ city, servicesCta }: { city: SeoLocalCity; servicesCta?: ReactNode }) => {
+const CityMasterTemplate = ({ city, servicesCta, whyUsSection }: { city: SeoLocalCity; servicesCta?: ReactNode; whyUsSection?: ReactNode }) => {
   const { name, slug, population, competition, plazo } = city;
   const url = `https://slocal.es/seo-local-${slug}`;
   const isValencia = slug === "valencia";
@@ -127,6 +127,7 @@ const CityMasterTemplate = ({ city, servicesCta }: { city: SeoLocalCity; service
     finalCtaTitle: `¿Quieres que tu negocio en ${name} reciba más contactos gracias a Google?`,
     jsonLd: [breadcrumbSchema, faqSchema, serviceSchema, localBusinessSchema],
     servicesCta,
+    whyUsSection,
   };
 
   return <SectorMasterTemplate content={content} />;
