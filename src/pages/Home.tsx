@@ -8,6 +8,7 @@ import ContactForm from "@/components/forms/ContactForm";
 import ElfsightReviews from "@/components/ElfsightReviews";
 import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisual";
 import OptimizedWebsiteVisual from "@/components/OptimizedWebsiteVisual";
+import queEsSeoLocalAsset from "@/assets/que-es-seo-local.webp.asset.json";
 
 const sectionCls = "bg-white py-24 md:py-32 border-t border-warm-fg/10";
 
@@ -122,17 +123,14 @@ const Home = () => {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 lg:gap-20 items-center">
             <div className="md:col-span-7">
-              <div
-                className="w-full aspect-[4/3] rounded-3xl border-2 border-dashed border-warm-fg/20 bg-[hsl(var(--warm-bg))] flex flex-col items-center justify-center gap-3 p-8 text-center"
-                role="img"
-                aria-label="Mockup de una ficha de Google Business Profile optimizada"
-              >
-                <span className="font-heading text-[10px] tracking-[0.28em] uppercase text-warm-fg/50">
-                  ILLUSTRATION PLACEHOLDER
-                </span>
-                <span className="font-body text-[13px] text-warm-fg/45 max-w-[28ch]">
-                  Mockup de una ficha de Google Business Profile
-                </span>
+              <div className="w-full rounded-3xl overflow-hidden border border-warm-fg/10 bg-white shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)]">
+                <img
+                  src={queEsSeoLocalAsset.url}
+                  alt="Mockup de una ficha de Google Business Profile optimizada"
+                  className="block w-full h-auto object-contain"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
             </div>
             <div className="md:col-span-5">
