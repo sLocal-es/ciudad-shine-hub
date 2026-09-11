@@ -127,6 +127,7 @@ const CityMasterTemplate = ({ city, servicesCta, whyUsSection }: { city: SeoLoca
     finalCtaTitle: `¿Quieres que tu negocio en ${name} reciba más contactos gracias a Google?`,
     jsonLd: [breadcrumbSchema, faqSchema, serviceSchema, localBusinessSchema],
     servicesCta,
+    whyUsSection,
   };
 
   return <SectorMasterTemplate content={content} />;
