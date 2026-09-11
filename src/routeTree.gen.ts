@@ -44,6 +44,7 @@ import { Route as MainSeoParaPsicologosRouteImport } from './routes/_main.seo-pa
 import { Route as MainSeoParaReformasRouteImport } from './routes/_main.seo-para-reformas'
 import { Route as MainSeoParaYogaRouteImport } from './routes/_main.seo-para-yoga'
 import { Route as MainServiciosRouteImport } from './routes/_main.servicios'
+import { Route as AdminIndexnowRouteImport } from './routes/admin.indexnow'
 import { Route as MainBlogIndexRouteImport } from './routes/_main.blog.index'
 import { Route as MainBlogSlugRouteImport } from './routes/_main.blog.$slug'
 import { Route as MainBlogSeoLocalMejorEstrategiaMarketingNuevoNegocioRouteImport } from './routes/_main.blog.seo-local-mejor-estrategia-marketing-nuevo-negocio'
@@ -230,6 +231,11 @@ const MainServiciosRoute = MainServiciosRouteImport.update({
   path: '/servicios',
   getParentRoute: () => MainRoute,
 } as any)
+const AdminIndexnowRoute = AdminIndexnowRouteImport.update({
+  id: '/admin/indexnow',
+  path: '/admin/indexnow',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MainBlogIndexRoute = MainBlogIndexRouteImport.update({
   id: '/blog/',
   path: '/blog/',
@@ -287,6 +293,7 @@ export interface FileRoutesByFullPath {
   '/seo-para-reformas': typeof MainSeoParaReformasRoute
   '/seo-para-yoga': typeof MainSeoParaYogaRoute
   '/servicios': typeof MainServiciosRoute
+  '/admin/indexnow': typeof AdminIndexnowRoute
   '/blog/$slug': typeof MainBlogSlugRoute
   '/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio': typeof MainBlogSeoLocalMejorEstrategiaMarketingNuevoNegocioRoute
   '/api/public/submit-indexnow': typeof ApiPublicSubmitIndexnowRoute
@@ -326,6 +333,7 @@ export interface FileRoutesByTo {
   '/seo-para-reformas': typeof MainSeoParaReformasRoute
   '/seo-para-yoga': typeof MainSeoParaYogaRoute
   '/servicios': typeof MainServiciosRoute
+  '/admin/indexnow': typeof AdminIndexnowRoute
   '/': typeof MainIndexRoute
   '/blog/$slug': typeof MainBlogSlugRoute
   '/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio': typeof MainBlogSeoLocalMejorEstrategiaMarketingNuevoNegocioRoute
@@ -368,6 +376,7 @@ export interface FileRoutesById {
   '/_main/seo-para-reformas': typeof MainSeoParaReformasRoute
   '/_main/seo-para-yoga': typeof MainSeoParaYogaRoute
   '/_main/servicios': typeof MainServiciosRoute
+  '/admin/indexnow': typeof AdminIndexnowRoute
   '/_main/': typeof MainIndexRoute
   '/_main/blog/$slug': typeof MainBlogSlugRoute
   '/_main/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio': typeof MainBlogSeoLocalMejorEstrategiaMarketingNuevoNegocioRoute
@@ -411,6 +420,7 @@ export interface FileRouteTypes {
     | '/seo-para-reformas'
     | '/seo-para-yoga'
     | '/servicios'
+    | '/admin/indexnow'
     | '/blog/$slug'
     | '/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio'
     | '/api/public/submit-indexnow'
@@ -450,6 +460,7 @@ export interface FileRouteTypes {
     | '/seo-para-reformas'
     | '/seo-para-yoga'
     | '/servicios'
+    | '/admin/indexnow'
     | '/'
     | '/blog/$slug'
     | '/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio'
@@ -491,6 +502,7 @@ export interface FileRouteTypes {
     | '/_main/seo-para-reformas'
     | '/_main/seo-para-yoga'
     | '/_main/servicios'
+    | '/admin/indexnow'
     | '/_main/'
     | '/_main/blog/$slug'
     | '/_main/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio'
@@ -501,6 +513,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   MainRoute: typeof MainRouteWithChildren
   SistemaRoute: typeof SistemaRoute
+  AdminIndexnowRoute: typeof AdminIndexnowRoute
   ApiPublicSubmitIndexnowRoute: typeof ApiPublicSubmitIndexnowRoute
 }
 
@@ -751,6 +764,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MainServiciosRouteImport
       parentRoute: typeof MainRoute
     }
+    '/admin/indexnow': {
+      id: '/admin/indexnow'
+      path: '/admin/indexnow'
+      fullPath: '/admin/indexnow'
+      preLoaderRoute: typeof AdminIndexnowRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_main/blog/': {
       id: '/_main/blog/'
       path: '/blog'
@@ -866,6 +886,7 @@ const MainRouteWithChildren = MainRoute._addFileChildren(MainRouteChildren)
 const rootRouteChildren: RootRouteChildren = {
   MainRoute: MainRouteWithChildren,
   SistemaRoute: SistemaRoute,
+  AdminIndexnowRoute: AdminIndexnowRoute,
   ApiPublicSubmitIndexnowRoute: ApiPublicSubmitIndexnowRoute,
 }
 export const routeTree = rootRouteImport
