@@ -24,7 +24,7 @@ export default function PromoBanner() {
           ⚡ Setup completo a €297 + IVA — solo hasta el lunes 28 de abril
         </span>
         <a
-          href="https://wa.me/34684780063"
+          href="https://wa.me/34644147310"
           className="underline font-medium hover:opacity-80 transition-opacity whitespace-nowrap"
         >
           Quiero este precio →

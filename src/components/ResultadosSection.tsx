@@ -7,7 +7,7 @@ import logoMva from "@/assets/casos/logo-mva.png";
 import logoFontaneros from "@/assets/casos/logo-fontaneros.png";
 
 const WA_URL =
-  "https://wa.me/34684780063?text=Hola%2C%20quiero%20que%20Google%20me%20mande%20clientes";
+  "https://wa.me/34644147310?text=Hola%2C%20quiero%20que%20Google%20me%20mande%20clientes";
 
 /* ------------------------------------------------------------------ */
 /*  Types                                                              */
