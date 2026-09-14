@@ -139,7 +139,30 @@ const Home = () => {
                 ¿Qué es el SEO local?
               </h2>
               <p className="text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed">
-                El SEO local es la estrategia de posicionamiento orgánico que hace que un negocio aparezca en resultados geolocalizados de Google: el Mapa, el Local Pack y las búsquedas con intención de "cerca de mí". Se compone de cuatro pilares principales: una ficha de Google Business Profile completa y activa, reseñas reales y respondidas, citaciones consistentes del nombre, dirección y teléfono (NAP) en directorios relevantes, y contenido de la web geolocalizado por ciudad, barrio y servicio. A diferencia del SEO tradicional, que persigue posicionar términos nacionales o genéricos sin ubicación, el SEO local vincula cada búsqueda a una dirección física y a un área de servicio concreta, de modo que quien busca recibe una respuesta local y puede contactar o visitar el negocio.
+                El SEO local es la estrategia de posicionamiento orgánico que hace que un negocio aparezca en resultados geolocalizados de Google: el Mapa, el Local Pack y las búsquedas con intención de "cerca de mí".
+              </p>
+              <p className="mt-4 text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed">
+                Se compone de cuatro pilares principales:
+              </p>
+              <ul className="mt-5 space-y-3">
+                {[
+                  { title: "Ficha de Google Business Profile", desc: "completa, activa y optimizada por categorías y servicios" },
+                  { title: "Reseñas reales y respondidas", desc: "la prueba social que decide la llamada" },
+                  { title: "Citaciones NAP consistentes", desc: "nombre, dirección y teléfono idénticos en directorios relevantes" },
+                  { title: "Contenido geolocalizado", desc: "páginas por ciudad, barrio y servicio" },
+                ].map((item) => (
+                  <li key={item.title} className="flex items-start gap-3">
+                    <svg width="14" height="14" viewBox="0 0 20 20" fill="none" className="text-primary shrink-0 mt-1.5" aria-hidden>
+                      <path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <span className="font-body text-[15px] md:text-base text-warm-fg/85 leading-snug">
+                      <strong className="font-semibold text-warm-fg">{item.title}</strong>: {item.desc}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-5 text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed">
+                A diferencia del SEO tradicional, que persigue posicionar términos nacionales o genéricos sin ubicación, el SEO local vincula cada búsqueda a una dirección física y a un área de servicio concreta: quien busca recibe una respuesta local y puede contactar o visitar el negocio.
               </p>
             </div>
           </div>
