@@ -54,7 +54,7 @@ export default function PromoPopup() {
         </div>
 
         <a
-          href="https://wa.me/34684780063"
+          href="https://wa.me/34644147310"
           className="block w-full text-center bg-primary text-primary-foreground font-heading font-medium py-4 rounded-lg hover:bg-primary/90 transition-colors mb-3"
         >
           Quiero aprovechar este precio →

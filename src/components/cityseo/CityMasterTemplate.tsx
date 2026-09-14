@@ -41,7 +41,7 @@ const CityMasterTemplate = ({ city, servicesCta, whyUsSection }: { city: SeoLoca
   const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
   const serviceSchema = { "@context": "https://schema.org", "@type": "Service", name: `SEO Local en ${name}`, provider: { "@type": "LocalBusiness", name: "slocal.es", url: "https://slocal.es" }, areaServed: `${name}, España` };
   const localBusinessSchema = { "@context": "https://schema.org", "@type": "LocalBusiness", name: "slocal.es", url, description: `SEO local para negocios en ${name}`, areaServed: isValencia ? { "@type": "City", name: "Valencia" } : `${name}, España`, ...(isValencia ? {
-    telephone: "+34684780063",
+    telephone: "+34644147310",
     sameAs: [
       "https://www.facebook.com/slocal.es",
       "https://www.instagram.com/slocal.es/?hl=es",

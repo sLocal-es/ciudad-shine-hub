@@ -6,7 +6,7 @@ import BreadcrumbNav from "@/components/BreadcrumbNav";
 import FAQSection from "@/components/FAQSection";
 
 const WA_URL =
-  "https://wa.me/34684780063?text=Hola%2C%20quiero%20SEO%20local%20para%20mi%20negocio";
+  "https://wa.me/34644147310?text=Hola%2C%20quiero%20SEO%20local%20para%20mi%20negocio";
 
 const TITLE = "SEO para Negocios Locales";
 const PATH = "/seo-para-negocios-locales";

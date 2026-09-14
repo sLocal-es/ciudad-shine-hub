@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/accordion";
 
 const WA_URL =
-  "https://wa.me/34684780063?text=Hola%2C%20quiero%20que%20Google%20me%20mande%20clientes";
+  "https://wa.me/34644147310?text=Hola%2C%20quiero%20que%20Google%20me%20mande%20clientes";
 
 const Sistema = () => {
   return (
