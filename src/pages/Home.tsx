@@ -6,32 +6,106 @@ import LogoMarquee from "@/components/LogoMarquee";
 import LeadMagnetForm from "@/components/forms/LeadMagnetForm";
 import ContactForm from "@/components/forms/ContactForm";
 import ElfsightReviews from "@/components/ElfsightReviews";
-import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisual";
-import OptimizedWebsiteVisual from "@/components/OptimizedWebsiteVisual";
+import { ServiceCard, type ExtraService } from "@/components/servicios/ServiciosUI";
 import queEsSeoLocalAsset from "@/assets/que-es-seo-local.webp.asset.json";
 
 const sectionCls = "bg-white py-24 md:py-32 border-t border-warm-fg/10";
 
-const IllustrationPlaceholder = ({
-  label,
-  aspect = "aspect-[1/1]",
-  className = "",
-}: {
-  label: string;
-  aspect?: string;
-  className?: string;
-}) => (
-  <div
-    className={`w-full ${aspect} rounded-3xl border-2 border-dashed border-warm-fg/20 bg-[hsl(var(--warm-bg))] flex flex-col items-center justify-center gap-3 p-8 text-center ${className}`}
-    role="img"
-    aria-label={label}
-  >
-    <span className="font-heading text-[10px] tracking-[0.28em] uppercase text-warm-fg/50">
-      Illustration placeholder
-    </span>
-    <span className="font-body text-[13px] text-warm-fg/45 max-w-[28ch]">{label}</span>
-  </div>
+const iconProps = {
+  width: 20,
+  height: 20,
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 1.8,
+  strokeLinecap: "round" as const,
+  strokeLinejoin: "round" as const,
+};
+
+const IconSpark = () => (
+  <svg {...iconProps} aria-hidden>
+    <path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z" />
+    <path d="M18.5 16.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7.7-1.8z" />
+  </svg>
 );
+
+const IconStar = () => (
+  <svg {...iconProps} aria-hidden>
+    <path d="M12 4l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 9.7l5.4-.8L12 4z" />
+  </svg>
+);
+
+const IconTarget = () => (
+  <svg {...iconProps} aria-hidden>
+    <circle cx="12" cy="12" r="8" />
+    <circle cx="12" cy="12" r="3.5" />
+    <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
+  </svg>
+);
+
+const complementaryServices: ExtraService[] = [
+  {
+    id: "ads",
+    title: <><span className="text-primary">Google</span> Ads</>,
+    illustration: "Ilustración isométrica: anuncio de búsqueda de Google generando llamadas",
+    icon: <IconTarget />,
+    description: "Empieza a recibir llamadas desde el primer día mientras el SEO Local sigue creciendo.",
+    features: ["Campañas de búsqueda", "Optimización mensual", "Seguimiento de conversiones", "Mejora continua"],
+    to: "/contacto",
+  },
+  {
+    id: "resenas",
+    title: <>Gestión de <span className="text-primary">reseñas PRO</span></>,
+    illustration: "Ilustración isométrica: tarjeta NFC y código QR generando reseñas de 5 estrellas",
+    icon: <IconStar />,
+    description: "Automatiza la captación de reseñas reales y mejora la confianza de tus futuros clientes.",
+    features: ["Tarjetas NFC", "Código QR", "Solicitudes automáticas", "Respuesta profesional", "Incremento de reputación"],
+    to: "/contacto",
+  },
+  {
+    id: "geo",
+    title: <>Posicionamiento <span className="text-primary">GEO</span></>,
+    illustration: "Ilustración isométrica: buscadores con IA (ChatGPT, Gemini) recomendando un negocio local",
+    icon: <IconSpark />,
+    description: "Haz que tu empresa aparezca cuando los clientes preguntan a ChatGPT, Gemini, Claude, Copilot o Google AI Overviews.",
+    features: ["Optimización para IA", "ChatGPT", "Gemini", "Claude", "Google AI Overviews"],
+    to: "/contacto",
+  },
+];
+
+const includedServices = [
+  ["Auditoría SEO inicial", "Analizamos tu ficha de Google Business Profile, tu web y a tu competencia directa antes de tocar nada."],
+  ["Estudio de palabras clave", "Identificamos las búsquedas reales de tu servicio y tu zona, las de alta intención de contacto."],
+  ["Ficha de Google Business Profile", "Optimización completa: categorías, atributos, servicios, fotos, zona de servicio y publicaciones."],
+  ["Web SEO Local", "Landing por servicio y por zona o barrio, pensada para que Google te posicione por cada combinación relevante."],
+  ["Citaciones en directorios locales y temáticos", "Presencia consistente en los directorios que Google usa como señal de confianza."],
+  ["Reporte mensual", "Llamadas, posiciones y evolución, en lenguaje claro, sin jerga."],
+];
+
+const whySlocal = [
+  ["Equipo especializado en SEO local", "No somos una agencia generalista que también hace SEO: es lo único que hacemos, y lo conocemos a fondo."],
+  ["Optimización para buscadores de IA incluida", "Trabajamos para que aparezcas también en ChatGPT, Gemini y AI Overviews, no solo en Google tradicional — algo que la mayoría de agencias de SEO local todavía no ofrece."],
+  ["Sin permanencia", "Te quedas con nosotros porque el servicio funciona, no porque haya un contrato que te obligue."],
+  ["Precio fijo mensual", "Sin tramos ocultos ni sorpresas en la factura."],
+];
+
+const fitFor = [
+  "una clínica, centro médico o de estética con atención presencial",
+  "un negocio físico a pie de calle",
+  "una empresa de reformas, abogados, fisioterapia o servicios de proximidad",
+  "una tienda, academia, despacho o centro que depende de clientes locales",
+  "varias sedes o ubicaciones y necesitas gestionar varias fichas de Google a la vez",
+  "una ficha de Google Business Profile que no te está generando llamadas",
+  "un negocio que quiere dominar su zona en Google Maps",
+];
+
+const notFitFor = [
+  "un eCommerce nacional sin componente local",
+  "un SaaS 100% online",
+  "infoproductos sin ubicación física",
+  "un negocio que no atiende clientes en una zona concreta",
+  "un proyecto que busca resultados mágicos en dos semanas",
+];
 
 const Home = () => {
   const jsonLd = {
