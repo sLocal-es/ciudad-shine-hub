@@ -10,7 +10,9 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as MainRouteImport } from './routes/_main'
+import { Route as McpRouteImport } from './routes/mcp'
 import { Route as SistemaRouteImport } from './routes/sistema'
+import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
 import { Route as MainIndexRouteImport } from './routes/_main.index'
 import { Route as MainSplatRouteImport } from './routes/_main.$'
 import { Route as MainAparecerEnGoogleMapsRouteImport } from './routes/_main.aparecer-en-google-maps'
@@ -54,11 +56,22 @@ const MainRoute = MainRouteImport.update({
   id: '/_main',
   getParentRoute: () => rootRouteImport,
 } as any)
+const McpRoute = McpRouteImport.update({
+  id: '/mcp',
+  path: '/mcp',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SistemaRoute = SistemaRouteImport.update({
   id: '/sistema',
   path: '/sistema',
   getParentRoute: () => rootRouteImport,
 } as any)
+const Char91DotwellKnownChar93OauthProtectedResourceRoute =
+  Char91DotwellKnownChar93OauthProtectedResourceRouteImport.update({
+    id: '/.well-known/oauth-protected-resource',
+    path: '/.well-known/oauth-protected-resource',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const MainIndexRoute = MainIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -260,7 +273,9 @@ const ApiPublicSubmitIndexnowRoute = ApiPublicSubmitIndexnowRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof MainIndexRoute
+  '/mcp': typeof McpRoute
   '/sistema': typeof SistemaRoute
+  '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/$': typeof MainSplatRoute
   '/aparecer-en-google-maps': typeof MainAparecerEnGoogleMapsRoute
   '/como-funciona': typeof MainComoFuncionaRoute
@@ -300,7 +315,9 @@ export interface FileRoutesByFullPath {
   '/blog/': typeof MainBlogIndexRoute
 }
 export interface FileRoutesByTo {
+  '/mcp': typeof McpRoute
   '/sistema': typeof SistemaRoute
+  '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/$': typeof MainSplatRoute
   '/aparecer-en-google-maps': typeof MainAparecerEnGoogleMapsRoute
   '/como-funciona': typeof MainComoFuncionaRoute
@@ -343,7 +360,9 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_main': typeof MainRouteWithChildren
+  '/mcp': typeof McpRoute
   '/sistema': typeof SistemaRoute
+  '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/_main/$': typeof MainSplatRoute
   '/_main/aparecer-en-google-maps': typeof MainAparecerEnGoogleMapsRoute
   '/_main/como-funciona': typeof MainComoFuncionaRoute
@@ -387,7 +406,9 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/mcp'
     | '/sistema'
+    | '/.well-known/oauth-protected-resource'
     | '/$'
     | '/aparecer-en-google-maps'
     | '/como-funciona'
@@ -427,7 +448,9 @@ export interface FileRouteTypes {
     | '/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
+    | '/mcp'
     | '/sistema'
+    | '/.well-known/oauth-protected-resource'
     | '/$'
     | '/aparecer-en-google-maps'
     | '/como-funciona'
@@ -469,7 +492,9 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/_main'
+    | '/mcp'
     | '/sistema'
+    | '/.well-known/oauth-protected-resource'
     | '/_main/$'
     | '/_main/aparecer-en-google-maps'
     | '/_main/como-funciona'
@@ -512,7 +537,9 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   MainRoute: typeof MainRouteWithChildren
+  McpRoute: typeof McpRoute
   SistemaRoute: typeof SistemaRoute
+  Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   AdminIndexnowRoute: typeof AdminIndexnowRoute
   ApiPublicSubmitIndexnowRoute: typeof ApiPublicSubmitIndexnowRoute
 }
@@ -526,11 +553,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MainRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/mcp': {
+      id: '/mcp'
+      path: '/mcp'
+      fullPath: '/mcp'
+      preLoaderRoute: typeof McpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sistema': {
       id: '/sistema'
       path: '/sistema'
       fullPath: '/sistema'
       preLoaderRoute: typeof SistemaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/.well-known/oauth-protected-resource': {
+      id: '/.well-known/oauth-protected-resource'
+      path: '/.well-known/oauth-protected-resource'
+      fullPath: '/.well-known/oauth-protected-resource'
+      preLoaderRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_main/': {
@@ -885,7 +926,10 @@ const MainRouteWithChildren = MainRoute._addFileChildren(MainRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   MainRoute: MainRouteWithChildren,
+  McpRoute: McpRoute,
   SistemaRoute: SistemaRoute,
+  Char91DotwellKnownChar93OauthProtectedResourceRoute:
+    Char91DotwellKnownChar93OauthProtectedResourceRoute,
   AdminIndexnowRoute: AdminIndexnowRoute,
   ApiPublicSubmitIndexnowRoute: ApiPublicSubmitIndexnowRoute,
 }
