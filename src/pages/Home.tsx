@@ -324,16 +324,19 @@ const Home = () => {
               No es magia ni es cuestión de suerte: Google decide qué negocio muestra primero según tres cosas — que tu ficha y tu web coincidan con lo que la persona está buscando, que estés cerca de quien busca, y la confianza que Google tiene en tu negocio según reseñas y consistencia de tus datos. Sobre la distancia no podemos hacer nada, pero sobre las otras dos trabajamos a fondo:
             </p>
           </div>
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            {[
-              ["01", "¿Cómo hacemos que tu negocio encaje con la búsqueda?", "Optimizamos tu ficha de Google Business Profile y tu web con las mismas categorías, servicios y zonas que usa la gente cuando busca — para que Google entienda exactamente qué ofreces y dónde."],
-              ["02", "¿Por qué deben coincidir tus datos en todas partes?", "Tu nombre, dirección y teléfono deben aparecer exactamente igual en tu ficha, tu web y los directorios donde apareces. Cuando no coincide, Google pierde confianza en tu negocio y te baja posiciones."],
-              ["03", "¿Cómo influyen las reseñas en tu posición?", "El volumen, la frecuencia y cómo respondes a tus reseñas son una de las señales que más pesan a la hora de decidir qué negocio aparece primero."],
-            ].map(([number, title, text]) => (
-              <article key={number} className="border-t-2 border-primary pt-7">
-                <span className="font-heading text-xs tracking-[0.22em] text-primary">{number}</span>
-                <h3 className="mt-5 font-heading font-semibold text-xl md:text-2xl text-warm-fg leading-snug">{title}</h3>
-                <p className="mt-4 font-body font-light text-warm-fg/70 leading-relaxed">{text}</p>
+          <div className="mt-16 space-y-8 md:space-y-10">
+            {positioningFactors.map((factor, index) => (
+              <article key={factor.eyebrow} className="overflow-hidden rounded-3xl border border-warm-fg/10 bg-white shadow-[0_20px_60px_-38px_rgba(0,0,0,0.18)]">
+                <div className="grid grid-cols-1 md:grid-cols-2 items-stretch">
+                  <div className={`flex flex-col justify-center p-7 md:p-10 lg:p-12 ${index % 2 === 1 ? "md:order-2" : ""}`}>
+                    <p className="font-heading text-[11px] tracking-[0.2em] uppercase text-primary">— {factor.eyebrow}</p>
+                    <h3 className="mt-5 font-heading font-semibold text-3xl md:text-4xl text-warm-fg leading-[1.12]">{factor.title}</h3>
+                    <p className="mt-5 font-body font-light text-base md:text-lg text-warm-fg/70 leading-relaxed">{factor.text}</p>
+                  </div>
+                  <div className={`min-h-[260px] bg-warm-fg/[0.03] ${index % 2 === 1 ? "md:order-1" : ""}`}>
+                    <img src={factor.image} alt={factor.alt} className="h-full w-full object-cover" loading="lazy" width={1200} height={800} decoding="async" />
+                  </div>
+                </div>
               </article>
             ))}
           </div>
@@ -352,12 +355,19 @@ const Home = () => {
               Qué incluye nuestro servicio de SEO Local
             </h2>
           </div>
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px overflow-hidden rounded-2xl border border-warm-fg/10 bg-warm-fg/10">
-            {includedServices.map(([title, text], index) => (
-              <article key={title} className="bg-white p-7 md:p-8">
-                <span className="font-heading text-xs tracking-[0.2em] text-primary">0{index + 1}</span>
-                <h3 className="mt-5 font-heading font-semibold text-xl text-warm-fg leading-snug">{title}</h3>
-                <p className="mt-3 font-body font-light text-warm-fg/70 leading-relaxed">{text}</p>
+          <div className="mt-16 space-y-8 md:space-y-10">
+            {includedServices.map((service, index) => (
+              <article key={service.eyebrow} className="overflow-hidden rounded-3xl border border-warm-fg/10 bg-white shadow-[0_20px_60px_-38px_rgba(0,0,0,0.18)]">
+                <div className="grid grid-cols-1 md:grid-cols-2 items-stretch">
+                  <div className={`flex flex-col justify-center p-7 md:p-10 lg:p-12 ${index % 2 === 1 ? "md:order-2" : ""}`}>
+                    <p className="font-heading text-[11px] tracking-[0.2em] uppercase text-primary">— {service.eyebrow}</p>
+                    <h3 className="mt-5 font-heading font-semibold text-3xl md:text-4xl text-warm-fg leading-[1.12]">{service.title}</h3>
+                    <p className="mt-5 font-body font-light text-base md:text-lg text-warm-fg/70 leading-relaxed">{service.text}</p>
+                  </div>
+                  <div className={`min-h-[260px] bg-warm-fg/[0.03] ${index % 2 === 1 ? "md:order-1" : ""}`}>
+                    <img src={service.image} alt={service.alt} className="h-full w-full object-cover" loading="lazy" width={1200} height={800} decoding="async" />
+                  </div>
+                </div>
               </article>
             ))}
           </div>
@@ -418,24 +428,24 @@ const Home = () => {
             </h2>
           </div>
           <div className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-            <article className="rounded-2xl border border-success/25 bg-success/5 p-7 md:p-10">
+            <article className="rounded-2xl border border-primary/35 bg-primary/5 p-7 md:p-10">
               <div className="flex items-center gap-4">
-                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-success text-primary-foreground text-xl" aria-hidden>✓</span>
+                <span className="text-primary text-3xl leading-none" aria-hidden>✓</span>
                 <h3 className="font-heading font-semibold text-2xl text-warm-fg">¿Para quién sí es este servicio?</h3>
               </div>
               <p className="mt-6 font-body text-warm-fg/75">Este servicio es para ti si tienes:</p>
               <ul className="mt-5 space-y-3">
-                {fitFor.map((item) => <li key={item} className="flex items-start gap-3 font-body text-warm-fg/75 leading-relaxed"><span className="mt-1 text-success" aria-hidden>✓</span><span>{item}</span></li>)}
+                {fitFor.map((item) => <li key={item} className="flex items-start gap-3 font-body text-warm-fg/75 leading-relaxed"><span className="mt-1 text-primary" aria-hidden>✓</span><span>{item}</span></li>)}
               </ul>
             </article>
-            <article className="rounded-2xl border border-destructive/25 bg-destructive/5 p-7 md:p-10">
+            <article className="rounded-2xl border border-warm-fg/20 bg-warm-fg/[0.03] p-7 md:p-10">
               <div className="flex items-center gap-4">
-                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-destructive text-destructive-foreground text-xl" aria-hidden>×</span>
+                <span className="text-warm-fg text-3xl leading-none" aria-hidden>×</span>
                 <h3 className="font-heading font-semibold text-2xl text-warm-fg">¿Para quién no es?</h3>
               </div>
               <p className="mt-6 font-body text-warm-fg/75">Este servicio no es para ti si tienes:</p>
               <ul className="mt-5 space-y-3">
-                {notFitFor.map((item) => <li key={item} className="flex items-start gap-3 font-body text-warm-fg/75 leading-relaxed"><span className="mt-1 text-destructive" aria-hidden>×</span><span>{item}</span></li>)}
+                {notFitFor.map((item) => <li key={item} className="flex items-start gap-3 font-body text-warm-fg/75 leading-relaxed"><span className="mt-1 text-warm-fg" aria-hidden>×</span><span>{item}</span></li>)}
               </ul>
             </article>
           </div>
