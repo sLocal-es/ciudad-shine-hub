@@ -36,6 +36,7 @@ export interface ExtraService {
   id: string;
   title: ReactNode;
   illustration: string;
+  visual?: ReactNode;
   icon: ReactNode;
   description: string;
   features: string[];
@@ -44,7 +45,17 @@ export interface ExtraService {
 
 export const ServiceCard = ({ service }: { service: ExtraService }) => (
   <article className="group h-full flex flex-col rounded-3xl border border-warm-fg/10 bg-white p-6 md:p-7 shadow-[0_18px_50px_-38px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_28px_70px_-40px_rgba(0,0,0,0.35)] hover:border-primary/40">
-    <IllustrationPlaceholder label={service.illustration} aspect="aspect-[16/10]" />
+    {service.visual ? (
+      <div
+        className="flex aspect-[16/10] w-full items-center justify-center overflow-hidden rounded-2xl border border-warm-fg/10 bg-warm-fg/[0.025] p-5 text-primary"
+        role="img"
+        aria-label={service.illustration}
+      >
+        {service.visual}
+      </div>
+    ) : (
+      <IllustrationPlaceholder label={service.illustration} aspect="aspect-[16/10]" />
+    )}
     <div className="mt-6 flex items-center gap-3">
       <span className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center transition-colors duration-300 group-hover:bg-primary group-hover:text-primary-foreground">
         {service.icon}
