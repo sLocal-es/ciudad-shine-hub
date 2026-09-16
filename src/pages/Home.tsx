@@ -380,13 +380,13 @@ const Home = () => {
             <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Diferencias clave</p>
             <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight">SEO tradicional vs SEO Local</h2>
           </div>
-          <div className="mt-14 overflow-x-auto rounded-2xl border border-warm-fg/10">
-            <table className="w-full min-w-[720px] border-collapse text-left">
+          <div className="mt-14 overflow-hidden rounded-2xl border border-warm-fg/10">
+            <table className="w-full table-fixed border-collapse text-left">
               <thead className="bg-dark-bg text-dark-fg">
                 <tr>
-                  <th scope="col" className="p-5 md:p-6 font-heading text-sm">Comparativa</th>
-                  <th scope="col" className="p-5 md:p-6 font-heading text-sm">SEO tradicional</th>
-                  <th scope="col" className="p-5 md:p-6 font-heading text-sm text-primary">SEO Local</th>
+                  <th scope="col" className="w-[28%] p-3 md:p-6 font-heading text-[11px] md:text-sm">Comparativa</th>
+                  <th scope="col" className="w-[31%] p-3 md:p-6 font-heading text-[11px] md:text-sm">SEO tradicional</th>
+                  <th scope="col" className="w-[41%] p-3 md:p-6 font-heading text-[11px] md:text-sm text-primary">SEO Local</th>
                 </tr>
               </thead>
               <tbody className="bg-white">
@@ -398,9 +398,9 @@ const Home = () => {
                   ["A quién le sirve", "Ecommerce, medios, marcas nacionales", "Negocios con ubicación física o zona de servicio"],
                 ].map(([label, traditional, local]) => (
                   <tr key={label} className="border-t border-warm-fg/10 align-top">
-                    <th scope="row" className="p-5 md:p-6 font-heading text-sm text-warm-fg">{label}</th>
-                    <td className="p-5 md:p-6 font-body text-sm md:text-base text-warm-fg/65">{traditional}</td>
-                    <td className="p-5 md:p-6 font-body text-sm md:text-base font-medium text-warm-fg">{local}</td>
+                    <th scope="row" className="p-3 md:p-6 font-heading text-[11px] md:text-sm text-warm-fg break-words">{label}</th>
+                    <td className="p-3 md:p-6 font-body text-[11px] md:text-base text-warm-fg/65 break-words">{traditional}</td>
+                    <td className="p-3 md:p-6 font-body text-[11px] md:text-base font-medium text-warm-fg break-words">{local}</td>
                   </tr>
                 ))}
               </tbody>
