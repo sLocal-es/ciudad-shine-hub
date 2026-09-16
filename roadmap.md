@@ -9,3 +9,5 @@
 - [x] Corregir la paleta de las tarjetas Sí/No a naranja, negro y blanco.
 - [x] Convertir posicionamiento y servicio base en nueve bloques visuales alternos.
 - [x] Resaltar las palabras clave de sus títulos en naranja.
+- [x] Adaptar la sección de sectores a una cuadrícula abierta con iconos y descripciones.
+- [x] Añadir ilustraciones naranjas a Google Ads, Reseñas PRO y Posicionamiento GEO.
