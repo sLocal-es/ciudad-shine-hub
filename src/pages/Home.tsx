@@ -8,6 +8,15 @@ import ContactForm from "@/components/forms/ContactForm";
 import ElfsightReviews from "@/components/ElfsightReviews";
 import { ServiceCard, type ExtraService } from "@/components/servicios/ServiciosUI";
 import queEsSeoLocalAsset from "@/assets/que-es-seo-local.webp.asset.json";
+import relevanciaOnPageImage from "@/assets/home/relevancia-on-page.webp";
+import consistenciaNapImage from "@/assets/home/consistencia-nap.webp";
+import resenasAutoridadImage from "@/assets/home/resenas-autoridad-local.webp";
+import auditoriaSeoImage from "@/assets/home/auditoria-seo.webp";
+import palabrasClaveImage from "@/assets/home/estudio-palabras-clave.webp";
+import fichaGoogleImage from "@/assets/home/ficha-google-business.webp";
+import webSeoLocalImage from "@/assets/home/web-seo-local.webp";
+import citacionesImage from "@/assets/home/citaciones-directorios.webp";
+import reporteMensualImage from "@/assets/home/reporte-mensual.webp";
 
 const sectionCls = "bg-white py-24 md:py-32 border-t border-warm-fg/10";
 
@@ -73,13 +82,73 @@ const complementaryServices: ExtraService[] = [
   },
 ];
 
+const positioningFactors = [
+  {
+    eyebrow: "Relevancia",
+    title: <>Optimización <span className="text-primary">on-page</span></>,
+    text: "Optimizamos tu ficha de Google Business Profile y tu web con las mismas categorías, servicios y zonas que usa la gente cuando busca — para que Google entienda exactamente qué ofreces y dónde.",
+    image: relevanciaOnPageImage,
+    alt: "Ilustración de una ficha de negocio y una web optimizadas con categorías y palabras clave locales",
+  },
+  {
+    eyebrow: "Notoriedad y confianza",
+    title: <>Consistencia <span className="text-primary">NAP</span></>,
+    text: "Tu nombre, dirección y teléfono deben aparecer exactamente igual en tu ficha, tu web y los directorios donde apareces. Cuando no coincide, Google pierde confianza en tu negocio y te baja posiciones.",
+    image: consistenciaNapImage,
+    alt: "Ilustración de datos de nombre, dirección y teléfono coincidentes en varias fichas de directorios",
+  },
+  {
+    eyebrow: "Notoriedad",
+    title: <>Reseñas y <span className="text-primary">autoridad local</span></>,
+    text: "El volumen, la frecuencia y cómo respondes a tus reseñas son una de las señales que más pesan a la hora de decidir qué negocio aparece primero.",
+    image: resenasAutoridadImage,
+    alt: "Ilustración de una ficha local con reseñas, estrellas y respuestas del negocio",
+  },
+];
+
 const includedServices = [
-  ["Auditoría SEO inicial", "Analizamos tu ficha de Google Business Profile, tu web y a tu competencia directa antes de tocar nada."],
-  ["Estudio de palabras clave", "Identificamos las búsquedas reales de tu servicio y tu zona, las de alta intención de contacto."],
-  ["Ficha de Google Business Profile", "Optimización completa: categorías, atributos, servicios, fotos, zona de servicio y publicaciones."],
-  ["Web SEO Local", "Landing por servicio y por zona/barrio, pensada para que Google te posicione por cada combinación relevante."],
-  ["Citaciones en directorios locales y temáticos", "Presencia consistente en los directorios que Google usa como señal de confianza."],
-  ["Reporte mensual", "Llamadas, posiciones y evolución, en lenguaje claro, sin jerga."],
+  {
+    eyebrow: "Diagnóstico",
+    title: <><span className="text-primary">Auditoría SEO</span> inicial</>,
+    text: "Analizamos tu ficha de Google Business Profile, tu web y a tu competencia directa antes de tocar nada. Así detectamos qué frena tu visibilidad y qué acciones deben tener prioridad.",
+    image: auditoriaSeoImage,
+    alt: "Ilustración de una auditoría SEO de una web y una ficha de negocio local",
+  },
+  {
+    eyebrow: "Investigación",
+    title: <>Estudio de <span className="text-primary">palabras clave</span></>,
+    text: "Identificamos las búsquedas reales de tu servicio y tu zona, especialmente las que muestran una intención clara de llamar, reservar o visitar el negocio.",
+    image: palabrasClaveImage,
+    alt: "Ilustración de un estudio de palabras clave con lupa, búsquedas locales y gráficos",
+  },
+  {
+    eyebrow: "Presencia en Maps",
+    title: <>Ficha de <span className="text-primary">Google Business Profile</span></>,
+    text: "Realizamos una optimización completa de categorías, atributos, servicios, fotos, zona de servicio y publicaciones para que Google entienda y muestre mejor tu negocio.",
+    image: fichaGoogleImage,
+    alt: "Ilustración de una ficha de Google Business Profile completa y optimizada",
+  },
+  {
+    eyebrow: "Captación local",
+    title: <>Web <span className="text-primary">SEO Local</span></>,
+    text: "Creamos páginas por servicio y por zona o barrio, pensadas para posicionar cada combinación relevante y convertir las búsquedas locales en contactos.",
+    image: webSeoLocalImage,
+    alt: "Ilustración de una web SEO local conectada con páginas de servicios y zonas",
+  },
+  {
+    eyebrow: "Señales de confianza",
+    title: <><span className="text-primary">Citaciones</span> en directorios locales y temáticos</>,
+    text: "Construimos una presencia consistente en los directorios que Google utiliza como señal de confianza, manteniendo los datos esenciales del negocio alineados.",
+    image: citacionesImage,
+    alt: "Ilustración de un negocio conectado con varios directorios locales y temáticos",
+  },
+  {
+    eyebrow: "Seguimiento",
+    title: <span className="text-primary">Reporte mensual</span>,
+    text: "Recibes la evolución de llamadas, posiciones y visibilidad en un informe claro y comprensible, con el trabajo realizado y los siguientes pasos, sin jerga innecesaria.",
+    image: reporteMensualImage,
+    alt: "Ilustración de un informe mensual con llamadas, posiciones locales y evolución",
+  },
 ];
 
 const whySlocal = [
