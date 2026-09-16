@@ -8,6 +8,15 @@ import ContactForm from "@/components/forms/ContactForm";
 import ElfsightReviews from "@/components/ElfsightReviews";
 import { ServiceCard, type ExtraService } from "@/components/servicios/ServiciosUI";
 import queEsSeoLocalAsset from "@/assets/que-es-seo-local.webp.asset.json";
+import relevanciaOnPageImage from "@/assets/home/relevancia-on-page.webp";
+import consistenciaNapImage from "@/assets/home/consistencia-nap.webp";
+import resenasAutoridadImage from "@/assets/home/resenas-autoridad-local.webp";
+import auditoriaSeoImage from "@/assets/home/auditoria-seo.webp";
+import palabrasClaveImage from "@/assets/home/estudio-palabras-clave.webp";
+import fichaGoogleImage from "@/assets/home/ficha-google-business.webp";
+import webSeoLocalImage from "@/assets/home/web-seo-local.webp";
+import citacionesImage from "@/assets/home/citaciones-directorios.webp";
+import reporteMensualImage from "@/assets/home/reporte-mensual.webp";
 
 const sectionCls = "bg-white py-24 md:py-32 border-t border-warm-fg/10";
 
@@ -73,13 +82,73 @@ const complementaryServices: ExtraService[] = [
   },
 ];
 
+const positioningFactors = [
+  {
+    eyebrow: "Relevancia",
+    title: <>Optimización <span className="text-primary">on-page</span></>,
+    text: "Optimizamos tu ficha de Google Business Profile y tu web con las mismas categorías, servicios y zonas que usa la gente cuando busca — para que Google entienda exactamente qué ofreces y dónde.",
+    image: relevanciaOnPageImage,
+    alt: "Ilustración de una ficha de negocio y una web optimizadas con categorías y palabras clave locales",
+  },
+  {
+    eyebrow: "Notoriedad y confianza",
+    title: <>Consistencia <span className="text-primary">NAP</span></>,
+    text: "Tu nombre, dirección y teléfono deben aparecer exactamente igual en tu ficha, tu web y los directorios donde apareces. Cuando no coincide, Google pierde confianza en tu negocio y te baja posiciones.",
+    image: consistenciaNapImage,
+    alt: "Ilustración de datos de nombre, dirección y teléfono coincidentes en varias fichas de directorios",
+  },
+  {
+    eyebrow: "Notoriedad",
+    title: <>Reseñas y <span className="text-primary">autoridad local</span></>,
+    text: "El volumen, la frecuencia y cómo respondes a tus reseñas son una de las señales que más pesan a la hora de decidir qué negocio aparece primero.",
+    image: resenasAutoridadImage,
+    alt: "Ilustración de una ficha local con reseñas, estrellas y respuestas del negocio",
+  },
+];
+
 const includedServices = [
-  ["Auditoría SEO inicial", "Analizamos tu ficha de Google Business Profile, tu web y a tu competencia directa antes de tocar nada."],
-  ["Estudio de palabras clave", "Identificamos las búsquedas reales de tu servicio y tu zona, las de alta intención de contacto."],
-  ["Ficha de Google Business Profile", "Optimización completa: categorías, atributos, servicios, fotos, zona de servicio y publicaciones."],
-  ["Web SEO Local", "Landing por servicio y por zona/barrio, pensada para que Google te posicione por cada combinación relevante."],
-  ["Citaciones en directorios locales y temáticos", "Presencia consistente en los directorios que Google usa como señal de confianza."],
-  ["Reporte mensual", "Llamadas, posiciones y evolución, en lenguaje claro, sin jerga."],
+  {
+    eyebrow: "Diagnóstico",
+    title: <><span className="text-primary">Auditoría SEO</span> inicial</>,
+    text: "Analizamos tu ficha de Google Business Profile, tu web y a tu competencia directa antes de tocar nada. Así detectamos qué frena tu visibilidad y qué acciones deben tener prioridad.",
+    image: auditoriaSeoImage,
+    alt: "Ilustración de una auditoría SEO de una web y una ficha de negocio local",
+  },
+  {
+    eyebrow: "Investigación",
+    title: <>Estudio de <span className="text-primary">palabras clave</span></>,
+    text: "Identificamos las búsquedas reales de tu servicio y tu zona, especialmente las que muestran una intención clara de llamar, reservar o visitar el negocio.",
+    image: palabrasClaveImage,
+    alt: "Ilustración de un estudio de palabras clave con lupa, búsquedas locales y gráficos",
+  },
+  {
+    eyebrow: "Presencia en Maps",
+    title: <>Ficha de <span className="text-primary">Google Business Profile</span></>,
+    text: "Realizamos una optimización completa de categorías, atributos, servicios, fotos, zona de servicio y publicaciones para que Google entienda y muestre mejor tu negocio.",
+    image: fichaGoogleImage,
+    alt: "Ilustración de una ficha de Google Business Profile completa y optimizada",
+  },
+  {
+    eyebrow: "Captación local",
+    title: <>Web <span className="text-primary">SEO Local</span></>,
+    text: "Creamos páginas por servicio y por zona o barrio, pensadas para posicionar cada combinación relevante y convertir las búsquedas locales en contactos.",
+    image: webSeoLocalImage,
+    alt: "Ilustración de una web SEO local conectada con páginas de servicios y zonas",
+  },
+  {
+    eyebrow: "Señales de confianza",
+    title: <><span className="text-primary">Citaciones</span> en directorios locales y temáticos</>,
+    text: "Construimos una presencia consistente en los directorios que Google utiliza como señal de confianza, manteniendo los datos esenciales del negocio alineados.",
+    image: citacionesImage,
+    alt: "Ilustración de un negocio conectado con varios directorios locales y temáticos",
+  },
+  {
+    eyebrow: "Seguimiento",
+    title: <span className="text-primary">Reporte mensual</span>,
+    text: "Recibes la evolución de llamadas, posiciones y visibilidad en un informe claro y comprensible, con el trabajo realizado y los siguientes pasos, sin jerga innecesaria.",
+    image: reporteMensualImage,
+    alt: "Ilustración de un informe mensual con llamadas, posiciones locales y evolución",
+  },
 ];
 
 const whySlocal = [
@@ -249,22 +318,25 @@ const Home = () => {
           <div className="mx-auto max-w-4xl text-center">
             <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Nuestro método</p>
             <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight">
-              ¿Cómo posicionamos tu negocio en los primeros puestos de Google?
+              ¿Cómo posicionamos tu negocio en los <span className="text-primary">primeros puestos de Google</span>?
             </h2>
             <p className="mt-8 text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed">
               No es magia ni es cuestión de suerte: Google decide qué negocio muestra primero según tres cosas — que tu ficha y tu web coincidan con lo que la persona está buscando, que estés cerca de quien busca, y la confianza que Google tiene en tu negocio según reseñas y consistencia de tus datos. Sobre la distancia no podemos hacer nada, pero sobre las otras dos trabajamos a fondo:
             </p>
           </div>
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-            {[
-              ["01", "¿Cómo hacemos que tu negocio encaje con la búsqueda?", "Optimizamos tu ficha de Google Business Profile y tu web con las mismas categorías, servicios y zonas que usa la gente cuando busca — para que Google entienda exactamente qué ofreces y dónde."],
-              ["02", "¿Por qué deben coincidir tus datos en todas partes?", "Tu nombre, dirección y teléfono deben aparecer exactamente igual en tu ficha, tu web y los directorios donde apareces. Cuando no coincide, Google pierde confianza en tu negocio y te baja posiciones."],
-              ["03", "¿Cómo influyen las reseñas en tu posición?", "El volumen, la frecuencia y cómo respondes a tus reseñas son una de las señales que más pesan a la hora de decidir qué negocio aparece primero."],
-            ].map(([number, title, text]) => (
-              <article key={number} className="border-t-2 border-primary pt-7">
-                <span className="font-heading text-xs tracking-[0.22em] text-primary">{number}</span>
-                <h3 className="mt-5 font-heading font-semibold text-xl md:text-2xl text-warm-fg leading-snug">{title}</h3>
-                <p className="mt-4 font-body font-light text-warm-fg/70 leading-relaxed">{text}</p>
+          <div className="mt-16 space-y-8 md:space-y-10">
+            {positioningFactors.map((factor, index) => (
+              <article key={factor.eyebrow} className="overflow-hidden rounded-3xl border border-warm-fg/10 bg-white shadow-[0_20px_60px_-38px_rgba(0,0,0,0.18)]">
+                <div className="grid grid-cols-1 md:grid-cols-2 items-stretch">
+                  <div className={`flex flex-col justify-center p-7 md:p-10 lg:p-12 ${index % 2 === 1 ? "md:order-2" : ""}`}>
+                    <p className="font-heading text-[11px] tracking-[0.2em] uppercase text-primary">— {factor.eyebrow}</p>
+                    <h3 className="mt-5 font-heading font-semibold text-3xl md:text-4xl text-warm-fg leading-[1.12]">{factor.title}</h3>
+                    <p className="mt-5 font-body font-light text-base md:text-lg text-warm-fg/70 leading-relaxed">{factor.text}</p>
+                  </div>
+                  <div className={`min-h-[260px] bg-warm-fg/[0.03] ${index % 2 === 1 ? "md:order-1" : ""}`}>
+                    <img src={factor.image} alt={factor.alt} className="h-full w-full object-cover" loading="lazy" width={1200} height={800} decoding="async" />
+                  </div>
+                </div>
               </article>
             ))}
           </div>
@@ -280,15 +352,22 @@ const Home = () => {
           <div className="mx-auto max-w-4xl text-center">
             <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Servicio base</p>
             <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight">
-              Qué incluye nuestro servicio de SEO Local
+              Qué incluye nuestro servicio de <span className="text-primary">SEO Local</span>
             </h2>
           </div>
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px overflow-hidden rounded-2xl border border-warm-fg/10 bg-warm-fg/10">
-            {includedServices.map(([title, text], index) => (
-              <article key={title} className="bg-white p-7 md:p-8">
-                <span className="font-heading text-xs tracking-[0.2em] text-primary">0{index + 1}</span>
-                <h3 className="mt-5 font-heading font-semibold text-xl text-warm-fg leading-snug">{title}</h3>
-                <p className="mt-3 font-body font-light text-warm-fg/70 leading-relaxed">{text}</p>
+          <div className="mt-16 space-y-8 md:space-y-10">
+            {includedServices.map((service, index) => (
+              <article key={service.eyebrow} className="overflow-hidden rounded-3xl border border-warm-fg/10 bg-white shadow-[0_20px_60px_-38px_rgba(0,0,0,0.18)]">
+                <div className="grid grid-cols-1 md:grid-cols-2 items-stretch">
+                  <div className={`flex flex-col justify-center p-7 md:p-10 lg:p-12 ${index % 2 === 1 ? "md:order-2" : ""}`}>
+                    <p className="font-heading text-[11px] tracking-[0.2em] uppercase text-primary">— {service.eyebrow}</p>
+                    <h3 className="mt-5 font-heading font-semibold text-3xl md:text-4xl text-warm-fg leading-[1.12]">{service.title}</h3>
+                    <p className="mt-5 font-body font-light text-base md:text-lg text-warm-fg/70 leading-relaxed">{service.text}</p>
+                  </div>
+                  <div className={`min-h-[260px] bg-warm-fg/[0.03] ${index % 2 === 1 ? "md:order-1" : ""}`}>
+                    <img src={service.image} alt={service.alt} className="h-full w-full object-cover" loading="lazy" width={1200} height={800} decoding="async" />
+                  </div>
+                </div>
               </article>
             ))}
           </div>
@@ -349,24 +428,24 @@ const Home = () => {
             </h2>
           </div>
           <div className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-            <article className="rounded-2xl border border-success/25 bg-success/5 p-7 md:p-10">
+            <article className="rounded-2xl border border-primary/35 bg-primary/5 p-7 md:p-10">
               <div className="flex items-center gap-4">
-                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-success text-primary-foreground text-xl" aria-hidden>✓</span>
+                <span className="text-primary text-3xl leading-none" aria-hidden>✓</span>
                 <h3 className="font-heading font-semibold text-2xl text-warm-fg">¿Para quién sí es este servicio?</h3>
               </div>
               <p className="mt-6 font-body text-warm-fg/75">Este servicio es para ti si tienes:</p>
               <ul className="mt-5 space-y-3">
-                {fitFor.map((item) => <li key={item} className="flex items-start gap-3 font-body text-warm-fg/75 leading-relaxed"><span className="mt-1 text-success" aria-hidden>✓</span><span>{item}</span></li>)}
+                {fitFor.map((item) => <li key={item} className="flex items-start gap-3 font-body text-warm-fg/75 leading-relaxed"><span className="mt-1 text-primary" aria-hidden>✓</span><span>{item}</span></li>)}
               </ul>
             </article>
-            <article className="rounded-2xl border border-destructive/25 bg-destructive/5 p-7 md:p-10">
+            <article className="rounded-2xl border border-warm-fg/20 bg-warm-fg/[0.03] p-7 md:p-10">
               <div className="flex items-center gap-4">
-                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-destructive text-destructive-foreground text-xl" aria-hidden>×</span>
+                <span className="text-warm-fg text-3xl leading-none" aria-hidden>×</span>
                 <h3 className="font-heading font-semibold text-2xl text-warm-fg">¿Para quién no es?</h3>
               </div>
               <p className="mt-6 font-body text-warm-fg/75">Este servicio no es para ti si tienes:</p>
               <ul className="mt-5 space-y-3">
-                {notFitFor.map((item) => <li key={item} className="flex items-start gap-3 font-body text-warm-fg/75 leading-relaxed"><span className="mt-1 text-destructive" aria-hidden>×</span><span>{item}</span></li>)}
+                {notFitFor.map((item) => <li key={item} className="flex items-start gap-3 font-body text-warm-fg/75 leading-relaxed"><span className="mt-1 text-warm-fg" aria-hidden>×</span><span>{item}</span></li>)}
               </ul>
             </article>
           </div>
