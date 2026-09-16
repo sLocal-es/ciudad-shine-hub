@@ -6,32 +6,106 @@ import LogoMarquee from "@/components/LogoMarquee";
 import LeadMagnetForm from "@/components/forms/LeadMagnetForm";
 import ContactForm from "@/components/forms/ContactForm";
 import ElfsightReviews from "@/components/ElfsightReviews";
-import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisual";
-import OptimizedWebsiteVisual from "@/components/OptimizedWebsiteVisual";
+import { ServiceCard, type ExtraService } from "@/components/servicios/ServiciosUI";
 import queEsSeoLocalAsset from "@/assets/que-es-seo-local.webp.asset.json";
 
 const sectionCls = "bg-white py-24 md:py-32 border-t border-warm-fg/10";
 
-const IllustrationPlaceholder = ({
-  label,
-  aspect = "aspect-[1/1]",
-  className = "",
-}: {
-  label: string;
-  aspect?: string;
-  className?: string;
-}) => (
-  <div
-    className={`w-full ${aspect} rounded-3xl border-2 border-dashed border-warm-fg/20 bg-[hsl(var(--warm-bg))] flex flex-col items-center justify-center gap-3 p-8 text-center ${className}`}
-    role="img"
-    aria-label={label}
-  >
-    <span className="font-heading text-[10px] tracking-[0.28em] uppercase text-warm-fg/50">
-      Illustration placeholder
-    </span>
-    <span className="font-body text-[13px] text-warm-fg/45 max-w-[28ch]">{label}</span>
-  </div>
+const iconProps = {
+  width: 20,
+  height: 20,
+  viewBox: "0 0 24 24",
+  fill: "none",
+  stroke: "currentColor",
+  strokeWidth: 1.8,
+  strokeLinecap: "round" as const,
+  strokeLinejoin: "round" as const,
+};
+
+const IconSpark = () => (
+  <svg {...iconProps} aria-hidden>
+    <path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z" />
+    <path d="M18.5 16.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7.7-1.8z" />
+  </svg>
 );
+
+const IconStar = () => (
+  <svg {...iconProps} aria-hidden>
+    <path d="M12 4l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 9.7l5.4-.8L12 4z" />
+  </svg>
+);
+
+const IconTarget = () => (
+  <svg {...iconProps} aria-hidden>
+    <circle cx="12" cy="12" r="8" />
+    <circle cx="12" cy="12" r="3.5" />
+    <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
+  </svg>
+);
+
+const complementaryServices: ExtraService[] = [
+  {
+    id: "ads",
+    title: <><span className="text-primary">Google</span> Ads</>,
+    illustration: "Ilustración isométrica: anuncio de búsqueda de Google generando llamadas",
+    icon: <IconTarget />,
+    description: "Empieza a recibir llamadas desde el primer día mientras el SEO Local sigue creciendo.",
+    features: ["Campañas de búsqueda", "Optimización mensual", "Seguimiento de conversiones", "Mejora continua"],
+    to: "/contacto",
+  },
+  {
+    id: "resenas",
+    title: <>Gestión de <span className="text-primary">reseñas PRO</span></>,
+    illustration: "Ilustración isométrica: tarjeta NFC y código QR generando reseñas de 5 estrellas",
+    icon: <IconStar />,
+    description: "Automatiza la captación de reseñas reales y mejora la confianza de tus futuros clientes.",
+    features: ["Tarjetas NFC", "Código QR", "Solicitudes automáticas", "Respuesta profesional", "Incremento de reputación"],
+    to: "/contacto",
+  },
+  {
+    id: "geo",
+    title: <>Posicionamiento <span className="text-primary">GEO</span></>,
+    illustration: "Ilustración isométrica: buscadores con IA (ChatGPT, Gemini) recomendando un negocio local",
+    icon: <IconSpark />,
+    description: "Haz que tu empresa aparezca cuando los clientes preguntan a ChatGPT, Gemini, Claude, Copilot o Google AI Overviews.",
+    features: ["Optimización para IA", "ChatGPT", "Gemini", "Claude", "Google AI Overviews"],
+    to: "/contacto",
+  },
+];
+
+const includedServices = [
+  ["Auditoría SEO inicial", "Analizamos tu ficha de Google Business Profile, tu web y a tu competencia directa antes de tocar nada."],
+  ["Estudio de palabras clave", "Identificamos las búsquedas reales de tu servicio y tu zona, las de alta intención de contacto."],
+  ["Ficha de Google Business Profile", "Optimización completa: categorías, atributos, servicios, fotos, zona de servicio y publicaciones."],
+  ["Web SEO Local", "Landing por servicio y por zona/barrio, pensada para que Google te posicione por cada combinación relevante."],
+  ["Citaciones en directorios locales y temáticos", "Presencia consistente en los directorios que Google usa como señal de confianza."],
+  ["Reporte mensual", "Llamadas, posiciones y evolución, en lenguaje claro, sin jerga."],
+];
+
+const whySlocal = [
+  ["Equipo especializado en SEO local", "No somos una agencia generalista que también hace SEO: es lo único que hacemos, y lo conocemos a fondo."],
+  ["Optimización para buscadores de IA incluida", "Trabajamos para que aparezcas también en ChatGPT, Gemini y AI Overviews, no solo en Google tradicional — algo que la mayoría de agencias de SEO local todavía no ofrece."],
+  ["Sin permanencia", "Te quedas con nosotros porque el servicio funciona, no porque haya un contrato que te obligue."],
+  ["Precio fijo mensual", "Sin tramos ocultos ni sorpresas en la factura."],
+];
+
+const fitFor = [
+  "una clínica, centro médico o de estética con atención presencial",
+  "un negocio físico a pie de calle",
+  "una empresa de reformas, abogados, fisioterapia o servicios de proximidad",
+  "una tienda, academia, despacho o centro que depende de clientes locales",
+  "varias sedes o ubicaciones y necesitas gestionar varias fichas de Google a la vez",
+  "una ficha de Google Business Profile que no te está generando llamadas",
+  "un negocio que quiere dominar su zona en Google Maps",
+];
+
+const notFitFor = [
+  "un eCommerce nacional sin componente local",
+  "un SaaS 100% online",
+  "infoproductos sin ubicación física",
+  "un negocio que no atiende clientes en una zona concreta",
+  "un proyecto que busca resultados mágicos en dos semanas",
+];
 
 const Home = () => {
   const jsonLd = {
@@ -169,70 +243,172 @@ const Home = () => {
         </div>
       </section>
 
-      {/* MANIFIESTO */}
+      {/* CÓMO POSICIONAMOS */}
       <section className={sectionCls}>
         <div className="container">
-          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— El punto de partida</p>
-          <h2 className="font-heading font-semibold text-warm-fg leading-[1.05] tracking-tight text-4xl md:text-5xl lg:text-6xl max-w-[22ch]">
-            ¿Cómo conseguir <span className="text-primary">más llamadas</span> desde Google para tu negocio local?
-          </h2>
-          <p className="mt-8 max-w-2xl text-base md:text-lg font-body text-warm-fg leading-relaxed">
-            En Slocal optimizamos tu ficha de Google Business Profile y posicionamos tu web para búsquedas locales de alta intención. Aparecer en el top 3 de Google Maps multiplica los contactos: esos tres negocios se llevan la mayoría de las llamadas de la zona.
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Nuestro método</p>
+            <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight">
+              ¿Cómo posicionamos tu negocio en los primeros puestos de Google?
+            </h2>
+            <p className="mt-8 text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed">
+              No es magia ni es cuestión de suerte: Google decide qué negocio muestra primero según tres cosas — que tu ficha y tu web coincidan con lo que la persona está buscando, que estés cerca de quien busca, y la confianza que Google tiene en tu negocio según reseñas y consistencia de tus datos. Sobre la distancia no podemos hacer nada, pero sobre las otras dos trabajamos a fondo:
+            </p>
+          </div>
+          <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+            {[
+              ["01", "¿Cómo hacemos que tu negocio encaje con la búsqueda?", "Optimizamos tu ficha de Google Business Profile y tu web con las mismas categorías, servicios y zonas que usa la gente cuando busca — para que Google entienda exactamente qué ofreces y dónde."],
+              ["02", "¿Por qué deben coincidir tus datos en todas partes?", "Tu nombre, dirección y teléfono deben aparecer exactamente igual en tu ficha, tu web y los directorios donde apareces. Cuando no coincide, Google pierde confianza en tu negocio y te baja posiciones."],
+              ["03", "¿Cómo influyen las reseñas en tu posición?", "El volumen, la frecuencia y cómo respondes a tus reseñas son una de las señales que más pesan a la hora de decidir qué negocio aparece primero."],
+            ].map(([number, title, text]) => (
+              <article key={number} className="border-t-2 border-primary pt-7">
+                <span className="font-heading text-xs tracking-[0.22em] text-primary">{number}</span>
+                <h3 className="mt-5 font-heading font-semibold text-xl md:text-2xl text-warm-fg leading-snug">{title}</h3>
+                <p className="mt-4 font-body font-light text-warm-fg/70 leading-relaxed">{text}</p>
+              </article>
+            ))}
+          </div>
+          <p className="mt-12 mx-auto max-w-4xl text-center font-heading text-lg md:text-xl text-warm-fg leading-relaxed">
+            Trabajamos estos tres frentes a la vez porque Google no premia a quien hace uno bien, sino a quien no falla en ninguno.
           </p>
+        </div>
+      </section>
 
-          {/* Editorial split — GBP */}
-          <div className="mt-24 md:mt-32 grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center">
-            <div>
-              <p className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary mb-6">Google Business Profile</p>
-              <h3 className="font-heading font-semibold text-warm-fg leading-[1.1] tracking-tight text-3xl md:text-4xl lg:text-5xl max-w-[18ch]">
-                Tu ficha de <span className="text-primary">Google Business Profile</span> genera llamadas
-              </h3>
-              <p className="mt-6 max-w-lg text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed">
-                Google Business Profile es donde el cliente decide llamarte. Optimizamos categorías, servicios, zonas y reseñas para que aparezcas antes que tu competencia y esas búsquedas se conviertan en contactos reales.
-              </p>
-              <ul className="mt-8 space-y-3 max-w-md">
-                {["Categorías optimizadas", "Zonas de servicio", "Publicaciones periódicas", "Gestión de reseñas", "Fotos y vídeos", "Seguimiento de llamadas"].map((f) => (
-                  <li key={f} className="flex items-center gap-3 font-body text-warm-fg/85">
-                    <svg width="14" height="14" viewBox="0 0 20 20" fill="none" className="text-primary shrink-0" aria-hidden>
-                      <path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                    <span className="text-[15px] md:text-base">{f}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="order-first md:order-last">
-              <GoogleBusinessProfileVisual alt="Ilustración de una ficha de Google Business Profile optimizada por Slocal" />
-            </div>
-
+      {/* QUÉ INCLUYE */}
+      <section className={sectionCls}>
+        <div className="container">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Servicio base</p>
+            <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight">
+              Qué incluye nuestro servicio de SEO Local
+            </h2>
           </div>
-
-          {/* Editorial split — Web */}
-          <div className="mt-24 md:mt-32 grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center">
-            <div>
-              <OptimizedWebsiteVisual alt="Ilustración de una página web optimizada para negocios locales por Slocal" />
-            </div>
-
-            <div>
-              <p className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary mb-6">Web optimizada</p>
-              <h3 className="font-heading font-semibold text-warm-fg leading-[1.1] tracking-tight text-3xl md:text-4xl lg:text-5xl max-w-[18ch]">
-                Una web que <span className="text-primary">convierte</span> visitas en clientes
-              </h3>
-              <p className="mt-6 max-w-lg text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed">
-                Mientras tu ficha genera la llamada, tu web convierte las visitas en contactos cualificados. Diseñada para posicionar por servicio y por barrio, y para que el cliente contacte en dos clics.
-              </p>
-              <ul className="mt-8 space-y-3 max-w-md">
-                {["SEO Local", "Landing por servicio", "Landing por ciudad", "Formularios optimizados", "WhatsApp", "Google Analytics"].map((f) => (
-                  <li key={f} className="flex items-center gap-3 font-body text-warm-fg/85">
-                    <svg width="14" height="14" viewBox="0 0 20 20" fill="none" className="text-primary shrink-0" aria-hidden>
-                      <path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                    <span className="text-[15px] md:text-base">{f}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px overflow-hidden rounded-2xl border border-warm-fg/10 bg-warm-fg/10">
+            {includedServices.map(([title, text], index) => (
+              <article key={title} className="bg-white p-7 md:p-8">
+                <span className="font-heading text-xs tracking-[0.2em] text-primary">0{index + 1}</span>
+                <h3 className="mt-5 font-heading font-semibold text-xl text-warm-fg leading-snug">{title}</h3>
+                <p className="mt-3 font-body font-light text-warm-fg/70 leading-relaxed">{text}</p>
+              </article>
+            ))}
           </div>
+          <p className="mt-8 mx-auto max-w-4xl text-center text-sm md:text-[15px] font-body text-warm-fg/60 leading-relaxed">
+            Todo el contenido que redactamos para tu ficha y tu web está además estructurado para poder ser citado por ChatGPT, Gemini y otros buscadores con IA — no es un extra que factures aparte, va incluido en el servicio base.
+          </p>
+        </div>
+      </section>
+
+      {/* SERVICIOS COMPLEMENTARIOS */}
+      <section className={sectionCls}>
+        <div className="container">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Servicios complementarios</p>
+            <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight">
+              Cómo acelerarlo o complementarlo
+            </h2>
+            <p className="mt-7 text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed">
+              Con tu ficha y tu web optimizadas, el SEO local sigue trabajando cada mes de forma orgánica. Si quieres acelerar el resultado o ampliar dónde apareces, estos servicios se suman al servicio base:
+            </p>
+          </div>
+          <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-7">
+            {complementaryServices.map((service) => <ServiceCard key={service.id} service={service} />)}
+          </div>
+        </div>
+      </section>
+
+      {/* POR QUÉ SLOCAL */}
+      <section className={sectionCls}>
+        <div className="container">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Una agencia especializada</p>
+            <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight">Por qué Slocal</h2>
+          </div>
+          <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6">
+            {whySlocal.map(([title, text], index) => (
+              <article key={title} className="bg-white border border-warm-fg/10 rounded-2xl p-7 md:p-9">
+                <div className="flex items-start gap-5">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground font-heading text-sm">{index + 1}</span>
+                  <div>
+                    <h3 className="font-heading font-semibold text-xl md:text-2xl text-warm-fg leading-snug">{title}</h3>
+                    <p className="mt-3 font-body font-light text-warm-fg/70 leading-relaxed">{text}</p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ENCAJE */}
+      <section className={sectionCls}>
+        <div className="container">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Antes de empezar</p>
+            <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight">
+              ¿Es Slocal la agencia adecuada para tu negocio?
+            </h2>
+          </div>
+          <div className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+            <article className="rounded-2xl border border-success/25 bg-success/5 p-7 md:p-10">
+              <div className="flex items-center gap-4">
+                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-success text-primary-foreground text-xl" aria-hidden>✓</span>
+                <h3 className="font-heading font-semibold text-2xl text-warm-fg">¿Para quién sí es este servicio?</h3>
+              </div>
+              <p className="mt-6 font-body text-warm-fg/75">Este servicio es para ti si tienes:</p>
+              <ul className="mt-5 space-y-3">
+                {fitFor.map((item) => <li key={item} className="flex items-start gap-3 font-body text-warm-fg/75 leading-relaxed"><span className="mt-1 text-success" aria-hidden>✓</span><span>{item}</span></li>)}
+              </ul>
+            </article>
+            <article className="rounded-2xl border border-destructive/25 bg-destructive/5 p-7 md:p-10">
+              <div className="flex items-center gap-4">
+                <span className="flex h-11 w-11 items-center justify-center rounded-full bg-destructive text-destructive-foreground text-xl" aria-hidden>×</span>
+                <h3 className="font-heading font-semibold text-2xl text-warm-fg">¿Para quién no es?</h3>
+              </div>
+              <p className="mt-6 font-body text-warm-fg/75">Este servicio no es para ti si tienes:</p>
+              <ul className="mt-5 space-y-3">
+                {notFitFor.map((item) => <li key={item} className="flex items-start gap-3 font-body text-warm-fg/75 leading-relaxed"><span className="mt-1 text-destructive" aria-hidden>×</span><span>{item}</span></li>)}
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* COMPARATIVA */}
+      <section className={sectionCls}>
+        <div className="container">
+          <div className="mx-auto max-w-4xl text-center">
+            <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Diferencias clave</p>
+            <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight">SEO tradicional vs SEO Local</h2>
+          </div>
+          <div className="mt-14 overflow-hidden rounded-2xl border border-warm-fg/10">
+            <table className="w-full table-fixed border-collapse text-left">
+              <thead className="bg-dark-bg text-dark-fg">
+                <tr>
+                  <th scope="col" className="w-[28%] p-3 md:p-6 font-heading text-[11px] md:text-sm">Comparativa</th>
+                  <th scope="col" className="w-[31%] p-3 md:p-6 font-heading text-[11px] md:text-sm">SEO tradicional</th>
+                  <th scope="col" className="w-[41%] p-3 md:p-6 font-heading text-[11px] md:text-sm text-primary">SEO Local</th>
+                </tr>
+              </thead>
+              <tbody className="bg-white">
+                {[
+                  ["Objetivo de búsqueda", "Términos nacionales o genéricos", "Servicio + ciudad o barrio"],
+                  ["Dónde compites", "Resultados orgánicos nacionales", "Mapa de Google, ficha y orgánico local"],
+                  ["Factor decisivo", "Autoridad de dominio y backlinks", "Ficha de Google, reseñas, consistencia de datos, proximidad"],
+                  ["Resultado que persigue", "Tráfico", "Llamadas y visitas al negocio"],
+                  ["A quién le sirve", "Ecommerce, medios, marcas nacionales", "Negocios con ubicación física o zona de servicio"],
+                ].map(([label, traditional, local]) => (
+                  <tr key={label} className="border-t border-warm-fg/10 align-top">
+                    <th scope="row" className="p-3 md:p-6 font-heading text-[11px] md:text-sm text-warm-fg break-words">{label}</th>
+                    <td className="p-3 md:p-6 font-body text-[11px] md:text-base text-warm-fg/65 break-words">{traditional}</td>
+                    <td className="p-3 md:p-6 font-body text-[11px] md:text-base font-medium text-warm-fg break-words">{local}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-8 text-center font-heading text-lg md:text-xl text-warm-fg leading-relaxed">
+            Si tu negocio depende de clientes de tu zona, el SEO local no es un complemento del SEO tradicional: es la estrategia que de verdad te trae llamadas.
+          </p>
         </div>
       </section>
 
@@ -257,30 +433,6 @@ const Home = () => {
 
 
 
-
-      {/* SECTORES */}
-      <section className={sectionCls}>
-        <div className="container">
-          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Sectores</p>
-          <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight max-w-[22ch] mb-6">
-            SEO Local para <span className="text-primary">cada tipo</span> de negocio
-          </h2>
-          <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed mb-12 max-w-3xl">
-            Cada sector tiene sus propias búsquedas y su propia competencia local. Por eso trabajamos de forma específica en cada uno.
-          </p>
-          <div className="flex flex-wrap gap-2.5">
-            {sectores.map((s) => (
-              <Link
-                key={s.to}
-                to={s.to}
-                className="border border-warm-fg/20 rounded-full px-5 py-2.5 text-sm font-heading text-warm-fg transition-all duration-200 hover:border-primary hover:text-primary hover:-translate-y-[2px]"
-              >
-                {s.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* LEAD MAGNET */}
       <section className="bg-white py-12 md:py-20">
@@ -318,6 +470,31 @@ const Home = () => {
 
       {/* RESEÑAS */}
       <ElfsightReviews className="bg-white py-24 md:py-32 border-t border-warm-fg/10" />
+
+      {/* SECTORES */}
+      <section className={sectionCls}>
+        <div className="container">
+          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Sectores</p>
+          <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight max-w-[22ch] mb-6">
+            SEO Local para <span className="text-primary">cada tipo</span> de negocio
+          </h2>
+          <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed mb-12 max-w-3xl">
+            Cada sector tiene sus propias búsquedas y su propia competencia local. Por eso trabajamos de forma específica en cada uno.
+          </p>
+          <div className="flex flex-wrap gap-2.5">
+            {sectores.map((s) => (
+              <Link
+                key={s.to}
+                to={s.to}
+                className="border border-warm-fg/20 rounded-full px-5 py-2.5 text-sm font-heading text-warm-fg transition-all duration-200 hover:border-primary hover:text-primary hover:-translate-y-[2px]"
+              >
+                {s.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
 
       {/* FAQ */}
       <section className={sectionCls}>
