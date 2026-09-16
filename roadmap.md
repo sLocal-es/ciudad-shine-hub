@@ -6,3 +6,6 @@
 - [x] Añadir Por qué Slocal, encaje del servicio y comparativa semántica.
 - [x] Conservar los bloques protegidos y los metadatos actuales.
 - [x] Validar escritorio, móvil y HTML servido.
+- [x] Corregir la paleta de las tarjetas Sí/No a naranja, negro y blanco.
+- [x] Convertir posicionamiento y servicio base en nueve bloques visuales alternos.
+- [x] Resaltar las palabras clave de sus títulos en naranja.

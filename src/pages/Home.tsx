@@ -318,7 +318,7 @@ const Home = () => {
           <div className="mx-auto max-w-4xl text-center">
             <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Nuestro método</p>
             <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight">
-              ¿Cómo posicionamos tu negocio en los primeros puestos de Google?
+              ¿Cómo posicionamos tu negocio en los <span className="text-primary">primeros puestos de Google</span>?
             </h2>
             <p className="mt-8 text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed">
               No es magia ni es cuestión de suerte: Google decide qué negocio muestra primero según tres cosas — que tu ficha y tu web coincidan con lo que la persona está buscando, que estés cerca de quien busca, y la confianza que Google tiene en tu negocio según reseñas y consistencia de tus datos. Sobre la distancia no podemos hacer nada, pero sobre las otras dos trabajamos a fondo:
@@ -352,7 +352,7 @@ const Home = () => {
           <div className="mx-auto max-w-4xl text-center">
             <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Servicio base</p>
             <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight">
-              Qué incluye nuestro servicio de SEO Local
+              Qué incluye nuestro servicio de <span className="text-primary">SEO Local</span>
             </h2>
           </div>
           <div className="mt-16 space-y-8 md:space-y-10">
