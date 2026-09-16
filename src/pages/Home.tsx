@@ -9,7 +9,6 @@ import ElfsightReviews from "@/components/ElfsightReviews";
 import { ServiceCard, type ExtraService } from "@/components/servicios/ServiciosUI";
 import {
   BriefcaseBusiness,
-  Building2,
   Dumbbell,
   Hammer,
   HeartPulse,
