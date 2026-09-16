@@ -77,7 +77,7 @@ const includedServices = [
   ["Auditoría SEO inicial", "Analizamos tu ficha de Google Business Profile, tu web y a tu competencia directa antes de tocar nada."],
   ["Estudio de palabras clave", "Identificamos las búsquedas reales de tu servicio y tu zona, las de alta intención de contacto."],
   ["Ficha de Google Business Profile", "Optimización completa: categorías, atributos, servicios, fotos, zona de servicio y publicaciones."],
-  ["Web SEO Local", "Landing por servicio y por zona o barrio, pensada para que Google te posicione por cada combinación relevante."],
+  ["Web SEO Local", "Landing por servicio y por zona/barrio, pensada para que Google te posicione por cada combinación relevante."],
   ["Citaciones en directorios locales y temáticos", "Presencia consistente en los directorios que Google usa como señal de confianza."],
   ["Reporte mensual", "Llamadas, posiciones y evolución, en lenguaje claro, sin jerga."],
 ];
