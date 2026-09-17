@@ -134,11 +134,11 @@ const sectorIcon: Record<string, LucideIcon> = {
   "Abogados": Scale,
 };
 
-function SectorIcon({ category }: { category: string }) {
+function SectorIcon({ category, size = "lg" }: { category: string; size?: "lg" | "sm" }) {
   const Icon = sectorIcon[category] ?? HeartPulse;
   return (
     <Icon
-      className="w-16 h-16 md:w-20 md:h-20 text-primary"
+      className={size === "lg" ? "w-16 h-16 md:w-20 md:h-20 text-primary" : "w-8 h-8 text-primary"}
       strokeWidth={1.25}
       aria-hidden
     />
@@ -175,7 +175,7 @@ function CaseStudyModal({ study, onClose }: { study: CaseStudy; onClose: () => v
         <div className="p-8 pb-6">
           <div className="flex items-center gap-5 mb-5">
             <div className="w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0 bg-primary/10">
-              <SectorIcon category={study.category} />
+              <SectorIcon category={study.category} size="sm" />
             </div>
             <div>
               <h3 className="font-heading text-xl font-bold text-foreground">
