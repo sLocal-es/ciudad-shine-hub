@@ -7,7 +7,7 @@ import { SectorIcon } from "@/components/ResultadosSection";
 import type { CaseStudy } from "@/data/casosExito";
 
 const CasoExitoDetailPage = ({ study }: { study: CaseStudy }) => {
-  const showGeogrid = Boolean(study.geogridBefore && study.geogridAfter);
+  const showQuickStats = Boolean(study.quickStats?.length);
 
   return (
     <>
