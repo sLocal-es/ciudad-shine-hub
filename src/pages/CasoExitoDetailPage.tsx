@@ -44,6 +44,21 @@ const CasoExitoDetailPage = ({ study }: { study: CaseStudy }) => {
               <h1 className="font-heading font-extrabold leading-[1.08] tracking-tight text-3xl md:text-5xl max-w-[24ch]">
                 {study.name}
               </h1>
+              {showQuickStats && (
+                <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  {study.quickStats!.map((stat) => (
+                    <div
+                      key={stat.label}
+                      className="rounded-xl border border-foreground/10 bg-primary/5 px-4 py-3"
+                    >
+                      <p className="text-xs font-medium text-foreground/50">{stat.label}</p>
+                      <p className="mt-1 font-heading text-lg md:text-xl font-bold text-foreground">
+                        {stat.value}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>
