@@ -30,11 +30,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://slocal.es/casos-de-exito/viviane</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://slocal.es/casos-de-exito/tei</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
