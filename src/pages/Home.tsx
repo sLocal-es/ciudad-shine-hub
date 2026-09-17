@@ -1,4 +1,6 @@
+import { useRef } from "react";
 import { Link } from "@/lib/router-compat";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import SEOHead from "@/components/SEOHead";
 import CTASection from "@/components/CTASection";
 import SectorHeroDark from "@/components/sector/SectorHeroDark";
@@ -6,6 +8,8 @@ import LogoMarquee from "@/components/LogoMarquee";
 import LeadMagnetForm from "@/components/forms/LeadMagnetForm";
 import ContactForm from "@/components/forms/ContactForm";
 import ElfsightReviews from "@/components/ElfsightReviews";
+import { SectorIcon } from "@/components/ResultadosSection";
+import { cases } from "@/data/casosExito";
 import { ServiceCard, type ExtraService } from "@/components/servicios/ServiciosUI";
 import {
   BriefcaseBusiness,
@@ -222,6 +226,7 @@ const notFitFor = [
 ];
 
 const Home = () => {
+  const stripRef = useRef<HTMLDivElement>(null);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -594,6 +599,71 @@ const Home = () => {
 
       {/* RESEÑAS */}
       <ElfsightReviews className="bg-white py-24 md:py-32 border-t border-warm-fg/10" />
+
+      {/* CASOS DE ÉXITO */}
+      <section className={sectionCls}>
+        <div className="container">
+          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Casos de éxito</p>
+          <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight max-w-[22ch] mb-6">
+            ¿Qué <span className="text-primary">resultados reales</span> da el SEO Local?
+          </h2>
+          <p className="font-body font-light text-warm-fg/75 text-base md:text-lg leading-relaxed max-w-2xl mb-14">
+            Negocios reales que pasaron de no aparecer en Google a recibir llamadas. Entra en cada caso para ver qué hicimos y qué consiguió.
+          </p>
+
+          <div className="flex items-center justify-between gap-4 mb-8">
+            <span className="sr-only">Casos de éxito</span>
+            <div className="hidden md:flex items-center gap-2 ml-auto">
+              <button
+                type="button"
+                onClick={() => stripRef.current?.scrollBy({ left: -320, behavior: "smooth" })}
+                aria-label="Ver casos anteriores"
+                className="w-10 h-10 rounded-full flex items-center justify-center bg-primary/10 text-primary transition-colors hover:bg-primary/20"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                type="button"
+                onClick={() => stripRef.current?.scrollBy({ left: 320, behavior: "smooth" })}
+                aria-label="Ver casos siguientes"
+                className="w-10 h-10 rounded-full flex items-center justify-center bg-primary/10 text-primary transition-colors hover:bg-primary/20"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+
+          <div
+            ref={stripRef}
+            className="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2 -mx-5 px-5 md:mx-0 md:px-0"
+          >
+            {cases.map((study) => (
+              <Link
+                key={study.slug}
+                to={`/casos-de-exito/${study.slug}`}
+                className="group snap-start flex-shrink-0 w-[260px] rounded-2xl border border-foreground/10 bg-white p-5 flex flex-col gap-3 transition-colors duration-300 hover:border-primary/40"
+              >
+                <SectorIcon category={study.category} size="sm" />
+                <p className="font-heading text-base font-bold text-warm-fg leading-snug">
+                  {study.name}
+                </p>
+                <p className="text-sm leading-snug text-warm-fg/60 line-clamp-1">
+                  {study.cardHook}
+                </p>
+              </Link>
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link
+              to="/casos-de-exito"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-all hover:gap-2.5"
+            >
+              Ver todos los casos de éxito →
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* SECTORES */}
       <section className={sectionCls}>
