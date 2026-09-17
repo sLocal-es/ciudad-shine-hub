@@ -1,10 +1,12 @@
-import { CheckCircle2, Euro, Quote } from "lucide-react";
+import { useRef } from "react";
+import { CheckCircle2, ChevronLeft, ChevronRight, Euro, Quote } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 import SEOHead from "@/components/SEOHead";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import CTASection from "@/components/CTASection";
 import { SectorIcon } from "@/components/ResultadosSection";
-import type { CaseStudy } from "@/data/casosExito";
+import { cases, type CaseStudy } from "@/data/casosExito";
 
 const CasoExitoDetailPage = ({ study }: { study: CaseStudy }) => {
   const showQuickStats = Boolean(study.quickStats?.length);
