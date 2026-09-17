@@ -106,6 +106,11 @@ export const cases: CaseStudy[] = [
     testimonial:
       "Notamos un incremento notable en la demanda de servicios de extranjería.",
     geogridComparison: geogridComparisonExtranjeria.url,
+    quickStats: [
+      { label: "Posición media", value: "13,2 → 4,9" },
+      { label: "Vistas de ficha", value: "+42% al mes" },
+      { label: "Tiempo", value: "3 meses" },
+    ],
     impactoTexto:
       "Sin invertir un euro en publicidad, este despacho está generando más de 2.500€ al mes en negocio nuevo desde que le optimizamos la ficha — y es la cifra más baja, porque muchos de sus servicios superan los 1.300€ por caso.",
   },
