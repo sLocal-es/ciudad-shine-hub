@@ -2,19 +2,12 @@ import logoTei from "@/assets/casos/logo-tei.png";
 import logoViviane from "@/assets/casos/logo-viviane.png";
 import logoMva from "@/assets/casos/logo-mva.png";
 import logoFontaneros from "@/assets/casos/logo-fontaneros.png";
-
-export interface MonthlyMetric {
-  month: string;
-  calls: number;
-  chatClicks: number;
-  directionRequests: number;
-  websiteClicks: number;
-  profileViews: number;
-  profileViewsGrowth: string;
-}
+import geogridAntesExtranjeria from "@/assets/casos/geogrid-antes-extranjeria-valencia.png";
+import geogridDespuesExtranjeria from "@/assets/casos/geogrid-despues-extranjeria-valencia.png";
 
 export interface CaseStudy {
   id: string;
+  slug: string;
   logo: string;
   name: string;
   category: string;
@@ -23,12 +16,15 @@ export interface CaseStudy {
   actions: string[];
   after: string;
   testimonial: string;
-  monthlyMetrics?: MonthlyMetric[];
+  geogridBefore?: string;
+  geogridAfter?: string;
+  impactoPendiente?: boolean;
 }
 
 export const cases: CaseStudy[] = [
   {
     id: "viviane",
+    slug: "viviane",
     logo: logoViviane,
     name: "Viviane Custodio",
     category: "Psicóloga",
@@ -47,6 +43,7 @@ export const cases: CaseStudy[] = [
   },
   {
     id: "tei",
+    slug: "tei",
     logo: logoTei,
     name: "Grupo TEI",
     category: "Reformas",
@@ -65,6 +62,7 @@ export const cases: CaseStudy[] = [
   },
   {
     id: "fontaneros",
+    slug: "fontaneros",
     logo: logoFontaneros,
     name: "Fontaneros Económicos",
     category: "Fontanería",
@@ -83,6 +81,7 @@ export const cases: CaseStudy[] = [
   },
   {
     id: "mva",
+    slug: "mva",
     logo: logoMva,
     name: "MVA Fontanería",
     category: "Fontanería",
@@ -101,12 +100,13 @@ export const cases: CaseStudy[] = [
   },
   {
     id: "despacho-extranjeria-valencia",
+    slug: "despacho-extranjeria-valencia",
     logo: "/placeholder.svg",
     name: "Despacho de Extranjería en Valencia",
     category: "Abogados",
     city: "Valencia",
     before:
-      "La ficha de Google tenía una categoría genérica ('Abogados') en vez de especializarse en extranjería, sin servicios definidos ni categorías secundarias, y con los datos de contacto sin coincidir con la web. Para 'abogado extranjería Valencia' estaban fuera del top 10 de Google, con una posición media de 12-15.",
+      "La ficha de Google tenía una categoría genérica ('Abogados') en vez de especializarse en extranjería, sin servicios definidos ni categorías secundarias, y con los datos de contacto sin coincidir con la web. Para 'abogado extranjería Valencia' ni siquiera aparecían en la primera página de Google.",
     actions: [
       "Definimos la categoría principal como especialista en extranjería y añadimos categorías secundarias",
       "Hicimos un estudio de palabras clave para detectar qué servicios buscaba realmente la gente",
@@ -114,15 +114,13 @@ export const cases: CaseStudy[] = [
       "Optimizamos la ficha al completo: descripción, servicios y fotos",
     ],
     after:
-      "En 3 meses pasaron de estar fuera del top 10 a estar entre las posiciones 2-5 en el centro de Valencia (radio de 5 km). Las llamadas subieron cada mes de forma sostenida y las visitas a la ficha crecieron un 42% de media frente al año anterior — no fue un pico puntual, sino una mejora constante mes a mes.",
+      "En 3 meses pasaron de estar fuera del top 10 a estar entre los 2 y 5 primeros resultados en el centro de Valencia. Las vistas de su ficha crecieron un 42% de media cada mes frente al año anterior — no fue un pico puntual, fue una mejora sostenida — y las llamadas no han dejado de subir desde entonces.",
     testimonial:
       "Notamos un incremento notable en la demanda de servicios de extranjería.",
-    monthlyMetrics: [
-      { month: "Junio", calls: 52, chatClicks: 6, directionRequests: 93, websiteClicks: 76, profileViews: 3147, profileViewsGrowth: "+42,3%" },
-      { month: "Julio", calls: 56, chatClicks: 6, directionRequests: 73, websiteClicks: 71, profileViews: 3369, profileViewsGrowth: "+44,4%" },
-      { month: "Agosto", calls: 59, chatClicks: 22, directionRequests: 96, websiteClicks: 71, profileViews: 3512, profileViewsGrowth: "+42,1%" },
-    ],
+    geogridBefore: geogridAntesExtranjeria,
+    geogridAfter: geogridDespuesExtranjeria,
+    impactoPendiente: true,
   },
 ];
 
-export const getCaseBySlug = (slug: string) => cases.find((c) => c.id === slug);
+export const getCaseBySlug = (slug: string) => cases.find((c) => c.slug === slug);
