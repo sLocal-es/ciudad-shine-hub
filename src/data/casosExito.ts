@@ -123,7 +123,8 @@ export const cases: CaseStudy[] = [
     after:
       "En el primer mes completo, partiendo de cero, 753 personas vieron su ficha, recibieron 19 llamadas, 10 conversaciones por chat y 20 clics a la web. Su web ya empezó a posicionar en paralelo: en las primeras semanas acumula más de 4.200 impresiones y 32 clics orgánicos en Google Search Console.",
     testimonial: "",
-    impactoPendiente: true,
+    impactoTexto:
+      "Sin invertir un euro en publicidad, en sus primeras 6 semanas recibió 28 llamadas nuevas desde Google (19 el primer mes, 9 en lo que va de septiembre). Con una conversión conservadora del 25% — habitual en fontanería urgente, donde quien llama ya tiene el problema delante — y su ticket medio de entre 80€ y 450€, son entre 560€ y 3.150€ facturados solo gracias a la ficha y la web.",
   },
 ];
 
