@@ -3,7 +3,7 @@ import { Link, useLocation } from "@/lib/router-compat";
 
 const links = [
   { to: "/servicios", label: "Servicios" },
-  { to: "/seo-para-fontaneros#caso-real", label: "Casos de éxito" },
+  { to: "/casos-de-exito", label: "Casos de éxito" },
   { to: "/blog", label: "Blog" },
   { to: "/contacto", label: "Contacto" },
 ];
