@@ -8,7 +8,7 @@ import LogoMarquee from "@/components/LogoMarquee";
 import LeadMagnetForm from "@/components/forms/LeadMagnetForm";
 import ContactForm from "@/components/forms/ContactForm";
 import ElfsightReviews from "@/components/ElfsightReviews";
-import { SectorIcon } from "@/components/ResultadosSection";
+import { CaseCard } from "@/components/ResultadosSection";
 import { cases } from "@/data/casosExito";
 import { ServiceCard, type ExtraService } from "@/components/servicios/ServiciosUI";
 import {
@@ -597,20 +597,13 @@ const Home = () => {
             ref={stripRef}
             className="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2 -mx-5 px-5 md:mx-0 md:px-0"
           >
-            {cases.map((study) => (
-              <Link
+            {cases.map((study, index) => (
+              <div
                 key={study.slug}
-                to={`/casos-de-exito/${study.slug}`}
-                className="group snap-start flex-shrink-0 w-[260px] rounded-2xl border border-foreground/10 bg-white p-5 flex flex-col gap-3 transition-colors duration-300 hover:border-primary/40"
+                className="snap-start flex-shrink-0 w-[320px] sm:w-[360px]"
               >
-                <SectorIcon category={study.category} size="sm" />
-                <p className="font-heading text-base font-bold text-warm-fg leading-snug">
-                  {study.name}
-                </p>
-                <p className="text-sm leading-snug text-warm-fg/60 line-clamp-1">
-                  {study.cardHook}
-                </p>
-              </Link>
+                <CaseCard study={study} position={index + 1} />
+              </div>
             ))}
           </div>
 
