@@ -1,7 +1,8 @@
 import logoTei from "@/assets/casos/logo-tei.png";
 import logoMva from "@/assets/casos/logo-mva.png";
 import logoFontaneros from "@/assets/casos/logo-fontaneros.png";
-import geogridComparisonExtranjeria from "@/assets/casos/geogrid-comparison-v3.png.asset.json";
+import geogridRealAntes from "@/assets/casos/geogrid-real-antes.png.asset.json";
+import geogridRealDespues from "@/assets/casos/geogrid-real-despues.png.asset.json";
 
 export interface CaseStudy {
   id: string;
@@ -15,7 +16,10 @@ export interface CaseStudy {
   actions: string[];
   after: string;
   testimonial: string;
-  geogridComparison?: string;
+  geogridBefore?: string;
+  geogridAfter?: string;
+  geogridBeforeAlt?: string;
+  geogridAfterAlt?: string;
   impactoPendiente?: boolean;
   impactoTexto?: string;
   quickStats?: { label: string; value: string }[];
@@ -105,7 +109,12 @@ export const cases: CaseStudy[] = [
       "En 3 meses pasaron de estar fuera del top 10 a estar entre los 2 y 5 primeros resultados en el centro de Valencia. Las vistas de su ficha crecieron un 42% de media cada mes frente al año anterior — no fue un pico puntual, fue una mejora sostenida — y las llamadas no han dejado de subir desde entonces.",
     testimonial:
       "Notamos un incremento notable en la demanda de servicios de extranjería.",
-    geogridComparison: geogridComparisonExtranjeria.url,
+    geogridBefore: geogridRealAntes.url,
+    geogridAfter: geogridRealDespues.url,
+    geogridBeforeAlt:
+      "Mapa de calor de posicionamiento en Google Maps para 'abogado extranjería Valencia' antes de la optimización SEO, con posiciones mayoritariamente entre 11 y 15 en la zona metropolitana",
+    geogridAfterAlt:
+      "Mapa de calor de posicionamiento en Google Maps para 'abogado extranjería Valencia' después de la optimización SEO, con posiciones mayoritariamente entre 3 y 10 en la zona metropolitana",
     quickStats: [
       { label: "Posición media", value: "13,2 → 4,9" },
       { label: "Vistas de ficha", value: "+42% al mes" },
