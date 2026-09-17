@@ -10,6 +10,8 @@ import { cases, type CaseStudy } from "@/data/casosExito";
 
 const CasoExitoDetailPage = ({ study }: { study: CaseStudy }) => {
   const showQuickStats = Boolean(study.quickStats?.length);
+  const stripRef = useRef<HTMLDivElement>(null);
+  const otherCases = cases.filter((c) => c.slug !== study.slug);
 
   return (
     <>
