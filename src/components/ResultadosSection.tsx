@@ -47,23 +47,23 @@ function CaseCard({ study }: { study: CaseStudy }) {
         </div>
 
         <div className="pt-5 px-1 pb-2 flex flex-col flex-1">
-          {/* Pills: sector + ciudad */}
-          <div className="flex flex-wrap gap-2 mb-3">
-            <span className="inline-flex items-center text-xs font-medium rounded-full px-3 py-1 bg-primary/10 text-primary">
-              {study.category}
-            </span>
-            <span className="inline-flex items-center text-xs font-medium rounded-full px-3 py-1 bg-primary/10 text-primary">
-              {study.city}
-            </span>
-          </div>
-
-          <h3 className="font-heading text-lg font-bold text-foreground leading-snug mb-3">
+          <h3 className="font-heading text-lg font-bold text-foreground leading-snug mb-2">
             {study.name}
           </h3>
 
-          <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-all group-hover:gap-2.5 mt-auto">
-            Ver caso <ArrowRight className="w-4 h-4" />
-          </span>
+          <p className="text-[15px] font-semibold leading-snug text-primary mb-3">
+            {study.cardHook}
+          </p>
+
+          {/* Pills: sector + ciudad */}
+          <div className="flex flex-wrap gap-2 mt-auto">
+            <span className="inline-flex items-center text-[11px] font-medium rounded-full px-2.5 py-0.5 bg-primary/10 text-primary">
+              {study.category}
+            </span>
+            <span className="inline-flex items-center text-[11px] font-medium rounded-full px-2.5 py-0.5 bg-primary/10 text-primary">
+              {study.city}
+            </span>
+          </div>
         </div>
       </Link>
     </article>
