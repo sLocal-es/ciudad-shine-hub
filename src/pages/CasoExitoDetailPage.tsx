@@ -126,15 +126,36 @@ const CasoExitoDetailPage = ({ study }: { study: CaseStudy }) => {
             </div>
           )}
 
-          {/* Prueba visual: comparativa geogrid antes / después */}
-          {study.geogridComparison && (
+          {/* Prueba visual: geogrid antes / después */}
+          {study.geogridBefore && study.geogridAfter && (
             <div className="mb-12">
-              <img
-                src={study.geogridComparison}
-                alt={`Comparativa antes/después del posicionamiento en el mapa de Google para ${study.name}`}
-                className="w-full max-w-2xl mx-auto rounded-2xl"
-                loading="lazy"
-              />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <span className="inline-block mb-3 px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase bg-foreground text-white">
+                    Antes
+                  </span>
+                  <img
+                    src={study.geogridBefore}
+                    alt={study.geogridBeforeAlt ?? `Geogrid antes de la optimización para ${study.name}`}
+                    className="w-full rounded-2xl"
+                    loading="lazy"
+                  />
+                </div>
+                <div>
+                  <span className="inline-block mb-3 px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase bg-primary text-white">
+                    Después
+                  </span>
+                  <img
+                    src={study.geogridAfter}
+                    alt={study.geogridAfterAlt ?? `Geogrid después de la optimización para ${study.name}`}
+                    className="w-full rounded-2xl"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <p className="mt-6 rounded-2xl bg-primary/5 px-6 py-4 text-center font-semibold text-primary">
+                Posición media en el mapa: 13,2 → 4,9 (Top 2-5 en el centro de Valencia)
+              </p>
             </div>
           )}
 
