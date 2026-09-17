@@ -1,5 +1,4 @@
 import logoTei from "@/assets/casos/logo-tei.png";
-import logoViviane from "@/assets/casos/logo-viviane.png";
 import logoMva from "@/assets/casos/logo-mva.png";
 import logoFontaneros from "@/assets/casos/logo-fontaneros.png";
 import geogridAntesExtranjeria from "@/assets/casos/geogrid-antes-extranjeria-valencia.png";
@@ -23,25 +22,6 @@ export interface CaseStudy {
 }
 
 export const cases: CaseStudy[] = [
-  {
-    id: "viviane",
-    slug: "viviane",
-    logo: logoViviane,
-    name: "Viviane Custodio",
-    category: "Psicóloga",
-    city: "Valencia",
-    before:
-      "No tenía presencia en Google. Solo aparecía en directorios y dependía del boca a boca. Si alguien la buscaba directamente, casi no la encontraba.",
-    actions: [
-      "Reactivamos su ficha de Google desde cero",
-      "Configuramos sus servicios y horarios",
-      "Subimos fotos profesionales y empezamos a publicar",
-    ],
-    after:
-      "En el segundo mes ya empezó a recibir llamadas directas desde Google sin pagar publicidad. Pacientes nuevos que la encontraron buscando psicóloga en su zona.",
-    testimonial:
-      "La ficha estaba completamente parada y ahora vuelve a generar contactos.",
-  },
   {
     id: "tei",
     slug: "tei",
