@@ -34,7 +34,7 @@ function CaseCard({ study }: { study: CaseStudy }) {
     <article className="group transition-transform duration-300 hover:-translate-y-1 flex flex-col">
       <Link
         to="/casos-de-exito/$slug"
-        params={{ slug: study.id }}
+        params={{ slug: study.slug }}
         className="flex flex-col flex-1"
         aria-label={`Ver el caso de éxito de ${study.name}`}
       >
