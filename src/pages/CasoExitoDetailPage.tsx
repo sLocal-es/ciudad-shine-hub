@@ -81,15 +81,29 @@ const CasoExitoDetailPage = ({ study }: { study: CaseStudy }) => {
             {study.after}
           </p>
 
-          {/* Impacto pendiente */}
-          {study.impactoPendiente && (
+          {/* Impacto */}
+          {(study.impactoTexto || study.impactoPendiente) && (
             <div className="mb-12 rounded-2xl border border-primary/40 bg-primary/5 p-6 flex items-start gap-4">
               <Euro className="w-6 h-6 flex-shrink-0 text-primary" />
-              <p className="text-base leading-relaxed text-foreground/80">
-                💰 Cada posición ganada en el mapa son más llamadas — y cada llamada es un
-                cliente potencial. Pronto añadimos aquí cuánto ha supuesto esto en
-                facturación real para el despacho.
-              </p>
+              <div>
+                {study.impactoTexto ? (
+                  <>
+                    <p className="text-base leading-relaxed text-foreground/80">
+                      {study.impactoTexto}
+                    </p>
+                    <p className="mt-3 text-xs leading-relaxed text-foreground/50">
+                      Estimación ilustrativa a partir de datos reales de llamadas y honorarios
+                      aproximados del despacho; no son cifras de facturación auditadas.
+                    </p>
+                  </>
+                ) : (
+                  <p className="text-base leading-relaxed text-foreground/80">
+                    💰 Cada posición ganada en el mapa son más llamadas — y cada llamada es un
+                    cliente potencial. Pronto añadimos aquí cuánto ha supuesto esto en
+                    facturación real para el despacho.
+                  </p>
+                )}
+              </div>
             </div>
           )}
 
