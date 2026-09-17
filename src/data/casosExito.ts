@@ -1,8 +1,7 @@
 import logoTei from "@/assets/casos/logo-tei.png";
 import logoMva from "@/assets/casos/logo-mva.png";
 import logoFontaneros from "@/assets/casos/logo-fontaneros.png";
-import geogridAntesExtranjeria from "@/assets/casos/geogrid-antes-v2.png";
-import geogridDespuesExtranjeria from "@/assets/casos/geogrid-despues-v2.png";
+import geogridComparisonExtranjeria from "@/assets/casos/geogrid-comparison-v3.png.asset.json";
 
 export interface CaseStudy {
   id: string;
@@ -16,10 +15,10 @@ export interface CaseStudy {
   actions: string[];
   after: string;
   testimonial: string;
-  geogridBefore?: string;
-  geogridAfter?: string;
+  geogridComparison?: string;
   impactoPendiente?: boolean;
   impactoTexto?: string;
+  quickStats?: { label: string; value: string }[];
 }
 
 export const cases: CaseStudy[] = [
