@@ -51,6 +51,7 @@ import { Route as AdminIndexnowRouteImport } from './routes/admin.indexnow'
 import { Route as MainBlogIndexRouteImport } from './routes/_main.blog.index'
 import { Route as MainBlogSlugRouteImport } from './routes/_main.blog.$slug'
 import { Route as MainBlogSeoLocalMejorEstrategiaMarketingNuevoNegocioRouteImport } from './routes/_main.blog.seo-local-mejor-estrategia-marketing-nuevo-negocio'
+import { Route as MainCasosDeExitoSlugRouteImport } from './routes/_main.casos-de-exito.$slug'
 import { Route as ApiPublicSubmitIndexnowRouteImport } from './routes/api/public/submit-indexnow'
 
 const MainRoute = MainRouteImport.update({
@@ -271,6 +272,11 @@ const MainBlogSeoLocalMejorEstrategiaMarketingNuevoNegocioRoute =
     path: '/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio',
     getParentRoute: () => MainRoute,
   } as any)
+const MainCasosDeExitoSlugRoute = MainCasosDeExitoSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => MainCasosDeExitoRoute,
+} as any)
 const ApiPublicSubmitIndexnowRoute = ApiPublicSubmitIndexnowRouteImport.update({
   id: '/api/public/submit-indexnow',
   path: '/api/public/submit-indexnow',
@@ -284,7 +290,7 @@ export interface FileRoutesByFullPath {
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/$': typeof MainSplatRoute
   '/aparecer-en-google-maps': typeof MainAparecerEnGoogleMapsRoute
-  '/casos-de-exito': typeof MainCasosDeExitoRoute
+  '/casos-de-exito': typeof MainCasosDeExitoRouteWithChildren
   '/como-funciona': typeof MainComoFuncionaRoute
   '/como-salir-primero-en-google': typeof MainComoSalirPrimeroEnGoogleRoute
   '/como-ve-google-mi-web': typeof MainComoVeGoogleMiWebRoute
@@ -318,6 +324,7 @@ export interface FileRoutesByFullPath {
   '/admin/indexnow': typeof AdminIndexnowRoute
   '/blog/$slug': typeof MainBlogSlugRoute
   '/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio': typeof MainBlogSeoLocalMejorEstrategiaMarketingNuevoNegocioRoute
+  '/casos-de-exito/$slug': typeof MainCasosDeExitoSlugRoute
   '/api/public/submit-indexnow': typeof ApiPublicSubmitIndexnowRoute
   '/blog/': typeof MainBlogIndexRoute
 }
@@ -327,7 +334,7 @@ export interface FileRoutesByTo {
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/$': typeof MainSplatRoute
   '/aparecer-en-google-maps': typeof MainAparecerEnGoogleMapsRoute
-  '/casos-de-exito': typeof MainCasosDeExitoRoute
+  '/casos-de-exito': typeof MainCasosDeExitoRouteWithChildren
   '/como-funciona': typeof MainComoFuncionaRoute
   '/como-salir-primero-en-google': typeof MainComoSalirPrimeroEnGoogleRoute
   '/como-ve-google-mi-web': typeof MainComoVeGoogleMiWebRoute
@@ -362,6 +369,7 @@ export interface FileRoutesByTo {
   '/': typeof MainIndexRoute
   '/blog/$slug': typeof MainBlogSlugRoute
   '/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio': typeof MainBlogSeoLocalMejorEstrategiaMarketingNuevoNegocioRoute
+  '/casos-de-exito/$slug': typeof MainCasosDeExitoSlugRoute
   '/api/public/submit-indexnow': typeof ApiPublicSubmitIndexnowRoute
   '/blog': typeof MainBlogIndexRoute
 }
@@ -373,7 +381,7 @@ export interface FileRoutesById {
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/_main/$': typeof MainSplatRoute
   '/_main/aparecer-en-google-maps': typeof MainAparecerEnGoogleMapsRoute
-  '/_main/casos-de-exito': typeof MainCasosDeExitoRoute
+  '/_main/casos-de-exito': typeof MainCasosDeExitoRouteWithChildren
   '/_main/como-funciona': typeof MainComoFuncionaRoute
   '/_main/como-salir-primero-en-google': typeof MainComoSalirPrimeroEnGoogleRoute
   '/_main/como-ve-google-mi-web': typeof MainComoVeGoogleMiWebRoute
@@ -408,6 +416,7 @@ export interface FileRoutesById {
   '/_main/': typeof MainIndexRoute
   '/_main/blog/$slug': typeof MainBlogSlugRoute
   '/_main/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio': typeof MainBlogSeoLocalMejorEstrategiaMarketingNuevoNegocioRoute
+  '/_main/casos-de-exito/$slug': typeof MainCasosDeExitoSlugRoute
   '/api/public/submit-indexnow': typeof ApiPublicSubmitIndexnowRoute
   '/_main/blog/': typeof MainBlogIndexRoute
 }
@@ -454,6 +463,7 @@ export interface FileRouteTypes {
     | '/admin/indexnow'
     | '/blog/$slug'
     | '/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio'
+    | '/casos-de-exito/$slug'
     | '/api/public/submit-indexnow'
     | '/blog/'
   fileRoutesByTo: FileRoutesByTo
@@ -498,6 +508,7 @@ export interface FileRouteTypes {
     | '/'
     | '/blog/$slug'
     | '/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio'
+    | '/casos-de-exito/$slug'
     | '/api/public/submit-indexnow'
     | '/blog'
   id:
@@ -543,6 +554,7 @@ export interface FileRouteTypes {
     | '/_main/'
     | '/_main/blog/$slug'
     | '/_main/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio'
+    | '/_main/casos-de-exito/$slug'
     | '/api/public/submit-indexnow'
     | '/_main/blog/'
   fileRoutesById: FileRoutesById
@@ -852,6 +864,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MainBlogSeoLocalMejorEstrategiaMarketingNuevoNegocioRouteImport
       parentRoute: typeof MainRoute
     }
+    '/_main/casos-de-exito/$slug': {
+      id: '/_main/casos-de-exito/$slug'
+      path: '/$slug'
+      fullPath: '/casos-de-exito/$slug'
+      preLoaderRoute: typeof MainCasosDeExitoSlugRouteImport
+      parentRoute: typeof MainCasosDeExitoRoute
+    }
     '/api/public/submit-indexnow': {
       id: '/api/public/submit-indexnow'
       path: '/api/public/submit-indexnow'
@@ -862,10 +881,21 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface MainCasosDeExitoRouteChildren {
+  MainCasosDeExitoSlugRoute: typeof MainCasosDeExitoSlugRoute
+}
+
+const MainCasosDeExitoRouteChildren: MainCasosDeExitoRouteChildren = {
+  MainCasosDeExitoSlugRoute: MainCasosDeExitoSlugRoute,
+}
+
+const MainCasosDeExitoRouteWithChildren =
+  MainCasosDeExitoRoute._addFileChildren(MainCasosDeExitoRouteChildren)
+
 interface MainRouteChildren {
   MainSplatRoute: typeof MainSplatRoute
   MainAparecerEnGoogleMapsRoute: typeof MainAparecerEnGoogleMapsRoute
-  MainCasosDeExitoRoute: typeof MainCasosDeExitoRoute
+  MainCasosDeExitoRoute: typeof MainCasosDeExitoRouteWithChildren
   MainComoFuncionaRoute: typeof MainComoFuncionaRoute
   MainComoSalirPrimeroEnGoogleRoute: typeof MainComoSalirPrimeroEnGoogleRoute
   MainComoVeGoogleMiWebRoute: typeof MainComoVeGoogleMiWebRoute
@@ -905,7 +935,7 @@ interface MainRouteChildren {
 const MainRouteChildren: MainRouteChildren = {
   MainSplatRoute: MainSplatRoute,
   MainAparecerEnGoogleMapsRoute: MainAparecerEnGoogleMapsRoute,
-  MainCasosDeExitoRoute: MainCasosDeExitoRoute,
+  MainCasosDeExitoRoute: MainCasosDeExitoRouteWithChildren,
   MainComoFuncionaRoute: MainComoFuncionaRoute,
   MainComoSalirPrimeroEnGoogleRoute: MainComoSalirPrimeroEnGoogleRoute,
   MainComoVeGoogleMiWebRoute: MainComoVeGoogleMiWebRoute,
