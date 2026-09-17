@@ -92,8 +92,8 @@ const CasoExitoDetailPage = ({ study }: { study: CaseStudy }) => {
                       {study.impactoTexto}
                     </p>
                     <p className="mt-3 text-xs leading-relaxed text-foreground/50">
-                      Estimación ilustrativa a partir de datos reales de llamadas y honorarios
-                      aproximados del despacho; no son cifras de facturación auditadas.
+                      Estimación ilustrativa a partir de datos reales de llamadas y ticket medio
+                      aproximado del negocio; no son cifras de facturación auditadas.
                     </p>
                   </>
                 ) : (
