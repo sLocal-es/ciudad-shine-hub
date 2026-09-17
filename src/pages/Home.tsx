@@ -226,6 +226,7 @@ const notFitFor = [
 ];
 
 const Home = () => {
+  const stripRef = useRef<HTMLDivElement>(null);
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -639,8 +640,7 @@ const Home = () => {
             {cases.map((study) => (
               <Link
                 key={study.slug}
-                to="/casos-de-exito/$slug"
-                params={{ slug: study.slug }}
+                to={`/casos-de-exito/${study.slug}`}
                 className="group snap-start flex-shrink-0 w-[260px] rounded-2xl border border-foreground/10 bg-white p-5 flex flex-col gap-3 transition-colors duration-300 hover:border-primary/40"
               >
                 <SectorIcon category={study.category} size="sm" />
