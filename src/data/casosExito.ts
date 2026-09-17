@@ -105,8 +105,7 @@ export const cases: CaseStudy[] = [
       "En 3 meses pasaron de estar fuera del top 10 a estar entre los 2 y 5 primeros resultados en el centro de Valencia. Las vistas de su ficha crecieron un 42% de media cada mes frente al año anterior — no fue un pico puntual, fue una mejora sostenida — y las llamadas no han dejado de subir desde entonces.",
     testimonial:
       "Notamos un incremento notable en la demanda de servicios de extranjería.",
-    geogridBefore: geogridAntesExtranjeria,
-    geogridAfter: geogridDespuesExtranjeria,
+    geogridComparison: geogridComparisonExtranjeria.url,
     impactoTexto:
       "Sin invertir un euro en publicidad, este despacho está generando más de 2.500€ al mes en negocio nuevo desde que le optimizamos la ficha — y es la cifra más baja, porque muchos de sus servicios superan los 1.300€ por caso.",
   },
