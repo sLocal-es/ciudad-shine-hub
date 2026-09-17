@@ -7,7 +7,7 @@ import { SectorIcon } from "@/components/ResultadosSection";
 import type { CaseStudy } from "@/data/casosExito";
 
 const CasoExitoDetailPage = ({ study }: { study: CaseStudy }) => {
-  const showGeogrid = Boolean(study.geogridBefore && study.geogridAfter);
+  const showQuickStats = Boolean(study.quickStats?.length);
 
   return (
     <>
@@ -44,6 +44,21 @@ const CasoExitoDetailPage = ({ study }: { study: CaseStudy }) => {
               <h1 className="font-heading font-extrabold leading-[1.08] tracking-tight text-3xl md:text-5xl max-w-[24ch]">
                 {study.name}
               </h1>
+              {showQuickStats && (
+                <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  {study.quickStats!.map((stat) => (
+                    <div
+                      key={stat.label}
+                      className="rounded-xl border border-foreground/10 bg-primary/5 px-4 py-3"
+                    >
+                      <p className="text-xs font-medium text-foreground/50">{stat.label}</p>
+                      <p className="mt-1 font-heading text-lg md:text-xl font-bold text-foreground">
+                        {stat.value}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -107,37 +122,15 @@ const CasoExitoDetailPage = ({ study }: { study: CaseStudy }) => {
             </div>
           )}
 
-          {/* Prueba visual: geogrid antes / después */}
-          {showGeogrid && (
+          {/* Prueba visual: comparativa geogrid antes / después */}
+          {study.geogridComparison && (
             <div className="mb-12">
-              <h2 className="font-heading text-xl md:text-2xl font-bold text-foreground mb-5">
-                Antes / Después en el mapa de Google — "abogado extranjería Valencia"
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <figure>
-                  <img
-                    src={study.geogridBefore}
-                    alt="Mapa de posiciones antes de la optimización para 'abogado extranjería Valencia': posición media 13,2 en un radio de 5 km"
-                    className="w-full rounded-2xl border border-foreground/10"
-                    loading="lazy"
-                  />
-                  <figcaption className="mt-3 text-xs text-foreground/50">
-                    Estimación a partir de la posición media histórica (12-15). No se conservó
-                    una captura exacta de la fecha de inicio.
-                  </figcaption>
-                </figure>
-                <figure>
-                  <img
-                    src={study.geogridAfter}
-                    alt="Mapa de posiciones después de la optimización para 'abogado extranjería Valencia': posición media 4,9 y mejor posición 3 en un radio de 5 km"
-                    className="w-full rounded-2xl border border-foreground/10"
-                    loading="lazy"
-                  />
-                  <figcaption className="mt-3 text-xs text-foreground/50">
-                    Captura real, septiembre 2026.
-                  </figcaption>
-                </figure>
-              </div>
+              <img
+                src={study.geogridComparison}
+                alt={`Comparativa antes/después del posicionamiento en el mapa de Google para ${study.name}`}
+                className="w-full max-w-2xl mx-auto rounded-2xl"
+                loading="lazy"
+              />
             </div>
           )}
 
