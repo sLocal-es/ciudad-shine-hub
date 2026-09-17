@@ -102,6 +102,25 @@ const cases: CaseStudy[] = [
     testimonial:
       "No esperábamos movimiento sin tener ni web.",
   },
+  {
+    id: "despacho-extranjeria-valencia",
+    logo: "/placeholder.svg",
+    name: "Despacho de Extranjería en Valencia",
+    category: "Abogados",
+    city: "Valencia",
+    before:
+      "La ficha de Google tenía una categoría genérica ('Abogados') en vez de especializarse en extranjería, sin servicios definidos ni categorías secundarias, y con los datos de contacto sin coincidir con la web. Para 'abogado extranjería Valencia' estaban fuera del top 10 de Google.",
+    actions: [
+      "Definimos la categoría principal como especialista en extranjería y añadimos categorías secundarias",
+      "Hicimos un estudio de palabras clave para detectar qué servicios buscaba realmente la gente",
+      "Corregimos los datos de contacto para que coincidieran ficha y web",
+      "Optimizamos la ficha al completo: descripción, servicios y fotos",
+    ],
+    after:
+      "En 3 meses pasaron de estar fuera del top 10 a estar entre los 3 primeros resultados en el centro de Valencia. Las llamadas subieron cada mes y las visitas a la ficha crecieron un 42% de media frente al año anterior.",
+    testimonial:
+      "Notamos un incremento notable en la demanda de servicios de extranjería.",
+  },
 ];
 
 /* ------------------------------------------------------------------ */
