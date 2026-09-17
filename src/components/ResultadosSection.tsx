@@ -1,5 +1,5 @@
 import { useState, useCallback } from "react";
-import { X, Quote, ArrowRight, CheckCircle2 } from "lucide-react";
+import { X, Quote, ArrowRight, CheckCircle2, Wrench, Hammer, Scale, HeartPulse, Brain, type LucideIcon } from "lucide-react";
 
 import logoTei from "@/assets/casos/logo-tei.png";
 import logoViviane from "@/assets/casos/logo-viviane.png";
@@ -124,7 +124,29 @@ const cases: CaseStudy[] = [
 ];
 
 /* ------------------------------------------------------------------ */
-/*  CaseStudyModal — Antes → Acción → Después                          */
+/*  Icono por sector — mismo patrón que la sección de sectores de Home */
+/* ------------------------------------------------------------------ */
+
+const sectorIcon: Record<string, LucideIcon> = {
+  "Psicóloga": Brain,
+  "Reformas": Hammer,
+  "Fontanería": Wrench,
+  "Abogados": Scale,
+};
+
+function SectorIcon({ category, size = "lg" }: { category: string; size?: "lg" | "sm" }) {
+  const Icon = sectorIcon[category] ?? HeartPulse;
+  return (
+    <Icon
+      className={size === "lg" ? "w-16 h-16 md:w-20 md:h-20 text-primary" : "w-8 h-8 text-primary"}
+      strokeWidth={1.25}
+      aria-hidden
+    />
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  CaseStudyModal — Antes → Qué hicimos → Después                     */
 /* ------------------------------------------------------------------ */
 
 function CaseStudyModal({ study, onClose }: { study: CaseStudy; onClose: () => void }) {
@@ -133,18 +155,17 @@ function CaseStudyModal({ study, onClose }: { study: CaseStudy; onClose: () => v
       className="fixed inset-0 z-50 flex items-center justify-center p-4"
       onClick={onClose}
       role="dialog"
+      aria-modal="true"
     >
-      <div className="absolute inset-0 bg-black/80 backdrop-blur-xs" />
+      <div className="absolute inset-0 bg-foreground/60 backdrop-blur-xs" />
 
       <div
-        className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-2xl animate-in fade-in zoom-in-95 duration-300"
-        style={{ background: "#12152A", border: "1px solid rgba(249,115,22,0.15)" }}
+        className="relative w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-2xl bg-white border border-foreground/10 shadow-xl animate-in fade-in zoom-in-95 duration-300"
         onClick={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 rounded-full p-2 transition-colors"
-          style={{ background: "rgba(255,255,255,0.06)", color: "rgba(255,255,255,0.5)" }}
+          className="absolute top-4 right-4 z-10 rounded-full p-2 text-foreground/50 hover:text-foreground hover:bg-foreground/5 transition-colors"
           aria-label="Cerrar"
         >
           <X className="w-4 h-4" />
@@ -153,98 +174,82 @@ function CaseStudyModal({ study, onClose }: { study: CaseStudy; onClose: () => v
         {/* Header */}
         <div className="p-8 pb-6">
           <div className="flex items-center gap-5 mb-5">
-            <div
-              className="w-16 h-16 rounded-xl flex items-center justify-center overflow-hidden flex-shrink-0 bg-white"
-            >
-              <img src={study.logo} alt={study.name} className="w-12 h-12 object-contain" loading="lazy" />
+            <div className="w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0 bg-primary/10">
+              <SectorIcon category={study.category} size="sm" />
             </div>
             <div>
-              <h3 className="text-xl font-bold" style={{ color: "#fff", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+              <h3 className="font-heading text-xl font-bold text-foreground">
                 {study.name}
               </h3>
-              <span
-                className="inline-block mt-1 text-[10px] font-medium uppercase tracking-widest rounded-full px-3 py-1"
-                style={{ background: "rgba(249,115,22,0.1)", border: "1px solid rgba(249,115,22,0.3)", color: "#F97316" }}
-              >
-                {study.category} · {study.city}
-              </span>
+              <div className="flex flex-wrap gap-2 mt-2">
+                <span className="inline-block text-[10px] font-medium uppercase tracking-widest rounded-full px-3 py-1 bg-primary/10 text-primary">
+                  {study.category}
+                </span>
+                <span className="inline-block text-[10px] font-medium uppercase tracking-widest rounded-full px-3 py-1 bg-primary/10 text-primary">
+                  {study.city}
+                </span>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="mx-8" style={{ height: "1px", background: "rgba(255,255,255,0.06)" }} />
+        <div className="mx-8 h-px bg-foreground/10" />
 
         {/* Antes */}
         <div className="p-8 pb-5">
-          <div className="flex items-center gap-2 mb-3">
-            <div className="w-1.5 h-1.5 rounded-full" style={{ background: "#ef4444" }} />
-            <span className="text-[11px] font-semibold uppercase tracking-widest" style={{ color: "#ef4444" }}>
-              Antes
-            </span>
-          </div>
-          <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.7)" }}>
+          <span className="block font-heading text-[11px] font-semibold uppercase tracking-widest text-foreground/60 mb-3">
+            Antes
+          </span>
+          <p className="text-sm leading-relaxed text-foreground/70">
             {study.before}
           </p>
         </div>
 
         {/* Qué se hizo */}
         <div className="px-8 pb-5">
-          <div className="flex items-center gap-2 mb-3">
-            <div className="w-1.5 h-1.5 rounded-full" style={{ background: "#F97316" }} />
-            <span className="text-[11px] font-semibold uppercase tracking-widest" style={{ color: "#F97316" }}>
-              Qué hicimos
-            </span>
-          </div>
-          <div className="space-y-2.5">
+          <span className="block font-heading text-[11px] font-semibold uppercase tracking-widest text-primary mb-3">
+            Qué hicimos
+          </span>
+          <ul className="space-y-2.5">
             {study.actions.map((action, i) => (
-              <div key={i} className="flex items-start gap-3">
-                <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "#F97316" }} />
-                <span className="text-sm" style={{ color: "rgba(255,255,255,0.7)" }}>{action}</span>
-              </div>
+              <li key={i} className="flex items-start gap-3">
+                <CheckCircle2 className="w-4 h-4 mt-0.5 flex-shrink-0 text-primary" />
+                <span className="text-sm text-foreground/70">{action}</span>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
 
         {/* Después */}
         <div className="px-8 pb-6">
-          <div className="flex items-center gap-2 mb-3">
-            <div className="w-1.5 h-1.5 rounded-full" style={{ background: "#22c55e" }} />
-            <span className="text-[11px] font-semibold uppercase tracking-widest" style={{ color: "#22c55e" }}>
-              Después
-            </span>
-          </div>
-          <p className="text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.85)" }}>
+          <span className="block font-heading text-[11px] font-semibold uppercase tracking-widest text-foreground/60 mb-3">
+            Después
+          </span>
+          <p className="text-sm leading-relaxed text-foreground font-medium">
             {study.after}
           </p>
         </div>
 
         {/* Testimonio */}
         <div className="px-8 pb-6">
-          <div
-            className="rounded-xl p-5 relative"
-            style={{ background: "rgba(249,115,22,0.05)", borderLeft: "3px solid #F97316" }}
-          >
-            <Quote className="w-4 h-4 mb-2" style={{ color: "rgba(249,115,22,0.5)" }} />
-            <p
-              className="text-sm leading-relaxed italic"
-              style={{ color: "rgba(255,255,255,0.8)", fontFamily: "'DM Serif Display', serif" }}
-            >
+          <blockquote className="rounded-xl p-5 bg-primary/5 border-l-[3px] border-primary">
+            <Quote className="w-4 h-4 mb-2 text-primary/60" />
+            <p className="text-sm leading-relaxed italic text-foreground/80">
               "{study.testimonial}"
             </p>
-            <span className="block mt-2 text-[11px] font-medium" style={{ color: "rgba(255,255,255,0.4)" }}>
+            <footer className="block mt-2 text-[11px] font-medium text-foreground/50">
               — {study.name}
-            </span>
-          </div>
+            </footer>
+          </blockquote>
         </div>
 
         {/* CTA WhatsApp */}
         <div className="px-8 pb-8">
           <a
             href={WA_URL}
-            className="block w-full text-center rounded-lg py-3.5 text-sm font-semibold transition-opacity hover:opacity-90"
-            style={{ background: "linear-gradient(135deg,#D96A28,#F97316)", color: "#fff" }}
+            className="block w-full text-center rounded-lg py-3.5 text-sm font-semibold bg-primary text-primary-foreground transition-opacity hover:opacity-90"
           >
-            💬 Quiero algo así para mi negocio
+            Quiero algo así para mi negocio
           </a>
         </div>
       </div>
@@ -253,52 +258,43 @@ function CaseStudyModal({ study, onClose }: { study: CaseStudy; onClose: () => v
 }
 
 /* ------------------------------------------------------------------ */
-/*  CaseCard — sin texto extra, solo logo + nombre                     */
+/*  CaseCard — visual grande arriba, pills de sector y ciudad, nombre  */
 /* ------------------------------------------------------------------ */
 
 function CaseCard({ study, onClick }: { study: CaseStudy; onClick: () => void }) {
   return (
-    <div
-      className="group rounded-2xl cursor-pointer transition-all duration-300 hover:-translate-y-1 flex flex-col overflow-hidden"
-      style={{
-        background: "#1A1D2E",
-        border: "1px solid rgba(249,115,22,0.12)",
-      }}
+    <article
+      className="group cursor-pointer transition-transform duration-300 hover:-translate-y-1 flex flex-col"
       onClick={onClick}
-      onMouseEnter={(e) => {
-        (e.currentTarget as HTMLElement).style.borderColor = "rgba(249,115,22,0.35)";
-        (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 40px -12px rgba(249,115,22,0.15)";
-      }}
-      onMouseLeave={(e) => {
-        (e.currentTarget as HTMLElement).style.borderColor = "rgba(249,115,22,0.12)";
-        (e.currentTarget as HTMLElement).style.boxShadow = "none";
-      }}
     >
+      {/* Visual: panel tint naranja con icono del sector */}
       <div
-        className="flex items-center justify-center rounded-t-2xl"
-        style={{ background: "#FFFFFF", height: "180px", padding: "16px" }}
+        className="relative flex items-center justify-center rounded-2xl overflow-hidden bg-primary/10 aspect-[4/3] transition-colors duration-300 group-hover:bg-primary/15"
+        aria-hidden
       >
-        <img
-          src={study.logo}
-          alt={study.name}
-          className="object-contain"
-          style={{ maxWidth: "80%", maxHeight: "80%" }}
-          loading="lazy"
-        />
+        <SectorIcon category={study.category} />
       </div>
 
-      <div className="p-5 md:p-6 flex flex-col flex-1">
-        <h3 className="text-base font-bold mb-3" style={{ color: "#fff", fontFamily: "'Plus Jakarta Sans', sans-serif" }}>
+      <div className="pt-5 px-1 pb-2 flex flex-col flex-1">
+        {/* Pills: sector + ciudad */}
+        <div className="flex flex-wrap gap-2 mb-3">
+          <span className="inline-flex items-center text-xs font-medium rounded-full px-3 py-1 bg-primary/10 text-primary">
+            {study.category}
+          </span>
+          <span className="inline-flex items-center text-xs font-medium rounded-full px-3 py-1 bg-primary/10 text-primary">
+            {study.city}
+          </span>
+        </div>
+
+        <h3 className="font-heading text-lg font-bold text-foreground leading-snug mb-3">
           {study.name}
         </h3>
-        <span
-          className="inline-flex items-center gap-1.5 text-xs font-semibold transition-all group-hover:gap-2.5 mt-auto"
-          style={{ color: "#F97316" }}
-        >
-          Ver caso <ArrowRight className="w-3.5 h-3.5" />
+
+        <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-all group-hover:gap-2.5 mt-auto">
+          Ver caso <ArrowRight className="w-4 h-4" />
         </span>
       </div>
-    </div>
+    </article>
   );
 }
 
@@ -316,34 +312,22 @@ export default function ResultadosSection() {
     <>
       {activeStudy && <CaseStudyModal study={activeStudy} onClose={handleClose} />}
 
-      <section
-        className="py-20 md:py-28"
-        style={{ background: "#0B1120", fontFamily: "'DM Sans', sans-serif" }}
-      >
+      <section className="py-20 md:py-28 bg-white">
         <div className="container">
-          <div
-            className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-[11px] font-medium uppercase tracking-widest mb-7"
-            style={{ background: "rgba(249,115,22,0.1)", border: "1px solid rgba(249,115,22,0.3)", color: "#F97316" }}
-          >
-            <span className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: "#F97316" }} />
+          <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-[11px] font-medium uppercase tracking-widest bg-primary/10 text-primary mb-7">
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-primary" />
             Casos reales
           </div>
 
-          <h2
-            className="text-2xl md:text-4xl font-heading font-extrabold leading-tight mb-3 max-w-xl"
-            style={{ color: "#fff" }}
-          >
+          <h2 className="font-heading text-2xl md:text-4xl font-extrabold leading-tight text-foreground mb-3 max-w-xl">
             Negocios reales,{" "}
-            <span style={{ color: "#F97316" }}>resultados reales.</span>
+            <span className="text-primary">resultados reales.</span>
           </h2>
-          <p
-            className="text-sm md:text-base max-w-lg leading-relaxed mb-14"
-            style={{ color: "rgba(255,255,255,0.45)" }}
-          >
+          <p className="text-sm md:text-base max-w-lg leading-relaxed text-foreground/60 mb-14">
             Haz clic en cada caso para ver cómo pasaron de no aparecer en Google a recibir llamadas.
           </p>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
             {cases.map((c) => (
               <CaseCard key={c.id} study={c} onClick={() => handleOpen(c)} />
             ))}
