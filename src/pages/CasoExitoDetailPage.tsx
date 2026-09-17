@@ -142,15 +142,17 @@ const CasoExitoDetailPage = ({ study }: { study: CaseStudy }) => {
           )}
 
           {/* Testimonio */}
-          <blockquote className="rounded-2xl p-6 bg-primary/5 border-l-[3px] border-primary">
-            <Quote className="w-5 h-5 mb-3 text-primary/60" />
-            <p className="text-base leading-relaxed italic text-foreground/80">
-              "{study.testimonial}"
-            </p>
-            <footer className="block mt-3 text-xs font-medium text-foreground/50">
-              — {study.name}
-            </footer>
-          </blockquote>
+          {study.testimonial && (
+            <blockquote className="rounded-2xl p-6 bg-primary/5 border-l-[3px] border-primary">
+              <Quote className="w-5 h-5 mb-3 text-primary/60" />
+              <p className="text-base leading-relaxed italic text-foreground/80">
+                "{study.testimonial}"
+              </p>
+              <footer className="block mt-3 text-xs font-medium text-foreground/50">
+                — {study.name}
+              </footer>
+            </blockquote>
+          )}
         </div>
       </section>
 
