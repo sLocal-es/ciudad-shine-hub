@@ -16,6 +16,7 @@ import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } fr
 import { Route as MainIndexRouteImport } from './routes/_main.index'
 import { Route as MainSplatRouteImport } from './routes/_main.$'
 import { Route as MainAparecerEnGoogleMapsRouteImport } from './routes/_main.aparecer-en-google-maps'
+import { Route as MainCasosDeExitoRouteImport } from './routes/_main.casos-de-exito'
 import { Route as MainComoFuncionaRouteImport } from './routes/_main.como-funciona'
 import { Route as MainComoSalirPrimeroEnGoogleRouteImport } from './routes/_main.como-salir-primero-en-google'
 import { Route as MainComoVeGoogleMiWebRouteImport } from './routes/_main.como-ve-google-mi-web'
@@ -88,6 +89,11 @@ const MainAparecerEnGoogleMapsRoute =
     path: '/aparecer-en-google-maps',
     getParentRoute: () => MainRoute,
   } as any)
+const MainCasosDeExitoRoute = MainCasosDeExitoRouteImport.update({
+  id: '/casos-de-exito',
+  path: '/casos-de-exito',
+  getParentRoute: () => MainRoute,
+} as any)
 const MainComoFuncionaRoute = MainComoFuncionaRouteImport.update({
   id: '/como-funciona',
   path: '/como-funciona',
@@ -278,6 +284,7 @@ export interface FileRoutesByFullPath {
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/$': typeof MainSplatRoute
   '/aparecer-en-google-maps': typeof MainAparecerEnGoogleMapsRoute
+  '/casos-de-exito': typeof MainCasosDeExitoRoute
   '/como-funciona': typeof MainComoFuncionaRoute
   '/como-salir-primero-en-google': typeof MainComoSalirPrimeroEnGoogleRoute
   '/como-ve-google-mi-web': typeof MainComoVeGoogleMiWebRoute
@@ -320,6 +327,7 @@ export interface FileRoutesByTo {
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/$': typeof MainSplatRoute
   '/aparecer-en-google-maps': typeof MainAparecerEnGoogleMapsRoute
+  '/casos-de-exito': typeof MainCasosDeExitoRoute
   '/como-funciona': typeof MainComoFuncionaRoute
   '/como-salir-primero-en-google': typeof MainComoSalirPrimeroEnGoogleRoute
   '/como-ve-google-mi-web': typeof MainComoVeGoogleMiWebRoute
@@ -365,6 +373,7 @@ export interface FileRoutesById {
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   '/_main/$': typeof MainSplatRoute
   '/_main/aparecer-en-google-maps': typeof MainAparecerEnGoogleMapsRoute
+  '/_main/casos-de-exito': typeof MainCasosDeExitoRoute
   '/_main/como-funciona': typeof MainComoFuncionaRoute
   '/_main/como-salir-primero-en-google': typeof MainComoSalirPrimeroEnGoogleRoute
   '/_main/como-ve-google-mi-web': typeof MainComoVeGoogleMiWebRoute
@@ -411,6 +420,7 @@ export interface FileRouteTypes {
     | '/.well-known/oauth-protected-resource'
     | '/$'
     | '/aparecer-en-google-maps'
+    | '/casos-de-exito'
     | '/como-funciona'
     | '/como-salir-primero-en-google'
     | '/como-ve-google-mi-web'
@@ -453,6 +463,7 @@ export interface FileRouteTypes {
     | '/.well-known/oauth-protected-resource'
     | '/$'
     | '/aparecer-en-google-maps'
+    | '/casos-de-exito'
     | '/como-funciona'
     | '/como-salir-primero-en-google'
     | '/como-ve-google-mi-web'
@@ -497,6 +508,7 @@ export interface FileRouteTypes {
     | '/.well-known/oauth-protected-resource'
     | '/_main/$'
     | '/_main/aparecer-en-google-maps'
+    | '/_main/casos-de-exito'
     | '/_main/como-funciona'
     | '/_main/como-salir-primero-en-google'
     | '/_main/como-ve-google-mi-web'
@@ -593,6 +605,13 @@ declare module '@tanstack/react-router' {
       path: '/aparecer-en-google-maps'
       fullPath: '/aparecer-en-google-maps'
       preLoaderRoute: typeof MainAparecerEnGoogleMapsRouteImport
+      parentRoute: typeof MainRoute
+    }
+    '/_main/casos-de-exito': {
+      id: '/_main/casos-de-exito'
+      path: '/casos-de-exito'
+      fullPath: '/casos-de-exito'
+      preLoaderRoute: typeof MainCasosDeExitoRouteImport
       parentRoute: typeof MainRoute
     }
     '/_main/como-funciona': {
@@ -846,6 +865,7 @@ declare module '@tanstack/react-router' {
 interface MainRouteChildren {
   MainSplatRoute: typeof MainSplatRoute
   MainAparecerEnGoogleMapsRoute: typeof MainAparecerEnGoogleMapsRoute
+  MainCasosDeExitoRoute: typeof MainCasosDeExitoRoute
   MainComoFuncionaRoute: typeof MainComoFuncionaRoute
   MainComoSalirPrimeroEnGoogleRoute: typeof MainComoSalirPrimeroEnGoogleRoute
   MainComoVeGoogleMiWebRoute: typeof MainComoVeGoogleMiWebRoute
@@ -885,6 +905,7 @@ interface MainRouteChildren {
 const MainRouteChildren: MainRouteChildren = {
   MainSplatRoute: MainSplatRoute,
   MainAparecerEnGoogleMapsRoute: MainAparecerEnGoogleMapsRoute,
+  MainCasosDeExitoRoute: MainCasosDeExitoRoute,
   MainComoFuncionaRoute: MainComoFuncionaRoute,
   MainComoSalirPrimeroEnGoogleRoute: MainComoSalirPrimeroEnGoogleRoute,
   MainComoVeGoogleMiWebRoute: MainComoVeGoogleMiWebRoute,
