@@ -64,6 +64,10 @@ function CaseCard({ study }: { study: CaseStudy }) {
               {study.city}
             </span>
           </div>
+
+          <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-all group-hover:gap-2.5 mt-4">
+            Ver caso <ArrowRight className="w-4 h-4" />
+          </span>
         </div>
       </Link>
     </article>
