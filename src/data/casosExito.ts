@@ -19,6 +19,7 @@ export interface CaseStudy {
   geogridBefore?: string;
   geogridAfter?: string;
   impactoPendiente?: boolean;
+  impactoTexto?: string;
 }
 
 export const cases: CaseStudy[] = [
@@ -59,6 +60,7 @@ export const cases: CaseStudy[] = [
       "En 3 meses empezaron a recibir llamadas directas desde Google sin tocar la web vieja. Clientes nuevos que llegan diciendo 'os he visto en Google'.",
     testimonial:
       "En pocos meses empezamos a recibir llamadas sin depender de la web.",
+    impactoPendiente: true,
   },
   {
     id: "fontaneros",
@@ -78,6 +80,7 @@ export const cases: CaseStudy[] = [
       "En mes y medio empezaron a recibir llamadas otra vez y mensajes por WhatsApp de clientes nuevos que les encontraron en Google.",
     testimonial:
       "Después de meses bloqueados, por fin volvemos a estar visibles y recibiendo llamadas.",
+    impactoPendiente: true,
   },
   {
     id: "mva",
@@ -97,6 +100,7 @@ export const cases: CaseStudy[] = [
       "En 2 meses empezaron a recibir contactos nuevos solo desde la ficha de Google, sin tener todavía página web. Clientes que antes no sabían que existían.",
     testimonial:
       "No esperábamos movimiento sin tener ni web.",
+    impactoPendiente: true,
   },
   {
     id: "despacho-extranjeria-valencia",
@@ -119,7 +123,8 @@ export const cases: CaseStudy[] = [
       "Notamos un incremento notable en la demanda de servicios de extranjería.",
     geogridBefore: geogridAntesExtranjeria,
     geogridAfter: geogridDespuesExtranjeria,
-    impactoPendiente: true,
+    impactoTexto:
+      "Solo con las llamadas actuales — una media de 56 al mes — y siendo conservadores: si solo 1 de cada 10 se convierte en cliente, y el servicio más económico de extranjería ronda los 450€, son más de 2.500€ al mes en negocio nuevo generado únicamente por la ficha de Google. Al año, son más de 30.000€ — y este es el escenario más bajo, porque buena parte de sus servicios superan los 1.300€.",
   },
 ];
 
