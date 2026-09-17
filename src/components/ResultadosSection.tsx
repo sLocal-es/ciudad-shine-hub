@@ -29,7 +29,7 @@ export function SectorIcon({ category, size = "lg" }: { category: string; size?:
 /*  CaseCard — compacta y densa: eyebrow naranja, título, hook, stats  */
 /* ------------------------------------------------------------------ */
 
-function CaseCard({ study, position }: { study: CaseStudy; position: number }) {
+export function CaseCard({ study, position }: { study: CaseStudy; position: number }) {
   const stats =
     study.quickStats && study.quickStats.length > 0
       ? study.quickStats.slice(0, 3)

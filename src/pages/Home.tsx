@@ -8,7 +8,7 @@ import LogoMarquee from "@/components/LogoMarquee";
 import LeadMagnetForm from "@/components/forms/LeadMagnetForm";
 import ContactForm from "@/components/forms/ContactForm";
 import ElfsightReviews from "@/components/ElfsightReviews";
-import { SectorIcon } from "@/components/ResultadosSection";
+import { CaseCard } from "@/components/ResultadosSection";
 import { cases } from "@/data/casosExito";
 import { ServiceCard, type ExtraService } from "@/components/servicios/ServiciosUI";
 import {
