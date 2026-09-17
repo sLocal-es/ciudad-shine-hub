@@ -151,6 +151,59 @@ const CasoExitoDetailPage = ({ study }: { study: CaseStudy }) => {
         </div>
       </section>
 
+      {/* Otros casos — tira horizontal scrollable */}
+      {otherCases.length > 0 && (
+        <section className="bg-white pb-20 md:pb-28">
+          <div className="container">
+            <div className="flex items-end justify-between gap-4 mb-8">
+              <h2 className="font-heading text-2xl md:text-3xl font-extrabold leading-tight text-foreground">
+                Otros casos
+              </h2>
+              <div className="hidden md:flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() => stripRef.current?.scrollBy({ left: -320, behavior: "smooth" })}
+                  aria-label="Ver casos anteriores"
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-primary/10 text-primary transition-colors hover:bg-primary/20"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => stripRef.current?.scrollBy({ left: 320, behavior: "smooth" })}
+                  aria-label="Ver casos siguientes"
+                  className="w-10 h-10 rounded-full flex items-center justify-center bg-primary/10 text-primary transition-colors hover:bg-primary/20"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+
+            <div
+              ref={stripRef}
+              className="flex gap-4 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-2 -mx-5 px-5 md:mx-0 md:px-0"
+            >
+              {otherCases.map((other) => (
+                <Link
+                  key={other.slug}
+                  to="/casos-de-exito/$slug"
+                  params={{ slug: other.slug }}
+                  className="group snap-start flex-shrink-0 w-[260px] rounded-2xl border border-foreground/10 bg-white p-5 flex flex-col gap-3 transition-colors duration-300 hover:border-primary/40"
+                >
+                  <SectorIcon category={other.category} size="sm" />
+                  <p className="font-heading text-base font-bold text-foreground leading-snug">
+                    {other.name}
+                  </p>
+                  <p className="text-sm leading-snug text-foreground/60 line-clamp-1">
+                    {other.cardHook}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       <CTASection
         title="¿Quieres ser el próximo caso de éxito?"
         buttonText="Solicitar análisis gratuito →"
