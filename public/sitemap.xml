@@ -30,6 +30,31 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://slocal.es/casos-de-exito/viviane</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://slocal.es/casos-de-exito/tei</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://slocal.es/casos-de-exito/fontaneros</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://slocal.es/casos-de-exito/mva</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://slocal.es/casos-de-exito/despacho-extranjeria-valencia</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://slocal.es/sistema</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
