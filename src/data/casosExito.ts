@@ -9,6 +9,7 @@ export interface CaseStudy {
   slug: string;
   logo: string;
   name: string;
+  cardHook: string;
   category: string;
   city: string;
   before: string;
@@ -27,6 +28,7 @@ export const cases: CaseStudy[] = [
     slug: "tei",
     logo: logoTei,
     name: "Grupo TEI",
+    cardHook: "Llamadas nuevas cada mes desde Google, sin tocar su web antigua",
     category: "Reformas",
     city: "Madrid",
     before:
@@ -47,6 +49,7 @@ export const cases: CaseStudy[] = [
     slug: "fontaneros",
     logo: logoFontaneros,
     name: "Fontaneros Económicos",
+    cardHook: "De ficha suspendida a llamadas y WhatsApp en mes y medio",
     category: "Fontanería",
     city: "Madrid",
     before:
@@ -67,6 +70,7 @@ export const cases: CaseStudy[] = [
     slug: "mva",
     logo: logoMva,
     name: "MVA Fontanería",
+    cardHook: "Clientes nuevos en 2 meses, sin tener aún página web",
     category: "Fontanería",
     city: "Madrid",
     before:
@@ -87,6 +91,7 @@ export const cases: CaseStudy[] = [
     slug: "despacho-extranjeria-valencia",
     logo: "/placeholder.svg",
     name: "Despacho de Extranjería en Valencia",
+    cardHook: "Más de 2.500€ al mes en negocio nuevo, sin publicidad",
     category: "Abogados",
     city: "Valencia",
     before:
@@ -104,13 +109,14 @@ export const cases: CaseStudy[] = [
     geogridBefore: geogridAntesExtranjeria,
     geogridAfter: geogridDespuesExtranjeria,
     impactoTexto:
-      "Solo con las llamadas actuales — una media de 56 al mes — y siendo conservadores: si solo 1 de cada 10 se convierte en cliente, y el servicio más económico de extranjería ronda los 450€, son más de 2.500€ al mes en negocio nuevo generado únicamente por la ficha de Google. Al año, son más de 30.000€ — y este es el escenario más bajo, porque buena parte de sus servicios superan los 1.300€.",
+      "Sin invertir un euro en publicidad, este despacho está generando más de 2.500€ al mes en negocio nuevo desde que le optimizamos la ficha — y es la cifra más baja, porque muchos de sus servicios superan los 1.300€ por caso.",
   },
   {
     id: "fontaneros-24-horas-valencia",
     slug: "fontaneros-24-horas-valencia",
     logo: "/placeholder.svg",
     name: "Fontaneros 24 Horas Valencia",
+    cardHook: "Hasta 3.150€ facturados en 6 semanas, sin publicidad",
     category: "Fontanería",
     city: "Valencia",
     before:
@@ -124,7 +130,7 @@ export const cases: CaseStudy[] = [
       "En el primer mes completo, partiendo de cero, 753 personas vieron su ficha, recibieron 19 llamadas, 10 conversaciones por chat y 20 clics a la web. Su web ya empezó a posicionar en paralelo: en las primeras semanas acumula más de 4.200 impresiones y 32 clics orgánicos en Google Search Console.",
     testimonial: "",
     impactoTexto:
-      "Sin invertir un euro en publicidad, en sus primeras 6 semanas recibió 28 llamadas nuevas desde Google (19 el primer mes, 9 en lo que va de septiembre). Con una conversión conservadora del 25% — habitual en fontanería urgente, donde quien llama ya tiene el problema delante — y su ticket medio de entre 80€ y 450€, son entre 560€ y 3.150€ facturados solo gracias a la ficha y la web.",
+      "Sin invertir un euro en publicidad, en sus primeras 6 semanas ha facturado hasta 3.150€ gracias a las 28 llamadas que le trajo su ficha de Google.",
   },
 ];
 
