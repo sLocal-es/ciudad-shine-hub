@@ -1,21 +1,20 @@
-import { CheckCircle2, Quote } from "lucide-react";
+import { CheckCircle2, Euro, Quote } from "lucide-react";
 
 import SEOHead from "@/components/SEOHead";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import CTASection from "@/components/CTASection";
 import { SectorIcon } from "@/components/ResultadosSection";
 import type { CaseStudy } from "@/data/casosExito";
-import geogridExtranjeria from "@/assets/casos/geogrid-antes-despues-extranjeria.png";
 
 const CasoExitoDetailPage = ({ study }: { study: CaseStudy }) => {
-  const showGeogrid = study.id === "despacho-extranjeria-valencia";
+  const showGeogrid = Boolean(study.geogridBefore && study.geogridAfter);
 
   return (
     <>
       <SEOHead
         title={`Caso de éxito: ${study.name} | slocal.es`}
         description={`Cómo ${study.name} (${study.category} en ${study.city}) mejoró su visibilidad en Google Maps y su ficha de Google Business Profile: qué hicimos y qué resultados reales obtuvo.`}
-        canonical={`/casos-de-exito/${study.id}`}
+        canonical={`/casos-de-exito/${study.slug}`}
       />
 
       {/* HEADER */}
@@ -82,69 +81,50 @@ const CasoExitoDetailPage = ({ study }: { study: CaseStudy }) => {
             {study.after}
           </p>
 
-          {/* Métricas mes a mes */}
-          {study.monthlyMetrics && (
-            <div className="mb-12">
-              <h3 className="font-heading text-lg font-bold text-foreground mb-5">
-                Evolución mes a mes de la ficha de Google
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {study.monthlyMetrics.map((m) => (
-                  <div
-                    key={m.month}
-                    className="rounded-2xl border border-foreground/10 bg-white p-5"
-                  >
-                    <span className="block font-heading text-[11px] font-semibold uppercase tracking-widest text-primary mb-4">
-                      {m.month}
-                    </span>
-                    <dl className="space-y-2.5 text-sm">
-                      <div className="flex items-baseline justify-between gap-3">
-                        <dt className="text-foreground/60">Llamadas</dt>
-                        <dd className="font-heading font-bold text-foreground">{m.calls}</dd>
-                      </div>
-                      <div className="flex items-baseline justify-between gap-3">
-                        <dt className="text-foreground/60">Clics en chat</dt>
-                        <dd className="font-heading font-bold text-foreground">{m.chatClicks}</dd>
-                      </div>
-                      <div className="flex items-baseline justify-between gap-3">
-                        <dt className="text-foreground/60">Solicitudes de ruta</dt>
-                        <dd className="font-heading font-bold text-foreground">{m.directionRequests}</dd>
-                      </div>
-                      <div className="flex items-baseline justify-between gap-3">
-                        <dt className="text-foreground/60">Clics a la web</dt>
-                        <dd className="font-heading font-bold text-foreground">{m.websiteClicks}</dd>
-                      </div>
-                      <div className="flex items-baseline justify-between gap-3 pt-2.5 border-t border-foreground/10">
-                        <dt className="text-foreground/60">Visitas a la ficha</dt>
-                        <dd className="text-right">
-                          <span className="block font-heading font-bold text-foreground">
-                            {m.profileViews.toLocaleString("es-ES")}
-                          </span>
-                          <span className="block text-xs font-medium text-primary">
-                            {m.profileViewsGrowth}
-                          </span>
-                        </dd>
-                      </div>
-                    </dl>
-                  </div>
-                ))}
-              </div>
+          {/* Impacto pendiente */}
+          {study.impactoPendiente && (
+            <div className="mb-12 rounded-2xl border border-primary/40 bg-primary/5 p-6 flex items-start gap-4">
+              <Euro className="w-6 h-6 flex-shrink-0 text-primary" />
+              <p className="text-base leading-relaxed text-foreground/80">
+                💰 Cada posición ganada en el mapa son más llamadas — y cada llamada es un
+                cliente potencial. Pronto añadimos aquí cuánto ha supuesto esto en
+                facturación real para el despacho.
+              </p>
             </div>
           )}
 
-          {/* Geogrid antes / después */}
+          {/* Prueba visual: geogrid antes / después */}
           {showGeogrid && (
-            <figure className="mb-12">
-              <img
-                src={geogridExtranjeria}
-                alt="Comparativa de geogrid antes y después para la búsqueda 'abogado extranjería Valencia': de una posición media de 13 en mayo a una media de 4,9 en septiembre en un radio de 5 km alrededor del despacho"
-                className="w-full rounded-2xl border border-foreground/10"
-                loading="lazy"
-              />
-              <figcaption className="mt-3 text-xs text-foreground/50">
-                Posicionamiento en Google Maps en un radio de ~5 km: antes (mayo) frente a después (septiembre).
-              </figcaption>
-            </figure>
+            <div className="mb-12">
+              <h2 className="font-heading text-xl md:text-2xl font-bold text-foreground mb-5">
+                Antes / Después en el mapa de Google — "abogado extranjería Valencia"
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <figure>
+                  <img
+                    src={study.geogridBefore}
+                    alt="Mapa de posiciones antes de la optimización para 'abogado extranjería Valencia': posición media 13,2 en un radio de 5 km"
+                    className="w-full rounded-2xl border border-foreground/10"
+                    loading="lazy"
+                  />
+                  <figcaption className="mt-3 text-xs text-foreground/50">
+                    Estimación a partir de la posición media histórica (12-15). No se conservó
+                    una captura exacta de la fecha de inicio.
+                  </figcaption>
+                </figure>
+                <figure>
+                  <img
+                    src={study.geogridAfter}
+                    alt="Mapa de posiciones después de la optimización para 'abogado extranjería Valencia': posición media 4,9 y mejor posición 3 en un radio de 5 km"
+                    className="w-full rounded-2xl border border-foreground/10"
+                    loading="lazy"
+                  />
+                  <figcaption className="mt-3 text-xs text-foreground/50">
+                    Captura real, septiembre 2026.
+                  </figcaption>
+                </figure>
+              </div>
+            </div>
           )}
 
           {/* Testimonio */}
