@@ -106,6 +106,25 @@ export const cases: CaseStudy[] = [
     impactoTexto:
       "Solo con las llamadas actuales — una media de 56 al mes — y siendo conservadores: si solo 1 de cada 10 se convierte en cliente, y el servicio más económico de extranjería ronda los 450€, son más de 2.500€ al mes en negocio nuevo generado únicamente por la ficha de Google. Al año, son más de 30.000€ — y este es el escenario más bajo, porque buena parte de sus servicios superan los 1.300€.",
   },
+  {
+    id: "fontaneros-24-horas-valencia",
+    slug: "fontaneros-24-horas-valencia",
+    logo: "/placeholder.svg",
+    name: "Fontaneros 24 Horas Valencia",
+    category: "Fontanería",
+    city: "Valencia",
+    before:
+      "No tenían ninguna presencia digital — ni ficha de Google ni página web. Todo el negocio dependía del boca a boca.",
+    actions: [
+      "Creamos su página web desde cero",
+      "Configuramos y optimizamos su ficha de Google Business Profile",
+      "Activamos llamadas, chat y clics a la web directamente desde el perfil",
+    ],
+    after:
+      "En el primer mes completo, partiendo de cero, 753 personas vieron su ficha, recibieron 19 llamadas, 10 conversaciones por chat y 20 clics a la web. Su web ya empezó a posicionar en paralelo: en las primeras semanas acumula más de 4.200 impresiones y 32 clics orgánicos en Google Search Console.",
+    testimonial: "",
+    impactoPendiente: true,
+  },
 ];
 
 export const getCaseBySlug = (slug: string) => cases.find((c) => c.slug === slug);
