@@ -119,7 +119,7 @@ const CasoExitoDetailPage = ({ study }: { study: CaseStudy }) => {
                   <p className="text-base leading-relaxed text-foreground/80">
                     💰 Cada posición ganada en el mapa son más llamadas — y cada llamada es un
                     cliente potencial. Pronto añadimos aquí cuánto ha supuesto esto en
-                    facturación real para el despacho.
+                    facturación real para el negocio.
                   </p>
                 )}
               </div>
