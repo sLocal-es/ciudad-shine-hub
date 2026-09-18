@@ -4,6 +4,7 @@ import SEOHead from "@/components/SEOHead";
 import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisual";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import FAQSection from "@/components/FAQSection";
+import CasosExitoSection from "@/components/CasosExitoSection";
 
 const WA_URL =
   "https://wa.me/34644147310?text=Hola%2C%20quiero%20SEO%20local%20para%20mi%20negocio";
@@ -251,6 +252,8 @@ const SeoNegociosLocales = () => {
           </div>
         </div>
       </section>
+
+      <CasosExitoSection />
 
       {/* FINAL CTA */}
       <section className="bg-primary py-16">

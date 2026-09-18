@@ -12,6 +12,7 @@ import casoIntermedioImg from "@/assets/caso-exito-estrategia.webp.asset.json";
 import casoFinalImg from "@/assets/caso-exito-resultado.webp.asset.json";
 import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisual";
 import OptimizedWebsiteVisual from "@/components/OptimizedWebsiteVisual";
+import CasosExitoSection from "@/components/CasosExitoSection";
 
 
 const AuditoriaLeadForm = () => {
@@ -1056,6 +1057,8 @@ const FontanerosPage = () => {
           </div>
         </div>
       </section>
+
+      <CasosExitoSection />
 
       <CTASection
         id="contacto"

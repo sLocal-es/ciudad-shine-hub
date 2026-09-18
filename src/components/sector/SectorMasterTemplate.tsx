@@ -9,6 +9,7 @@ import { sendForm } from "@/lib/sendForm";
 import { toast } from "@/hooks/use-toast";
 import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisual";
 import OptimizedWebsiteVisual from "@/components/OptimizedWebsiteVisual";
+import CasosExitoSection from "@/components/CasosExitoSection";
 import caseBeforeAsset from "@/assets/caso-exito-antes.webp.asset.json";
 import caseStrategyAsset from "@/assets/caso-exito-estrategia.webp.asset.json";
 import caseResultAsset from "@/assets/caso-exito-resultado.webp.asset.json";
@@ -719,6 +720,8 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
           </div>
         </div>
       </section>
+
+      <CasosExitoSection />
 
       <CTASection id="contacto" title={c.finalCtaTitle} buttonText="Solicitar auditoría gratuita →" />
     </>
