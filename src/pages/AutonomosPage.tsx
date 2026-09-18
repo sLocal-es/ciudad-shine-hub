@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisual";
+import CasosExitoSection from "@/components/CasosExitoSection";
 
 type Sector =
   | "Fontanero"
@@ -368,6 +369,8 @@ const AutonomosPage = () => {
           </div>
         </div>
       </section>
+
+      <CasosExitoSection />
 
       <CTASection
         id="contacto"

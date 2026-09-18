@@ -4,6 +4,7 @@ import BreadcrumbNav from "@/components/BreadcrumbNav";
 
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
+import CasosExitoSection from "@/components/CasosExitoSection";
 import { sectors } from "@/data/sectors";
 import { cities } from "@/data/cities";
 
@@ -261,6 +262,8 @@ const SectorPage = () => {
           </div>
         </div>
       </section>
+
+      <CasosExitoSection />
 
       {/* SECTION 10 — FINAL CTA */}
       <CTASection title={`¿Listo para que Google te traiga ${sector.ctaWord}?`} buttonText="Empezar →" />

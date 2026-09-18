@@ -11,3 +11,6 @@
 - [x] Resaltar las palabras clave de sus títulos en naranja.
 - [x] Adaptar la sección de sectores a una cuadrícula abierta con iconos y descripciones.
 - [x] Añadir ilustraciones naranjas a Google Ads, Reseñas PRO y Posicionamiento GEO.
+- [x] Añadir brillo naranja a las tarjetas de casos en hover y foco.
+- [x] Compartir la sección de casos de éxito en Home, sectores y ciudades.
+- [x] Añadir a Home el refuerzo de 60 días antes del CTA final.

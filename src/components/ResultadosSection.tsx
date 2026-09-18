@@ -39,11 +39,11 @@ export function CaseCard({ study, position }: { study: CaseStudy; position: numb
         ];
 
   return (
-    <article className="group transition-transform duration-300 hover:-translate-y-1 flex flex-col">
+    <article className="group transition-transform duration-300 hover:-translate-y-1 focus-within:-translate-y-1 flex flex-col">
       <Link
         to="/casos-de-exito/$slug"
         params={{ slug: study.slug }}
-        className="flex flex-col flex-1 rounded-2xl border border-foreground/10 bg-white p-5 transition-colors duration-300 hover:border-primary/40"
+        className="flex flex-col flex-1 rounded-2xl border border-foreground/10 bg-white p-5 transition-[color,box-shadow,border-color] duration-300 hover:border-primary/40 hover:shadow-[0_0_32px_hsl(var(--primary)/0.28)] focus-visible:border-primary/40 focus-visible:shadow-[0_0_32px_hsl(var(--primary)/0.28)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
         aria-label={`Ver el caso de éxito de ${study.name}`}
       >
         {/* Fila superior: eyebrow + icono pequeño */}
