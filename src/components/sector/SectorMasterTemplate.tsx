@@ -10,6 +10,8 @@ import { toast } from "@/hooks/use-toast";
 import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisual";
 import OptimizedWebsiteVisual from "@/components/OptimizedWebsiteVisual";
 import CasosExitoSection from "@/components/CasosExitoSection";
+import ComoPosicionamosSection, { ComoPosicionamosSectionProps } from "@/components/sector/ComoPosicionamosSection";
+import QueIncluyeSection, { QueIncluyeSectionProps } from "@/components/sector/QueIncluyeSection";
 import caseBeforeAsset from "@/assets/caso-exito-antes.webp.asset.json";
 import caseStrategyAsset from "@/assets/caso-exito-estrategia.webp.asset.json";
 import caseResultAsset from "@/assets/caso-exito-resultado.webp.asset.json";
@@ -65,6 +67,10 @@ export type SectorTemplateContent = {
   webBody: ReactNode;
   webFeatures: string[];
   webImage?: { src: string; alt: string };
+
+  // Optional page-specific positioning and service content
+  comoPosicionamos?: ComoPosicionamosSectionProps;
+  queIncluye?: QueIncluyeSectionProps;
 
   // Auditoria CTA (form) — keep master copy by default
   auditoriaH2?: ReactNode;
@@ -397,6 +403,10 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
           </div>
         </div>
       </section>
+
+      {c.comoPosicionamos && <ComoPosicionamosSection {...c.comoPosicionamos} />}
+
+      {c.queIncluye && <QueIncluyeSection {...c.queIncluye} />}
 
       {c.servicesCta}
 

@@ -23,6 +23,7 @@ const CityMasterTemplate = ({ city, servicesCta, whyUsSection }: { city: SeoLoca
   const { name, slug, population, competition, plazo } = city;
   const url = `https://slocal.es/seo-local-${slug}`;
   const isValencia = slug === "valencia";
+  const isMadrid = slug === "madrid";
 
   const faqs = [
     { q: `¿Cuándo empezaré a ver resultados de SEO local en ${name}?`, a: `En ${name}, con una competencia digital ${competition.toLowerCase()}, los primeros resultados visibles llegan en ${plazo}: más visitas al perfil de Google Business Profile, más llamadas y mejora de posiciones en Google Maps. A partir del mes 6 el flujo se consolida.` },
@@ -75,6 +76,27 @@ const CityMasterTemplate = ({ city, servicesCta, whyUsSection }: { city: SeoLoca
     webH3: <>Una web que <span className="text-primary">convierte</span> visitas en clientes</>,
     webBody: <>Mientras Google Business Profile genera la llamada, tu web convierte las visitas en contactos cualificados. Trabajamos páginas específicas por servicio y por barrio de {name}.</>,
     webFeatures: ["SEO Local", "Landing por servicio", "Landing por barrio", "Formularios optimizados", "WhatsApp", "Google Analytics"],
+    comoPosicionamos: isMadrid ? {
+      titleSuffix: "en Madrid",
+      intro: "En Madrid, la relevancia por servicio y barrio, la coherencia de los datos del negocio y una reputación local sólida determinan qué empresas compiten por las posiciones visibles de Google.",
+      texts: [
+        "Creamos una arquitectura de páginas que conecta cada servicio con la zona donde existe demanda. Así, búsquedas concretas como «fisioterapeuta en Chamberí» o «fontanero en Vallecas» encuentran una página útil que responde a esa necesidad y ayuda a Google a entender dónde y para qué debe mostrar el negocio.",
+        "Revisamos que el nombre, la dirección y el teléfono del negocio coincidan en Google Business Profile, la web y los directorios relevantes. En una ciudad de 3,4 millones de habitantes, esta consistencia ayuda a diferenciar cada ubicación y evita señales contradictorias entre barrios y áreas de servicio.",
+        "Madrid tiene un volumen alto de búsquedas locales y una competencia digital alta. Trabajamos la obtención y respuesta de reseñas reales, su relación con los servicios prestados y la autoridad de la web para reforzar la confianza del usuario y la capacidad del negocio para competir en su zona.",
+      ],
+      closing: "La estrategia combina relevancia por barrio, datos coherentes y autoridad local para que Google identifique el negocio como una respuesta fiable dentro de Madrid.",
+    } : undefined,
+    queIncluye: isMadrid ? {
+      titleSuffix: "en Madrid",
+      texts: [
+        "Auditamos la ficha, la web y la visibilidad actual por zonas de Madrid. El diagnóstico compara categorías, servicios, contenido, reseñas, citaciones y competidores para detectar qué limita la presencia en Google Maps y en los resultados orgánicos.",
+        "Analizamos búsquedas con intención de contratación y las agrupamos por servicio y barrio. Consultas como «abogado en Carabanchel» o «reformas en Tetuán» permiten construir una estrategia basada en cómo buscan los usuarios de Madrid, no en términos genéricos sin contexto local.",
+        "Configuramos categorías, servicios, descripción, zonas de cobertura, fotografías y publicaciones de Google Business Profile. La ficha se trabaja para representar correctamente la actividad del negocio y ganar relevancia en las búsquedas próximas a su ubicación real.",
+        "Desarrollamos páginas específicas para los servicios y zonas prioritarias de Madrid, con información útil y diferenciada. La web conecta cada necesidad local con una vía clara de contacto y refuerza la relación entre el negocio, su especialidad y el área donde trabaja.",
+        "Corregimos y ampliamos las menciones del negocio en directorios locales y temáticos que aportan contexto. Mantener los mismos datos en estas fuentes refuerza la identidad de la empresa y su vinculación con Madrid ante los buscadores.",
+        "El informe mensual reúne posiciones, llamadas, formularios y evolución de la ficha por las búsquedas trabajadas. En un mercado de competencia alta, estos datos permiten ajustar barrios, servicios y contenidos durante el plazo estimado de 3 a 6 meses sin depender de impresiones generales.",
+      ],
+    } : undefined,
     auditoriaFormType: `auditoria_${slug}`,
     howH2: <>¿Cómo conseguimos que aparezcas <span className="text-primary">por delante</span> de tu competencia en {name}?</>,
     howIntro: <>En Slocal apareces primero en Google Maps en {name} optimizando tu ficha, servicios, reseñas y contenido local. Google prioriza fichas activas, con reseñas recientes y coherencia entre ficha, web y citaciones locales de la ciudad.</>,

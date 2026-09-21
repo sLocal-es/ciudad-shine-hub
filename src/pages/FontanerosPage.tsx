@@ -13,6 +13,8 @@ import casoFinalImg from "@/assets/caso-exito-resultado.webp.asset.json";
 import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisual";
 import OptimizedWebsiteVisual from "@/components/OptimizedWebsiteVisual";
 import CasosExitoSection from "@/components/CasosExitoSection";
+import ComoPosicionamosSection from "@/components/sector/ComoPosicionamosSection";
+import QueIncluyeSection from "@/components/sector/QueIncluyeSection";
 
 
 const AuditoriaLeadForm = () => {
@@ -411,6 +413,29 @@ const FontanerosPage = () => {
           </div>
         </div>
       </section>
+
+      <ComoPosicionamosSection
+        titleSuffix="para fontaneros"
+        intro="El posicionamiento de una empresa de fontanería depende de que Google entienda qué averías resuelve, en qué zonas trabaja y por qué merece la confianza de una persona que necesita llamar en ese momento."
+        texts={[
+          "Creamos páginas diferenciadas para urgencias 24 horas, detección de fugas, desatascos, reparación de averías e instalaciones cuando esos servicios forman parte de la oferta real del negocio. Cada página responde a una necesidad concreta y la conecta con las ciudades y zonas donde trabaja el fontanero.",
+          "Unificamos el nombre comercial, el teléfono y las zonas de servicio en Google Business Profile, la web y los directorios del sector. Esa consistencia evita que Google encuentre datos contradictorios y refuerza la relación entre la empresa de fontanería y su área de cobertura.",
+          "Las reseñas explican qué trabajo se realizó, en qué zona y cómo fue la atención recibida. Ayudamos a solicitar y responder opiniones reales para reforzar servicios como urgencias, fugas o desatascos, sin fabricar valoraciones ni utilizar textos repetidos.",
+        ]}
+        closing="La combinación de páginas por avería, datos coherentes y reseñas reales permite competir tanto en búsquedas urgentes como en trabajos de fontanería planificados."
+      />
+
+      <QueIncluyeSection
+        titleSuffix="para fontaneros"
+        texts={[
+          "Revisamos la ficha de Google Business Profile, la web, las posiciones actuales y los competidores que aparecen para búsquedas de fontanería. La auditoría detecta problemas de categorías, servicios, zonas, contenido, reseñas y conversión antes de definir prioridades.",
+          "Separamos las búsquedas urgentes de las planificadas y analizamos cómo cambia la intención entre «fontanero 24 horas», «reparación de fugas», «desatascos» o «instalación de caldera». Solo trabajamos servicios y ubicaciones que la empresa presta realmente.",
+          "Configuramos la categoría principal y las categorías secundarias según la actividad real, detallamos urgencias 24 horas cuando se ofrecen, añadimos servicios, zonas de cobertura, horarios, fotografías y publicaciones, y facilitamos que el usuario llame desde Google Maps.",
+          "La web se estructura con páginas propias para cada servicio de fontanería y cada ubicación prioritaria. Incluye llamadas visibles, formularios claros y contenido que explica la avería, el tipo de intervención y la cobertura sin mezclar todas las búsquedas en una única página genérica.",
+          "Revisamos directorios locales y fuentes temáticas donde una empresa de fontanería puede acreditar su actividad. Corregimos diferencias en nombre, teléfono o cobertura y seleccionamos menciones útiles, evitando altas masivas en sitios sin relación con el negocio.",
+          "Cada mes mostramos la evolución de las búsquedas prioritarias, la visibilidad en Google Maps y los contactos recibidos por llamada o formulario. El reporte distingue servicios urgentes y trabajos planificados para decidir qué páginas, zonas y contenidos necesitan refuerzo.",
+        ]}
+      />
 
       {/* CTA AUDITORÍA GRATUITA */}
       <section className="bg-white py-12 md:py-20">
