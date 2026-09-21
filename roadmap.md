@@ -14,3 +14,5 @@
 - [x] Añadir brillo naranja a las tarjetas de casos en hover y foco.
 - [x] Compartir la sección de casos de éxito en Home, sectores y ciudades.
 - [x] Añadir a Home el refuerzo de 60 días antes del CTA final.
+- [x] Añadir contenido único de «Cómo posicionamos» y «Qué incluye» a Madrid.
+- [x] Añadir contenido único de «Cómo posicionamos» y «Qué incluye» a Fontaneros.

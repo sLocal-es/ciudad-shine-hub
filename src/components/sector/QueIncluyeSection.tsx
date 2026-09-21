@@ -73,7 +73,7 @@ const QueIncluyeSection = ({ titleSuffix, texts }: QueIncluyeSectionProps) => (
       <div className="mx-auto max-w-4xl text-center">
         <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Servicio base</p>
         <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight">
-          Qué incluye nuestro servicio de <span className="text-primary">SEO Local</span> {titleSuffix}
+          ¿Qué incluye nuestro servicio de <span className="text-primary">SEO Local</span> {titleSuffix}?
         </h2>
       </div>
       <div className="mt-16 space-y-8 md:space-y-10">
