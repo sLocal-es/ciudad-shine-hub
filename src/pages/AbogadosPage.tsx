@@ -1,3 +1,4 @@
+import { Link } from "@/lib/router-compat";
 import SectorMasterTemplate, { SectorTemplateContent } from "@/components/sector/SectorMasterTemplate";
 
 const AbogadosPage = () => {
@@ -29,7 +30,7 @@ const AbogadosPage = () => {
     sectorLabel: "Abogados", sectorSlug: "seo-para-abogados", sectorLower: "abogados", clientWord: "clientes",
     heroEyebrow: "Agencia SEO Local · Abogados",
     heroH1: <h1>SEO para <span className="text-primary">Abogados</span></h1>,
-    heroSubtitle: <>Agencia SEO Local especializada en despachos de abogados. Optimizamos tu ficha de Google Business Profile y tu web para que aparezcas primero cuando alguien busca abogado en tu ciudad.</>,
+    heroSubtitle: <>Slocal es una <Link to="/" className="text-primary hover:underline">agencia SEO local</Link> especializada en despachos de abogados. Optimizamos tu ficha de Google Business Profile y tu web para que aparezcas primero cuando alguien busca abogado en tu ciudad.</>,
     heroTrust: ["Google Partner", "Ficha de Google gestionada cada mes", "Auditoría inicial sin coste"],
     manifestoEyebrow: "— El punto de partida",
     manifestoH2: <>¿Cómo conseguir <span className="text-primary">más consultas</span> para tu despacho desde Google?</>,

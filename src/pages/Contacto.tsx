@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "@/lib/router-compat";
 import { z } from "zod";
 import SEOHead from "@/components/SEOHead";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
@@ -136,8 +137,9 @@ const Contacto = () => {
               <span className="text-primary">más clientes desde Google</span>.
             </h1>
             <p className="mt-6 max-w-2xl text-base md:text-lg font-body font-light leading-relaxed text-black">
-              Analizaremos gratuitamente tu Google Business Profile y tu presencia online para detectar
-              oportunidades de mejora y mostrarte cómo conseguir más llamadas, formularios y clientes desde Google.
+              Nuestra <Link to="/" className="text-primary hover:underline">agencia SEO local</Link> analizará gratuitamente tu
+              Google Business Profile y tu presencia online para detectar oportunidades de mejora y mostrarte cómo conseguir
+              más llamadas, formularios y clientes desde Google.
             </p>
 
             <div className="mt-9 flex flex-wrap gap-3">
