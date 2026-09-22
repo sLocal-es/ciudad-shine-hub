@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import { Link } from "@/lib/router-compat";
 import SectorMasterTemplate, { SectorTemplateContent } from "@/components/sector/SectorMasterTemplate";
 import { SeoLocalCity } from "@/data/seoLocalCities";
 
@@ -24,6 +25,7 @@ const CityMasterTemplate = ({ city, servicesCta, whyUsSection }: { city: SeoLoca
   const url = `https://slocal.es/seo-local-${slug}`;
   const isValencia = slug === "valencia";
   const isMadrid = slug === "madrid";
+  const isCordoba = slug === "cordoba";
 
   const faqs = [
     { q: `¿Cuándo empezaré a ver resultados de SEO local en ${name}?`, a: `En ${name}, con una competencia digital ${competition.toLowerCase()}, los primeros resultados visibles llegan en ${plazo}: más visitas al perfil de Google Business Profile, más llamadas y mejora de posiciones en Google Maps. A partir del mes 6 el flujo se consolida.` },
@@ -69,7 +71,7 @@ const CityMasterTemplate = ({ city, servicesCta, whyUsSection }: { city: SeoLoca
     heroTrust: ["Google Partner", "Ficha de Google gestionada cada mes", "Auditoría inicial sin coste"],
     manifestoEyebrow: "— El punto de partida",
     manifestoH2: <>¿Cómo conseguir <span className="text-primary">más clientes</span> desde Google en {name}?</>,
-    manifestoBody: <>En Slocal conseguimos que más clientes contacten con tu negocio en {name} optimizando tu ficha de Google Business Profile y posicionando tu web para búsquedas locales de alta intención. {name} tiene {population} y una competencia digital {competition.toLowerCase()}: aparecer en el top 3 de Google Maps multiplica los contactos porque esos tres negocios se llevan la mayoría de las llamadas. {isValencia && <>La optimización también contempla cómo aparece y se entiende tu negocio en respuestas de ChatGPT, Gemini y AI Overviews, una línea de posicionamiento GEO que Slocal ya integra en su trabajo.</>}</>,
+    manifestoBody: <>En Slocal{isCordoba && <>, <Link to="/" className="text-primary hover:underline">agencia SEO local</Link>,</>} conseguimos que más clientes contacten con tu negocio en {name} optimizando tu ficha de Google Business Profile y posicionando tu web para búsquedas locales de alta intención. {name} tiene {population} y una competencia digital {competition.toLowerCase()}: aparecer en el top 3 de Google Maps multiplica los contactos porque esos tres negocios se llevan la mayoría de las llamadas. {isValencia && <>La optimización también contempla cómo aparece y se entiende tu negocio en respuestas de ChatGPT, Gemini y AI Overviews, una línea de posicionamiento GEO que Slocal ya integra en su trabajo.</>}</>,
     gbpH3: <>Tu ficha de <span className="text-primary">Google Business Profile</span> genera llamadas en {name}</>,
     gbpBody: <>Google Business Profile es donde el cliente de {name} decide llamarte. Optimizamos tu ficha para aparecer antes que otros negocios de tu zona y convertir búsquedas en contactos reales.</>,
     gbpFeatures: ["Categorías optimizadas", "Zona de servicio por barrios", "Publicaciones semanales", "Gestión de reseñas", "Geolocalización", "Seguimiento de llamadas"],

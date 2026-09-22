@@ -224,8 +224,8 @@ const Servicios = () => {
             </h1>
             <p className="mt-7 max-w-xl font-body font-light text-warm-fg/75 text-base md:text-lg leading-relaxed">
               Todo empieza con una base sólida: una página web profesional junto con una ficha de Google Business Profile
-              optimizada para atraer clientes desde Google. Después, puedes potenciar aún más tus resultados con
-              servicios especializados.
+              optimizada para atraer clientes desde Google. Después, puedes potenciar aún más tus resultados con los
+              servicios especializados de esta <Link to="/" className="text-primary hover:underline">agencia SEO local</Link>.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link

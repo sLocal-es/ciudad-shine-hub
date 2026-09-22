@@ -50,7 +50,8 @@ const BlogIndex = () => {
               Estrategias reales de <span className="text-primary">SEO Local</span>
             </h1>
             <p className="mt-7 max-w-2xl font-body font-light text-warm-fg/75 text-base md:text-lg leading-relaxed">
-              Aquí compartimos lo que aplicamos cada día: Google Business Profile, páginas web que convierten,
+              Aquí compartimos lo que aplicamos cada día como <Link to="/" className="text-primary hover:underline">agencia SEO local</Link>:
+              Google Business Profile, páginas web que convierten,
               posicionamiento en Google Maps y captación de clientes locales. Sin tecnicismos y con ejemplos reales.
             </p>
             <div className="mt-9 flex flex-col sm:flex-row gap-3 sm:gap-4">

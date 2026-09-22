@@ -589,7 +589,7 @@ const ComoFunciona = () => (
           Un sistema que trabaja mientras tú atiendes a tus clientes
         </h1>
         <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-[600px] mx-auto">
-          No somos una agencia con cuentas junior y reuniones semanales. Somos un sistema con tres piezas que hacemos funcionar por ti, mes a mes, sin que tengas que saber nada de SEO.
+          No somos la típica <Link to="/" className="text-primary hover:underline">agencia SEO local</Link> con cuentas junior y reuniones semanales. Somos un sistema con tres piezas que hacemos funcionar por ti, mes a mes, sin que tengas que saber nada de SEO.
         </p>
       </div>
     </section>
