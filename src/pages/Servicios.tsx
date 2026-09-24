@@ -4,13 +4,15 @@ import Reveal from "@/components/Reveal";
 import {
   Check,
   Eyebrow,
-  IllustrationPlaceholder,
   NeedRow,
   ServiceCard,
   type ExtraService,
 } from "@/components/servicios/ServiciosUI";
 import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisual";
 import OptimizedWebsiteVisual from "@/components/OptimizedWebsiteVisual";
+import resenasProAsset from "@/assets/servicios/resenas-google-pro.webp.asset.json";
+import googleAdsAsset from "@/assets/servicios/google-ads.webp.asset.json";
+import backlinksAsset from "@/assets/servicios/backlinks.webp.asset.json";
 
 const sectionCls = "bg-white py-24 md:py-32 border-t border-warm-fg/10";
 
@@ -24,13 +26,6 @@ const iconProps = {
   strokeLinecap: "round" as const,
   strokeLinejoin: "round" as const,
 };
-
-const IconSpark = () => (
-  <svg {...iconProps} aria-hidden>
-    <path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z" />
-    <path d="M18.5 16.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7.7-1.8z" />
-  </svg>
-);
 
 const IconStar = () => (
   <svg {...iconProps} aria-hidden>
@@ -100,19 +95,17 @@ const idealPara = [
 
 const extraServices: ExtraService[] = [
   {
-    id: "geo",
-    title: <>Posicionamiento <span className="text-primary">GEO</span></>,
-    illustration: "Ilustración isométrica: buscadores con IA (ChatGPT, Gemini) recomendando un negocio local",
-    icon: <IconSpark />,
-    description:
-      "Haz que tu empresa aparezca cuando los clientes preguntan a ChatGPT, Gemini, Claude, Copilot o Google AI Overviews.",
-    features: ["Optimización para IA", "ChatGPT", "Gemini", "Claude", "Google AI Overviews"],
-    to: "/contacto",
-  },
-  {
     id: "resenas",
     title: <>Gestión de <span className="text-primary">reseñas PRO</span></>,
-    illustration: "Ilustración isométrica: tarjeta NFC y código QR generando reseñas de 5 estrellas",
+    illustration: "Tarjeta NFC y código QR generando reseñas de 5 estrellas en Google",
+    visual: (
+      <img
+        src={resenasProAsset.url}
+        alt="Ilustración de reseñas de Google PRO: móvil con una reseña de 5 estrellas, logo de Google y gráfico de llamadas creciendo"
+        className="w-full h-full object-cover"
+        loading="lazy"
+      />
+    ),
     icon: <IconStar />,
     description:
       "Automatiza la captación de reseñas reales y mejora la confianza de tus futuros clientes.",
@@ -128,7 +121,15 @@ const extraServices: ExtraService[] = [
   {
     id: "ads",
     title: <><span className="text-primary">Google</span> Ads</>,
-    illustration: "Ilustración isométrica: anuncio de búsqueda de Google generando llamadas",
+    illustration: "Anuncio de búsqueda de Google generando llamadas al negocio",
+    visual: (
+      <img
+        src={googleAdsAsset.url}
+        alt="Ilustración de Google Ads: logo de Google Ads, móvil con un anuncio de búsqueda y un gráfico de llamadas creciendo"
+        className="w-full h-full object-cover"
+        loading="lazy"
+      />
+    ),
     icon: <IconTarget />,
     description:
       "Empieza a recibir llamadas desde el primer día mientras el SEO Local sigue creciendo.",
@@ -143,7 +144,15 @@ const extraServices: ExtraService[] = [
   {
     id: "backlinks",
     title: <>Backlinks <span className="text-primary">Locales</span></>,
-    illustration: "Ilustración isométrica: red de enlaces y menciones locales conectando con una web",
+    illustration: "Red de enlaces y menciones locales conectando con una web",
+    visual: (
+      <img
+        src={backlinksAsset.url}
+        alt="Ilustración de backlinks: cadena naranja conectando dominios que enlazan y un gráfico de autoridad creciendo"
+        className="w-full h-full object-cover"
+        loading="lazy"
+      />
+    ),
     icon: <IconLink />,
     description:
       "Aumenta la autoridad de tu página web mediante enlaces y menciones desde sitios relevantes.",
@@ -154,7 +163,6 @@ const extraServices: ExtraService[] = [
 
 const needs = [
   { icon: <IconRocket />, need: "Cliente que empieza desde cero", answer: "Pack Web + Google Business Profile", to: "#pack" },
-  { icon: <IconSpark />, need: "Quiere salir en ChatGPT", answer: "Posicionamiento GEO", to: "#servicios-extra" },
   { icon: <IconStar />, need: "Quiere conseguir más reseñas", answer: "Gestión de reseñas PRO", to: "#servicios-extra" },
   { icon: <IconTarget />, need: "Necesita clientes desde el primer día", answer: "Google Ads", to: "#servicios-extra" },
   { icon: <IconLink />, need: "Quiere mejorar el posicionamiento SEO", answer: "Backlinks Locales", to: "#servicios-extra" },
@@ -197,7 +205,6 @@ const Servicios = () => {
       name: "Servicios de Slocal",
       itemListElement: [
         "Pack Web + Google Business Profile",
-        "Posicionamiento GEO",
         "Gestión de reseñas PRO",
         "Google Ads",
         "Backlinks Locales",
@@ -209,7 +216,7 @@ const Servicios = () => {
     <>
       <SEOHead
         title="Servicios de Agencia SEO Local | slocal.es"
-        description="Servicios de Agencia SEO Local: Pack Web + Google Business Profile, Posicionamiento GEO, gestión de reseñas, Google Ads y backlinks locales para conseguir más clientes desde Google."
+        description="Servicios de Agencia SEO Local: Pack Web + Google Business Profile, gestión de reseñas, Google Ads y backlinks locales para conseguir más clientes desde Google."
         canonical="/servicios"
         jsonLd={jsonLd}
       />
