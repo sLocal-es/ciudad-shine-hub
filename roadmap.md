@@ -22,4 +22,4 @@
 - [x] Convertir `/sistema` en landing no indexable y alinear su catálogo con `/servicios`.
 - [x] Eliminar de toda la web los mensajes de permanencia, cancelación y penalizaciones.
 - [x] Integrar GEO como parte del SEO Local en ciudades, sectores, Home y Servicios.
-- [ ] Revisar visualmente `/ficha-google-mi-negocio` en escritorio y móvil.
+- [x] Revisar visualmente `/ficha-google-mi-negocio` en escritorio y móvil.
