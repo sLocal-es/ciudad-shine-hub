@@ -62,7 +62,7 @@ const Sistema = () => {
       <section className="py-16 md:py-20 bg-dark-bg border-t border-dark-fg/10 text-dark-fg">
         <div className="container max-w-3xl mx-auto">
           <h2 className="font-heading text-3xl md:text-4xl leading-tight mb-10">
-            Qué incluye y qué puedes <em className="text-primary not-italic">añadir</em>
+            ¿Qué incluye el servicio y qué puedes <em className="text-primary not-italic">añadir</em>?
           </h2>
           <ul className="grid md:grid-cols-2 gap-4">
             {[
@@ -92,7 +92,7 @@ const Sistema = () => {
       <section className="py-16 md:py-20 bg-secondary/40">
         <div className="container max-w-3xl mx-auto">
           <h2 className="font-heading text-3xl md:text-4xl leading-tight mb-10">
-            Esto es para ti si…
+            ¿Para quién está pensado este servicio?
           </h2>
           <div className="grid md:grid-cols-2 gap-4">
             <div className="bg-card border border-border rounded-xl p-6">
@@ -121,7 +121,7 @@ const Sistema = () => {
       <section className="py-16 md:py-20 bg-dark-bg text-dark-fg">
         <div className="container max-w-3xl mx-auto">
           <h2 className="font-heading text-3xl md:text-4xl leading-tight mb-10">
-            Cómo funciona
+            ¿Cómo funciona el servicio?
           </h2>
           <ol className="space-y-5">
             {[
@@ -170,7 +170,7 @@ const Sistema = () => {
       <section className="py-16 md:py-20 bg-secondary/40">
         <div className="container max-w-3xl mx-auto">
           <h2 className="font-heading text-3xl md:text-4xl leading-tight mb-10">
-            Lo que la gente me pregunta
+            ¿Qué suelen preguntar los negocios antes de empezar?
           </h2>
           <Accordion type="single" collapsible className="space-y-3">
             {[
