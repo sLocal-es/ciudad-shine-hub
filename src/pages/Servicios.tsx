@@ -10,7 +10,7 @@ import {
 } from "@/components/servicios/ServiciosUI";
 import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisual";
 import OptimizedWebsiteVisual from "@/components/OptimizedWebsiteVisual";
-import resenasProAsset from "@/assets/servicios/resenas-google-pro.webp.asset.json";
+import resenasProAsset from "@/assets/servicios/resenas-google-pro-v2.webp.asset.json";
 import googleAdsAsset from "@/assets/servicios/google-ads.webp.asset.json";
 import backlinksAsset from "@/assets/servicios/backlinks.webp.asset.json";
 
@@ -101,7 +101,7 @@ const extraServices: ExtraService[] = [
     visual: (
       <img
         src={resenasProAsset.url}
-        alt="Ilustración de reseñas de Google PRO: móvil con una reseña de 5 estrellas, logo de Google y gráfico de llamadas creciendo"
+        alt="Reseñas PRO de Google: móvil con una reseña, logo de Google y cinco estrellas naranjas"
         className="w-full h-full object-cover"
         loading="lazy"
       />

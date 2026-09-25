@@ -29,6 +29,8 @@ import fichaGoogleImage from "@/assets/home/ficha-google-business.webp";
 import webSeoLocalImage from "@/assets/home/web-seo-local.webp";
 import citacionesImage from "@/assets/home/citaciones-directorios.webp";
 import reporteMensualImage from "@/assets/home/reporte-mensual.webp";
+import resenasProAsset from "@/assets/servicios/resenas-google-pro-v2.webp.asset.json";
+import googleAdsAsset from "@/assets/servicios/google-ads.webp.asset.json";
 
 const sectionCls = "bg-white py-24 md:py-32 border-t border-warm-fg/10";
 
@@ -64,22 +66,6 @@ const IconTarget = () => (
   </svg>
 );
 
-const GoogleAdsVisual = () => (
-  <div className="flex h-full w-full items-center justify-center" aria-hidden>
-    <span className="font-heading text-[clamp(5rem,10vw,8rem)] font-semibold leading-none text-primary">G</span>
-  </div>
-);
-
-const ReviewsProVisual = () => (
-  <svg viewBox="0 0 320 190" className="h-full w-full max-w-[300px]" fill="none" aria-hidden>
-    <rect x="54" y="28" width="212" height="134" rx="18" stroke="currentColor" strokeWidth="4" />
-    <circle cx="88" cy="65" r="15" fill="currentColor" opacity=".16" />
-    <path d="M82 65l4 4 9-10" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M116 58h108M116 72h76" stroke="currentColor" strokeWidth="4" strokeLinecap="round" opacity=".45" />
-    <path d="M85 112l6-12 6 12 13 2-10 9 3 13-12-6-12 6 3-13-10-9 13-2zM137 112l6-12 6 12 13 2-10 9 3 13-12-6-12 6 3-13-10-9 13-2zM189 112l6-12 6 12 13 2-10 9 3 13-12-6-12 6 3-13-10-9 13-2zM241 112l6-12 6 12 13 2-10 9 3 13-12-6-12 6 3-13-10-9 13-2z" fill="currentColor" />
-  </svg>
-);
-
 const GeoPlatformsVisual = () => (
   <div className="grid w-full max-w-[300px] grid-cols-2 gap-3" aria-hidden>
     {[
@@ -101,7 +87,14 @@ const complementaryServices: ExtraService[] = [
     id: "ads",
     title: <><span className="text-primary">Google</span> Ads</>,
     illustration: "Ilustración isométrica: anuncio de búsqueda de Google generando llamadas",
-    visual: <GoogleAdsVisual />,
+    visual: (
+      <img
+        src={googleAdsAsset.url}
+        alt="Google Ads: móvil con un anuncio de búsqueda y un gráfico de llamadas creciendo"
+        className="h-full w-full object-cover"
+        loading="lazy"
+      />
+    ),
     icon: <IconTarget />,
     description: "Empieza a recibir llamadas desde el primer día mientras el SEO Local sigue creciendo.",
     features: ["Campañas de búsqueda", "Optimización mensual", "Seguimiento de conversiones", "Mejora continua"],
@@ -111,7 +104,14 @@ const complementaryServices: ExtraService[] = [
     id: "resenas",
     title: <>Gestión de <span className="text-primary">reseñas PRO</span></>,
     illustration: "Ilustración isométrica: tarjeta NFC y código QR generando reseñas de 5 estrellas",
-    visual: <ReviewsProVisual />,
+    visual: (
+      <img
+        src={resenasProAsset.url}
+        alt="Reseñas PRO de Google: móvil con una reseña, logo de Google y cinco estrellas naranjas"
+        className="h-full w-full object-cover"
+        loading="lazy"
+      />
+    ),
     icon: <IconStar />,
     description: "Automatiza la captación de reseñas reales y mejora la confianza de tus futuros clientes.",
     features: ["Tarjetas NFC", "Código QR", "Solicitudes automáticas", "Respuesta profesional", "Incremento de reputación"],
