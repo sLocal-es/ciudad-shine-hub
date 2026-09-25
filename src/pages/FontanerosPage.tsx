@@ -340,7 +340,7 @@ const FontanerosPage = () => {
             ¿Cómo conseguir <span className="text-primary">más clientes</span> de fontanería desde Google?
           </h2>
           <p className="mt-8 max-w-2xl text-base md:text-lg font-body text-warm-fg leading-relaxed">
-            En Slocal conseguimos que más clientes te llamen optimizando tu ficha de Google Business Profile y posicionando tu web para búsquedas locales de alta intención. Aparecer en el top 3 de Google Maps multiplica las llamadas: esos tres negocios se llevan el 40 % de los clics.
+            En Slocal conseguimos que más clientes te llamen optimizando tu ficha de Google Business Profile y posicionando tu web para búsquedas locales de alta intención. Aparecer en el top 3 de Google Maps multiplica las llamadas: esos tres negocios se llevan el 40 % de los clics. También estructuramos urgencias, averías y zonas de servicio para que ChatGPT, Gemini y AI Overviews entiendan cuándo recomendar al fontanero; este posicionamiento GEO está integrado en el SEO Local.
           </p>
 
           {/* Editorial split — GBP */}
@@ -647,21 +647,11 @@ const FontanerosPage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
 
 
             {/* Service cards */}
             {[
-              {
-                logo: <img src="/logos/chatgpt.png" alt="ChatGPT" className="h-8 w-auto object-contain" />,
-                title: <>
-                  <span className="block leading-[1.1] mb-1">Posicionamiento</span>
-                  <span className="block leading-[1.1] text-primary group-hover:text-white transition-colors duration-[250ms]">GEO</span>
-                </>,
-                desc: "Haz que tu empresa aparezca en ChatGPT, Gemini, AI Overviews y otros buscadores basados en IA cuando los clientes busquen empresas como la tuya.",
-                features: ["ChatGPT y Gemini", "AI Overviews", "Optimización para IA"],
-                link: "/posicionamiento-local",
-              },
               {
                 logo: <img src="/logos/google-business-profile.png" alt="Google Business Profile" className="h-8 w-auto object-contain" />,
                 title: <>Gestión de <span className="text-primary group-hover:text-white transition-colors duration-[250ms]">reseñas PRO</span></>,

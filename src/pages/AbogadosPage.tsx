@@ -35,6 +35,7 @@ const AbogadosPage = () => {
     manifestoEyebrow: "— El punto de partida",
     manifestoH2: <>¿Cómo conseguir <span className="text-primary">más consultas</span> para tu despacho desde Google?</>,
     manifestoBody: <>En Slocal conseguimos que más clientes contacten con tu despacho optimizando tu ficha de Google Business Profile y posicionando tu web para búsquedas locales de alta intención. Aparecer en el top 3 de Google Maps multiplica las consultas: esos tres despachos se llevan la mayoría de los contactos.</>,
+    geoBody: <>También estructuramos las áreas de práctica y la información profesional para que ChatGPT, Gemini y AI Overviews comprendan cuándo recomendar el despacho; este posicionamiento GEO forma parte del SEO Local.</>,
     gbpH3: <>Tu ficha de <span className="text-primary">Google Business Profile</span> genera consultas</>,
     gbpBody: <>Google Business Profile es donde el cliente decide llamarte cuando tiene un problema legal. Optimizamos tu ficha para aparecer antes que otros despachos y convertir búsquedas en consultas reales.</>,
     gbpFeatures: ["Categorías jurídicas optimizadas", "Áreas de práctica estructuradas", "Publicaciones", "Gestión de reseñas", "Geolocalización", "Seguimiento de llamadas"],

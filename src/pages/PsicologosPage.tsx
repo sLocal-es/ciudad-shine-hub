@@ -34,6 +34,7 @@ const PsicologosPage = () => {
     manifestoEyebrow: "— El punto de partida",
     manifestoH2: <>¿Cómo conseguir <span className="text-primary">más pacientes</span> para tu consulta desde Google?</>,
     manifestoBody: <>En Slocal conseguimos que más pacientes lleguen directamente a tu consulta optimizando tu ficha de Google Business Profile y posicionando tu web para búsquedas locales de alta intención. Sin comisiones de plataformas.</>,
+    geoBody: <>También organizamos especialidades, modalidad de consulta y credenciales para que ChatGPT, Gemini y AI Overviews entiendan cuándo mostrar al profesional; este enfoque GEO se integra en el SEO Local.</>,
     gbpH3: <>Tu ficha de <span className="text-primary">Google Business Profile</span> genera pacientes</>,
     gbpBody: <>Google Business Profile es donde el paciente decide llamarte. Optimizamos tu ficha para aparecer antes que otros psicólogos y convertir búsquedas en primeras sesiones.</>,
     gbpFeatures: ["Categorías correctas de psicología", "Especialidades estructuradas", "Publicaciones", "Gestión de reseñas", "Geolocalización", "Seguimiento de llamadas"],

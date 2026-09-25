@@ -697,10 +697,10 @@ const ComoFunciona = () => (
           Un solo plan
         </div>
         <h2 className="font-heading text-3xl md:text-5xl text-dark-fg mb-5 leading-tight">
-          consulta condiciones. Sin permanencia.
+          Consulta condiciones.
         </h2>
         <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-8">
-          Sin contrato anual. Sin letra pequeña. Si en 3 meses no ves resultados, te lo decimos nosotros antes que tú.
+          Sin letra pequeña. Si en 3 meses no ves resultados, te lo decimos nosotros antes que tú.
         </p>
         <div className="flex flex-wrap justify-center gap-4 mb-8">
           <Link
@@ -711,7 +711,7 @@ const ComoFunciona = () => (
           </Link>
         </div>
         <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-dark-fg/80">
-          {["Sin permanencia", "Precio fijo visible", "Siempre la misma persona"].map((item) => (
+          {["Precio fijo visible", "Siempre la misma persona"].map((item) => (
             <span key={item} className="inline-flex items-center gap-2">
               <Check className="w-4 h-4 text-primary" />
               {item}

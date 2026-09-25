@@ -54,6 +54,7 @@ export type SectorTemplateContent = {
   manifestoEyebrow: string;    // "— El punto de partida"
   manifestoH2: ReactNode;
   manifestoBody: ReactNode;
+  geoBody?: ReactNode;
 
   // GBP editorial split
   gbpH3: ReactNode;
@@ -234,18 +235,6 @@ const AuditoriaLeadForm = ({ formType }: { formType: string }) => {
 /* ---------- Complementary services (identical to master) ---------- */
 const complementaryServices = [
   {
-    logo: <img src="/logos/chatgpt.png" alt="ChatGPT" className="h-8 w-auto object-contain" />,
-    title: (
-      <>
-        <span className="block leading-[1.1] mb-1">Posicionamiento</span>
-        <span className="block leading-[1.1] text-primary group-hover:text-white transition-colors duration-[250ms]">GEO</span>
-      </>
-    ),
-    desc: "Haz que tu empresa aparezca en ChatGPT, Gemini, AI Overviews y otros buscadores basados en IA cuando los clientes busquen empresas como la tuya.",
-    features: ["ChatGPT y Gemini", "AI Overviews", "Optimización para IA"],
-    link: "/posicionamiento-local",
-  },
-  {
     logo: <img src="/logos/google-business-profile.png" alt="Google Business Profile" className="h-8 w-auto object-contain" />,
     title: (
       <>
@@ -339,7 +328,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
             {c.manifestoH2}
           </h2>
           <p className="mt-8 max-w-2xl text-base md:text-lg font-body text-warm-fg leading-relaxed">
-            {c.manifestoBody}
+            {c.manifestoBody}{c.geoBody && <> {c.geoBody}</>}
           </p>
 
           {/* Editorial split — GBP */}
@@ -569,7 +558,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
             {complementaryServices.map((service, idx) => (
               <div
                 key={idx}

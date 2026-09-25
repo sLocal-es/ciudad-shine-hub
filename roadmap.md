@@ -16,3 +16,10 @@
 - [x] Añadir a Home el refuerzo de 60 días antes del CTA final.
 - [x] Añadir contenido único de «Cómo posicionamos» y «Qué incluye» a Madrid.
 - [x] Añadir contenido único de «Cómo posicionamos» y «Qué incluye» a Fontaneros.
+
+# Actualización de catálogo y GEO
+
+- [x] Convertir `/sistema` en landing no indexable y alinear su catálogo con `/servicios`.
+- [x] Eliminar de toda la web los mensajes de permanencia, cancelación y penalizaciones.
+- [x] Integrar GEO como parte del SEO Local en ciudades, sectores, Home y Servicios.
+- [x] Revisar visualmente `/ficha-google-mi-negocio` en escritorio y móvil.

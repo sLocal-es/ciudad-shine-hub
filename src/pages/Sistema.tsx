@@ -15,8 +15,9 @@ const Sistema = () => {
     <>
       <SEOHead
         title="Que Google te mande clientes — slocal.es"
-        description="Web + ficha de Google + contenido al mes. Sin agencias, sin permanencia. Escríbeme por WhatsApp."
+        description="Pack Web + Google Business Profile para SEO Local, con servicios opcionales de reseñas, Google Ads y backlinks locales."
         canonical="/sistema"
+        noIndex
       />
 
       {/* Mini nav */}
@@ -61,14 +62,14 @@ const Sistema = () => {
       <section className="py-16 md:py-20 bg-dark-bg border-t border-dark-fg/10 text-dark-fg">
         <div className="container max-w-3xl mx-auto">
           <h2 className="font-heading text-3xl md:text-4xl leading-tight mb-10">
-            Qué incluye <em className="text-primary not-italic">todos los meses</em>
+            Qué incluye y qué puedes <em className="text-primary not-italic">añadir</em>
           </h2>
           <ul className="grid md:grid-cols-2 gap-4">
             {[
-              { t: "Web optimizada", d: "Una página por servicio y por zona. La que Google entiende." },
-              { t: "Ficha de Google activa", d: "Configurada, mantenida y actualizada cada mes." },
-              { t: "Contenido cada mes", d: "Artículos en tu web y posts en tu ficha. Sin que tú toques nada." },
-              { t: "Seguimiento directo", d: "Te escribo yo por WhatsApp. Sin informes inútiles." },
+              { t: "Pack Web + Google Business Profile", d: "La base del SEO Local: una web optimizada y una ficha de Google preparada para captar clientes." },
+              { t: "Gestión de Reseñas PRO", d: "Un añadido opcional para captar reseñas reales y reforzar la confianza en tu negocio." },
+              { t: "Google Ads", d: "Un añadido opcional para generar visibilidad inmediata mientras crece el posicionamiento orgánico." },
+              { t: "Backlinks Locales", d: "Un añadido opcional para reforzar la autoridad de la web con enlaces y menciones relevantes." },
             ].map((b) => (
               <li
                 key={b.t}
@@ -156,11 +157,6 @@ const Sistema = () => {
           <p className="text-dark-fg/70 text-lg mb-8 max-w-md mx-auto">
             Web + ficha de Google + contenido cada mes + seguimiento directo conmigo. Todo incluido.
           </p>
-          <ul className="text-left max-w-md mx-auto space-y-3 text-sm text-dark-fg/75 mb-10">
-            <li className="flex gap-2"><span className="text-primary">✓</span> Sin permanencia.</li>
-            <li className="flex gap-2"><span className="text-primary">✓</span> Sin contratos largos.</li>
-            <li className="flex gap-2"><span className="text-primary">✓</span> Cancelas cuando quieras.</li>
-          </ul>
           <a
             href={WA_URL}
             className="inline-flex items-center gap-2 bg-primary text-primary-foreground font-heading font-medium px-8 py-4 rounded-lg hover:bg-primary/90 transition-all"
@@ -182,7 +178,6 @@ const Sistema = () => {
               { q: "¿Cuánto tarda en dar resultados?", a: "Las primeras llamadas suelen llegar en el mes 1 o 2 desde la ficha de Google. La web tarda un poco más, entre 2 y 4 meses para verla subir de forma sólida." },
               { q: "¿Necesito tener web ya?", a: "No. Si no tienes, te la monto yo. Si la tienes pero está vieja o mal hecha para Google, te monto una nueva pensada para captar clientes." },
               { q: "¿Hay que pagar publicidad aparte?", a: "No. Esto es posicionamiento orgánico en Google y Maps. No gastas un euro en anuncios." },
-              { q: "¿Y si no me convence?", a: "Te vas cuando quieras. Sin permanencia, sin penalizaciones, sin llamadas raras." },
             ].map((f) => (
               <AccordionItem
                 key={f.q}

@@ -34,6 +34,7 @@ const GimnasiosPage = () => {
     manifestoEyebrow: "— El punto de partida",
     manifestoH2: <>¿Cómo conseguir <span className="text-primary">más socios</span> para tu gimnasio desde Google?</>,
     manifestoBody: <>En Slocal conseguimos que más socios se inscriban optimizando tu ficha de Google Business Profile y posicionando tu web para búsquedas locales de alta intención. Aparecer en el top 3 de Google Maps multiplica las inscripciones: esos tres negocios se llevan la mayoría de los contactos.</>,
+    geoBody: <>También organizamos actividades, instalaciones y zonas para que ChatGPT, Gemini y AI Overviews entiendan qué ofrece el gimnasio; este trabajo GEO está incluido dentro del SEO Local.</>,
     gbpH3: <>Tu ficha de <span className="text-primary">Google Business Profile</span> genera inscripciones</>,
     gbpBody: <>Google Business Profile es donde el socio potencial decide llamarte o venir a probar. Optimizamos tu ficha para aparecer antes que tu competencia y convertir búsquedas locales en visitas reales.</>,
     gbpFeatures: ["Categorías optimizadas", "Servicios y actividades estructurados", "Publicaciones semanales", "Gestión de reseñas", "Geolocalización por barrio", "Seguimiento de llamadas"],

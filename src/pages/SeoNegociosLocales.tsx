@@ -119,7 +119,7 @@ const SeoNegociosLocales = () => {
               SEO para Negocios Locales: Aparece en Google Cuando te Buscan
             </h1>
             <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-8 font-body font-light">
-              El SEO local es la forma más rentable de conseguir clientes nuevos. Como <Link to="/" className="text-primary hover:underline">agencia SEO local</Link>, gestionamos todo el proceso para que tu negocio aparezca en Google Maps y búsquedas locales cada vez que alguien busca tu servicio en tu ciudad.
+              El SEO local es la forma más rentable de conseguir clientes nuevos. Como <Link to="/" className="text-primary hover:underline">agencia SEO local</Link>, gestionamos todo el proceso para que tu negocio aparezca en Google Maps y búsquedas locales cada vez que alguien busca tu servicio en tu ciudad. También aplicamos posicionamiento GEO para que ChatGPT, Gemini y AI Overviews entiendan tu actividad y tu zona como parte de la misma estrategia.
             </p>
             <a
               href={WA_URL}
@@ -209,14 +209,6 @@ const SeoNegociosLocales = () => {
             <p className="text-sm text-foreground/80 mt-5 leading-relaxed">
               Web optimizada + ficha de Google Business Profile + contenido mensual + seguimiento directo.
             </p>
-            <ul className="mt-5 space-y-2">
-              <li className="text-sm flex items-start gap-2 text-foreground/80">
-                <span className="text-primary mt-0.5">✓</span> Sin contratos largos
-              </li>
-              <li className="text-sm flex items-start gap-2 text-foreground/80">
-                <span className="text-primary mt-0.5">✓</span> Cancelas cuando quieras
-              </li>
-            </ul>
             <a
               href={WA_URL}
               target="_blank"
