@@ -38,7 +38,7 @@ export const cities: CityData[] = [
     intro: [
       "Barcelona es una ciudad bilingüe con un alto volumen de búsquedas tanto en castellano como en catalán. El turismo y el comercio local generan una demanda constante de servicios que se buscan directamente en Google. Si tu negocio no aparece en esas búsquedas, estás dejando clientes sobre la mesa.",
       "El mercado de Barcelona combina residentes, turistas y profesionales que buscan servicios locales a diario. Desde peluquerías en el Eixample hasta talleres en Gràcia, cada barrio tiene su propia competencia digital. Posicionarte en Google Maps y en los resultados orgánicos es lo que marca la diferencia entre un negocio visible y uno invisible.",
-      "Nuestro sistema de SEO local en Barcelona está diseñado para que tu negocio aparezca primero cuando alguien busca lo que ofreces. Sin agencias, sin contratos eternos — un sistema que crece contigo mes a mes."
+      "Nuestro sistema de SEO local en Barcelona está diseñado para que tu negocio aparezca primero cuando alguien busca lo que ofreces y crezca contigo mes a mes."
     ],
   },
   {

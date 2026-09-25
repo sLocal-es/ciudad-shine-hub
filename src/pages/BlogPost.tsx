@@ -149,7 +149,7 @@ const BlogPostPage = () => {
           </h2>
           <p className="mt-4 font-body font-light text-warm-fg/70 leading-relaxed">
             Revisamos tu ficha de Google Business Profile y tu web y te decimos qué falta para aparecer entre los
-            primeros en tu zona. Sin compromiso.
+            primeros en tu zona.
           </p>
           <div className="mt-7 flex flex-col sm:flex-row gap-3 sm:gap-4">
             <Link

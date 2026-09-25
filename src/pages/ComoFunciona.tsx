@@ -362,7 +362,7 @@ const VisualStep3 = () => {
     {
       url: "tunegocio.es › reformas-banos-sevilla-triana",
       title: "Reformas de baños en Triana, Sevilla",
-      desc: "Presupuesto sin compromiso en 24h.",
+      desc: "Presupuesto personalizado en 24h.",
     },
     {
       url: "tunegocio.es › fisioterapia-deportiva-gracia-barcelona",

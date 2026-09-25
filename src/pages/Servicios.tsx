@@ -433,7 +433,7 @@ const Servicios = () => {
               Solicitar análisis gratuito
             </Link>
             <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-7 gap-y-3">
-              {["Sin compromiso", "Análisis personalizado", "Estrategia adaptada a tu negocio"].map((t) => (
+              {["Análisis personalizado", "Estrategia adaptada a tu negocio"].map((t) => (
                 <li key={t} className="flex items-center gap-2 font-body text-sm text-warm-fg/70">
                   <Check className="text-primary" />
                   {t}

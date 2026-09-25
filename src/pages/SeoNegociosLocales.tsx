@@ -148,7 +148,7 @@ const SeoNegociosLocales = () => {
             El SEO local es el conjunto de técnicas que hacen que tu negocio aparezca en Google cuando alguien busca tu servicio en tu ciudad o zona. No se trata de estar en internet por estar — se trata de aparecer exactamente cuando un cliente potencial te necesita. "Fontanero en Valencia", "clínica dental cerca de mí", "taller mecánico Sevilla" — esas son las búsquedas que generan clientes reales y llamadas directas.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-4 text-sm md:text-base">
-            Cuando alguien hace una búsqueda local, Google muestra tres negocios destacados en el mapa — el Local Pack. Aparecer ahí puede multiplicar las llamadas a tu negocio. A diferencia de la publicidad, el SEO local no desaparece cuando dejas de pagar: es un activo que crece mes a mes. Cada artículo publicado, cada página optimizada y cada reseña obtenida suma autoridad en Google.
+            Cuando alguien hace una búsqueda local, Google muestra tres negocios destacados en el mapa — el Local Pack. Aparecer ahí puede multiplicar las llamadas a tu negocio. El SEO local construye un activo que crece mes a mes: cada artículo publicado, cada página optimizada y cada reseña obtenida suma autoridad en Google.
           </p>
         </div>
       </section>
