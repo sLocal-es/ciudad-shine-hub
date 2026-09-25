@@ -114,11 +114,7 @@ const AnalisisGratuitoModal = ({ trigger }: Props) => {
             >
               {loading ? "Enviando..." : "Quiero mi análisis gratuito"}
             </button>
-            <div className="flex items-center justify-center gap-3 mt-3 text-xs text-muted-foreground">
-              <span>Sin compromiso</span>
-              <span aria-hidden>·</span>
-              <span>Respuesta en menos de 24h</span>
-            </div>
+            <p className="mt-3 text-center text-xs text-muted-foreground">Respuesta en menos de 24h</p>
           </div>
         </form>
       </DialogContent>

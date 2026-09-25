@@ -81,7 +81,7 @@ const CityHeroAuditForm = ({ ciudad }: Props) => {
       >
         {sending ? "Enviando..." : "Quiero mi análisis gratuito"}
       </button>
-      <p className="text-xs text-primary-foreground/70 text-center">Sin compromiso. Sin llamadas comerciales.</p>
+      <p className="text-xs text-primary-foreground/70 text-center">Sin llamadas comerciales.</p>
       {error && (
         <p className="text-xs text-center text-red-100">Algo ha fallado. Escríbenos a info@slocal.es</p>
       )}

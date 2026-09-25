@@ -212,8 +212,7 @@ const AnalisisGratuitoPopup = () => {
                 {loading ? "Enviando…" : "Solicitar mi análisis gratuito"}
               </button>
               <p className="text-center text-[12.5px] font-body text-[#6B7280] leading-relaxed">
-                Sin compromiso. Analizamos tu presencia en Google y te mostramos las principales
-                oportunidades de mejora.
+                Analizamos tu presencia en Google y te mostramos las principales oportunidades de mejora.
               </p>
             </form>
           </>

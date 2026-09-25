@@ -29,11 +29,6 @@ const beneficios = [
   },
   {
     n: "02",
-    h: "Sin compromiso",
-    d: "Te enviamos el análisis y las oportunidades detectadas. Decides después, sin presión.",
-  },
-  {
-    n: "03",
     h: "Respuesta en menos de 24 horas",
     d: "Una persona del equipo revisa tu caso y te contesta el mismo día laborable.",
   },
@@ -319,7 +314,7 @@ const Contacto = () => {
                   {loading ? "Enviando..." : "Solicitar análisis gratuito"}
                 </button>
                 <p className="text-center text-[13px] font-body text-[#6B7280]">
-                  🔒 Tus datos están seguros · Sin compromiso · Respuesta en menos de 24h
+                  🔒 Tus datos están seguros · Respuesta en menos de 24h
                 </p>
               </form>
             </div>

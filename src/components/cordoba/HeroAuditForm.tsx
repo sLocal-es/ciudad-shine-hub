@@ -128,7 +128,7 @@ const HeroAuditForm = () => {
         {sending ? "Enviando..." : "Quiero mi auditoría gratis →"}
       </button>
       <p className="text-xs text-white/50 text-center">
-        Gratis · Sin compromiso · Respuesta en menos de 24h
+        Gratis · Respuesta en menos de 24h
       </p>
     </form>
   );

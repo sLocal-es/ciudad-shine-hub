@@ -24,7 +24,7 @@ export const services: ServiceData[] = [
     explainerH2: "¿Qué es el SEO local y por qué tu negocio lo necesita?",
     explainerText: [
       "El SEO local es el conjunto de técnicas que hacen que tu negocio aparezca en Google cuando alguien busca un servicio en tu ciudad o zona. No se trata de estar en internet por estar — se trata de aparecer exactamente cuando un cliente potencial te necesita. 'Fontanero en Valencia', 'clínica dental cerca de mí', 'taller mecánico Sevilla' — esas son las búsquedas que generan clientes reales.",
-      "A diferencia de la publicidad, el SEO local no desaparece cuando dejas de pagar. Es un activo que se construye mes a mes: cada artículo publicado, cada página optimizada y cada reseña obtenida suma a tu autoridad en Google. Al principio los resultados son graduales, pero a partir del mes 4-6 la curva de crecimiento se acelera.",
+      "El SEO local construye un activo mes a mes: cada artículo publicado, cada página optimizada y cada reseña obtenida suma a tu autoridad en Google. Al principio los resultados son graduales, pero a partir del mes 4-6 la curva de crecimiento se acelera.",
       "El problema es que la mayoría de negocios locales no tienen ni el tiempo ni el conocimiento para hacer SEO. Por eso creamos slocal.es: un sistema que se encarga de todo — desde la ficha de Google hasta la web y el contenido — para que tú puedas centrarte en tu negocio mientras Google trabaja para ti."
     ],
     howCards: [

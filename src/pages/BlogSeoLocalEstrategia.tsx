@@ -102,7 +102,7 @@ const AuditForm = () => {
       >
         {status === "sending" ? "Enviando..." : "Quiero mi auditoría gratuita"}
       </button>
-      <p className="text-xs text-white/60 text-center">Sin compromiso. Sin llamadas comerciales.</p>
+      <p className="text-xs text-white/60 text-center">Sin llamadas comerciales.</p>
       {status === "error" && (
         <p className="text-xs text-red-300 text-center">
           Algo ha fallado. Escríbenos a hola@slocal.es

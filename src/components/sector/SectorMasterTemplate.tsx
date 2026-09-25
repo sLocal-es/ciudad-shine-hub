@@ -415,7 +415,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
                   {c.auditoriaBody ?? "Analizamos gratis tu ficha de Google Business Profile y tu web. Te mostraremos los principales errores que están impidiendo que aparezcas por delante de tu competencia."}
                 </p>
                 <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm md:text-base font-body text-white/90">
-                  {["Sin compromiso", "Vídeo personalizado", "En menos de 24 horas"].map((b) => (
+                  {["Vídeo personalizado", "En menos de 24 horas"].map((b) => (
                     <li key={b} className="flex items-center gap-2">
                       <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden>
                         <path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />

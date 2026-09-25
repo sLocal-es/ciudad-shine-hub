@@ -131,7 +131,7 @@ const MiniAuditWidget = () => {
                 {loading ? "Enviando…" : "Ver mi diagnóstico gratis →"}
               </button>
               <p className="text-xs text-muted-foreground text-center">
-                Gratis. Sin compromiso. Respuesta en 24h.
+                Gratis. Respuesta en 24h.
               </p>
             </form>
           </>

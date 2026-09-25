@@ -75,7 +75,7 @@ const AutonomosAuditForm = () => {
       >
         {sending ? "Enviando..." : "Quiero mi análisis gratuito"}
       </button>
-      <p className="text-xs text-white/50 text-center">Sin compromiso. Sin llamadas comerciales.</p>
+      <p className="text-xs text-white/50 text-center">Sin llamadas comerciales.</p>
       {error && (
         <p className="text-xs text-center text-red-300">Algo ha fallado. Escríbenos a hola@slocal.es</p>
       )}
