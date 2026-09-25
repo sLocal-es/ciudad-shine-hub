@@ -34,6 +34,7 @@ const FisioterapeutasPage = () => {
     manifestoEyebrow: "— El punto de partida",
     manifestoH2: <>¿Cómo conseguir <span className="text-primary">más pacientes</span> para tu clínica de fisioterapia desde Google?</>,
     manifestoBody: <>En Slocal conseguimos que más pacientes pidan cita optimizando tu ficha de Google Business Profile y posicionando tu web para búsquedas locales de alta intención. Aparecer en el top 3 de Google Maps multiplica las llamadas.</>,
+    geoBody: <>Además, estructuramos especialidades y tratamientos para que ChatGPT, Gemini y AI Overviews interpreten correctamente la consulta; el posicionamiento GEO se integra dentro del SEO Local.</>,
     gbpH3: <>Tu ficha de <span className="text-primary">Google Business Profile</span> genera llamadas</>,
     gbpBody: <>Google Business Profile es donde el paciente decide llamar a tu clínica. Optimizamos tu ficha para aparecer antes que otros fisios y convertir búsquedas locales en citas.</>,
     gbpFeatures: ["Categorías optimizadas", "Servicios estructurados (suelo pélvico, deportiva…)", "Publicaciones", "Gestión de reseñas", "Geolocalización", "Seguimiento de llamadas"],

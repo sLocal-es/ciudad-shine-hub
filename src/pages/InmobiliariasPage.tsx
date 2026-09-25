@@ -36,6 +36,7 @@ const InmobiliariasPage = () => {
     manifestoEyebrow: "— El punto de partida",
     manifestoH2: <>¿Cómo conseguir <span className="text-primary">más contactos</span> para tu inmobiliaria desde Google?</>,
     manifestoBody: <>En Slocal conseguimos que más clientes contacten con tu inmobiliaria optimizando tu ficha de Google Business Profile y posicionando tu web para búsquedas locales de alta intención. Aparecer en el top 3 de Google Maps multiplica los contactos: esas tres inmobiliarias se llevan la mayoría de las llamadas y formularios.</>,
+    geoBody: <>La estrategia estructura zonas, tipos de inmueble y operaciones para que ChatGPT, Gemini y AI Overviews comprendan la oferta de la inmobiliaria; el posicionamiento GEO forma parte del SEO Local.</>,
     gbpH3: <>Tu ficha de <span className="text-primary">Google Business Profile</span> genera contactos</>,
     gbpBody: <>Google Business Profile es donde el cliente decide llamarte cuando busca comprar o alquilar. Optimizamos tu ficha para aparecer antes que otras inmobiliarias y convertir búsquedas en contactos reales.</>,
     gbpFeatures: ["Categorías inmobiliarias optimizadas", "Zonas de servicio por barrios", "Publicaciones de inmuebles", "Gestión de reseñas", "Geolocalización", "Seguimiento de llamadas"],

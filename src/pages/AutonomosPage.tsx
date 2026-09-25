@@ -68,7 +68,6 @@ const faqs = [
   { q: "¿Qué diferencia hay entre SEO local y Google Ads?", a: "Con Google Ads pagas por cada clic — cuando dejas de pagar, desapareces. Con SEO local posicionas tu negocio de forma orgánica: cuando llegas al top 3, te mantienes ahí aunque pares la inversión. Para un autónomo con presupuesto limitado, el SEO local tiene mejor retorno a medio plazo." },
   { q: "¿Funciona el SEO local en ciudades pequeñas?", a: "Mejor que en ciudades grandes. En una ciudad pequeña hay menos competencia digital, lo que significa que posicionas más rápido y con menos esfuerzo. Muchos autónomos en ciudades medianas están en el top 3 de Google en su sector simplemente porque nadie más lo trabaja." },
   { q: "¿Qué es el Local Pack de Google y por qué importa?", a: "Es el bloque de tres negocios que Google muestra en el mapa cuando alguien busca un servicio local. Esos tres negocios reciben la mayoría de los contactos de esa búsqueda. El objetivo del SEO local es que tu negocio sea uno de esos tres." },
-  { q: "¿Puedo cancelar cuando quiera?", a: "Sí. Sin permanencia mínima ni penalización. Avisas con 30 días de antelación y listo." },
 ];
 
 const sectionCls = "bg-white py-24 md:py-32 border-t border-warm-fg/10";
@@ -183,7 +182,7 @@ const AutonomosPage = () => {
     "@type": "Service",
     name: "SEO para autónomos",
     provider: { "@type": "LocalBusiness", name: "slocal.es", url: "https://slocal.es" },
-    description: "SEO local para autónomos: ficha de Google, web y posicionamiento local sin permanencia.",
+    description: "SEO local para autónomos: ficha de Google, web y posicionamiento local gestionados de forma coordinada.",
     areaServed: { "@type": "Country", name: "España" },
   };
 
@@ -223,7 +222,7 @@ const AutonomosPage = () => {
     <>
       <SEOHead
         title="SEO para autónomos: consigue clientes desde Google | slocal.es"
-        description="Agencia SEO Local para autónomos: ficha de Google, web y SEO local gestionados por un consultor. Sin permanencia. Más clientes para tu negocio."
+        description="Agencia SEO Local para autónomos: ficha de Google, web y SEO local gestionados por un consultor para conseguir más clientes."
         canonical="/seo-para-autonomos"
         jsonLd={[breadcrumbSchema, serviceSchema, faqSchema]}
       />
@@ -236,7 +235,7 @@ const AutonomosPage = () => {
         subtitle={<>Consultor SEO Local para autónomos: ficha de Google, web y posicionamiento local. Una persona, un servicio completo, sin intermediarios.</>}
         primaryCta={{ label: "Solicitar auditoría gratuita", to: "/contacto" }}
         secondaryCta={{ label: "Ver cómo funciona", to: "/como-funciona" }}
-        trustItems={["Sin permanencia", "Un consultor dedicado", "Auditoría inicial sin coste"]}
+        trustItems={["Un consultor dedicado", "Ficha de Google gestionada cada mes", "Auditoría inicial sin coste"]}
         curveClass="bg-white"
       />
 
@@ -258,7 +257,7 @@ const AutonomosPage = () => {
             ¿Por qué tu negocio no aparece cuando <span className="text-primary">te buscan</span> en Google?
           </h2>
           <p className="mt-8 max-w-2xl text-base md:text-lg font-body text-warm-fg leading-relaxed">
-            Como autónomo compites en Google contra empresas, franquicias y agencias. La diferencia entre aparecer o no aparecer no es el tamaño: es tener una ficha de Google trabajada, una web coherente y a alguien que lo mantenga cada mes.
+            Como autónomo compites en Google contra empresas, franquicias y agencias. La diferencia entre aparecer o no aparecer no es el tamaño: es tener una ficha de Google trabajada, una web coherente y a alguien que lo mantenga cada mes. También estructuramos tu actividad, servicios y zona para que ChatGPT, Gemini y AI Overviews entiendan cuándo recomendarte; el posicionamiento GEO forma parte del SEO Local.
           </p>
 
           <div className="mt-20 md:mt-24 grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10">
@@ -286,7 +285,7 @@ const AutonomosPage = () => {
                 Google no valora la ficha sola ni la web sola. Los valora juntos, coherentes y activos. Por eso Slocal gestiona los tres a la vez — no son tres servicios separados, son tres señales que Google lee como una sola.
               </p>
               <ul className="mt-8 space-y-3 max-w-md">
-                {["Ficha de Google Business Profile", "Web con SEO Local", "Posicionamiento activo cada mes", "Un solo interlocutor", "Sin permanencia mínima", "Informe mensual claro"].map((f) => (
+                {["Ficha de Google Business Profile", "Web con SEO Local", "Posicionamiento activo cada mes", "Un solo interlocutor", "Contenido preparado para buscadores de IA", "Informe mensual claro"].map((f) => (
                   <li key={f} className="flex items-center gap-3 font-body text-warm-fg/85">
                     <svg width="14" height="14" viewBox="0 0 20 20" fill="none" className="text-primary shrink-0" aria-hidden>
                       <path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

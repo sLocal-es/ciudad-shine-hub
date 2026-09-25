@@ -45,13 +45,6 @@ const iconProps = {
   strokeLinejoin: "round" as const,
 };
 
-const IconSpark = () => (
-  <svg {...iconProps} aria-hidden>
-    <path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3z" />
-    <path d="M18.5 16.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7.7-1.8z" />
-  </svg>
-);
-
 const IconStar = () => (
   <svg {...iconProps} aria-hidden>
     <path d="M12 4l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 9.7l5.4-.8L12 4z" />
@@ -64,22 +57,6 @@ const IconTarget = () => (
     <circle cx="12" cy="12" r="3.5" />
     <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
   </svg>
-);
-
-const GeoPlatformsVisual = () => (
-  <div className="grid w-full max-w-[300px] grid-cols-2 gap-3" aria-hidden>
-    {[
-      ["◎", "ChatGPT"],
-      ["✳", "Claude"],
-      ["◇", "Perplexity"],
-      ["✦", "Gemini"],
-    ].map(([mark, name]) => (
-      <div key={name} className="flex min-h-16 items-center gap-2.5 rounded-xl border border-primary/25 bg-white px-3 py-2 text-primary">
-        <span className="font-heading text-2xl leading-none">{mark}</span>
-        <span className="font-heading text-[11px] font-semibold leading-tight">{name}</span>
-      </div>
-    ))}
-  </div>
 );
 
 const complementaryServices: ExtraService[] = [
@@ -115,16 +92,6 @@ const complementaryServices: ExtraService[] = [
     icon: <IconStar />,
     description: "Automatiza la captación de reseñas reales y mejora la confianza de tus futuros clientes.",
     features: ["Tarjetas NFC", "Código QR", "Solicitudes automáticas", "Respuesta profesional", "Incremento de reputación"],
-    to: "/contacto",
-  },
-  {
-    id: "geo",
-    title: <>Posicionamiento <span className="text-primary">GEO</span></>,
-    illustration: "Ilustración isométrica: buscadores con IA (ChatGPT, Gemini) recomendando un negocio local",
-    visual: <GeoPlatformsVisual />,
-    icon: <IconSpark />,
-    description: "Haz que tu empresa aparezca cuando los clientes preguntan a ChatGPT, Gemini, Claude, Copilot o Google AI Overviews.",
-    features: ["Optimización para IA", "ChatGPT", "Gemini", "Claude", "Google AI Overviews"],
     to: "/contacto",
   },
 ];
@@ -200,8 +167,7 @@ const includedServices = [
 
 const whySlocal = [
   ["Equipo especializado en SEO local", "No somos una agencia generalista que también hace SEO: es lo único que hacemos, y lo conocemos a fondo."],
-  ["Optimización para buscadores de IA incluida", "Trabajamos para que aparezcas también en ChatGPT, Gemini y AI Overviews, no solo en Google tradicional — algo que la mayoría de agencias de SEO local todavía no ofrece."],
-  ["Sin permanencia", "Te quedas con nosotros porque el servicio funciona, no porque haya un contrato que te obligue."],
+  ["Optimización para buscadores de IA incluida", "El posicionamiento GEO forma parte del SEO Local: estructuramos la información para que ChatGPT, Gemini y AI Overviews puedan entender y citar tu negocio."],
   ["Precio fijo mensual", "Sin tramos ocultos ni sorpresas en la factura."],
 ];
 
@@ -419,7 +385,7 @@ const Home = () => {
             ))}
           </div>
           <p className="mt-8 mx-auto max-w-4xl text-center text-sm md:text-[15px] font-body text-warm-fg/60 leading-relaxed">
-            Todo el contenido que redactamos para tu ficha y tu web está además estructurado para poder ser citado por ChatGPT, Gemini y otros buscadores con IA — no es un extra que factures aparte, va incluido en el servicio base.
+            El posicionamiento GEO forma parte del SEO Local: estructuramos el contenido de tu ficha y tu web para que ChatGPT, Gemini y AI Overviews puedan entender y citar tu negocio. No es un servicio independiente.
           </p>
         </div>
       </section>

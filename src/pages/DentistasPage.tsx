@@ -34,6 +34,7 @@ const DentistasPage = () => {
     manifestoEyebrow: "— El punto de partida",
     manifestoH2: <>¿Cómo conseguir <span className="text-primary">más pacientes</span> para tu clínica dental desde Google?</>,
     manifestoBody: <>En Slocal conseguimos que más pacientes pidan cita en tu clínica optimizando tu ficha de Google Business Profile y posicionando tu web para búsquedas locales de alta intención. Aparecer en el top 3 de Google Maps multiplica las citas: esas tres clínicas se llevan la mayoría de contactos.</>,
+    geoBody: <>El trabajo también ordena tratamientos, especialidades y señales de confianza para que ChatGPT, Gemini y AI Overviews entiendan la clínica; este enfoque GEO está integrado en el SEO Local.</>,
     gbpH3: <>Tu ficha de <span className="text-primary">Google Business Profile</span> genera citas</>,
     gbpBody: <>Google Business Profile es donde el paciente decide llamar a tu clínica. Optimizamos tu ficha para aparecer antes que otras clínicas y convertir búsquedas locales en citas reales.</>,
     gbpFeatures: ["Categorías odontológicas optimizadas", "Tratamientos estructurados", "Publicaciones", "Gestión de reseñas", "Geolocalización", "Seguimiento de llamadas"],

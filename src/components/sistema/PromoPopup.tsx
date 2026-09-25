@@ -60,9 +60,6 @@ export default function PromoPopup() {
           Quiero aprovechar este precio →
         </a>
 
-        <p className="text-xs text-dark-fg/30 text-center">
-          Sin permanencia. Cancelas cuando quieras.
-        </p>
       </div>
     </div>
   );

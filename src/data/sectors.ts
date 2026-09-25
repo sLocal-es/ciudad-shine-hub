@@ -65,7 +65,7 @@ export const sectors: SectorData[] = [
   {
     slug: "seo-para-reformas",
     metaTitle: "SEO para Empresas de Reformas | Aparece en Google | slocal.es",
-    metaDesc: "Consigue más solicitudes de presupuesto para tu empresa de reformas desde Google. Ficha, web y posicionamiento local. Sin permanencia.",
+    metaDesc: "Consigue más solicitudes de presupuesto para tu empresa de reformas desde Google con una ficha, una web y posicionamiento local.",
     h1: "Más Presupuestos para tu Empresa de Reformas desde Google",
     pillBadge: "Para reformas",
     painSubtitle: "El cliente que busca 'empresa de reformas en tu ciudad' ya tiene intención de contratar. Si no apareces, ese presupuesto se lo lleva otro.",

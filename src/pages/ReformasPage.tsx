@@ -34,6 +34,7 @@ const ReformasPage = () => {
     manifestoEyebrow: "— El punto de partida",
     manifestoH2: <>¿Cómo conseguir <span className="text-primary">más presupuestos</span> de reforma desde Google?</>,
     manifestoBody: <>En Slocal conseguimos que más clientes te pidan presupuesto optimizando tu ficha de Google Business Profile y posicionando tu web para búsquedas locales de alta intención. Aparecer en el top 3 de Google Maps multiplica los contactos cualificados.</>,
+    geoBody: <>Además, estructuramos tipos de reforma, proyectos y zonas de trabajo para que ChatGPT, Gemini y AI Overviews comprendan la especialidad de la empresa; el posicionamiento GEO forma parte del SEO Local.</>,
     gbpH3: <>Tu ficha de <span className="text-primary">Google Business Profile</span> genera presupuestos</>,
     gbpBody: <>Google Business Profile es donde el cliente decide llamarte para pedir presupuesto. Optimizamos tu ficha para aparecer antes que otras empresas y convertir búsquedas en solicitudes reales.</>,
     gbpFeatures: ["Categorías de reformas y construcción", "Servicios estructurados por tipo", "Publicaciones con proyectos", "Gestión de reseñas", "Geolocalización", "Seguimiento de llamadas"],

@@ -86,7 +86,7 @@ export const cities: CityData[] = [
     intro: [
       "Zaragoza es una ciudad industrial y comercial con una competencia digital moderada — lo que la convierte en un mercado ideal para posicionarse en Google con resultados rápidos. Los negocios que trabajen su SEO local ahora tienen una ventaja clara.",
       "La ciudad tiene un tejido comercial activo: talleres, comercios, profesionales de servicios que atienden a una población estable y fiel. El problema es que muchos de estos negocios no aparecen en Google cuando alguien busca lo que ofrecen. Eso se soluciona con un sistema de posicionamiento bien ejecutado.",
-      "En slocal.es ayudamos a negocios de Zaragoza a ganar visibilidad en Google de forma orgánica. Ficha optimizada, web preparada, resultados medibles. Sin agencias, sin contratos largos."
+      "En slocal.es ayudamos a negocios de Zaragoza a ganar visibilidad en Google de forma orgánica. Ficha optimizada, web preparada y resultados medibles."
     ],
   },
   {

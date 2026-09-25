@@ -8,6 +8,13 @@ import CasosExitoSection from "@/components/CasosExitoSection";
 import { sectors } from "@/data/sectors";
 import { cities } from "@/data/cities";
 
+const sectorGeoCopy: Record<string, string> = {
+  "seo-para-pintores": "El SEO Local también estructura los tipos de pintura, trabajos y zonas para que ChatGPT, Gemini y AI Overviews entiendan cuándo recomendar al profesional; este enfoque GEO no es un servicio separado.",
+  "seo-para-clinicas": "El SEO Local también ordena especialidades, tratamientos y señales profesionales para que ChatGPT, Gemini y AI Overviews comprendan la clínica; el posicionamiento GEO va integrado en el trabajo.",
+  "seo-para-entrenadores": "El SEO Local también organiza modalidades, objetivos y zonas de entrenamiento para que ChatGPT, Gemini y AI Overviews puedan interpretar y recomendar al profesional; GEO forma parte del mismo servicio.",
+  "seo-para-yoga": "El SEO Local también estructura estilos, clases y ubicación para que ChatGPT, Gemini y AI Overviews entiendan la propuesta del estudio; este posicionamiento GEO está integrado en la estrategia.",
+};
+
 const SectorPage = () => {
   const location = useLocation();
   const currentSlug = location.pathname.replace("/", "");
@@ -77,7 +84,7 @@ const SectorPage = () => {
               {breadcrumbLabel} — Consigue {ctaWordCapitalized} en Google
             </h1>
             <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-8 font-body font-light">
-              {sector.painSubtitle}
+              {sector.painSubtitle} {sectorGeoCopy[sector.slug]}
             </p>
             <div className="flex flex-wrap gap-3">
               <Link to="/contacto" className="bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors">

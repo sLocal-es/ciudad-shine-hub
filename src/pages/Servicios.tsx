@@ -269,7 +269,8 @@ const Servicios = () => {
             <p className="mt-7 max-w-2xl font-body font-light text-warm-fg/75 text-base md:text-lg leading-relaxed">
               En Slocal no vendemos servicios aislados. Creemos que todo negocio necesita primero una presencia sólida en
               Google. Por eso todos nuestros clientes comienzan con un mismo punto de partida: una página web optimizada
-              para convertir visitas en clientes y una ficha de Google Business Profile completamente optimizada.
+              para convertir visitas en clientes y una ficha de Google Business Profile completamente optimizada. Esta base
+              también incorpora posicionamiento GEO para que ChatGPT, Gemini y AI Overviews entiendan mejor el negocio; no se ofrece como servicio independiente.
             </p>
           </Reveal>
 
