@@ -44,7 +44,7 @@ const Sistema = () => {
             <em className="text-primary not-italic">Cada mes.</em>
           </h1>
           <p className="text-lg text-dark-fg/75 leading-relaxed mb-8 max-w-xl">
-            Te monto la web, la ficha de Google y publico contenido cada mes para que aparezcas cuando alguien busca lo que haces en tu ciudad. <strong className="text-dark-fg">Desde consulta condiciones.</strong>
+            Construimos la base con el Pack Web + Google Business Profile para que aparezcas cuando alguien busca lo que haces en tu ciudad. Después puedes añadir Reseñas PRO, Google Ads o Backlinks Locales según tu estrategia.
           </p>
           <a
             href={WA_URL}
@@ -127,8 +127,8 @@ const Sistema = () => {
             {[
               { n: "01", t: "Me escribes por WhatsApp", d: "Me dices a qué te dedicas y en qué ciudad. Te miro gratis cómo estás en Google." },
               { n: "02", t: "Te digo qué se puede hacer", d: "Sin humo. Si no veo recorrido, te lo digo. Si lo veo, te paso precio y tiempos." },
-              { n: "03", t: "Monto el sistema", d: "Web + ficha de Google configuradas en pocos días. Lo hago yo, sin reuniones eternas." },
-              { n: "04", t: "Cada mes me ocupo de todo", d: "Contenido nuevo, mantenimiento de la ficha y aviso por WhatsApp cuando hay movimiento." },
+              { n: "03", t: "Preparamos la base", d: "Ponemos en marcha el Pack Web + Google Business Profile y dejamos definida la estrategia local." },
+              { n: "04", t: "Trabajamos el crecimiento", d: "Mantenemos el SEO Local y sumamos solo los servicios opcionales que encajen con tus objetivos." },
             ].map((s) => (
               <li key={s.n} className="flex gap-5 items-start border-b border-dark-fg/10 pb-5 last:border-0">
                 <span className="font-heading text-2xl font-bold text-primary/50 shrink-0 w-12">{s.n}</span>
@@ -149,13 +149,13 @@ const Sistema = () => {
       <section className="py-20 md:py-24 bg-dark-bg text-dark-fg border-t border-dark-fg/10">
         <div className="container max-w-2xl mx-auto text-center">
           <div className="inline-block px-4 py-1.5 rounded-full bg-dark-bg border border-primary/30 text-primary text-xs font-medium tracking-wider uppercase mb-6">
-            Precio
+            Propuesta
           </div>
           <h2 className="font-heading text-4xl md:text-5xl leading-tight mb-4">
-            Desde <em className="text-primary not-italic">consulta condiciones</em>
+            ¿Qué necesita <em className="text-primary not-italic">tu negocio</em>?
           </h2>
           <p className="text-dark-fg/70 text-lg mb-8 max-w-md mx-auto">
-            Web + ficha de Google + contenido cada mes + seguimiento directo conmigo. Todo incluido.
+            Partimos del Pack Web + Google Business Profile y te proponemos únicamente los complementos adecuados para tu situación.
           </p>
           <a
             href={WA_URL}
@@ -177,7 +177,7 @@ const Sistema = () => {
               { q: "¿Funciona en mi sector?", a: "Si tu cliente te busca en Google (fontaneros, fisios, reformas, clínicas, abogados, talleres, estética…), funciona. Si vendes online a toda España sin zona, no es lo mío." },
               { q: "¿Cuánto tarda en dar resultados?", a: "Las primeras llamadas suelen llegar en el mes 1 o 2 desde la ficha de Google. La web tarda un poco más, entre 2 y 4 meses para verla subir de forma sólida." },
               { q: "¿Necesito tener web ya?", a: "No. Si no tienes, te la monto yo. Si la tienes pero está vieja o mal hecha para Google, te monto una nueva pensada para captar clientes." },
-              { q: "¿Hay que pagar publicidad aparte?", a: "No. Esto es posicionamiento orgánico en Google y Maps. No gastas un euro en anuncios." },
+              { q: "¿Hay que contratar Google Ads?", a: "No. Google Ads es un servicio opcional para acelerar la captación mientras crece el posicionamiento orgánico en Google y Maps." },
             ].map((f) => (
               <AccordionItem
                 key={f.q}
