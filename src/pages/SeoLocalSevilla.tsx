@@ -168,7 +168,7 @@ const SevillaMobileAuditButton = () => {
     const bandObserver = new IntersectionObserver(([entry]) => {
       if (!entry) return;
       setBandPassed(entry.boundingClientRect.bottom < 0);
-    });
+    }, { rootMargin: "0px 0px 100% 0px" });
     const auditObserver = new IntersectionObserver(([entry]) => {
       if (!entry) return;
       setAuditReached(entry.isIntersecting || entry.boundingClientRect.top <= 0);
