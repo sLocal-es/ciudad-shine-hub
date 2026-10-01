@@ -219,7 +219,7 @@ export const AuditoriaLeadForm = ({ formType, compact = false, inline = false }:
 
     return (
       <form onSubmit={onSubmit} className="w-full lg:max-w-4xl">
-        <div className="grid grid-cols-2 gap-2 lg:grid-cols-5">
+        <div className="grid grid-cols-2 gap-2 lg:grid-cols-[repeat(4,minmax(0,1fr))_minmax(11rem,1.5fr)]">
           <input required type="text" placeholder="Nombre" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className={inlineInputCls} />
           <input required type="text" placeholder="Nombre de tu empresa" value={form.business} onChange={(e) => setForm({ ...form, business: e.target.value })} className={inlineInputCls} />
           <input required type="tel" placeholder="Teléfono" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className={inlineInputCls} />
@@ -227,7 +227,7 @@ export const AuditoriaLeadForm = ({ formType, compact = false, inline = false }:
           <button
             type="submit"
             disabled={loading}
-            className="col-span-2 h-11 w-full rounded-xl bg-warm-fg px-4 text-sm font-heading font-medium text-white transition hover:bg-warm-fg/90 disabled:opacity-60 lg:col-span-1"
+            className="col-span-2 h-11 w-full whitespace-nowrap rounded-xl bg-warm-fg px-4 text-sm font-heading font-medium text-white transition hover:bg-warm-fg/90 disabled:opacity-60 lg:col-span-1"
           >
             {loading ? "Enviando..." : "Quiero mi auditoría gratuita"}
           </button>
