@@ -28,6 +28,7 @@ type CityMasterTemplateProps = {
   whyUsSection?: ReactNode;
   afterHero?: ReactNode;
   afterManifesto?: ReactNode;
+  manifestoSection?: ReactNode;
   comoPosicionamos?: ComoPosicionamosSectionProps;
   queIncluye?: QueIncluyeSectionProps;
   additionalFaq?: { item: { q: string; a: string }; index: number };
@@ -38,6 +39,7 @@ type CityMasterTemplateProps = {
   heroPrimaryCtaTo?: string;
   finalCtaTo?: string;
   otherSectorsSection?: ReactNode;
+  otherSectorsAfterAudit?: boolean;
 };
 
 const CityMasterTemplate = ({
@@ -46,6 +48,7 @@ const CityMasterTemplate = ({
   whyUsSection,
   afterHero,
   afterManifesto,
+  manifestoSection,
   comoPosicionamos,
   queIncluye,
   additionalFaq,
@@ -56,6 +59,7 @@ const CityMasterTemplate = ({
   heroPrimaryCtaTo,
   finalCtaTo,
   otherSectorsSection,
+  otherSectorsAfterAudit,
 }: CityMasterTemplateProps) => {
   const { name, slug, population, competition, plazo } = city;
   const url = `https://slocal.es/seo-local-${slug}`;
@@ -195,12 +199,14 @@ const CityMasterTemplate = ({
     whyUsSection,
     afterHero,
     afterManifesto,
+    manifestoSection,
     casesBeforeAudit,
     auditoriaSectionId,
     auditoriaScrollMargin,
     heroPrimaryCtaTo,
     finalCtaTo,
     otherSectorsSection,
+    otherSectorsAfterAudit,
   };
 
   return <SectorMasterTemplate content={content} />;

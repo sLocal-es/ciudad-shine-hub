@@ -55,6 +55,7 @@ export type SectorTemplateContent = {
   manifestoH2: ReactNode;
   manifestoBody: ReactNode;
   geoBody?: ReactNode;
+  manifestoSection?: ReactNode;
 
   // GBP editorial split
   gbpH3: ReactNode;
@@ -130,6 +131,7 @@ export type SectorTemplateContent = {
   otherSectorsBody: ReactNode;
   otherSectors: { label: string; slug: string }[];
   otherSectorsSection?: ReactNode;
+  otherSectorsAfterAudit?: boolean;
 
   // Final CTA
   finalCtaTitle: string;
@@ -183,7 +185,7 @@ const IllustrationPlaceholder = ({
 );
 
 /* ---------- Auditoria lead form (copy of master) ---------- */
-export const AuditoriaLeadForm = ({ formType, compact = false }: { formType: string; compact?: boolean }) => {
+export const AuditoriaLeadForm = ({ formType, compact = false, inline = false }: { formType: string; compact?: boolean; inline?: boolean }) => {
   const [form, setForm] = useState({ name: "", business: "", phone: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
 
@@ -210,6 +212,32 @@ export const AuditoriaLeadForm = ({ formType, compact = false }: { formType: str
 
   const inputCls =
     "w-full rounded-xl bg-white text-warm-fg placeholder:text-warm-fg/50 px-4 py-3.5 text-[15px] font-body outline-hidden border border-transparent focus:border-warm-fg/20 focus:ring-2 focus:ring-white/40 transition resize-none";
+
+  if (inline) {
+    const inlineInputCls =
+      "h-11 w-full min-w-0 rounded-xl border border-transparent bg-white px-3 text-sm font-body text-warm-fg outline-hidden placeholder:text-warm-fg/60 focus:border-warm-fg/20 focus:ring-2 focus:ring-white/40 transition";
+
+    return (
+      <form onSubmit={onSubmit} className="w-full lg:max-w-4xl">
+        <div className="grid grid-cols-2 gap-2 lg:grid-cols-5">
+          <input required type="text" placeholder="Nombre" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className={inlineInputCls} />
+          <input required type="text" placeholder="Nombre de tu empresa" value={form.business} onChange={(e) => setForm({ ...form, business: e.target.value })} className={inlineInputCls} />
+          <input required type="tel" placeholder="Teléfono" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className={inlineInputCls} />
+          <input required type="email" placeholder="Correo electrónico" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className={inlineInputCls} />
+          <button
+            type="submit"
+            disabled={loading}
+            className="col-span-2 h-11 w-full rounded-xl bg-warm-fg px-4 text-sm font-heading font-medium text-white transition hover:bg-warm-fg/90 disabled:opacity-60 lg:col-span-1"
+          >
+            {loading ? "Enviando..." : "Quiero mi auditoría gratuita"}
+          </button>
+        </div>
+        <p className="pt-2 text-center text-[13px] font-body text-white/80 lg:text-right">
+          🔒 Tus datos están seguros. Te responderemos en menos de 24 horas.
+        </p>
+      </form>
+    );
+  }
 
   return (
     <form onSubmit={onSubmit} className="w-full rounded-2xl bg-white/10 p-5 md:p-6 backdrop-blur-xs">
@@ -333,7 +361,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       </section>
 
       {/* MANIFIESTO */}
-      <section className={sectionCls}>
+      {c.manifestoSection ?? <section className={sectionCls}>
         <div className="container">
           <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">{c.manifestoEyebrow}</p>
           <h2 className="font-heading font-semibold text-warm-fg leading-[1.05] tracking-tight text-4xl md:text-5xl lg:text-6xl max-w-[22ch]">
@@ -403,7 +431,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
             </div>
           </div>
         </div>
-      </section>
+      </section>}
 
       {c.afterManifesto}
 
@@ -446,6 +474,8 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
           </div>
         </div>
       </section>
+
+      {c.otherSectorsAfterAudit && c.otherSectorsSection}
 
       {/* CÓMO TRABAJAMOS */}
       <section className={sectionCls}>
@@ -717,7 +747,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       </section>
 
       {/* OTROS SECTORES */}
-      {c.otherSectorsSection ?? (
+      {!c.otherSectorsAfterAudit && (c.otherSectorsSection ?? (
         <section className="bg-white py-16 md:py-20 border-t border-warm-fg/10">
           <div className="container">
             <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Otros sectores</p>
@@ -736,7 +766,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
             </div>
           </div>
         </section>
-      )}
+      ))}
 
       {!c.casesBeforeAudit && <CasosExitoSection />}
 
