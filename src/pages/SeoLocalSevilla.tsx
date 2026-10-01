@@ -59,21 +59,74 @@ const SearchTypeIcon = ({ type }: { type: "city" | "zone" | "nearby" | "urgent" 
 };
 
 const HeroAuditBand = () => (
-  <section id="auditoria-hero" className="scroll-mt-24 bg-white py-12 md:py-20">
+  <section id="auditoria-hero" className="scroll-mt-24 bg-white py-6 md:py-8">
     <div className="container">
-      <div className="rounded-3xl bg-primary text-primary-foreground px-6 py-10 md:px-14 md:py-14 lg:px-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          <div>
-            <p className="font-heading font-semibold leading-[1.1] text-3xl md:text-4xl text-white max-w-[20ch]">
+      <div className="rounded-2xl bg-primary px-5 py-5 text-primary-foreground md:px-8 md:py-6">
+        <div className="lg:flex lg:items-center lg:justify-between lg:gap-8">
+          <div className="lg:w-[17rem] lg:shrink-0">
+            <p className="font-heading text-xl font-semibold leading-tight text-white md:text-2xl">
               Auditoría gratuita de tu ficha y tu web
             </p>
-            <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm md:text-base font-body text-white/90">
+            <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-sm font-body text-white md:text-[15px]">
               <CheckItem>Vídeo personalizado</CheckItem>
               <CheckItem>En menos de 24 horas</CheckItem>
             </ul>
           </div>
-          <AuditoriaLeadForm formType="auditoria_sevilla_hero" compact />
+          <div className="mt-5 min-w-0 flex-1 lg:mt-0">
+            <AuditoriaLeadForm formType="auditoria_sevilla_hero" compact inline />
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
+);
+
+const ManifestoCardIcon = ({ type }: { type: "pin" | "browser" }) => (
+  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary" aria-hidden>
+    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      {type === "pin" ? (
+        <><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" /></>
+      ) : (
+        <><rect x="3" y="4" width="18" height="16" rx="2" /><path d="M3 9h18M7 6.5h.01M10 6.5h.01M8 14h8M8 17h5" /></>
+      )}
+    </svg>
+  </span>
+);
+
+const SevillaManifestoSection = () => (
+  <section className="bg-white py-24 md:py-32 border-t border-warm-fg/10">
+    <div className="container">
+      <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— El punto de partida</p>
+      <h2 className="font-heading font-semibold text-warm-fg leading-[1.05] tracking-tight text-4xl md:text-5xl lg:text-6xl max-w-[22ch]">
+        ¿Cómo conseguir <span className="text-primary">más clientes</span> desde Google en Sevilla?
+      </h2>
+
+      <div className="mt-10 max-w-4xl">
+        <p className="font-heading font-semibold text-xl md:text-2xl text-warm-fg leading-snug">
+          En Slocal conseguimos que más clientes contacten con tu negocio en Sevilla optimizando tu ficha de Google Business Profile y posicionando tu web para búsquedas locales de alta intención.
+        </p>
+        <p className="mt-7 border-l-4 border-primary pl-5 text-base leading-relaxed text-warm-fg md:pl-6 md:text-lg">
+          Sevilla tiene {city.population} y una competencia digital {city.competition.toLowerCase()}: aparecer en el <span className="text-primary font-semibold">top 3 de Google Maps</span> multiplica los contactos porque esos tres negocios se llevan la mayoría de las llamadas.
+        </p>
+        <div className="mt-7 flex items-start gap-3 rounded-xl bg-primary/10 px-4 py-3 text-[15px] leading-relaxed text-warm-fg">
+          <svg className="mt-0.5 h-5 w-5 shrink-0 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+            <path d="m12 3 1.3 4.2L17.5 8.5l-4.2 1.3L12 14l-1.3-4.2-4.2-1.3 4.2-1.3L12 3Z" /><path d="m19 14 .8 2.2L22 17l-2.2.8L19 20l-.8-2.2L16 17l2.2-.8L19 14ZM5 14l.7 1.8 1.8.7-1.8.7L5 19l-.7-1.8-1.8-.7 1.8-.7L5 14Z" />
+          </svg>
+          <p>La optimización también contempla cómo aparece y se entiende tu negocio en respuestas de ChatGPT, Gemini y AI Overviews, una línea de posicionamiento GEO que Slocal ya integra en su trabajo en Sevilla.</p>
+        </div>
+      </div>
+
+      <div className="mt-10 grid gap-5 md:grid-cols-2">
+        <article className="rounded-2xl border border-warm-fg/10 bg-white p-6 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)]">
+          <ManifestoCardIcon type="pin" />
+          <h3 className="mt-5 font-heading font-semibold text-xl text-warm-fg">Tu ficha de <span className="text-primary">Google Business Profile</span> genera llamadas en Sevilla</h3>
+          <p className="mt-4 text-[15px] leading-relaxed text-warm-fg/85 md:text-base">Google Business Profile es donde el cliente de Sevilla decide llamarte. Optimizamos tu ficha para aparecer antes que otros negocios de tu zona y convertir búsquedas en contactos reales.</p>
+        </article>
+        <article className="rounded-2xl border border-warm-fg/10 bg-white p-6 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)]">
+          <ManifestoCardIcon type="browser" />
+          <h3 className="mt-5 font-heading font-semibold text-xl text-warm-fg">Una web que <span className="text-primary">convierte</span> visitas en clientes</h3>
+          <p className="mt-4 text-[15px] leading-relaxed text-warm-fg/85 md:text-base">Mientras Google Business Profile genera la llamada, tu web convierte las visitas en contactos cualificados. Trabajamos páginas específicas por servicio y por barrio de Sevilla.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -281,6 +334,7 @@ const SeoLocalSevilla = () => (
     <CityMasterTemplate
       city={city}
       afterHero={<HeroAuditBand />}
+      manifestoSection={<SevillaManifestoSection />}
       afterManifesto={<WhyLocalSeoSection />}
       comoPosicionamos={{
         titleSuffix: "con SEO local en Sevilla",
@@ -318,6 +372,7 @@ const SeoLocalSevilla = () => (
       heroPrimaryCtaTo="#auditoria-hero"
       finalCtaTo="#auditoria"
       otherSectorsSection={<SectorsGridSection />}
+      otherSectorsAfterAudit
     />
     <SevillaMobileAuditButton />
   </>
