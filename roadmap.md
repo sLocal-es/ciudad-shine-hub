@@ -28,4 +28,4 @@
 
 - [x] Añadir contenido y captación exclusivos de Sevilla mediante opciones aisladas.
 - [x] Reordenar casos, auditoría y sectores solo en `/seo-local-sevilla`.
-- [ ] Verificar Sevilla y confirmar que el resto de páginas no cambia.
+- [x] Verificar Sevilla y confirmar que el resto de páginas no cambia.
