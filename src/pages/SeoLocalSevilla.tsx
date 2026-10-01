@@ -19,7 +19,7 @@ const provinceMunicipalities = [
   "Carmona",
 ];
 
-const compactTimeframe = city.plazo.replace("-", "-");
+const compactTimeframe = city.plazo.replace(/\s*meses?$/i, "");
 const proseTimeframe = city.plazo.replace("-", " a ");
 
 const CheckItem = ({ children }: { children: string }) => (
@@ -30,6 +30,33 @@ const CheckItem = ({ children }: { children: string }) => (
     <span>{children}</span>
   </li>
 );
+
+const SearchBar = ({ children }: { children: string }) => (
+  <div className="flex min-w-0 items-center gap-2 rounded-full border border-warm-fg/20 bg-white px-4 py-2.5">
+    <svg className="h-4 w-4 shrink-0 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
+      <circle cx="11" cy="11" r="7" />
+      <path d="m20 20-4-4" />
+    </svg>
+    <span className="min-w-0 font-body text-[15px] text-warm-fg">{children}</span>
+  </div>
+);
+
+const SearchTypeIcon = ({ type }: { type: "city" | "zone" | "nearby" | "urgent" }) => {
+  const paths = {
+    city: <><path d="M4 21V7l8-4 8 4v14" /><path d="M9 21v-5h6v5M8 9h.01M12 9h.01M16 9h.01M8 12h.01M12 12h.01M16 12h.01" /></>,
+    zone: <><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" /></>,
+    nearby: <><circle cx="12" cy="12" r="7" /><circle cx="12" cy="12" r="2" /><path d="M12 2v3M12 19v3M2 12h3M19 12h3" /></>,
+    urgent: <><path d="M13 2 4.5 13H11l-1 9 8.5-11H12l1-9Z" /></>,
+  };
+
+  return (
+    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary" aria-hidden>
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        {paths[type]}
+      </svg>
+    </span>
+  );
+};
 
 const HeroAuditBand = () => (
   <section id="auditoria-hero" className="scroll-mt-24 bg-white py-12 md:py-20">
@@ -57,32 +84,55 @@ const WhyLocalSeoSection = () => (
     <div className="container">
       <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Por qué importa</p>
       <h2 className="font-heading font-semibold text-warm-fg leading-[1.05] text-4xl md:text-5xl lg:text-6xl max-w-[22ch]">
-        ¿Por qué es importante el SEO local en Sevilla?
+        ¿Por qué es <span className="text-primary">importante</span> el SEO local en Sevilla?
       </h2>
-      <p className="mt-8 max-w-3xl text-base md:text-lg font-body text-warm-fg leading-relaxed">
-        El SEO local decide qué negocios aparecen cuando alguien en Sevilla busca un servicio cerca de él. Esas búsquedas se hacen por servicio y por zona, y aparecer en las primeras posiciones de Google Maps y de los resultados locales pone tu negocio delante de personas que ya quieren contratar.
-      </p>
 
-      <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
-        <div>
-          <h3 className="font-heading text-xl text-warm-fg">Datos clave del SEO local en Sevilla</h3>
-          <div className="mt-6 border-t border-warm-fg/15 pt-6">
-            <p className="font-body text-warm-fg">Plazo orientativo de los primeros resultados: {compactTimeframe}.</p>
-            <p className="mt-3 font-body text-sm text-warm-fg/70">El plazo es orientativo y depende del sector, de la competencia y del punto de partida de cada negocio.</p>
-          </div>
+      <div className="mt-12 grid lg:grid-cols-12 gap-10 items-stretch">
+        <div className="lg:col-span-7 flex flex-col justify-center">
+          <p className="font-heading font-semibold text-2xl md:text-3xl leading-snug text-warm-fg">
+            El SEO local decide qué negocios aparecen cuando alguien en Sevilla busca un servicio cerca de él.
+          </p>
+          <p className="mt-6 text-base md:text-lg font-body text-warm-fg leading-relaxed">
+            Esas búsquedas se hacen por servicio y por zona, y aparecer en las primeras posiciones de Google Maps y de los resultados locales pone tu negocio delante de personas que ya quieren contratar.
+          </p>
         </div>
-        <div>
-          <h3 className="font-heading text-xl text-warm-fg">Tipos de búsquedas que captamos en Sevilla</h3>
-          <ul className="mt-6 flex flex-wrap gap-2.5">
-            {[
-              "Servicio + ciudad: «abogado en Sevilla»",
-              "Servicio + zona: «fisioterapeuta en Triana», «fontanero en Macarena Sevilla»",
-              "Cerca de mí: «clínica dental cerca de mí»",
-              "Urgencias y alta intención: «fontanero urgente Sevilla»",
-            ].map((item) => (
-              <li key={item} className="rounded-full border border-warm-fg/20 px-4 py-2 font-heading text-sm text-warm-fg">{item}</li>
-            ))}
-          </ul>
+        <div className="lg:col-span-5 rounded-3xl bg-[hsl(var(--dark-bg))] text-white p-8 md:p-10">
+          <h3 className="text-white font-heading text-lg">Datos clave del SEO local en Sevilla</h3>
+          <div className="mt-8 flex items-end gap-3">
+            <span className="font-heading font-semibold text-6xl md:text-7xl text-primary leading-none">{compactTimeframe}</span>
+            <span className="pb-1 font-heading text-2xl text-white">meses</span>
+          </div>
+          <p className="mt-5 text-base text-white">Plazo orientativo de los primeros resultados</p>
+          <p className="mt-4 text-[15px] leading-relaxed text-white/80">El plazo es orientativo y depende del sector, de la competencia y del punto de partida de cada negocio.</p>
+        </div>
+      </div>
+
+      <div className="mt-16">
+        <h3 className="font-heading text-2xl text-warm-fg">Tipos de búsquedas que captamos en Sevilla</h3>
+        <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <article className="bg-white rounded-2xl border border-warm-fg/10 p-6 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)]">
+            <SearchTypeIcon type="city" />
+            <h3 className="mt-5 font-heading font-semibold text-lg text-warm-fg">Servicio + ciudad</h3>
+            <div className="mt-4"><SearchBar>«abogado en Sevilla»</SearchBar></div>
+          </article>
+          <article className="bg-white rounded-2xl border border-warm-fg/10 p-6 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)]">
+            <SearchTypeIcon type="zone" />
+            <h3 className="mt-5 font-heading font-semibold text-lg text-warm-fg">Servicio + zona</h3>
+            <div className="mt-4 space-y-3">
+              <SearchBar>«fisioterapeuta en Triana»</SearchBar>
+              <SearchBar>«fontanero en Macarena Sevilla»</SearchBar>
+            </div>
+          </article>
+          <article className="bg-white rounded-2xl border border-warm-fg/10 p-6 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)]">
+            <SearchTypeIcon type="nearby" />
+            <h3 className="mt-5 font-heading font-semibold text-lg text-warm-fg">Cerca de mí</h3>
+            <div className="mt-4"><SearchBar>«clínica dental cerca de mí»</SearchBar></div>
+          </article>
+          <article className="bg-white rounded-2xl border border-warm-fg/10 p-6 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)]">
+            <SearchTypeIcon type="urgent" />
+            <h3 className="mt-5 font-heading font-semibold text-lg text-warm-fg">Urgencias y alta intención</h3>
+            <div className="mt-4"><SearchBar>«fontanero urgente Sevilla»</SearchBar></div>
+          </article>
         </div>
       </div>
     </div>
@@ -111,8 +161,8 @@ const SevillaCoverageSection = () => (
               </svg>
             </span>
             <h3 className="mt-5 font-heading font-semibold text-xl text-warm-fg">{barrio}</h3>
-            <p className="mt-5 font-heading text-[10px] tracking-[0.22em] uppercase text-primary">Búsqueda tipo</p>
-            <p className="mt-2 font-body font-light text-sm text-warm-fg/70">«{busqueda}»</p>
+            <p className="mt-5 font-heading text-[11px] tracking-[0.22em] uppercase text-primary">Búsqueda tipo</p>
+            <p className="mt-2 font-body font-light text-[15px] text-warm-fg/80">«{busqueda}»</p>
           </article>
         ))}
       </div>
@@ -124,7 +174,7 @@ const SevillaCoverageSection = () => (
         </div>
         <div className="md:col-span-8 flex flex-wrap gap-2.5 content-start">
           {provinceMunicipalities.map((municipality) => (
-            <span key={municipality} className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-heading text-white/90">
+            <span key={municipality} className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-[15px] font-heading text-white">
               <span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden />
               {municipality}
             </span>
@@ -138,12 +188,45 @@ const SevillaCoverageSection = () => (
 const GoogleMapsGuideSection = () => (
   <section className="bg-white py-24 md:py-32 border-t border-warm-fg/10">
     <div className="container">
+      <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Google Maps</p>
       <h2 className="font-heading font-semibold text-warm-fg leading-[1.05] text-4xl md:text-5xl lg:text-6xl max-w-[22ch]">
-        ¿Cómo aparecer en Google Maps en Sevilla?
+        ¿Cómo aparecer en <span className="text-primary">Google Maps</span> en Sevilla?
       </h2>
-      <div className="mt-8 max-w-3xl space-y-6 text-base md:text-lg font-body text-warm-fg leading-relaxed">
-        <p>Para aparecer en Google Maps en Sevilla, tu negocio necesita una ficha de Google Business Profile verificada y bien configurada, datos coherentes en la web y en los directorios, y reseñas reales de clientes. Google decide qué negocios muestra según tres factores: relevancia, distancia y prominencia.</p>
-        <p>Si quieres ver cómo se trabaja paso a paso, consulta nuestra guía para <Link to="/aparecer-en-google-maps" className="text-primary hover:underline">aparecer en Google Maps</Link>.</p>
+
+      <div className="mt-12 grid lg:grid-cols-12 gap-10 lg:gap-16">
+        <div className="lg:col-span-6">
+          <p className="font-heading font-semibold text-xl md:text-2xl text-warm-fg">Para aparecer en Google Maps en Sevilla, tu negocio necesita:</p>
+          <ul className="mt-7 space-y-5">
+            {["una ficha de Google Business Profile verificada y bien configurada", "datos coherentes en la web y en los directorios", "reseñas reales de clientes"].map((item) => (
+              <li key={item} className="flex items-start gap-3 text-base md:text-lg text-warm-fg">
+                <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary" aria-hidden>
+                  <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                </span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="lg:col-span-6">
+          <p className="text-base md:text-lg text-warm-fg">Google decide qué negocios muestra según tres factores:</p>
+          <div className="mt-7 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              { label: "Relevancia", icon: <><circle cx="12" cy="12" r="8" /><circle cx="12" cy="12" r="4" /><path d="m15 9 5-5M16 4h4v4" /></> },
+              { label: "Distancia", icon: <><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" /></> },
+              { label: "Prominencia", icon: <path d="m12 2 3 6.1 6.7 1-4.9 4.7 1.2 6.7-6-3.2-6 3.2 1.2-6.7-4.9-4.7 6.7-1L12 2Z" /> },
+            ].map(({ label, icon }) => (
+              <div key={label} className="rounded-2xl bg-primary/10 p-5 text-center">
+                <svg className="mx-auto h-7 w-7 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>{icon}</svg>
+                <p className="mt-4 font-heading font-semibold text-lg text-warm-fg">{label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="mt-12 rounded-2xl border border-warm-fg/10 bg-white p-6 text-base md:text-lg text-warm-fg">
+        Si quieres ver cómo se trabaja paso a paso, consulta nuestra guía para{" "}
+        <Link to="/ficha-google-mi-negocio" className="font-semibold text-primary hover:underline">aparecer en Google Maps →</Link>.
       </div>
     </div>
   </section>
