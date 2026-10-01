@@ -23,3 +23,9 @@
 - [x] Eliminar de toda la web los mensajes de permanencia, cancelación y penalizaciones.
 - [x] Integrar GEO como parte del SEO Local en ciudades, sectores, Home y Servicios.
 - [x] Revisar visualmente `/ficha-google-mi-negocio` en escritorio y móvil.
+
+# SEO local Sevilla
+
+- [x] Añadir contenido y captación exclusivos de Sevilla mediante opciones aisladas.
+- [x] Reordenar casos, auditoría y sectores solo en `/seo-local-sevilla`.
+- [x] Verificar Sevilla y confirmar que el resto de páginas no cambia.
