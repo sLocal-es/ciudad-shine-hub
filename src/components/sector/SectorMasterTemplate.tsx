@@ -416,7 +416,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       {c.casesBeforeAudit && <CasosExitoSection />}
 
       {/* CTA AUDITORÍA GRATUITA */}
-      <section id={c.auditoriaSectionId} className={`bg-white py-12 md:py-20 ${c.auditoriaScrollMargin ? "scroll-mt-24" : ""}`}>
+      <section id={c.auditoriaSectionId} className={c.auditoriaScrollMargin ? "bg-white py-12 md:py-20 scroll-mt-24" : "bg-white py-12 md:py-20"}>
         <div className="container">
           <div className="rounded-3xl bg-primary text-primary-foreground px-6 py-14 md:px-14 md:py-20 lg:px-20 lg:py-24">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
