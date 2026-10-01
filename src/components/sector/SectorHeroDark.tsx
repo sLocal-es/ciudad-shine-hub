@@ -32,6 +32,8 @@ const SectorHeroDark = ({
   secondaryCta = { label: "Ver cómo funciona", to: "/como-funciona" },
   curveClass = "bg-background",
 }: SectorHeroDarkProps) => {
+  const primaryClassName = "inline-flex items-center rounded-full bg-primary px-7 py-3.5 text-sm font-heading text-primary-foreground transition-colors hover:bg-primary/90";
+
   return (
     <section className="relative overflow-hidden bg-white text-foreground">
       {/* Ambient background accents */}
@@ -78,12 +80,11 @@ const SectorHeroDark = ({
             </div>
 
             <div className="mt-9 flex flex-wrap gap-3">
-              <Link
-                to={primaryCta.to}
-                className="inline-flex items-center rounded-full bg-primary px-7 py-3.5 text-sm font-heading text-primary-foreground transition-colors hover:bg-primary/90"
-              >
-                {primaryCta.label}
-              </Link>
+              {primaryCta.to.startsWith("#") ? (
+                <a href={primaryCta.to} className={primaryClassName}>{primaryCta.label}</a>
+              ) : (
+                <Link to={primaryCta.to} className={primaryClassName}>{primaryCta.label}</Link>
+              )}
               <Link
                 to={secondaryCta.to}
                 className="inline-flex items-center rounded-full bg-slate-100 px-7 py-3.5 text-sm font-heading font-medium text-slate-800 transition-all duration-200 hover:bg-slate-200"
