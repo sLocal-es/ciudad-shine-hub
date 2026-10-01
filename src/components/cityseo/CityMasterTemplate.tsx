@@ -2,6 +2,8 @@ import { ReactNode } from "react";
 import { Link } from "@/lib/router-compat";
 import SectorMasterTemplate, { SectorTemplateContent } from "@/components/sector/SectorMasterTemplate";
 import { SeoLocalCity } from "@/data/seoLocalCities";
+import { ComoPosicionamosSectionProps } from "@/components/sector/ComoPosicionamosSection";
+import { QueIncluyeSectionProps } from "@/components/sector/QueIncluyeSection";
 
 /**
  * CityMasterTemplate
@@ -20,14 +22,48 @@ const sectorChips = [
   { label: "SEO para empresas de reformas", slug: "seo-para-reformas" },
 ];
 
-const CityMasterTemplate = ({ city, servicesCta, whyUsSection }: { city: SeoLocalCity; servicesCta?: ReactNode; whyUsSection?: ReactNode }) => {
+type CityMasterTemplateProps = {
+  city: SeoLocalCity;
+  servicesCta?: ReactNode;
+  whyUsSection?: ReactNode;
+  afterHero?: ReactNode;
+  afterManifesto?: ReactNode;
+  comoPosicionamos?: ComoPosicionamosSectionProps;
+  queIncluye?: QueIncluyeSectionProps;
+  additionalFaq?: { item: { q: string; a: string }; index: number };
+  hideCase?: boolean;
+  casesBeforeAudit?: boolean;
+  auditoriaSectionId?: string;
+  auditoriaScrollMargin?: boolean;
+  heroPrimaryCtaTo?: string;
+  finalCtaTo?: string;
+  otherSectorsSection?: ReactNode;
+};
+
+const CityMasterTemplate = ({
+  city,
+  servicesCta,
+  whyUsSection,
+  afterHero,
+  afterManifesto,
+  comoPosicionamos,
+  queIncluye,
+  additionalFaq,
+  hideCase,
+  casesBeforeAudit,
+  auditoriaSectionId,
+  auditoriaScrollMargin,
+  heroPrimaryCtaTo,
+  finalCtaTo,
+  otherSectorsSection,
+}: CityMasterTemplateProps) => {
   const { name, slug, population, competition, plazo } = city;
   const url = `https://slocal.es/seo-local-${slug}`;
   const isValencia = slug === "valencia";
   const isMadrid = slug === "madrid";
   const isCordoba = slug === "cordoba";
 
-  const faqs = [
+  const defaultFaqs = [
     { q: `¿Cuándo empezaré a ver resultados de SEO local en ${name}?`, a: `En ${name}, con una competencia digital ${competition.toLowerCase()}, los primeros resultados visibles llegan en ${plazo}: más visitas al perfil de Google Business Profile, más llamadas y mejora de posiciones en Google Maps. A partir del mes 6 el flujo se consolida.` },
     { q: `¿Funciona el SEO local en ${name} para negocios pequeños?`, a: `Sí. El SEO local favorece precisamente a los negocios de barrio frente a franquicias generalistas. En ${name}, cada zona funciona como un mercado propio y un negocio bien posicionado en su barrio compite en igualdad de condiciones.` },
     { q: `¿Necesito web para hacer SEO local en ${name}?`, a: `Una web optimizada por servicio y por barrio de ${name} es lo que permite aparecer en resultados orgánicos además de en Google Maps. El servicio incluye la web desde el inicio.` },
@@ -36,6 +72,9 @@ const CityMasterTemplate = ({ city, servicesCta, whyUsSection }: { city: SeoLoca
     { q: `¿Basta con tener la ficha de Google creada en ${name}?`, a: `No. Sin fotos recientes, sin reseñas respondidas y sin publicaciones, Google interpreta que el negocio no es relevante en ${name} y lo baja del ranking. La ficha necesita actividad continua.` },
     { q: `¿Es suficiente una sola página para toda la ciudad de ${name}?`, a: `No. Las búsquedas locales en ${name} se hacen por barrio y por servicio. Cada combinación necesita su propia página para competir con quien ya la tiene.` },
   ];
+  const faqs = additionalFaq
+    ? [...defaultFaqs.slice(0, additionalFaq.index), additionalFaq.item, ...defaultFaqs.slice(additionalFaq.index)]
+    : defaultFaqs;
 
   const breadcrumbSchema = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
     { "@type": "ListItem", position: 1, name: "Inicio", item: "https://slocal.es/" },
@@ -79,7 +118,7 @@ const CityMasterTemplate = ({ city, servicesCta, whyUsSection }: { city: SeoLoca
     webH3: <>Una web que <span className="text-primary">convierte</span> visitas en clientes</>,
     webBody: <>Mientras Google Business Profile genera la llamada, tu web convierte las visitas en contactos cualificados. Trabajamos páginas específicas por servicio y por barrio de {name}.</>,
     webFeatures: ["SEO Local", "Landing por servicio", "Landing por barrio", "Formularios optimizados", "WhatsApp", "Google Analytics"],
-    comoPosicionamos: isMadrid ? {
+    comoPosicionamos: comoPosicionamos ?? (isMadrid ? {
       titleSuffix: "en Madrid",
       intro: "En Madrid, la relevancia por servicio y barrio, la coherencia de los datos del negocio y una reputación local sólida determinan qué empresas compiten por las posiciones visibles de Google.",
       texts: [
@@ -88,8 +127,8 @@ const CityMasterTemplate = ({ city, servicesCta, whyUsSection }: { city: SeoLoca
         "Madrid tiene un volumen alto de búsquedas locales y una competencia digital alta. Trabajamos la obtención y respuesta de reseñas reales, su relación con los servicios prestados y la autoridad de la web para reforzar la confianza del usuario y la capacidad del negocio para competir en su zona.",
       ],
       closing: "La estrategia combina relevancia por barrio, datos coherentes y autoridad local para que Google identifique el negocio como una respuesta fiable dentro de Madrid.",
-    } : undefined,
-    queIncluye: isMadrid ? {
+    } : undefined),
+    queIncluye: queIncluye ?? (isMadrid ? {
       titleSuffix: "en Madrid",
       texts: [
         "Auditamos la ficha, la web y la visibilidad actual por zonas de Madrid. El diagnóstico compara categorías, servicios, contenido, reseñas, citaciones y competidores para detectar qué limita la presencia en Google Maps y en los resultados orgánicos.",
@@ -99,7 +138,7 @@ const CityMasterTemplate = ({ city, servicesCta, whyUsSection }: { city: SeoLoca
         "Corregimos y ampliamos las menciones del negocio en directorios locales y temáticos que aportan contexto. Mantener los mismos datos en estas fuentes refuerza la identidad de la empresa y su vinculación con Madrid ante los buscadores.",
         "El informe mensual reúne posiciones, llamadas, formularios y evolución de la ficha por las búsquedas trabajadas. En un mercado de competencia alta, estos datos permiten ajustar barrios, servicios y contenidos durante el plazo estimado de 3 a 6 meses sin depender de impresiones generales.",
       ],
-    } : undefined,
+    } : undefined),
     auditoriaFormType: `auditoria_${slug}`,
     howH2: <>¿Cómo conseguimos que aparezcas <span className="text-primary">por delante</span> de tu competencia en {name}?</>,
     howIntro: <>En Slocal apareces primero en Google Maps en {name} optimizando tu ficha, servicios, reseñas y contenido local. Google prioriza fichas activas, con reseñas recientes y coherencia entre ficha, web y citaciones locales de la ciudad.</>,
@@ -118,6 +157,7 @@ const CityMasterTemplate = ({ city, servicesCta, whyUsSection }: { city: SeoLoca
       { title: "RESULTADO", text: `Top 3 en Google Maps de ${name}, aumento constante de llamadas y menos dependencia de publicidad de pago.`, label: `Resultados: top 3 en Google Maps de ${name} y agenda llena` },
     ],
     caseKpis: [{ k: "x3", l: "Contactos al mes" }, { k: "TOP 3", l: "Google Maps" }, { k: "x9", l: "Retorno de la inversión" }],
+    hideCase,
     monthlyH2: <>¿Por qué el SEO Local en {name} necesita trabajo <span className="text-primary">mes a mes</span>?</>,
     monthlyBody: <>Porque Google no es una fotografía, es una competición continua. En {name} reforzamos cada mes tu ficha, reseñas y contenido para mantener las primeras posiciones.</>,
     monthlyReasons: [
@@ -153,6 +193,14 @@ const CityMasterTemplate = ({ city, servicesCta, whyUsSection }: { city: SeoLoca
     jsonLd: [breadcrumbSchema, faqSchema, serviceSchema, localBusinessSchema],
     servicesCta,
     whyUsSection,
+    afterHero,
+    afterManifesto,
+    casesBeforeAudit,
+    auditoriaSectionId,
+    auditoriaScrollMargin,
+    heroPrimaryCtaTo,
+    finalCtaTo,
+    otherSectorsSection,
   };
 
   return <SectorMasterTemplate content={content} />;
