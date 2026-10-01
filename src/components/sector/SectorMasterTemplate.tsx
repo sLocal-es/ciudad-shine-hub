@@ -72,11 +72,17 @@ export type SectorTemplateContent = {
   // Optional page-specific positioning and service content
   comoPosicionamos?: ComoPosicionamosSectionProps;
   queIncluye?: QueIncluyeSectionProps;
+  afterHero?: ReactNode;
+  afterManifesto?: ReactNode;
 
   // Auditoria CTA (form) — keep master copy by default
   auditoriaH2?: ReactNode;
   auditoriaBody?: ReactNode;
   auditoriaFormType: string;   // "auditoria_abogados"
+  auditoriaSectionId?: string;
+  auditoriaScrollMargin?: boolean;
+  heroPrimaryCtaTo?: string;
+  casesBeforeAudit?: boolean;
 
   // How we work — 5 steps
   howEyebrow?: string;
@@ -123,9 +129,11 @@ export type SectorTemplateContent = {
   otherSectorsH2: ReactNode;
   otherSectorsBody: ReactNode;
   otherSectors: { label: string; slug: string }[];
+  otherSectorsSection?: ReactNode;
 
   // Final CTA
   finalCtaTitle: string;
+  finalCtaTo?: string;
 
   // JSON-LD (fully composed by caller)
   jsonLd: object[];
@@ -175,7 +183,7 @@ const IllustrationPlaceholder = ({
 );
 
 /* ---------- Auditoria lead form (copy of master) ---------- */
-const AuditoriaLeadForm = ({ formType }: { formType: string }) => {
+export const AuditoriaLeadForm = ({ formType, compact = false }: { formType: string; compact?: boolean }) => {
   const [form, setForm] = useState({ name: "", business: "", phone: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
 
@@ -210,13 +218,15 @@ const AuditoriaLeadForm = ({ formType }: { formType: string }) => {
         <input required type="text" placeholder="Nombre de tu empresa" value={form.business} onChange={(e) => setForm({ ...form, business: e.target.value })} className={inputCls} />
         <input required type="tel" placeholder="Teléfono" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className={inputCls} />
         <input required type="email" placeholder="Correo electrónico" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className={inputCls} />
-        <textarea
-          rows={3}
-          placeholder="Ej. Conseguir más llamadas, aparecer primero en Google, mejorar mi web..."
-          value={form.message}
-          onChange={(e) => setForm({ ...form, message: e.target.value })}
-          className={inputCls}
-        />
+        {!compact && (
+          <textarea
+            rows={3}
+            placeholder="Ej. Conseguir más llamadas, aparecer primero en Google, mejorar mi web..."
+            value={form.message}
+            onChange={(e) => setForm({ ...form, message: e.target.value })}
+            className={inputCls}
+          />
+        )}
         <button
           type="submit"
           disabled={loading}
@@ -304,11 +314,13 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
         eyebrow={c.heroEyebrow}
         h1={c.heroH1}
         subtitle={c.heroSubtitle}
-        primaryCta={{ label: "Solicitar auditoría gratuita", to: "/contacto" }}
+        primaryCta={{ label: "Solicitar auditoría gratuita", to: c.heroPrimaryCtaTo ?? "/contacto" }}
         secondaryCta={{ label: "Ver cómo funciona", to: "/como-funciona" }}
         trustItems={c.heroTrust}
         curveClass="bg-white"
       />
+
+      {c.afterHero}
 
       {/* MARQUEE */}
       <section className="bg-white border-t border-warm-fg/10">
@@ -393,14 +405,18 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
         </div>
       </section>
 
+      {c.afterManifesto}
+
       {c.comoPosicionamos && <ComoPosicionamosSection {...c.comoPosicionamos} />}
 
       {c.queIncluye && <QueIncluyeSection {...c.queIncluye} />}
 
       {c.servicesCta}
 
+      {c.casesBeforeAudit && <CasosExitoSection />}
+
       {/* CTA AUDITORÍA GRATUITA */}
-      <section className="bg-white py-12 md:py-20">
+      <section id={c.auditoriaSectionId} className={`bg-white py-12 md:py-20 ${c.auditoriaScrollMargin ? "scroll-mt-24" : ""}`}>
         <div className="container">
           <div className="rounded-3xl bg-primary text-primary-foreground px-6 py-14 md:px-14 md:py-20 lg:px-20 lg:py-24">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
@@ -701,28 +717,30 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       </section>
 
       {/* OTROS SECTORES */}
-      <section className="bg-white py-16 md:py-20 border-t border-warm-fg/10">
-        <div className="container">
-          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Otros sectores</p>
-          <h2 className="font-heading text-2xl md:text-3xl text-warm-fg mb-4">{c.otherSectorsH2}</h2>
-          <p className="text-base font-body text-warm-fg leading-relaxed max-w-3xl mb-8">{c.otherSectorsBody}</p>
-          <div className="flex flex-wrap gap-2.5">
-            {c.otherSectors.map((s) => (
-              <Link
-                key={s.slug}
-                to={`/${s.slug}`}
-                className="border border-warm-fg/20 rounded-full px-5 py-2.5 text-sm font-heading text-warm-fg transition-all duration-200 hover:border-primary hover:text-primary hover:-translate-y-[2px]"
-              >
-                {s.label}
-              </Link>
-            ))}
+      {c.otherSectorsSection ?? (
+        <section className="bg-white py-16 md:py-20 border-t border-warm-fg/10">
+          <div className="container">
+            <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Otros sectores</p>
+            <h2 className="font-heading text-2xl md:text-3xl text-warm-fg mb-4">{c.otherSectorsH2}</h2>
+            <p className="text-base font-body text-warm-fg leading-relaxed max-w-3xl mb-8">{c.otherSectorsBody}</p>
+            <div className="flex flex-wrap gap-2.5">
+              {c.otherSectors.map((s) => (
+                <Link
+                  key={s.slug}
+                  to={`/${s.slug}`}
+                  className="border border-warm-fg/20 rounded-full px-5 py-2.5 text-sm font-heading text-warm-fg transition-all duration-200 hover:border-primary hover:text-primary hover:-translate-y-[2px]"
+                >
+                  {s.label}
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
-      <CasosExitoSection />
+      {!c.casesBeforeAudit && <CasosExitoSection />}
 
-      <CTASection id="contacto" title={c.finalCtaTitle} buttonText="Solicitar auditoría gratuita →" />
+      <CTASection id="contacto" title={c.finalCtaTitle} buttonText="Solicitar auditoría gratuita →" buttonTo={c.finalCtaTo} />
     </>
   );
 };
