@@ -63,7 +63,7 @@ const HeroAuditBand = () => (
     <div className="container">
       <div className="rounded-2xl bg-primary px-5 py-5 text-primary-foreground md:px-8 md:py-6">
         <div className="lg:flex lg:items-center lg:justify-between lg:gap-8">
-          <div className="lg:shrink-0">
+          <div className="lg:w-[17rem] lg:shrink-0">
             <p className="font-heading text-xl font-semibold leading-tight text-white md:text-2xl">
               Auditoría gratuita de tu ficha y tu web
             </p>
