@@ -13,22 +13,14 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { reportLovableError } from "@/lib/lovable-error-reporting";
+import { organizationNode } from "@/lib/citySchema";
 
 import "@fontsource-variable/dm-sans/index.css";
 import "@fontsource-variable/plus-jakarta-sans/index.css";
 import "@fontsource/dm-serif-display/400.css";
 import appCss from "@/styles.css?url";
 
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "slocal.es",
-  url: "https://slocal.es",
-  email: "info@slocal.es",
-  logo: "https://slocal.es/favicon.png",
-  description: "Visibilidad y captación en Google para negocios locales españoles",
-  areaServed: "ES",
-};
+const organizationSchema = { "@context": "https://schema.org", ...organizationNode };
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   // Sitewide defaults ONLY. No title / description / og:* fallbacks here —

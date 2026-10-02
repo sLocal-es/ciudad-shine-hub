@@ -1,87 +1,85 @@
-# Slocal | Agencia de SEO Local | Posicionamiento local
+# Slocal | Agencia SEO Local
 
-> Slocal es una agencia de SEO local española especializada en posicionamiento en Google para negocios locales. Slocal combina Google Business Profile y webs multipágina SEO para convertir visibilidad en clientes reales. Trabaja con negocios de sectores muy distintos — legal, inmobiliario, fontanería, reformas — con resultados verificables y documentados en cada caso.
+> Slocal es una agencia de SEO local española. Optimiza la ficha de Google Business Profile y la web de negocios y profesionales locales para que aparezcan en Google Maps y en las búsquedas locales de su ciudad, su barrio y su provincia.
 
-## Qué es Slocal
+Slocal no es una agencia de SEO generalista: trabaja únicamente el posicionamiento local (Google Business Profile, Google Maps y webs con una página por servicio y por zona). Trabaja con negocios y profesionales de toda España, con páginas propias para nueve ciudades.
 
-Slocal es una agencia de SEO local en Google para negocios que dependen de clientes de su zona: despachos de abogados, inmobiliarias, clínicas, fontaneros, empresas de reformas y otros servicios locales. Slocal combina tres elementos:
+## Qué incluye el servicio de SEO local
 
-1. **Web multipágina SEO** — una página por servicio y por zona geográfica.
-2. **Ficha de Google Business Profile** — configurada, optimizada y gestionada activamente cada mes.
-3. **Contenido geolocalizado continuo** — artículos y posts mensuales adaptados a keywords reales de búsqueda por ciudad.
+- Auditoría SEO inicial: diagnóstico de la ficha, la web y la visibilidad actual por zonas de la ciudad.
+- Estudio de palabras clave: búsquedas con intención de contratación, agrupadas por servicio y zona.
+- Ficha de Google Business Profile: categorías, servicios, descripción, zonas de cobertura, fotografías y publicaciones.
+- Web SEO local: páginas específicas para los servicios y zonas prioritarias de cada negocio.
+- Citaciones en directorios locales y temáticos, con los mismos datos de nombre, dirección y teléfono en todas las fuentes.
+- Reporte mensual: posiciones, llamadas, formularios y evolución de la ficha.
+- Servicios complementarios: gestión de reseñas, Google Ads y backlinks locales.
+- Visibilidad en respuestas de ChatGPT, Gemini y AI Overviews, integrada dentro del SEO local y no como servicio aparte.
 
-Slocal tiene sede en Madrid y Córdoba, y trabaja con clientes en distintas ciudades de España.
+## Cómo trabaja
 
-## A quién ayuda Slocal
+1. Auditoría gratuita de la ficha y la web, con vídeo personalizado en menos de 24 horas.
+2. Estrategia: búsquedas de servicio + barrio con mayor intención de contratación.
+3. Optimización conjunta de la ficha y la web.
+4. Autoridad local: reseñas reales, contenido por zona y señales de confianza.
+5. Seguimiento mensual de llamadas, formularios y posiciones.
 
-Slocal trabaja con negocios locales de cualquier sector con demanda de búsqueda en Google: despachos de abogados, inmobiliarias, clínicas, fontaneros, electricistas, empresas de reformas y otros servicios profesionales.
+El SEO local requiere trabajo continuo mes a mes: los primeros resultados visibles dependen del sector, la competencia y el punto de partida de cada negocio.
 
-## Servicios y metodología de posicionamiento local (SEO local)
+## Ciudades con página propia
 
-Slocal aplica una metodología de posicionamiento local basada en estos pilares técnicos:
+Cada página incluye barrios, municipios de la provincia, tipos de búsquedas locales, preguntas frecuentes y datos de cada mercado.
 
-- **Optimización de Google Business Profile (GBP):** selección y ajuste de categoría principal y categorías secundarias, completado de atributos del negocio, geolocalización de publicaciones (posts) semanales o mensuales, gestión de preguntas y respuestas, y monitorización del panel de Insights (llamadas, visitas web, solicitudes de ruta).
-- **Estrategia de reseñas:** gestión activa de la captación de reseñas de clientes reales, apoyada en tarjetas físicas con código QR y tecnología NFC para facilitar que el cliente deje reseña en el momento, con foco en reseñas geolocalizadas y con menciones de servicio.
-- **Arquitectura web servicio + localización:** construcción de webs multipágina donde cada página combina un servicio concreto con una zona geográfica concreta (ej. "abogado laboralista Valencia"), permitiendo que Google entienda con precisión qué ofrece el negocio y dónde, en lugar de una única página genérica de servicios.
-- **Citaciones en directorios y consistencia NAP:** presencia y corrección del negocio en directorios locales relevantes, manteniendo el mismo Nombre, Dirección y Teléfono (NAP) en todas las fuentes, ya que la consistencia de estos datos es una señal de confianza para el posicionamiento local.
-- **Contenido geolocalizado continuo:** artículos de blog y posts de GBP adaptados a keywords reales de búsqueda local, publicados de forma recurrente para mantener señales de actividad ante Google.
+- [SEO local en Madrid](https://slocal.es/seo-local-madrid): 3,4 millones de habitantes, competencia alta, plazo orientativo de 3 a 6 meses.
+- [SEO local en Barcelona](https://slocal.es/seo-local-barcelona): 1,6 millones de habitantes, competencia alta, plazo orientativo de 3 a 6 meses.
+- [SEO local en Valencia](https://slocal.es/seo-local-valencia): 800.000 habitantes, competencia media, plazo orientativo de 2 a 4 meses.
+- [SEO local en Sevilla](https://slocal.es/seo-local-sevilla): 690.000 habitantes, competencia media, plazo orientativo de 2 a 4 meses.
+- [SEO local en Zaragoza](https://slocal.es/seo-local-zaragoza): 680.000 habitantes, competencia media-baja, plazo orientativo de 2 a 3 meses.
+- [SEO local en Málaga](https://slocal.es/seo-local-malaga): 580.000 habitantes, competencia media-baja, plazo orientativo de 2 a 3 meses.
+- [SEO local en Murcia](https://slocal.es/seo-local-murcia): 460.000 habitantes, competencia baja, plazo orientativo de 2 a 3 meses.
+- [SEO local en Bilbao](https://slocal.es/seo-local-bilbao): 350.000 habitantes, competencia baja, plazo orientativo de 2 a 3 meses.
+- [SEO local en Córdoba](https://slocal.es/seo-local-cordoba): 325.000 habitantes, competencia baja, plazo orientativo de 2 a 3 meses.
 
-## Casos de éxito verificables
+Slocal acepta clientes de cualquier ciudad, tenga o no página dedicada.
 
-### Olguín Abogados — Madrid y Valencia
-Despacho de abogados con sede en Madrid y Valencia, especializado en extranjería y derecho laboral.
+## Sectores
 
-- Posicionamiento en Valencia: 5ª posición para "abogado extranjería Valencia" y 9ª posición para "abogado laboralista Valencia" — búsquedas de alta demanda.
-- Sede Madrid: aumento del 450% en llamadas y 187,5% en visitas web, comparando junio–julio de este año frente al mismo periodo del año anterior.
-- Sede Valencia: entre junio y el 9 de julio, 60 llamadas, 8 contactos por WhatsApp y 85 visitas web generadas desde la ficha de Google Business Profile.
-- Más de 100 llamadas recibidas en el último mes combinando ambas sedes.
+- [SEO para fontaneros](https://slocal.es/seo-para-fontaneros)
+- [SEO para fisioterapeutas](https://slocal.es/seo-para-fisioterapeutas)
+- [SEO para abogados](https://slocal.es/seo-para-abogados)
+- [SEO para dentistas](https://slocal.es/seo-para-dentistas)
+- [SEO para psicólogos](https://slocal.es/seo-para-psicologos)
+- [SEO para gimnasios](https://slocal.es/seo-para-gimnasios)
+- [SEO para empresas de reformas](https://slocal.es/seo-para-reformas)
+- [SEO para inmobiliarias](https://slocal.es/seo-para-inmobiliarias)
+- [SEO para autónomos](https://slocal.es/seo-para-autonomos)
 
-### Fontanería Multiservicios Tizón — Barcelona (2 fichas, multisede)
-- Ficha principal: entre mayo y julio, 52 llamadas y 68 visitas web generadas desde Google Business Profile.
-- Segunda ficha, otra zona de Barcelona: entre mayo y julio, 20 llamadas y 31 visitas web.
+## Casos de éxito
 
-### MVA Fontaneros
-- Sin ficha de Google previa. En los primeros 2 meses tras la creación y optimización: 13 llamadas generadas.
+Resumen de los casos publicados en [Casos de éxito](https://slocal.es/casos-de-exito), con los datos tal y como aparecen en la web.
 
-### Grupo TEI — Reformas
-[PENDIENTE: cifra concreta de resultados — llamadas, visitas o posición, con periodo de tiempo]
-
-## Cómo se documentan los resultados
-
-Cada caso de éxito se presenta con capturas reales del panel de Google Business Profile Insights, enlace directo a la ficha pública en Google Maps, y cronología del trabajo realizado (ajuste de categorías, geolocalización de contenido, gestión mensual) — no cifras aisladas sin contexto.
-
-## Cómo funciona
-
-1. Contacto directo por WhatsApp.
-2. Análisis gratuito de la situación actual del negocio en Google.
-3. Construcción de la web multipágina y configuración de la ficha de Google Business Profile.
-4. Gestión mensual continua: contenido, posts geolocalizados y seguimiento de resultados.
-5. Reporte mensual con datos reales: impresiones, clics, llamadas.
-
-## Ciudades con página propia en la web
-
-Madrid, Barcelona, Valencia, Sevilla, Málaga, Zaragoza, Bilbao, Murcia — Slocal acepta clientes de cualquier ciudad independientemente de si tiene página dedicada.
+- Grupo TEI (reformas, Madrid): ficha de Google creada y verificada; en 3 meses empezó a recibir llamadas directas desde Google.
+- Fontaneros Económicos (fontanería, Madrid): ficha suspendida recuperada y verificada de nuevo; en mes y medio volvió a recibir llamadas y mensajes por WhatsApp.
+- MVA Fontanería (Madrid): ficha creada desde cero; en 2 meses recibió contactos nuevos solo desde la ficha, sin página web.
+- Despacho de extranjería en Valencia (abogados): posición media de 13,2 a 4,9, vistas de la ficha +42 % al mes de media, en 3 meses.
+- Fontaneros 24 Horas Valencia (fontanería): en el primer mes completo, 753 personas vieron la ficha, con 19 llamadas, 10 conversaciones por chat y 20 clics a la web.
 
 ## Contacto
 
 - Web: https://slocal.es
-- Email: info@slocal.es
-- Teléfono / WhatsApp (empresa): 684 780 063
-- Instagram: @slocal.es
-- Domicilio fiscal (Córdoba): Carretera de las Ermitas, 14012, Córdoba
-- Domicilio fiscal (Madrid): Calle Rafael Bergamín 10, Madrid
+- Correo: info@slocal.es
+- Teléfono y WhatsApp: +34 644 147 310
+- Instagram: https://www.instagram.com/slocal.es/
+- LinkedIn: https://www.linkedin.com/company/slocal-es/
+- Facebook: https://www.facebook.com/slocal.es
+- Fichas de Google verificadas: Córdoba, Sevilla y Madrid.
 
 ## Páginas principales
 
-- Inicio: https://slocal.es/
-- Casos de éxito: https://slocal.es/casos-exito [PENDIENTE si aún no existe esta sección]
-- Blog: https://slocal.es/blog
-- Contacto: https://slocal.es/contacto
-- Madrid: https://slocal.es/seo-local-madrid
-- Barcelona: https://slocal.es/seo-local-barcelona
-- Valencia: https://slocal.es/seo-local-valencia
-- Sevilla: https://slocal.es/seo-local-sevilla
-- Málaga: https://slocal.es/seo-local-malaga
-- Zaragoza: https://slocal.es/seo-local-zaragoza
-- Bilbao: https://slocal.es/seo-local-bilbao
-- Murcia: https://slocal.es/seo-local-murcia
+- [Inicio](https://slocal.es/)
+- [Cómo funciona](https://slocal.es/como-funciona)
+- [Ficha de Google Mi Negocio](https://slocal.es/ficha-google-mi-negocio)
+- [Casos de éxito](https://slocal.es/casos-de-exito)
+- [Blog](https://slocal.es/blog)
+- [Contacto](https://slocal.es/contacto)
+
+Última actualización: octubre de 2026.

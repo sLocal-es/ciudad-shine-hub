@@ -4,6 +4,7 @@ import SectorMasterTemplate, { SectorTemplateContent } from "@/components/sector
 import { SeoLocalCity } from "@/data/seoLocalCities";
 import { ComoPosicionamosSectionProps } from "@/components/sector/ComoPosicionamosSection";
 import { QueIncluyeSectionProps } from "@/components/sector/QueIncluyeSection";
+import { buildCitySchema, CitySchemaOptions } from "@/lib/citySchema";
 
 /**
  * CityMasterTemplate
@@ -40,6 +41,7 @@ type CityMasterTemplateProps = {
   finalCtaTo?: string;
   otherSectorsSection?: ReactNode;
   otherSectorsAfterAudit?: boolean;
+  schemaOptions?: CitySchemaOptions;
 };
 
 const CityMasterTemplate = ({
@@ -60,6 +62,7 @@ const CityMasterTemplate = ({
   finalCtaTo,
   otherSectorsSection,
   otherSectorsAfterAudit,
+  schemaOptions,
 }: CityMasterTemplateProps) => {
   const { name, slug, population, competition, plazo } = city;
   const url = `https://slocal.es/seo-local-${slug}`;
@@ -79,6 +82,10 @@ const CityMasterTemplate = ({
   const faqs = additionalFaq
     ? [...defaultFaqs.slice(0, additionalFaq.index), additionalFaq.item, ...defaultFaqs.slice(additionalFaq.index)]
     : defaultFaqs;
+  const seoTitle = `SEO Local en ${name} | Agencia SEO Local | slocal.es`;
+  const seoDescription = isValencia
+    ? "Agencia SEO Local en Valencia: Google Maps, Google Business Profile y visibilidad en ChatGPT, Gemini y AI Overviews para negocios locales."
+    : `Agencia SEO Local en ${name}: Google Business Profile, Google Maps y posicionamiento local para que tus clientes te encuentren primero en Google.`;
 
   const breadcrumbSchema = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
     { "@type": "ListItem", position: 1, name: "Inicio", item: "https://slocal.es/" },
@@ -99,10 +106,8 @@ const CityMasterTemplate = ({
   ]};
 
   const content: SectorTemplateContent = {
-    seoTitle: `SEO Local en ${name} | Agencia SEO Local | slocal.es`,
-    seoDescription: isValencia
-      ? "Agencia SEO Local en Valencia: Google Maps, Google Business Profile y visibilidad en ChatGPT, Gemini y AI Overviews para negocios locales."
-      : `Agencia SEO Local en ${name}: Google Business Profile, Google Maps y posicionamiento local para que tus clientes te encuentren primero en Google.`,
+    seoTitle,
+    seoDescription,
     canonical: `/seo-local-${slug}`,
     sectorLabel: name,
     sectorSlug: `seo-local-${slug}`,
@@ -194,7 +199,9 @@ const CityMasterTemplate = ({
     otherSectorsBody: <>Trabajamos con fontaneros, abogados, dentistas, fisioterapeutas, psicólogos, gimnasios, inmobiliarias y empresas de reformas en {name}.</>,
     otherSectors: sectorChips,
     finalCtaTitle: `¿Quieres que tu negocio en ${name} reciba más contactos gracias a Google?`,
-    jsonLd: [breadcrumbSchema, faqSchema, serviceSchema, localBusinessSchema],
+    jsonLd: schemaOptions
+      ? [buildCitySchema(city, url, seoTitle, seoDescription, faqs, schemaOptions)]
+      : [breadcrumbSchema, faqSchema, serviceSchema, localBusinessSchema],
     servicesCta,
     whyUsSection,
     afterHero,

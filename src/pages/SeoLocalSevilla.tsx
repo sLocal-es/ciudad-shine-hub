@@ -4,6 +4,7 @@ import { AuditoriaLeadForm } from "@/components/sector/SectorMasterTemplate";
 import SectorsGridSection from "@/components/home/SectorsGridSection";
 import { seoLocalCities } from "@/data/seoLocalCities";
 import { Link } from "@/lib/router-compat";
+import { AppWindow, Clock, Copy, ShieldCheck, Star, Tag } from "lucide-react";
 
 const city = seoLocalCities.sevilla;
 const provinceMunicipalities = [
@@ -75,6 +76,23 @@ const HeroAuditBand = () => (
           <div className="mt-5 min-w-0 flex-1 lg:mt-0">
             <AuditoriaLeadForm formType="auditoria_sevilla_hero" compact inline />
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+const GuaranteeStrip = () => (
+  <section className="bg-white pb-6 md:pb-8">
+    <div className="container">
+      <div className="rounded-2xl bg-[hsl(var(--dark-bg))] px-5 py-4 text-white md:px-8 md:py-5 lg:flex lg:items-center lg:gap-6">
+        <div className="flex shrink-0 items-center gap-2 text-primary">
+          <ShieldCheck className="h-5 w-5" aria-hidden />
+          <span className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary">Garantía de 60 días</span>
+        </div>
+        <div className="mt-4 lg:mt-0">
+          <p className="font-heading font-semibold text-lg md:text-xl leading-snug text-white">Si en 60 días tu ficha no ha mejorado, seguimos trabajando sin coste hasta que lo haga.</p>
+          <p className="mt-2 text-[15px] text-white/80">Mejora medida con las estadísticas de tu ficha de Google (visitas al perfil, llamadas y búsquedas en las que apareces), comparando los 60 días anteriores y posteriores al inicio del trabajo.</p>
         </div>
       </div>
     </div>
@@ -238,6 +256,42 @@ const SevillaCoverageSection = () => (
   </section>
 );
 
+const whyNotAppearItems = [
+  { icon: ShieldCheck, title: "Ficha sin verificar", text: "Sin verificar, la ficha apenas puede competir con las de tu zona." },
+  { icon: Tag, title: "Categoría equivocada", text: "Google decide para qué búsquedas mostrarte según la categoría que elijas." },
+  { icon: Copy, title: "Datos incoherentes", text: "Nombre, dirección o teléfono distintos entre ficha, web y directorios." },
+  { icon: Star, title: "Reseñas sin atender", text: "Pocas reseñas, antiguas o sin responder restan confianza y relevancia." },
+  { icon: AppWindow, title: "Web sin páginas locales", text: "Sin una página por servicio y por barrio, no hay nada que posicionar." },
+  { icon: Clock, title: "Ficha abandonada", text: "Sin fotos, publicaciones ni actividad, Google la ve menos relevante." },
+];
+
+const WhyNotAppearSection = () => (
+  <section className="bg-white py-24 md:py-32 border-t border-warm-fg/10">
+    <div className="container">
+      <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Diagnóstico</p>
+      <h2 className="font-heading font-semibold text-warm-fg leading-[1.05] text-4xl md:text-5xl lg:text-6xl max-w-[22ch]">
+        ¿Por qué <span className="text-primary">no aparece</span> tu negocio en Google Maps en Sevilla?
+      </h2>
+      <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {whyNotAppearItems.map(({ icon: Icon, title, text }) => (
+          <article key={title} className="bg-white rounded-2xl border border-warm-fg/10 p-6 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)]">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary" aria-hidden>
+              <Icon className="h-5 w-5" />
+            </span>
+            <h3 className="mt-5 font-heading font-semibold text-lg text-warm-fg">{title}</h3>
+            <p className="mt-3 text-[15px] md:text-base text-warm-fg/85 leading-relaxed">{text}</p>
+          </article>
+        ))}
+      </div>
+      <div className="mt-10 rounded-3xl bg-[hsl(var(--dark-bg))] px-6 py-10 md:px-12 md:py-12 text-center">
+        <h3 className="font-heading font-semibold text-2xl md:text-4xl leading-tight text-white uppercase">Te decimos qué le falta <span className="text-primary">a tu ficha</span></h3>
+        <p className="mt-4 text-base md:text-lg text-white/90">Auditoría gratuita con vídeo personalizado en menos de 24 horas.</p>
+        <a href="#auditoria" className="mt-7 inline-flex items-center rounded-full bg-primary px-7 py-3.5 text-sm font-heading text-primary-foreground hover:bg-primary/90">Solicitar auditoría gratuita</a>
+      </div>
+    </div>
+  </section>
+);
+
 const GoogleMapsGuideSection = () => (
   <section className="bg-white py-24 md:py-32 border-t border-warm-fg/10">
     <div className="container">
@@ -279,7 +333,7 @@ const GoogleMapsGuideSection = () => (
 
       <div className="mt-12 rounded-2xl border border-warm-fg/10 bg-white p-6 text-base md:text-lg text-warm-fg">
         Si quieres ver cómo se trabaja paso a paso, consulta nuestra guía para{" "}
-        <Link to="/ficha-google-mi-negocio" className="font-semibold text-primary hover:underline">aparecer en Google Maps →</Link>.
+        <Link to="/ficha-google-mi-negocio" className="font-semibold text-primary hover:underline">aparecer en Google Maps</Link>.
       </div>
     </div>
   </section>
@@ -288,6 +342,7 @@ const GoogleMapsGuideSection = () => (
 const SevillaServicesCta = () => (
   <>
     <SevillaCoverageSection />
+    <WhyNotAppearSection />
     <GoogleMapsGuideSection />
   </>
 );
@@ -333,7 +388,7 @@ const SeoLocalSevilla = () => (
   <>
     <CityMasterTemplate
       city={city}
-      afterHero={<HeroAuditBand />}
+      afterHero={<><HeroAuditBand /><GuaranteeStrip /></>}
       manifestoSection={<SevillaManifestoSection />}
       afterManifesto={<WhyLocalSeoSection />}
       comoPosicionamos={{
@@ -373,6 +428,7 @@ const SeoLocalSevilla = () => (
       finalCtaTo="#auditoria"
       otherSectorsSection={<SectorsGridSection />}
       otherSectorsAfterAudit
+      schemaOptions={{ province: "Provincia de Sevilla", municipios: provinceMunicipalities, dateModified: "2026-10-02", gbp: { name: "Agencia SEO Local | Slocal", map: "https://www.google.com/maps?cid=16970055204824583970" } }}
     />
     <SevillaMobileAuditButton />
   </>
