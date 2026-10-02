@@ -5,6 +5,7 @@ import SEOHead from "@/components/SEOHead";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 import { sendForm } from "@/lib/sendForm";
 import { useToast } from "@/hooks/use-toast";
+import { seoLocalCities } from "@/data/seoLocalCities";
 
 const schema = z.object({
   nombre: z.string().trim().min(1, "Indica tu nombre").max(100),
@@ -18,9 +19,6 @@ const schema = z.object({
 
 const sectionCls = "bg-white py-24 md:py-32 border-t border-[#E5E7EB]";
 
-const MAP_EMBED =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d811430.806100093!2d-6.6367644726445185!3d37.39807113471488!2m3!1f0!2f0!2f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xac51e84256737de1%3A0xba193d08e9882037!2sSlocal!5e0!3m2!1ses!2ses!4v1785864736626!5m2!1ses!2ses";
-
 const beneficios = [
   {
     n: "01",
@@ -32,6 +30,12 @@ const beneficios = [
     h: "Respuesta en menos de 24 horas",
     d: "Una persona del equipo revisa tu caso y te contesta el mismo día laborable.",
   },
+];
+
+const mapas = [
+  { name: "Madrid", src: seoLocalCities.madrid.mapEmbed },
+  { name: "Sevilla", src: seoLocalCities.sevilla.mapEmbed },
+  { name: "Córdoba", src: seoLocalCities.cordoba.mapEmbed },
 ];
 
 const Contacto = () => {
@@ -87,9 +91,9 @@ const Contacto = () => {
     }
   };
 
-  const labelCls = "font-heading text-[11px] tracking-[0.18em] uppercase text-black block mb-2";
+  const labelCls = "font-heading text-[11px] tracking-[0.18em] uppercase text-white block mb-2";
   const inputCls =
-    "w-full rounded-xl bg-white text-black placeholder:text-gray-600 caret-black px-4 py-3.5 text-[15px] font-body outline-hidden border border-[#E5E7EB] focus:border-primary focus:ring-2 focus:ring-primary/15 transition";
+    "w-full rounded-xl bg-white text-warm-fg placeholder:text-warm-fg/60 rounded-xl px-4 py-3.5 text-[15px] font-body border border-transparent focus:ring-2 focus:ring-white/60 outline-hidden";
 
   return (
     <>
@@ -175,148 +179,149 @@ const Contacto = () => {
       {/* FORMULARIO */}
       <section id="formulario" className={sectionCls}>
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            <div className="lg:col-span-5">
-              <p className="font-heading text-xs tracking-[0.22em] uppercase text-primary mb-6">— Solicitud</p>
-              <h2 className="font-heading font-semibold text-black text-3xl md:text-4xl leading-[1.08] tracking-tight">
-                Cuéntanos dónde estás y te decimos{" "}
-                <span className="text-primary">qué está frenando tus llamadas</span>
-              </h2>
-              <p className="mt-6 text-base font-body font-light text-[#4B5563] leading-relaxed">
-                Con estos datos revisamos tu ficha, tu web y las búsquedas locales de tu ciudad antes de
-                contactarte. Recibirás un análisis concreto, con acciones priorizadas.
-              </p>
-
-              {/* CTA WhatsApp */}
-              <a
-                href="https://wa.me/34600000000?text=Hola%2C%20quiero%20mi%20an%C3%A1lisis%20gratuito%20de%20Google"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group mt-10 flex items-center justify-between gap-4 rounded-2xl border border-[#E5E7EB] bg-white p-6 hover:border-primary/40 transition"
-              >
-                <span>
-                  <span className="font-heading text-[11px] tracking-[0.2em] uppercase text-primary">
-                    Prefieres hablarlo
-                  </span>
-                  <span className="mt-2 block font-heading font-semibold text-black text-lg leading-tight">
-                    Escríbenos por WhatsApp
-                  </span>
-                  <span className="mt-1 block text-[14px] font-body text-[#6B7280]">
-                    Respuesta directa en horario laboral
-                  </span>
-                </span>
-                <span className="shrink-0 w-11 h-11 rounded-full bg-primary text-primary-foreground grid place-items-center font-heading text-lg transition-transform group-hover:translate-x-1">
-                  →
-                </span>
-              </a>
-            </div>
-
-            <div className="lg:col-span-7 w-full">
-              <form
-                onSubmit={handleSubmit}
-                className="rounded-3xl border border-[#E5E7EB] bg-white p-6 md:p-10 space-y-5"
-              >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                  <div>
-                    <label className={labelCls}>Nombre *</label>
-                    <input
-                      required
-                      value={form.nombre}
-                      onChange={(e) => setForm({ ...form, nombre: e.target.value })}
-                      className={inputCls}
-                      placeholder="Tu nombre"
-                    />
-                  </div>
-                  <div>
-                    <label className={labelCls}>Negocio / sector *</label>
-                    <input
-                      required
-                      value={form.negocio}
-                      onChange={(e) => setForm({ ...form, negocio: e.target.value })}
-                      className={inputCls}
-                      placeholder="Nombre y actividad"
-                    />
-                  </div>
-                  <div>
-                    <label className={labelCls}>Ciudad *</label>
-                    <input
-                      required
-                      value={form.ciudad}
-                      onChange={(e) => setForm({ ...form, ciudad: e.target.value })}
-                      className={inputCls}
-                      placeholder="Tu ciudad"
-                    />
-                  </div>
-                  <div>
-                    <label className={labelCls}>Email *</label>
-                    <input
-                      required
-                      type="email"
-                      value={form.email}
-                      onChange={(e) => setForm({ ...form, email: e.target.value })}
-                      className={inputCls}
-                      placeholder="tucorreo@email.com"
-                    />
-                  </div>
-                  <div className="md:col-span-2">
-                    <label className={labelCls}>Teléfono</label>
-                    <input
-                      value={form.telefono}
-                      onChange={(e) => setForm({ ...form, telefono: e.target.value })}
-                      className={inputCls}
-                      placeholder="Para llamarte o escribirte por WhatsApp"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className={labelCls}>¿Tienes web ahora?</label>
-                  <div className="flex flex-wrap gap-3">
-                    {["Sí", "No", "Sí pero necesita mejoras"].map((opt) => (
-                      <label
-                        key={opt}
-                        className={`cursor-pointer rounded-full border px-4 py-2 text-[14px] font-body transition ${
-                          form.tieneWeb === opt
-                            ? "border-primary bg-primary text-primary-foreground"
-                            : "border-[#E5E7EB] bg-white text-[#4B5563] hover:border-[#D1D5DB]"
-                        }`}
-                      >
-                        <input
-                          type="radio"
-                          name="tieneWeb"
-                          value={opt}
-                          checked={form.tieneWeb === opt}
-                          onChange={(e) => setForm({ ...form, tieneWeb: e.target.value })}
-                          className="sr-only"
-                        />
-                        {opt}
-                      </label>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <label className={labelCls}>¿Qué quieres mejorar? (opcional)</label>
-                  <textarea
-                    value={form.mensaje}
-                    onChange={(e) => setForm({ ...form, mensaje: e.target.value })}
-                    rows={4}
-                    className={`${inputCls} resize-none`}
-                    placeholder="Ej. Conseguir más llamadas, aparecer en Google Maps, mejorar mi web..."
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full rounded-xl bg-primary text-primary-foreground px-6 py-4 font-heading text-[15px] font-medium shadow-[0_14px_40px_-18px_hsl(var(--primary))] hover:bg-primary/90 transition disabled:opacity-60"
-                >
-                  {loading ? "Enviando..." : "Solicitar análisis gratuito"}
-                </button>
-                <p className="text-center text-[13px] font-body text-[#6B7280]">
-                  🔒 Tus datos están seguros · Respuesta en menos de 24h
+          <div className="rounded-3xl bg-primary text-primary-foreground px-6 py-10 md:px-12 md:py-14 lg:px-16 shadow-[0_24px_60px_-28px_hsl(var(--primary))]">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+              <div className="lg:col-span-5">
+                <p className="inline-flex rounded-full bg-white/20 px-3 py-1 text-[11px] font-heading tracking-[0.18em] uppercase text-white">
+                  Solicitud
                 </p>
-              </form>
+                <h2 className="mt-6 font-heading font-semibold text-white text-3xl md:text-4xl leading-[1.08] tracking-tight">
+                  Cuéntanos dónde estás y te decimos{" "}
+                  <span className="text-[hsl(var(--dark-bg))]">qué está frenando tus llamadas</span>
+                </h2>
+                <p className="mt-6 text-base text-white leading-relaxed">
+                  Con estos datos revisamos tu ficha, tu web y las búsquedas locales de tu ciudad antes de
+                  contactarte. Recibirás un análisis concreto, con acciones priorizadas.
+                </p>
+
+                {/* CTA WhatsApp */}
+                <a
+                  href="https://wa.me/34644147310?text=Hola%2C%20quiero%20mi%20an%C3%A1lisis%20gratuito%20de%20Google"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group mt-10 flex items-center justify-between gap-4 rounded-2xl bg-white p-6 transition hover:shadow-[0_14px_40px_-18px_hsl(var(--dark-bg))]"
+                >
+                  <span>
+                    <span className="font-heading text-[11px] tracking-[0.2em] uppercase text-primary">
+                      Prefieres hablarlo
+                    </span>
+                    <span className="mt-2 block font-heading font-semibold text-warm-fg text-lg leading-tight">
+                      Escríbenos por WhatsApp
+                    </span>
+                    <span className="mt-1 block text-[14px] font-body text-warm-fg">
+                      Respuesta directa en horario laboral
+                    </span>
+                  </span>
+                  <span className="shrink-0 w-11 h-11 rounded-full bg-primary text-primary-foreground grid place-items-center font-heading text-lg transition-transform group-hover:translate-x-1">
+                    →
+                  </span>
+                </a>
+              </div>
+
+              <div className="lg:col-span-7 w-full">
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                      <label className={labelCls}>Nombre *</label>
+                      <input
+                        required
+                        value={form.nombre}
+                        onChange={(e) => setForm({ ...form, nombre: e.target.value })}
+                        className={inputCls}
+                        placeholder="Tu nombre"
+                      />
+                    </div>
+                    <div>
+                      <label className={labelCls}>Negocio / sector *</label>
+                      <input
+                        required
+                        value={form.negocio}
+                        onChange={(e) => setForm({ ...form, negocio: e.target.value })}
+                        className={inputCls}
+                        placeholder="Nombre y actividad"
+                      />
+                    </div>
+                    <div>
+                      <label className={labelCls}>Ciudad *</label>
+                      <input
+                        required
+                        value={form.ciudad}
+                        onChange={(e) => setForm({ ...form, ciudad: e.target.value })}
+                        className={inputCls}
+                        placeholder="Tu ciudad"
+                      />
+                    </div>
+                    <div>
+                      <label className={labelCls}>Email *</label>
+                      <input
+                        required
+                        type="email"
+                        value={form.email}
+                        onChange={(e) => setForm({ ...form, email: e.target.value })}
+                        className={inputCls}
+                        placeholder="tucorreo@email.com"
+                      />
+                    </div>
+                    <div className="md:col-span-2">
+                      <label className={labelCls}>Teléfono</label>
+                      <input
+                        value={form.telefono}
+                        onChange={(e) => setForm({ ...form, telefono: e.target.value })}
+                        className={inputCls}
+                        placeholder="Para llamarte o escribirte por WhatsApp"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className={labelCls}>¿Tienes web ahora?</label>
+                    <div className="flex flex-wrap gap-3">
+                      {["Sí", "No", "Sí pero necesita mejoras"].map((opt) => (
+                        <label
+                          key={opt}
+                          className={`cursor-pointer rounded-full px-4 py-2 font-heading text-[14px] transition ${
+                            form.tieneWeb === opt
+                              ? "bg-white text-primary border border-white"
+                              : "border border-white text-white hover:bg-white/10"
+                          }`}
+                        >
+                          <input
+                            type="radio"
+                            name="tieneWeb"
+                            value={opt}
+                            checked={form.tieneWeb === opt}
+                            onChange={(e) => setForm({ ...form, tieneWeb: e.target.value })}
+                            className="sr-only"
+                          />
+                          {opt}
+                        </label>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className={labelCls}>¿Qué quieres mejorar? (opcional)</label>
+                    <textarea
+                      value={form.mensaje}
+                      onChange={(e) => setForm({ ...form, mensaje: e.target.value })}
+                      rows={4}
+                      className={`${inputCls} resize-none`}
+                      placeholder="Ej. Conseguir más llamadas, aparecer en Google Maps, mejorar mi web..."
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={loading}
+                    className="w-full rounded-xl bg-[hsl(var(--dark-bg))] text-white px-6 py-4 font-heading text-base font-medium hover:bg-[hsl(var(--dark-bg))]/90 disabled:opacity-60 transition"
+                  >
+                    {loading ? "Enviando..." : "Solicitar análisis gratuito"}
+                  </button>
+                  <p className="text-center text-sm text-white/90">
+                    🔒 Tus datos están seguros · Respuesta en menos de 24h
+                  </p>
+                </form>
+              </div>
             </div>
           </div>
         </div>
@@ -334,14 +339,24 @@ const Contacto = () => {
               llamadas, solicitudes y clientes desde las búsquedas locales.
             </p>
           </div>
-          <div className="w-full rounded-2xl overflow-hidden border border-[#E5E7EB] shadow-[0_10px_40px_-30px_rgba(0,0,0,0.12)]">
-            <iframe
-              title="Mapa de Slocal"
-              src={MAP_EMBED}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="w-full h-[320px] md:h-[440px] border-0 block"
-            />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {mapas.map((m) => (
+              <div
+                key={m.name}
+                className="rounded-3xl bg-primary p-4 md:p-5 shadow-[0_14px_40px_-18px_hsl(var(--primary))]"
+              >
+                <h3 className="font-heading font-semibold text-xl text-white mb-4">{m.name}</h3>
+                <div className="rounded-2xl overflow-hidden bg-white">
+                  <iframe
+                    title={`Mapa de la ficha de Slocal en ${m.name}`}
+                    src={m.src}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="w-full h-[280px] md:h-[340px] border-0 block"
+                  />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
