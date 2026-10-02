@@ -49,6 +49,7 @@ export type SectorTemplateContent = {
   heroH1: ReactNode;           // <h1>...</h1>
   heroSubtitle: ReactNode;
   heroTrust: string[];
+  heroVisualAlt?: string;
 
   // Manifesto (H2)
   manifestoEyebrow: string;    // "— El punto de partida"
@@ -346,6 +347,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
         primaryCta={{ label: "Solicitar auditoría gratuita", to: c.heroPrimaryCtaTo ?? "/contacto" }}
         secondaryCta={{ label: "Ver cómo funciona", to: "/como-funciona" }}
         trustItems={c.heroTrust}
+        visualAlt={c.heroVisualAlt}
         curveClass="bg-white"
       />
 

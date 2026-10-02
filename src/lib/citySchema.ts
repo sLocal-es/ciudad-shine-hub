@@ -4,6 +4,9 @@ export const ORG_ID = "https://slocal.es/#organization";
 const SITE_ID = "https://slocal.es/#website";
 const OG_IMAGE = "https://storage.googleapis.com/gpt-engineer-file-uploads/at352BHsLgQVqWQciJfj2Ilzwdn1/social-images/social-1773311958891-1000001083.webp";
 
+// Actualizar solo cuando cambie el contenido real.
+export const SCHEMA_DATE_MODIFIED = "2026-10-02";
+
 export const organizationNode = {
   "@type": "Organization",
   "@id": ORG_ID,
@@ -33,6 +36,8 @@ export type CitySchemaOptions = {
   municipios: string[];
   dateModified: string;
   gbp?: { name: string; map: string };
+  includeZones?: boolean;
+  includeOfferCatalog?: boolean;
 };
 
 export const buildCitySchema = (
@@ -61,8 +66,8 @@ export const buildCitySchema = (
 
   const areaServed = [
     { "@type": "City", "@id": cityId, name, containedInPlace: { "@type": "AdministrativeArea", name: opts.province } },
-    ...city.barriosBusquedas.map(({ barrio }) => ({ "@type": "Place", name: `${barrio} (${name})`, containedInPlace: { "@id": cityId } })),
-    ...opts.municipios.map((m) => ({ "@type": "City", name: m, containedInPlace: { "@type": "AdministrativeArea", name: opts.province } })),
+    ...(opts.includeZones !== false ? city.barriosBusquedas.map(({ barrio }) => ({ "@type": "Place", name: `${barrio} (${name})`, containedInPlace: { "@id": cityId } })) : []),
+    ...(opts.includeZones !== false ? opts.municipios.map((m) => ({ "@type": "City", name: m, containedInPlace: { "@type": "AdministrativeArea", name: opts.province } })) : []),
   ];
 
   const graph: object[] = [
@@ -78,8 +83,8 @@ export const buildCitySchema = (
       provider: { "@id": opts.gbp ? localBusinessId : ORG_ID },
       areaServed,
       audience: { "@type": "Audience", audienceType: `Negocios y profesionales locales de ${name}` },
-      hasOfferCatalog: { "@type": "OfferCatalog", name: `Servicios de SEO local en ${name}`,
-        itemListElement: services.map(([n, d]) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: n, description: d } })) },
+      ...(opts.includeOfferCatalog !== false ? { hasOfferCatalog: { "@type": "OfferCatalog", name: `Servicios de SEO local en ${name}`,
+        itemListElement: services.map(([n, d]) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: n, description: d } })) } } : {}),
     },
   ];
 

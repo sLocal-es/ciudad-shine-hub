@@ -27,8 +27,6 @@ El SEO local requiere trabajo continuo mes a mes: los primeros resultados visibl
 
 ## Ciudades con página propia
 
-Cada página incluye barrios, municipios de la provincia, tipos de búsquedas locales, preguntas frecuentes y datos de cada mercado.
-
 - [SEO local en Madrid](https://slocal.es/seo-local-madrid): 3,4 millones de habitantes, competencia alta, plazo orientativo de 3 a 6 meses.
 - [SEO local en Barcelona](https://slocal.es/seo-local-barcelona): 1,6 millones de habitantes, competencia alta, plazo orientativo de 3 a 6 meses.
 - [SEO local en Valencia](https://slocal.es/seo-local-valencia): 800.000 habitantes, competencia media, plazo orientativo de 2 a 4 meses.

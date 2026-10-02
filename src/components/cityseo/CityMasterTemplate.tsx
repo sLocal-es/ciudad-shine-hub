@@ -4,7 +4,7 @@ import SectorMasterTemplate, { SectorTemplateContent } from "@/components/sector
 import { SeoLocalCity } from "@/data/seoLocalCities";
 import { ComoPosicionamosSectionProps } from "@/components/sector/ComoPosicionamosSection";
 import { QueIncluyeSectionProps } from "@/components/sector/QueIncluyeSection";
-import { buildCitySchema, CitySchemaOptions } from "@/lib/citySchema";
+import { buildCitySchema, CitySchemaOptions, SCHEMA_DATE_MODIFIED } from "@/lib/citySchema";
 
 /**
  * CityMasterTemplate
@@ -54,7 +54,7 @@ const CityMasterTemplate = ({
   comoPosicionamos,
   queIncluye,
   additionalFaq,
-  hideCase,
+  hideCase = true,
   casesBeforeAudit,
   auditoriaSectionId,
   auditoriaScrollMargin,
@@ -83,27 +83,15 @@ const CityMasterTemplate = ({
     ? [...defaultFaqs.slice(0, additionalFaq.index), additionalFaq.item, ...defaultFaqs.slice(additionalFaq.index)]
     : defaultFaqs;
   const seoTitle = `SEO Local en ${name} | Agencia SEO Local | slocal.es`;
-  const seoDescription = isValencia
-    ? "Agencia SEO Local en Valencia: Google Maps, Google Business Profile y visibilidad en ChatGPT, Gemini y AI Overviews para negocios locales."
-    : `Agencia SEO Local en ${name}: Google Business Profile, Google Maps y posicionamiento local para que tus clientes te encuentren primero en Google.`;
-
-  const breadcrumbSchema = { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
-    { "@type": "ListItem", position: 1, name: "Inicio", item: "https://slocal.es/" },
-    { "@type": "ListItem", position: 2, name: `SEO Local en ${name}`, item: url },
-  ]};
-  const faqSchema = { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) };
-  const serviceSchema = { "@context": "https://schema.org", "@type": "Service", name: `SEO Local en ${name}`, provider: { "@type": "LocalBusiness", name: "slocal.es", url: "https://slocal.es" }, areaServed: `${name}, España` };
-  const localBusinessSchema = { "@context": "https://schema.org", "@type": "LocalBusiness", name: "slocal.es", url, description: `SEO local para negocios en ${name}`, areaServed: isValencia ? { "@type": "City", name: "Valencia" } : `${name}, España`, ...(isValencia ? {
-    telephone: "+34644147310",
-    sameAs: [
-      "https://www.facebook.com/slocal.es",
-      "https://www.instagram.com/slocal.es/?hl=es",
-      "https://www.linkedin.com/company/slocal-es/",
-    ],
-  } : {}), priceRange: "€€", openingHoursSpecification: [
-    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday"], opens: "09:00", closes: "20:00" },
-    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Friday"], opens: "09:00", closes: "14:00" },
-  ]};
+  const seoDescription = `Agencia SEO Local en ${name}: Google Business Profile, Google Maps y posicionamiento local para que tus clientes te encuentren primero en Google.`;
+  const resolvedSchemaOptions: CitySchemaOptions = schemaOptions ?? {
+    province: city.provinceName,
+    municipios: city.municipios,
+    dateModified: SCHEMA_DATE_MODIFIED,
+    gbp: city.gbp,
+    includeZones: false,
+    includeOfferCatalog: isMadrid,
+  };
 
   const content: SectorTemplateContent = {
     seoTitle,
@@ -117,6 +105,7 @@ const CityMasterTemplate = ({
     heroH1: <h1>SEO Local en <span className="text-primary">{name}</span></h1>,
     heroSubtitle: <>Agencia SEO Local en {name}. Optimizamos tu ficha de Google Business Profile y tu web para que aparezcas primero cuando alguien busca tu servicio en {name}.</>,
     heroTrust: ["Google Partner", "Ficha de Google gestionada cada mes", "Auditoría inicial sin coste"],
+    heroVisualAlt: `Google Maps mostrando un negocio de ${name} posicionado en los primeros resultados de Google Business Profile`,
     manifestoEyebrow: "— El punto de partida",
     manifestoH2: <>¿Cómo conseguir <span className="text-primary">más clientes</span> desde Google en {name}?</>,
     manifestoBody: <>En Slocal{isCordoba && <>, <Link to="/" className="text-primary hover:underline">agencia SEO local</Link>,</>} conseguimos que más clientes contacten con tu negocio en {name} optimizando tu ficha de Google Business Profile y posicionando tu web para búsquedas locales de alta intención. {name} tiene {population} y una competencia digital {competition.toLowerCase()}: aparecer en el top 3 de Google Maps multiplica los contactos porque esos tres negocios se llevan la mayoría de las llamadas.</>,
@@ -194,14 +183,12 @@ const CityMasterTemplate = ({
       },
     ] : undefined,
     citiesH2: <>¿En qué otras <span className="text-primary">ciudades</span> trabaja Slocal?</>,
-    citiesBody: <>Slocal trabaja con negocios locales en toda España, con clientes activos en Madrid, Barcelona, Valencia, Sevilla, Málaga, Zaragoza, Bilbao y Murcia.</>,
+    citiesBody: <>Slocal trabaja con negocios locales de toda España y tiene páginas propias para Madrid, Barcelona, Valencia, Sevilla, Málaga, Zaragoza, Bilbao, Murcia y Córdoba.</>,
     otherSectorsH2: <>¿Con qué <span className="text-primary">sectores</span> trabaja Slocal en {name}?</>,
     otherSectorsBody: <>Trabajamos con fontaneros, abogados, dentistas, fisioterapeutas, psicólogos, gimnasios, inmobiliarias y empresas de reformas en {name}.</>,
     otherSectors: sectorChips,
     finalCtaTitle: `¿Quieres que tu negocio en ${name} reciba más contactos gracias a Google?`,
-    jsonLd: schemaOptions
-      ? [buildCitySchema(city, url, seoTitle, seoDescription, faqs, schemaOptions)]
-      : [breadcrumbSchema, faqSchema, serviceSchema, localBusinessSchema],
+    jsonLd: [buildCitySchema(city, url, seoTitle, seoDescription, faqs, resolvedSchemaOptions)],
     servicesCta,
     whyUsSection,
     afterHero,
