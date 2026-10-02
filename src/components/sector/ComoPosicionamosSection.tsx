@@ -36,6 +36,8 @@ const cardMeta = [
 ];
 
 export interface ComoPosicionamosSectionProps {
+  /** Hover naranja en las tarjetas (por defecto false) */
+  hoverAccent?: boolean;
   /** Sufijo del H2: "en Madrid" / "para fontaneros" */
   titleSuffix: string;
   /** Entradilla única de la página */
@@ -46,7 +48,7 @@ export interface ComoPosicionamosSectionProps {
   closing: string;
 }
 
-const ComoPosicionamosSection = ({ titleSuffix, intro, texts, closing }: ComoPosicionamosSectionProps) => (
+const ComoPosicionamosSection = ({ titleSuffix, intro, texts, closing, hoverAccent = false }: ComoPosicionamosSectionProps) => (
   <section className="bg-white py-24 md:py-32 border-t border-warm-fg/10">
     <div className="container">
       <div className="mx-auto max-w-4xl text-center">
@@ -58,14 +60,14 @@ const ComoPosicionamosSection = ({ titleSuffix, intro, texts, closing }: ComoPos
       </div>
       <div className="mt-16 space-y-8 md:space-y-10">
         {cardMeta.map((card, index) => (
-          <article key={card.eyebrow} className="overflow-hidden rounded-3xl border border-warm-fg/10 bg-white shadow-[0_20px_60px_-38px_rgba(0,0,0,0.18)]">
+          <article key={card.eyebrow} className={`overflow-hidden rounded-3xl border border-warm-fg/10 bg-white shadow-[0_20px_60px_-38px_rgba(0,0,0,0.18)]${hoverAccent ? " group transition-all duration-[250ms] hover:-translate-y-1 hover:border-primary hover:shadow-[0_20px_50px_-20px_hsl(var(--primary))]" : ""}`}>
             <div className="grid grid-cols-1 md:grid-cols-2 items-stretch">
-              <div className={`flex flex-col justify-center p-7 md:p-10 lg:p-12 ${index % 2 === 1 ? "md:order-2" : ""}`}>
-                <p className="font-heading text-[11px] tracking-[0.2em] uppercase text-primary">— {card.eyebrow}</p>
-                <h3 className="mt-5 font-heading font-semibold text-3xl md:text-4xl text-warm-fg leading-[1.12]">
-                  {card.title} <span className="text-primary">{card.highlight}</span>
+              <div className={`flex flex-col justify-center p-7 md:p-10 lg:p-12 ${index % 2 === 1 ? "md:order-2" : ""}${hoverAccent ? " transition-colors duration-[250ms] group-hover:bg-primary" : ""}`}>
+                <p className={`font-heading text-[11px] tracking-[0.2em] uppercase text-primary${hoverAccent ? " group-hover:text-white" : ""}`}>— {card.eyebrow}</p>
+                <h3 className={`mt-5 font-heading font-semibold text-3xl md:text-4xl text-warm-fg leading-[1.12]${hoverAccent ? " group-hover:text-white" : ""}`}>
+                  {card.title} <span className={`text-primary${hoverAccent ? " group-hover:text-[hsl(var(--dark-bg))]" : ""}`}>{card.highlight}</span>
                 </h3>
-                <p className="mt-5 font-body font-light text-base md:text-lg text-warm-fg/70 leading-relaxed">{texts[index]}</p>
+                <p className={`mt-5 font-body font-light text-base md:text-lg text-warm-fg/70 leading-relaxed${hoverAccent ? " group-hover:text-white group-hover:font-normal" : ""}`}>{texts[index]}</p>
               </div>
               <div className={`min-h-[260px] bg-warm-fg/[0.03] ${index % 2 === 1 ? "md:order-1" : ""}`}>
                 <img src={card.image} alt={card.alt} className="h-full w-full object-cover" loading="lazy" width={1200} height={800} decoding="async" />

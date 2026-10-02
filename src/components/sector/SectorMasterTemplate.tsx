@@ -97,6 +97,7 @@ export type SectorTemplateContent = {
   caseIntro: ReactNode;
   caseStages: { title: string; text: string; label: string }[]; // 3 items (label = placeholder text)
   caseKpis: { k: string; l: string }[];                         // 3 items
+  hideHow?: boolean;            // omit the "Cómo trabajamos" section
   hideCase?: boolean;           // omit the case-study section when no real data exists
 
   // Optional editorial block rendered right after "Cómo trabajamos"
@@ -481,6 +482,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       {c.otherSectorsAfterAudit && c.otherSectorsSection}
 
       {/* CÓMO TRABAJAMOS */}
+      {!c.hideHow && (
       <section className={sectionCls}>
         <div className="container">
           <div className="max-w-3xl">
@@ -538,6 +540,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
           </div>
         </div>
       </section>
+      )}
 
       {c.extraSection}
 

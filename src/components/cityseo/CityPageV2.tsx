@@ -208,16 +208,20 @@ const CityCoverageSection = ({ city }: { city: SeoLocalCity }) => (
       <h3 className="mt-14 font-heading text-xl text-warm-fg">Barrios de {city.name}</h3>
       <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {city.barriosBusquedas.map(({ barrio, busqueda }) => (
-          <article key={barrio} className="bg-white rounded-2xl border border-warm-fg/10 p-6 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] transition-all duration-[250ms] hover:-translate-y-1 hover:border-primary/40">
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary" aria-hidden>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+          <article key={barrio} className="group relative overflow-hidden rounded-3xl border border-warm-fg/10 bg-white p-7 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] transition-all duration-[250ms] hover:-translate-y-1 hover:border-primary hover:bg-primary">
+            <svg className="pointer-events-none absolute -right-5 -top-5 h-32 w-32 text-primary/10 transition-colors duration-[250ms] group-hover:text-white/15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" />
+                <circle cx="12" cy="10" r="2.5" />
+            </svg>
+            <span className="relative flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors duration-[250ms] group-hover:bg-white/20 group-hover:text-white">
+              <svg className="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                 <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" />
                 <circle cx="12" cy="10" r="2.5" />
               </svg>
             </span>
-            <h3 className="mt-5 font-heading font-semibold text-xl text-warm-fg">{barrio}</h3>
-            <p className="mt-5 font-heading text-[11px] tracking-[0.22em] uppercase text-primary">Búsqueda tipo</p>
-            <p className="mt-2 font-body font-light text-[15px] text-warm-fg/80">«{busqueda}»</p>
+            <h3 className="mt-6 font-heading font-semibold text-2xl text-warm-fg transition-colors group-hover:text-white">{barrio}</h3>
+            <p className="mt-5 font-heading text-[11px] tracking-[0.22em] uppercase text-primary transition-colors group-hover:text-white">Búsqueda tipo</p>
+            <div className="mt-2"><SearchBar>«{busqueda}»</SearchBar></div>
           </article>
         ))}
       </div>
@@ -409,6 +413,7 @@ const CityPageV2 = ({ city }: { city: SeoLocalCity }) => {
         },
       }}
       hideCase
+      hideHow
       casesBeforeAudit
       auditoriaSectionId="auditoria"
       auditoriaScrollMargin
