@@ -34,6 +34,7 @@ type CityMasterTemplateProps = {
   queIncluye?: QueIncluyeSectionProps;
   additionalFaq?: { item: { q: string; a: string }; index: number };
   hideCase?: boolean;
+  hideHow?: boolean;
   casesBeforeAudit?: boolean;
   auditoriaSectionId?: string;
   auditoriaScrollMargin?: boolean;
@@ -43,6 +44,9 @@ type CityMasterTemplateProps = {
   otherSectorsAfterAudit?: boolean;
   schemaOptions?: CitySchemaOptions;
 };
+
+const withHover = <T extends object>(v: T | undefined): (T & { hoverAccent: boolean }) | undefined =>
+  v ? { ...v, hoverAccent: true } : undefined;
 
 const CityMasterTemplate = ({
   city,
@@ -55,6 +59,7 @@ const CityMasterTemplate = ({
   queIncluye,
   additionalFaq,
   hideCase = true,
+  hideHow = false,
   casesBeforeAudit,
   auditoriaSectionId,
   auditoriaScrollMargin,
@@ -105,7 +110,7 @@ const CityMasterTemplate = ({
     heroH1: <h1>SEO Local en <span className="text-primary">{name}</span></h1>,
     heroSubtitle: <>Agencia SEO Local en {name}. Optimizamos tu ficha de Google Business Profile y tu web para que aparezcas primero cuando alguien busca tu servicio en {name}.</>,
     heroTrust: ["Google Partner", "Ficha de Google gestionada cada mes", "Auditoría inicial sin coste"],
-    heroVisualAlt: `Google Maps mostrando un negocio de ${name} posicionado en los primeros resultados de Google Business Profile`,
+    heroVisualAlt: `Ilustración de un móvil con Google Maps y una ficha de negocio local en primer lugar, con llamadas, reseñas y Top 3 en ${name}`,
     manifestoEyebrow: "— El punto de partida",
     manifestoH2: <>¿Cómo conseguir <span className="text-primary">más clientes</span> desde Google en {name}?</>,
     manifestoBody: <>En Slocal{isCordoba && <>, <Link to="/" className="text-primary hover:underline">agencia SEO local</Link>,</>} conseguimos que más clientes contacten con tu negocio en {name} optimizando tu ficha de Google Business Profile y posicionando tu web para búsquedas locales de alta intención. {name} tiene {population} y una competencia digital {competition.toLowerCase()}: aparecer en el top 3 de Google Maps multiplica los contactos porque esos tres negocios se llevan la mayoría de las llamadas.</>,
@@ -116,7 +121,7 @@ const CityMasterTemplate = ({
     webH3: <>Una web que <span className="text-primary">convierte</span> visitas en clientes</>,
     webBody: <>Mientras Google Business Profile genera la llamada, tu web convierte las visitas en contactos cualificados. Trabajamos páginas específicas por servicio y por barrio de {name}.</>,
     webFeatures: ["SEO Local", "Landing por servicio", "Landing por barrio", "Formularios optimizados", "WhatsApp", "Google Analytics"],
-    comoPosicionamos: comoPosicionamos ?? (isMadrid ? {
+    comoPosicionamos: withHover(comoPosicionamos ?? (isMadrid ? {
       titleSuffix: "en Madrid",
       intro: "En Madrid, la relevancia por servicio y barrio, la coherencia de los datos del negocio y una reputación local sólida determinan qué empresas compiten por las posiciones visibles de Google.",
       texts: [
@@ -125,8 +130,8 @@ const CityMasterTemplate = ({
         "Madrid tiene un volumen alto de búsquedas locales y una competencia digital alta. Trabajamos la obtención y respuesta de reseñas reales, su relación con los servicios prestados y la autoridad de la web para reforzar la confianza del usuario y la capacidad del negocio para competir en su zona.",
       ],
       closing: "La estrategia combina relevancia por barrio, datos coherentes y autoridad local para que Google identifique el negocio como una respuesta fiable dentro de Madrid.",
-    } : undefined),
-    queIncluye: queIncluye ?? (isMadrid ? {
+    } : undefined)),
+    queIncluye: withHover(queIncluye ?? (isMadrid ? {
       titleSuffix: "en Madrid",
       texts: [
         "Auditamos la ficha, la web y la visibilidad actual por zonas de Madrid. El diagnóstico compara categorías, servicios, contenido, reseñas, citaciones y competidores para detectar qué limita la presencia en Google Maps y en los resultados orgánicos.",
@@ -136,7 +141,7 @@ const CityMasterTemplate = ({
         "Corregimos y ampliamos las menciones del negocio en directorios locales y temáticos que aportan contexto. Mantener los mismos datos en estas fuentes refuerza la identidad de la empresa y su vinculación con Madrid ante los buscadores.",
         "El informe mensual reúne posiciones, llamadas, formularios y evolución de la ficha por las búsquedas trabajadas. En un mercado de competencia alta, estos datos permiten ajustar barrios, servicios y contenidos durante el plazo estimado de 3 a 6 meses sin depender de impresiones generales.",
       ],
-    } : undefined),
+    } : undefined)),
     auditoriaFormType: `auditoria_${slug}`,
     howH2: <>¿Cómo conseguimos que aparezcas <span className="text-primary">por delante</span> de tu competencia en {name}?</>,
     howIntro: <>En Slocal apareces primero en Google Maps en {name} optimizando tu ficha, servicios, reseñas y contenido local. Google prioriza fichas activas, con reseñas recientes y coherencia entre ficha, web y citaciones locales de la ciudad.</>,
@@ -156,6 +161,7 @@ const CityMasterTemplate = ({
     ],
     caseKpis: [{ k: "x3", l: "Contactos al mes" }, { k: "TOP 3", l: "Google Maps" }, { k: "x9", l: "Retorno de la inversión" }],
     hideCase,
+    hideHow,
     monthlyH2: <>¿Por qué el SEO Local en {name} necesita trabajo <span className="text-primary">mes a mes</span>?</>,
     monthlyBody: <>Porque Google no es una fotografía, es una competición continua. En {name} reforzamos cada mes tu ficha, reseñas y contenido para mantener las primeras posiciones.</>,
     monthlyReasons: [
