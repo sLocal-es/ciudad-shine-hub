@@ -150,6 +150,7 @@ const cities = [
   { name: "Zaragoza", slug: "zaragoza" },
   { name: "Bilbao", slug: "bilbao" },
   { name: "Murcia", slug: "murcia" },
+  { name: "Córdoba", slug: "cordoba" },
 ];
 
 const sectionCls = "bg-white py-24 md:py-32 border-t border-warm-fg/10";
@@ -232,7 +233,7 @@ export const AuditoriaLeadForm = ({ formType, compact = false, inline = false }:
             {loading ? "Enviando..." : "Quiero mi auditoría gratuita"}
           </button>
         </div>
-        <p className="pt-2 text-center text-[13px] font-body text-white/80 lg:text-right">
+        <p className="pt-2 text-center text-sm font-body text-white/90 lg:text-right">
           🔒 Tus datos están seguros. Te responderemos en menos de 24 horas.
         </p>
       </form>
