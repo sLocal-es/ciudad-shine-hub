@@ -93,7 +93,7 @@ const Contacto = () => {
 
   const labelCls = "font-heading text-[11px] tracking-[0.18em] uppercase text-white block mb-2";
   const inputCls =
-    "w-full rounded-xl bg-white text-warm-fg placeholder:text-warm-fg/60 rounded-xl px-4 py-3.5 text-[15px] font-body border border-transparent focus:ring-2 focus:ring-white/60 outline-hidden";
+    "w-full rounded-xl bg-white text-warm-fg placeholder:text-warm-fg/60 px-4 py-3.5 text-[15px] font-body border border-transparent focus:ring-2 focus:ring-white/60 outline-hidden";
 
   return (
     <>
