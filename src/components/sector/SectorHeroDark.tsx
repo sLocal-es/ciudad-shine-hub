@@ -16,6 +16,7 @@ interface SectorHeroDarkProps {
   trustItems?: string[];
   /** Tailwind bg-* class used for the curved bottom transition (should match the next section's background). */
   curveClass?: string;
+  visualAlt?: string;
 }
 
 /**
@@ -31,6 +32,7 @@ const SectorHeroDark = ({
   primaryCta = { label: "Empezar →", to: "/contacto" },
   secondaryCta = { label: "Ver cómo funciona", to: "/como-funciona" },
   curveClass = "bg-background",
+  visualAlt,
 }: SectorHeroDarkProps) => {
   const primaryClassName = "inline-flex items-center rounded-full bg-primary px-7 py-3.5 text-sm font-heading text-primary-foreground transition-colors hover:bg-primary/90";
 
@@ -99,7 +101,7 @@ const SectorHeroDark = ({
             </div>
           </div>
                     <div className="relative z-10 md:col-span-6 lg:col-span-5 flex justify-end">
-            <HeroVisual />
+            <HeroVisual alt={visualAlt} />
           </div>
         </div>
       </div>
