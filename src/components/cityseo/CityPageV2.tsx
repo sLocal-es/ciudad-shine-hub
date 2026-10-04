@@ -105,10 +105,10 @@ const CityManifestoSection = ({ city }: { city: SeoLocalCity }) => (
 
       <div className="mt-10 max-w-4xl">
         <p className="font-heading font-semibold text-xl md:text-2xl text-warm-fg leading-snug">
-          En Slocal conseguimos que más clientes contacten con tu negocio en {city.name} optimizando tu ficha de Google Business Profile y posicionando tu web para búsquedas locales de alta intención.
+          En Slocal, <Link to="/" className="text-primary hover:underline">agencia SEO local</Link>, conseguimos que más clientes contacten con tu negocio en {city.name} optimizando tu ficha de Google Business Profile y posicionando tu web para búsquedas locales de alta intención.
         </p>
         <p className="mt-7 border-l-4 border-primary pl-5 text-base leading-relaxed text-warm-fg md:pl-6 md:text-lg">
-          {city.name} tiene {city.population} y una competencia digital {city.competition.toLowerCase()}: aparecer en el <span className="text-primary font-semibold">top 3 de Google Maps</span> multiplica los contactos porque esos tres negocios se llevan la mayoría de las llamadas.
+          En {city.name} hay más de {city.empresasActivas} empresas activas (INE, 2025): aparecer en el <span className="text-primary font-semibold">top 3 de Google Maps</span> multiplica los contactos porque esos tres negocios se llevan la mayoría de las llamadas.
         </p>
         <div className="mt-7 flex items-start gap-3 rounded-xl bg-primary/10 px-4 py-3 text-[15px] leading-relaxed text-warm-fg">
           <svg className="mt-0.5 h-5 w-5 shrink-0 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -215,8 +215,8 @@ const CityCoverageSection = ({ city }: { city: SeoLocalCity }) => (
             </svg>
             <span className="relative flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors duration-[250ms] group-hover:bg-white/20 group-hover:text-white">
               <svg className="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" />
-                <circle cx="12" cy="10" r="2.5" />
+                <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" fill="currentColor" />
+                <circle cx="12" cy="10" r="2.5" className="fill-white group-hover:fill-primary" stroke="none" />
               </svg>
             </span>
             <h3 className="mt-6 font-heading font-semibold text-2xl text-warm-fg transition-colors group-hover:text-white">{barrio}</h3>

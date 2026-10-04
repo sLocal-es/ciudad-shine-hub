@@ -2,6 +2,8 @@ export interface SeoLocalCity {
   slug: string;
   name: string;
   population: string;
+  /** INE, DIRCE 1-ene-2025, empresas del municipio, redondeado a miles hacia abajo */
+  empresasActivas: string;
   competition: string;
   plazo: string;
   mapQuery: string;
@@ -21,6 +23,7 @@ export const seoLocalCities: Record<string, SeoLocalCity> = {
     slug: "madrid",
     name: "Madrid",
     population: "3,4 millones de habitantes",
+    empresasActivas: "297.000",
     competition: "Alta",
     plazo: "3-6 meses",
     mapQuery: "Madrid, España",
@@ -47,6 +50,7 @@ export const seoLocalCities: Record<string, SeoLocalCity> = {
     slug: "barcelona",
     name: "Barcelona",
     population: "1,6 millones de habitantes",
+    empresasActivas: "174.000",
     competition: "Alta",
     plazo: "3-6 meses",
     mapQuery: "Barcelona, España",
@@ -71,6 +75,7 @@ export const seoLocalCities: Record<string, SeoLocalCity> = {
     slug: "valencia",
     name: "Valencia",
     population: "800.000 habitantes",
+    empresasActivas: "70.000",
     competition: "Media",
     plazo: "2-4 meses",
     mapQuery: "Valencia, España",
@@ -95,6 +100,7 @@ export const seoLocalCities: Record<string, SeoLocalCity> = {
     slug: "sevilla",
     name: "Sevilla",
     population: "690.000 habitantes",
+    empresasActivas: "49.000",
     competition: "Media",
     plazo: "2-4 meses",
     mapQuery: "Sevilla, España",
@@ -121,6 +127,7 @@ export const seoLocalCities: Record<string, SeoLocalCity> = {
     slug: "malaga",
     name: "Málaga",
     population: "580.000 habitantes",
+    empresasActivas: "43.000",
     competition: "Media-baja",
     plazo: "2-3 meses",
     mapQuery: "Málaga, España",
@@ -145,6 +152,7 @@ export const seoLocalCities: Record<string, SeoLocalCity> = {
     slug: "zaragoza",
     name: "Zaragoza",
     population: "680.000 habitantes",
+    empresasActivas: "42.000",
     competition: "Media-baja",
     plazo: "2-3 meses",
     mapQuery: "Zaragoza, España",
@@ -169,6 +177,7 @@ export const seoLocalCities: Record<string, SeoLocalCity> = {
     slug: "bilbao",
     name: "Bilbao",
     population: "350.000 habitantes",
+    empresasActivas: "25.000",
     competition: "Baja",
     plazo: "2-3 meses",
     mapQuery: "Bilbao, España",
@@ -193,6 +202,7 @@ export const seoLocalCities: Record<string, SeoLocalCity> = {
     slug: "murcia",
     name: "Murcia",
     population: "460.000 habitantes",
+    empresasActivas: "32.000",
     competition: "Baja",
     plazo: "2-3 meses",
     mapQuery: "Murcia, España",
@@ -217,6 +227,7 @@ export const seoLocalCities: Record<string, SeoLocalCity> = {
     slug: "cordoba",
     name: "Córdoba",
     population: "325.000 habitantes",
+    empresasActivas: "21.000",
     competition: "Baja",
     plazo: "2-3 meses",
     mapQuery: "Córdoba, España",
