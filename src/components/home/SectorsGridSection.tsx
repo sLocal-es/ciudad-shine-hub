@@ -37,10 +37,12 @@ const SectorsGridSection = () => (
           const SectorIcon = s.icon;
           return (
             <article key={s.to} className="group flex flex-col items-center text-center">
-              <SectorIcon className="h-10 w-10 text-warm-fg/65 transition-colors duration-200 group-hover:text-primary" strokeWidth={1.35} aria-hidden />
+              <span className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors duration-200 group-hover:bg-primary group-hover:text-white" aria-hidden>
+                <SectorIcon className="h-8 w-8" strokeWidth={1.6} aria-hidden />
+              </span>
               <h3 className="mt-6 font-heading text-lg font-semibold text-warm-fg">
                 <Link to={s.to} className="transition-colors duration-200 hover:text-primary">
-                  {s.label}
+                  SEO para <span className="text-primary">{s.label.replace(/^SEO para /, "")}</span>
                 </Link>
               </h3>
               <p className="mt-3 max-w-[34ch] font-body text-[15px] font-light leading-relaxed text-warm-fg/65">
