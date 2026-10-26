@@ -43,6 +43,8 @@ type CityMasterTemplateProps = {
   otherSectorsSection?: ReactNode;
   otherSectorsAfterAudit?: boolean;
   schemaOptions?: CitySchemaOptions;
+  seoTitleOverride?: string;
+  heroSubtitleOverride?: ReactNode;
 };
 
 const withHover = <T extends object>(v: T | undefined): (T & { hoverAccent: boolean }) | undefined =>
@@ -68,6 +70,8 @@ const CityMasterTemplate = ({
   otherSectorsSection,
   otherSectorsAfterAudit,
   schemaOptions,
+  seoTitleOverride,
+  heroSubtitleOverride,
 }: CityMasterTemplateProps) => {
   const { name, slug, population, competition, plazo } = city;
   const url = `https://slocal.es/seo-local-${slug}`;
@@ -86,7 +90,7 @@ const CityMasterTemplate = ({
   const faqs = additionalFaq
     ? [...defaultFaqs.slice(0, additionalFaq.index), additionalFaq.item, ...defaultFaqs.slice(additionalFaq.index)]
     : defaultFaqs;
-  const seoTitle = `SEO Local en ${name} | Agencia SEO Local | slocal.es`;
+  const seoTitle = seoTitleOverride ?? `SEO Local en ${name} | Agencia SEO Local | slocal.es`;
   const seoDescription = `Agencia SEO Local en ${name}: Google Business Profile, Google Maps y posicionamiento local para que tus clientes te encuentren primero en Google.`;
   const resolvedSchemaOptions: CitySchemaOptions = schemaOptions ?? {
     province: city.provinceName,
@@ -107,7 +111,7 @@ const CityMasterTemplate = ({
     clientWord: "clientes",
     heroEyebrow: `Agencia SEO Local · ${name}`,
     heroH1: <h1>SEO Local en <span className="text-primary">{name}</span></h1>,
-    heroSubtitle: <>Agencia SEO Local en {name}. Optimizamos tu ficha de Google Business Profile y tu web para que aparezcas primero cuando alguien busca tu servicio en {name}.</>,
+    heroSubtitle: heroSubtitleOverride ?? <>Agencia SEO Local en {name}. Optimizamos tu ficha de Google Business Profile y tu web para que aparezcas primero cuando alguien busca tu servicio en {name}.</>,
     heroTrust: ["Google Partner", "Ficha de Google gestionada cada mes", "Auditoría inicial sin coste"],
     heroVisualAlt: `Ilustración de un móvil con Google Maps y una ficha de negocio local en primer lugar, con llamadas, reseñas y Top 3 en ${name}`,
     manifestoEyebrow: "— El punto de partida",
