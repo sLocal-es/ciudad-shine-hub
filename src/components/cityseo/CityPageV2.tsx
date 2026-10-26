@@ -372,7 +372,29 @@ const CityMobileAuditButton = () => {
   );
 };
 
-const CityPageV2 = ({ city }: { city: SeoLocalCity }) => {
+export const SevillaPosicionamientoSection = () => (
+  <section className="bg-white py-24 md:py-32 border-t border-warm-fg/10">
+    <div className="container">
+      <h2 className="font-heading font-semibold text-warm-fg leading-[1.05] tracking-tight text-4xl md:text-5xl lg:text-6xl max-w-[22ch]">
+        Posicionamiento SEO en Sevilla
+      </h2>
+      <div className="mt-10 max-w-4xl space-y-6 text-base leading-relaxed text-warm-fg md:text-lg">
+        <p>Como <Link to="/" className="text-primary hover:underline">agencia de SEO local</Link>, también nos ocupamos del posicionamiento SEO en Sevilla de tu negocio: conseguimos que aparezca en Google Maps y en los resultados de búsqueda cuando un cliente de la ciudad busca tu servicio.</p>
+        <p>El posicionamiento SEO en Sevilla se trabaja en dos frentes. La ficha de Google Business Profile determina tu presencia en Google Maps. El posicionamiento web de tu página, con contenido y páginas por servicio y por zona, determina en qué resultados orgánicos apareces. Una agencia SEO en Sevilla debe coordinar ambos para que la ficha y la web se refuercen entre sí.</p>
+        <p>Trabajamos el posicionamiento SEO en Sevilla para las búsquedas con las que un cliente decide contratar, como «abogado en Nervión», «clínica dental Los Remedios», «reformas en San Pablo» o «psicólogo en Bellavista Sevilla». Cada una combina un servicio con una zona de la ciudad, por eso cada servicio y cada barrio necesitan su propia página para posicionar.</p>
+      </div>
+    </div>
+  </section>
+);
+
+type CityPageV2Props = {
+  city: SeoLocalCity;
+  seoTitleOverride?: string;
+  heroSubtitleOverride?: ReactNode;
+  afterManifestoBefore?: ReactNode;
+};
+
+const CityPageV2 = ({ city, seoTitleOverride, heroSubtitleOverride, afterManifestoBefore }: CityPageV2Props) => {
   const compactTimeframe = city.plazo.replace(/\s*meses?$/i, "");
   const proseTimeframe = city.plazo.replace("-", " a ");
 
@@ -382,7 +404,9 @@ const CityPageV2 = ({ city }: { city: SeoLocalCity }) => {
       city={city}
       afterHero={<><HeroAuditBand city={city} /><GuaranteeStrip /></>}
       manifestoSection={<CityManifestoSection city={city} />}
-      afterManifesto={<WhyLocalSeoSection city={city} compactTimeframe={compactTimeframe} />}
+      seoTitleOverride={seoTitleOverride}
+      heroSubtitleOverride={heroSubtitleOverride}
+      afterManifesto={afterManifestoBefore ? <>{afterManifestoBefore}<WhyLocalSeoSection city={city} compactTimeframe={compactTimeframe} /></> : <WhyLocalSeoSection city={city} compactTimeframe={compactTimeframe} />}
       comoPosicionamos={{
         titleSuffix: `con SEO local en ${city.name}`,
         intro: `En ${city.name}, la relevancia por servicio y zona, la coherencia de los datos del negocio y una reputación local sólida determinan qué empresas compiten por las posiciones visibles de Google.`,
