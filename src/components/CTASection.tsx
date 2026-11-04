@@ -5,10 +5,17 @@ interface CTASectionProps {
   buttonText?: string;
   buttonTo?: string;
   id?: string;
+  gradient?: boolean;
 }
 
-const CTASection = ({ title, buttonText = "Hablemos →", buttonTo = "/contacto", id }: CTASectionProps) => (
-  <section id={id} className="bg-primary py-16">
+const ORANGE_GRADIENT = "linear-gradient(135deg, hsl(18 82% 54%) 0%, hsl(12 80% 42%) 100%)";
+
+const CTASection = ({ title, buttonText = "Hablemos →", buttonTo = "/contacto", id, gradient = false }: CTASectionProps) => (
+  <section
+    id={id}
+    className={gradient ? "py-14 md:py-16" : "bg-primary py-16"}
+    style={gradient ? { backgroundImage: ORANGE_GRADIENT } : undefined}
+  >
     <div className="container text-center">
       <h2 className="font-heading text-2xl md:text-3xl text-primary-foreground mb-6">{title}</h2>
       {buttonTo.startsWith("#") ? (

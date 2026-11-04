@@ -646,7 +646,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       {/* CASO REAL */}
       {!c.hideCase && (
       <section id="caso-real" className={sec("bg-white")}>
-        <div className={`${wrap} max-w-6xl`}>
+        <div className={R ? wrap : `${wrap} max-w-6xl`}>
           <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1.5 text-[11px] font-heading tracking-[0.18em] uppercase text-primary mb-6">
             Caso real
           </span>
