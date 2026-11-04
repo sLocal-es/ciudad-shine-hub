@@ -870,7 +870,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
           <h2 className={`font-heading font-semibold text-warm-fg ${R ? h2Size : "text-3xl md:text-4xl lg:text-5xl"} leading-[1.05] tracking-tight ${h2Max} mb-4`}>
             {c.citiesH2}
           </h2>
-          <p className={`text-base font-body text-warm-fg leading-relaxed max-w-2xl ${R ? "mb-6" : "mb-6"}`}>{c.citiesBody}</p>
+          <p className="text-base font-body text-warm-fg leading-relaxed mb-6 max-w-2xl">{c.citiesBody}</p>
           <CoberturaMapas />
           <div className="flex flex-wrap gap-2.5">
             {cities.map((city) => (
