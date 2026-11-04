@@ -679,6 +679,16 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       </section>
       )}
 
+      {R && !c.hideHow && (
+        <ConversionBanner
+          title="Empieza por la auditoría"
+          sub="Revisamos tu ficha de Google, tu web y a tu competencia directa."
+          cta="Solicitar auditoría gratuita"
+          to={c.heroPrimaryCtaTo ?? "/contacto"}
+          variant="dark"
+        />
+      )}
+
       {c.extraSection}
 
       {c.whyUsSection}
@@ -747,19 +757,13 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       )}
 
       {R && !c.hideCase && (
-      <div className="bg-white py-10">
-        <div className={wrap}>
-          <div className="rounded-2xl px-6 py-8 md:px-10 md:py-9 flex flex-col md:flex-row md:items-center md:justify-between gap-6" style={{ backgroundImage: ORANGE_GRADIENT }}>
-            <div>
-              <p className="font-heading text-xl md:text-2xl font-semibold text-white">Pide tu auditoría gratuita</p>
-              <p className="mt-1 text-sm text-white/85">Auditoría inicial sin coste · Respuesta en menos de 24 horas</p>
-            </div>
-            <Link to={c.heroPrimaryCtaTo ?? "/contacto"} className="inline-flex items-center rounded-full bg-white px-7 py-3.5 text-sm font-heading font-medium text-primary transition-colors hover:bg-white/90">
-              Solicitar auditoría gratuita
-            </Link>
-          </div>
-        </div>
-      </div>
+        <ConversionBanner
+          title="Este resultado empieza con una auditoría"
+          sub="Cuéntanos tu caso y vemos qué puede hacer Slocal por tu negocio."
+          cta="Hablar con Slocal"
+          to="/contacto"
+          variant="gradient"
+        />
       )}
 
       <ElfsightReviews className={R ? "bg-white py-16 md:py-20" : sectionCls} verifiedReviews={c.verifiedReviews} />
