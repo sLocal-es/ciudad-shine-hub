@@ -24,7 +24,7 @@ import reporteMensualImage from "@/assets/home/reporte-mensual.webp";
 import resenasProAsset from "@/assets/servicios/resenas-google-pro-v2.webp.asset.json";
 import googleAdsAsset from "@/assets/servicios/google-ads.webp.asset.json";
 
-const sectionCls = "bg-white py-24 md:py-32 border-t border-warm-fg/10";
+const sectionCls = "py-16 md:py-20";
 
 const iconProps = {
   width: 20,
@@ -267,8 +267,8 @@ const Home = () => {
       </div>
 
       {/* ¿QUÉ ES EL SEO LOCAL? */}
-      <section className={sectionCls}>
-        <div className="container">
+      <section className={`${sectionCls} bg-white`}>
+        <div className="mx-auto w-full max-w-[1200px] px-6">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 lg:gap-20 items-center">
             <div className="md:col-span-7">
               <div className="w-full rounded-3xl overflow-hidden border border-warm-fg/10 bg-white shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)]">
@@ -282,8 +282,8 @@ const Home = () => {
               </div>
             </div>
             <div className="md:col-span-5">
-              <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-5">— Concepto clave</p>
-              <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-5xl leading-[1.1] tracking-tight mb-6">
+              <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-warm-fg mb-5"><span className="h-2 w-2 rounded-full bg-primary" />Concepto clave</p>
+              <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight mb-6">
                 ¿Qué es el SEO local?
               </h2>
               <p className="text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed">
@@ -326,65 +326,57 @@ const Home = () => {
       />
 
       {/* CÓMO POSICIONAMOS */}
-      <section className={sectionCls}>
-        <div className="container">
+      <section className={`${sectionCls} bg-white`}>
+        <div className="mx-auto w-full max-w-[1200px] px-6">
           <div className="mx-auto max-w-4xl text-center">
-            <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Nuestro método</p>
-            <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight">
+            <div className="flex justify-center"><p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-warm-fg mb-6"><span className="h-2 w-2 rounded-full bg-primary" />Nuestro método</p></div>
+            <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight">
               ¿Cómo posicionamos tu negocio en los <span className="text-primary">primeros puestos de Google</span>?
             </h2>
-            <p className="mt-8 text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed">
+            <p className="mt-4 text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed">
               No es magia ni es cuestión de suerte: Google decide qué negocio muestra primero según tres cosas — que tu ficha y tu web coincidan con lo que la persona está buscando, que estés cerca de quien busca, y la confianza que Google tiene en tu negocio según reseñas y consistencia de tus datos. Sobre la distancia no podemos hacer nada, pero sobre las otras dos trabajamos a fondo:
             </p>
           </div>
-          <div className="mt-16 space-y-8 md:space-y-10">
-            {positioningFactors.map((factor, index) => (
-              <article key={factor.eyebrow} className="overflow-hidden rounded-3xl border border-warm-fg/10 bg-white shadow-[0_20px_60px_-38px_rgba(0,0,0,0.18)]">
-                <div className="grid grid-cols-1 md:grid-cols-2 items-stretch">
-                  <div className={`flex flex-col justify-center p-7 md:p-10 lg:p-12 ${index % 2 === 1 ? "md:order-2" : ""}`}>
-                    <p className="font-heading text-[11px] tracking-[0.2em] uppercase text-primary">— {factor.eyebrow}</p>
-                    <h3 className="mt-5 font-heading font-semibold text-3xl md:text-4xl text-warm-fg leading-[1.12]">{factor.title}</h3>
-                    <p className="mt-5 font-body font-light text-base md:text-lg text-warm-fg/70 leading-relaxed">{factor.text}</p>
-                  </div>
-                  <div className={`min-h-[260px] bg-warm-fg/[0.03] ${index % 2 === 1 ? "md:order-1" : ""}`}>
-                    <img src={factor.image} alt={factor.alt} className="h-full w-full object-cover" loading="lazy" width={1200} height={800} decoding="async" />
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 mt-10">
+            {positioningFactors.map((item) => (
+              <article key={item.eyebrow} className="rounded-2xl overflow-hidden flex flex-col bg-white border border-primary/15 shadow-[0_14px_40px_-24px_hsl(var(--primary)/0.4)]">
+                <img src={item.image} alt={item.alt} className="aspect-[16/10] w-full object-cover" loading="lazy" width={1200} height={800} decoding="async" />
+                <div className="p-6">
+                  <p className="font-heading text-[11px] tracking-[0.2em] uppercase text-primary">{item.eyebrow}</p>
+                  <h3 className="mt-3 font-heading font-semibold text-xl md:text-[22px] leading-tight text-warm-fg">{item.title}</h3>
+                  <p className="mt-3 font-body font-light text-sm leading-relaxed text-warm-fg/70">{item.text}</p>
                 </div>
               </article>
             ))}
           </div>
-          <p className="mt-12 mx-auto max-w-4xl text-center font-heading text-lg md:text-xl text-warm-fg leading-relaxed">
+          <p className="mt-10 mx-auto max-w-4xl text-center font-heading text-base md:text-lg text-warm-fg leading-relaxed">
             Trabajamos estos tres frentes a la vez porque Google no premia a quien hace uno bien, sino a quien no falla en ninguno.
           </p>
         </div>
       </section>
 
       {/* QUÉ INCLUYE */}
-      <section className={sectionCls}>
-        <div className="container">
+      <section className={`${sectionCls} bg-dark-bg`}>
+        <div className="mx-auto w-full max-w-[1200px] px-6">
           <div className="mx-auto max-w-4xl text-center">
-            <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Servicio base</p>
-            <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight">
+            <div className="flex justify-center"><p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-transparent px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-white mb-6"><span className="h-2 w-2 rounded-full bg-primary" />Servicio base</p></div>
+            <h2 className="font-heading font-semibold text-white text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight">
               Qué incluye nuestro servicio de <span className="text-primary">SEO Local</span>
             </h2>
           </div>
-          <div className="mt-16 space-y-8 md:space-y-10">
-            {includedServices.map((service, index) => (
-              <article key={service.eyebrow} className="overflow-hidden rounded-3xl border border-warm-fg/10 bg-white shadow-[0_20px_60px_-38px_rgba(0,0,0,0.18)]">
-                <div className="grid grid-cols-1 md:grid-cols-2 items-stretch">
-                  <div className={`flex flex-col justify-center p-7 md:p-10 lg:p-12 ${index % 2 === 1 ? "md:order-2" : ""}`}>
-                    <p className="font-heading text-[11px] tracking-[0.2em] uppercase text-primary">— {service.eyebrow}</p>
-                    <h3 className="mt-5 font-heading font-semibold text-3xl md:text-4xl text-warm-fg leading-[1.12]">{service.title}</h3>
-                    <p className="mt-5 font-body font-light text-base md:text-lg text-warm-fg/70 leading-relaxed">{service.text}</p>
-                  </div>
-                  <div className={`min-h-[260px] bg-warm-fg/[0.03] ${index % 2 === 1 ? "md:order-1" : ""}`}>
-                    <img src={service.image} alt={service.alt} className="h-full w-full object-cover" loading="lazy" width={1200} height={800} decoding="async" />
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 mt-10">
+            {includedServices.map((item) => (
+              <article key={item.eyebrow} className="rounded-2xl overflow-hidden flex flex-col bg-white/[0.06] border border-white/10">
+                <img src={item.image} alt={item.alt} className="aspect-[16/10] w-full object-cover" loading="lazy" width={1200} height={800} decoding="async" />
+                <div className="p-6">
+                  <p className="font-heading text-[11px] tracking-[0.2em] uppercase text-primary">{item.eyebrow}</p>
+                  <h3 className="mt-3 font-heading font-semibold text-xl md:text-[22px] leading-tight text-white">{item.title}</h3>
+                  <p className="mt-3 font-body font-light text-sm leading-relaxed text-white/70">{item.text}</p>
                 </div>
               </article>
             ))}
           </div>
-          <p className="mt-8 mx-auto max-w-4xl text-center text-sm md:text-[15px] font-body text-warm-fg/60 leading-relaxed">
+          <p className="mt-8 mx-auto max-w-4xl text-center text-sm md:text-[15px] font-body text-white/60 leading-relaxed">
             El posicionamiento GEO forma parte del SEO Local: estructuramos el contenido de tu ficha y tu web para que ChatGPT, Gemini y AI Overviews puedan entender y citar tu negocio. No es un servicio independiente.
           </p>
         </div>
@@ -395,15 +387,15 @@ const Home = () => {
         sub="Ficha, web, reseñas y reporte mensual con precio fijo mensual."
         cta="Solicitar auditoría gratuita"
         to="/contacto"
-        variant="dark"
+        variant="gradient"
       />
 
       {/* SERVICIOS COMPLEMENTARIOS */}
-      <section className={sectionCls}>
-        <div className="container">
+      <section className={`${sectionCls} bg-primary/[0.10]`}>
+        <div className="mx-auto w-full max-w-[1200px] px-6">
           <div className="mx-auto max-w-4xl text-center">
-            <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Servicios complementarios</p>
-            <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight">
+            <div className="flex justify-center"><p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-warm-fg mb-6"><span className="h-2 w-2 rounded-full bg-primary" />Servicios complementarios</p></div>
+            <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight">
               Cómo acelerarlo o complementarlo
             </h2>
             <p className="mt-7 text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed">
@@ -417,15 +409,15 @@ const Home = () => {
       </section>
 
       {/* POR QUÉ SLOCAL */}
-      <section className={sectionCls}>
-        <div className="container">
+      <section className={`${sectionCls} bg-white`}>
+        <div className="mx-auto w-full max-w-[1200px] px-6">
           <div className="mx-auto max-w-4xl text-center">
-            <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Una agencia especializada</p>
-            <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight">Por qué Slocal</h2>
+            <div className="flex justify-center"><p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-warm-fg mb-6"><span className="h-2 w-2 rounded-full bg-primary" />Una agencia especializada</p></div>
+            <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight">Por qué Slocal</h2>
           </div>
           <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6">
             {whySlocal.map(([title, text], index) => (
-              <article key={title} className="bg-white border border-warm-fg/10 rounded-2xl p-7 md:p-9">
+              <article key={title} className="bg-white border border-primary/15 rounded-2xl p-7 md:p-9">
                 <div className="flex items-start gap-5">
                   <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground font-heading text-sm">{index + 1}</span>
                   <div>
@@ -444,20 +436,20 @@ const Home = () => {
         sub="Te decimos con sinceridad si el SEO Local encaja contigo."
         cta="Solicitar consulta"
         to="/contacto"
-        variant="gradient"
+        variant="dark"
       />
 
       {/* ENCAJE */}
-      <section className={sectionCls}>
-        <div className="container">
+      <section className={`${sectionCls} bg-primary/[0.10]`}>
+        <div className="mx-auto w-full max-w-[1200px] px-6">
           <div className="mx-auto max-w-4xl text-center">
-            <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Antes de empezar</p>
-            <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight">
+            <div className="flex justify-center"><p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-warm-fg mb-6"><span className="h-2 w-2 rounded-full bg-primary" />Antes de empezar</p></div>
+            <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight">
               ¿Es Slocal la agencia adecuada para tu negocio?
             </h2>
           </div>
           <div className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-            <article className="rounded-2xl border border-primary/35 bg-primary/5 p-7 md:p-10">
+            <article className="rounded-2xl border border-primary/35 bg-white p-7 md:p-10">
               <div className="flex items-center gap-4">
                 <span className="text-primary text-3xl leading-none" aria-hidden>✓</span>
                 <h3 className="font-heading font-semibold text-2xl text-warm-fg">¿Para quién sí es este servicio?</h3>
@@ -467,7 +459,7 @@ const Home = () => {
                 {fitFor.map((item) => <li key={item} className="flex items-start gap-3 font-body text-warm-fg/75 leading-relaxed"><span className="mt-1 text-primary" aria-hidden>✓</span><span>{item}</span></li>)}
               </ul>
             </article>
-            <article className="rounded-2xl border border-warm-fg/20 bg-warm-fg/[0.03] p-7 md:p-10">
+            <article className="rounded-2xl border border-warm-fg/20 bg-white p-7 md:p-10">
               <div className="flex items-center gap-4">
                 <span className="text-warm-fg text-3xl leading-none" aria-hidden>×</span>
                 <h3 className="font-heading font-semibold text-2xl text-warm-fg">¿Para quién no es?</h3>
@@ -482,11 +474,11 @@ const Home = () => {
       </section>
 
       {/* COMPARATIVA */}
-      <section className={sectionCls}>
-        <div className="container">
+      <section className={`${sectionCls} bg-white`}>
+        <div className="mx-auto w-full max-w-[1200px] px-6">
           <div className="mx-auto max-w-4xl text-center">
-            <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Diferencias clave</p>
-            <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight">SEO tradicional vs SEO Local</h2>
+            <div className="flex justify-center"><p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-warm-fg mb-6"><span className="h-2 w-2 rounded-full bg-primary" />Diferencias clave</p></div>
+            <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight">SEO tradicional vs SEO Local</h2>
           </div>
           <div className="mt-14 overflow-hidden rounded-2xl border border-warm-fg/10">
             <table className="w-full table-fixed border-collapse text-left">
@@ -521,18 +513,18 @@ const Home = () => {
       </section>
 
       {/* DOLOR */}
-      <section className={sectionCls}>
-        <div className="container">
-          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— El problema</p>
-          <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-14 max-w-[22ch]">
+      <section className={`${sectionCls} bg-dark-bg`}>
+        <div className="mx-auto w-full max-w-[1200px] px-6">
+          <p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-transparent px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-white mb-8"><span className="h-2 w-2 rounded-full bg-primary" />El problema</p>
+          <h2 className="font-heading font-semibold text-white text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight mb-14 max-w-[26ch]">
             ¿Por qué tu negocio local <span className="text-primary">no aparece</span> en Google?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10">
             {dolores.map((d) => (
-              <div key={d.n} className="bg-white rounded-3xl border border-warm-fg/10 p-8 hover:shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)] transition-all">
+              <div key={d.n} className="bg-white/[0.06] rounded-3xl border border-white/10 p-8 transition-all">
                 <span className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary">{d.n}</span>
-                <h3 className="mt-6 font-heading text-xl md:text-2xl text-warm-fg leading-snug">{d.h}</h3>
-                <p className="mt-4 font-body font-light text-warm-fg/70 leading-relaxed">{d.d}</p>
+                <h3 className="mt-6 font-heading text-xl md:text-2xl text-white leading-snug">{d.h}</h3>
+                <p className="mt-4 font-body font-light text-white/70 leading-relaxed">{d.d}</p>
               </div>
             ))}
           </div>
@@ -544,7 +536,7 @@ const Home = () => {
         sub="Empieza por una auditoría gratuita de tu ficha y tu web."
         cta="Quiero mi auditoría gratis"
         to="/contacto"
-        variant="dark"
+        variant="gradient"
       />
 
       <CasosExitoSection />
@@ -584,25 +576,25 @@ const Home = () => {
       </section>
 
       {/* RESEÑAS */}
-      <ElfsightReviews className="bg-white py-24 md:py-32 border-t border-warm-fg/10" />
+      <ElfsightReviews className="bg-white py-16 md:py-20" />
 
       {/* SECTORES */}
       <SectorsGridSection />
 
 
       {/* FAQ */}
-      <section className={sectionCls}>
-        <div className="container grid grid-cols-1 md:grid-cols-12 gap-12">
+      <section className={`${sectionCls} bg-primary/[0.10]`}>
+        <div className="mx-auto w-full max-w-[1200px] px-6 grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
-            <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— FAQ</p>
-            <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl leading-[1.05] tracking-tight">
+            <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-warm-fg mb-6"><span className="h-2 w-2 rounded-full bg-primary" />FAQ</p>
+            <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight">
               Preguntas frecuentes.
             </h2>
           </div>
           <div className="md:col-span-8">
-            <div className="divide-y divide-warm-fg/15 border-y border-warm-fg/15">
+            <div className="space-y-3">
               {faqs.map((item, i) => (
-                <details key={i} className="group py-6">
+                <details key={i} className="group rounded-2xl border border-primary/15 bg-white px-6 py-6">
                   <summary className="cursor-pointer list-none flex items-start justify-between gap-6 font-heading text-lg md:text-xl text-warm-fg">
                     <span>{item.q}</span>
                     <span className="text-primary shrink-0 text-2xl leading-none transition-transform group-open:rotate-45">+</span>
@@ -616,10 +608,10 @@ const Home = () => {
       </section>
 
       {/* CIUDADES */}
-      <section className="bg-white py-20 md:py-24 border-t border-warm-fg/10">
-        <div className="container">
-          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Cobertura</p>
-          <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-5xl leading-[1.05] tracking-tight max-w-[22ch] mb-4">
+      <section className="bg-white py-16 md:py-20">
+        <div className="mx-auto w-full max-w-[1200px] px-6">
+          <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-warm-fg mb-6"><span className="h-2 w-2 rounded-full bg-primary" />Cobertura</p>
+          <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight max-w-[26ch] mb-4">
             Posicionamiento local en <span className="text-primary">toda España</span>
           </h2>
           <p className="text-base font-body text-warm-fg leading-relaxed mb-6 max-w-2xl">
@@ -631,7 +623,7 @@ const Home = () => {
               <Link
                 key={c.to}
                 to={c.to}
-                className="border border-warm-fg/20 rounded-full px-5 py-2.5 text-sm font-heading text-warm-fg transition-all duration-200 hover:border-primary hover:text-primary hover:-translate-y-[2px]"
+                className="border border-primary/25 rounded-full px-5 py-2.5 text-sm font-heading text-warm-fg transition-all duration-200 hover:border-primary hover:text-primary hover:-translate-y-[2px]"
               >
                 {c.label}
               </Link>
@@ -641,10 +633,10 @@ const Home = () => {
       </section>
 
       {/* CONTACTO */}
-      <section id="contacto" className={sectionCls}>
-        <div className="container max-w-2xl">
-          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6 text-center">— Contacto</p>
-          <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl leading-[1.05] tracking-tight text-center mb-4">
+      <section id="contacto" className={`${sectionCls} bg-primary/[0.10]`}>
+        <div className="mx-auto w-full max-w-[1200px] px-6 max-w-2xl">
+          <div className="flex justify-center"><p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-warm-fg mb-6"><span className="h-2 w-2 rounded-full bg-primary" />Contacto</p></div>
+          <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight text-center mb-4">
             ¿Tienes dudas? <span className="text-primary">Escríbenos</span>
           </h2>
           <p className="text-center text-warm-fg/70 font-body leading-relaxed mb-10">
@@ -656,7 +648,7 @@ const Home = () => {
         </div>
       </section>
 
-      <CTASection title="Tu negocio debería aparecer cuando tus clientes te buscan en Google." buttonText="Solicitar auditoría gratuita →" />
+      <CTASection gradient title="Tu negocio debería aparecer cuando tus clientes te buscan en Google." buttonText="Solicitar auditoría gratuita →" />
     </>
   );
 };
