@@ -2,8 +2,4 @@
 
 # Estrella guía
 
-Los negocios locales aparecen en Google y consiguen más clientes
-
-## Métrica
-
-Negocios que envían una solicitud de auditoría gratuita cada semana
+Captar clientes de SEO Local en las ciudades de España para las que tenemos URL
