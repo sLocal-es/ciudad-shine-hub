@@ -1,4 +1,5 @@
 import { Link } from "@/lib/router-compat";
+import { Facebook, Instagram, Linkedin } from "lucide-react";
 
 
 const Footer = () => {
@@ -16,6 +17,25 @@ const Footer = () => {
           <p className="text-sm text-dark-fg/60 mt-3 leading-relaxed">
             Agencia SEO Local para negocios españoles.
           </p>
+          <div className="mt-5 flex items-center justify-start gap-3">
+            {[
+              { href: "https://www.facebook.com/slocal.es", label: "Facebook de slocal.es", Icon: Facebook },
+              { href: "https://www.instagram.com/slocal.es/", label: "Instagram de slocal.es", Icon: Instagram },
+              { href: "https://linkedin.com/company/slocal-es", label: "LinkedIn de slocal.es", Icon: Linkedin },
+            ].map(({ href, label, Icon }) => (
+              <a
+                key={href}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={label}
+                title={label}
+                className="group flex h-9 w-9 items-center justify-center rounded-full border border-dark-fg/20 transition-colors hover:border-primary hover:bg-primary"
+              >
+                <Icon className="h-4 w-4 text-dark-fg/60 transition-colors group-hover:text-white" aria-hidden />
+              </a>
+            ))}
+          </div>
         </div>
 
         {/* Servicio */}
