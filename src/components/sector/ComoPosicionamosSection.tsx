@@ -38,6 +38,8 @@ const cardMeta = [
 export interface ComoPosicionamosSectionProps {
   /** Hover naranja en las tarjetas (por defecto false) */
   hoverAccent?: boolean;
+  /** Cuadrícula compacta de 3 columnas (por defecto false) */
+  compact?: boolean;
   /** Sufijo del H2: "en Madrid" / "para fontaneros" */
   titleSuffix: string;
   /** Entradilla única de la página */
@@ -48,7 +50,34 @@ export interface ComoPosicionamosSectionProps {
   closing: string;
 }
 
-const ComoPosicionamosSection = ({ titleSuffix, intro, texts, closing, hoverAccent = false }: ComoPosicionamosSectionProps) => (
+const ComoPosicionamosSection = ({ titleSuffix, intro, texts, closing, hoverAccent = false, compact = false }: ComoPosicionamosSectionProps) => compact ? (
+  <section className="bg-white py-14 md:py-16">
+    <div className="mx-auto w-full max-w-[1200px] px-6">
+      <div className="mx-auto max-w-4xl text-center">
+        <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-warm-fg mb-6"><span className="h-2 w-2 rounded-full bg-primary" />Nuestro método</p>
+        <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl leading-[1.1] tracking-tight max-w-[24ch] mx-auto">
+          ¿Cómo posicionamos tu negocio en los <span className="text-primary">primeros puestos de Google</span> {titleSuffix}?
+        </h2>
+        <p className="mt-4 text-base font-body font-light text-warm-fg/75 leading-relaxed">{intro}</p>
+      </div>
+      <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+        {cardMeta.map((card, index) => (
+          <article key={card.eyebrow} className={`rounded-2xl overflow-hidden flex flex-col bg-white border border-primary/15 shadow-[0_14px_40px_-24px_hsl(var(--primary)/0.4)]${hoverAccent ? " group transition-all duration-[250ms] hover:-translate-y-1 hover:border-primary hover:shadow-[0_20px_50px_-20px_hsl(var(--primary))]" : ""}`}>
+            <img src={card.image} alt={card.alt} className="aspect-[16/10] w-full object-cover rounded-t-2xl" loading="lazy" width={1200} height={750} decoding="async" />
+            <div className={`flex-1 p-6${hoverAccent ? " transition-colors duration-[250ms] group-hover:bg-primary" : ""}`}>
+              <p className={`font-heading text-[11px] tracking-[0.2em] uppercase text-primary${hoverAccent ? " group-hover:text-white" : ""}`}>— {card.eyebrow}</p>
+              <h3 className={`mt-3 font-heading font-semibold text-xl md:text-[22px] text-warm-fg leading-tight${hoverAccent ? " group-hover:text-white" : ""}`}>
+                {card.title} <span className={`text-primary${hoverAccent ? " group-hover:text-[hsl(var(--dark-bg))]" : ""}`}>{card.highlight}</span>
+              </h3>
+              <p className={`mt-3 font-body font-light text-sm text-warm-fg/70 leading-relaxed${hoverAccent ? " group-hover:text-white group-hover:font-normal" : ""}`}>{texts[index]}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+      <p className="mt-10 mx-auto max-w-4xl text-center font-heading text-base md:text-lg text-warm-fg leading-relaxed">{closing}</p>
+    </div>
+  </section>
+) : (
   <section className="bg-white py-24 md:py-32 border-t border-warm-fg/10">
     <div className="container">
       <div className="mx-auto max-w-4xl text-center">

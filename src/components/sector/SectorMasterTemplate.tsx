@@ -343,6 +343,11 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
   const h2Max = R ? "max-w-[26ch]" : "max-w-[22ch]";
   const stepCard = R ? "border-primary/15 shadow-[0_10px_30px_-18px_hsl(var(--primary)/0.35)]" : "border-warm-fg/10 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)]";
   const chip = R ? "border-primary/25" : "border-warm-fg/20";
+  const pill = (label: React.ReactNode, mb: string, dark = false) => (
+    <p className={`inline-flex items-center gap-2 rounded-full border ${dark ? "border-white/25 bg-transparent text-white" : "border-primary/30 bg-white/70 text-warm-fg"} px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] ${mb}`}>
+      <span className="h-2 w-2 rounded-full bg-primary" />{label}
+    </p>
+  );
   return (
     <>
       <SEOHead
@@ -382,7 +387,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
         <>
           <section className="bg-white py-16 md:py-20">
             <div className={wrap}>
-              <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">{c.manifestoEyebrow}</p>
+              {pill(typeof c.manifestoEyebrow === "string" ? c.manifestoEyebrow.replace(/^—\s*/, "") : c.manifestoEyebrow, "mb-8")}
               <div className="md:grid md:grid-cols-12 gap-10 items-start">
                 <h2 className={`md:col-span-6 font-heading font-semibold text-warm-fg leading-[1.05] tracking-tight ${h2Size} ${h2Max}`}>
                   {c.manifestoH2}
@@ -393,9 +398,10 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
               </div>
             </div>
           </section>
-          <section className="bg-primary/[0.05] py-16 md:py-20">
+          <section className="bg-white py-6 md:py-8">
             <div className={wrap}>
           {/* Editorial split — GBP */}
+          <div className="rounded-[2rem] bg-primary/[0.10] border border-primary/15 p-8 md:p-12 lg:p-14">
           <div className={splitCls}>
             <div>
               <p className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary mb-6">Google Business Profile</p>
@@ -425,6 +431,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
               />
             </div>
 
+          </div>
           </div>
 
             </div>
@@ -535,9 +542,9 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
 
       {c.afterManifesto}
 
-      {c.comoPosicionamos && <ComoPosicionamosSection {...c.comoPosicionamos} />}
+      {c.comoPosicionamos && (R ? <ComoPosicionamosSection {...c.comoPosicionamos} compact /> : <ComoPosicionamosSection {...c.comoPosicionamos} />)}
 
-      {c.queIncluye && <QueIncluyeSection {...c.queIncluye} />}
+      {c.queIncluye && (R ? <QueIncluyeSection {...c.queIncluye} compact /> : <QueIncluyeSection {...c.queIncluye} />)}
 
       {c.servicesCta}
 
@@ -580,12 +587,12 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
 
       {/* CÓMO TRABAJAMOS */}
       {!c.hideHow && (
-      <section className={sec("bg-primary/[0.05]")}>
+      <section className={sec("bg-primary/[0.10]")}>
         <div className={wrap}>
           <div className="max-w-3xl">
-            <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1.5 text-[11px] font-heading tracking-[0.18em] uppercase text-primary mb-8">
+            {R ? pill(c.howEyebrow ?? "Cómo trabajamos", "mb-8") : <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1.5 text-[11px] font-heading tracking-[0.18em] uppercase text-primary mb-8">
               {c.howEyebrow ?? "Cómo trabajamos"}
-            </span>
+            </span>}
             <h2 className={`font-heading font-semibold text-warm-fg ${h2Size} leading-[1.05] tracking-tight mb-6`}>
               {c.howH2}
             </h2>
@@ -647,9 +654,9 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       {!c.hideCase && (
       <section id="caso-real" className={sec("bg-white")}>
         <div className={R ? wrap : `${wrap} max-w-6xl`}>
-          <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1.5 text-[11px] font-heading tracking-[0.18em] uppercase text-primary mb-6">
+          {R ? pill("Caso real", "mb-6") : <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1.5 text-[11px] font-heading tracking-[0.18em] uppercase text-primary mb-6">
             Caso real
-          </span>
+          </span>}
           <h2 className={`font-heading font-semibold text-warm-fg ${h2Size} leading-[1.05] tracking-tight mb-6 ${h2Max}`}>
             {c.caseH2}
           </h2>
@@ -722,16 +729,16 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       </div>
       )}
 
-      <ElfsightReviews className={R ? "bg-primary/[0.05] py-16 md:py-20" : sectionCls} verifiedReviews={c.verifiedReviews} />
+      <ElfsightReviews className={R ? "bg-white py-16 md:py-20" : sectionCls} verifiedReviews={c.verifiedReviews} />
 
       {/* SERVICIOS COMPLEMENTARIOS */}
-      <section className={sec("bg-white")}>
+      <section className={sec(R ? "bg-dark-bg" : "bg-white")}>
         <div className={wrap}>
           <div className="max-w-3xl mb-16">
-            <h2 className={`font-heading font-semibold text-warm-fg ${h2Size} leading-[1.05] tracking-tight mb-6`}>
+            <h2 className={`font-heading font-semibold ${R ? "text-white" : "text-warm-fg"} ${h2Size} leading-[1.05] tracking-tight mb-6`}>
               ¿Qué otros servicios pueden ayudarte a conseguir <span className="text-primary">más clientes</span> desde Google?
             </h2>
-            <p className="text-base md:text-lg font-body font-light text-warm-fg/70 leading-relaxed max-w-3xl">
+            <p className={`text-base md:text-lg font-body font-light ${R ? "text-white/70" : "text-warm-fg/70"} leading-relaxed max-w-3xl`}>
               Además de optimizar tu web y Google Business Profile, podemos ayudarte con servicios especializados para aumentar tu visibilidad, generar más confianza y acelerar el crecimiento de tu negocio.
             </p>
           </div>
@@ -740,7 +747,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
             {complementaryServices.map((service, idx) => (
               <div
                 key={idx}
-                className={`group bg-white border ${R ? "border-primary/15" : "border-warm-fg/10"} rounded-2xl p-7 md:p-8 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] flex flex-col ${R ? "min-h-[440px]" : "min-h-[520px]"} transition-all duration-[250ms] ease-out hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(26,26,36,0.15)] hover:border-primary hover:bg-primary`}
+                className={`group bg-white border ${R ? "border-transparent" : "border-warm-fg/10"} rounded-2xl p-7 md:p-8 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] flex flex-col ${R ? "min-h-[440px]" : "min-h-[520px]"} transition-all duration-[250ms] ease-out hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(26,26,36,0.15)] hover:border-primary hover:bg-primary`}
               >
                 <div className="mb-8 h-14 flex items-center">
                   <div className="inline-flex items-center justify-center h-14 w-14 rounded-xl bg-transparent group-hover:bg-white group-hover:shadow-xs transition-all duration-[250ms] text-warm-fg">
@@ -777,10 +784,10 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       </section>
 
       {/* POR QUÉ CADA MES */}
-      <section className={sec("bg-primary/[0.05]")}>
+      <section className={sec("bg-primary/[0.10]")}>
         <div className={`${wrap} grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16`}>
           <div className="md:col-span-5">
-            <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Trabajo mensual</p>
+            {R ? pill("Trabajo mensual", "mb-8") : <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Trabajo mensual</p>}
             <h2 className={`font-heading font-semibold text-warm-fg ${h2Size2} leading-[1.05] tracking-tight mb-6`}>
               {c.monthlyH2}
             </h2>
@@ -833,15 +840,15 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       <section className={sec("bg-white")}>
         <div className={`${wrap} grid grid-cols-1 md:grid-cols-12 gap-12`}>
           <div className="md:col-span-4">
-            <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— FAQ</p>
+            {R ? pill("FAQ", "mb-6") : <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— FAQ</p>}
             <h2 className={`font-heading font-semibold text-warm-fg ${h2Size2} leading-[1.05] tracking-tight`}>
               Preguntas frecuentes.
             </h2>
           </div>
           <div className="md:col-span-8">
-            <div className={R ? "divide-y divide-primary/20 border-y border-primary/20" : "divide-y divide-warm-fg/15 border-y border-warm-fg/15"}>
+            <div className={R ? "space-y-3" : "divide-y divide-warm-fg/15 border-y border-warm-fg/15"}>
               {c.faqs.map((item, i) => (
-                <details key={i} className="group py-6">
+                <details key={i} className={R ? "group py-6 rounded-2xl border border-primary/15 bg-white px-6" : "group py-6"}>
                   <summary className="cursor-pointer list-none flex items-start justify-between gap-6 font-heading text-lg md:text-xl text-warm-fg">
                     <span>{item.q}</span>
                     <span className="text-primary shrink-0 text-2xl leading-none transition-transform group-open:rotate-45">+</span>
@@ -857,9 +864,9 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       </section>
 
       {/* CIUDADES */}
-      <section className={R ? "bg-primary/[0.05] py-14 md:py-16" : "bg-white py-20 md:py-24 border-t border-warm-fg/10"}>
+      <section className={R ? "bg-primary/[0.10] py-14 md:py-16" : "bg-white py-20 md:py-24 border-t border-warm-fg/10"}>
         <div className={wrap}>
-          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Cobertura</p>
+          {R ? pill("Cobertura", "mb-6") : <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Cobertura</p>}
           <h2 className={`font-heading font-semibold text-warm-fg ${R ? h2Size : "text-3xl md:text-4xl lg:text-5xl"} leading-[1.05] tracking-tight ${h2Max} mb-4`}>
             {c.citiesH2}
           </h2>
@@ -882,7 +889,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       {!c.otherSectorsAfterAudit && (c.otherSectorsSection ?? (
         <section className={R ? "bg-white py-12 md:py-14" : "bg-white py-16 md:py-20 border-t border-warm-fg/10"}>
           <div className={wrap}>
-            <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Otros sectores</p>
+            {R ? pill("Otros sectores", "mb-6") : <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Otros sectores</p>}
             <h2 className="font-heading text-2xl md:text-3xl text-warm-fg mb-4">{c.otherSectorsH2}</h2>
             <p className="text-base font-body text-warm-fg leading-relaxed max-w-3xl mb-8">{c.otherSectorsBody}</p>
             <div className="flex flex-wrap gap-2.5">
