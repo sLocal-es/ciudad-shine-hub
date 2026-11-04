@@ -10,6 +10,7 @@ import { toast } from "@/hooks/use-toast";
 import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisual";
 import OptimizedWebsiteVisual from "@/components/OptimizedWebsiteVisual";
 import CasosExitoSection from "@/components/CasosExitoSection";
+import CoberturaMapas from "@/components/CoberturaMapas";
 import ComoPosicionamosSection, { ComoPosicionamosSectionProps } from "@/components/sector/ComoPosicionamosSection";
 import QueIncluyeSection, { QueIncluyeSectionProps } from "@/components/sector/QueIncluyeSection";
 import caseBeforeAsset from "@/assets/caso-exito-antes.webp.asset.json";
