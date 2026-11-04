@@ -342,7 +342,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
   const splitCls = R ? "grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center" : "mt-24 md:mt-32 grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center";
   const h2Max = R ? "max-w-[26ch]" : "max-w-[22ch]";
   const stepCard = R ? "border-primary/15 shadow-[0_10px_30px_-18px_hsl(var(--primary)/0.35)]" : "border-warm-fg/10 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)]";
-  const chip = R ? "border-primary/25" : "border-warm-fg/20";
+  const chip = R ? "border-primary/25 bg-white" : "border-warm-fg/20";
   const pill = (label: ReactNode, mb: string, dark = false) => (
     <p className={`inline-flex items-center gap-2 rounded-full border ${dark ? "border-white/25 bg-transparent text-white" : "border-primary/30 bg-white/70 text-warm-fg"} px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] ${mb}`}>
       <span className="h-2 w-2 rounded-full bg-primary" />{label}
