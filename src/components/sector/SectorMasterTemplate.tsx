@@ -401,7 +401,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
           <section className="bg-white py-6 md:py-8">
             <div className={wrap}>
           {/* Editorial split — GBP */}
-          <div className="rounded-[2rem] bg-primary/[0.10] border border-primary/15 p-8 md:p-12 lg:p-14">
+          <div className="rounded-[2rem] bg-white border border-primary/30 shadow-[0_20px_60px_-30px_rgba(0,0,0,0.15)] p-8 md:p-12 lg:p-14">
           <div className={splitCls}>
             <div>
               <p className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary mb-6">Google Business Profile</p>
@@ -597,16 +597,16 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
 
       {/* CÓMO TRABAJAMOS */}
       {!c.hideHow && (
-      <section className={sec("bg-primary/[0.10]")}>
+      <section className={sec("bg-dark-bg")}>
         <div className={wrap}>
           <div className="max-w-3xl">
-            {R ? pill(c.howEyebrow ?? "Cómo trabajamos", "mb-8") : <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1.5 text-[11px] font-heading tracking-[0.18em] uppercase text-primary mb-8">
+            {R ? pill(c.howEyebrow ?? "Cómo trabajamos", "mb-8", true) : <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1.5 text-[11px] font-heading tracking-[0.18em] uppercase text-primary mb-8">
               {c.howEyebrow ?? "Cómo trabajamos"}
             </span>}
-            <h2 className={`font-heading font-semibold text-warm-fg ${h2Size} leading-[1.05] tracking-tight mb-6`}>
+            <h2 className={`font-heading font-semibold ${R ? "text-white" : "text-warm-fg"} ${h2Size} leading-[1.05] tracking-tight mb-6`}>
               {c.howH2}
             </h2>
-            <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed max-w-3xl">
+            <p className={`text-base md:text-lg font-body ${R ? "text-white/70" : "text-warm-fg"} leading-relaxed max-w-3xl`}>
               {c.howIntro}
             </p>
           </div>
@@ -614,7 +614,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
           {/* Desktop timeline */}
           <div className="hidden md:block mt-20 md:mt-24">
             <div className="relative">
-              <div className="absolute top-6 left-[10%] right-[10%] h-px bg-primary/25" />
+              <div className={`absolute top-6 left-[10%] right-[10%] h-px ${R ? "bg-white/25" : "bg-primary/25"}`} />
               <div className="grid grid-cols-5 gap-6">
                 {c.howSteps.map((step, i) => (
                   <div key={step.h} className="relative flex flex-col items-center text-center">
@@ -635,7 +635,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
           {/* Mobile timeline */}
           <div className="md:hidden mt-20">
             <div className="relative">
-              <div className="absolute left-6 top-0 bottom-0 w-px bg-primary/25" />
+              <div className={`absolute left-6 top-0 bottom-0 w-px ${R ? "bg-white/25" : "bg-primary/25"}`} />
               <div className="space-y-8">
                 {c.howSteps.map((step, i) => (
                   <div key={step.h} className="relative flex gap-6">
@@ -662,7 +662,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
           sub="Auditoría gratuita de tu ficha de Google, tu web y los negocios que hoy aparecen por delante de ti."
           cta="Pedir mi auditoría gratis"
           to={c.heroPrimaryCtaTo ?? "/contacto"}
-          variant="dark"
+          variant="gradient"
         />
       )}
 
@@ -798,7 +798,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       </section>
 
       {/* POR QUÉ CADA MES */}
-      <section className={sec("bg-primary/[0.10]")}>
+      <section className={sec("bg-white")}>
         <div className={`${wrap} grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16`}>
           <div className="md:col-span-5">
             {R ? pill("Trabajo mensual", "mb-8") : <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Trabajo mensual</p>}
@@ -851,11 +851,11 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       )}
 
       {/* FAQ */}
-      <section className={sec("bg-white")}>
+      <section className={sec(R ? "bg-dark-bg" : "bg-white")}>
         <div className={`${wrap} grid grid-cols-1 md:grid-cols-12 gap-12`}>
           <div className="md:col-span-4">
-            {R ? pill("FAQ", "mb-6") : <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— FAQ</p>}
-            <h2 className={`font-heading font-semibold text-warm-fg ${h2Size2} leading-[1.05] tracking-tight`}>
+            {R ? pill("FAQ", "mb-6", true) : <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— FAQ</p>}
+            <h2 className={`font-heading font-semibold ${R ? "text-white" : "text-warm-fg"} ${h2Size2} leading-[1.05] tracking-tight`}>
               Preguntas frecuentes.
             </h2>
           </div>
@@ -883,12 +883,12 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
           sub="Pide tu auditoría gratuita y descubre dónde estás ahora mismo."
           cta="Auditar mi negocio gratis"
           to="/contacto"
-          variant="dark"
+          variant="gradient"
         />
       )}
 
       {/* CIUDADES */}
-      <section className={R ? "bg-primary/[0.10] py-14 md:py-16" : "bg-white py-20 md:py-24 border-t border-warm-fg/10"}>
+      <section className={R ? "bg-white py-14 md:py-16" : "bg-white py-20 md:py-24 border-t border-warm-fg/10"}>
         <div className={wrap}>
           {R ? pill("Cobertura", "mb-6") : <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Cobertura</p>}
           <h2 className={`font-heading font-semibold text-warm-fg ${R ? h2Size : "text-3xl md:text-4xl lg:text-5xl"} leading-[1.05] tracking-tight ${h2Max} mb-4`}>
