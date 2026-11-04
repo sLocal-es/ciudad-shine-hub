@@ -11,6 +11,7 @@ import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisua
 import OptimizedWebsiteVisual from "@/components/OptimizedWebsiteVisual";
 import CasosExitoSection from "@/components/CasosExitoSection";
 import CoberturaMapas from "@/components/CoberturaMapas";
+import ConversionBanner from "@/components/ConversionBanner";
 import ComoPosicionamosSection, { ComoPosicionamosSectionProps } from "@/components/sector/ComoPosicionamosSection";
 import QueIncluyeSection, { QueIncluyeSectionProps } from "@/components/sector/QueIncluyeSection";
 import caseBeforeAsset from "@/assets/caso-exito-antes.webp.asset.json";
@@ -544,8 +545,8 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       {R && (
         <ConversionBanner
           title={`¿Quieres más ${c.clientWord} desde Google?`}
-          sub="Te decimos qué mejorar en tu ficha y en tu web. Auditoría inicial sin coste."
-          cta="Pedir auditoría gratuita"
+          sub="Analizamos gratis tu ficha, tu web y a tu competencia, y te decimos qué te está frenando."
+          cta="Quiero mi auditoría gratis"
           to={c.heroPrimaryCtaTo ?? "/contacto"}
           variant="gradient"
         />
@@ -659,9 +660,9 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
 
       {R && !c.hideHow && (
         <ConversionBanner
-          title="Empieza por la auditoría"
-          sub="Revisamos tu ficha de Google, tu web y a tu competencia directa."
-          cta="Solicitar auditoría gratuita"
+          title="Descubre qué te frena frente a tu competencia"
+          sub="Auditoría gratuita de tu ficha de Google, tu web y los negocios que hoy aparecen por delante de ti."
+          cta="Pedir mi auditoría gratis"
           to={c.heroPrimaryCtaTo ?? "/contacto"}
           variant="dark"
         />
@@ -736,9 +737,9 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
 
       {R && !c.hideCase && (
         <ConversionBanner
-          title="Este resultado empieza con una auditoría"
-          sub="Cuéntanos tu caso y vemos qué puede hacer Slocal por tu negocio."
-          cta="Hablar con Slocal"
+          title="Tu negocio puede ser el próximo caso de éxito"
+          sub="Cuéntanos tu situación y te decimos qué haría Slocal en tu caso."
+          cta="Quiero hablar con Slocal"
           to="/contacto"
           variant="gradient"
         />
@@ -880,9 +881,9 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
 
       {R && (
         <ConversionBanner
-          title="¿Te ha quedado alguna duda?"
-          sub="Escríbenos y te respondemos con tu caso concreto."
-          cta="Contactar"
+          title="Tu competencia ya está en Google. ¿Y tú?"
+          sub="Pide tu auditoría gratuita y descubre dónde estás ahora mismo."
+          cta="Auditar mi negocio gratis"
           to="/contacto"
           variant="dark"
         />
