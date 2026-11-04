@@ -36,7 +36,7 @@ const SectorsGridSection = () => (
         {sectores.map((s) => {
           const SectorIcon = s.icon;
           return (
-            <article key={s.to} className="group flex flex-col items-center text-center">
+            <article key={s.to} className="flex flex-col items-center text-center rounded-2xl border border-transparent bg-white p-6 group transition-[transform,color,box-shadow,border-color] duration-300 hover:-translate-y-1 focus-within:-translate-y-1 hover:border-primary hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)] focus-within:border-primary focus-within:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)]">
               <span className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors duration-200 group-hover:bg-primary group-hover:text-white" aria-hidden>
                 <SectorIcon className="h-8 w-8" strokeWidth={1.6} aria-hidden />
               </span>

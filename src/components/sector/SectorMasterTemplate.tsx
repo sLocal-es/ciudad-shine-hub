@@ -761,7 +761,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
             {complementaryServices.map((service, idx) => (
               <div
                 key={idx}
-                className={`group bg-white border ${R ? "border-transparent" : "border-warm-fg/10"} rounded-2xl p-7 md:p-8 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] flex flex-col ${R ? "min-h-[440px]" : "min-h-[520px]"} transition-all duration-[250ms] ease-out hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(26,26,36,0.15)] hover:border-primary hover:bg-primary`}
+                className={`group bg-white border ${R ? "border-transparent" : "border-warm-fg/10"} rounded-2xl p-7 md:p-8 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] flex flex-col ${R ? "min-h-[440px]" : "min-h-[520px]"} ${R ? "transition-[transform,color,box-shadow,border-color] duration-300 hover:-translate-y-1 focus-within:-translate-y-1 hover:border-primary hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)] focus-within:border-primary focus-within:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)]" : "transition-all duration-[250ms] ease-out hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(26,26,36,0.15)] hover:border-primary hover:bg-primary"}`}
               >
                 <div className="mb-8 h-14 flex items-center">
                   <div className="inline-flex items-center justify-center h-14 w-14 rounded-xl bg-transparent group-hover:bg-white group-hover:shadow-xs transition-all duration-[250ms] text-warm-fg">

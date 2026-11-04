@@ -17,7 +17,7 @@ const CoberturaMapas = () => (
       {cities.map((city) => (
         <article
           key={city.slug}
-          className="overflow-hidden rounded-2xl border border-primary/15 bg-white shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)]"
+          className="overflow-hidden rounded-2xl border border-primary/15 bg-white shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] group transition-[transform,color,box-shadow,border-color] duration-300 hover:-translate-y-1 focus-within:-translate-y-1 hover:border-primary hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)] focus-within:border-primary focus-within:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)]"
         >
           <iframe
             src={`https://www.google.com/maps?q=${encodeURIComponent(`${city.name}, España`)}&output=embed`}
@@ -36,7 +36,7 @@ const CoberturaMapas = () => (
             </p>
             <Link
               to={`/seo-local-${city.slug}`}
-              className="mt-3 inline-flex items-center gap-1 font-heading text-sm text-primary transition-all duration-[250ms] hover:gap-2"
+              className="mt-3 inline-flex items-center gap-1 font-heading text-sm text-primary transition-all group-hover:gap-2.5 focus-visible:outline-none"
             >
               Ver SEO local en {city.name}
               <span aria-hidden>→</span>

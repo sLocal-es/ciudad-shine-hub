@@ -1,3 +1,4 @@
+import { Clock, Wallet, Search } from "lucide-react";
 import { Link } from "@/lib/router-compat";
 import SEOHead from "@/components/SEOHead";
 import CTASection from "@/components/CTASection";
@@ -219,9 +220,9 @@ const Home = () => {
 
 
   const dolores = [
-    { n: "01", h: "Tu ficha lleva meses sin tocarse", d: "Google interpreta la inactividad como irrelevancia y va bajando tu posición cada semana." },
-    { n: "02", h: "Has pagado a una agencia sin resultados", d: "Cuotas altas, informes vacíos y ningún cambio real en las llamadas que recibe tu negocio." },
-    { n: "03", h: "Tus clientes te buscan ahora mismo", d: "Y encuentran a tu competencia porque nadie está trabajando tu presencia local en Google." },
+    { n: "01", icon: Clock, h: "Tu ficha lleva meses sin tocarse", d: "Google interpreta la inactividad como irrelevancia y va bajando tu posición cada semana." },
+    { n: "02", icon: Wallet, h: "Has pagado a una agencia sin resultados", d: "Cuotas altas, informes vacíos y ningún cambio real en las llamadas que recibe tu negocio." },
+    { n: "03", icon: Search, h: "Tus clientes te buscan ahora mismo", d: "Y encuentran a tu competencia porque nadie está trabajando tu presencia local en Google." },
   ];
 
   const faqs = [
@@ -366,12 +367,12 @@ const Home = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 mt-10">
             {includedServices.map((item) => (
-              <article key={item.eyebrow} className="rounded-2xl overflow-hidden flex flex-col bg-white/[0.06] border border-white/10">
+              <article key={item.eyebrow} className="rounded-2xl overflow-hidden flex flex-col bg-white shadow-[0_24px_60px_-20px_rgba(0,0,0,0.6)]">
                 <img src={item.image} alt={item.alt} className="aspect-[16/10] w-full object-cover" loading="lazy" width={1200} height={800} decoding="async" />
                 <div className="p-6">
                   <p className="font-heading text-[11px] tracking-[0.2em] uppercase text-primary">{item.eyebrow}</p>
-                  <h3 className="mt-3 font-heading font-semibold text-xl md:text-[22px] leading-tight text-white">{item.title}</h3>
-                  <p className="mt-3 font-body font-light text-sm leading-relaxed text-white/70">{item.text}</p>
+                  <h3 className="mt-3 font-heading font-semibold text-xl md:text-[22px] leading-tight text-warm-fg">{item.title}</h3>
+                  <p className="mt-3 font-body font-light text-sm leading-relaxed text-warm-fg/75">{item.text}</p>
                 </div>
               </article>
             ))}
@@ -521,10 +522,13 @@ const Home = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10">
             {dolores.map((d) => (
-              <div key={d.n} className="bg-white/[0.06] rounded-3xl border border-white/10 p-8 transition-all">
-                <span className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary">{d.n}</span>
-                <h3 className="mt-6 font-heading text-xl md:text-2xl text-white leading-snug">{d.h}</h3>
-                <p className="mt-4 font-body font-light text-white/70 leading-relaxed">{d.d}</p>
+              <div key={d.n} className={`bg-white rounded-3xl border border-transparent p-8 shadow-[0_30px_70px_-20px_rgba(0,0,0,0.7)] ${"group transition-[transform,color,box-shadow,border-color] duration-300 hover:-translate-y-1 focus-within:-translate-y-1 hover:border-primary hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)] focus-within:border-primary focus-within:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)]"}`}>
+                <div className="flex items-start justify-between gap-4">
+                  <span className="flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground" aria-hidden><d.icon className="h-6 w-6" strokeWidth={2} /></span>
+                  <span className="font-heading text-6xl font-extrabold leading-none text-primary">{d.n}</span>
+                </div>
+                <h3 className="mt-8 font-heading font-bold text-2xl md:text-[26px] text-warm-fg leading-snug">{d.h}</h3>
+                <p className="mt-4 font-body text-warm-fg/80 leading-relaxed">{d.d}</p>
               </div>
             ))}
           </div>
