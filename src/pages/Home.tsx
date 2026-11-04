@@ -416,14 +416,14 @@ const Home = () => {
             <div className="flex justify-center"><p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-warm-fg mb-6"><span className="h-2 w-2 rounded-full bg-primary" />Una agencia especializada</p></div>
             <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight">Por qué Slocal</h2>
           </div>
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {whySlocal.map(([title, text], index) => (
-              <article key={title} className="bg-white border border-primary/15 rounded-2xl p-7 md:p-9">
+              <article key={title} className="group bg-primary border border-primary rounded-2xl p-7 md:p-9 shadow-[0_20px_50px_-25px_hsl(var(--primary)/0.7)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 focus-within:-translate-y-1 hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)] focus-within:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)]">
                 <div className="flex items-start gap-5">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground font-heading text-sm">{index + 1}</span>
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-primary font-heading font-bold text-sm">{index + 1}</span>
                   <div>
-                    <h3 className="font-heading font-semibold text-xl md:text-2xl text-warm-fg leading-snug">{title}</h3>
-                    <p className="mt-3 font-body font-light text-warm-fg/70 leading-relaxed">{text}</p>
+                    <h3 className="font-heading font-semibold text-xl md:text-2xl text-white leading-snug">{title}</h3>
+                    <p className="mt-3 font-body font-light text-white/90 leading-relaxed">{text}</p>
                   </div>
                 </div>
               </article>
@@ -450,24 +450,24 @@ const Home = () => {
             </h2>
           </div>
           <div className="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-            <article className="rounded-2xl border border-primary/35 bg-white p-7 md:p-10">
+            <article className="rounded-2xl border border-primary bg-primary p-7 md:p-10 shadow-[0_30px_70px_-25px_hsl(var(--primary)/0.75)]">
               <div className="flex items-center gap-4">
-                <span className="text-primary text-3xl leading-none" aria-hidden>✓</span>
-                <h3 className="font-heading font-semibold text-2xl text-warm-fg">¿Para quién sí es este servicio?</h3>
+                <span className="text-white text-3xl leading-none" aria-hidden>✓</span>
+                <h3 className="font-heading font-semibold text-2xl text-white">¿Para quién sí es este servicio?</h3>
               </div>
-              <p className="mt-6 font-body text-warm-fg/75">Este servicio es para ti si tienes:</p>
+              <p className="mt-6 font-body text-white/90">Este servicio es para ti si tienes:</p>
               <ul className="mt-5 space-y-3">
-                {fitFor.map((item) => <li key={item} className="flex items-start gap-3 font-body text-warm-fg/75 leading-relaxed"><span className="mt-1 text-primary" aria-hidden>✓</span><span>{item}</span></li>)}
+                {fitFor.map((item) => <li key={item} className="flex items-start gap-3 font-body text-white leading-relaxed"><span className="mt-1 text-white" aria-hidden>✓</span><span>{item}</span></li>)}
               </ul>
             </article>
             <article className="rounded-2xl border border-warm-fg/20 bg-white p-7 md:p-10">
               <div className="flex items-center gap-4">
-                <span className="text-warm-fg text-3xl leading-none" aria-hidden>×</span>
-                <h3 className="font-heading font-semibold text-2xl text-warm-fg">¿Para quién no es?</h3>
+                <span className="text-warm-fg/50 text-3xl leading-none" aria-hidden>×</span>
+                <h3 className="font-heading font-semibold text-2xl text-warm-fg/80">¿Para quién no es?</h3>
               </div>
               <p className="mt-6 font-body text-warm-fg/75">Este servicio no es para ti si tienes:</p>
               <ul className="mt-5 space-y-3">
-                {notFitFor.map((item) => <li key={item} className="flex items-start gap-3 font-body text-warm-fg/75 leading-relaxed"><span className="mt-1 text-warm-fg" aria-hidden>×</span><span>{item}</span></li>)}
+                {notFitFor.map((item) => <li key={item} className="flex items-start gap-3 font-body text-warm-fg/65 leading-relaxed"><span className="mt-1 text-warm-fg/50" aria-hidden>×</span><span>{item}</span></li>)}
               </ul>
             </article>
           </div>
@@ -481,13 +481,13 @@ const Home = () => {
             <div className="flex justify-center"><p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-warm-fg mb-6"><span className="h-2 w-2 rounded-full bg-primary" />Diferencias clave</p></div>
             <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight">SEO tradicional vs SEO Local</h2>
           </div>
-          <div className="mt-14 overflow-hidden rounded-2xl border border-warm-fg/10">
-            <table className="w-full table-fixed border-collapse text-left">
-              <thead className="bg-dark-bg text-dark-fg">
+          <div className="mt-14 overflow-x-auto rounded-2xl border border-warm-fg/10">
+            <table className="w-full min-w-[340px] table-fixed border-collapse text-left">
+              <thead className="bg-white text-warm-fg/70">
                 <tr>
                   <th scope="col" className="w-[28%] p-3 md:p-6 font-heading text-[11px] md:text-sm">Comparativa</th>
                   <th scope="col" className="w-[31%] p-3 md:p-6 font-heading text-[11px] md:text-sm">SEO tradicional</th>
-                  <th scope="col" className="w-[41%] p-3 md:p-6 font-heading text-[11px] md:text-sm text-primary">SEO Local</th>
+                  <th scope="col" className="w-[41%] p-3 md:p-6 font-heading text-[11px] md:text-sm font-bold uppercase tracking-wide bg-primary text-white border-b-2 border-white/40">SEO Local</th>
                 </tr>
               </thead>
               <tbody className="bg-white">
@@ -500,8 +500,8 @@ const Home = () => {
                 ].map(([label, traditional, local]) => (
                   <tr key={label} className="border-t border-warm-fg/10 align-top">
                     <th scope="row" className="p-3 md:p-6 font-heading text-[11px] md:text-sm text-warm-fg break-words">{label}</th>
-                    <td className="p-3 md:p-6 font-body text-[11px] md:text-base text-warm-fg/65 break-words">{traditional}</td>
-                    <td className="p-3 md:p-6 font-body text-[11px] md:text-base font-medium text-warm-fg break-words">{local}</td>
+                    <td className="p-3 md:p-6 font-body text-[11px] md:text-base text-warm-fg/50 break-words">{traditional}</td>
+                    <td className="p-3 md:p-6 font-body text-[11px] md:text-base font-bold bg-primary text-white break-words">{local}</td>
                   </tr>
                 ))}
               </tbody>
