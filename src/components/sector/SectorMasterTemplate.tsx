@@ -546,7 +546,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
           sub="Analizamos gratis tu ficha, tu web y a tu competencia, y te decimos qué te está frenando."
           cta="Quiero mi auditoría gratis"
           to={c.heroPrimaryCtaTo ?? "/contacto"}
-          variant="gradient"
+          variant={c.comoPosicionamos || c.queIncluye || c.afterManifesto || c.servicesCta || c.casesBeforeAudit ? "gradient" : "dark"}
         />
       )}
 
