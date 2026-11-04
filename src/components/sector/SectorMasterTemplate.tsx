@@ -331,8 +331,6 @@ const stepIcons = [
   <svg key="5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 3v18h18" /><path d="M18 17V9" /><path d="M13 17V5" /><path d="M8 17v-3" /></svg>,
 ];
 
-const ORANGE_GRADIENT = "linear-gradient(135deg, hsl(18 82% 54%) 0%, hsl(12 80% 42%) 100%)";
-
 const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }) => {
   // Visual redesign applies only to sector pages (/seo-para-*); city pages keep the previous layout.
   const R = c.canonical.startsWith("/seo-para-");
@@ -565,7 +563,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       {/* CTA AUDITORÍA GRATUITA */}
       <section id={c.auditoriaSectionId} className={`${R ? "bg-white py-10 md:py-14" : "bg-white py-12 md:py-20"}${c.auditoriaScrollMargin ? " scroll-mt-24" : ""}`}>
         <div className={wrap}>
-          <div className={R ? "relative overflow-hidden rounded-3xl text-primary-foreground px-6 py-10 md:px-12 md:py-14 lg:px-16 lg:py-16" : "rounded-3xl bg-primary text-primary-foreground px-6 py-14 md:px-14 md:py-20 lg:px-20 lg:py-24"} style={R ? { backgroundImage: ORANGE_GRADIENT } : undefined}>
+          <div className={R ? "relative overflow-hidden rounded-3xl bg-primary text-primary-foreground px-6 py-10 md:px-12 md:py-14 lg:px-16 lg:py-16" : "rounded-3xl bg-primary text-primary-foreground px-6 py-14 md:px-14 md:py-20 lg:px-20 lg:py-24"}>
             {R && <div aria-hidden className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "radial-gradient(500px 300px at 85% 10%, rgba(255,255,255,0.18), transparent 60%)" }} />}
             <div className={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center${R ? " relative z-10" : ""}`}>
               <div>
