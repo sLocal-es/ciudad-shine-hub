@@ -332,6 +332,28 @@ const stepIcons = [
 
 const ORANGE_GRADIENT = "linear-gradient(135deg, hsl(18 82% 54%) 0%, hsl(12 80% 42%) 100%)";
 
+const ConversionBanner = ({ title, sub, cta, to, variant }: { title: string; sub: string; cta: string; to: string; variant: "gradient" | "dark" }) => (
+  <div className="bg-white py-8 md:py-10">
+    <div className="mx-auto w-full max-w-[1200px] px-6">
+      <div
+        className={`rounded-2xl px-6 py-8 md:px-10 md:py-9 flex flex-col md:flex-row md:items-center md:justify-between gap-6${variant === "dark" ? " bg-dark-bg" : ""}`}
+        style={variant === "gradient" ? { backgroundImage: ORANGE_GRADIENT } : undefined}
+      >
+        <div>
+          <p className="font-heading text-xl md:text-2xl font-semibold text-white">{title}</p>
+          <p className={`mt-1 text-sm ${variant === "dark" ? "text-white/70" : "text-white/85"}`}>{sub}</p>
+        </div>
+        <Link
+          to={to}
+          className={`inline-flex items-center rounded-full px-7 py-3.5 text-sm font-heading font-medium transition-colors shrink-0 ${variant === "dark" ? "bg-primary text-primary-foreground hover:bg-primary/90" : "bg-white text-primary hover:bg-white/90"}`}
+        >
+          {cta}
+        </Link>
+      </div>
+    </div>
+  </div>
+);
+
 const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }) => {
   // Visual redesign applies only to sector pages (/seo-para-*); city pages keep the previous layout.
   const R = c.canonical.startsWith("/seo-para-");
@@ -541,6 +563,16 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
         </div>
       </section>)}
 
+      {R && (
+        <ConversionBanner
+          title={`¿Quieres más ${c.clientWord} desde Google?`}
+          sub="Te decimos qué mejorar en tu ficha y en tu web. Auditoría inicial sin coste."
+          cta="Pedir auditoría gratuita"
+          to={c.heroPrimaryCtaTo ?? "/contacto"}
+          variant="gradient"
+        />
+      )}
+
       {c.afterManifesto}
 
       {c.comoPosicionamos && (R ? <ComoPosicionamosSection {...c.comoPosicionamos} compact /> : <ComoPosicionamosSection {...c.comoPosicionamos} />)}
@@ -647,6 +679,16 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       </section>
       )}
 
+      {R && !c.hideHow && (
+        <ConversionBanner
+          title="Empieza por la auditoría"
+          sub="Revisamos tu ficha de Google, tu web y a tu competencia directa."
+          cta="Solicitar auditoría gratuita"
+          to={c.heroPrimaryCtaTo ?? "/contacto"}
+          variant="dark"
+        />
+      )}
+
       {c.extraSection}
 
       {c.whyUsSection}
@@ -715,19 +757,13 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       )}
 
       {R && !c.hideCase && (
-      <div className="bg-white py-10">
-        <div className={wrap}>
-          <div className="rounded-2xl px-6 py-8 md:px-10 md:py-9 flex flex-col md:flex-row md:items-center md:justify-between gap-6" style={{ backgroundImage: ORANGE_GRADIENT }}>
-            <div>
-              <p className="font-heading text-xl md:text-2xl font-semibold text-white">Pide tu auditoría gratuita</p>
-              <p className="mt-1 text-sm text-white/85">Auditoría inicial sin coste · Respuesta en menos de 24 horas</p>
-            </div>
-            <Link to={c.heroPrimaryCtaTo ?? "/contacto"} className="inline-flex items-center rounded-full bg-white px-7 py-3.5 text-sm font-heading font-medium text-primary transition-colors hover:bg-white/90">
-              Solicitar auditoría gratuita
-            </Link>
-          </div>
-        </div>
-      </div>
+        <ConversionBanner
+          title="Este resultado empieza con una auditoría"
+          sub="Cuéntanos tu caso y vemos qué puede hacer Slocal por tu negocio."
+          cta="Hablar con Slocal"
+          to="/contacto"
+          variant="gradient"
+        />
       )}
 
       <ElfsightReviews className={R ? "bg-white py-16 md:py-20" : sectionCls} verifiedReviews={c.verifiedReviews} />
@@ -863,6 +899,16 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
           </div>
         </div>
       </section>
+
+      {R && (
+        <ConversionBanner
+          title="¿Te ha quedado alguna duda?"
+          sub="Escríbenos y te respondemos con tu caso concreto."
+          cta="Contactar"
+          to="/contacto"
+          variant="dark"
+        />
+      )}
 
       {/* CIUDADES */}
       <section className={R ? "bg-primary/[0.10] py-14 md:py-16" : "bg-white py-20 md:py-24 border-t border-warm-fg/10"}>
