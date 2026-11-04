@@ -391,14 +391,14 @@ const Home = () => {
       />
 
       {/* SERVICIOS COMPLEMENTARIOS */}
-      <section className={`${sectionCls} bg-primary/[0.10]`}>
+      <section className={`${sectionCls} bg-dark-bg`}>
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <div className="mx-auto max-w-4xl text-center">
-            <div className="flex justify-center"><p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-warm-fg mb-6"><span className="h-2 w-2 rounded-full bg-primary" />Servicios complementarios</p></div>
-            <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight">
+            <div className="flex justify-center"><p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-transparent px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-white mb-6"><span className="h-2 w-2 rounded-full bg-primary" />Servicios complementarios</p></div>
+            <h2 className="font-heading font-semibold text-white text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight">
               Cómo acelerarlo o complementarlo
             </h2>
-            <p className="mt-7 text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed">
+            <p className="mt-7 text-base md:text-lg font-body font-light text-white/70 leading-relaxed">
               Con tu ficha y tu web optimizadas, el SEO local sigue trabajando cada mes de forma orgánica. Si quieres acelerar el resultado o ampliar dónde apareces, estos servicios se suman al servicio base:
             </p>
           </div>
@@ -436,15 +436,15 @@ const Home = () => {
         sub="Te decimos con sinceridad si el SEO Local encaja contigo."
         cta="Solicitar consulta"
         to="/contacto"
-        variant="dark"
+        variant="gradient"
       />
 
       {/* ENCAJE */}
-      <section className={`${sectionCls} bg-primary/[0.10]`}>
+      <section className={`${sectionCls} bg-dark-bg`}>
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <div className="mx-auto max-w-4xl text-center">
-            <div className="flex justify-center"><p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-warm-fg mb-6"><span className="h-2 w-2 rounded-full bg-primary" />Antes de empezar</p></div>
-            <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight">
+            <div className="flex justify-center"><p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-transparent px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-white mb-6"><span className="h-2 w-2 rounded-full bg-primary" />Antes de empezar</p></div>
+            <h2 className="font-heading font-semibold text-white text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight">
               ¿Es Slocal la agencia adecuada para tu negocio?
             </h2>
           </div>
@@ -583,11 +583,11 @@ const Home = () => {
 
 
       {/* FAQ */}
-      <section className={`${sectionCls} bg-primary/[0.10]`}>
+      <section className={`${sectionCls} bg-dark-bg`}>
         <div className="mx-auto w-full max-w-[1200px] px-6 grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
-            <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-warm-fg mb-6"><span className="h-2 w-2 rounded-full bg-primary" />FAQ</p>
-            <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight">
+            <p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-transparent px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-white mb-6"><span className="h-2 w-2 rounded-full bg-primary" />FAQ</p>
+            <h2 className="font-heading font-semibold text-white text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight">
               Preguntas frecuentes.
             </h2>
           </div>
@@ -633,13 +633,13 @@ const Home = () => {
       </section>
 
       {/* CONTACTO */}
-      <section id="contacto" className={`${sectionCls} bg-primary/[0.10]`}>
+      <section id="contacto" className={`${sectionCls} bg-dark-bg`}>
         <div className="mx-auto w-full max-w-[1200px] px-6 max-w-2xl">
-          <div className="flex justify-center"><p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-warm-fg mb-6"><span className="h-2 w-2 rounded-full bg-primary" />Contacto</p></div>
-          <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight text-center mb-4">
+          <div className="flex justify-center"><p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-transparent px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-white mb-6"><span className="h-2 w-2 rounded-full bg-primary" />Contacto</p></div>
+          <h2 className="font-heading font-semibold text-white text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight text-center mb-4">
             ¿Tienes dudas? <span className="text-primary">Escríbenos</span>
           </h2>
-          <p className="text-center text-warm-fg/70 font-body leading-relaxed mb-10">
+          <p className="text-center text-white/70 font-body leading-relaxed mb-10">
             Si prefieres que te contactemos nosotros, déjanos tus datos y te respondemos en menos de 24 horas.
           </p>
           <div className="bg-white rounded-2xl border border-warm-fg/10 p-6 md:p-8 shadow-[0_10px_40px_-30px_rgba(0,0,0,0.08)]">
