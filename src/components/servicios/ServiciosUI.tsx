@@ -44,7 +44,7 @@ export interface ExtraService {
 }
 
 export const ServiceCard = ({ service }: { service: ExtraService }) => (
-  <article className="group h-full flex flex-col rounded-3xl border border-warm-fg/10 bg-white p-6 md:p-7 shadow-[0_18px_50px_-38px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_28px_70px_-40px_rgba(0,0,0,0.35)] hover:border-primary/40">
+  <article className="group h-full flex flex-col rounded-3xl border border-warm-fg/10 bg-white p-6 md:p-7 shadow-[0_18px_50px_-38px_rgba(0,0,0,0.35)] group transition-[transform,color,box-shadow,border-color] duration-300 hover:-translate-y-1 focus-within:-translate-y-1 hover:border-primary hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)] focus-within:border-primary focus-within:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)]">
     {service.visual ? (
       <div
         className="flex aspect-[16/10] w-full items-center justify-center overflow-hidden rounded-2xl border border-warm-fg/10 bg-white p-5 text-primary"
@@ -75,7 +75,7 @@ export const ServiceCard = ({ service }: { service: ExtraService }) => (
     </ul>
     <Link
       to={service.to}
-      className="mt-7 pt-5 border-t border-warm-fg/10 font-heading text-sm text-primary inline-flex items-center gap-2 mt-auto"
+      className="mt-7 pt-5 border-t border-warm-fg/10 font-heading text-sm text-primary inline-flex items-center gap-2 mt-auto transition-all group-hover:gap-2.5 focus-visible:outline-none"
     >
       Más información
       <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
