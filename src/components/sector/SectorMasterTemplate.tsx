@@ -329,7 +329,20 @@ const stepIcons = [
   <svg key="5" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 3v18h18" /><path d="M18 17V9" /><path d="M13 17V5" /><path d="M8 17v-3" /></svg>,
 ];
 
+const ORANGE_GRADIENT = "linear-gradient(135deg, hsl(18 82% 54%) 0%, hsl(12 80% 42%) 100%)";
+
 const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }) => {
+  // Visual redesign applies only to sector pages (/seo-para-*); city pages keep the previous layout.
+  const R = c.canonical.startsWith("/seo-para-");
+  const wrap = R ? "mx-auto w-full max-w-[1200px] px-6" : "container";
+  const sec = (bg: string) => (R ? `${bg} py-16 md:py-20` : sectionCls);
+  const h2Size = R ? "text-3xl md:text-4xl lg:text-[42px]" : "text-4xl md:text-5xl lg:text-6xl";
+  const h2Size2 = R ? "text-3xl md:text-4xl lg:text-[42px]" : "text-4xl md:text-5xl";
+  const h3Split = R ? "text-2xl md:text-3xl lg:text-4xl" : "text-3xl md:text-4xl lg:text-5xl";
+  const splitCls = R ? "grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-center" : "mt-24 md:mt-32 grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center";
+  const h2Max = R ? "max-w-[26ch]" : "max-w-[22ch]";
+  const stepCard = R ? "border-primary/15 shadow-[0_10px_30px_-18px_hsl(var(--primary)/0.35)]" : "border-warm-fg/10 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)]";
+  const chip = R ? "border-primary/25" : "border-warm-fg/20";
   return (
     <>
       <SEOHead
@@ -365,7 +378,90 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       </div>
 
       {/* MANIFIESTO */}
-      {c.manifestoSection ?? <section className={sectionCls}>
+      {c.manifestoSection ?? (R ? (
+        <>
+          <section className="bg-white py-16 md:py-20">
+            <div className={wrap}>
+              <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">{c.manifestoEyebrow}</p>
+              <div className="md:grid md:grid-cols-12 gap-10 items-start">
+                <h2 className={`md:col-span-6 font-heading font-semibold text-warm-fg leading-[1.05] tracking-tight ${h2Size} ${h2Max}`}>
+                  {c.manifestoH2}
+                </h2>
+                <p className="md:col-span-6 mt-6 md:mt-0 text-base md:text-lg font-body text-warm-fg leading-relaxed">
+                  {c.manifestoBody}{c.geoBody && <> {c.geoBody}</>}
+                </p>
+              </div>
+            </div>
+          </section>
+          <section className="bg-primary/[0.05] py-16 md:py-20">
+            <div className={wrap}>
+          {/* Editorial split — GBP */}
+          <div className={splitCls}>
+            <div>
+              <p className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary mb-6">Google Business Profile</p>
+              <h3 className={`font-heading font-semibold text-warm-fg leading-[1.1] tracking-tight ${h3Split} max-w-[18ch]`}>
+                {c.gbpH3}
+              </h3>
+              <p className="mt-6 max-w-lg text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed">
+                {c.gbpBody}
+              </p>
+              <ul className="mt-8 space-y-3 max-w-md">
+                {c.gbpFeatures.map((f) => (
+                  <li key={f} className="flex items-center gap-3 font-body text-warm-fg/85">
+                    <svg width="14" height="14" viewBox="0 0 20 20" fill="none" className="text-primary shrink-0" aria-hidden>
+                      <path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <span className="text-[15px] md:text-base">{f}</span>
+                  </li>
+                ))}
+              </ul>
+              {!c.hideCase && <a href="#caso-real" className="mt-10 inline-flex items-center gap-1 font-heading text-sm text-primary hover:gap-2 transition-all">
+                Ver caso real →
+              </a>}
+            </div>
+            <div className="order-first md:order-last">
+              <GoogleBusinessProfileVisual
+                alt={`Ilustración de una ficha de Google Business Profile para ${c.sectorLower}`}
+              />
+            </div>
+
+          </div>
+
+            </div>
+          </section>
+          <section className="bg-white py-16 md:py-20">
+            <div className={wrap}>
+          {/* Editorial split — Web */}
+          <div className={splitCls}>
+            <div>
+              <OptimizedWebsiteVisual
+                alt={`Ilustración de una página web optimizada para ${c.sectorLower}`}
+              />
+            </div>
+            <div>
+              <p className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary mb-6">Web optimizada</p>
+              <h3 className={`font-heading font-semibold text-warm-fg leading-[1.1] tracking-tight ${h3Split} max-w-[18ch]`}>
+                {c.webH3}
+              </h3>
+              <p className="mt-6 max-w-lg text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed">
+                {c.webBody}
+              </p>
+              <ul className="mt-8 space-y-3 max-w-md">
+                {c.webFeatures.map((f) => (
+                  <li key={f} className="flex items-center gap-3 font-body text-warm-fg/85">
+                    <svg width="14" height="14" viewBox="0 0 20 20" fill="none" className="text-primary shrink-0" aria-hidden>
+                      <path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                    <span className="text-[15px] md:text-base">{f}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+            </div>
+          </section>
+        </>
+      ) : <section className={sectionCls}>
         <div className="container">
           <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">{c.manifestoEyebrow}</p>
           <h2 className="font-heading font-semibold text-warm-fg leading-[1.05] tracking-tight text-4xl md:text-5xl lg:text-6xl max-w-[22ch]">
@@ -376,10 +472,10 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
           </p>
 
           {/* Editorial split — GBP */}
-          <div className="mt-24 md:mt-32 grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center">
+          <div className={splitCls}>
             <div>
               <p className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary mb-6">Google Business Profile</p>
-              <h3 className="font-heading font-semibold text-warm-fg leading-[1.1] tracking-tight text-3xl md:text-4xl lg:text-5xl max-w-[18ch]">
+              <h3 className={`font-heading font-semibold text-warm-fg leading-[1.1] tracking-tight ${h3Split} max-w-[18ch]`}>
                 {c.gbpH3}
               </h3>
               <p className="mt-6 max-w-lg text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed">
@@ -408,7 +504,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
           </div>
 
           {/* Editorial split — Web */}
-          <div className="mt-24 md:mt-32 grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center">
+          <div className={splitCls}>
             <div>
               <OptimizedWebsiteVisual
                 alt={`Ilustración de una página web optimizada para ${c.sectorLower}`}
@@ -416,7 +512,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
             </div>
             <div>
               <p className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary mb-6">Web optimizada</p>
-              <h3 className="font-heading font-semibold text-warm-fg leading-[1.1] tracking-tight text-3xl md:text-4xl lg:text-5xl max-w-[18ch]">
+              <h3 className={`font-heading font-semibold text-warm-fg leading-[1.1] tracking-tight ${h3Split} max-w-[18ch]`}>
                 {c.webH3}
               </h3>
               <p className="mt-6 max-w-lg text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed">
@@ -435,7 +531,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
             </div>
           </div>
         </div>
-      </section>}
+      </section>)}
 
       {c.afterManifesto}
 
@@ -448,10 +544,11 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       {c.casesBeforeAudit && <CasosExitoSection />}
 
       {/* CTA AUDITORÍA GRATUITA */}
-      <section id={c.auditoriaSectionId} className={c.auditoriaScrollMargin ? "bg-white py-12 md:py-20 scroll-mt-24" : "bg-white py-12 md:py-20"}>
-        <div className="container">
-          <div className="rounded-3xl bg-primary text-primary-foreground px-6 py-14 md:px-14 md:py-20 lg:px-20 lg:py-24">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+      <section id={c.auditoriaSectionId} className={`${R ? "bg-white py-10 md:py-14" : "bg-white py-12 md:py-20"}${c.auditoriaScrollMargin ? " scroll-mt-24" : ""}`}>
+        <div className={wrap}>
+          <div className={R ? "relative overflow-hidden rounded-3xl text-primary-foreground px-6 py-10 md:px-12 md:py-14 lg:px-16 lg:py-16" : "rounded-3xl bg-primary text-primary-foreground px-6 py-14 md:px-14 md:py-20 lg:px-20 lg:py-24"} style={R ? { backgroundImage: ORANGE_GRADIENT } : undefined}>
+            {R && <div aria-hidden className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "radial-gradient(500px 300px at 85% 10%, rgba(255,255,255,0.18), transparent 60%)" }} />}
+            <div className={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center${R ? " relative z-10" : ""}`}>
               <div>
                 <span className="inline-flex items-center rounded-full bg-white/15 px-3 py-1 text-[11px] font-heading tracking-[0.18em] uppercase text-white">
                   Auditoría gratuita
@@ -483,13 +580,13 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
 
       {/* CÓMO TRABAJAMOS */}
       {!c.hideHow && (
-      <section className={sectionCls}>
-        <div className="container">
+      <section className={sec("bg-primary/[0.05]")}>
+        <div className={wrap}>
           <div className="max-w-3xl">
             <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1.5 text-[11px] font-heading tracking-[0.18em] uppercase text-primary mb-8">
               {c.howEyebrow ?? "Cómo trabajamos"}
             </span>
-            <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
+            <h2 className={`font-heading font-semibold text-warm-fg ${h2Size} leading-[1.05] tracking-tight mb-6`}>
               {c.howH2}
             </h2>
             <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed max-w-3xl">
@@ -507,7 +604,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
                     <div className="relative z-10 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-heading text-lg shadow-xs">
                       {i + 1}
                     </div>
-                    <div className="mt-8 bg-white border border-warm-fg/10 rounded-2xl p-6 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] w-full">
+                    <div className={`mt-8 bg-white border rounded-2xl p-6 w-full ${stepCard}`}>
                       <div className="mb-3 text-primary flex justify-center">{stepIcons[i]}</div>
                       <h3 className="font-heading text-lg text-warm-fg mb-2">{step.h}</h3>
                       <p className="text-sm font-body text-warm-fg/70 leading-relaxed">{step.d}</p>
@@ -528,7 +625,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
                     <div className="relative z-10 w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-heading text-lg shadow-xs shrink-0">
                       {i + 1}
                     </div>
-                    <div className="flex-1 bg-white border border-warm-fg/10 rounded-2xl p-5 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)]">
+                    <div className={`flex-1 bg-white border rounded-2xl p-5 ${stepCard}`}>
                       <div className="mb-2 text-primary">{stepIcons[i]}</div>
                       <h3 className="font-heading text-lg text-warm-fg mb-2">{step.h}</h3>
                       <p className="text-sm font-body text-warm-fg/70 leading-relaxed">{step.d}</p>
@@ -548,12 +645,12 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
 
       {/* CASO REAL */}
       {!c.hideCase && (
-      <section id="caso-real" className={sectionCls}>
-        <div className="container max-w-6xl">
+      <section id="caso-real" className={sec("bg-white")}>
+        <div className={`${wrap} max-w-6xl`}>
           <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1.5 text-[11px] font-heading tracking-[0.18em] uppercase text-primary mb-6">
             Caso real
           </span>
-          <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6 max-w-[22ch]">
+          <h2 className={`font-heading font-semibold text-warm-fg ${h2Size} leading-[1.05] tracking-tight mb-6 ${h2Max}`}>
             {c.caseH2}
           </h2>
           <p className="text-base md:text-lg font-body font-light text-warm-fg/70 leading-relaxed mb-20 max-w-3xl">
@@ -564,7 +661,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
             {c.caseStages.map((card, index) => (
               <div
                 key={card.title}
-                className="group flex flex-col bg-white rounded-3xl border border-warm-fg/10 p-6 lg:p-8 transition-all duration-300 hover:shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)] hover:border-warm-fg/20"
+                className={`group flex flex-col bg-white rounded-3xl border ${R ? "border-primary/15" : "border-warm-fg/10"} p-6 lg:p-8 transition-all duration-300 hover:shadow-[0_20px_60px_-30px_rgba(0,0,0,0.12)] hover:border-warm-fg/20`}
               >
                 <p className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary mb-6">{card.title}</p>
                 <div className="mb-6 aspect-[4/3] w-full overflow-hidden rounded-2xl border border-warm-fg/10 bg-white">
@@ -581,6 +678,18 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
             ))}
           </div>
 
+          {R ? (
+          <div className="rounded-3xl bg-dark-bg px-6 py-10 md:px-12 md:py-12">
+            <div className="grid grid-cols-1 sm:grid-cols-3 sm:divide-x divide-y sm:divide-y-0 divide-white/15">
+              {c.caseKpis.map((m) => (
+                <div key={m.l} className="py-6 sm:py-2 text-center">
+                  <p className="font-heading font-semibold text-4xl md:text-5xl lg:text-6xl leading-none tracking-tight text-primary">{m.k}</p>
+                  <p className="mt-4 font-body text-sm text-white/70">{m.l}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          ) : (
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6">
             {c.caseKpis.map((m) => (
               <div
@@ -592,17 +701,34 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
               </div>
             ))}
           </div>
+          )}
         </div>
       </section>
       )}
 
-      <ElfsightReviews className={sectionCls} verifiedReviews={c.verifiedReviews} />
+      {R && !c.hideCase && (
+      <div className="bg-white py-10">
+        <div className={wrap}>
+          <div className="rounded-2xl px-6 py-8 md:px-10 md:py-9 flex flex-col md:flex-row md:items-center md:justify-between gap-6" style={{ backgroundImage: ORANGE_GRADIENT }}>
+            <div>
+              <p className="font-heading text-xl md:text-2xl font-semibold text-white">Pide tu auditoría gratuita</p>
+              <p className="mt-1 text-sm text-white/85">Auditoría inicial sin coste · Respuesta en menos de 24 horas</p>
+            </div>
+            <Link to={c.heroPrimaryCtaTo ?? "/contacto"} className="inline-flex items-center rounded-full bg-white px-7 py-3.5 text-sm font-heading font-medium text-primary transition-colors hover:bg-white/90">
+              Solicitar auditoría gratuita
+            </Link>
+          </div>
+        </div>
+      </div>
+      )}
+
+      <ElfsightReviews className={R ? "bg-primary/[0.05] py-16 md:py-20" : sectionCls} verifiedReviews={c.verifiedReviews} />
 
       {/* SERVICIOS COMPLEMENTARIOS */}
-      <section className={sectionCls}>
-        <div className="container">
+      <section className={sec("bg-white")}>
+        <div className={wrap}>
           <div className="max-w-3xl mb-16">
-            <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
+            <h2 className={`font-heading font-semibold text-warm-fg ${h2Size} leading-[1.05] tracking-tight mb-6`}>
               ¿Qué otros servicios pueden ayudarte a conseguir <span className="text-primary">más clientes</span> desde Google?
             </h2>
             <p className="text-base md:text-lg font-body font-light text-warm-fg/70 leading-relaxed max-w-3xl">
@@ -614,7 +740,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
             {complementaryServices.map((service, idx) => (
               <div
                 key={idx}
-                className="group bg-white border border-warm-fg/10 rounded-2xl p-7 md:p-8 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] flex flex-col min-h-[520px] transition-all duration-[250ms] ease-out hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(26,26,36,0.15)] hover:border-primary hover:bg-primary"
+                className={`group bg-white border ${R ? "border-primary/15" : "border-warm-fg/10"} rounded-2xl p-7 md:p-8 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] flex flex-col ${R ? "min-h-[440px]" : "min-h-[520px]"} transition-all duration-[250ms] ease-out hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(26,26,36,0.15)] hover:border-primary hover:bg-primary`}
               >
                 <div className="mb-8 h-14 flex items-center">
                   <div className="inline-flex items-center justify-center h-14 w-14 rounded-xl bg-transparent group-hover:bg-white group-hover:shadow-xs transition-all duration-[250ms] text-warm-fg">
@@ -651,11 +777,11 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       </section>
 
       {/* POR QUÉ CADA MES */}
-      <section className={sectionCls}>
-        <div className="container grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
+      <section className={sec("bg-primary/[0.05]")}>
+        <div className={`${wrap} grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16`}>
           <div className="md:col-span-5">
             <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Trabajo mensual</p>
-            <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
+            <h2 className={`font-heading font-semibold text-warm-fg ${h2Size2} leading-[1.05] tracking-tight mb-6`}>
               {c.monthlyH2}
             </h2>
             <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed">{c.monthlyBody}</p>
@@ -680,10 +806,10 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
 
       {/* PRESENCIA LOCAL — MAPA */}
       {(c.mapEmbed || c.mapQuery) && (
-        <section className={sectionCls}>
-          <div className="container">
+        <section className={sec("bg-white")}>
+          <div className={wrap}>
             <div className="max-w-3xl mb-12">
-              <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
+              <h2 className={`font-heading font-semibold text-warm-fg ${h2Size2} leading-[1.05] tracking-tight mb-6`}>
                 {c.mapTitle}
               </h2>
               <p className="text-base md:text-lg font-body font-light text-warm-fg/70 leading-relaxed">
@@ -704,16 +830,16 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       )}
 
       {/* FAQ */}
-      <section className={sectionCls}>
-        <div className="container grid grid-cols-1 md:grid-cols-12 gap-12">
+      <section className={sec("bg-white")}>
+        <div className={`${wrap} grid grid-cols-1 md:grid-cols-12 gap-12`}>
           <div className="md:col-span-4">
             <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— FAQ</p>
-            <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl leading-[1.05] tracking-tight">
+            <h2 className={`font-heading font-semibold text-warm-fg ${h2Size2} leading-[1.05] tracking-tight`}>
               Preguntas frecuentes.
             </h2>
           </div>
           <div className="md:col-span-8">
-            <div className="divide-y divide-warm-fg/15 border-y border-warm-fg/15">
+            <div className={R ? "divide-y divide-primary/20 border-y border-primary/20" : "divide-y divide-warm-fg/15 border-y border-warm-fg/15"}>
               {c.faqs.map((item, i) => (
                 <details key={i} className="group py-6">
                   <summary className="cursor-pointer list-none flex items-start justify-between gap-6 font-heading text-lg md:text-xl text-warm-fg">
@@ -731,10 +857,10 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       </section>
 
       {/* CIUDADES */}
-      <section className="bg-white py-20 md:py-24 border-t border-warm-fg/10">
-        <div className="container">
+      <section className={R ? "bg-primary/[0.05] py-14 md:py-16" : "bg-white py-20 md:py-24 border-t border-warm-fg/10"}>
+        <div className={wrap}>
           <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Cobertura</p>
-          <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-5xl leading-[1.05] tracking-tight max-w-[22ch] mb-4">
+          <h2 className={`font-heading font-semibold text-warm-fg ${R ? h2Size : "text-3xl md:text-4xl lg:text-5xl"} leading-[1.05] tracking-tight ${h2Max} mb-4`}>
             {c.citiesH2}
           </h2>
           <p className="text-base font-body text-warm-fg leading-relaxed mb-10 max-w-2xl">{c.citiesBody}</p>
@@ -743,7 +869,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
               <Link
                 key={city.slug}
                 to={`/seo-local-${city.slug}`}
-                className="border border-warm-fg/20 rounded-full px-5 py-2.5 text-sm font-heading text-warm-fg transition-all duration-200 hover:border-primary hover:text-primary hover:-translate-y-[2px]"
+                className={`border ${R ? "bg-white border-primary/25" : "border-warm-fg/20"} rounded-full px-5 py-2.5 text-sm font-heading text-warm-fg transition-all duration-200 hover:border-primary hover:text-primary hover:-translate-y-[2px]`}
               >
                 {city.name}
               </Link>
@@ -754,8 +880,8 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
 
       {/* OTROS SECTORES */}
       {!c.otherSectorsAfterAudit && (c.otherSectorsSection ?? (
-        <section className="bg-white py-16 md:py-20 border-t border-warm-fg/10">
-          <div className="container">
+        <section className={R ? "bg-white py-12 md:py-14" : "bg-white py-16 md:py-20 border-t border-warm-fg/10"}>
+          <div className={wrap}>
             <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Otros sectores</p>
             <h2 className="font-heading text-2xl md:text-3xl text-warm-fg mb-4">{c.otherSectorsH2}</h2>
             <p className="text-base font-body text-warm-fg leading-relaxed max-w-3xl mb-8">{c.otherSectorsBody}</p>
@@ -764,7 +890,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
                 <Link
                   key={s.slug}
                   to={`/${s.slug}`}
-                  className="border border-warm-fg/20 rounded-full px-5 py-2.5 text-sm font-heading text-warm-fg transition-all duration-200 hover:border-primary hover:text-primary hover:-translate-y-[2px]"
+                  className={`border ${chip} rounded-full px-5 py-2.5 text-sm font-heading text-warm-fg transition-all duration-200 hover:border-primary hover:text-primary hover:-translate-y-[2px]`}
                 >
                   {s.label}
                 </Link>
@@ -776,7 +902,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
 
       {!c.casesBeforeAudit && <CasosExitoSection />}
 
-      <CTASection id="contacto" title={c.finalCtaTitle} buttonText="Solicitar auditoría gratuita →" buttonTo={c.finalCtaTo} />
+      <CTASection id="contacto" title={c.finalCtaTitle} buttonText="Solicitar auditoría gratuita →" buttonTo={c.finalCtaTo} gradient={R} />
     </>
   );
 };
