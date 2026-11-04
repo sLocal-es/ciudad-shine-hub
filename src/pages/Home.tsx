@@ -3,7 +3,7 @@ import SEOHead from "@/components/SEOHead";
 import CTASection from "@/components/CTASection";
 import CasosExitoSection from "@/components/CasosExitoSection";
 import SectorHeroDark from "@/components/sector/SectorHeroDark";
-import ServicesCTABlock from "@/components/sector/ServicesCTABlock";
+import ConversionBanner from "@/components/ConversionBanner";
 import LogoMarquee from "@/components/LogoMarquee";
 import LeadMagnetForm from "@/components/forms/LeadMagnetForm";
 import ContactForm from "@/components/forms/ContactForm";
@@ -317,6 +317,14 @@ const Home = () => {
         </div>
       </section>
 
+      <ConversionBanner
+        title="¿Aparece tu negocio cuando te buscan?"
+        sub="Descubre gratis cómo te ve Google ahora mismo."
+        cta="Solicitar auditoría gratuita"
+        to="/contacto"
+        variant="gradient"
+      />
+
       {/* CÓMO POSICIONAMOS */}
       <section className={sectionCls}>
         <div className="container">
@@ -382,6 +390,14 @@ const Home = () => {
         </div>
       </section>
 
+      <ConversionBanner
+        title="Nos encargamos de todo, tú atiendes a tus clientes"
+        sub="Ficha, web, reseñas y reporte mensual con precio fijo mensual."
+        cta="Solicitar auditoría gratuita"
+        to="/contacto"
+        variant="dark"
+      />
+
       {/* SERVICIOS COMPLEMENTARIOS */}
       <section className={sectionCls}>
         <div className="container">
@@ -422,6 +438,14 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <ConversionBanner
+        title="¿Hablamos de tu negocio?"
+        sub="Te decimos con sinceridad si el SEO Local encaja contigo."
+        cta="Solicitar consulta"
+        to="/contacto"
+        variant="gradient"
+      />
 
       {/* ENCAJE */}
       <section className={sectionCls}>
@@ -514,6 +538,14 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <ConversionBanner
+        title="Cada semana que pasa, tu competencia gana terreno"
+        sub="Empieza por una auditoría gratuita de tu ficha y tu web."
+        cta="Quiero mi auditoría gratis"
+        to="/contacto"
+        variant="dark"
+      />
 
       <CasosExitoSection />
 
@@ -623,13 +655,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      <ServicesCTABlock
-        headline="En menos de 60 días puedes empezar a recibir más llamadas, más visitas y más clientes. El momento de ocupar tu lugar en Google es ahora."
-        ctaText="Solicita tu consulta y te diremos exactamente qué pasos seguir para ser el primero en tu zona."
-        buttonText="Solicitar consulta"
-        buttonTo="/contacto"
-      />
 
       <CTASection title="Tu negocio debería aparecer cuando tus clientes te buscan en Google." buttonText="Solicitar auditoría gratuita →" />
     </>
