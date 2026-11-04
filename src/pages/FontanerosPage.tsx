@@ -322,14 +322,14 @@ const FontanerosPage = () => {
       />
 
       {/* MARQUEE — barra infinita de logos */}
-      <section className="bg-white border-t border-warm-fg/10">
+      <div className="bg-white border-t border-warm-fg/10">
         <div className="container">
           <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary py-6 text-center">
             — Herramientas con las que trabajamos
           </p>
         </div>
         <LogoMarquee />
-      </section>
+      </div>
 
 
       {/* MANIFIESTO */}
