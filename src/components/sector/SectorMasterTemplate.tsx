@@ -343,7 +343,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
   const h2Max = R ? "max-w-[26ch]" : "max-w-[22ch]";
   const stepCard = R ? "border-primary/15 shadow-[0_10px_30px_-18px_hsl(var(--primary)/0.35)]" : "border-warm-fg/10 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)]";
   const chip = R ? "border-primary/25" : "border-warm-fg/20";
-  const pill = (label: React.ReactNode, mb: string, dark = false) => (
+  const pill = (label: ReactNode, mb: string, dark = false) => (
     <p className={`inline-flex items-center gap-2 rounded-full border ${dark ? "border-white/25 bg-transparent text-white" : "border-primary/30 bg-white/70 text-warm-fg"} px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] ${mb}`}>
       <span className="h-2 w-2 rounded-full bg-primary" />{label}
     </p>
@@ -387,7 +387,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
         <>
           <section className="bg-white py-16 md:py-20">
             <div className={wrap}>
-              {pill(typeof c.manifestoEyebrow === "string" ? c.manifestoEyebrow.replace(/^—\s*/, "") : c.manifestoEyebrow, "mb-8")}
+              {pill(c.manifestoEyebrow.replace(/^—\s*/, ""), "mb-8")}
               <div className="md:grid md:grid-cols-12 gap-10 items-start">
                 <h2 className={`md:col-span-6 font-heading font-semibold text-warm-fg leading-[1.05] tracking-tight ${h2Size} ${h2Max}`}>
                   {c.manifestoH2}
