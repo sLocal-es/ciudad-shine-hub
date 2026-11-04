@@ -47,7 +47,7 @@ export const ServiceCard = ({ service }: { service: ExtraService }) => (
   <article className="group h-full flex flex-col rounded-3xl border border-warm-fg/10 bg-white p-6 md:p-7 shadow-[0_18px_50px_-38px_rgba(0,0,0,0.35)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_28px_70px_-40px_rgba(0,0,0,0.35)] hover:border-primary/40">
     {service.visual ? (
       <div
-        className="flex aspect-[16/10] w-full items-center justify-center overflow-hidden rounded-2xl border border-warm-fg/10 bg-warm-fg/[0.025] p-5 text-primary"
+        className="flex aspect-[16/10] w-full items-center justify-center overflow-hidden rounded-2xl border border-warm-fg/10 bg-white p-5 text-primary"
         role="img"
         aria-label={service.illustration}
       >
