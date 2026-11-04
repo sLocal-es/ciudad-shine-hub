@@ -24,7 +24,7 @@ import reporteMensualImage from "@/assets/home/reporte-mensual.webp";
 import resenasProAsset from "@/assets/servicios/resenas-google-pro-v2.webp.asset.json";
 import googleAdsAsset from "@/assets/servicios/google-ads.webp.asset.json";
 
-const sectionCls = "bg-white py-16 md:py-20";
+const sectionCls = "py-16 md:py-20";
 
 const iconProps = {
   width: 20,
@@ -267,7 +267,7 @@ const Home = () => {
       </div>
 
       {/* ¿QUÉ ES EL SEO LOCAL? */}
-      <section className={sectionCls}>
+      <section className={`${sectionCls} bg-white`}>
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 lg:gap-20 items-center">
             <div className="md:col-span-7">
@@ -326,7 +326,7 @@ const Home = () => {
       />
 
       {/* CÓMO POSICIONAMOS */}
-      <section className={sectionCls}>
+      <section className={`${sectionCls} bg-white`}>
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <div className="mx-auto max-w-4xl text-center">
             <div className="flex justify-center"><p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-warm-fg mb-6"><span className="h-2 w-2 rounded-full bg-primary" />Nuestro método</p></div>
@@ -409,7 +409,7 @@ const Home = () => {
       </section>
 
       {/* POR QUÉ SLOCAL */}
-      <section className={sectionCls}>
+      <section className={`${sectionCls} bg-white`}>
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <div className="mx-auto max-w-4xl text-center">
             <div className="flex justify-center"><p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-warm-fg mb-6"><span className="h-2 w-2 rounded-full bg-primary" />Una agencia especializada</p></div>
@@ -474,7 +474,7 @@ const Home = () => {
       </section>
 
       {/* COMPARATIVA */}
-      <section className={sectionCls}>
+      <section className={`${sectionCls} bg-white`}>
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <div className="mx-auto max-w-4xl text-center">
             <div className="flex justify-center"><p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-warm-fg mb-6"><span className="h-2 w-2 rounded-full bg-primary" />Diferencias clave</p></div>
