@@ -10,6 +10,7 @@ import ContactForm from "@/components/forms/ContactForm";
 import ElfsightReviews from "@/components/ElfsightReviews";
 import { ServiceCard, type ExtraService } from "@/components/servicios/ServiciosUI";
 import SectorsGridSection from "@/components/home/SectorsGridSection";
+import CoberturaMapas from "@/components/CoberturaMapas";
 import queEsSeoLocalAsset from "@/assets/que-es-seo-local.webp.asset.json";
 import relevanciaOnPageImage from "@/assets/home/relevancia-on-page.webp";
 import consistenciaNapImage from "@/assets/home/consistencia-nap.webp";
@@ -187,7 +188,19 @@ const Home = () => {
     name: "slocal.es",
     url: "https://slocal.es",
     email: "info@slocal.es",
-    areaServed: "España",
+    telephone: "+34644147310",
+    sameAs: [
+      "https://www.facebook.com/slocal.es",
+      "https://www.instagram.com/slocal.es/",
+      "https://linkedin.com/company/slocal-es",
+    ],
+    areaServed: [
+      "España",
+      { "@type": "City", name: "Madrid" },
+      { "@type": "City", name: "Sevilla" },
+      { "@type": "City", name: "Málaga" },
+      { "@type": "City", name: "Córdoba" },
+    ],
     description: "Agencia SEO Local para negocios españoles.",
   };
 
@@ -577,9 +590,10 @@ const Home = () => {
           <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-5xl leading-[1.05] tracking-tight max-w-[22ch] mb-4">
             Posicionamiento local en <span className="text-primary">toda España</span>
           </h2>
-          <p className="text-base font-body text-warm-fg leading-relaxed mb-10 max-w-2xl">
+          <p className="text-base font-body text-warm-fg leading-relaxed mb-6 max-w-2xl">
             Trabajamos con negocios en las principales ciudades españolas. Cada ciudad tiene su propia competencia y sus propias búsquedas.
           </p>
+          <CoberturaMapas />
           <div className="flex flex-wrap gap-2.5">
             {ciudades.map((c) => (
               <Link
