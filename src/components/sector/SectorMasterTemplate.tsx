@@ -900,6 +900,16 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
         </div>
       </section>
 
+      {R && (
+        <ConversionBanner
+          title="¿Te ha quedado alguna duda?"
+          sub="Escríbenos y te respondemos con tu caso concreto."
+          cta="Contactar"
+          to="/contacto"
+          variant="dark"
+        />
+      )}
+
       {/* CIUDADES */}
       <section className={R ? "bg-primary/[0.10] py-14 md:py-16" : "bg-white py-20 md:py-24 border-t border-warm-fg/10"}>
         <div className={wrap}>
