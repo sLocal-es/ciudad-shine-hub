@@ -1,13 +1,10 @@
 import { Link } from "@/lib/router-compat";
 
-const ORANGE_GRADIENT = "linear-gradient(135deg, hsl(18 82% 54%) 0%, hsl(12 80% 42%) 100%)";
-
 const ConversionBanner = ({ title, sub, cta, to, variant }: { title: string; sub: string; cta: string; to: string; variant: "gradient" | "dark" }) => (
   <div className="bg-white py-8 md:py-10">
     <div className="mx-auto w-full max-w-[1200px] px-6">
       <div
-        className={`rounded-2xl px-6 py-8 md:px-10 md:py-9 flex flex-col md:flex-row md:items-center md:justify-between gap-6${variant === "dark" ? " bg-dark-bg" : ""}`}
-        style={variant === "gradient" ? { backgroundImage: ORANGE_GRADIENT } : undefined}
+        className={`rounded-2xl px-6 py-8 md:px-10 md:py-9 flex flex-col md:flex-row md:items-center md:justify-between gap-6${variant === "dark" ? " bg-dark-bg" : " bg-primary"}`}
       >
         <div>
           <p className="font-heading text-xl md:text-2xl font-semibold text-white">{title}</p>
