@@ -338,7 +338,7 @@ const Home = () => {
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 mt-10">
-            {positioningFactor.map((item) => (
+            {positioningFactors.map((item) => (
               <article key={item.eyebrow} className="rounded-2xl overflow-hidden flex flex-col bg-white border border-primary/15 shadow-[0_14px_40px_-24px_hsl(var(--primary)/0.4)]">
                 <img src={item.image} alt={item.alt} className="aspect-[16/10] w-full object-cover" loading="lazy" width={1200} height={800} decoding="async" />
                 <div className="p-6">
@@ -365,7 +365,7 @@ const Home = () => {
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 mt-10">
-            {includedService.map((item) => (
+            {includedServices.map((item) => (
               <article key={item.eyebrow} className="rounded-2xl overflow-hidden flex flex-col bg-white/[0.06] border border-white/10">
                 <img src={item.image} alt={item.alt} className="aspect-[16/10] w-full object-cover" loading="lazy" width={1200} height={800} decoding="async" />
                 <div className="p-6">
