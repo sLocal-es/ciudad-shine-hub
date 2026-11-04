@@ -10,6 +10,7 @@ import { toast } from "@/hooks/use-toast";
 import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisual";
 import OptimizedWebsiteVisual from "@/components/OptimizedWebsiteVisual";
 import CasosExitoSection from "@/components/CasosExitoSection";
+import CoberturaMapas from "@/components/CoberturaMapas";
 import ComoPosicionamosSection, { ComoPosicionamosSectionProps } from "@/components/sector/ComoPosicionamosSection";
 import QueIncluyeSection, { QueIncluyeSectionProps } from "@/components/sector/QueIncluyeSection";
 import caseBeforeAsset from "@/assets/caso-exito-antes.webp.asset.json";
@@ -870,7 +871,8 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
           <h2 className={`font-heading font-semibold text-warm-fg ${R ? h2Size : "text-3xl md:text-4xl lg:text-5xl"} leading-[1.05] tracking-tight ${h2Max} mb-4`}>
             {c.citiesH2}
           </h2>
-          <p className="text-base font-body text-warm-fg leading-relaxed mb-10 max-w-2xl">{c.citiesBody}</p>
+          <p className="text-base font-body text-warm-fg leading-relaxed mb-6 max-w-2xl">{c.citiesBody}</p>
+          <CoberturaMapas />
           <div className="flex flex-wrap gap-2.5">
             {cities.map((city) => (
               <Link
