@@ -4,6 +4,7 @@ import BreadcrumbNav from "@/components/BreadcrumbNav";
 
 import CTASection from "@/components/CTASection";
 import ConversionBanner from "@/components/ConversionBanner";
+import { BANNER_COPY } from "@/data/bannerCopy";
 import { RevealScope } from "@/components/Reveal";
 import CasosExitoSection from "@/components/CasosExitoSection";
 import { sectors } from "@/data/sectors";
@@ -143,9 +144,9 @@ const SectorPage = () => {
 
 
       <ConversionBanner
-        title={`¿Quieres más ${sector.ctaWord} desde Google?`}
+        title={BANNER_COPY.masClientes(sector.ctaWord).title}
         sub="Analizamos gratis tu ficha, tu web y a tu competencia, y te decimos qué te está frenando."
-        cta="Quiero mi auditoría gratis"
+        cta={BANNER_COPY.masClientes(sector.ctaWord).cta}
         to="/contacto"
         variant="gradient"
       />
@@ -177,9 +178,9 @@ const SectorPage = () => {
 
 
       <ConversionBanner
-        title="Descubre qué te frena frente a tu competencia"
+        title={BANNER_COPY.frena.title}
         sub="Auditoría gratuita de tu ficha de Google, tu web y los negocios que hoy aparecen por delante de ti."
-        cta="Pedir mi auditoría gratis"
+        cta={BANNER_COPY.frena.cta}
         to="/contacto"
         variant="gradient"
       />
@@ -239,9 +240,9 @@ const SectorPage = () => {
 
 
       <ConversionBanner
-        title="Tu negocio puede ser el próximo caso de éxito"
+        title={BANNER_COPY.proximoCaso.title}
         sub="Cuéntanos tu situación y te decimos qué haría Slocal en tu caso."
-        cta="Quiero hablar con Slocal"
+        cta={BANNER_COPY.proximoCaso.cta}
         to="/contacto"
         variant="gradient"
       />
@@ -269,9 +270,9 @@ const SectorPage = () => {
 
 
       <ConversionBanner
-        title="Tu competencia ya está en Google. ¿Y tú?"
+        title={BANNER_COPY.competencia.title}
         sub="Pide tu auditoría gratuita y descubre dónde estás ahora mismo."
-        cta="Auditar mi negocio gratis"
+        cta={BANNER_COPY.competencia.cta}
         to="/contacto"
         variant="gradient"
       />

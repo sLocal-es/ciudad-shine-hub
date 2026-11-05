@@ -4,6 +4,7 @@ import { Link } from "@/lib/router-compat";
 import SEOHead from "@/components/SEOHead";
 import CTASection from "@/components/CTASection";
 import ConversionBanner from "@/components/ConversionBanner";
+import { BANNER_COPY } from "@/data/bannerCopy";
 import ComplementaryServicesGrid from "@/components/ComplementaryServicesGrid";
 import { RevealScope } from "@/components/Reveal";
 import SectorHeroDark from "@/components/sector/SectorHeroDark";
@@ -444,9 +445,9 @@ const FontanerosPage = () => {
 
 
       <ConversionBanner
-        title="¿Quieres más clientes desde Google?"
+        title={BANNER_COPY.masClientes("clientes").title}
         sub="Analizamos gratis tu ficha, tu web y a tu competencia, y te decimos qué te está frenando."
-        cta="Quiero mi auditoría gratis"
+        cta={BANNER_COPY.masClientes("clientes").cta}
         to="/contacto"
         variant="dark"
       />
@@ -551,9 +552,9 @@ const FontanerosPage = () => {
 
 
       <ConversionBanner
-        title="Descubre qué te frena frente a tu competencia"
+        title={BANNER_COPY.frena.title}
         sub="Auditoría gratuita de tu ficha de Google, tu web y los negocios que hoy aparecen por delante de ti."
-        cta="Pedir mi auditoría gratis"
+        cta={BANNER_COPY.frena.cta}
         to="/contacto"
         variant="dark"
       />
@@ -656,9 +657,9 @@ const FontanerosPage = () => {
 
 
       <ConversionBanner
-        title="Tu negocio puede ser el próximo caso de éxito"
+        title={BANNER_COPY.proximoCaso.title}
         sub="Cuéntanos tu situación y te decimos qué haría Slocal en tu caso."
-        cta="Quiero hablar con Slocal"
+        cta={BANNER_COPY.proximoCaso.cta}
         to="/contacto"
         variant="gradient"
       />
@@ -988,9 +989,9 @@ const FontanerosPage = () => {
 
 
       <ConversionBanner
-        title="Tu competencia ya está en Google. ¿Y tú?"
+        title={BANNER_COPY.competencia.title}
         sub="Pide tu auditoría gratuita y descubre dónde estás ahora mismo."
-        cta="Auditar mi negocio gratis"
+        cta={BANNER_COPY.competencia.cta}
         to="/contacto"
         variant="gradient"
       />

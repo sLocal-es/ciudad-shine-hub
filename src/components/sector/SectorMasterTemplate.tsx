@@ -13,6 +13,7 @@ import OptimizedWebsiteVisual from "@/components/OptimizedWebsiteVisual";
 import CasosExitoSection from "@/components/CasosExitoSection";
 import CoberturaMapas from "@/components/CoberturaMapas";
 import ConversionBanner from "@/components/ConversionBanner";
+import { BANNER_COPY } from "@/data/bannerCopy";
 import ComplementaryServicesGrid from "@/components/ComplementaryServicesGrid";
 import ComoPosicionamosSection, { ComoPosicionamosSectionProps } from "@/components/sector/ComoPosicionamosSection";
 import QueIncluyeSection, { QueIncluyeSectionProps } from "@/components/sector/QueIncluyeSection";
@@ -293,9 +294,9 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
   const R = isSector || isCity;
   const cityBanner2 = isCity && (
     <ConversionBanner
-      title={`Tu competencia en ${c.sectorLabel} ya está trabajando su ficha de Google`}
+      title={BANNER_COPY.cityCompetencia(c.sectorLabel).title}
       sub="Cada semana que pasa son llamadas que van a otro negocio."
-      cta="Pedir auditoría gratuita"
+      cta={BANNER_COPY.cityCompetencia(c.sectorLabel).cta}
       to="/contacto"
       variant="dark"
     />
@@ -509,19 +510,19 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
 
       {isSector && (
         <ConversionBanner
-          title={`¿Quieres más ${c.clientWord} desde Google?`}
+          title={BANNER_COPY.masClientes(c.clientWord).title}
           sub="Analizamos gratis tu ficha, tu web y a tu competencia, y te decimos qué te está frenando."
-          cta="Quiero mi auditoría gratis"
-          to={c.heroPrimaryCtaTo ?? "/contacto"}
+          cta={BANNER_COPY.masClientes(c.clientWord).cta}
+          to="/contacto"
           variant={c.comoPosicionamos || c.queIncluye || c.afterManifesto || c.servicesCta || c.casesBeforeAudit ? "gradient" : "dark"}
         />
       )}
 
       {isCity && (
         <ConversionBanner
-          title={`¿Aparece tu negocio en ${c.sectorLabel} cuando te buscan?`}
+          title={BANNER_COPY.cityAparece(c.sectorLabel).title}
           sub="Te mostramos dónde estás hoy frente a tu competencia con una auditoría gratuita de tu ficha y tu web."
-          cta="Quiero mi auditoría gratuita"
+          cta={BANNER_COPY.cityAparece(c.sectorLabel).cta}
           to="/contacto"
           variant="gradient"
         />
@@ -638,10 +639,10 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
 
       {isSector && !c.hideHow && (
         <ConversionBanner
-          title="Descubre qué te frena frente a tu competencia"
+          title={BANNER_COPY.frena.title}
           sub="Auditoría gratuita de tu ficha de Google, tu web y los negocios que hoy aparecen por delante de ti."
-          cta="Pedir mi auditoría gratis"
-          to={c.heroPrimaryCtaTo ?? "/contacto"}
+          cta={BANNER_COPY.frena.cta}
+          to="/contacto"
           variant="gradient"
         />
       )}
@@ -715,9 +716,9 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
 
       {isSector && !c.hideCase && (
         <ConversionBanner
-          title="Tu negocio puede ser el próximo caso de éxito"
+          title={BANNER_COPY.proximoCaso.title}
           sub="Cuéntanos tu situación y te decimos qué haría Slocal en tu caso."
-          cta="Quiero hablar con Slocal"
+          cta={BANNER_COPY.proximoCaso.cta}
           to="/contacto"
           variant="gradient"
         />
@@ -827,9 +828,9 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
 
       {isSector && (
         <ConversionBanner
-          title="Tu competencia ya está en Google. ¿Y tú?"
+          title={BANNER_COPY.competencia.title}
           sub="Pide tu auditoría gratuita y descubre dónde estás ahora mismo."
-          cta="Auditar mi negocio gratis"
+          cta={BANNER_COPY.competencia.cta}
           to="/contacto"
           variant="gradient"
         />
@@ -884,9 +885,9 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
 
       {isCity && (
         <ConversionBanner
-          title={`Pasa de no aparecer a recibir llamadas en ${c.sectorLabel}`}
+          title={BANNER_COPY.cityLlamadas(c.sectorLabel).title}
           sub="Hablamos de tu negocio y te decimos por dónde empezar. Sin compromiso."
-          cta="Solicitar consulta"
+          cta={BANNER_COPY.cityLlamadas(c.sectorLabel).cta}
           to="/contacto"
           variant="gradient"
         />

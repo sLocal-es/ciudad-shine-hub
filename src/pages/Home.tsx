@@ -5,6 +5,7 @@ import CTASection from "@/components/CTASection";
 import CasosExitoSection from "@/components/CasosExitoSection";
 import SectorHeroDark from "@/components/sector/SectorHeroDark";
 import ConversionBanner from "@/components/ConversionBanner";
+import { BANNER_COPY } from "@/data/bannerCopy";
 import LogoMarquee from "@/components/LogoMarquee";
 import { RevealScope } from "@/components/Reveal";
 import LeadMagnetForm from "@/components/forms/LeadMagnetForm";
@@ -282,9 +283,9 @@ const Home = () => {
       </section>
 
       <ConversionBanner
-        title="¿Aparece tu negocio cuando te buscan?"
+        title={BANNER_COPY.homeAparece.title}
         sub="Descubre gratis cómo te ve Google ahora mismo."
-        cta="Solicitar auditoría gratuita"
+        cta={BANNER_COPY.homeAparece.cta}
         to="/contacto"
         variant="gradient"
       />
@@ -347,9 +348,9 @@ const Home = () => {
       </section>
 
       <ConversionBanner
-        title="Nos encargamos de todo, tú atiendes a tus clientes"
+        title={BANNER_COPY.homeTodo.title}
         sub="Ficha, web, reseñas y reporte mensual con precio fijo mensual."
-        cta="Solicitar auditoría gratuita"
+        cta={BANNER_COPY.homeTodo.cta}
         to="/contacto"
         variant="gradient"
       />
@@ -410,9 +411,9 @@ const Home = () => {
       </section>
 
       <ConversionBanner
-        title="¿Hablamos de tu negocio?"
+        title={BANNER_COPY.homeHablamos.title}
         sub="Te decimos con sinceridad si el SEO Local encaja contigo."
-        cta="Solicitar consulta"
+        cta={BANNER_COPY.homeHablamos.cta}
         to="/contacto"
         variant="gradient"
       />
@@ -513,9 +514,9 @@ const Home = () => {
       </section>
 
       <ConversionBanner
-        title="Cada semana que pasa, tu competencia gana terreno"
+        title={BANNER_COPY.homeSemana.title}
         sub="Empieza por una auditoría gratuita de tu ficha y tu web."
-        cta="Quiero mi auditoría gratis"
+        cta={BANNER_COPY.homeSemana.cta}
         to="/contacto"
         variant="gradient"
       />
@@ -558,6 +559,14 @@ const Home = () => {
 
       {/* RESEÑAS */}
       <ElfsightReviews className="bg-white py-16 md:py-20" />
+
+      <ConversionBanner
+        title={BANNER_COPY.homeResenas.title}
+        sub="El siguiente puede ser el tuyo."
+        cta={BANNER_COPY.homeResenas.cta}
+        to="/contacto"
+        variant="dark"
+      />
 
       {/* SECTORES */}
       <SectorsGridSection />
