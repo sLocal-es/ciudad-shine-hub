@@ -98,7 +98,7 @@ const QueIncluyeSection = ({ titleSuffix, texts, hoverAccent = false, compact = 
                   </>
                 )}
               </h3>
-              <p className={`mt-3 font-body font-light text-sm text-warm-fg/75 leading-relaxed${hoverAccent ? " group-hover:text-white group-hover:font-normal" : ""}`}>{texts[index]}</p>
+              <p className={`mt-3 font-body font-light text-sm text-warm-fg/75 leading-relaxed`}>{texts[index]}</p>
             </div>
           </article>
         ))}
