@@ -601,7 +601,7 @@ const FontanerosPage = () => {
                   {card.title}
                 </p>
                 {card.image ? (
-                  <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-[hsl(var(--warm-bg))] border border-warm-fg/10 mb-6">
+                  <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden bg-white border border-warm-fg/10 mb-6">
                     <img
                       src={card.image}
                       alt={card.imageAlt}
@@ -611,7 +611,7 @@ const FontanerosPage = () => {
                   </div>
                 ) : (
                   <div
-                    className="w-full aspect-[4/3] rounded-2xl bg-[hsl(var(--warm-bg))] border-2 border-dashed border-warm-fg/15 flex flex-col items-center justify-center gap-3 mb-6"
+                    className="w-full aspect-[4/3] rounded-2xl bg-white border-2 border-dashed border-warm-fg/15 flex flex-col items-center justify-center gap-3 mb-6"
                     role="img"
                     aria-label={card.label}
                   >
