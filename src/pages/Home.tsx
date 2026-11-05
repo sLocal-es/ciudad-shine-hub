@@ -98,16 +98,9 @@ const includedServices = [
     alt: "Ilustración de una ficha de Google Business Profile completa y optimizada",
   },
   {
-    eyebrow: "Captación local",
-    title: <>Web <span className="text-primary">SEO Local</span></>,
-    text: "Creamos páginas por servicio y por zona o barrio, pensadas para posicionar cada combinación relevante y convertir las búsquedas locales en contactos.",
-    image: webSeoLocalImage,
-    alt: "Ilustración de una web SEO local conectada con páginas de servicios y zonas",
-  },
-  {
     eyebrow: "Tu web",
     title: <>Diseño web local o <span className="text-primary">optimización de tu web actual</span></>,
-    text: "Si no tienes web, diseñamos una pensada para tu zona y tus servicios; si ya la tienes, la optimizamos para que Google y tus clientes entiendan qué haces y dónde.",
+    text: "Si no tienes web, diseñamos una pensada para tu zona y tus servicios; si ya la tienes, la optimizamos para que Google y tus clientes entiendan qué haces y dónde. Creamos páginas por servicio y por zona o barrio para posicionar cada combinación relevante y convertir las búsquedas locales en contactos.",
     image: webSeoLocalImage,
     alt: "Ilustración de una web local diseñada u optimizada para un negocio de la zona",
   },

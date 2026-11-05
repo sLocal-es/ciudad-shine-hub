@@ -784,7 +784,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-            {complementaryServices.map((service, idx) => (
+            {complementaryServices.filter((sv) => sv.link === "/contacto" && !String(sv.desc).includes("enlaces")).map((service, idx) => (
               <div
                 key={idx}
                 className={`${R ? "group/svc" : "group"} bg-white border ${R ? "border-transparent" : "border-warm-fg/10"} rounded-2xl p-7 md:p-8 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] flex flex-col ${R ? "min-h-[440px]" : "min-h-[520px]"} ${R ? "transition-[transform,color,box-shadow,border-color] duration-300 hover:-translate-y-1 focus-within:-translate-y-1 hover:border-primary hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)] focus-within:border-primary focus-within:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)]" : "transition-all duration-[250ms] ease-out hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(26,26,36,0.15)] hover:border-primary hover:bg-primary"}`}

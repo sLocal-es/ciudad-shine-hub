@@ -67,9 +67,7 @@ const Sistema = () => {
           <ul className="grid md:grid-cols-2 gap-4">
             {[
               { t: "Pack Web + Google Business Profile", d: "La base del SEO Local: una web optimizada y una ficha de Google preparada para captar clientes." },
-              { t: "Gestión de Reseñas PRO", d: "Un añadido opcional para captar reseñas reales y reforzar la confianza en tu negocio." },
               { t: "Google Ads", d: "Un añadido opcional para generar visibilidad inmediata mientras crece el posicionamiento orgánico." },
-              { t: "Backlinks Locales", d: "Un añadido opcional para reforzar la autoridad de la web con enlaces y menciones relevantes." },
             ].map((b) => (
               <li
                 key={b.t}

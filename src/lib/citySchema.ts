@@ -59,7 +59,7 @@ export const buildCitySchema = (
     ["Auditoría SEO inicial", `Diagnóstico de la ficha, la web y la visibilidad actual por zonas de ${name}.`],
     ["Estudio de palabras clave", "Análisis de búsquedas con intención de contratación agrupadas por servicio y zona."],
     ["Ficha de Google Business Profile", "Configuración de categorías, servicios, descripción, zonas de cobertura, fotografías y publicaciones."],
-    ["Web SEO Local", `Páginas específicas para los servicios y zonas prioritarias de ${name}.`],
+    ["Diseño web local o optimización de tu web actual", `Diseño u optimización de la web con páginas específicas para los servicios y zonas prioritarias de ${name}.`],
     ["Citaciones en directorios locales y temáticos", "Corrección y ampliación de las menciones del negocio en directorios locales y temáticos."],
     ["Reporte mensual", "Informe mensual con posiciones, llamadas, formularios y evolución de la ficha."],
   ];
