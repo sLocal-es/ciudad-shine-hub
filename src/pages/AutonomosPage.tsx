@@ -234,7 +234,7 @@ const AutonomosPage = () => {
         h1={<h1>SEO para <span className="text-primary">autónomos</span></h1>}
         subtitle={<>Consultor SEO Local para autónomos: ficha de Google, web y posicionamiento local. Una persona, un servicio completo, sin intermediarios.</>}
         primaryCta={{ label: "Solicitar auditoría gratuita", to: "/contacto" }}
-        secondaryCta={{ label: "Ver cómo funciona", to: "/como-funciona" }}
+        secondaryCta={{ label: "Ver cómo funciona", to: "/#como-posicionamos" }}
         trustItems={["Un consultor dedicado", "Ficha de Google gestionada cada mes", "Auditoría inicial sin coste"]}
         curveClass="bg-white"
       />

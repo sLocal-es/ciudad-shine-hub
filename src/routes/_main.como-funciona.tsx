@@ -1,6 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
-import ComoFunciona from "@/pages/ComoFunciona";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/_main/como-funciona")({
-  component: ComoFunciona,
+  beforeLoad: () => {
+    throw redirect({ to: "/", statusCode: 301 });
+  },
 });

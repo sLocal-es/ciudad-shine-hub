@@ -252,7 +252,7 @@ const Home = () => {
           <>Google Business Profile, Google Maps y posicionamiento local. Gestionamos tu presencia para que cada mes más clientes de tu ciudad te encuentren antes que a tu competencia.</>
         }
         primaryCta={{ label: "Solicitar auditoría gratuita", to: "/contacto" }}
-        secondaryCta={{ label: "Ver cómo funciona", to: "/como-funciona" }}
+        secondaryCta={{ label: "Ver cómo funciona", to: "/#como-posicionamos" }}
         trustItems={["Google Partner", "Ficha gestionada cada mes", "Auditoría inicial sin coste"]}
         curveClass="bg-white"
       />

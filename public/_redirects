@@ -19,5 +19,10 @@
 # 301 redirect for renamed Córdoba page
 /seo-cordoba                               /seo-local-cordoba                301
 
+# 301 redirects for removed pages
+/servicios                                 /                                 301
+/servicios/*                               /                                 301
+/como-funciona                             /                                 301
+
 # SPA fallback
 /*    /index.html   200

@@ -30,7 +30,7 @@ const SectorHeroDark = ({
   h1,
   subtitle,
   primaryCta = { label: "Empezar →", to: "/contacto" },
-  secondaryCta = { label: "Ver cómo funciona", to: "/como-funciona" },
+  secondaryCta = { label: "Ver cómo funciona", to: "/#como-posicionamos" },
   curveClass = "bg-background",
   visualAlt,
 }: SectorHeroDarkProps) => {
