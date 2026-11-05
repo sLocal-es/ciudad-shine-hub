@@ -36,20 +36,6 @@ const iconProps = {
   strokeLinejoin: "round" as const,
 };
 
-const IconStar = () => (
-  <svg {...iconProps} aria-hidden>
-    <path d="M12 4l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 9.7l5.4-.8L12 4z" />
-  </svg>
-);
-
-const IconTarget = () => (
-  <svg {...iconProps} aria-hidden>
-    <circle cx="12" cy="12" r="8" />
-    <circle cx="12" cy="12" r="3.5" />
-    <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
-  </svg>
-);
-
 const complementaryServices = [
   {
     id: "ads",
