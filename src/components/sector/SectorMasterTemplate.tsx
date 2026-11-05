@@ -333,8 +333,19 @@ const stepIcons = [
 ];
 
 const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }) => {
-  // Visual redesign applies only to sector pages (/seo-para-*); city pages keep the previous layout.
-  const R = c.canonical.startsWith("/seo-para-");
+  // Visual redesign applies to sector pages (/seo-para-*) and city pages (/seo-local-*).
+  const isSector = c.canonical.startsWith("/seo-para-");
+  const isCity = c.canonical.startsWith("/seo-local-");
+  const R = isSector || isCity;
+  const cityBanner2 = isCity && (
+    <ConversionBanner
+      title={`Tu competencia en ${c.sectorLabel} ya está trabajando su ficha de Google`}
+      sub="Cada semana que pasa son llamadas que van a otro negocio."
+      cta="Pedir auditoría gratuita"
+      to="/contacto"
+      variant="dark"
+    />
+  );
   const wrap = R ? "mx-auto w-full max-w-[1200px] px-6" : "container";
   const sec = (bg: string) => (R ? `${bg} py-16 md:py-20` : sectionCls);
   const h2Size = R ? "text-3xl md:text-4xl lg:text-[42px]" : "text-4xl md:text-5xl lg:text-6xl";
@@ -542,7 +553,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
         </div>
       </section>)}
 
-      {R && (
+      {isSector && (
         <ConversionBanner
           title={`¿Quieres más ${c.clientWord} desde Google?`}
           sub="Analizamos gratis tu ficha, tu web y a tu competencia, y te decimos qué te está frenando."
@@ -552,11 +563,22 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
         />
       )}
 
+      {isCity && (
+        <ConversionBanner
+          title={`¿Aparece tu negocio en ${c.sectorLabel} cuando te buscan?`}
+          sub="Te mostramos dónde estás hoy frente a tu competencia con una auditoría gratuita de tu ficha y tu web."
+          cta="Quiero mi auditoría gratuita"
+          to="/contacto"
+          variant="gradient"
+        />
+      )}
+
       {c.afterManifesto}
 
       {c.comoPosicionamos && (R ? <ComoPosicionamosSection {...c.comoPosicionamos} compact /> : <ComoPosicionamosSection {...c.comoPosicionamos} />)}
 
       {c.queIncluye && (R ? <QueIncluyeSection {...c.queIncluye} compact /> : <QueIncluyeSection {...c.queIncluye} />)}
+      {c.queIncluye && cityBanner2}
 
       {c.servicesCta}
 
@@ -658,7 +680,9 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       </section>
       )}
 
-      {R && !c.hideHow && (
+      {!c.queIncluye && !c.hideHow && cityBanner2}
+
+      {isSector && !c.hideHow && (
         <ConversionBanner
           title="Descubre qué te frena frente a tu competencia"
           sub="Auditoría gratuita de tu ficha de Google, tu web y los negocios que hoy aparecen por delante de ti."
@@ -735,7 +759,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       </section>
       )}
 
-      {R && !c.hideCase && (
+      {isSector && !c.hideCase && (
         <ConversionBanner
           title="Tu negocio puede ser el próximo caso de éxito"
           sub="Cuéntanos tu situación y te decimos qué haría Slocal en tu caso."
@@ -879,7 +903,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
         </div>
       </section>
 
-      {R && (
+      {isSector && (
         <ConversionBanner
           title="Tu competencia ya está en Google. ¿Y tú?"
           sub="Pide tu auditoría gratuita y descubre dónde estás ahora mismo."
@@ -935,6 +959,16 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       ))}
 
       {!c.casesBeforeAudit && <CasosExitoSection />}
+
+      {isCity && (
+        <ConversionBanner
+          title={`Pasa de no aparecer a recibir llamadas en ${c.sectorLabel}`}
+          sub="Hablamos de tu negocio y te decimos por dónde empezar. Sin compromiso."
+          cta="Solicitar consulta"
+          to="/contacto"
+          variant="gradient"
+        />
+      )}
 
       <CTASection id="contacto" title={c.finalCtaTitle} buttonText="Solicitar auditoría gratuita →" buttonTo={c.finalCtaTo} gradient={R} />
     </>
