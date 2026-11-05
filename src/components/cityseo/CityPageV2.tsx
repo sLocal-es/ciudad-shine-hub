@@ -45,7 +45,7 @@ const SearchTypeIcon = ({ type }: { type: "city" | "zone" | "nearby" | "urgent" 
 
 const HeroAuditBand = ({ city }: { city: SeoLocalCity }) => (
   <section id="auditoria-hero" className="scroll-mt-24 bg-white py-6 md:py-8">
-    <div className="container">
+    <div className="mx-auto w-full max-w-[1200px] px-6">
       <div className="rounded-2xl bg-primary px-5 py-5 text-primary-foreground md:px-8 md:py-6">
         <div className="lg:flex lg:items-center lg:justify-between lg:gap-8">
           <div className="lg:w-[17rem] lg:shrink-0">
@@ -68,7 +68,7 @@ const HeroAuditBand = ({ city }: { city: SeoLocalCity }) => (
 
 const GuaranteeStrip = () => (
   <section className="bg-white pb-6 md:pb-8">
-    <div className="container">
+    <div className="mx-auto w-full max-w-[1200px] px-6">
       <div className="rounded-2xl bg-[hsl(var(--dark-bg))] px-5 py-4 text-white md:px-8 md:py-5 lg:flex lg:items-center lg:gap-6">
         <div className="flex shrink-0 items-center gap-2 text-primary">
           <ShieldCheck className="h-5 w-5" aria-hidden />
@@ -96,10 +96,10 @@ const ManifestoCardIcon = ({ type }: { type: "pin" | "browser" }) => (
 );
 
 const CityManifestoSection = ({ city }: { city: SeoLocalCity }) => (
-  <section className="bg-white py-24 md:py-32 border-t border-warm-fg/10">
-    <div className="container">
-      <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— El punto de partida</p>
-      <h2 className="font-heading font-semibold text-warm-fg leading-[1.05] tracking-tight text-4xl md:text-5xl lg:text-6xl max-w-[22ch]">
+  <section className="bg-white py-14 md:py-16">
+    <div className="mx-auto w-full max-w-[1200px] px-6">
+      <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-warm-fg mb-8"><span className="h-2 w-2 rounded-full bg-primary" />El punto de partida</p>
+      <h2 className="font-heading font-semibold text-warm-fg leading-[1.05] tracking-tight text-3xl md:text-4xl lg:text-[42px] max-w-[26ch]">
         ¿Cómo conseguir <span className="text-primary">más clientes</span> desde Google en {city.name}?
       </h2>
 
@@ -110,7 +110,7 @@ const CityManifestoSection = ({ city }: { city: SeoLocalCity }) => (
         <p className="mt-7 border-l-4 border-primary pl-5 text-base leading-relaxed text-warm-fg md:pl-6 md:text-lg">
           En {city.name} hay más de {city.empresasActivas} empresas activas (INE, 2025): aparecer en el <span className="text-primary font-semibold">top 3 de Google Maps</span> multiplica los contactos porque esos tres negocios se llevan la mayoría de las llamadas.
         </p>
-        <div className="mt-7 flex items-start gap-3 rounded-xl bg-primary/10 px-4 py-3 text-[15px] leading-relaxed text-warm-fg">
+        <div className="mt-7 flex items-start gap-3 rounded-xl border border-primary/25 bg-white px-4 py-3 text-[15px] leading-relaxed text-warm-fg">
           <svg className="mt-0.5 h-5 w-5 shrink-0 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
             <path d="m12 3 1.3 4.2L17.5 8.5l-4.2 1.3L12 14l-1.3-4.2-4.2-1.3 4.2-1.3L12 3Z" /><path d="m19 14 .8 2.2L22 17l-2.2.8L19 20l-.8-2.2L16 17l2.2-.8L19 14ZM5 14l.7 1.8 1.8.7-1.8.7L5 19l-.7-1.8-1.8-.7 1.8-.7L5 14Z" />
           </svg>
@@ -119,12 +119,12 @@ const CityManifestoSection = ({ city }: { city: SeoLocalCity }) => (
       </div>
 
       <div className="mt-10 grid gap-5 md:grid-cols-2">
-        <article className="rounded-2xl border border-warm-fg/10 bg-white p-6 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)]">
+        <article className="rounded-2xl border border-primary/15 bg-white p-6 shadow-[0_10px_30px_-18px_hsl(var(--primary)/0.35)]">
           <ManifestoCardIcon type="pin" />
           <h3 className="mt-5 font-heading font-semibold text-xl text-warm-fg">Tu ficha de <span className="text-primary">Google Business Profile</span> genera llamadas en {city.name}</h3>
           <p className="mt-4 text-[15px] leading-relaxed text-warm-fg/85 md:text-base">Google Business Profile es donde el cliente de {city.name} decide llamarte. Optimizamos tu ficha para aparecer antes que otros negocios de tu zona y convertir búsquedas en contactos reales.</p>
         </article>
-        <article className="rounded-2xl border border-warm-fg/10 bg-white p-6 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)]">
+        <article className="rounded-2xl border border-primary/15 bg-white p-6 shadow-[0_10px_30px_-18px_hsl(var(--primary)/0.35)]">
           <ManifestoCardIcon type="browser" />
           <h3 className="mt-5 font-heading font-semibold text-xl text-warm-fg">Una web que <span className="text-primary">convierte</span> visitas en clientes</h3>
           <p className="mt-4 text-[15px] leading-relaxed text-warm-fg/85 md:text-base">Mientras Google Business Profile genera la llamada, tu web convierte las visitas en contactos cualificados. Trabajamos páginas específicas por servicio y por barrio de {city.name}.</p>
@@ -135,42 +135,42 @@ const CityManifestoSection = ({ city }: { city: SeoLocalCity }) => (
 );
 
 const WhyLocalSeoSection = ({ city, compactTimeframe }: { city: SeoLocalCity; compactTimeframe: string }) => (
-  <section className="bg-white py-24 md:py-32 border-t border-warm-fg/10">
-    <div className="container">
-      <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Por qué importa</p>
-      <h2 className="font-heading font-semibold text-warm-fg leading-[1.05] text-4xl md:text-5xl lg:text-6xl max-w-[22ch]">
+  <section className="bg-dark-bg py-14 md:py-16">
+    <div className="mx-auto w-full max-w-[1200px] px-6">
+      <p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-transparent px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-white mb-8"><span className="h-2 w-2 rounded-full bg-primary" />Por qué importa</p>
+      <h2 className="font-heading font-semibold text-white leading-[1.05] text-3xl md:text-4xl lg:text-[42px] max-w-[26ch]">
         ¿Por qué es <span className="text-primary">importante</span> el SEO local en {city.name}?
       </h2>
 
-      <div className="mt-12 grid lg:grid-cols-12 gap-10 items-stretch">
+      <div className="mt-10 grid lg:grid-cols-12 gap-10 items-stretch">
         <div className="lg:col-span-7 flex flex-col justify-center">
-          <p className="font-heading font-semibold text-2xl md:text-3xl leading-snug text-warm-fg">
+          <p className="font-heading font-semibold text-2xl md:text-3xl leading-snug text-white">
             El SEO local decide qué negocios aparecen cuando alguien en {city.name} busca un servicio cerca de él.
           </p>
-          <p className="mt-6 text-base md:text-lg font-body text-warm-fg leading-relaxed">
+          <p className="mt-6 text-base md:text-lg font-body text-white/75 leading-relaxed">
             Esas búsquedas se hacen por servicio y por zona, y aparecer en las primeras posiciones de Google Maps y de los resultados locales pone tu negocio delante de personas que ya quieren contratar.
           </p>
         </div>
-        <div className="lg:col-span-5 rounded-3xl bg-[hsl(var(--dark-bg))] text-white p-8 md:p-10">
+        <div className="lg:col-span-5 rounded-3xl bg-primary text-white p-8 md:p-10">
           <h3 className="text-white font-heading text-lg">Datos clave del SEO local en {city.name}</h3>
           <div className="mt-8 flex items-end gap-3">
-            <span className="font-heading font-semibold text-6xl md:text-7xl text-primary leading-none">{compactTimeframe}</span>
+            <span className="font-heading font-semibold text-6xl md:text-7xl text-white leading-none">{compactTimeframe}</span>
             <span className="pb-1 font-heading text-2xl text-white">meses</span>
           </div>
           <p className="mt-5 text-base text-white">Plazo orientativo de los primeros resultados</p>
-          <p className="mt-4 text-[15px] leading-relaxed text-white/80">El plazo es orientativo y depende del sector, de la competencia y del punto de partida de cada negocio.</p>
+          <p className="mt-4 text-[15px] leading-relaxed text-white/90">El plazo es orientativo y depende del sector, de la competencia y del punto de partida de cada negocio.</p>
         </div>
       </div>
 
-      <div className="mt-16">
-        <h3 className="font-heading text-2xl text-warm-fg">Tipos de búsquedas que captamos en {city.name}</h3>
+      <div className="mt-12">
+        <h3 className="font-heading text-2xl text-white">Tipos de búsquedas que captamos en {city.name}</h3>
         <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          <article className="bg-white rounded-2xl border border-warm-fg/10 p-6 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)]">
+          <article className="bg-white rounded-2xl border border-primary/15 p-6 shadow-[0_10px_30px_-18px_hsl(var(--primary)/0.35)]">
             <SearchTypeIcon type="city" />
             <h3 className="mt-5 font-heading font-semibold text-lg text-warm-fg">Servicio + ciudad</h3>
             <div className="mt-4"><SearchBar>«abogado en {city.name}»</SearchBar></div>
           </article>
-          <article className="bg-white rounded-2xl border border-warm-fg/10 p-6 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)]">
+          <article className="bg-white rounded-2xl border border-primary/15 p-6 shadow-[0_10px_30px_-18px_hsl(var(--primary)/0.35)]">
             <SearchTypeIcon type="zone" />
             <h3 className="mt-5 font-heading font-semibold text-lg text-warm-fg">Servicio + zona</h3>
             <div className="mt-4 space-y-3">
@@ -178,12 +178,12 @@ const WhyLocalSeoSection = ({ city, compactTimeframe }: { city: SeoLocalCity; co
               <SearchBar>«{city.barriosBusquedas[3]?.busqueda}»</SearchBar>
             </div>
           </article>
-          <article className="bg-white rounded-2xl border border-warm-fg/10 p-6 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)]">
+          <article className="bg-white rounded-2xl border border-primary/15 p-6 shadow-[0_10px_30px_-18px_hsl(var(--primary)/0.35)]">
             <SearchTypeIcon type="nearby" />
             <h3 className="mt-5 font-heading font-semibold text-lg text-warm-fg">Cerca de mí</h3>
             <div className="mt-4"><SearchBar>«clínica dental cerca de mí»</SearchBar></div>
           </article>
-          <article className="bg-white rounded-2xl border border-warm-fg/10 p-6 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)]">
+          <article className="bg-white rounded-2xl border border-primary/15 p-6 shadow-[0_10px_30px_-18px_hsl(var(--primary)/0.35)]">
             <SearchTypeIcon type="urgent" />
             <h3 className="mt-5 font-heading font-semibold text-lg text-warm-fg">Urgencias y alta intención</h3>
             <div className="mt-4"><SearchBar>«fontanero urgente {city.name}»</SearchBar></div>
@@ -195,17 +195,17 @@ const WhyLocalSeoSection = ({ city, compactTimeframe }: { city: SeoLocalCity; co
 );
 
 const CityCoverageSection = ({ city }: { city: SeoLocalCity }) => (
-  <section className="bg-white py-24 md:py-32 border-t border-warm-fg/10">
-    <div className="container">
-      <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Cobertura local</p>
-      <h2 className="font-heading font-semibold text-warm-fg leading-[1.05] text-4xl md:text-5xl lg:text-6xl max-w-[22ch]">
+  <section className="bg-white py-14 md:py-16">
+    <div className="mx-auto w-full max-w-[1200px] px-6">
+      <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-warm-fg mb-6"><span className="h-2 w-2 rounded-full bg-primary" />Cobertura local</p>
+      <h2 className="font-heading font-semibold text-warm-fg leading-[1.05] text-3xl md:text-4xl lg:text-[42px] max-w-[26ch]">
         Zonas de <span className="text-primary">{city.name}</span> donde trabajamos
       </h2>
       <p className="mt-8 max-w-3xl text-base md:text-lg font-body text-warm-fg leading-relaxed">
         Trabajamos el SEO local de negocios de {city.name} y {city.coverageArea}, porque las búsquedas se hacen por barrio o por municipio y cada zona tiene su propia competencia.
       </p>
 
-      <h3 className="mt-14 font-heading text-xl text-warm-fg">Barrios de {city.name}</h3>
+      <h3 className="mt-10 font-heading text-xl text-warm-fg">Barrios de {city.name}</h3>
       <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {city.barriosBusquedas.map(({ barrio, busqueda }) => (
           <article key={barrio} className="group relative overflow-hidden rounded-3xl border border-warm-fg/10 bg-white p-7 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] transition-all duration-[250ms] hover:-translate-y-1 hover:border-primary hover:bg-primary">
@@ -254,15 +254,15 @@ const whyNotAppearItems = [
 ];
 
 const WhyNotAppearSection = ({ city }: { city: SeoLocalCity }) => (
-  <section className="bg-white py-24 md:py-32 border-t border-warm-fg/10">
-    <div className="container">
-      <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Diagnóstico</p>
-      <h2 className="font-heading font-semibold text-warm-fg leading-[1.05] text-4xl md:text-5xl lg:text-6xl max-w-[22ch]">
+  <section className="bg-dark-bg py-14 md:py-16">
+    <div className="mx-auto w-full max-w-[1200px] px-6">
+      <p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-transparent px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-white mb-8"><span className="h-2 w-2 rounded-full bg-primary" />Diagnóstico</p>
+      <h2 className="font-heading font-semibold text-white leading-[1.05] text-3xl md:text-4xl lg:text-[42px] max-w-[26ch]">
         ¿Por qué <span className="text-primary">no aparece</span> tu negocio en Google Maps en {city.name}?
       </h2>
-      <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {whyNotAppearItems.map(({ icon: Icon, title, text }) => (
-          <article key={title} className="bg-white rounded-2xl border border-warm-fg/10 p-6 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)]">
+          <article key={title} className="bg-white rounded-2xl border border-primary/15 p-6 shadow-[0_10px_30px_-18px_hsl(var(--primary)/0.35)]">
             <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary" aria-hidden>
               <Icon className="h-5 w-5" />
             </span>
@@ -271,24 +271,24 @@ const WhyNotAppearSection = ({ city }: { city: SeoLocalCity }) => (
           </article>
         ))}
       </div>
-      <div className="mt-10 rounded-3xl bg-[hsl(var(--dark-bg))] px-6 py-10 md:px-12 md:py-12 text-center">
-        <h3 className="font-heading font-semibold text-2xl md:text-4xl leading-tight text-white uppercase">Te decimos qué le falta <span className="text-primary">a tu ficha</span></h3>
+      <div className="mt-10 rounded-3xl bg-primary px-6 py-10 md:px-12 md:py-12 text-center">
+        <h3 className="font-heading font-semibold text-2xl md:text-4xl leading-tight text-white uppercase">Te decimos qué le falta <span className="text-[hsl(var(--dark-bg))]">a tu ficha</span></h3>
         <p className="mt-4 text-base md:text-lg text-white/90">Auditoría gratuita con vídeo personalizado en menos de 24 horas.</p>
-        <a href="#auditoria" className="mt-7 inline-flex items-center rounded-full bg-primary px-7 py-3.5 text-sm font-heading text-primary-foreground hover:bg-primary/90">Solicitar auditoría gratuita</a>
+        <a href="#auditoria" className="mt-7 inline-flex items-center rounded-full bg-white px-7 py-3.5 text-sm font-heading text-primary hover:bg-white/90">Solicitar auditoría gratuita</a>
       </div>
     </div>
   </section>
 );
 
 const GoogleMapsGuideSection = ({ city }: { city: SeoLocalCity }) => (
-  <section className="bg-white py-24 md:py-32 border-t border-warm-fg/10">
-    <div className="container">
-      <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— Google Maps</p>
-      <h2 className="font-heading font-semibold text-warm-fg leading-[1.05] text-4xl md:text-5xl lg:text-6xl max-w-[22ch]">
+  <section className="bg-white py-14 md:py-16">
+    <div className="mx-auto w-full max-w-[1200px] px-6">
+      <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-warm-fg mb-8"><span className="h-2 w-2 rounded-full bg-primary" />Google Maps</p>
+      <h2 className="font-heading font-semibold text-warm-fg leading-[1.05] text-3xl md:text-4xl lg:text-[42px] max-w-[26ch]">
         ¿Cómo aparecer en <span className="text-primary">Google Maps</span> en {city.name}?
       </h2>
 
-      <div className="mt-12 grid lg:grid-cols-12 gap-10 lg:gap-16">
+      <div className="mt-10 grid lg:grid-cols-12 gap-10 lg:gap-16">
         <div className="lg:col-span-6">
           <p className="font-heading font-semibold text-xl md:text-2xl text-warm-fg">Para aparecer en Google Maps en {city.name}, tu negocio necesita:</p>
           <ul className="mt-7 space-y-5">
@@ -310,7 +310,7 @@ const GoogleMapsGuideSection = ({ city }: { city: SeoLocalCity }) => (
               { label: "Distancia", icon: <><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" /></> },
               { label: "Prominencia", icon: <path d="m12 2 3 6.1 6.7 1-4.9 4.7 1.2 6.7-6-3.2-6 3.2 1.2-6.7-4.9-4.7 6.7-1L12 2Z" /> },
             ].map(({ label, icon }) => (
-              <div key={label} className="rounded-2xl bg-primary/10 p-5 text-center">
+              <div key={label} className="rounded-2xl border border-primary/20 bg-white p-5 text-center">
                 <svg className="mx-auto h-7 w-7 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>{icon}</svg>
                 <p className="mt-4 font-heading font-semibold text-lg text-warm-fg">{label}</p>
               </div>
@@ -319,7 +319,7 @@ const GoogleMapsGuideSection = ({ city }: { city: SeoLocalCity }) => (
         </div>
       </div>
 
-      <div className="mt-12 rounded-2xl border border-warm-fg/10 bg-white p-6 text-base md:text-lg text-warm-fg">
+      <div className="mt-12 rounded-2xl border border-primary/20 bg-white p-6 text-base md:text-lg text-warm-fg">
         Si quieres ver cómo se trabaja paso a paso, consulta nuestra guía para{" "}
         <Link to="/ficha-google-mi-negocio" className="font-semibold text-primary hover:underline">aparecer en Google Maps</Link>.
       </div>
@@ -373,9 +373,9 @@ const CityMobileAuditButton = () => {
 };
 
 export const SevillaPosicionamientoSection = () => (
-  <section className="bg-white py-24 md:py-32 border-t border-warm-fg/10">
-    <div className="container">
-      <h2 className="font-heading font-semibold text-warm-fg leading-[1.05] tracking-tight text-4xl md:text-5xl lg:text-6xl max-w-[22ch]">
+  <section className="bg-white py-14 md:py-16">
+    <div className="mx-auto w-full max-w-[1200px] px-6">
+      <h2 className="font-heading font-semibold text-warm-fg leading-[1.05] tracking-tight text-3xl md:text-4xl lg:text-[42px] max-w-[26ch]">
         Posicionamiento SEO en Sevilla
       </h2>
       <div className="mt-10 max-w-4xl space-y-6 text-base leading-relaxed text-warm-fg md:text-lg">

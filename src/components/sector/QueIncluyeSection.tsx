@@ -82,14 +82,14 @@ const QueIncluyeSection = ({ titleSuffix, texts, hoverAccent = false, compact = 
       </div>
       <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
         {cardMeta.map((card, index) => (
-          <article key={card.eyebrow} className={`rounded-2xl overflow-hidden flex flex-col bg-white/[0.06] border border-white/10${hoverAccent ? " group transition-all duration-[250ms] hover:-translate-y-1 hover:border-primary hover:shadow-[0_20px_50px_-20px_hsl(var(--primary))]" : ""}`}>
+          <article key={card.eyebrow} className={`rounded-2xl overflow-hidden flex flex-col bg-white border border-primary/20 group transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)]`}>
             <img src={card.image} alt={card.alt} className="aspect-[16/10] w-full object-cover rounded-t-2xl" loading="lazy" width={1200} height={750} decoding="async" />
-            <div className={`flex-1 p-6${hoverAccent ? " transition-colors duration-[250ms] group-hover:bg-primary" : ""}`}>
-              <p className={`font-heading text-[11px] tracking-[0.2em] uppercase text-primary${hoverAccent ? " group-hover:text-white" : ""}`}>— {card.eyebrow}</p>
-              <h3 className="mt-3 font-heading font-semibold text-xl md:text-[22px] text-white leading-tight">
+            <div className={"flex-1 p-6"}>
+              <p className={"font-heading text-[11px] tracking-[0.2em] uppercase text-primary"}>— {card.eyebrow}</p>
+              <h3 className="mt-3 font-heading font-semibold text-xl md:text-[22px] text-warm-fg leading-tight">
                 {card.highlightFirst || !card.highlight ? (
                   <>
-                    <span className={`text-primary${hoverAccent ? " group-hover:text-[hsl(var(--dark-bg))]" : ""}`}>{card.title}</span>
+                    <span className={"text-primary"}>{card.title}</span>
                     {card.highlight ? <> {card.highlight}</> : null}
                   </>
                 ) : (
@@ -98,7 +98,7 @@ const QueIncluyeSection = ({ titleSuffix, texts, hoverAccent = false, compact = 
                   </>
                 )}
               </h3>
-              <p className={`mt-3 font-body font-light text-sm text-white/70 leading-relaxed${hoverAccent ? " group-hover:text-white group-hover:font-normal" : ""}`}>{texts[index]}</p>
+              <p className={`mt-3 font-body font-light text-sm text-warm-fg/75 leading-relaxed`}>{texts[index]}</p>
             </div>
           </article>
         ))}
