@@ -4,6 +4,7 @@ import { Link } from "@/lib/router-compat";
 import SEOHead from "@/components/SEOHead";
 import CTASection from "@/components/CTASection";
 import ConversionBanner from "@/components/ConversionBanner";
+import ComplementaryServicesGrid from "@/components/ComplementaryServicesGrid";
 import { RevealScope } from "@/components/Reveal";
 import SectorHeroDark from "@/components/sector/SectorHeroDark";
 import LogoMarquee from "@/components/LogoMarquee";
@@ -674,78 +675,11 @@ const FontanerosPage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-
-
-            {/* Service cards */}
-            {[
-              {
-                logo: <img src="/logos/google-business-profile.png" alt="Google Business Profile" className="h-8 w-auto object-contain" />,
-                title: <>Gestión de <span className="text-primary transition-colors duration-[250ms]">reseñas PRO</span></>,
-                desc: "Consigue más reseñas reales y mejora tu reputación online con una estrategia diseñada para aumentar la confianza de nuevos clientes.",
-                features: ["Tarjeta NFC o QR", "Automatización de solicitudes", "Respuesta profesional"],
-                link: "/ficha-google-mi-negocio",
-              },
-              {
-                logo: (
-                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden>
-                    <rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" strokeWidth="1.5" />
-                    <text x="12" y="16.5" textAnchor="middle" fontSize="9" fontWeight="bold" fill="currentColor" fontFamily="sans-serif">Ads</text>
-                  </svg>
-                ),
-                title: <>Google <span className="text-primary transition-colors duration-[250ms]">Ads</span></>,
-                desc: "Genera llamadas desde el primer día mientras el SEO Local sigue creciendo de forma orgánica.",
-                features: ["Campañas de búsqueda", "Optimización mensual", "Seguimiento de conversiones"],
-                link: "/contacto",
-              },
-              {
-                logo: (
-                  <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
-                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-                  </svg>
-                ),
-                title: <><span className="text-primary transition-colors duration-[250ms]">Backlinks</span> Locales</>,
-                desc: "Consigue enlaces y menciones locales para aumentar la autoridad de tu web y reforzar tu posicionamiento.",
-                features: ["Citaciones locales", "Directorios de calidad", "Link Building Local"],
-                link: "/contacto",
-              },
-            ].map((service, idx) => (
-              <div
-                key={idx}
-                className="group bg-white border border-transparent rounded-2xl p-7 md:p-8 flex flex-col min-h-[440px] transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)]"
-              >
-                <div className="mb-8 h-14 flex items-center">
-                  <div className="inline-flex items-center justify-center h-14 w-14 rounded-xl bg-transparent transition-all duration-[250ms] text-warm-fg">
-                    {service.logo}
-                  </div>
-                </div>
-                <h3 className="font-heading font-bold text-warm-fg text-2xl md:text-[26px] leading-[1.15] tracking-tight mb-5 transition-colors duration-[250ms]">
-                  {service.title}
-                </h3>
-                <p className="text-[15px] font-body font-light text-warm-fg/70 leading-relaxed mb-8 transition-colors duration-[250ms]">
-                  {service.desc}
-                </p>
-                <ul className="space-y-3 mt-auto">
-                  {service.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5 text-[14px] font-body text-warm-fg/85 transition-colors duration-[250ms]">
-                      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" className="text-primary shrink-0 mt-0.5 transition-colors duration-[250ms]" aria-hidden>
-                        <circle cx="10" cy="10" r="9" stroke="currentColor" strokeWidth="1.5" />
-                        <path d="M8 6.5l3.5 3.5L8 13.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                      <span>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  to={service.link}
-                  className="mt-6 inline-flex items-center gap-1 font-heading text-sm text-primary hover:gap-2 transition-all duration-[250ms]"
-                >
-                  Más información →
-                </Link>
-              </div>
-            ))}
-          </div>
+          <ComplementaryServicesGrid className="mt-0" />
+          <p className="mt-8 text-center text-sm md:text-base font-body text-white/70">
+            ¿Quieres combinarlas con tu SEO local?{" "}
+            <Link to="/contacto" className="font-medium text-primary underline-offset-4 hover:underline">Cuéntanos tu caso</Link>
+          </p>
         </div>
       </section>
 
