@@ -23,35 +23,37 @@ const sectores = [
 ];
 
 const SectorsGridSection = () => (
-  <section className="bg-white py-24 md:py-32 border-t border-warm-fg/10">
-    <div className="container">
-      <p className="text-center font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Sectores</p>
-      <h2 className="mx-auto text-center font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight max-w-[22ch] mb-6">
+  <section className="bg-white py-14 md:py-16">
+    <div className="mx-auto w-full max-w-[1200px] px-6">
+      <div className="text-center">
+        <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-warm-fg"><span className="h-2 w-2 rounded-full bg-primary" />Sectores</p>
+      </div>
+      <h2 className="mx-auto mt-4 text-center font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight max-w-[26ch]">
         SEO Local para <span className="text-primary">cada tipo</span> de negocio
       </h2>
-      <p className="mx-auto text-center text-base md:text-lg font-body text-warm-fg/70 leading-relaxed mb-16 max-w-3xl">
+      <p className="mx-auto mt-4 text-center text-base font-body text-warm-fg/70 leading-relaxed max-w-2xl">
         Cada sector tiene sus propias búsquedas y su propia competencia local. Por eso trabajamos de forma específica en cada uno.
       </p>
-      <div className="grid grid-cols-1 gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-16 lg:gap-y-20">
+      <ul className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
         {sectores.map((s) => {
           const SectorIcon = s.icon;
           return (
-            <article key={s.to} className="flex flex-col items-center text-center rounded-2xl border border-transparent bg-white p-6 group transition-[transform,color,box-shadow,border-color] duration-300 hover:-translate-y-1 focus-within:-translate-y-1 hover:border-primary hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)] focus-within:border-primary focus-within:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)]">
-              <span className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors duration-200 group-hover:bg-primary group-hover:text-white" aria-hidden>
-                <SectorIcon className="h-8 w-8" strokeWidth={1.6} aria-hidden />
-              </span>
-              <h3 className="mt-6 font-heading text-lg font-semibold text-warm-fg">
-                <Link to={s.to} className="transition-colors duration-200 hover:text-primary">
-                  SEO para <span className="text-primary">{s.label.replace(/^SEO para /, "")}</span>
-                </Link>
-              </h3>
-              <p className="mt-3 max-w-[34ch] font-body text-[15px] font-light leading-relaxed text-warm-fg/65">
-                {s.description}
-              </p>
-            </article>
+            <li key={s.to}>
+              <Link
+                to={s.to}
+                title={s.description}
+                className="flex h-full min-h-[120px] flex-col items-center justify-center text-center rounded-2xl border border-primary/15 bg-white p-4 transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 focus-visible:-translate-y-1 hover:border-primary hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)] focus-visible:border-primary focus-visible:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)]"
+              >
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground" aria-hidden>
+                  <SectorIcon className="h-6 w-6" strokeWidth={1.75} aria-hidden />
+                </span>
+                <h3 className="mt-3 font-heading text-sm font-semibold text-warm-fg leading-tight">{s.label}</h3>
+                <span className="mt-1 text-xs font-heading text-primary">Ver →</span>
+              </Link>
+            </li>
           );
         })}
-      </div>
+      </ul>
     </div>
   </section>
 );
