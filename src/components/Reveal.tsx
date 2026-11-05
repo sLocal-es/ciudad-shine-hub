@@ -98,3 +98,5 @@ export function Reveal({ children, delay = 0, className }: { children: ReactNode
   }, [delay]);
   return <div ref={ref} className={className}>{children}</div>;
 }
+
+export default Reveal;
