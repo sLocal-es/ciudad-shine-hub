@@ -383,3 +383,17 @@
     @apply text-warm-fg not-italic font-medium;
   }
 }
+
+/* Scroll reveal: hidden state only after hydration (html.reveal-ready) */
+html.reveal-ready [data-reveal-item] {
+  transition-property: opacity, transform;
+  transition-duration: 600ms;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+html.reveal-ready [data-reveal-item]:not(.is-revealed) {
+  opacity: 0;
+  transform: translateY(24px);
+}
+@media (prefers-reduced-motion: reduce) {
+  html.reveal-ready [data-reveal-item] { opacity: 1 !important; transform: none !important; transition: none !important; }
+}

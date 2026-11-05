@@ -5,6 +5,7 @@ import SEOHead from "@/components/SEOHead";
 import CTASection from "@/components/CTASection";
 import SectorHeroDark from "@/components/sector/SectorHeroDark";
 import LogoMarquee from "@/components/LogoMarquee";
+import { RevealScope } from "@/components/Reveal";
 import { sendForm } from "@/lib/sendForm";
 import { toast } from "@/hooks/use-toast";
 import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisual";
@@ -381,6 +382,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
         </div>
         <LogoMarquee />
       </div>
+      {R && <RevealScope />}
 
       {/* MANIFIESTO */}
       {c.manifestoSection ?? (R ? (
@@ -710,7 +712,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
             <div className="grid grid-cols-1 sm:grid-cols-3 sm:divide-x divide-y sm:divide-y-0 divide-white/15">
               {c.caseKpis.map((m) => (
                 <div key={m.l} className="py-6 sm:py-2 text-center">
-                  <p className="font-heading font-semibold text-4xl md:text-5xl lg:text-6xl leading-none tracking-tight text-primary">{m.k}</p>
+                  <p data-count className="font-heading font-semibold text-4xl md:text-5xl lg:text-6xl leading-none tracking-tight text-primary tabular-nums">{m.k}</p>
                   <p className="mt-4 font-body text-sm text-white/70">{m.l}</p>
                 </div>
               ))}

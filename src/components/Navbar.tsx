@@ -24,7 +24,7 @@ const Navbar = () => {
             <Link
               key={l.to}
               to={l.to}
-              className={`hover:text-primary transition-colors ${location.pathname === l.to ? "text-primary" : ""}`}
+              className={`relative hover:text-primary transition-colors duration-200 after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-full after:bg-primary after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 ${location.pathname === l.to ? "text-primary" : ""}`}
             >
               {l.label}
             </Link>
@@ -33,7 +33,7 @@ const Navbar = () => {
 
         <Link
           to="/contacto#formulario"
-          className="hidden md:inline-flex items-center gap-2 bg-primary text-primary-foreground font-heading text-sm font-medium rounded-lg px-5 py-2.5 shadow-[0_10px_30px_-14px_hsl(var(--primary))] hover:bg-primary/90 transition-colors"
+          className="hidden md:inline-flex items-center gap-2 bg-primary text-primary-foreground font-heading text-sm font-medium rounded-lg px-5 py-2.5 shadow-[0_10px_30px_-14px_hsl(var(--primary))] hover:bg-primary/90 transition-[transform,background-color] duration-200 hover:scale-[1.03]"
         >
           Solicitar análisis gratuito
         </Link>

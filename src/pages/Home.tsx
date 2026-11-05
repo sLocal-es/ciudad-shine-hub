@@ -6,6 +6,7 @@ import CasosExitoSection from "@/components/CasosExitoSection";
 import SectorHeroDark from "@/components/sector/SectorHeroDark";
 import ConversionBanner from "@/components/ConversionBanner";
 import LogoMarquee from "@/components/LogoMarquee";
+import { RevealScope } from "@/components/Reveal";
 import LeadMagnetForm from "@/components/forms/LeadMagnetForm";
 import ContactForm from "@/components/forms/ContactForm";
 import ElfsightReviews from "@/components/ElfsightReviews";
@@ -266,6 +267,7 @@ const Home = () => {
         </div>
         <LogoMarquee />
       </div>
+      <RevealScope />
 
       {/* ¿QUÉ ES EL SEO LOCAL? */}
       <section className={`${sectionCls} bg-white`}>
