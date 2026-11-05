@@ -6,6 +6,7 @@ import BreadcrumbNav from "@/components/BreadcrumbNav";
 import { sendForm } from "@/lib/sendForm";
 import { useToast } from "@/hooks/use-toast";
 import { seoLocalCities } from "@/data/seoLocalCities";
+import { RevealScope } from "@/components/Reveal";
 
 const schema = z.object({
   nombre: z.string().trim().min(1, "Indica tu nombre").max(100),
@@ -17,7 +18,9 @@ const schema = z.object({
   mensaje: z.string().trim().max(2000).optional(),
 });
 
-const sectionCls = "bg-white py-24 md:py-32 border-t border-[#E5E7EB]";
+const W = "mx-auto w-full max-w-[1200px] px-6";
+const WHATSAPP_URL = "https://wa.me/34644147310?text=Hola%2C%20quiero%20mi%20an%C3%A1lisis%20gratuito%20de%20Google";
+const pasos = ["Nos cuentas tu negocio", "Analizamos tu ficha y tu web", "Te explicamos por dónde empezar"];
 
 const beneficios = [
   {
@@ -91,9 +94,9 @@ const Contacto = () => {
     }
   };
 
-  const labelCls = "font-heading text-[11px] tracking-[0.18em] uppercase text-white block mb-2";
+  const labelCls = "font-heading text-[11px] tracking-[0.18em] uppercase text-warm-fg block mb-2";
   const inputCls =
-    "w-full rounded-xl bg-white text-warm-fg placeholder:text-warm-fg/60 px-4 py-3.5 text-[15px] font-body border border-transparent focus:ring-2 focus:ring-white/60 outline-hidden";
+    "w-full rounded-xl bg-white text-warm-fg placeholder:text-warm-fg/50 px-4 py-3.5 text-[15px] font-body border border-warm-fg/15 focus:border-primary focus:ring-2 focus:ring-primary/30 outline-hidden";
 
   return (
     <>
@@ -159,17 +162,19 @@ const Contacto = () => {
         </div>
       </section>
 
+      <RevealScope />
+
       {/* CONFIANZA */}
-      <section className={sectionCls}>
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+      <section className="bg-dark-bg py-14 md:py-16">
+        <div className={W}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
             {beneficios.map((b) => (
-              <div key={b.n} className="rounded-3xl border border-[#E5E7EB] p-8 bg-white">
-                <span className="font-heading text-xs tracking-[0.22em] text-primary">{b.n}</span>
-                <h2 className="mt-5 font-heading font-semibold text-black text-xl md:text-2xl leading-tight tracking-tight">
+              <div key={b.n} data-reveal className="rounded-2xl border border-primary/20 p-7 bg-white shadow-[0_14px_40px_-24px_hsl(var(--primary)/0.6)]">
+                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-primary font-heading text-xs text-primary-foreground">{b.n}</span>
+                <h2 className="mt-5 font-heading font-semibold text-warm-fg text-xl md:text-2xl leading-tight tracking-tight">
                   {b.h}
                 </h2>
-                <p className="mt-3 text-[15px] font-body font-light text-[#4B5563] leading-relaxed">{b.d}</p>
+                <p className="mt-3 text-[15px] font-body font-light text-warm-fg/75 leading-relaxed">{b.d}</p>
               </div>
             ))}
           </div>
@@ -177,29 +182,38 @@ const Contacto = () => {
       </section>
 
       {/* FORMULARIO */}
-      <section id="formulario" className={sectionCls}>
-        <div className="container">
-          <div className="rounded-3xl bg-primary text-primary-foreground px-6 py-10 md:px-12 md:py-14 lg:px-16 shadow-[0_24px_60px_-28px_hsl(var(--primary))]">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
-              <div className="lg:col-span-5">
-                <p className="inline-flex rounded-full bg-white/20 px-3 py-1 text-[11px] font-heading tracking-[0.18em] uppercase text-white">
-                  Solicitud
+      <section id="formulario" className="bg-white py-14 md:py-16 scroll-mt-24">
+        <div className={W}>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+              <div className="lg:col-span-5 rounded-3xl bg-dark-bg px-6 py-9 md:px-10 md:py-10">
+                <p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-transparent px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-white">
+                  <span className="h-2 w-2 rounded-full bg-primary" />Solicitud
                 </p>
-                <h2 className="mt-6 font-heading font-semibold text-white text-3xl md:text-4xl leading-[1.08] tracking-tight">
+                <h2 className="mt-6 font-heading font-semibold text-white text-3xl md:text-[34px] leading-[1.1] tracking-tight">
                   Cuéntanos dónde estás y te decimos{" "}
-                  <span className="text-[hsl(var(--dark-bg))]">qué está frenando tus llamadas</span>
+                  <span className="text-primary">qué está frenando tus llamadas</span>
                 </h2>
-                <p className="mt-6 text-base text-white leading-relaxed">
+                <p className="mt-5 text-base text-white/75 leading-relaxed">
                   Con estos datos revisamos tu ficha, tu web y las búsquedas locales de tu ciudad antes de
                   contactarte. Recibirás un análisis concreto, con acciones priorizadas.
                 </p>
 
+                <p className="mt-9 font-heading font-semibold text-white text-lg">Qué pasa después de escribirnos</p>
+                <ol className="mt-5 space-y-4">
+                  {pasos.map((paso, i) => (
+                    <li key={paso} className="flex items-center gap-4">
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary font-heading font-semibold text-primary-foreground">{i + 1}</span>
+                      <span className="font-heading text-base text-white">{paso}</span>
+                    </li>
+                  ))}
+                </ol>
+
                 {/* CTA WhatsApp */}
                 <a
-                  href="https://wa.me/34644147310?text=Hola%2C%20quiero%20mi%20an%C3%A1lisis%20gratuito%20de%20Google"
+                  href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group mt-10 flex items-center justify-between gap-4 rounded-2xl bg-white p-6 transition hover:shadow-[0_14px_40px_-18px_hsl(var(--dark-bg))]"
+                  className="group mt-9 flex items-center justify-between gap-4 rounded-2xl bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)]"
                 >
                   <span>
                     <span className="font-heading text-[11px] tracking-[0.2em] uppercase text-primary">
@@ -218,7 +232,7 @@ const Contacto = () => {
                 </a>
               </div>
 
-              <div className="lg:col-span-7 w-full">
+              <div className="lg:col-span-7 w-full rounded-3xl border border-primary/20 bg-white p-6 md:p-10 shadow-[0_24px_60px_-28px_hsl(var(--primary)/0.55)]">
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     <div>
@@ -281,8 +295,8 @@ const Contacto = () => {
                           key={opt}
                           className={`cursor-pointer rounded-full px-4 py-2 font-heading text-[14px] transition ${
                             form.tieneWeb === opt
-                              ? "bg-white text-primary border border-white"
-                              : "border border-white text-white hover:bg-white/10"
+                              ? "bg-primary text-primary-foreground border border-primary"
+                              : "border border-warm-fg/20 text-warm-fg hover:border-primary hover:text-primary"
                           }`}
                         >
                           <input
@@ -317,24 +331,23 @@ const Contacto = () => {
                   >
                     {loading ? "Enviando..." : "Solicitar análisis gratuito"}
                   </button>
-                  <p className="text-center text-sm text-white/90">
+                  <p className="text-center text-sm text-warm-fg/70">
                     🔒 Tus datos están seguros · Respuesta en menos de 24h
                   </p>
                 </form>
               </div>
             </div>
-          </div>
         </div>
       </section>
 
       {/* MAPA */}
-      <section className={sectionCls}>
-        <div className="container">
-          <div className="max-w-3xl mb-12">
-            <h2 className="font-heading font-semibold text-black text-4xl md:text-5xl leading-[1.05] tracking-tight mb-6">
+      <section className="bg-dark-bg py-14 md:py-16">
+        <div className={W}>
+          <div className="max-w-3xl mb-10">
+            <h2 className="font-heading font-semibold text-white text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight mb-5">
               Nuestra <span className="text-primary">presencia local</span>
             </h2>
-            <p className="text-base md:text-lg font-body font-light text-[#4B5563] leading-relaxed">
+            <p className="text-base md:text-lg font-body font-light text-white/70 leading-relaxed">
               Trabajamos con empresas de toda España para mejorar su visibilidad en Google Maps y aumentar las
               llamadas, solicitudes y clientes desde las búsquedas locales.
             </p>
@@ -360,6 +373,24 @@ const Contacto = () => {
           </div>
         </div>
       </section>
+
+      {/* BANNER FINAL */}
+      <div className="bg-white py-8 md:py-10">
+        <div className={W}>
+          <div data-conversion-banner className="rounded-2xl bg-primary px-6 py-8 md:px-10 md:py-9 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <p className="font-heading text-xl md:text-2xl font-semibold text-white">¿Prefieres hablar directamente?</p>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/cta inline-flex items-center gap-2 rounded-full bg-white px-7 py-3.5 text-sm font-heading font-medium text-primary transition-[transform,background-color] duration-200 hover:scale-[1.03] hover:bg-white/90 shrink-0"
+            >
+              Escríbenos por WhatsApp
+              <span aria-hidden className="transition-transform duration-200 group-hover/cta:translate-x-1">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </>
   );
 };
