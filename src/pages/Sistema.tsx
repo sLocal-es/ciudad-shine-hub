@@ -15,7 +15,7 @@ const Sistema = () => {
     <>
       <SEOHead
         title="Que Google te mande clientes — slocal.es"
-        description="Pack Web + Google Business Profile para SEO Local, con servicios opcionales de reseñas, Google Ads y backlinks locales."
+        description="Pack Web + Google Business Profile para SEO Local, con Google Ads y Anuncios de Servicios Locales de Google como opcionales."
         canonical="/sistema"
         noIndex
       />
@@ -44,7 +44,7 @@ const Sistema = () => {
             <em className="text-primary not-italic">Cada mes.</em>
           </h1>
           <p className="text-lg text-dark-fg/75 leading-relaxed mb-8 max-w-xl">
-            Construimos la base con el Pack Web + Google Business Profile para que aparezcas cuando alguien busca lo que haces en tu ciudad. Después puedes añadir Reseñas PRO, Google Ads o Backlinks Locales según tu estrategia.
+            Construimos la base con el Pack Web + Google Business Profile para que aparezcas cuando alguien busca lo que haces en tu ciudad. Después puedes añadir Google Ads o Anuncios de Servicios Locales de Google según tu estrategia.
           </p>
           <a
             href={WA_URL}

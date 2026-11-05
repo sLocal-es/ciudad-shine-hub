@@ -13,6 +13,8 @@ import OptimizedWebsiteVisual from "@/components/OptimizedWebsiteVisual";
 import CasosExitoSection from "@/components/CasosExitoSection";
 import CoberturaMapas from "@/components/CoberturaMapas";
 import ConversionBanner from "@/components/ConversionBanner";
+import { BANNER_COPY } from "@/data/bannerCopy";
+import ComplementaryServicesGrid from "@/components/ComplementaryServicesGrid";
 import ComoPosicionamosSection, { ComoPosicionamosSectionProps } from "@/components/sector/ComoPosicionamosSection";
 import QueIncluyeSection, { QueIncluyeSectionProps } from "@/components/sector/QueIncluyeSection";
 import caseBeforeAsset from "@/assets/caso-exito-antes.webp.asset.json";
@@ -276,53 +278,6 @@ export const AuditoriaLeadForm = ({ formType, compact = false, inline = false }:
   );
 };
 
-/* ---------- Complementary services (identical to master) ---------- */
-const complementaryServices = [
-  {
-    logo: <img src="/logos/google-business-profile.png" alt="Google Business Profile" className="h-8 w-auto object-contain" />,
-    title: (
-      <>
-        Gestión de <span className="text-primary group-hover:text-white transition-colors duration-[250ms]">reseñas PRO</span>
-      </>
-    ),
-    desc: "Consigue más reseñas reales y mejora tu reputación online con una estrategia diseñada para aumentar la confianza de nuevos clientes.",
-    features: ["Tarjeta NFC o QR", "Automatización de solicitudes", "Respuesta profesional"],
-    link: "/ficha-google-mi-negocio",
-  },
-  {
-    logo: (
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" aria-hidden>
-        <rect x="2" y="2" width="20" height="20" rx="4" stroke="currentColor" strokeWidth="1.5" />
-        <text x="12" y="16.5" textAnchor="middle" fontSize="9" fontWeight="bold" fill="currentColor" fontFamily="sans-serif">Ads</text>
-      </svg>
-    ),
-    title: (
-      <>
-        Google <span className="text-primary group-hover:text-white transition-colors duration-[250ms]">Ads</span>
-      </>
-    ),
-    desc: "Genera llamadas desde el primer día mientras el SEO Local sigue creciendo de forma orgánica.",
-    features: ["Campañas de búsqueda", "Optimización mensual", "Seguimiento de conversiones"],
-    link: "/contacto",
-  },
-  {
-    logo: (
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
-        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-      </svg>
-    ),
-    title: (
-      <>
-        <span className="text-primary group-hover:text-white transition-colors duration-[250ms]">Backlinks</span> Locales
-      </>
-    ),
-    desc: "Consigue enlaces y menciones locales para aumentar la autoridad de tu web y reforzar tu posicionamiento.",
-    features: ["Citaciones locales", "Directorios de calidad", "Link Building Local"],
-    link: "/contacto",
-  },
-];
-
 /* ---------- Step icons (same set as master) ---------- */
 const stepIcons = [
   <svg key="1" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></svg>,
@@ -339,9 +294,9 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
   const R = isSector || isCity;
   const cityBanner2 = isCity && (
     <ConversionBanner
-      title={`Tu competencia en ${c.sectorLabel} ya está trabajando su ficha de Google`}
+      title={BANNER_COPY.cityCompetencia(c.sectorLabel).title}
       sub="Cada semana que pasa son llamadas que van a otro negocio."
-      cta="Pedir auditoría gratuita"
+      cta={BANNER_COPY.cityCompetencia(c.sectorLabel).cta}
       to="/contacto"
       variant="dark"
     />
@@ -555,19 +510,19 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
 
       {isSector && (
         <ConversionBanner
-          title={`¿Quieres más ${c.clientWord} desde Google?`}
+          title={BANNER_COPY.masClientes(c.clientWord).title}
           sub="Analizamos gratis tu ficha, tu web y a tu competencia, y te decimos qué te está frenando."
-          cta="Quiero mi auditoría gratis"
-          to={c.heroPrimaryCtaTo ?? "/contacto"}
+          cta={BANNER_COPY.masClientes(c.clientWord).cta}
+          to="/contacto"
           variant={c.comoPosicionamos || c.queIncluye || c.afterManifesto || c.servicesCta || c.casesBeforeAudit ? "gradient" : "dark"}
         />
       )}
 
       {isCity && (
         <ConversionBanner
-          title={`¿Aparece tu negocio en ${c.sectorLabel} cuando te buscan?`}
+          title={BANNER_COPY.cityAparece(c.sectorLabel).title}
           sub="Te mostramos dónde estás hoy frente a tu competencia con una auditoría gratuita de tu ficha y tu web."
-          cta="Quiero mi auditoría gratuita"
+          cta={BANNER_COPY.cityAparece(c.sectorLabel).cta}
           to="/contacto"
           variant="gradient"
         />
@@ -684,10 +639,10 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
 
       {isSector && !c.hideHow && (
         <ConversionBanner
-          title="Descubre qué te frena frente a tu competencia"
+          title={BANNER_COPY.frena.title}
           sub="Auditoría gratuita de tu ficha de Google, tu web y los negocios que hoy aparecen por delante de ti."
-          cta="Pedir mi auditoría gratis"
-          to={c.heroPrimaryCtaTo ?? "/contacto"}
+          cta={BANNER_COPY.frena.cta}
+          to="/contacto"
           variant="gradient"
         />
       )}
@@ -761,9 +716,9 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
 
       {isSector && !c.hideCase && (
         <ConversionBanner
-          title="Tu negocio puede ser el próximo caso de éxito"
+          title={BANNER_COPY.proximoCaso.title}
           sub="Cuéntanos tu situación y te decimos qué haría Slocal en tu caso."
-          cta="Quiero hablar con Slocal"
+          cta={BANNER_COPY.proximoCaso.cta}
           to="/contacto"
           variant="gradient"
         />
@@ -783,43 +738,11 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
-            {complementaryServices.filter((sv) => sv.link === "/contacto" && !String(sv.desc).includes("enlaces")).map((service, idx) => (
-              <div
-                key={idx}
-                className={`${R ? "group/svc" : "group"} bg-white border ${R ? "border-transparent" : "border-warm-fg/10"} rounded-2xl p-7 md:p-8 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] flex flex-col ${R ? "min-h-[440px]" : "min-h-[520px]"} ${R ? "transition-[transform,color,box-shadow,border-color] duration-300 hover:-translate-y-1 focus-within:-translate-y-1 hover:border-primary hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)] focus-within:border-primary focus-within:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)]" : "transition-all duration-[250ms] ease-out hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(26,26,36,0.15)] hover:border-primary hover:bg-primary"}`}
-              >
-                <div className="mb-8 h-14 flex items-center">
-                  <div className="inline-flex items-center justify-center h-14 w-14 rounded-xl bg-transparent group-hover:bg-white group-hover:shadow-xs transition-all duration-[250ms] text-warm-fg">
-                    {service.logo}
-                  </div>
-                </div>
-                <h3 className="font-heading font-bold text-warm-fg text-2xl md:text-[26px] leading-[1.15] tracking-tight mb-5 group-hover:text-white transition-colors duration-[250ms]">
-                  {service.title}
-                </h3>
-                <p className="text-[15px] font-body font-light text-warm-fg/70 leading-relaxed mb-8 group-hover:text-white/90 transition-colors duration-[250ms]">
-                  {service.desc}
-                </p>
-                <ul className="space-y-3 mt-auto">
-                  {service.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5 text-[14px] font-body text-warm-fg/85 group-hover:text-white transition-colors duration-[250ms]">
-                      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" className="text-primary shrink-0 mt-0.5 group-hover:text-white transition-colors duration-[250ms]" aria-hidden>
-                        <circle cx="10" cy="10" r="9" stroke="currentColor" strokeWidth="1.5" />
-                        <path d="M8 6.5l3.5 3.5L8 13.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                      <span>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  to={service.link}
-                  className="mt-6 inline-flex items-center gap-1 font-heading text-sm text-primary hover:gap-2 transition-all duration-[250ms] group-hover:text-white group-hover/svc:gap-2.5"
-                >
-                  Más información →
-                </Link>
-              </div>
-            ))}
-          </div>
+          <ComplementaryServicesGrid className="mt-0" />
+          <p className="mt-8 text-center text-sm md:text-base font-body text-white/70">
+            ¿Quieres combinarlas con tu SEO local?{" "}
+            <Link to="/contacto" className="font-medium text-primary underline-offset-4 hover:underline">Cuéntanos tu caso</Link>
+          </p>
         </div>
       </section>
 
@@ -905,9 +828,9 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
 
       {isSector && (
         <ConversionBanner
-          title="Tu competencia ya está en Google. ¿Y tú?"
+          title={BANNER_COPY.competencia.title}
           sub="Pide tu auditoría gratuita y descubre dónde estás ahora mismo."
-          cta="Auditar mi negocio gratis"
+          cta={BANNER_COPY.competencia.cta}
           to="/contacto"
           variant="gradient"
         />
@@ -962,9 +885,9 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
 
       {isCity && (
         <ConversionBanner
-          title={`Pasa de no aparecer a recibir llamadas en ${c.sectorLabel}`}
+          title={BANNER_COPY.cityLlamadas(c.sectorLabel).title}
           sub="Hablamos de tu negocio y te decimos por dónde empezar. Sin compromiso."
-          cta="Solicitar consulta"
+          cta={BANNER_COPY.cityLlamadas(c.sectorLabel).cta}
           to="/contacto"
           variant="gradient"
         />

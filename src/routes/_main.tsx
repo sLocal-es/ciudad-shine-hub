@@ -1,6 +1,7 @@
 import { Outlet, createFileRoute } from "@tanstack/react-router";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import MobileStickyCTA from "@/components/MobileStickyCTA";
 
 export const Route = createFileRoute("/_main")({
   component: MainLayout,
@@ -14,6 +15,7 @@ function MainLayout() {
         <Outlet />
       </main>
       <Footer />
+      <MobileStickyCTA />
     </>
   );
 }
