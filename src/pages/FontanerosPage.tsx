@@ -681,7 +681,7 @@ const FontanerosPage = () => {
             {[
               {
                 logo: <img src="/logos/google-business-profile.png" alt="Google Business Profile" className="h-8 w-auto object-contain" />,
-                title: <>Gestión de <span className="text-primary group-hover:text-white transition-colors duration-[250ms]">reseñas PRO</span></>,
+                title: <>Gestión de <span className="text-primary transition-colors duration-[250ms]">reseñas PRO</span></>,
                 desc: "Consigue más reseñas reales y mejora tu reputación online con una estrategia diseñada para aumentar la confianza de nuevos clientes.",
                 features: ["Tarjeta NFC o QR", "Automatización de solicitudes", "Respuesta profesional"],
                 link: "/ficha-google-mi-negocio",
@@ -693,7 +693,7 @@ const FontanerosPage = () => {
                     <text x="12" y="16.5" textAnchor="middle" fontSize="9" fontWeight="bold" fill="currentColor" fontFamily="sans-serif">Ads</text>
                   </svg>
                 ),
-                title: <>Google <span className="text-primary group-hover:text-white transition-colors duration-[250ms]">Ads</span></>,
+                title: <>Google <span className="text-primary transition-colors duration-[250ms]">Ads</span></>,
                 desc: "Genera llamadas desde el primer día mientras el SEO Local sigue creciendo de forma orgánica.",
                 features: ["Campañas de búsqueda", "Optimización mensual", "Seguimiento de conversiones"],
                 link: "/contacto",
@@ -705,7 +705,7 @@ const FontanerosPage = () => {
                     <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
                   </svg>
                 ),
-                title: <><span className="text-primary group-hover:text-white transition-colors duration-[250ms]">Backlinks</span> Locales</>,
+                title: <><span className="text-primary transition-colors duration-[250ms]">Backlinks</span> Locales</>,
                 desc: "Consigue enlaces y menciones locales para aumentar la autoridad de tu web y reforzar tu posicionamiento.",
                 features: ["Citaciones locales", "Directorios de calidad", "Link Building Local"],
                 link: "/contacto",
@@ -713,23 +713,23 @@ const FontanerosPage = () => {
             ].map((service, idx) => (
               <div
                 key={idx}
-                className="group bg-white border border-warm-fg/10 rounded-2xl p-7 md:p-8 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] flex flex-col min-h-[520px] transition-all duration-[250ms] ease-out hover:-translate-y-1 hover:shadow-[0_20px_50px_-20px_rgba(26,26,36,0.15)] hover:border-primary hover:bg-primary"
+                className="group bg-white border border-transparent rounded-2xl p-7 md:p-8 flex flex-col min-h-[440px] transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)]"
               >
                 <div className="mb-8 h-14 flex items-center">
-                  <div className="inline-flex items-center justify-center h-14 w-14 rounded-xl bg-transparent group-hover:bg-white group-hover:shadow-xs transition-all duration-[250ms] text-warm-fg">
+                  <div className="inline-flex items-center justify-center h-14 w-14 rounded-xl bg-transparent transition-all duration-[250ms] text-warm-fg">
                     {service.logo}
                   </div>
                 </div>
-                <h3 className="font-heading font-bold text-warm-fg text-2xl md:text-[26px] leading-[1.15] tracking-tight mb-5 group-hover:text-white transition-colors duration-[250ms]">
+                <h3 className="font-heading font-bold text-warm-fg text-2xl md:text-[26px] leading-[1.15] tracking-tight mb-5 transition-colors duration-[250ms]">
                   {service.title}
                 </h3>
-                <p className="text-[15px] font-body font-light text-warm-fg/70 leading-relaxed mb-8 group-hover:text-white/90 transition-colors duration-[250ms]">
+                <p className="text-[15px] font-body font-light text-warm-fg/70 leading-relaxed mb-8 transition-colors duration-[250ms]">
                   {service.desc}
                 </p>
                 <ul className="space-y-3 mt-auto">
                   {service.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5 text-[14px] font-body text-warm-fg/85 group-hover:text-white transition-colors duration-[250ms]">
-                      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" className="text-primary shrink-0 mt-0.5 group-hover:text-white transition-colors duration-[250ms]" aria-hidden>
+                    <li key={f} className="flex items-start gap-2.5 text-[14px] font-body text-warm-fg/85 transition-colors duration-[250ms]">
+                      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" className="text-primary shrink-0 mt-0.5 transition-colors duration-[250ms]" aria-hidden>
                         <circle cx="10" cy="10" r="9" stroke="currentColor" strokeWidth="1.5" />
                         <path d="M8 6.5l3.5 3.5L8 13.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
@@ -739,7 +739,7 @@ const FontanerosPage = () => {
                 </ul>
                 <Link
                   to={service.link}
-                  className="mt-6 inline-flex items-center gap-1 font-heading text-sm text-primary hover:gap-2 transition-all duration-[250ms] group-hover:text-white"
+                  className="mt-6 inline-flex items-center gap-1 font-heading text-sm text-primary hover:gap-2 transition-all duration-[250ms]"
                 >
                   Más información →
                 </Link>
