@@ -1,6 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
-import Servicios from "@/pages/Servicios";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/_main/servicios")({
-  component: Servicios,
+  beforeLoad: () => {
+    throw redirect({ to: "/", statusCode: 301 });
+  },
 });

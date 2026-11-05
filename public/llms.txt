@@ -74,7 +74,6 @@ Resumen de los casos publicados en [Casos de éxito](https://slocal.es/casos-de-
 ## Páginas principales
 
 - [Inicio](https://slocal.es/)
-- [Cómo funciona](https://slocal.es/como-funciona)
 - [Ficha de Google Mi Negocio](https://slocal.es/ficha-google-mi-negocio)
 - [Casos de éxito](https://slocal.es/casos-de-exito)
 - [Blog](https://slocal.es/blog)

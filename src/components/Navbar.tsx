@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "@/lib/router-compat";
 
 const links = [
-  { to: "/servicios", label: "Servicios" },
+  { to: "/ficha-google-mi-negocio", label: "Ficha de Google" },
   { to: "/casos-de-exito", label: "Casos de éxito" },
   { to: "/blog", label: "Blog" },
   { to: "/contacto", label: "Contacto" },

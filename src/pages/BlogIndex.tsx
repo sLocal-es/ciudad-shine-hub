@@ -62,7 +62,7 @@ const BlogIndex = () => {
                 Solicitar análisis gratuito
               </Link>
               <Link
-                to="/servicios"
+                to="/"
                 className="inline-flex items-center justify-center border border-warm-fg/15 text-warm-fg font-heading text-sm font-medium rounded-xl px-7 py-3.5 hover:border-primary hover:text-primary transition-colors"
               >
                 Ver servicios

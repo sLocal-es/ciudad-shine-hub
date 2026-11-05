@@ -1,4 +1,4 @@
-import { Clock, Wallet, Search } from "lucide-react";
+import { Clock, Wallet, Search, Megaphone, PhoneCall } from "lucide-react";
 import { Link } from "@/lib/router-compat";
 import SEOHead from "@/components/SEOHead";
 import CTASection from "@/components/CTASection";
@@ -10,7 +10,6 @@ import { RevealScope } from "@/components/Reveal";
 import LeadMagnetForm from "@/components/forms/LeadMagnetForm";
 import ContactForm from "@/components/forms/ContactForm";
 import ElfsightReviews from "@/components/ElfsightReviews";
-import { ServiceCard, type ExtraService } from "@/components/servicios/ServiciosUI";
 import SectorsGridSection from "@/components/home/SectorsGridSection";
 import CoberturaMapas from "@/components/CoberturaMapas";
 import queEsSeoLocalAsset from "@/assets/que-es-seo-local.webp.asset.json";
@@ -23,8 +22,6 @@ import fichaGoogleImage from "@/assets/home/ficha-google-business.webp";
 import webSeoLocalImage from "@/assets/home/web-seo-local.webp";
 import citacionesImage from "@/assets/home/citaciones-directorios.webp";
 import reporteMensualImage from "@/assets/home/reporte-mensual.webp";
-import resenasProAsset from "@/assets/servicios/resenas-google-pro-v2.webp.asset.json";
-import googleAdsAsset from "@/assets/servicios/google-ads.webp.asset.json";
 
 const sectionCls = "py-16 md:py-20";
 
@@ -39,54 +36,18 @@ const iconProps = {
   strokeLinejoin: "round" as const,
 };
 
-const IconStar = () => (
-  <svg {...iconProps} aria-hidden>
-    <path d="M12 4l2.4 4.9 5.4.8-3.9 3.8.9 5.4-4.8-2.5-4.8 2.5.9-5.4L4.2 9.7l5.4-.8L12 4z" />
-  </svg>
-);
-
-const IconTarget = () => (
-  <svg {...iconProps} aria-hidden>
-    <circle cx="12" cy="12" r="8" />
-    <circle cx="12" cy="12" r="3.5" />
-    <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
-  </svg>
-);
-
-const complementaryServices: ExtraService[] = [
+const complementaryServices = [
   {
     id: "ads",
+    Icon: Megaphone,
     title: <><span className="text-primary">Google</span> Ads</>,
-    illustration: "Ilustración isométrica: anuncio de búsqueda de Google generando llamadas",
-    visual: (
-      <img
-        src={googleAdsAsset.url}
-        alt="Google Ads: móvil con un anuncio de búsqueda y un gráfico de llamadas creciendo"
-        className="h-full w-full object-cover"
-        loading="lazy"
-      />
-    ),
-    icon: <IconTarget />,
-    description: "Empieza a recibir llamadas desde el primer día mientras el SEO Local sigue creciendo.",
-    features: ["Campañas de búsqueda", "Optimización mensual", "Seguimiento de conversiones", "Mejora continua"],
-    to: "/contacto",
+    description: "Para negocios con más volumen que quieren acelerar: campañas en la red de búsqueda de Google que trabajan junto al SEO local, gestionadas con criterio y revisadas cada mes.",
   },
   {
-    id: "resenas",
-    title: <>Gestión de <span className="text-primary">reseñas PRO</span></>,
-    illustration: "Ilustración isométrica: tarjeta NFC y código QR generando reseñas de 5 estrellas",
-    visual: (
-      <img
-        src={resenasProAsset.url}
-        alt="Reseñas PRO de Google: móvil con una reseña, logo de Google y cinco estrellas naranjas"
-        className="h-full w-full object-cover"
-        loading="lazy"
-      />
-    ),
-    icon: <IconStar />,
-    description: "Automatiza la captación de reseñas reales y mejora la confianza de tus futuros clientes.",
-    features: ["Tarjetas NFC", "Código QR", "Solicitudes automáticas", "Respuesta profesional", "Incremento de reputación"],
-    to: "/contacto",
+    id: "lsa",
+    Icon: PhoneCall,
+    title: <>Anuncios de <span className="text-primary">Servicios Locales</span> de Google</>,
+    description: "Anuncios de pago por contacto (llamada) que aparecen por encima de los resultados locales de Google. Están disponibles para negocios de servicios que cumplen los requisitos de Google.",
   },
 ];
 
@@ -142,6 +103,13 @@ const includedServices = [
     text: "Creamos páginas por servicio y por zona o barrio, pensadas para posicionar cada combinación relevante y convertir las búsquedas locales en contactos.",
     image: webSeoLocalImage,
     alt: "Ilustración de una web SEO local conectada con páginas de servicios y zonas",
+  },
+  {
+    eyebrow: "Tu web",
+    title: <>Diseño web local o <span className="text-primary">optimización de tu web actual</span></>,
+    text: "Si no tienes web, diseñamos una pensada para tu zona y tus servicios; si ya la tienes, la optimizamos para que Google y tus clientes entiendan qué haces y dónde.",
+    image: webSeoLocalImage,
+    alt: "Ilustración de una web local diseñada u optimizada para un negocio de la zona",
   },
   {
     eyebrow: "Señales de confianza",
@@ -252,7 +220,7 @@ const Home = () => {
           <>Google Business Profile, Google Maps y posicionamiento local. Gestionamos tu presencia para que cada mes más clientes de tu ciudad te encuentren antes que a tu competencia.</>
         }
         primaryCta={{ label: "Solicitar auditoría gratuita", to: "/contacto" }}
-        secondaryCta={{ label: "Ver cómo funciona", to: "/como-funciona" }}
+        secondaryCta={{ label: "Ver cómo funciona", to: "/#como-posicionamos" }}
         trustItems={["Google Partner", "Ficha gestionada cada mes", "Auditoría inicial sin coste"]}
         curveClass="bg-white"
       />
@@ -329,7 +297,7 @@ const Home = () => {
       />
 
       {/* CÓMO POSICIONAMOS */}
-      <section className={`${sectionCls} bg-white`}>
+      <section id="como-posicionamos" className={`${sectionCls} bg-white scroll-mt-24`}>
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <div className="mx-auto max-w-4xl text-center">
             <div className="flex justify-center"><p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-warm-fg mb-6"><span className="h-2 w-2 rounded-full bg-primary" />Nuestro método</p></div>
@@ -405,9 +373,23 @@ const Home = () => {
               Con tu ficha y tu web optimizadas, el SEO local sigue trabajando cada mes de forma orgánica. Si quieres acelerar el resultado o ampliar dónde apareces, estos servicios se suman al servicio base:
             </p>
           </div>
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
-            {complementaryServices.map((service) => <ServiceCard key={service.id} service={service} variant="horizontal" />)}
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+            {complementaryServices.map(({ id, Icon, title, description }) => (
+              <article key={id} className="group transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 focus-within:-translate-y-1 hover:border-primary hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)] flex h-full overflow-hidden rounded-3xl border border-transparent bg-white">
+                <div className="flex w-28 md:w-36 shrink-0 items-center justify-center bg-primary">
+                  <Icon className="h-12 w-12 md:h-14 md:w-14 text-primary-foreground" strokeWidth={1.75} aria-hidden="true" />
+                </div>
+                <div className="p-6 md:p-7">
+                  <h3 className="font-heading font-semibold text-warm-fg text-xl md:text-2xl leading-tight">{title}</h3>
+                  <p className="mt-3 text-sm md:text-base font-body text-warm-fg/75 leading-relaxed">{description}</p>
+                </div>
+              </article>
+            ))}
           </div>
+          <p className="mt-8 text-center text-sm font-body text-white/70">
+            ¿Quieres combinarlas con tu SEO local?{" "}
+            <Link to="/contacto" className="font-medium text-primary underline-offset-4 hover:underline">Cuéntanos tu caso</Link>
+          </p>
         </div>
       </section>
 

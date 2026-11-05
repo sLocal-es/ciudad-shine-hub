@@ -52,6 +52,7 @@ import { Route as MainBlogSlugRouteImport } from './routes/_main.blog.$slug'
 import { Route as MainBlogSeoLocalMejorEstrategiaMarketingNuevoNegocioRouteImport } from './routes/_main.blog.seo-local-mejor-estrategia-marketing-nuevo-negocio'
 import { Route as MainCasosDeExitoIndexRouteImport } from './routes/_main.casos-de-exito.index'
 import { Route as MainCasosDeExitoSlugRouteImport } from './routes/_main.casos-de-exito.$slug'
+import { Route as MainServiciosSplatRouteImport } from './routes/_main.servicios.$'
 import { Route as ApiPublicSubmitIndexnowRouteImport } from './routes/api/public/submit-indexnow'
 
 const MainRoute = MainRouteImport.update({
@@ -277,6 +278,11 @@ const MainCasosDeExitoSlugRoute = MainCasosDeExitoSlugRouteImport.update({
   path: '/casos-de-exito/$slug',
   getParentRoute: () => MainRoute,
 } as any)
+const MainServiciosSplatRoute = MainServiciosSplatRouteImport.update({
+  id: '/$',
+  path: '/$',
+  getParentRoute: () => MainServiciosRoute,
+} as any)
 const ApiPublicSubmitIndexnowRoute = ApiPublicSubmitIndexnowRouteImport.update({
   id: '/api/public/submit-indexnow',
   path: '/api/public/submit-indexnow',
@@ -319,11 +325,12 @@ export interface FileRoutesByFullPath {
   '/seo-para-psicologos': typeof MainSeoParaPsicologosRoute
   '/seo-para-reformas': typeof MainSeoParaReformasRoute
   '/seo-para-yoga': typeof MainSeoParaYogaRoute
-  '/servicios': typeof MainServiciosRoute
+  '/servicios': typeof MainServiciosRouteWithChildren
   '/admin/indexnow': typeof AdminIndexnowRoute
   '/blog/$slug': typeof MainBlogSlugRoute
   '/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio': typeof MainBlogSeoLocalMejorEstrategiaMarketingNuevoNegocioRoute
   '/casos-de-exito/$slug': typeof MainCasosDeExitoSlugRoute
+  '/servicios/$': typeof MainServiciosSplatRoute
   '/api/public/submit-indexnow': typeof ApiPublicSubmitIndexnowRoute
   '/blog/': typeof MainBlogIndexRoute
   '/casos-de-exito/': typeof MainCasosDeExitoIndexRoute
@@ -363,12 +370,13 @@ export interface FileRoutesByTo {
   '/seo-para-psicologos': typeof MainSeoParaPsicologosRoute
   '/seo-para-reformas': typeof MainSeoParaReformasRoute
   '/seo-para-yoga': typeof MainSeoParaYogaRoute
-  '/servicios': typeof MainServiciosRoute
+  '/servicios': typeof MainServiciosRouteWithChildren
   '/admin/indexnow': typeof AdminIndexnowRoute
   '/': typeof MainIndexRoute
   '/blog/$slug': typeof MainBlogSlugRoute
   '/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio': typeof MainBlogSeoLocalMejorEstrategiaMarketingNuevoNegocioRoute
   '/casos-de-exito/$slug': typeof MainCasosDeExitoSlugRoute
+  '/servicios/$': typeof MainServiciosSplatRoute
   '/api/public/submit-indexnow': typeof ApiPublicSubmitIndexnowRoute
   '/blog': typeof MainBlogIndexRoute
   '/casos-de-exito': typeof MainCasosDeExitoIndexRoute
@@ -410,12 +418,13 @@ export interface FileRoutesById {
   '/_main/seo-para-psicologos': typeof MainSeoParaPsicologosRoute
   '/_main/seo-para-reformas': typeof MainSeoParaReformasRoute
   '/_main/seo-para-yoga': typeof MainSeoParaYogaRoute
-  '/_main/servicios': typeof MainServiciosRoute
+  '/_main/servicios': typeof MainServiciosRouteWithChildren
   '/admin/indexnow': typeof AdminIndexnowRoute
   '/_main/': typeof MainIndexRoute
   '/_main/blog/$slug': typeof MainBlogSlugRoute
   '/_main/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio': typeof MainBlogSeoLocalMejorEstrategiaMarketingNuevoNegocioRoute
   '/_main/casos-de-exito/$slug': typeof MainCasosDeExitoSlugRoute
+  '/_main/servicios/$': typeof MainServiciosSplatRoute
   '/api/public/submit-indexnow': typeof ApiPublicSubmitIndexnowRoute
   '/_main/blog/': typeof MainBlogIndexRoute
   '/_main/casos-de-exito/': typeof MainCasosDeExitoIndexRoute
@@ -463,6 +472,7 @@ export interface FileRouteTypes {
     | '/blog/$slug'
     | '/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio'
     | '/casos-de-exito/$slug'
+    | '/servicios/$'
     | '/api/public/submit-indexnow'
     | '/blog/'
     | '/casos-de-exito/'
@@ -508,6 +518,7 @@ export interface FileRouteTypes {
     | '/blog/$slug'
     | '/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio'
     | '/casos-de-exito/$slug'
+    | '/servicios/$'
     | '/api/public/submit-indexnow'
     | '/blog'
     | '/casos-de-exito'
@@ -554,6 +565,7 @@ export interface FileRouteTypes {
     | '/_main/blog/$slug'
     | '/_main/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio'
     | '/_main/casos-de-exito/$slug'
+    | '/_main/servicios/$'
     | '/api/public/submit-indexnow'
     | '/_main/blog/'
     | '/_main/casos-de-exito/'
@@ -871,6 +883,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MainCasosDeExitoSlugRouteImport
       parentRoute: typeof MainRoute
     }
+    '/_main/servicios/$': {
+      id: '/_main/servicios/$'
+      path: '/$'
+      fullPath: '/servicios/$'
+      preLoaderRoute: typeof MainServiciosSplatRouteImport
+      parentRoute: typeof MainServiciosRoute
+    }
     '/api/public/submit-indexnow': {
       id: '/api/public/submit-indexnow'
       path: '/api/public/submit-indexnow'
@@ -880,6 +899,18 @@ declare module '@tanstack/react-router' {
     }
   }
 }
+
+interface MainServiciosRouteChildren {
+  MainServiciosSplatRoute: typeof MainServiciosSplatRoute
+}
+
+const MainServiciosRouteChildren: MainServiciosRouteChildren = {
+  MainServiciosSplatRoute: MainServiciosSplatRoute,
+}
+
+const MainServiciosRouteWithChildren = MainServiciosRoute._addFileChildren(
+  MainServiciosRouteChildren,
+)
 
 interface MainRouteChildren {
   MainSplatRoute: typeof MainSplatRoute
@@ -913,7 +944,7 @@ interface MainRouteChildren {
   MainSeoParaPsicologosRoute: typeof MainSeoParaPsicologosRoute
   MainSeoParaReformasRoute: typeof MainSeoParaReformasRoute
   MainSeoParaYogaRoute: typeof MainSeoParaYogaRoute
-  MainServiciosRoute: typeof MainServiciosRoute
+  MainServiciosRoute: typeof MainServiciosRouteWithChildren
   MainIndexRoute: typeof MainIndexRoute
   MainBlogSlugRoute: typeof MainBlogSlugRoute
   MainBlogSeoLocalMejorEstrategiaMarketingNuevoNegocioRoute: typeof MainBlogSeoLocalMejorEstrategiaMarketingNuevoNegocioRoute
@@ -954,7 +985,7 @@ const MainRouteChildren: MainRouteChildren = {
   MainSeoParaPsicologosRoute: MainSeoParaPsicologosRoute,
   MainSeoParaReformasRoute: MainSeoParaReformasRoute,
   MainSeoParaYogaRoute: MainSeoParaYogaRoute,
-  MainServiciosRoute: MainServiciosRoute,
+  MainServiciosRoute: MainServiciosRouteWithChildren,
   MainIndexRoute: MainIndexRoute,
   MainBlogSlugRoute: MainBlogSlugRoute,
   MainBlogSeoLocalMejorEstrategiaMarketingNuevoNegocioRoute:

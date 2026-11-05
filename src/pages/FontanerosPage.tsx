@@ -312,7 +312,7 @@ const FontanerosPage = () => {
           </>
         }
         primaryCta={{ label: "Solicitar auditoría gratuita", to: "/contacto" }}
-        secondaryCta={{ label: "Ver cómo funciona", to: "/como-funciona" }}
+        secondaryCta={{ label: "Ver cómo funciona", to: "/#como-posicionamos" }}
         trustItems={[
           "Google Partner",
           "Ficha de Google gestionada cada mes",
