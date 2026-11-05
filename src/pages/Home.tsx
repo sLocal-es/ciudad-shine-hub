@@ -403,8 +403,8 @@ const Home = () => {
               Con tu ficha y tu web optimizadas, el SEO local sigue trabajando cada mes de forma orgánica. Si quieres acelerar el resultado o ampliar dónde apareces, estos servicios se suman al servicio base:
             </p>
           </div>
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-7">
-            {complementaryServices.map((service) => <ServiceCard key={service.id} service={service} />)}
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+            {complementaryServices.map((service) => <ServiceCard key={service.id} service={service} variant="horizontal" />)}
           </div>
         </div>
       </section>
@@ -416,14 +416,14 @@ const Home = () => {
             <div className="flex justify-center"><p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-warm-fg mb-6"><span className="h-2 w-2 rounded-full bg-primary" />Una agencia especializada</p></div>
             <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight">Por qué Slocal</h2>
           </div>
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="mt-14 grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
             {whySlocal.map(([title, text], index) => (
-              <article key={title} className="group bg-primary border border-primary rounded-2xl p-7 md:p-9 shadow-[0_20px_50px_-25px_hsl(var(--primary)/0.7)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 focus-within:-translate-y-1 hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)] focus-within:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)]">
+              <article key={title} className="group h-full bg-dark-bg border border-dark-bg border-t-4 border-t-primary rounded-3xl p-7 md:p-9 transition-[transform,box-shadow,border-color] hover:border-primary focus-within:border-primary duration-300 hover:-translate-y-1 focus-within:-translate-y-1 hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)] focus-within:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)]">
                 <div className="flex items-start gap-5">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-primary font-heading font-bold text-sm">{index + 1}</span>
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground font-heading font-bold text-sm">{index + 1}</span>
                   <div>
                     <h3 className="font-heading font-semibold text-xl md:text-2xl text-white leading-snug">{title}</h3>
-                    <p className="mt-3 font-body font-light text-white/90 leading-relaxed">{text}</p>
+                    <p className="mt-3 font-body font-light text-white/75 leading-relaxed">{text}</p>
                   </div>
                 </div>
               </article>

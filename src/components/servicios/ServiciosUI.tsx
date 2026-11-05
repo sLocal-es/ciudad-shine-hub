@@ -43,7 +43,30 @@ export interface ExtraService {
   to: string;
 }
 
-export const ServiceCard = ({ service }: { service: ExtraService }) => (
+const HOVER_CLS = "transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 focus-within:-translate-y-1 hover:border-primary hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)] focus-within:border-primary focus-within:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)]";
+
+const ServiceCardHorizontal = ({ service }: { service: ExtraService }) => (
+  <article className={`group h-full flex flex-col md:flex-row overflow-hidden rounded-3xl border border-warm-fg/10 bg-white md:max-h-[300px] ${HOVER_CLS}`}>
+    <div className="md:w-[40%] shrink-0 h-40 md:h-auto border-b md:border-b-0 md:border-r border-warm-fg/10 bg-white flex items-center justify-center overflow-hidden p-4 text-primary [&_img]:h-full [&_img]:w-full [&_img]:object-cover" role="img" aria-label={service.illustration}>
+      {service.visual ?? <IllustrationPlaceholder label={service.illustration} aspect="aspect-[16/10]" />}
+    </div>
+    <div className="flex flex-1 flex-col p-5 md:p-6 min-w-0">
+      <h3 className="font-heading font-semibold text-warm-fg text-xl leading-tight tracking-tight">{service.title}</h3>
+      <p className="mt-2 font-body font-light text-warm-fg/70 leading-snug text-sm line-clamp-3">{service.description}</p>
+      <ul className={`mt-3 grid gap-x-4 gap-y-1.5 ${service.features.length > 3 ? "grid-cols-1 sm:grid-cols-2" : "grid-cols-1"}`}>
+        {service.features.map((f) => (
+          <li key={f} className="flex items-center gap-2 font-body text-[13px] text-warm-fg/80"><Check className="text-primary shrink-0" />{f}</li>
+        ))}
+      </ul>
+      <Link to={service.to} className="mt-auto pt-3 font-heading text-sm text-primary inline-flex items-center gap-2 transition-all group-hover:gap-2.5 focus-visible:outline-none">
+        Más información
+        <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
+      </Link>
+    </div>
+  </article>
+);
+
+export const ServiceCard = ({ service, variant = "vertical" }: { service: ExtraService; variant?: "vertical" | "horizontal" }) => variant === "horizontal" ? <ServiceCardHorizontal service={service} /> : (
   <article className="group h-full flex flex-col rounded-3xl border border-warm-fg/10 bg-white p-6 md:p-7 shadow-[0_18px_50px_-38px_rgba(0,0,0,0.35)] group transition-[transform,color,box-shadow,border-color] duration-300 hover:-translate-y-1 focus-within:-translate-y-1 hover:border-primary hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)] focus-within:border-primary focus-within:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)]">
     {service.visual ? (
       <div
