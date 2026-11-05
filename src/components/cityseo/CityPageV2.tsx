@@ -35,7 +35,7 @@ const SearchTypeIcon = ({ type }: { type: "city" | "zone" | "nearby" | "urgent" 
   };
 
   return (
-    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary" aria-hidden>
+    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground" aria-hidden>
       <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         {paths[type]}
       </svg>
@@ -84,7 +84,7 @@ const GuaranteeStrip = () => (
 );
 
 const ManifestoCardIcon = ({ type }: { type: "pin" | "browser" }) => (
-  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary" aria-hidden>
+  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground" aria-hidden>
     <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
       {type === "pin" ? (
         <><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" /></>
@@ -208,19 +208,19 @@ const CityCoverageSection = ({ city }: { city: SeoLocalCity }) => (
       <h3 className="mt-10 font-heading text-xl text-warm-fg">Barrios de {city.name}</h3>
       <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {city.barriosBusquedas.map(({ barrio, busqueda }) => (
-          <article key={barrio} className="group relative overflow-hidden rounded-3xl border border-warm-fg/10 bg-white p-7 shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] transition-all duration-[250ms] hover:-translate-y-1 hover:border-primary hover:bg-primary">
-            <svg className="pointer-events-none absolute -right-5 -top-5 h-32 w-32 text-primary/10 transition-colors duration-[250ms] group-hover:text-white/15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+          <article key={barrio} className="group relative overflow-hidden rounded-3xl border border-primary/20 bg-white p-7 shadow-[0_10px_30px_-18px_hsl(var(--primary)/0.35)] transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)]">
+            <svg className="pointer-events-none absolute -right-5 -top-5 h-32 w-32 text-primary/10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                 <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" />
                 <circle cx="12" cy="10" r="2.5" />
             </svg>
-            <span className="relative flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors duration-[250ms] group-hover:bg-white/20 group-hover:text-white">
+            <span className="relative flex h-20 w-20 items-center justify-center rounded-full bg-primary text-white">
               <svg className="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                 <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" fill="currentColor" />
-                <circle cx="12" cy="10" r="2.5" className="fill-white group-hover:fill-primary" stroke="none" />
+                <circle cx="12" cy="10" r="2.5" className="fill-primary" stroke="none" />
               </svg>
             </span>
-            <h3 className="mt-6 font-heading font-semibold text-2xl text-warm-fg transition-colors group-hover:text-white">{barrio}</h3>
-            <p className="mt-5 font-heading text-[11px] tracking-[0.22em] uppercase text-primary transition-colors group-hover:text-white">Búsqueda tipo</p>
+            <h3 className="mt-6 font-heading font-semibold text-2xl text-warm-fg">{barrio}</h3>
+            <p className="mt-5 font-heading text-[11px] tracking-[0.22em] uppercase text-primary">Búsqueda tipo</p>
             <div className="mt-2"><SearchBar>«{busqueda}»</SearchBar></div>
           </article>
         ))}
@@ -263,7 +263,7 @@ const WhyNotAppearSection = ({ city }: { city: SeoLocalCity }) => (
       <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {whyNotAppearItems.map(({ icon: Icon, title, text }) => (
           <article key={title} className="bg-white rounded-2xl border border-primary/15 p-6 shadow-[0_10px_30px_-18px_hsl(var(--primary)/0.35)]">
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary" aria-hidden>
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-primary-foreground" aria-hidden>
               <Icon className="h-5 w-5" />
             </span>
             <h3 className="mt-5 font-heading font-semibold text-lg text-warm-fg">{title}</h3>
@@ -294,7 +294,7 @@ const GoogleMapsGuideSection = ({ city }: { city: SeoLocalCity }) => (
           <ul className="mt-7 space-y-5">
             {["una ficha de Google Business Profile verificada y bien configurada", "datos coherentes en la web y en los directorios", "reseñas reales de clientes"].map((item) => (
               <li key={item} className="flex items-start gap-3 text-base md:text-lg text-warm-fg">
-                <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary" aria-hidden>
+                <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground" aria-hidden>
                   <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 </span>
                 <span>{item}</span>

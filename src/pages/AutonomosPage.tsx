@@ -2,6 +2,8 @@ import { useMemo, useState } from "react";
 import { Link } from "@/lib/router-compat";
 import SEOHead from "@/components/SEOHead";
 import CTASection from "@/components/CTASection";
+import ConversionBanner from "@/components/ConversionBanner";
+import { RevealScope } from "@/components/Reveal";
 import SectorHeroDark from "@/components/sector/SectorHeroDark";
 import LogoMarquee from "@/components/LogoMarquee";
 import {
@@ -70,11 +72,11 @@ const faqs = [
   { q: "¿Qué es el Local Pack de Google y por qué importa?", a: "Es el bloque de tres negocios que Google muestra en el mapa cuando alguien busca un servicio local. Esos tres negocios reciben la mayoría de los contactos de esa búsqueda. El objetivo del SEO local es que tu negocio sea uno de esos tres." },
 ];
 
-const sectionCls = "bg-white py-24 md:py-32 border-t border-warm-fg/10";
+const sectionCls = "bg-white py-14 md:py-16";
 
 const IllustrationPlaceholder = ({ label, aspect = "aspect-[1/1]" }: { label: string; aspect?: string }) => (
   <div
-    className={`w-full ${aspect} rounded-3xl border-2 border-dashed border-warm-fg/20 bg-[hsl(var(--warm-bg))] flex flex-col items-center justify-center gap-3 p-8 text-center`}
+    className={`w-full ${aspect} rounded-3xl border-2 border-dashed border-warm-fg/20 bg-white flex flex-col items-center justify-center gap-3 p-8 text-center`}
     role="img"
     aria-label={label}
   >
@@ -249,11 +251,13 @@ const AutonomosPage = () => {
         <LogoMarquee />
       </div>
 
+      <RevealScope />
+
       {/* MANIFIESTO */}
       <section className={sectionCls}>
-        <div className="container">
-          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-8">— El punto de partida</p>
-          <h2 className="font-heading font-semibold text-warm-fg leading-[1.05] tracking-tight text-4xl md:text-5xl lg:text-6xl max-w-[22ch]">
+        <div className="mx-auto w-full max-w-[1200px] px-6">
+          <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 text-warm-fg px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] mb-8"><span className="h-2 w-2 rounded-full bg-primary" />El punto de partida</p>
+          <h2 className="font-heading font-semibold text-warm-fg leading-[1.05] tracking-tight text-3xl md:text-4xl lg:text-[42px] max-w-[26ch]">
             ¿Por qué tu negocio no aparece cuando <span className="text-primary">te buscan</span> en Google?
           </h2>
           <p className="mt-8 max-w-2xl text-base md:text-lg font-body text-warm-fg leading-relaxed">
@@ -272,13 +276,22 @@ const AutonomosPage = () => {
         </div>
       </section>
 
+
+      <ConversionBanner
+        title="¿Quieres más clientes desde Google?"
+        sub="Analizamos gratis tu ficha, tu web y a tu competencia, y te decimos qué te está frenando."
+        cta="Quiero mi auditoría gratis"
+        to="/contacto"
+        variant="gradient"
+      />
+
       {/* PACK EDITORIAL SPLIT */}
       <section className={sectionCls}>
-        <div className="container">
+        <div className="mx-auto w-full max-w-[1200px] px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 items-center">
             <div>
               <p className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary mb-6">Todo junto</p>
-              <h2 className="font-heading font-semibold text-warm-fg leading-[1.1] tracking-tight text-3xl md:text-4xl lg:text-5xl max-w-[18ch]">
+              <h2 className="font-heading font-semibold text-warm-fg leading-[1.1] tracking-tight text-2xl md:text-3xl lg:text-4xl max-w-[18ch]">
                 Ficha de Google + web + SEO local: <span className="text-primary">todo junto</span>
               </h2>
               <p className="mt-6 max-w-lg text-base md:text-lg font-body font-light text-warm-fg/75 leading-relaxed">
@@ -302,11 +315,20 @@ const AutonomosPage = () => {
         </div>
       </section>
 
+
+      <ConversionBanner
+        title="Descubre qué te frena frente a tu competencia"
+        sub="Auditoría gratuita de tu ficha de Google, tu web y los negocios que hoy aparecen por delante de ti."
+        cta="Pedir mi auditoría gratis"
+        to="/contacto"
+        variant="dark"
+      />
+
       {/* CALCULADORA */}
       <section className={sectionCls}>
-        <div className="container max-w-5xl">
-          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Calculadora</p>
-          <h2 className="font-heading font-semibold text-warm-fg leading-[1.05] tracking-tight text-4xl md:text-5xl lg:text-6xl max-w-[22ch] mb-6">
+        <div className="mx-auto w-full max-w-[1200px] px-6 max-w-5xl">
+          <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 text-warm-fg px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] mb-6"><span className="h-2 w-2 rounded-full bg-primary" />Calculadora</p>
+          <h2 className="font-heading font-semibold text-warm-fg leading-[1.05] tracking-tight text-3xl md:text-4xl lg:text-[42px] max-w-[26ch] mb-6">
             ¿Cuánto vale estar en los <span className="text-primary">primeros resultados</span> de Google en tu ciudad?
           </h2>
           <p className="text-base md:text-lg font-body font-light text-warm-fg/70 leading-relaxed max-w-3xl mb-12">
@@ -317,10 +339,10 @@ const AutonomosPage = () => {
       </section>
 
       {/* CASOS */}
-      <section className={sectionCls}>
-        <div className="container">
-          <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Casos reales</p>
-          <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight max-w-[22ch] mb-14">
+      <section className="bg-dark-bg py-14 md:py-16">
+        <div className="mx-auto w-full max-w-[1200px] px-6">
+          <p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-transparent text-white px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] mb-6"><span className="h-2 w-2 rounded-full bg-primary" />Casos reales</p>
+          <h2 className="font-heading font-semibold text-white text-3xl md:text-4xl lg:text-[42px] leading-[1.05] tracking-tight max-w-[26ch] mb-14">
             Autónomos que ya aparecen cuando les <span className="text-primary">buscan</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -328,7 +350,7 @@ const AutonomosPage = () => {
               <Link
                 key={`${c.sector}-${c.city}`}
                 to={c.link}
-                className="group bg-white rounded-2xl border border-warm-fg/10 px-6 py-5 flex items-center justify-between gap-4 hover:border-primary hover:shadow-[0_10px_40px_-25px_rgba(0,0,0,0.15)] transition-all"
+                className="group bg-white rounded-2xl border border-transparent px-6 py-5 flex items-center justify-between gap-4 transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)]"
               >
                 <div>
                   <p className="font-heading text-warm-fg group-hover:text-primary transition-colors">{c.sector}</p>
@@ -338,25 +360,34 @@ const AutonomosPage = () => {
               </Link>
             ))}
           </div>
-          <p className="text-xs text-warm-fg/60 font-body font-light mt-6">
+          <p className="text-xs text-white/60 font-body font-light mt-6">
             Resultados detallados en cuanto los casos alcancen el primer trimestre completo.
           </p>
         </div>
       </section>
 
+
+      <ConversionBanner
+        title="Tu negocio puede ser el próximo caso de éxito"
+        sub="Cuéntanos tu situación y te decimos qué haría Slocal en tu caso."
+        cta="Quiero hablar con Slocal"
+        to="/contacto"
+        variant="gradient"
+      />
+
       {/* FAQ */}
       <section className={sectionCls}>
-        <div className="container grid grid-cols-1 md:grid-cols-12 gap-12">
+        <div className="mx-auto w-full max-w-[1200px] px-6 grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
-            <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— FAQ</p>
-            <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl leading-[1.05] tracking-tight">
+            <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 text-warm-fg px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] mb-6"><span className="h-2 w-2 rounded-full bg-primary" />FAQ</p>
+            <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-[42px] leading-[1.05] tracking-tight">
               Preguntas frecuentes.
             </h2>
           </div>
           <div className="md:col-span-8">
-            <div className="divide-y divide-warm-fg/15 border-y border-warm-fg/15">
+            <div className="space-y-3">
               {faqs.map((item, i) => (
-                <details key={i} className="group py-6">
+                <details key={i} className="group py-6 rounded-2xl border border-primary/15 bg-white px-6">
                   <summary className="cursor-pointer list-none flex items-start justify-between gap-6 font-heading text-lg md:text-xl text-warm-fg">
                     <span>{item.q}</span>
                     <span className="text-primary shrink-0 text-2xl leading-none transition-transform group-open:rotate-45">+</span>
@@ -369,12 +400,22 @@ const AutonomosPage = () => {
         </div>
       </section>
 
+
+      <ConversionBanner
+        title="Tu competencia ya está en Google. ¿Y tú?"
+        sub="Pide tu auditoría gratuita y descubre dónde estás ahora mismo."
+        cta="Auditar mi negocio gratis"
+        to="/contacto"
+        variant="dark"
+      />
+
       <CasosExitoSection />
 
       <CTASection
         id="contacto"
         title="¿Tu negocio no aparece cuando te buscan en Google?"
         buttonText="Solicitar auditoría gratuita →"
+        gradient
       />
     </>
   );

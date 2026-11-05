@@ -2,8 +2,9 @@ import { useLocation, Link } from "@/lib/router-compat";
 import SEOHead from "@/components/SEOHead";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
 
-import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
+import ConversionBanner from "@/components/ConversionBanner";
+import { RevealScope } from "@/components/Reveal";
 import CasosExitoSection from "@/components/CasosExitoSection";
 import { sectors } from "@/data/sectors";
 import { cities } from "@/data/cities";
@@ -121,41 +122,52 @@ const SectorPage = () => {
         </div>
       </section>
 
+      <RevealScope />
+
       {/* SECTION 3 — PROBLEM */}
-      <section className="py-16">
-        <div className="container">
-          <h2 className="font-heading text-2xl md:text-3xl text-center mb-10">
+      <section className="bg-white py-14 md:py-16">
+        <div className="mx-auto w-full max-w-[1200px] px-6">
+          <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight text-center mb-10 max-w-[26ch] mx-auto">
             Por qué muchos {sectorLabel} son invisibles en Google
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {sector.painCards.map((card) => (
-              <div key={card.text} className="bg-warm-bg border border-border rounded-xl p-6 transition-all duration-200 hover:border-primary hover:-translate-y-[3px]">
+              <div key={card.text} className="bg-white border border-primary/15 rounded-2xl p-6 shadow-[0_10px_30px_-18px_hsl(var(--primary)/0.35)]">
                 <span className="text-2xl mb-3 block">{card.icon}</span>
-                <p className="text-sm leading-relaxed">{card.text}</p>
+                <p className="text-sm leading-relaxed text-warm-fg">{card.text}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
+
+      <ConversionBanner
+        title={`¿Quieres más ${sector.ctaWord} desde Google?`}
+        sub="Analizamos gratis tu ficha, tu web y a tu competencia, y te decimos qué te está frenando."
+        cta="Quiero mi auditoría gratis"
+        to="/contacto"
+        variant="gradient"
+      />
+
       {/* SECTION 4 — HOW IT WORKS */}
-      <section className="bg-warm-bg py-16">
-        <div className="container">
-          <h2 className="font-heading text-2xl md:text-3xl mb-8">
+      <section className="bg-dark-bg py-14 md:py-16">
+        <div className="mx-auto w-full max-w-[1200px] px-6">
+          <h2 className="font-heading font-semibold text-white text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight mb-8">
             Qué activamos para {sectorLabel}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-card border border-border rounded-xl p-6 transition-all duration-200 hover:border-primary hover:-translate-y-[3px]">
-              <h3 className="font-heading text-base mb-3">{sector.gbpCard.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{sector.gbpCard.body}</p>
+            <div className="bg-white border border-transparent rounded-2xl p-6">
+              <h3 className="font-heading font-semibold text-lg text-warm-fg mb-3">{sector.gbpCard.title}</h3>
+              <p className="text-sm text-warm-fg/75 leading-relaxed">{sector.gbpCard.body}</p>
             </div>
-            <div className="bg-card border border-border rounded-xl p-6 transition-all duration-200 hover:border-primary hover:-translate-y-[3px]">
-              <h3 className="font-heading text-base mb-3">{sector.webCard.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{sector.webCard.body}</p>
+            <div className="bg-white border border-transparent rounded-2xl p-6">
+              <h3 className="font-heading font-semibold text-lg text-warm-fg mb-3">{sector.webCard.title}</h3>
+              <p className="text-sm text-warm-fg/75 leading-relaxed">{sector.webCard.body}</p>
             </div>
-            <div className="bg-card border border-border rounded-xl p-6 transition-all duration-200 hover:border-primary hover:-translate-y-[3px]">
-              <h3 className="font-heading text-base mb-3">Informe mensual de posiciones y contactos</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+            <div className="bg-white border border-transparent rounded-2xl p-6">
+              <h3 className="font-heading font-semibold text-lg text-warm-fg mb-3">Informe mensual de posiciones y contactos</h3>
+              <p className="text-sm text-warm-fg/75 leading-relaxed">
                 Cada mes un informe claro: qué posiciones has ganado, cuántas visitas ha tenido tu web y cuántos {sector.reportCard} han contactado desde Google. Sin tecnicismos.
               </p>
             </div>
@@ -163,10 +175,19 @@ const SectorPage = () => {
         </div>
       </section>
 
+
+      <ConversionBanner
+        title="Descubre qué te frena frente a tu competencia"
+        sub="Auditoría gratuita de tu ficha de Google, tu web y los negocios que hoy aparecen por delante de ti."
+        cta="Pedir mi auditoría gratis"
+        to="/contacto"
+        variant="gradient"
+      />
+
       {/* SECTION 5 — VISUAL PROOF */}
-      <section className="bg-dark-bg text-dark-fg py-16">
-        <div className="container">
-          <h2 className="font-heading text-2xl md:text-3xl mb-8 text-center">
+      <section className="bg-dark-bg text-dark-fg py-14 md:py-16">
+        <div className="mx-auto w-full max-w-[1200px] px-6">
+          <h2 className="font-heading font-semibold text-white text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight mb-8 text-center">
             Así se ve cuando el sistema está funcionando
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -216,16 +237,52 @@ const SectorPage = () => {
       </section>
 
 
+
+      <ConversionBanner
+        title="Tu negocio puede ser el próximo caso de éxito"
+        sub="Cuéntanos tu situación y te decimos qué haría Slocal en tu caso."
+        cta="Quiero hablar con Slocal"
+        to="/contacto"
+        variant="gradient"
+      />
+
       {/* SECTION 7 — FAQ */}
-      <FAQSection title="Preguntas frecuentes" items={sector.faqs} />
+      <section className="bg-dark-bg py-14 md:py-16">
+        <div className="mx-auto w-full max-w-[1200px] px-6 grid grid-cols-1 md:grid-cols-12 gap-10">
+          <div className="md:col-span-4">
+            <p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-transparent text-white px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] mb-6"><span className="h-2 w-2 rounded-full bg-primary" />FAQ</p>
+            <h2 className="font-heading font-semibold text-white text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight">Preguntas frecuentes</h2>
+          </div>
+          <div className="md:col-span-8 space-y-3">
+            {sector.faqs.map((item, i) => (
+              <details key={i} className="group py-6 rounded-2xl border border-primary/15 bg-white px-6">
+                <summary className="cursor-pointer list-none flex items-start justify-between gap-6 font-heading text-lg md:text-xl text-warm-fg">
+                  <span>{item.q}</span>
+                  <span className="text-primary shrink-0 text-2xl leading-none transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <p className="mt-4 text-base font-body font-light text-warm-fg/75 leading-relaxed max-w-2xl">{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+      <ConversionBanner
+        title="Tu competencia ya está en Google. ¿Y tú?"
+        sub="Pide tu auditoría gratuita y descubre dónde estás ahora mismo."
+        cta="Auditar mi negocio gratis"
+        to="/contacto"
+        variant="gradient"
+      />
 
       {/* SECTION 8 — CITIES (Nivel 2 internal linking) */}
-      <section className="py-12">
-        <div className="container max-w-3xl text-center">
-          <h2 className="font-heading text-2xl md:text-3xl mb-4">
+      <section className="bg-white py-14 md:py-16">
+        <div className="mx-auto w-full max-w-[1200px] px-6 text-center">
+          <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight mb-4">
             Trabajamos con negocios en toda España
           </h2>
-          <p className="text-sm md:text-base text-muted-foreground mb-8 font-body font-light">
+          <p className="text-sm md:text-base text-warm-fg/75 mb-8 font-body font-light max-w-3xl mx-auto">
             Gestionamos el posicionamiento local de negocios en toda España. Estas son algunas de las ciudades donde trabajamos actualmente:
           </p>
           <div className="flex flex-wrap justify-center gap-2.5">
@@ -242,7 +299,7 @@ const SectorPage = () => {
               <Link
                 key={city.slug}
                 to={`/seo-local-${city.slug}`}
-                className="bg-card border border-border rounded-full px-4 py-2 text-sm font-heading text-foreground transition-all duration-200 hover:border-primary hover:text-primary hover:-translate-y-[2px]"
+                className="bg-white border border-primary/25 rounded-full px-4 py-2 text-sm font-heading text-warm-fg transition-all duration-200 hover:border-primary hover:text-primary hover:-translate-y-[2px]"
               >
                 {city.name}
               </Link>
@@ -252,18 +309,18 @@ const SectorPage = () => {
       </section>
 
       {/* SECTION 9 — RELATED SECTORS */}
-      <section className="bg-warm-bg py-12">
-        <div className="container">
-          <h2 className="font-heading text-xl mb-6">También trabajamos con otros sectores</h2>
+      <section className="bg-white pb-14 md:pb-16">
+        <div className="mx-auto w-full max-w-[1200px] px-6">
+          <h2 className="font-heading font-semibold text-warm-fg text-2xl md:text-3xl mb-6">También trabajamos con otros sectores</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             {otherSectors.map((s) => (
               <Link
                 key={s.slug}
                 to={`/${s.slug}`}
-                className="bg-card border border-border rounded-xl p-5 transition-all duration-200 hover:border-primary hover:-translate-y-[3px] group"
+                className="bg-white border border-primary/15 rounded-2xl p-5 group transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)]"
               >
-                <h3 className="font-heading text-sm group-hover:text-primary transition-colors mb-1">{s.relatedLabel}</h3>
-                <p className="text-xs text-muted-foreground">{s.relatedDesc}</p>
+                <h3 className="font-heading text-sm text-warm-fg group-hover:text-primary transition-colors mb-1">{s.relatedLabel}</h3>
+                <p className="text-xs text-warm-fg/70">{s.relatedDesc}</p>
               </Link>
             ))}
           </div>
@@ -273,7 +330,7 @@ const SectorPage = () => {
       <CasosExitoSection />
 
       {/* SECTION 10 — FINAL CTA */}
-      <CTASection title={`¿Listo para que Google te traiga ${sector.ctaWord}?`} buttonText="Empezar →" />
+      <CTASection title={`¿Listo para que Google te traiga ${sector.ctaWord}?`} buttonText="Empezar →" gradient />
     </>
   );
 };
