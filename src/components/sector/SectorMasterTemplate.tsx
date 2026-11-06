@@ -13,6 +13,7 @@ import OptimizedWebsiteVisual from "@/components/OptimizedWebsiteVisual";
 import CasosExitoSection from "@/components/CasosExitoSection";
 import CoberturaMapas from "@/components/CoberturaMapas";
 import ConversionBanner from "@/components/ConversionBanner";
+import CityConversionBanner, { BannerKey } from "@/components/cityseo/CityConversionBanner";
 import { BANNER_COPY } from "@/data/bannerCopy";
 import ComplementaryServicesGrid from "@/components/ComplementaryServicesGrid";
 import ComoPosicionamosSection, { ComoPosicionamosSectionProps } from "@/components/sector/ComoPosicionamosSection";
@@ -292,15 +293,11 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
   const isSector = c.canonical.startsWith("/seo-para-");
   const isCity = c.canonical.startsWith("/seo-local-");
   const R = isSector || isCity;
-  const cityBanner2 = isCity && (
-    <ConversionBanner
-      title={BANNER_COPY.cityCompetencia(c.sectorLabel).title}
-      sub="Cada semana que pasa son llamadas que van a otro negocio."
-      cta={BANNER_COPY.cityCompetencia(c.sectorLabel).cta}
-      to="/contacto"
-      variant="dark"
-    />
-  );
+  const cityBanner = (k: "cityAparece" | "cityCompetencia") => {
+    const b = BANNER_COPY[k](c.sectorLabel);
+    return <CityConversionBanner eyebrow={b.eyebrow} title={<>{b.title} <BannerKey variant="orange">{b.key}</BannerKey></>} sub={b.sub} variant="orange" />;
+  };
+  const cityBanner2 = isCity && cityBanner("cityCompetencia");
   const wrap = R ? "mx-auto w-full max-w-[1200px] px-6" : "container";
   const sec = (bg: string) => (R ? `${bg} py-16 md:py-20` : sectionCls);
   const h2Size = R ? "text-3xl md:text-4xl lg:text-[42px]" : "text-4xl md:text-5xl lg:text-6xl";
@@ -518,15 +515,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
         />
       )}
 
-      {isCity && (
-        <ConversionBanner
-          title={BANNER_COPY.cityAparece(c.sectorLabel).title}
-          sub="Te mostramos dónde estás hoy frente a tu competencia con una auditoría gratuita de tu ficha y tu web."
-          cta={BANNER_COPY.cityAparece(c.sectorLabel).cta}
-          to="/contacto"
-          variant="gradient"
-        />
-      )}
+      {isCity && cityBanner("cityAparece")}
 
       {c.afterManifesto}
 
@@ -537,7 +526,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
 
       {c.servicesCta}
 
-      {c.casesBeforeAudit && <CasosExitoSection />}
+      {c.casesBeforeAudit && <CasosExitoSection dark={isCity} />}
 
       {/* CTA AUDITORÍA GRATUITA */}
       <section id={c.auditoriaSectionId} className={`${R ? "bg-white py-10 md:py-14" : "bg-white py-12 md:py-20"}${c.auditoriaScrollMargin ? " scroll-mt-24" : ""}`}>
@@ -556,7 +545,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
                   {c.auditoriaBody ?? "Analizamos gratis tu ficha de Google Business Profile y tu web. Te mostraremos los principales errores que están impidiendo que aparezcas por delante de tu competencia."}
                 </p>
                 <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-sm md:text-base font-body text-white/90">
-                  {["Vídeo personalizado", "En menos de 24 horas"].map((b) => (
+                  {["En menos de 24 horas", "Sin compromiso"].map((b) => (
                     <li key={b} className="flex items-center gap-2">
                       <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden>
                         <path d="M4 10.5l4 4 8-9" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />

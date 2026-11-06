@@ -5,17 +5,17 @@ import { Link } from "@/lib/router-compat";
 import { CaseCard } from "@/components/ResultadosSection";
 import { cases } from "@/data/casosExito";
 
-const CasosExitoSection = () => {
+const CasosExitoSection = ({ dark = false }: { dark?: boolean }) => {
   const stripRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="bg-white py-24 md:py-32 border-t border-warm-fg/10">
+    <section className={dark ? "bg-dark-bg py-14 md:py-16" : "bg-white py-24 md:py-32 border-t border-warm-fg/10"}>
       <div className="container">
         <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Casos de éxito</p>
-        <h2 className="font-heading font-semibold text-warm-fg text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight max-w-[22ch] mb-6">
+        <h2 className={`font-heading font-semibold ${dark ? "text-white" : "text-warm-fg"} text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight max-w-[22ch] mb-6`}>
           ¿Qué <span className="text-primary">resultados reales</span> da el SEO Local?
         </h2>
-        <p className="font-body font-light text-warm-fg/75 text-base md:text-lg leading-relaxed max-w-2xl mb-14">
+        <p className={`font-body font-light ${dark ? "text-white/75" : "text-warm-fg/75"} text-base md:text-lg leading-relaxed max-w-2xl mb-14`}>
           Negocios reales que pasaron de no aparecer en Google a recibir llamadas. Entra en cada caso para ver qué hicimos y qué consiguió.
         </p>
 
@@ -26,7 +26,7 @@ const CasosExitoSection = () => {
               type="button"
               onClick={() => stripRef.current?.scrollBy({ left: -320, behavior: "smooth" })}
               aria-label="Ver casos anteriores"
-              className="w-10 h-10 rounded-full flex items-center justify-center bg-primary/10 text-primary transition-colors hover:bg-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              className={`w-10 h-10 rounded-full flex items-center justify-center ${dark ? "bg-white text-primary hover:bg-white/90" : "bg-primary/10 text-primary hover:bg-primary/20"} transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2`}
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
@@ -34,7 +34,7 @@ const CasosExitoSection = () => {
               type="button"
               onClick={() => stripRef.current?.scrollBy({ left: 320, behavior: "smooth" })}
               aria-label="Ver casos siguientes"
-              className="w-10 h-10 rounded-full flex items-center justify-center bg-primary/10 text-primary transition-colors hover:bg-primary/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+              className={`w-10 h-10 rounded-full flex items-center justify-center ${dark ? "bg-white text-primary hover:bg-white/90" : "bg-primary/10 text-primary hover:bg-primary/20"} transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2`}
             >
               <ChevronRight className="w-5 h-5" />
             </button>
