@@ -814,7 +814,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       )}
 
       {/* FAQ */}
-      <section className={isCity ? "bg-primary py-14 md:py-16" : sec(R ? "bg-dark-bg" : "bg-white")}>
+      <section data-no-reveal={isCity ? "" : undefined} className={isCity ? "bg-primary py-14 md:py-16" : sec(R ? "bg-dark-bg" : "bg-white")}>
         <div className={`${wrap} grid grid-cols-1 md:grid-cols-12 gap-12`}>
           <div className="md:col-span-4">
             {isCity ? <p className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-transparent text-white px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] mb-6"><span className="h-2 w-2 rounded-full bg-white" />FAQ</p> : R ? pill("FAQ", "mb-6", true) : <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— FAQ</p>}

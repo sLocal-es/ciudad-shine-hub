@@ -53,7 +53,7 @@ export function RevealScope() {
       // section headers: animate the whole header block (pill + H2 + paragraph)
       const el = node.tagName === "H2" ? (node.parentElement as HTMLElement) : node;
       if (!(marker.compareDocumentPosition(el) & Node.DOCUMENT_POSITION_FOLLOWING)) return;
-      if (el.closest("footer, header, nav")) return;
+      if (el.closest("footer, header, nav, [data-no-reveal]")) return;
       if (targets.includes(el) || targets.some((t) => t.contains(el) || el.contains(t))) return;
       targets.push(el);
     });
