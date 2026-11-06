@@ -379,23 +379,23 @@ const AutonomosPage = () => {
       />
 
       {/* FAQ */}
-      <section className={sectionCls}>
+      <section data-no-reveal="" className="bg-primary py-14 md:py-16">
         <div className="mx-auto w-full max-w-[1200px] px-6 grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
-            <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 text-warm-fg px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] mb-6"><span className="h-2 w-2 rounded-full bg-primary" />FAQ</p>
-            <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-[42px] leading-[1.05] tracking-tight">
+            <p className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-transparent text-white px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] mb-6"><span className="h-2 w-2 rounded-full bg-white" />FAQ</p>
+            <h2 className="font-heading font-semibold text-white text-3xl md:text-4xl lg:text-[42px] leading-[1.05] tracking-tight">
               Preguntas frecuentes.
             </h2>
           </div>
           <div className="md:col-span-8">
             <div className="space-y-3">
               {faqs.map((item, i) => (
-                <details key={i} className="group py-6 rounded-2xl border border-primary/15 bg-white px-6">
-                  <summary className="cursor-pointer list-none flex items-start justify-between gap-6 font-heading text-lg md:text-xl text-warm-fg">
+                <details key={i} className="group py-6 rounded-2xl border border-white/10 bg-dark-bg px-6">
+                  <summary className="cursor-pointer list-none flex items-start justify-between gap-6 font-heading text-lg md:text-xl text-white">
                     <span>{item.q}</span>
                     <span className="text-primary shrink-0 text-2xl leading-none transition-transform group-open:rotate-45">+</span>
                   </summary>
-                  <p className="mt-4 text-base font-body font-light text-warm-fg/70 leading-relaxed max-w-2xl">{item.a}</p>
+                  <p className="mt-4 text-base font-body font-light text-white/75 leading-relaxed max-w-2xl">{item.a}</p>
                 </details>
               ))}
             </div>

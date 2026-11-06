@@ -687,32 +687,28 @@ const FontanerosPage = () => {
       </section>
 
       {/* POR QUÉ CADA MES */}
-      <section className={sectionCls}>
-        <div className="mx-auto w-full max-w-[1200px] px-6 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
-          <div className="md:col-span-5">
-            <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 text-warm-fg px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] mb-8"><span className="h-2 w-2 rounded-full bg-primary" />Trabajo mensual</p>
-            <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-[42px] leading-[1.05] tracking-tight mb-6">
+      <section className="bg-white py-14 md:py-16">
+        <div className="mx-auto w-full max-w-[1200px] px-6">
+          <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 text-warm-fg px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] mb-6"><span className="h-2 w-2 rounded-full bg-primary" />Trabajo mensual</p>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 lg:items-end">
+            <h2 className="lg:col-span-7 font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-[42px] leading-[1.05] tracking-tight">
               ¿Por qué el SEO Local necesita trabajo <span className="text-primary">mes a mes</span>?
             </h2>
-            <p className="text-base md:text-lg font-body text-warm-fg leading-relaxed">
+            <p className="lg:col-span-5 text-base md:text-lg font-body text-warm-fg/80 leading-relaxed">
               Porque Google no es una fotografía, es una competición continua. En Slocal reforzamos cada mes tu ficha, reseñas, contenido y autoridad local para que tus competidores no te superen y para capturar nuevas búsquedas conforme aparecen en tu zona.
             </p>
           </div>
-          <div className="md:col-span-7">
-            <ol className="space-y-10 md:space-y-12">
-              {monthlyReasons.map((r, i) => (
-                <li key={r.h} className="border-t border-warm-fg/20 pt-6 grid grid-cols-[auto_1fr] gap-x-6 md:gap-x-10">
-                  <span className="font-heading text-xs tracking-widest text-warm-fg/40 pt-1.5">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <div>
-                    <h3 className="font-heading text-xl md:text-2xl leading-snug text-warm-fg mb-3">{r.h}</h3>
-                    <p className="font-body font-light text-base text-warm-fg/70 leading-relaxed">{r.d}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </div>
+          <ol className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+            {monthlyReasons.map((r, i) => (
+              <li key={r.h} data-reveal className="rounded-2xl border-t-4 border-primary bg-dark-bg p-5">
+                <span className="block font-heading text-3xl font-semibold text-primary leading-none">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mt-4 font-heading font-semibold text-base lg:text-lg leading-snug text-white">{r.h}</h3>
+                <p className="mt-2 font-body text-sm text-white/70 leading-relaxed">{r.d}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
@@ -963,10 +959,10 @@ const FontanerosPage = () => {
 
 
       {/* FAQ */}
-      <section className="bg-dark-bg py-14 md:py-16">
+      <section data-no-reveal="" className="bg-primary py-14 md:py-16">
         <div className="mx-auto w-full max-w-[1200px] px-6 grid grid-cols-1 md:grid-cols-12 gap-12">
           <div className="md:col-span-4">
-            <p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-transparent text-white px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] mb-6"><span className="h-2 w-2 rounded-full bg-primary" />FAQ</p>
+            <p className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-transparent text-white px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] mb-6"><span className="h-2 w-2 rounded-full bg-white" />FAQ</p>
             <h2 className="font-heading font-semibold text-white text-3xl md:text-4xl lg:text-[42px] leading-[1.05] tracking-tight">
               Preguntas frecuentes.
             </h2>
@@ -974,12 +970,12 @@ const FontanerosPage = () => {
           <div className="md:col-span-8">
             <div className="space-y-3">
               {faqs.map((item, i) => (
-                <details key={i} className="group py-6 rounded-2xl border border-primary/15 bg-white px-6">
-                  <summary className="cursor-pointer list-none flex items-start justify-between gap-6 font-heading text-lg md:text-xl text-warm-fg">
+                <details key={i} className="group py-6 rounded-2xl border border-white/10 bg-dark-bg px-6">
+                  <summary className="cursor-pointer list-none flex items-start justify-between gap-6 font-heading text-lg md:text-xl text-white">
                     <span>{item.q}</span>
                     <span className="text-primary shrink-0 text-2xl leading-none transition-transform group-open:rotate-45">+</span>
                   </summary>
-                  <p className="mt-4 text-base font-body font-light text-warm-fg/70 leading-relaxed max-w-2xl">
+                  <p className="mt-4 text-base font-body font-light text-white/75 leading-relaxed max-w-2xl">
                     {item.a}
                   </p>
                 </details>
