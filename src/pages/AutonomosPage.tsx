@@ -1,3 +1,4 @@
+import AnswerCapsule from "@/components/AnswerCapsule";
 import { useMemo, useState } from "react";
 import { Link } from "@/lib/router-compat";
 import SEOHead from "@/components/SEOHead";
@@ -253,6 +254,7 @@ const AutonomosPage = () => {
       </div>
 
       <RevealScope />
+      <AnswerCapsule kind="sector" sectorLower="autónomos" clientWord="clientes" />
 
       {/* MANIFIESTO */}
       <section className={sectionCls}>

@@ -1,3 +1,4 @@
+import AnswerCapsule from "@/components/AnswerCapsule";
 import { useLocation, Link } from "@/lib/router-compat";
 import SEOHead from "@/components/SEOHead";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
@@ -124,6 +125,7 @@ const SectorPage = () => {
       </section>
 
       <RevealScope />
+      <AnswerCapsule kind="sector" sectorLower={sectorLabel} clientWord={sector.ctaWord} />
 
       {/* SECTION 3 — PROBLEM */}
       <section className="bg-white py-14 md:py-16">

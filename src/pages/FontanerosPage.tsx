@@ -1,3 +1,4 @@
+import AnswerCapsule from "@/components/AnswerCapsule";
 import ElfsightReviews from "@/components/ElfsightReviews";
 import { useState, useEffect, Fragment } from "react";
 import { Link } from "@/lib/router-compat";
@@ -337,6 +338,7 @@ const FontanerosPage = () => {
 
 
       <RevealScope />
+      <AnswerCapsule kind="sector" sectorLower="fontaneros" clientWord="clientes" />
 
       {/* MANIFIESTO */}
       <section className={sectionCls}>
