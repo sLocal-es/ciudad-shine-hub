@@ -406,15 +406,8 @@ const AutonomosPage = () => {
       </section>
 
 
-      <ConversionBanner
-        title={BANNER_COPY.competencia.title}
-        sub="Pide tu auditoría gratuita y descubre dónde estás ahora mismo."
-        cta={BANNER_COPY.competencia.cta}
-        to="/contacto"
-        variant="dark"
-      />
 
-      <CasosExitoSection />
+      <CasosExitoSection dark />
 
       <CTASection
         id="contacto"

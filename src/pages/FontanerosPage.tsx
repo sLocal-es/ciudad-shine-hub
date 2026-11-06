@@ -19,6 +19,8 @@ import casoFinalImg from "@/assets/caso-exito-resultado.webp.asset.json";
 import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisual";
 import OptimizedWebsiteVisual from "@/components/OptimizedWebsiteVisual";
 import CasosExitoSection from "@/components/CasosExitoSection";
+import CoberturaMapas from "@/components/CoberturaMapas";
+import { SectorCardsGrid } from "@/components/home/SectorsGridSection";
 import ComoPosicionamosSection from "@/components/sector/ComoPosicionamosSection";
 import QueIncluyeSection from "@/components/sector/QueIncluyeSection";
 
@@ -988,30 +990,24 @@ const FontanerosPage = () => {
       </section>
 
 
-      <ConversionBanner
-        title={BANNER_COPY.competencia.title}
-        sub="Pide tu auditoría gratuita y descubre dónde estás ahora mismo."
-        cta={BANNER_COPY.competencia.cta}
-        to="/contacto"
-        variant="gradient"
-      />
 
       {/* CIUDADES */}
-      <section className="bg-white py-20 md:py-24 border-t border-warm-fg/10">
+      <section className="bg-dark-bg py-14 md:py-16">
         <div className="mx-auto w-full max-w-[1200px] px-6">
-          <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 text-warm-fg px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] mb-6"><span className="h-2 w-2 rounded-full bg-primary" />Cobertura</p>
-          <h2 className="font-heading font-semibold text-warm-fg text-2xl md:text-3xl lg:text-4xl leading-[1.05] tracking-tight max-w-[26ch] mb-4">
+          <p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-transparent text-white px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] mb-6"><span className="h-2 w-2 rounded-full bg-primary" />Cobertura</p>
+          <h2 className="font-heading font-semibold text-white text-2xl md:text-3xl lg:text-4xl leading-[1.05] tracking-tight max-w-[26ch] mb-4">
             ¿En qué <span className="text-primary">ciudades</span> trabaja Slocal con fontaneros?
           </h2>
-          <p className="text-base font-body text-warm-fg leading-relaxed mb-10 max-w-2xl">
+          <p className="text-base font-body text-white/70 leading-relaxed mb-6 max-w-2xl">
             Slocal trabaja con fontaneros en toda España, con clientes activos en Madrid, Barcelona, Valencia, Sevilla, Málaga, Zaragoza, Bilbao y Murcia. Adaptamos la estrategia local a cada ciudad y a cada barrio para captar las búsquedas de máxima intención de tu zona.
           </p>
+          <CoberturaMapas dark />
           <div className="flex flex-wrap gap-2.5">
             {cities.map((city) => (
               <Link
                 key={city.slug}
                 to={`/seo-local-${city.slug}`}
-                className="border border-warm-fg/20 rounded-full px-5 py-2.5 text-sm font-heading text-warm-fg transition-all duration-200 hover:border-primary hover:text-primary hover:-translate-y-[2px]"
+                className="border border-white bg-white rounded-full px-5 py-2.5 text-sm font-heading text-warm-fg transition-all duration-200 hover:bg-primary hover:border-primary hover:text-white hover:-translate-y-[2px]"
               >
                 {city.name}
               </Link>
@@ -1021,7 +1017,7 @@ const FontanerosPage = () => {
       </section>
 
       {/* OTROS SECTORES */}
-      <section className="bg-white py-16 md:py-20 border-t border-warm-fg/10">
+      <section className="bg-white py-14 md:py-16">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 text-warm-fg px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] mb-6"><span className="h-2 w-2 rounded-full bg-primary" />Otros sectores</p>
           <h2 className="font-heading text-2xl md:text-3xl text-warm-fg mb-4">
@@ -1030,21 +1026,11 @@ const FontanerosPage = () => {
           <p className="text-base font-body text-warm-fg leading-relaxed max-w-3xl mb-8">
             No. Slocal trabaja también con fisioterapeutas, empresas de reformas, pintores, clínicas, entrenadores personales y estudios de yoga. Aplicamos la misma metodología de SEO Local especializado a cada sector para que aparezcan cuando sus clientes buscan en Google.
           </p>
-          <div className="flex flex-wrap gap-2.5">
-            {otherSectors.map((s) => (
-              <Link
-                key={s.slug}
-                to={`/${s.slug}`}
-                className="border border-warm-fg/20 rounded-full px-5 py-2.5 text-sm font-heading text-warm-fg transition-all duration-200 hover:border-primary hover:text-primary hover:-translate-y-[2px]"
-              >
-                {s.label}
-              </Link>
-            ))}
-          </div>
+          <SectorCardsGrid exclude="/seo-para-fontaneros" className="" />
         </div>
       </section>
 
-      <CasosExitoSection />
+      <CasosExitoSection dark />
 
       <CTASection
         id="contacto"

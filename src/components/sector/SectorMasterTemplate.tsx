@@ -14,6 +14,7 @@ import GoogleBusinessProfileVisual from "@/components/GoogleBusinessProfileVisua
 import OptimizedWebsiteVisual from "@/components/OptimizedWebsiteVisual";
 import CasosExitoSection from "@/components/CasosExitoSection";
 import CoberturaMapas from "@/components/CoberturaMapas";
+import { SectorCardsGrid } from "@/components/home/SectorsGridSection";
 import ConversionBanner from "@/components/ConversionBanner";
 import CityConversionBanner, { BannerKey } from "@/components/cityseo/CityConversionBanner";
 import { BANNER_COPY } from "@/data/bannerCopy";
@@ -845,31 +846,21 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
         </div>
       </section>
 
-      {isSector && (
-        <ConversionBanner
-          title={BANNER_COPY.competencia.title}
-          sub="Pide tu auditoría gratuita y descubre dónde estás ahora mismo."
-          cta={BANNER_COPY.competencia.cta}
-          to="/contacto"
-          variant="gradient"
-        />
-      )}
-
       {/* CIUDADES */}
-      <section className={isCity ? "bg-dark-bg py-14 md:py-16" : R ? "bg-white py-14 md:py-16" : "bg-white py-20 md:py-24 border-t border-warm-fg/10"}>
+      <section className={R ? "bg-dark-bg py-14 md:py-16" : "bg-white py-20 md:py-24 border-t border-warm-fg/10"}>
         <div className={wrap}>
-          {R ? pill("Cobertura", "mb-6", isCity) : <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Cobertura</p>}
-          <h2 className={`font-heading font-semibold ${isCity ? "text-white" : "text-warm-fg"} ${R ? h2Size : "text-3xl md:text-4xl lg:text-5xl"} leading-[1.05] tracking-tight ${h2Max} mb-4`}>
+          {R ? pill("Cobertura", "mb-6", true) : <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Cobertura</p>}
+          <h2 className={`font-heading font-semibold ${R ? "text-white" : "text-warm-fg"} ${R ? h2Size : "text-3xl md:text-4xl lg:text-5xl"} leading-[1.05] tracking-tight ${h2Max} mb-4`}>
             {c.citiesH2}
           </h2>
-          <p className={`text-base font-body ${isCity ? "text-white/70" : "text-warm-fg"} leading-relaxed mb-6 max-w-2xl`}>{c.citiesBody}</p>
-          {isCity ? <CoberturaMapas dark /> : <CoberturaMapas />}
+          <p className={`text-base font-body ${R ? "text-white/70" : "text-warm-fg"} leading-relaxed mb-6 max-w-2xl`}>{c.citiesBody}</p>
+          {R ? <CoberturaMapas dark /> : <CoberturaMapas />}
           <div className="flex flex-wrap gap-2.5">
             {cities.map((city) => (
               <Link
                 key={city.slug}
                 to={`/seo-local-${city.slug}`}
-                className={isCity ? "border border-white bg-white rounded-full px-5 py-2.5 text-sm font-heading text-warm-fg transition-all duration-200 hover:bg-primary hover:border-primary hover:text-white hover:-translate-y-[2px]" : `border ${R ? "bg-white border-primary/25" : "border-warm-fg/20"} rounded-full px-5 py-2.5 text-sm font-heading text-warm-fg transition-all duration-200 hover:border-primary hover:text-primary hover:-translate-y-[2px]`}
+                className={R ? "border border-white bg-white rounded-full px-5 py-2.5 text-sm font-heading text-warm-fg transition-all duration-200 hover:bg-primary hover:border-primary hover:text-white hover:-translate-y-[2px]" : `border ${R ? "bg-white border-primary/25" : "border-warm-fg/20"} rounded-full px-5 py-2.5 text-sm font-heading text-warm-fg transition-all duration-200 hover:border-primary hover:text-primary hover:-translate-y-[2px]`}
               >
                 {city.name}
               </Link>
@@ -885,7 +876,7 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
             {R ? pill("Otros sectores", "mb-6") : <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Otros sectores</p>}
             <h2 className="font-heading text-2xl md:text-3xl text-warm-fg mb-4">{c.otherSectorsH2}</h2>
             <p className="text-base font-body text-warm-fg leading-relaxed max-w-3xl mb-8">{c.otherSectorsBody}</p>
-            <div className="flex flex-wrap gap-2.5">
+            {isSector ? <SectorCardsGrid exclude={c.canonical} className="" /> : <div className="flex flex-wrap gap-2.5">
               {c.otherSectors.map((s) => (
                 <Link
                   key={s.slug}
@@ -895,12 +886,12 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
                   {s.label}
                 </Link>
               ))}
-            </div>
+            </div>}
           </div>
         </section>
       ))}
 
-      {!c.casesBeforeAudit && <CasosExitoSection />}
+      {!c.casesBeforeAudit && <CasosExitoSection dark={isSector} />}
 
       <CTASection id="contacto" title={c.finalCtaTitle} buttonText="Solicitar auditoría gratuita →" buttonTo={c.finalCtaTo} gradient={R} />
     </>
