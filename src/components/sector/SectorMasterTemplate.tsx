@@ -747,6 +747,30 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       </section>
 
       {/* POR QUÉ CADA MES */}
+      {isCity ? (
+      <section className="bg-white py-14 md:py-16">
+        <div className={wrap}>
+          {pill("Trabajo mensual", "mb-6")}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-12 lg:items-end">
+            <h2 className={`lg:col-span-7 font-heading font-semibold text-warm-fg ${h2Size2} leading-[1.05] tracking-tight`}>
+              {c.monthlyH2}
+            </h2>
+            <p className="lg:col-span-5 text-base md:text-lg font-body text-warm-fg/80 leading-relaxed">{c.monthlyBody}</p>
+          </div>
+          <ol className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+            {c.monthlyReasons.map((r, i) => (
+              <li key={r.h} data-reveal className="rounded-2xl border-t-4 border-primary bg-dark-bg p-5">
+                <span className="block font-heading text-3xl font-semibold text-primary leading-none">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mt-4 font-heading font-semibold text-base lg:text-lg leading-snug text-white">{r.h}</h3>
+                <p className="mt-2 font-body text-sm text-white/70 leading-relaxed">{r.d}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+      ) : (
       <section className={sec("bg-white")}>
         <div className={`${wrap} grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16`}>
           <div className="md:col-span-5">
@@ -773,20 +797,21 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
           </div>
         </div>
       </section>
+      )}
 
       {/* PRESENCIA LOCAL — MAPA */}
       {(c.mapEmbed || c.mapQuery) && (
-        <section className={sec("bg-white")}>
+        <section className={isCity ? "bg-dark-bg py-14 md:py-16" : sec("bg-white")}>
           <div className={wrap}>
             <div className="max-w-3xl mb-12">
-              <h2 className={`font-heading font-semibold text-warm-fg ${h2Size2} leading-[1.05] tracking-tight mb-6`}>
+              <h2 className={`font-heading font-semibold ${isCity ? "text-white" : "text-warm-fg"} ${h2Size2} leading-[1.05] tracking-tight mb-6`}>
                 {c.mapTitle}
               </h2>
-              <p className="text-base md:text-lg font-body font-light text-warm-fg/70 leading-relaxed">
+              <p className={`text-base md:text-lg font-body font-light ${isCity ? "text-white/70" : "text-warm-fg/70"} leading-relaxed`}>
                 {c.mapSubtitle}
               </p>
             </div>
-            <div className="w-full rounded-2xl overflow-hidden border border-warm-fg/10 shadow-[0_10px_40px_-30px_rgba(0,0,0,0.12)]">
+            <div className={isCity ? "w-full rounded-3xl overflow-hidden border border-white/15" : "w-full rounded-2xl overflow-hidden border border-warm-fg/10 shadow-[0_10px_40px_-30px_rgba(0,0,0,0.12)]"}>
               <iframe
                 title={`Mapa de ${c.mapEmbed ? "Slocal" : c.mapQuery}`}
                 src={c.mapEmbed || `https://www.google.com/maps?q=${encodeURIComponent(c.mapQuery ?? "")}&output=embed`}
@@ -800,11 +825,11 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       )}
 
       {/* FAQ */}
-      <section className={sec(R ? "bg-dark-bg" : "bg-white")}>
+      <section className={isCity ? "bg-white py-14 md:py-16" : sec(R ? "bg-dark-bg" : "bg-white")}>
         <div className={`${wrap} grid grid-cols-1 md:grid-cols-12 gap-12`}>
           <div className="md:col-span-4">
-            {R ? pill("FAQ", "mb-6", true) : <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— FAQ</p>}
-            <h2 className={`font-heading font-semibold ${R ? "text-white" : "text-warm-fg"} ${h2Size2} leading-[1.05] tracking-tight`}>
+            {R ? pill("FAQ", "mb-6", !isCity) : <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— FAQ</p>}
+            <h2 className={`font-heading font-semibold ${R && !isCity ? "text-white" : "text-warm-fg"} ${h2Size2} leading-[1.05] tracking-tight`}>
               Preguntas frecuentes.
             </h2>
           </div>
@@ -837,20 +862,20 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       )}
 
       {/* CIUDADES */}
-      <section className={R ? "bg-white py-14 md:py-16" : "bg-white py-20 md:py-24 border-t border-warm-fg/10"}>
+      <section className={isCity ? "bg-dark-bg py-14 md:py-16" : R ? "bg-white py-14 md:py-16" : "bg-white py-20 md:py-24 border-t border-warm-fg/10"}>
         <div className={wrap}>
-          {R ? pill("Cobertura", "mb-6") : <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Cobertura</p>}
-          <h2 className={`font-heading font-semibold text-warm-fg ${R ? h2Size : "text-3xl md:text-4xl lg:text-5xl"} leading-[1.05] tracking-tight ${h2Max} mb-4`}>
+          {R ? pill("Cobertura", "mb-6", isCity) : <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— Cobertura</p>}
+          <h2 className={`font-heading font-semibold ${isCity ? "text-white" : "text-warm-fg"} ${R ? h2Size : "text-3xl md:text-4xl lg:text-5xl"} leading-[1.05] tracking-tight ${h2Max} mb-4`}>
             {c.citiesH2}
           </h2>
-          <p className="text-base font-body text-warm-fg leading-relaxed mb-6 max-w-2xl">{c.citiesBody}</p>
-          <CoberturaMapas />
+          <p className={`text-base font-body ${isCity ? "text-white/70" : "text-warm-fg"} leading-relaxed mb-6 max-w-2xl`}>{c.citiesBody}</p>
+          {isCity ? <CoberturaMapas dark /> : <CoberturaMapas />}
           <div className="flex flex-wrap gap-2.5">
             {cities.map((city) => (
               <Link
                 key={city.slug}
                 to={`/seo-local-${city.slug}`}
-                className={`border ${R ? "bg-white border-primary/25" : "border-warm-fg/20"} rounded-full px-5 py-2.5 text-sm font-heading text-warm-fg transition-all duration-200 hover:border-primary hover:text-primary hover:-translate-y-[2px]`}
+                className={isCity ? "border border-white bg-white rounded-full px-5 py-2.5 text-sm font-heading text-warm-fg transition-all duration-200 hover:bg-primary hover:border-primary hover:text-white hover:-translate-y-[2px]" : `border ${R ? "bg-white border-primary/25" : "border-warm-fg/20"} rounded-full px-5 py-2.5 text-sm font-heading text-warm-fg transition-all duration-200 hover:border-primary hover:text-primary hover:-translate-y-[2px]`}
               >
                 {city.name}
               </Link>
@@ -882,16 +907,6 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       ))}
 
       {!c.casesBeforeAudit && <CasosExitoSection />}
-
-      {isCity && (
-        <ConversionBanner
-          title={BANNER_COPY.cityLlamadas(c.sectorLabel).title}
-          sub="Hablamos de tu negocio y te decimos por dónde empezar. Sin compromiso."
-          cta={BANNER_COPY.cityLlamadas(c.sectorLabel).cta}
-          to="/contacto"
-          variant="gradient"
-        />
-      )}
 
       <CTASection id="contacto" title={c.finalCtaTitle} buttonText="Solicitar auditoría gratuita →" buttonTo={c.finalCtaTo} gradient={R} />
     </>

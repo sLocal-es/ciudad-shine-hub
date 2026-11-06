@@ -7,9 +7,9 @@ const cities = [
   { name: "Córdoba", slug: "cordoba" },
 ];
 
-const CoberturaMapas = () => (
+const CoberturaMapas = ({ dark = false }: { dark?: boolean }) => (
   <div className="mb-10">
-    <p className="text-sm font-body text-warm-fg/70 mb-4">
+    <p className={`text-sm font-body ${dark ? "text-white/70" : "text-warm-fg/70"} mb-4`}>
       Trabajamos en toda España y tenemos presencia en cuatro ciudades:
     </p>
 
@@ -17,7 +17,7 @@ const CoberturaMapas = () => (
       {cities.map((city) => (
         <article
           key={city.slug}
-          className="overflow-hidden rounded-2xl border border-primary/15 bg-white shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] group transition-[transform,color,box-shadow,border-color] duration-300 hover:-translate-y-1 focus-within:-translate-y-1 hover:border-primary hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)] focus-within:border-primary focus-within:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)]"
+          className={dark ? "overflow-hidden rounded-2xl border-2 border-white bg-white group transition-[transform,border-color] duration-300 hover:-translate-y-1 focus-within:-translate-y-1 hover:border-primary focus-within:border-primary" : "overflow-hidden rounded-2xl border border-primary/15 bg-white shadow-[0_8px_30px_-15px_rgba(26,26,36,0.08)] group transition-[transform,color,box-shadow,border-color] duration-300 hover:-translate-y-1 focus-within:-translate-y-1 hover:border-primary hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)] focus-within:border-primary focus-within:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)]"}
         >
           <iframe
             src={`https://www.google.com/maps?q=${encodeURIComponent(`${city.name}, España`)}&output=embed`}
@@ -46,7 +46,7 @@ const CoberturaMapas = () => (
       ))}
     </div>
 
-    <p className="mt-8 mb-4 text-sm font-body text-warm-fg/70">
+    <p className={`mt-8 mb-4 text-sm font-body ${dark ? "text-white/70" : "text-warm-fg/70"}`}>
       ¿Tu negocio está en otra ciudad? Trabajamos igual. Elige tu ciudad:
     </p>
   </div>
