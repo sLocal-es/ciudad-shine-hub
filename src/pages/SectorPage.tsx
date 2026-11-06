@@ -8,6 +8,8 @@ import ConversionBanner from "@/components/ConversionBanner";
 import { BANNER_COPY } from "@/data/bannerCopy";
 import { RevealScope } from "@/components/Reveal";
 import CasosExitoSection from "@/components/CasosExitoSection";
+import CoberturaMapas from "@/components/CoberturaMapas";
+import { SectorCardsGrid } from "@/components/home/SectorsGridSection";
 import { sectors } from "@/data/sectors";
 import { cities } from "@/data/cities";
 
@@ -271,23 +273,17 @@ const SectorPage = () => {
       </section>
 
 
-      <ConversionBanner
-        title={BANNER_COPY.competencia.title}
-        sub="Pide tu auditoría gratuita y descubre dónde estás ahora mismo."
-        cta={BANNER_COPY.competencia.cta}
-        to="/contacto"
-        variant="gradient"
-      />
 
       {/* SECTION 8 — CITIES (Nivel 2 internal linking) */}
-      <section className="bg-white py-14 md:py-16">
+      <section className="bg-dark-bg py-14 md:py-16">
         <div className="mx-auto w-full max-w-[1200px] px-6 text-center">
-          <h2 className="font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight mb-4">
+          <h2 className="font-heading font-semibold text-white text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight mb-4">
             Trabajamos con negocios en toda España
           </h2>
-          <p className="text-sm md:text-base text-warm-fg/75 mb-8 font-body font-light max-w-3xl mx-auto">
+          <p className="text-sm md:text-base text-white/70 mb-8 font-body font-light max-w-3xl mx-auto">
             Gestionamos el posicionamiento local de negocios en toda España. Estas son algunas de las ciudades donde trabajamos actualmente:
           </p>
+          <div className="text-left"><CoberturaMapas dark /></div>
           <div className="flex flex-wrap justify-center gap-2.5">
             {[
               { name: "Madrid", slug: "madrid" },
@@ -302,7 +298,7 @@ const SectorPage = () => {
               <Link
                 key={city.slug}
                 to={`/seo-local-${city.slug}`}
-                className="bg-white border border-primary/25 rounded-full px-4 py-2 text-sm font-heading text-warm-fg transition-all duration-200 hover:border-primary hover:text-primary hover:-translate-y-[2px]"
+                className="border border-white bg-white rounded-full px-5 py-2.5 text-sm font-heading text-warm-fg transition-all duration-200 hover:bg-primary hover:border-primary hover:text-white hover:-translate-y-[2px]"
               >
                 {city.name}
               </Link>
@@ -312,25 +308,14 @@ const SectorPage = () => {
       </section>
 
       {/* SECTION 9 — RELATED SECTORS */}
-      <section className="bg-white pb-14 md:pb-16">
+      <section className="bg-white py-14 md:py-16">
         <div className="mx-auto w-full max-w-[1200px] px-6">
           <h2 className="font-heading font-semibold text-warm-fg text-2xl md:text-3xl mb-6">También trabajamos con otros sectores</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-            {otherSectors.map((s) => (
-              <Link
-                key={s.slug}
-                to={`/${s.slug}`}
-                className="bg-white border border-primary/15 rounded-2xl p-5 group transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)]"
-              >
-                <h3 className="font-heading text-sm text-warm-fg group-hover:text-primary transition-colors mb-1">{s.relatedLabel}</h3>
-                <p className="text-xs text-warm-fg/70">{s.relatedDesc}</p>
-              </Link>
-            ))}
-          </div>
+          <SectorCardsGrid exclude={`/${sector.slug}`} className="" />
         </div>
       </section>
 
-      <CasosExitoSection />
+      <CasosExitoSection dark />
 
       {/* SECTION 10 — FINAL CTA */}
       <CTASection title={`¿Listo para que Google te traiga ${sector.ctaWord}?`} buttonText="Empezar →" gradient />
