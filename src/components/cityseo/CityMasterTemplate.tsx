@@ -110,7 +110,7 @@ const CityMasterTemplate = ({
     sectorLower: name.toLowerCase(),
     clientWord: "clientes",
     heroEyebrow: `Agencia SEO Local · ${name}`,
-    heroH1: <h1>SEO Local en <span className="text-primary">{name}</span><span className="block text-[0.62em] leading-[1.1] text-primary">más llamadas y más clientes desde Google</span></h1>,
+    heroH1: <h1>SEO Local en <span className="text-primary">{name}</span><span className="block">más llamadas y más clientes desde <span className="text-primary">Google</span></span></h1>,
     heroSubtitle: heroSubtitleOverride ?? <>Agencia SEO Local en {name}. Optimizamos tu ficha de Google Business Profile y tu web para que aparezcas primero cuando alguien busca tu servicio en {name}.</>,
     heroTrust: ["Google Partner", "Ficha de Google gestionada cada mes", "Auditoría inicial sin coste"],
     heroVisualAlt: `Ilustración de un móvil con Google Maps y una ficha de negocio local en primer lugar, con llamadas, reseñas y Top 3 en ${name}`,
