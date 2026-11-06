@@ -397,3 +397,10 @@ html.reveal-ready [data-reveal-item]:not(.is-revealed) {
 @media (prefers-reduced-motion: reduce) {
   html.reveal-ready [data-reveal-item] { opacity: 1 !important; transform: none !important; transition: none !important; }
 }
+
+/* Custom cursor (CSS only, inline SVG) */
+@media (pointer: fine) {
+  html, body { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='26' viewBox='0 0 26 26'%3E%3Cpath d='M3 2v19l5-5 3.5 8 3.5-1.5-3.5-7.5H18z' fill='%23fff' stroke='%231c1c2b' stroke-width='4' stroke-linejoin='round'/%3E%3Cpath d='M3 2v19l5-5 3.5 8 3.5-1.5-3.5-7.5H18z' fill='%23fff' stroke='%23FF6B00' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E") 3 2, auto; }
+  a, button, [role="button"], summary, label[for], select, input[type="submit"], input[type="button"], a * , button * { cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Ccircle cx='14' cy='14' r='11' fill='%23fff' stroke='%231c1c2b' stroke-width='4'/%3E%3Ccircle cx='14' cy='14' r='11' fill='%23fff' stroke='%23FF6B00' stroke-width='2'/%3E%3Ccircle cx='14' cy='14' r='3.5' fill='%23FF6B00'/%3E%3C/svg%3E") 14 14, pointer; }
+  input:not([type="submit"]):not([type="button"]):not([type="checkbox"]):not([type="radio"]), textarea { cursor: text; }
+}
