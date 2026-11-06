@@ -1,3 +1,4 @@
+import { Star } from "lucide-react";
 import ElfsightReviews from "@/components/ElfsightReviews";
 import { useState, ReactNode } from "react";
 import { Link } from "@/lib/router-compat";
@@ -331,6 +332,17 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
         secondaryCta={{ label: "Ver cómo funciona", to: "/#como-posicionamos" }}
         trustItems={c.heroTrust}
         visualAlt={c.heroVisualAlt}
+        trustRow={isCity ? (
+          <div className="mt-8">
+            <div className="flex items-center gap-2">
+              <span className="flex gap-0.5 text-primary" aria-hidden>
+                {[0, 1, 2, 3, 4].map((i) => <Star key={i} className="h-4 w-4 fill-current" strokeWidth={0} />)}
+              </span>
+              <span className="font-heading text-sm font-semibold text-warm-fg">Reseñas de 5 estrellas en Google</span>
+            </div>
+            <p className="mt-1 text-sm font-body text-warm-fg/60">Respuesta en menos de 24 h</p>
+          </div>
+        ) : undefined}
         curveClass="bg-white"
       />
 
