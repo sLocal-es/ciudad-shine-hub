@@ -28,7 +28,7 @@ const FisioterapeutasPage = () => {
     canonical: "/seo-para-fisioterapeutas",
     sectorLabel: "Fisioterapeutas", sectorSlug: "seo-para-fisioterapeutas", sectorLower: "fisioterapeutas", clientWord: "pacientes",
     heroEyebrow: "Agencia SEO Local · Fisioterapeutas",
-    heroH1: <h1>SEO para <span className="text-primary">Fisioterapeutas</span></h1>,
+    heroH1: <h1>SEO para <span className="text-primary">Fisioterapeutas</span>.<span className="block">Más llamadas y más clientes desde <span className="text-primary">Google</span>.</span></h1>,
     heroSubtitle: <>Agencia SEO Local especializada en fisioterapeutas y clínicas de fisioterapia. Optimizamos tu ficha de Google Business Profile y tu web para que aparezcas primero cuando alguien busca fisio cerca de mí en tu ciudad.</>,
     heroTrust: ["Google Partner", "Ficha de Google gestionada cada mes", "Auditoría inicial sin coste"],
     manifestoEyebrow: "— El punto de partida",

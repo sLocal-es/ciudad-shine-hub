@@ -28,7 +28,7 @@ const DentistasPage = () => {
     canonical: "/seo-para-dentistas",
     sectorLabel: "Dentistas", sectorSlug: "seo-para-dentistas", sectorLower: "dentistas", clientWord: "pacientes",
     heroEyebrow: "Agencia SEO Local · Dentistas",
-    heroH1: <h1>SEO para <span className="text-primary">Dentistas</span></h1>,
+    heroH1: <h1>SEO para <span className="text-primary">Dentistas</span>.<span className="block">Más llamadas y más clientes desde <span className="text-primary">Google</span>.</span></h1>,
     heroSubtitle: <>Agencia SEO Local especializada en clínicas dentales. Optimizamos tu ficha de Google Business Profile y tu web para que aparezcas primero cuando alguien busca dentista en tu ciudad.</>,
     heroTrust: ["Google Partner", "Ficha de Google gestionada cada mes", "Auditoría inicial sin coste"],
     manifestoEyebrow: "— El punto de partida",

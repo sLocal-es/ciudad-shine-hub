@@ -7,6 +7,7 @@ import ConversionBanner from "@/components/ConversionBanner";
 import { BANNER_COPY } from "@/data/bannerCopy";
 import { RevealScope } from "@/components/Reveal";
 import SectorHeroDark from "@/components/sector/SectorHeroDark";
+import HeroReviewsRow from "@/components/sector/HeroReviewsRow";
 import LogoMarquee from "@/components/LogoMarquee";
 import {
   Select,
@@ -235,11 +236,12 @@ const AutonomosPage = () => {
       <SectorHeroDark
         breadcrumbLabel="SEO para autónomos"
         eyebrow="Agencia SEO Local · Autónomos"
-        h1={<h1>SEO para <span className="text-primary">autónomos</span></h1>}
+        h1={<h1>SEO para <span className="text-primary">autónomos</span>.<span className="block">Más llamadas y más clientes desde <span className="text-primary">Google</span>.</span></h1>}
         subtitle={<>Consultor SEO Local para autónomos: ficha de Google, web y posicionamiento local. Una persona, un servicio completo, sin intermediarios.</>}
         primaryCta={{ label: "Solicitar auditoría gratuita", to: "/contacto" }}
         secondaryCta={{ label: "Ver cómo funciona", to: "/#como-posicionamos" }}
         trustItems={["Un consultor dedicado", "Ficha de Google gestionada cada mes", "Auditoría inicial sin coste"]}
+        trustRow={<HeroReviewsRow />}
         curveClass="bg-white"
       />
 

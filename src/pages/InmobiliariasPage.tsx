@@ -30,7 +30,7 @@ const InmobiliariasPage = () => {
     canonical: "/seo-para-inmobiliarias",
     sectorLabel: "Inmobiliarias", sectorSlug: "seo-para-inmobiliarias", sectorLower: "inmobiliarias", clientWord: "clientes",
     heroEyebrow: "Agencia SEO Local · Inmobiliarias",
-    heroH1: <h1>SEO para <span className="text-primary">Inmobiliarias</span></h1>,
+    heroH1: <h1>SEO para <span className="text-primary">Inmobiliarias</span>.<span className="block">Más llamadas y más clientes desde <span className="text-primary">Google</span>.</span></h1>,
     heroSubtitle: <>Agencia SEO Local especializada en inmobiliarias. Optimizamos tu ficha de Google Business Profile y tu web para que aparezcas primero cuando alguien busca piso o inmobiliaria en tu zona.</>,
     heroTrust: ["Google Partner", "Ficha de Google gestionada cada mes", "Auditoría inicial sin coste"],
     manifestoEyebrow: "— El punto de partida",
