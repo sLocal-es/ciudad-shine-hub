@@ -17,7 +17,7 @@ export const BANNER_COPY = {
   }),
   cityCompetencia: (c: string) => ({
     eyebrow: "TU COMPETENCIA YA ESTÁ AHÍ",
-    title: `Las llamadas de ${c} se las lleva quien sale primero.`,
+    title: `Las llamadas en ${c} se las lleva quien sale primero.`,
     key: "Que seas tú",
     sub: "Te mostramos dónde estás hoy frente a tus competidores y qué haríamos para pasarlos. Sin compromiso.",
   }),

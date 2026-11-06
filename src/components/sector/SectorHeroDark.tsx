@@ -17,6 +17,8 @@ interface SectorHeroDarkProps {
   /** Tailwind bg-* class used for the curved bottom transition (should match the next section's background). */
   curveClass?: string;
   visualAlt?: string;
+  /** Optional replacement for the trust image under the CTAs. */
+  trustRow?: ReactNode;
 }
 
 /**
@@ -33,6 +35,7 @@ const SectorHeroDark = ({
   secondaryCta = { label: "Ver cómo funciona", to: "/#como-posicionamos" },
   curveClass = "bg-background",
   visualAlt,
+  trustRow,
 }: SectorHeroDarkProps) => {
   const primaryClassName = "inline-flex items-center rounded-full bg-primary px-7 py-3.5 text-sm font-heading text-primary-foreground transition-colors hover:bg-primary/90";
 
@@ -96,9 +99,11 @@ const SectorHeroDark = ({
             </div>
 
             {/* Trust row */}
+            {trustRow ?? (
             <div  className="mt-10">
                 <HeroTrustBar />
             </div>
+            )}
           </div>
                     <div className="relative z-10 md:col-span-6 lg:col-span-5 flex justify-end">
             <HeroVisual alt={visualAlt} />
