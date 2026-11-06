@@ -22,6 +22,30 @@ const sectores = [
   { to: "/seo-para-autonomos", label: "SEO para autónomos", description: "Damos visibilidad a profesionales independientes que captan clientes en un área concreta.", icon: BriefcaseBusiness },
 ];
 
+/** Horizontal 3×3 sector cards (same as the dark variant), reusable on white or black. */
+export const SectorCardsGrid = ({ dark = false, exclude, className = "mt-10" }: { dark?: boolean; exclude?: string; className?: string }) => (
+  <ul className={`${className} grid grid-cols-1 md:grid-cols-3 gap-4`}>
+    {sectores.filter((s) => s.to !== exclude).map((s) => {
+      const SectorIcon = s.icon;
+      return (
+        <li key={s.to}>
+          <Link
+            to={s.to}
+            title={s.description}
+            className={`flex h-16 items-center gap-3 rounded-2xl border-2 ${dark ? "border-white" : "border-warm-fg/10"} bg-white px-4 transition-[transform,border-color] duration-300 hover:-translate-y-1 focus-visible:-translate-y-1 hover:border-primary focus-visible:border-primary`}
+          >
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground" aria-hidden>
+              <SectorIcon className="h-5 w-5" strokeWidth={1.75} aria-hidden />
+            </span>
+            <span className="min-w-0 flex-1 truncate font-heading text-sm font-semibold text-warm-fg">{s.label}</span>
+            <span className="shrink-0 text-xs font-heading text-primary">Ver →</span>
+          </Link>
+        </li>
+      );
+    })}
+  </ul>
+);
+
 const SectorsGridSection = ({ dark = false }: { dark?: boolean }) => (
   <section className={dark ? "bg-dark-bg py-14 md:py-16" : "bg-white py-14 md:py-16"}>
     <div className="mx-auto w-full max-w-[1200px] px-6">
