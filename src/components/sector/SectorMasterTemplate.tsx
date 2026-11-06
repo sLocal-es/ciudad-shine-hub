@@ -814,23 +814,23 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
       )}
 
       {/* FAQ */}
-      <section className={isCity ? "bg-white py-14 md:py-16" : sec(R ? "bg-dark-bg" : "bg-white")}>
+      <section className={isCity ? "bg-primary py-14 md:py-16" : sec(R ? "bg-dark-bg" : "bg-white")}>
         <div className={`${wrap} grid grid-cols-1 md:grid-cols-12 gap-12`}>
           <div className="md:col-span-4">
-            {R ? pill("FAQ", "mb-6", !isCity) : <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— FAQ</p>}
-            <h2 className={`font-heading font-semibold ${R && !isCity ? "text-white" : "text-warm-fg"} ${h2Size2} leading-[1.05] tracking-tight`}>
+            {isCity ? <p className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-transparent text-white px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] mb-6"><span className="h-2 w-2 rounded-full bg-white" />FAQ</p> : R ? pill("FAQ", "mb-6", true) : <p className="font-heading text-xs tracking-[0.2em] uppercase text-primary mb-6">— FAQ</p>}
+            <h2 className={`font-heading font-semibold ${R ? "text-white" : "text-warm-fg"} ${h2Size2} leading-[1.05] tracking-tight`}>
               Preguntas frecuentes.
             </h2>
           </div>
           <div className="md:col-span-8">
             <div className={R ? "space-y-3" : "divide-y divide-warm-fg/15 border-y border-warm-fg/15"}>
               {c.faqs.map((item, i) => (
-                <details key={i} className={R ? "group py-6 rounded-2xl border border-primary/15 bg-white px-6" : "group py-6"}>
-                  <summary className="cursor-pointer list-none flex items-start justify-between gap-6 font-heading text-lg md:text-xl text-warm-fg">
+                <details key={i} className={isCity ? "group py-6 rounded-2xl border border-white/10 bg-dark-bg px-6" : R ? "group py-6 rounded-2xl border border-primary/15 bg-white px-6" : "group py-6"}>
+                  <summary className={`cursor-pointer list-none flex items-start justify-between gap-6 font-heading text-lg md:text-xl ${isCity ? "text-white" : "text-warm-fg"}`}>
                     <span>{item.q}</span>
                     <span className="text-primary shrink-0 text-2xl leading-none transition-transform group-open:rotate-45">+</span>
                   </summary>
-                  <p className="mt-4 text-base font-body font-light text-warm-fg/70 leading-relaxed max-w-2xl">
+                  <p className={`mt-4 text-base font-body font-light ${isCity ? "text-white/75" : "text-warm-fg/70"} leading-relaxed max-w-2xl`}>
                     {item.a}
                   </p>
                 </details>
