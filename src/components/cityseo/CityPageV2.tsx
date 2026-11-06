@@ -215,7 +215,7 @@ const CityCoverageSection = ({ city }: { city: SeoLocalCity }) => (
                 <circle cx="12" cy="10" r="2.5" className="fill-primary" stroke="none" />
               </svg>
             </span>
-            <h4 className="mt-4 font-heading font-semibold text-lg leading-tight text-white break-words">{barrio}</h4>
+            <h3 className="mt-4 font-heading font-semibold text-lg leading-tight text-white break-words">{barrio}</h3>
             <p className="mt-3 font-heading text-[11px] tracking-[0.18em] uppercase text-primary">Búsqueda tipo</p>
             <div className="mt-2 min-w-0"><SearchBar>«{busqueda}»</SearchBar></div>
           </article>
