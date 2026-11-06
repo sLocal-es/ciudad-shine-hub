@@ -5,7 +5,7 @@ import SectorsGridSection from "@/components/home/SectorsGridSection";
 import type { SeoLocalCity } from "@/data/seoLocalCities";
 import { Link } from "@/lib/router-compat";
 import { SCHEMA_DATE_MODIFIED } from "@/lib/citySchema";
-import { AppWindow, Clock, Copy, ShieldCheck, Star, Tag } from "lucide-react";
+import { AppWindow, Clock, Copy, Phone, ShieldCheck, Star, Tag } from "lucide-react";
 
 const CheckItem = ({ children }: { children: string }) => (
   <li className="flex items-center gap-2">
@@ -53,8 +53,8 @@ const HeroAuditBand = ({ city }: { city: SeoLocalCity }) => (
               Auditoría gratuita de tu ficha y tu web
             </p>
             <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-sm font-body text-white md:text-[15px]">
-              <CheckItem>Vídeo personalizado</CheckItem>
               <CheckItem>En menos de 24 horas</CheckItem>
+              <CheckItem>Sin compromiso</CheckItem>
             </ul>
           </div>
           <div className="mt-5 min-w-0 flex-1 lg:mt-0">
@@ -66,17 +66,17 @@ const HeroAuditBand = ({ city }: { city: SeoLocalCity }) => (
   </section>
 );
 
-const GuaranteeStrip = () => (
+const ConversionStrip = ({ city }: { city: SeoLocalCity }) => (
   <section className="bg-white pb-6 md:pb-8">
     <div className="mx-auto w-full max-w-[1200px] px-6">
       <div className="rounded-2xl bg-[hsl(var(--dark-bg))] px-5 py-4 text-white md:px-8 md:py-5 lg:flex lg:items-center lg:gap-6">
         <div className="flex shrink-0 items-center gap-2 text-primary">
-          <ShieldCheck className="h-5 w-5" aria-hidden />
-          <span className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary">Garantía de 60 días</span>
+          <Phone className="h-5 w-5" aria-hidden />
+          <span className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary">Más llamadas desde Google</span>
         </div>
         <div className="mt-4 lg:mt-0">
-          <p className="font-heading font-semibold text-lg md:text-xl leading-snug text-white">Si en 60 días tu ficha no ha mejorado, seguimos trabajando sin coste hasta que lo haga.</p>
-          <p className="mt-2 text-[15px] text-white/80">Mejora medida con las estadísticas de tu ficha de Google (visitas al perfil, llamadas y búsquedas en las que apareces), comparando los 60 días anteriores y posteriores al inicio del trabajo.</p>
+          <p className="font-heading font-semibold text-lg md:text-xl leading-snug text-white">Cuando alguien busca tu servicio en {city.name}, el negocio que aparece primero se lleva la llamada. Hacemos que seas tú.</p>
+          <p className="mt-2 text-[15px] text-white/80">Auditoría gratuita de tu ficha y tu web: te decimos qué te frena y por dónde empezar.</p>
         </div>
       </div>
     </div>
@@ -194,6 +194,8 @@ const WhyLocalSeoSection = ({ city, compactTimeframe }: { city: SeoLocalCity; co
   </section>
 );
 
+const barrioCols = (n: number) => (n % 4 === 0 ? "md:grid-cols-4" : "md:grid-cols-3");
+
 const CityCoverageSection = ({ city }: { city: SeoLocalCity }) => (
   <section className="bg-white py-14 md:py-16">
     <div className="mx-auto w-full max-w-[1200px] px-6">
@@ -205,35 +207,37 @@ const CityCoverageSection = ({ city }: { city: SeoLocalCity }) => (
         Trabajamos el SEO local de negocios de {city.name} y {city.coverageArea}, porque las búsquedas se hacen por barrio o por municipio y cada zona tiene su propia competencia.
       </p>
 
-      <h3 className="mt-10 font-heading text-xl text-warm-fg">Barrios de {city.name}</h3>
-      <div className="mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
+      <h3 className="mt-10 font-heading font-semibold text-2xl text-warm-fg">Barrios de {city.name}</h3>
+      <div className={`mt-6 grid grid-cols-1 min-[420px]:grid-cols-2 ${barrioCols(city.barriosBusquedas.length)} items-stretch gap-3 md:gap-4`}>
         {city.barriosBusquedas.map(({ barrio, busqueda }) => (
-          <article key={barrio} className="min-w-0 rounded-2xl border-2 border-t-4 border-transparent border-t-primary bg-dark-bg p-4 md:p-5 transition-[transform,border-color] duration-300 hover:-translate-y-1 hover:border-primary">
-            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white" aria-hidden>
+          <article key={barrio} className="flex h-full min-w-0 flex-col rounded-2xl border border-transparent bg-primary p-5 text-white transition-[transform,border-color] duration-300 hover:-translate-y-1 hover:border-[hsl(var(--dark-bg)/0.4)]">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-primary" aria-hidden>
               <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                 <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" fill="currentColor" />
-                <circle cx="12" cy="10" r="2.5" className="fill-primary" stroke="none" />
+                <circle cx="12" cy="10" r="2.5" fill="white" stroke="none" />
               </svg>
             </span>
             <h3 className="mt-4 font-heading font-semibold text-lg leading-tight text-white break-words">{barrio}</h3>
-            <p className="mt-3 font-heading text-[11px] tracking-[0.12em] md:tracking-[0.18em] uppercase text-primary">Búsqueda tipo</p>
-            <div className="mt-2 flex min-w-0 items-start gap-2 rounded-2xl border border-warm-fg/20 bg-white px-3 py-2 md:rounded-full md:px-4 md:py-2.5">
-              <svg className="mt-0.5 h-4 w-4 shrink-0 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden><circle cx="11" cy="11" r="7" /><path d="m20 20-4-4" /></svg>
-              <span className="min-w-0 break-words font-body text-[13px] md:text-sm leading-snug text-warm-fg">«{busqueda}»</span>
+            <p className="mt-3 font-heading text-[11px] tracking-[0.12em] md:tracking-[0.18em] uppercase text-white/80">Búsqueda tipo</p>
+            <div className="mt-auto pt-2">
+              <div className="flex min-h-[56px] min-w-0 items-center gap-2 rounded-2xl bg-white px-3 py-2">
+                <svg className="h-4 w-4 shrink-0 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden><circle cx="11" cy="11" r="7" /><path d="m20 20-4-4" /></svg>
+                <span className="min-w-0 break-words font-body text-[13px] leading-snug text-warm-fg">«{busqueda}»</span>
+              </div>
             </div>
           </article>
         ))}
       </div>
 
-      <div className="mt-10 rounded-3xl bg-primary text-white p-6 md:p-8 grid md:grid-cols-12 gap-6">
+      <div className="mt-10 rounded-3xl bg-[hsl(var(--dark-bg))] text-white p-8 md:p-12 grid md:grid-cols-12 gap-6">
         <div className="md:col-span-4">
-          <p className="font-heading text-[11px] tracking-[0.22em] uppercase text-white">— Provincia</p>
+          <p className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary">— Provincia</p>
           <h3 className="mt-4 text-white font-heading text-2xl">{city.municipiosTitle}</h3>
         </div>
         <div className="md:col-span-8 flex flex-wrap gap-2.5 content-start">
           {city.municipios.map((municipality) => (
-            <span key={municipality} className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-transparent px-4 py-2 text-[15px] font-heading text-white">
-              <span className="h-1.5 w-1.5 rounded-full bg-white" aria-hidden />
+            <span key={municipality} className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-[15px] font-heading text-white">
+              <span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden />
               {municipality}
             </span>
           ))}
@@ -272,7 +276,7 @@ const WhyNotAppearSection = ({ city }: { city: SeoLocalCity }) => (
       </div>
       <div className="mt-10 rounded-3xl bg-primary px-6 py-10 md:px-12 md:py-12 text-center">
         <h3 className="font-heading font-semibold text-2xl md:text-4xl leading-tight text-white uppercase">Te decimos qué le falta <span className="text-[hsl(var(--dark-bg))]">a tu ficha</span></h3>
-        <p className="mt-4 text-base md:text-lg text-white/90">Auditoría gratuita con vídeo personalizado en menos de 24 horas.</p>
+        <p className="mt-4 text-base md:text-lg text-white/90">Auditoría gratuita en menos de 24 horas.</p>
         <a href="#auditoria" className="mt-7 inline-flex items-center rounded-full bg-white px-7 py-3.5 text-sm font-heading text-primary hover:bg-white/90">Solicitar auditoría gratuita</a>
       </div>
     </div>
@@ -401,7 +405,7 @@ const CityPageV2 = ({ city, seoTitleOverride, heroSubtitleOverride, afterManifes
   <>
     <CityMasterTemplate
       city={city}
-      afterHero={<><HeroAuditBand city={city} /><GuaranteeStrip /></>}
+      afterHero={<><HeroAuditBand city={city} /><ConversionStrip city={city} /></>}
       manifestoSection={<CityManifestoSection city={city} />}
       seoTitleOverride={seoTitleOverride}
       heroSubtitleOverride={heroSubtitleOverride}

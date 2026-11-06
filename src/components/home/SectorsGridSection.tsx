@@ -34,26 +34,49 @@ const SectorsGridSection = ({ dark = false }: { dark?: boolean }) => (
       <p className={`mx-auto mt-4 text-center text-base font-body ${dark ? "text-white/70" : "text-warm-fg/70"} leading-relaxed max-w-2xl`}>
         Cada sector tiene sus propias búsquedas y su propia competencia local. Por eso trabajamos de forma específica en cada uno.
       </p>
+      {dark ? (
+        <ul className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
+          {sectores.map((s) => {
+            const SectorIcon = s.icon;
+            return (
+              <li key={s.to}>
+                <Link
+                  to={s.to}
+                  title={s.description}
+                  className="flex h-16 items-center gap-3 rounded-2xl border-2 border-white bg-white px-4 transition-[transform,border-color] duration-300 hover:-translate-y-1 focus-visible:-translate-y-1 hover:border-primary focus-visible:border-primary"
+                >
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground" aria-hidden>
+                    <SectorIcon className="h-5 w-5" strokeWidth={1.75} aria-hidden />
+                  </span>
+                  <h3 className="min-w-0 flex-1 truncate font-heading text-sm font-semibold text-warm-fg">{s.label}</h3>
+                  <span className="shrink-0 text-xs font-heading text-primary">Ver →</span>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      ) : (
       <ul className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-        {sectores.map((s) => {
-          const SectorIcon = s.icon;
-          return (
-            <li key={s.to}>
-              <Link
-                to={s.to}
-                title={s.description}
-                className={dark ? "flex h-full min-h-[120px] flex-col items-center justify-center text-center rounded-2xl border-2 border-white bg-white p-4 transition-[transform,border-color] duration-300 hover:-translate-y-1 focus-visible:-translate-y-1 hover:border-primary focus-visible:border-primary" : "flex h-full min-h-[120px] flex-col items-center justify-center text-center rounded-2xl border border-primary/15 bg-white p-4 transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 focus-visible:-translate-y-1 hover:border-primary hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)] focus-visible:border-primary focus-visible:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)]"}
-              >
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground" aria-hidden>
-                  <SectorIcon className="h-6 w-6" strokeWidth={1.75} aria-hidden />
-                </span>
-                <h3 className="mt-3 font-heading text-sm font-semibold text-warm-fg leading-tight">{s.label}</h3>
-                <span className="mt-1 text-xs font-heading text-primary">Ver →</span>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
+          {sectores.map((s) => {
+            const SectorIcon = s.icon;
+            return (
+              <li key={s.to}>
+                <Link
+                  to={s.to}
+                  title={s.description}
+                  className={dark ? "flex h-full min-h-[120px] flex-col items-center justify-center text-center rounded-2xl border-2 border-white bg-white p-4 transition-[transform,border-color] duration-300 hover:-translate-y-1 focus-visible:-translate-y-1 hover:border-primary focus-visible:border-primary" : "flex h-full min-h-[120px] flex-col items-center justify-center text-center rounded-2xl border border-primary/15 bg-white p-4 transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 focus-visible:-translate-y-1 hover:border-primary hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)] focus-visible:border-primary focus-visible:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)]"}
+                >
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground" aria-hidden>
+                    <SectorIcon className="h-6 w-6" strokeWidth={1.75} aria-hidden />
+                  </span>
+                  <h3 className="mt-3 font-heading text-sm font-semibold text-warm-fg leading-tight">{s.label}</h3>
+                  <span className="mt-1 text-xs font-heading text-primary">Ver →</span>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      )}
     </div>
   </section>
 );
