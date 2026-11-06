@@ -206,35 +206,31 @@ const CityCoverageSection = ({ city }: { city: SeoLocalCity }) => (
       </p>
 
       <h3 className="mt-10 font-heading text-xl text-warm-fg">Barrios de {city.name}</h3>
-      <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
         {city.barriosBusquedas.map(({ barrio, busqueda }) => (
-          <article key={barrio} className="group relative overflow-hidden rounded-3xl border border-primary/20 bg-white p-7 shadow-[0_10px_30px_-18px_hsl(var(--primary)/0.35)] transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)]">
-            <svg className="pointer-events-none absolute -right-5 -top-5 h-32 w-32 text-primary/10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" />
-                <circle cx="12" cy="10" r="2.5" />
-            </svg>
-            <span className="relative flex h-20 w-20 items-center justify-center rounded-full bg-primary text-white">
-              <svg className="h-10 w-10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+          <article key={barrio} className="min-w-0 rounded-2xl border-2 border-t-4 border-transparent border-t-primary bg-dark-bg p-5 transition-[transform,border-color] duration-300 hover:-translate-y-1 hover:border-primary">
+            <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white" aria-hidden>
+              <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                 <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" fill="currentColor" />
                 <circle cx="12" cy="10" r="2.5" className="fill-primary" stroke="none" />
               </svg>
             </span>
-            <h3 className="mt-6 font-heading font-semibold text-2xl text-warm-fg">{barrio}</h3>
-            <p className="mt-5 font-heading text-[11px] tracking-[0.22em] uppercase text-primary">Búsqueda tipo</p>
-            <div className="mt-2"><SearchBar>«{busqueda}»</SearchBar></div>
+            <h4 className="mt-4 font-heading font-semibold text-lg leading-tight text-white break-words">{barrio}</h4>
+            <p className="mt-3 font-heading text-[11px] tracking-[0.18em] uppercase text-primary">Búsqueda tipo</p>
+            <div className="mt-2 min-w-0"><SearchBar>«{busqueda}»</SearchBar></div>
           </article>
         ))}
       </div>
 
-      <div className="mt-10 rounded-3xl bg-[hsl(var(--dark-bg))] text-white p-8 md:p-12 grid md:grid-cols-12 gap-8">
+      <div className="mt-10 rounded-3xl bg-primary text-white p-6 md:p-8 grid md:grid-cols-12 gap-6">
         <div className="md:col-span-4">
-          <p className="font-heading text-[11px] tracking-[0.22em] uppercase text-primary">— Provincia</p>
-          <h3 className="mt-5 text-white font-heading text-2xl">{city.municipiosTitle}</h3>
+          <p className="font-heading text-[11px] tracking-[0.22em] uppercase text-white">— Provincia</p>
+          <h3 className="mt-4 text-white font-heading text-2xl">{city.municipiosTitle}</h3>
         </div>
         <div className="md:col-span-8 flex flex-wrap gap-2.5 content-start">
           {city.municipios.map((municipality) => (
-            <span key={municipality} className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-[15px] font-heading text-white">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary" aria-hidden />
+            <span key={municipality} className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-transparent px-4 py-2 text-[15px] font-heading text-white">
+              <span className="h-1.5 w-1.5 rounded-full bg-white" aria-hidden />
               {municipality}
             </span>
           ))}
@@ -443,7 +439,7 @@ const CityPageV2 = ({ city, seoTitleOverride, heroSubtitleOverride, afterManifes
       auditoriaScrollMargin
       heroPrimaryCtaTo="#auditoria-hero"
       finalCtaTo="#auditoria"
-      otherSectorsSection={<SectorsGridSection />}
+      otherSectorsSection={<SectorsGridSection dark />}
       otherSectorsAfterAudit
       schemaOptions={{ province: city.provinceName, municipios: city.municipios, dateModified: SCHEMA_DATE_MODIFIED, gbp: city.gbp, includeZones: true, includeOfferCatalog: true }}
     />

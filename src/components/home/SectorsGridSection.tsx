@@ -22,16 +22,16 @@ const sectores = [
   { to: "/seo-para-autonomos", label: "SEO para autónomos", description: "Damos visibilidad a profesionales independientes que captan clientes en un área concreta.", icon: BriefcaseBusiness },
 ];
 
-const SectorsGridSection = () => (
-  <section className="bg-white py-14 md:py-16">
+const SectorsGridSection = ({ dark = false }: { dark?: boolean }) => (
+  <section className={dark ? "bg-dark-bg py-14 md:py-16" : "bg-white py-14 md:py-16"}>
     <div className="mx-auto w-full max-w-[1200px] px-6">
       <div className="text-center">
-        <p className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-warm-fg"><span className="h-2 w-2 rounded-full bg-primary" />Sectores</p>
+        <p className={dark ? "inline-flex items-center gap-2 rounded-full border border-white/25 bg-transparent px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-white" : "inline-flex items-center gap-2 rounded-full border border-primary/30 bg-white/70 px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] text-warm-fg"}><span className="h-2 w-2 rounded-full bg-primary" />Sectores</p>
       </div>
-      <h2 className="mx-auto mt-4 text-center font-heading font-semibold text-warm-fg text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight max-w-[26ch]">
+      <h2 className={`mx-auto mt-4 text-center font-heading font-semibold ${dark ? "text-white" : "text-warm-fg"} text-3xl md:text-4xl lg:text-[42px] leading-[1.1] tracking-tight max-w-[26ch]`}>
         SEO Local para <span className="text-primary">cada tipo</span> de negocio
       </h2>
-      <p className="mx-auto mt-4 text-center text-base font-body text-warm-fg/70 leading-relaxed max-w-2xl">
+      <p className={`mx-auto mt-4 text-center text-base font-body ${dark ? "text-white/70" : "text-warm-fg/70"} leading-relaxed max-w-2xl`}>
         Cada sector tiene sus propias búsquedas y su propia competencia local. Por eso trabajamos de forma específica en cada uno.
       </p>
       <ul className="mt-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
@@ -42,7 +42,7 @@ const SectorsGridSection = () => (
               <Link
                 to={s.to}
                 title={s.description}
-                className="flex h-full min-h-[120px] flex-col items-center justify-center text-center rounded-2xl border border-primary/15 bg-white p-4 transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 focus-visible:-translate-y-1 hover:border-primary hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)] focus-visible:border-primary focus-visible:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)]"
+                className={dark ? "flex h-full min-h-[120px] flex-col items-center justify-center text-center rounded-2xl border-2 border-white bg-white p-4 transition-[transform,border-color] duration-300 hover:-translate-y-1 focus-visible:-translate-y-1 hover:border-primary focus-visible:border-primary" : "flex h-full min-h-[120px] flex-col items-center justify-center text-center rounded-2xl border border-primary/15 bg-white p-4 transition-[transform,box-shadow,border-color] duration-300 hover:-translate-y-1 focus-visible:-translate-y-1 hover:border-primary hover:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)] focus-visible:border-primary focus-visible:shadow-[0_0_0_2px_hsl(var(--primary)/0.35),0_18px_60px_-10px_hsl(var(--primary)/0.65)]"}
               >
                 <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground" aria-hidden>
                   <SectorIcon className="h-6 w-6" strokeWidth={1.75} aria-hidden />
