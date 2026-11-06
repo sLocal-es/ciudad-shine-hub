@@ -1,3 +1,4 @@
+import AnswerCapsule from "@/components/AnswerCapsule";
 import { Star } from "lucide-react";
 import ElfsightReviews from "@/components/ElfsightReviews";
 import { useState, ReactNode } from "react";
@@ -358,6 +359,8 @@ const SectorMasterTemplate = ({ content: c }: { content: SectorTemplateContent }
         <LogoMarquee />
       </div>
       {R && <RevealScope />}
+      {isSector && <AnswerCapsule kind="sector" sectorLower={c.sectorLower} clientWord={c.clientWord} />}
+      {isCity && <AnswerCapsule kind="city" city={c.sectorLabel} />}
 
       {/* MANIFIESTO */}
       {c.manifestoSection ?? (R ? (
