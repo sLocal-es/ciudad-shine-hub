@@ -208,7 +208,7 @@ const CityCoverageSection = ({ city }: { city: SeoLocalCity }) => (
       <h3 className="mt-10 font-heading text-xl text-warm-fg">Barrios de {city.name}</h3>
       <div className="mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-4">
         {city.barriosBusquedas.map(({ barrio, busqueda }) => (
-          <article key={barrio} className="min-w-0 rounded-2xl border-2 border-t-4 border-transparent border-t-primary bg-dark-bg p-5 transition-[transform,border-color] duration-300 hover:-translate-y-1 hover:border-primary">
+          <article key={barrio} className="min-w-0 rounded-2xl border-2 border-t-4 border-transparent border-t-primary bg-dark-bg p-4 md:p-5 transition-[transform,border-color] duration-300 hover:-translate-y-1 hover:border-primary">
             <span className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-white" aria-hidden>
               <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                 <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" fill="currentColor" />
@@ -216,8 +216,11 @@ const CityCoverageSection = ({ city }: { city: SeoLocalCity }) => (
               </svg>
             </span>
             <h3 className="mt-4 font-heading font-semibold text-lg leading-tight text-white break-words">{barrio}</h3>
-            <p className="mt-3 font-heading text-[11px] tracking-[0.18em] uppercase text-primary">Búsqueda tipo</p>
-            <div className="mt-2 min-w-0"><SearchBar>«{busqueda}»</SearchBar></div>
+            <p className="mt-3 font-heading text-[11px] tracking-[0.12em] md:tracking-[0.18em] uppercase text-primary">Búsqueda tipo</p>
+            <div className="mt-2 flex min-w-0 items-start gap-2 rounded-2xl border border-warm-fg/20 bg-white px-3 py-2 md:rounded-full md:px-4 md:py-2.5">
+              <svg className="mt-0.5 h-4 w-4 shrink-0 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden><circle cx="11" cy="11" r="7" /><path d="m20 20-4-4" /></svg>
+              <span className="min-w-0 break-words font-body text-[13px] md:text-sm leading-snug text-warm-fg">«{busqueda}»</span>
+            </div>
           </article>
         ))}
       </div>
