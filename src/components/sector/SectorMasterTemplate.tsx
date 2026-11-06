@@ -1,5 +1,4 @@
 import AnswerCapsule from "@/components/AnswerCapsule";
-import { Star } from "lucide-react";
 import ElfsightReviews from "@/components/ElfsightReviews";
 import { useState, ReactNode } from "react";
 import { Link } from "@/lib/router-compat";
