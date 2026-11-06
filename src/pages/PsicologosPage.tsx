@@ -28,7 +28,7 @@ const PsicologosPage = () => {
     canonical: "/seo-para-psicologos",
     sectorLabel: "Psicólogos", sectorSlug: "seo-para-psicologos", sectorLower: "psicólogos", clientWord: "pacientes",
     heroEyebrow: "Agencia SEO Local · Psicólogos",
-    heroH1: <h1>SEO para <span className="text-primary">Psicólogos</span></h1>,
+    heroH1: <h1>SEO para <span className="text-primary">Psicólogos</span>.<span className="block">Más llamadas y más clientes desde <span className="text-primary">Google</span>.</span></h1>,
     heroSubtitle: <>Agencia SEO Local especializada en psicólogos y consultas de psicología. Optimizamos tu ficha de Google Business Profile y tu web para que aparezcas primero cuando alguien busca psicólogo en tu ciudad.</>,
     heroTrust: ["Google Partner", "Ficha de Google gestionada cada mes", "Auditoría inicial sin coste"],
     manifestoEyebrow: "— El punto de partida",

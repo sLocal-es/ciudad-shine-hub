@@ -9,6 +9,7 @@ import { BANNER_COPY } from "@/data/bannerCopy";
 import ComplementaryServicesGrid from "@/components/ComplementaryServicesGrid";
 import { RevealScope } from "@/components/Reveal";
 import SectorHeroDark from "@/components/sector/SectorHeroDark";
+import HeroReviewsRow from "@/components/sector/HeroReviewsRow";
 import LogoMarquee from "@/components/LogoMarquee";
 import { sendForm } from "@/lib/sendForm";
 import { toast } from "@/hooks/use-toast";
@@ -310,7 +311,7 @@ const FontanerosPage = () => {
       <SectorHeroDark
         breadcrumbLabel="SEO para Fontaneros"
         eyebrow="Agencia SEO Local · Fontaneros"
-        h1={<h1>SEO para <span className="text-primary">Fontaneros</span></h1>}
+        h1={<h1>SEO para <span className="text-primary">Fontaneros</span>.<span className="block">Más llamadas y más clientes desde <span className="text-primary">Google</span>.</span></h1>}
         subtitle={
           <>
             Agencia SEO Local especializada en fontaneros. Optimizamos tu ficha de Google Business Profile y tu web para que aparezcas primero cuando alguien busca fontanero urgente en tu ciudad.
@@ -323,6 +324,7 @@ const FontanerosPage = () => {
           "Ficha de Google gestionada cada mes",
           "Auditoría inicial sin coste",
         ]}
+        trustRow={<HeroReviewsRow />}
         curveClass="bg-white"
       />
 

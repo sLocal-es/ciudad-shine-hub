@@ -28,7 +28,7 @@ const GimnasiosPage = () => {
     canonical: "/seo-para-gimnasios",
     sectorLabel: "Gimnasios", sectorSlug: "seo-para-gimnasios", sectorLower: "gimnasios", clientWord: "socios",
     heroEyebrow: "Agencia SEO Local · Gimnasios",
-    heroH1: <h1>SEO para <span className="text-primary">Gimnasios</span></h1>,
+    heroH1: <h1>SEO para <span className="text-primary">Gimnasios</span>.<span className="block">Más llamadas y más clientes desde <span className="text-primary">Google</span>.</span></h1>,
     heroSubtitle: <>Agencia SEO Local especializada en gimnasios y centros deportivos. Optimizamos tu ficha de Google Business Profile y tu web para que aparezcas primero cuando alguien busca gimnasio cerca de mí en tu ciudad.</>,
     heroTrust: ["Google Partner", "Ficha de Google gestionada cada mes", "Auditoría inicial sin coste"],
     manifestoEyebrow: "— El punto de partida",

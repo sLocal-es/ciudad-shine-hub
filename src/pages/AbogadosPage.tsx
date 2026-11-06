@@ -29,7 +29,7 @@ const AbogadosPage = () => {
     canonical: "/seo-para-abogados",
     sectorLabel: "Abogados", sectorSlug: "seo-para-abogados", sectorLower: "abogados", clientWord: "clientes",
     heroEyebrow: "Agencia SEO Local · Abogados",
-    heroH1: <h1>SEO para <span className="text-primary">Abogados</span></h1>,
+    heroH1: <h1>SEO para <span className="text-primary">Abogados</span>.<span className="block">Más llamadas y más clientes desde <span className="text-primary">Google</span>.</span></h1>,
     heroSubtitle: <>Slocal es una <Link to="/" className="text-primary hover:underline">agencia SEO local</Link> especializada en despachos de abogados. Optimizamos tu ficha de Google Business Profile y tu web para que aparezcas primero cuando alguien busca abogado en tu ciudad.</>,
     heroTrust: ["Google Partner", "Ficha de Google gestionada cada mes", "Auditoría inicial sin coste"],
     manifestoEyebrow: "— El punto de partida",
