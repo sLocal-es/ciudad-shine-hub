@@ -4,9 +4,15 @@ import { cities } from "@/data/cities";
 import SEOHead from "@/components/SEOHead";
 import { ServiceHeroVisual } from "@/components/visuals/SeoVisuals";
 import BreadcrumbNav from "@/components/BreadcrumbNav";
-
-import FAQSection from "@/components/FAQSection";
+import HeroReviewsRow from "@/components/sector/HeroReviewsRow";
+import AuditoriaCtaSection from "@/components/sector/AuditoriaCtaSection";
+import CityConversionBanner, { BannerKey } from "@/components/cityseo/CityConversionBanner";
+import { RevealScope } from "@/components/Reveal";
 import CTASection from "@/components/CTASection";
+
+const wrap = "mx-auto w-full max-w-[1200px] px-6";
+const sec = "py-14 md:py-16";
+const h2Cls = "font-heading font-semibold text-3xl md:text-4xl lg:text-[42px] leading-[1.05] tracking-tight";
 
 const ServicePage = () => {
   const location = useLocation();
@@ -52,66 +58,115 @@ const ServicePage = () => {
         jsonLd={[breadcrumbSchema, faqSchema, serviceSchema]}
       />
 
-      {/* HERO */}
-      <section className="bg-dark-bg text-dark-fg py-16 md:py-24">
-        <div className="container grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div>
-            <BreadcrumbNav items={[
-              { label: "Inicio", href: "/" },
-              { label: "Posicionamiento Local", href: "/posicionamiento-local" },
-              { label: service.title },
-            ]} />
-            <h1 className="font-heading text-3xl md:text-4xl leading-tight mb-4">{service.h1}</h1>
-            <p className="text-dark-fg/70 text-base md:text-lg leading-relaxed mb-8 font-body font-light">
+      {/* HERO (negro) */}
+      <section className="bg-dark-bg text-white py-14 md:py-16">
+        <div className={`${wrap} grid grid-cols-1 md:grid-cols-2 gap-10 items-center`}>
+          <div className="min-w-0">
+            <div className="[&_nav]:text-white/60 [&_.text-foreground]:text-white">
+              <BreadcrumbNav items={[
+                { label: "Inicio", href: "/" },
+                { label: "Posicionamiento Local", href: "/posicionamiento-local" },
+                { label: service.title },
+              ]} />
+            </div>
+            <h1 className="font-heading font-semibold text-3xl md:text-4xl lg:text-5xl leading-[1.08] tracking-tight text-white mb-5">{service.h1}</h1>
+            <p className="text-white/75 text-base md:text-lg leading-relaxed mb-8 font-body font-light">
               {service.subtitle}
             </p>
-            <Link to="/contacto" className="bg-primary text-primary-foreground font-heading text-sm rounded-lg px-6 py-3 hover:bg-primary/90 transition-colors inline-block">
-              Hablemos →
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <Link to="/contacto" className="inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground px-7 py-3.5 text-sm font-heading font-medium transition-transform duration-200 hover:scale-[1.03]">
+                Solicitar auditoría gratuita
+              </Link>
+              <a href="#como-lo-resuelve" className="inline-flex items-center justify-center rounded-full border border-white/40 text-white px-7 py-3.5 text-sm font-heading font-medium transition-colors duration-200 hover:border-primary hover:text-primary">
+                Ver cómo lo resolvemos
+              </a>
+            </div>
+            <HeroReviewsRow onDark />
+            <p className="mt-3 text-xs font-body text-white/70">Auditoría gratuita · Sin compromiso</p>
           </div>
-          <ServiceHeroVisual slug={service.slug} />
+          <div className="min-w-0">
+            <ServiceHeroVisual slug={service.slug} />
+          </div>
         </div>
       </section>
 
-      {/* EXPLAINER */}
-      <section className="py-16">
-        <div className="container max-w-3xl">
-          <h2 className="font-heading text-2xl md:text-3xl mb-6">{service.explainerH2}</h2>
-          {service.explainerText.map((p, i) => (
-            <p key={i} className="text-muted-foreground leading-relaxed mb-4 text-sm md:text-base">{p}</p>
-          ))}
+      <RevealScope />
+
+      {/* EXPLAINER (blanco) */}
+      <section className={`bg-white ${sec}`}>
+        <div className={`${wrap} grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14`}>
+          <div className="lg:col-span-5">
+            <h2 className={`${h2Cls} text-warm-fg`}>{service.explainerH2}</h2>
+          </div>
+          <div className="lg:col-span-7">
+            {service.explainerText.map((p, i) => (
+              <p key={i} className="text-warm-fg/75 leading-relaxed mb-4 text-base font-body">{p}</p>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* HOW WE SOLVE IT */}
-      <section className="bg-warm-bg py-16">
-        <div className="container">
-          <h2 className="font-heading text-2xl md:text-3xl mb-8">Cómo lo resuelve slocal.es</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {service.howCards.map((card) => (
-              <div key={card.title} className="bg-card border border-border rounded-xl p-6 transition-all duration-200 hover:border-primary hover:-translate-y-[3px]">
-                <h3 className="font-heading text-base mb-3">{card.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{card.body}</p>
+      {/* BANNER (naranja) */}
+      <CityConversionBanner
+        variant="orange"
+        eyebrow="AUDITORÍA GRATUITA"
+        title={<>¿Tu negocio sale primero en Google? <BannerKey variant="orange">Compruébalo gratis</BannerKey></>}
+        sub="Te decimos en menos de 24 horas dónde estás frente a tu competencia."
+      />
+
+      {/* CÓMO LO RESUELVE (negro) */}
+      <section id="como-lo-resuelve" className={`bg-dark-bg ${sec} scroll-mt-24`}>
+        <div className={wrap}>
+          <h2 className={`${h2Cls} text-white mb-10`}>Cómo lo resuelve slocal.es</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {service.howCards.map((card, i) => (
+              <div key={card.title} className="rounded-2xl border-t-4 border-primary bg-white p-6 md:p-7 transition-transform duration-200 hover:-translate-y-[3px]">
+                <span className="font-heading font-semibold text-3xl text-primary">{String(i + 1).padStart(2, "0")}</span>
+                <h3 className="mt-3 font-heading font-semibold text-lg text-warm-fg mb-3">{card.title}</h3>
+                <p className="text-[15px] font-body text-warm-fg/75 leading-relaxed">{card.body}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* AUDITORÍA GRATUITA (blanco) */}
+      <AuditoriaCtaSection
+        formType={`auditoria_${service.slug.replace(/-/g, "_")}`}
+        paddingClassName="py-14 md:py-16"
+      />
 
-      {/* FAQ */}
-      <FAQSection title={`Preguntas frecuentes`} items={service.faqs} />
+      {/* FAQ (naranja) */}
+      <section data-no-reveal="" className={`bg-primary ${sec}`}>
+        <div className={`${wrap} grid grid-cols-1 md:grid-cols-12 gap-12`}>
+          <div className="md:col-span-4">
+            <p className="inline-flex items-center gap-2 rounded-full border border-white/40 bg-transparent text-white px-4 py-1.5 text-[11px] font-heading uppercase tracking-[0.18em] mb-6"><span className="h-2 w-2 rounded-full bg-white" />FAQ</p>
+            <h2 className={`${h2Cls} text-white`}>Preguntas frecuentes</h2>
+          </div>
+          <div className="md:col-span-8 space-y-3">
+            {service.faqs.map((item, i) => (
+              <details key={i} className="group py-6 rounded-2xl border border-white/10 bg-dark-bg px-6">
+                <summary className="cursor-pointer list-none flex items-start justify-between gap-6 font-heading text-lg md:text-xl text-white">
+                  <span>{item.q}</span>
+                  <span className="text-primary shrink-0 text-2xl leading-none transition-transform group-open:rotate-45">+</span>
+                </summary>
+                <p className="mt-4 text-base font-body font-light text-white/75 leading-relaxed max-w-2xl">{item.a}</p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      {/* CITY LINKS */}
-      <section className="bg-warm-bg py-12">
-        <div className="container">
-          <h2 className="font-heading text-xl mb-6">Disponible en toda España</h2>
-          <div className="flex flex-wrap gap-3">
+      {/* CIUDADES (negro) */}
+      <section className={`bg-dark-bg ${sec}`}>
+        <div className={wrap}>
+          <h2 className={`${h2Cls} text-white mb-8`}>Disponible en toda España</h2>
+          <div className="flex flex-wrap gap-2.5">
             {cities.map((c) => (
               <Link
                 key={c.slug}
                 to={`/seo-local-${c.slug}`}
-                className="border border-border bg-card rounded-full px-5 py-2 text-sm font-heading hover:border-primary hover:text-primary transition-colors"
+                className="border border-white bg-white rounded-full px-5 py-2.5 text-sm font-heading text-warm-fg transition-all duration-200 hover:bg-primary hover:border-primary hover:text-white hover:-translate-y-[2px]"
               >
                 {c.name}
               </Link>
@@ -120,8 +175,8 @@ const ServicePage = () => {
         </div>
       </section>
 
-      {/* FINAL CTA */}
-      <CTASection title="¿Listo para que tu negocio aparezca primero en Google?" buttonText="Empezar ahora →" />
+      {/* CTA FINAL (naranja) */}
+      <CTASection title="¿Listo para que tu negocio aparezca primero en Google?" buttonText="Solicitar auditoría gratuita →" gradient />
     </>
   );
 };
