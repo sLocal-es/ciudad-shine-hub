@@ -23,6 +23,7 @@
 /servicios                                 /                                 301
 /servicios/*                               /                                 301
 /como-funciona                             /                                 301
+/seo-para-negocios-locales                  /                                 301
 
 # SPA fallback
 /*    /index.html   200

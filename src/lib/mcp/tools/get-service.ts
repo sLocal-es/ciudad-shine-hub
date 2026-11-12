@@ -8,7 +8,7 @@ export default defineTool({
   description:
     "Return the published description of one slocal.es service page (what it is, how it works and its FAQs) by slug.",
   inputSchema: {
-    slug: z.string().describe("Service page slug, e.g. seo-para-negocios-locales"),
+    slug: z.string().describe("Service page slug, e.g. ficha-google-mi-negocio"),
   },
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: ({ slug }) => {

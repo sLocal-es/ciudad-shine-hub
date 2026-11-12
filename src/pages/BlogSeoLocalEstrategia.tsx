@@ -220,7 +220,7 @@ const RESUMEN_HTML = `
     <li>Google Business Profile optimizado puede dar resultados en semanas</li>
     <li>Cada mes de trabajo suma posiciones que no desaparecen</li>
   </ul>
-  <p style="margin-top:24px;">¿Quieres profundizar más? Lee nuestra guía completa sobre <a href="/seo-para-negocios-locales">SEO para negocios locales</a> o vuelve al <a href="/blog">blog</a> para más artículos.</p>
+  <p style="margin-top:24px;">¿Quieres profundizar más? Lee nuestra guía completa sobre <a href="/">SEO para negocios locales</a> o vuelve al <a href="/blog">blog</a> para más artículos.</p>
 `;
 
 const BlogSeoLocalEstrategia = () => {

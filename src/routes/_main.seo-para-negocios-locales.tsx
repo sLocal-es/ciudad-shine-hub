@@ -1,6 +1,7 @@
-import { createFileRoute } from "@tanstack/react-router";
-import SeoNegociosLocales from "@/pages/SeoNegociosLocales";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/_main/seo-para-negocios-locales")({
-  component: SeoNegociosLocales,
+  beforeLoad: () => {
+    throw redirect({ to: "/", statusCode: 301 });
+  },
 });

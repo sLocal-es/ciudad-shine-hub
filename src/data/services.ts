@@ -14,33 +14,6 @@ export interface ServiceData {
 
 export const services: ServiceData[] = [
   {
-    slug: "seo-para-negocios-locales",
-    title: "SEO para Negocios Locales",
-    metaTitle: "SEO para Negocios Locales en España | slocal.es",
-    metaDesc: "Posiciona tu negocio local en Google con un sistema de SEO que funciona mes a mes. Sin agencias, sin humo. Desde €150/mes.",
-    h1: "SEO para Negocios Locales: Cómo Posicionarse en Google",
-    subtitle: "El SEO local es la forma más rentable de atraer clientes a tu negocio. Nosotros lo convertimos en un sistema que funciona solo.",
-    imagePlaceholder: "FOTO: resultados de búsqueda Google en pantalla",
-    explainerH2: "¿Qué es el SEO local y por qué tu negocio lo necesita?",
-    explainerText: [
-      "El SEO local es el conjunto de técnicas que hacen que tu negocio aparezca en Google cuando alguien busca un servicio en tu ciudad o zona. No se trata de estar en internet por estar — se trata de aparecer exactamente cuando un cliente potencial te necesita. 'Fontanero en Valencia', 'clínica dental cerca de mí', 'taller mecánico Sevilla' — esas son las búsquedas que generan clientes reales.",
-      "El SEO local construye un activo mes a mes: cada artículo publicado, cada página optimizada y cada reseña obtenida suma a tu autoridad en Google. Al principio los resultados son graduales, pero a partir del mes 4-6 la curva de crecimiento se acelera.",
-      "El problema es que la mayoría de negocios locales no tienen ni el tiempo ni el conocimiento para hacer SEO. Por eso creamos slocal.es: un sistema que se encarga de todo — desde la ficha de Google hasta la web y el contenido — para que tú puedas centrarte en tu negocio mientras Google trabaja para ti."
-    ],
-    howCards: [
-      { title: "Analizamos tu mercado local", body: "Identificamos las búsquedas que hacen tus clientes potenciales, quién es tu competencia en Google y qué oportunidades tienes de posicionarte rápido en tu ciudad." },
-      { title: "Creamos el contenido que posiciona", body: "Páginas de servicio, artículos de blog y contenido optimizado para las búsquedas que importan. Todo pensado para que Google te considere la mejor respuesta local." },
-      { title: "Medimos y optimizamos cada mes", body: "No publicamos y olvidamos. Cada mes revisamos posiciones, ajustamos estrategia y te informamos de los avances con datos claros y comprensibles." },
-    ],
-    faqs: [
-      { q: "¿Qué es el SEO local y para qué sirve a mi negocio?", a: "El SEO local optimiza tu presencia en Google para que aparezcas cuando alguien busca servicios como los tuyos en tu ciudad. Sirve para atraer clientes que ya están buscando lo que ofreces." },
-      { q: "¿Cuánto tarda en dar resultados el SEO local?", a: "Los primeros resultados se ven entre el mes 2 y el 4. A partir del mes 6, las posiciones se consolidan y el tráfico crece de forma sostenida. Es una inversión a medio plazo, no un gasto puntual." },
-      { q: "¿Puede una pequeña empresa posicionarse en Google?", a: "Sí. De hecho, Google favorece a los negocios locales en las búsquedas con intención geográfica. Un negocio pequeño bien optimizado puede superar a grandes cadenas en búsquedas locales." },
-      { q: "¿Necesito una web para hacer SEO local?", a: "Sí, es fundamental. La ficha de Google te da visibilidad en Maps, pero una web optimizada es lo que te posiciona en los resultados orgánicos. Con el setup inicial ya incluimos la creación de la web." },
-      { q: "¿En qué se diferencia el SEO local del SEO normal?", a: "El SEO local se centra en posicionarte para búsquedas con intención geográfica: 'servicio + ciudad'. Incluye la optimización de Google Business Profile, contenido local y señales de relevancia geográfica." },
-    ],
-  },
-  {
     slug: "ficha-google-mi-negocio",
     title: "Ficha de Google Mi Negocio",
     metaTitle: "Ficha de Google Mi Negocio | Optimización Google Business Profile | slocal.es",
