@@ -136,7 +136,7 @@
           "properties": {
             "slug": {
               "type": "string",
-              "description": "Service page slug, e.g. seo-para-negocios-locales"
+              "description": "Service page slug, e.g. ficha-google-mi-negocio"
             }
           },
           "required": [
