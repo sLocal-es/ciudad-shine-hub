@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as MainRouteImport } from './routes/_main'
+import { Route as LoginRouteImport } from './routes/login'
 import { Route as McpRouteImport } from './routes/mcp'
 import { Route as SistemaRouteImport } from './routes/sistema'
 import { Route as Char91DotwellKnownChar93OauthProtectedResourceRouteImport } from './routes/[.well-known]/oauth-protected-resource'
@@ -47,6 +48,7 @@ import { Route as MainSeoParaReformasRouteImport } from './routes/_main.seo-para
 import { Route as MainSeoParaYogaRouteImport } from './routes/_main.seo-para-yoga'
 import { Route as MainServiciosRouteImport } from './routes/_main.servicios'
 import { Route as AdminIndexnowRouteImport } from './routes/admin.indexnow'
+import { Route as DotlovableOauthConsentRouteImport } from './routes/[.]lovable.oauth.consent'
 import { Route as MainBlogIndexRouteImport } from './routes/_main.blog.index'
 import { Route as MainBlogSlugRouteImport } from './routes/_main.blog.$slug'
 import { Route as MainBlogSeoLocalMejorEstrategiaMarketingNuevoNegocioRouteImport } from './routes/_main.blog.seo-local-mejor-estrategia-marketing-nuevo-negocio'
@@ -57,6 +59,11 @@ import { Route as ApiPublicSubmitIndexnowRouteImport } from './routes/api/public
 
 const MainRoute = MainRouteImport.update({
   id: '/_main',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
 const McpRoute = McpRouteImport.update({
@@ -252,6 +259,11 @@ const AdminIndexnowRoute = AdminIndexnowRouteImport.update({
   path: '/admin/indexnow',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DotlovableOauthConsentRoute = DotlovableOauthConsentRouteImport.update({
+  id: '/.lovable/oauth/consent',
+  path: '/.lovable/oauth/consent',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MainBlogIndexRoute = MainBlogIndexRouteImport.update({
   id: '/blog/',
   path: '/blog/',
@@ -291,6 +303,7 @@ const ApiPublicSubmitIndexnowRoute = ApiPublicSubmitIndexnowRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof MainIndexRoute
+  '/login': typeof LoginRoute
   '/mcp': typeof McpRoute
   '/sistema': typeof SistemaRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
@@ -327,6 +340,7 @@ export interface FileRoutesByFullPath {
   '/seo-para-yoga': typeof MainSeoParaYogaRoute
   '/servicios': typeof MainServiciosRouteWithChildren
   '/admin/indexnow': typeof AdminIndexnowRoute
+  '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
   '/blog/$slug': typeof MainBlogSlugRoute
   '/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio': typeof MainBlogSeoLocalMejorEstrategiaMarketingNuevoNegocioRoute
   '/casos-de-exito/$slug': typeof MainCasosDeExitoSlugRoute
@@ -336,6 +350,7 @@ export interface FileRoutesByFullPath {
   '/casos-de-exito/': typeof MainCasosDeExitoIndexRoute
 }
 export interface FileRoutesByTo {
+  '/login': typeof LoginRoute
   '/mcp': typeof McpRoute
   '/sistema': typeof SistemaRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
@@ -373,6 +388,7 @@ export interface FileRoutesByTo {
   '/servicios': typeof MainServiciosRouteWithChildren
   '/admin/indexnow': typeof AdminIndexnowRoute
   '/': typeof MainIndexRoute
+  '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
   '/blog/$slug': typeof MainBlogSlugRoute
   '/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio': typeof MainBlogSeoLocalMejorEstrategiaMarketingNuevoNegocioRoute
   '/casos-de-exito/$slug': typeof MainCasosDeExitoSlugRoute
@@ -384,6 +400,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_main': typeof MainRouteWithChildren
+  '/login': typeof LoginRoute
   '/mcp': typeof McpRoute
   '/sistema': typeof SistemaRoute
   '/.well-known/oauth-protected-resource': typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
@@ -421,6 +438,7 @@ export interface FileRoutesById {
   '/_main/servicios': typeof MainServiciosRouteWithChildren
   '/admin/indexnow': typeof AdminIndexnowRoute
   '/_main/': typeof MainIndexRoute
+  '/.lovable/oauth/consent': typeof DotlovableOauthConsentRoute
   '/_main/blog/$slug': typeof MainBlogSlugRoute
   '/_main/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio': typeof MainBlogSeoLocalMejorEstrategiaMarketingNuevoNegocioRoute
   '/_main/casos-de-exito/$slug': typeof MainCasosDeExitoSlugRoute
@@ -433,6 +451,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/login'
     | '/mcp'
     | '/sistema'
     | '/.well-known/oauth-protected-resource'
@@ -469,6 +488,7 @@ export interface FileRouteTypes {
     | '/seo-para-yoga'
     | '/servicios'
     | '/admin/indexnow'
+    | '/.lovable/oauth/consent'
     | '/blog/$slug'
     | '/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio'
     | '/casos-de-exito/$slug'
@@ -478,6 +498,7 @@ export interface FileRouteTypes {
     | '/casos-de-exito/'
   fileRoutesByTo: FileRoutesByTo
   to:
+    | '/login'
     | '/mcp'
     | '/sistema'
     | '/.well-known/oauth-protected-resource'
@@ -515,6 +536,7 @@ export interface FileRouteTypes {
     | '/servicios'
     | '/admin/indexnow'
     | '/'
+    | '/.lovable/oauth/consent'
     | '/blog/$slug'
     | '/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio'
     | '/casos-de-exito/$slug'
@@ -525,6 +547,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/_main'
+    | '/login'
     | '/mcp'
     | '/sistema'
     | '/.well-known/oauth-protected-resource'
@@ -562,6 +585,7 @@ export interface FileRouteTypes {
     | '/_main/servicios'
     | '/admin/indexnow'
     | '/_main/'
+    | '/.lovable/oauth/consent'
     | '/_main/blog/$slug'
     | '/_main/blog/seo-local-mejor-estrategia-marketing-nuevo-negocio'
     | '/_main/casos-de-exito/$slug'
@@ -573,10 +597,12 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   MainRoute: typeof MainRouteWithChildren
+  LoginRoute: typeof LoginRoute
   McpRoute: typeof McpRoute
   SistemaRoute: typeof SistemaRoute
   Char91DotwellKnownChar93OauthProtectedResourceRoute: typeof Char91DotwellKnownChar93OauthProtectedResourceRoute
   AdminIndexnowRoute: typeof AdminIndexnowRoute
+  DotlovableOauthConsentRoute: typeof DotlovableOauthConsentRoute
   ApiPublicSubmitIndexnowRoute: typeof ApiPublicSubmitIndexnowRoute
 }
 
@@ -587,6 +613,13 @@ declare module '@tanstack/react-router' {
       path: ''
       fullPath: '/'
       preLoaderRoute: typeof MainRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/mcp': {
@@ -848,6 +881,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminIndexnowRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/.lovable/oauth/consent': {
+      id: '/.lovable/oauth/consent'
+      path: '/.lovable/oauth/consent'
+      fullPath: '/.lovable/oauth/consent'
+      preLoaderRoute: typeof DotlovableOauthConsentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_main/blog/': {
       id: '/_main/blog/'
       path: '/blog'
@@ -999,11 +1039,13 @@ const MainRouteWithChildren = MainRoute._addFileChildren(MainRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   MainRoute: MainRouteWithChildren,
+  LoginRoute: LoginRoute,
   McpRoute: McpRoute,
   SistemaRoute: SistemaRoute,
   Char91DotwellKnownChar93OauthProtectedResourceRoute:
     Char91DotwellKnownChar93OauthProtectedResourceRoute,
   AdminIndexnowRoute: AdminIndexnowRoute,
+  DotlovableOauthConsentRoute: DotlovableOauthConsentRoute,
   ApiPublicSubmitIndexnowRoute: ApiPublicSubmitIndexnowRoute,
 }
 export const routeTree = rootRouteImport
