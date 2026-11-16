@@ -12,8 +12,9 @@ Slocal no es una agencia de SEO generalista: trabaja únicamente el posicionamie
 - Web SEO local: páginas específicas para los servicios y zonas prioritarias de cada negocio.
 - Citaciones en directorios locales y temáticos, con los mismos datos de nombre, dirección y teléfono en todas las fuentes.
 - Reporte mensual: posiciones, llamadas, formularios y evolución de la ficha.
-- Servicios complementarios: gestión de reseñas, Google Ads y backlinks locales.
+- Servicios complementarios opcionales: Google Ads y Anuncios de Servicios Locales de Google.
 - Visibilidad en respuestas de ChatGPT, Gemini y AI Overviews, integrada dentro del SEO local y no como servicio aparte.
+- Precio: SEO local desde 290 €/mes.
 
 ## Cómo trabaja
 
@@ -50,6 +51,10 @@ Slocal acepta clientes de cualquier ciudad, tenga o no página dedicada.
 - [SEO para empresas de reformas](https://slocal.es/seo-para-reformas)
 - [SEO para inmobiliarias](https://slocal.es/seo-para-inmobiliarias)
 - [SEO para autónomos](https://slocal.es/seo-para-autonomos)
+- [SEO para pintores](https://slocal.es/seo-para-pintores)
+- [SEO para clínicas](https://slocal.es/seo-para-clinicas)
+- [SEO para entrenadores personales](https://slocal.es/seo-para-entrenadores)
+- [SEO para estudios de yoga](https://slocal.es/seo-para-yoga)
 
 ## Casos de éxito
 
@@ -70,13 +75,16 @@ Resumen de los casos publicados en [Casos de éxito](https://slocal.es/casos-de-
 - LinkedIn: https://www.linkedin.com/company/slocal-es/
 - Facebook: https://www.facebook.com/slocal.es
 - Fichas de Google verificadas: Córdoba, Sevilla y Madrid.
+- Sedes en Córdoba, Sevilla y Madrid, con servicio en toda España.
 
 ## Páginas principales
 
 - [Inicio](https://slocal.es/)
 - [Ficha de Google Mi Negocio](https://slocal.es/ficha-google-mi-negocio)
 - [Casos de éxito](https://slocal.es/casos-de-exito)
+- [Cómo salir primero en Google con tu negocio local](https://slocal.es/como-salir-primero-en-google)
+- [Posicionamiento local en Google](https://slocal.es/posicionamiento-local)
 - [Blog](https://slocal.es/blog)
 - [Contacto](https://slocal.es/contacto)
 
-Última actualización: octubre de 2026.
+Última actualización: noviembre de 2026.
