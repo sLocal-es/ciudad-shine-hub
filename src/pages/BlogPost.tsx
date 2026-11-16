@@ -31,6 +31,11 @@ const BlogPostPage = () => {
     ? sectors.find((s) => s.slug === post.relatedSectorSlug)
     : null;
 
+  // Related block: sector page when the post belongs to one, otherwise an optional custom link
+  const relatedBlock = relatedSector
+    ? { to: `/${relatedSector.slug}`, label: relatedSector.metaTitle.split("|")[0].trim() }
+    : post.relatedLink ?? null;
+
   // Related posts: same category first, then most recent
   const related = [
     ...posts.filter((p) => p.slug !== post.slug && p.category === post.category),
@@ -168,14 +173,14 @@ const BlogPostPage = () => {
         </div>
 
         {/* Related sector link */}
-        {relatedSector && (
+        {relatedBlock && (
           <div className="mt-8 rounded-2xl border border-warm-fg/10 bg-white p-6">
             <p className="font-body text-[13px] text-warm-fg/55 mb-2">Artículo relacionado con:</p>
             <Link
-              to={`/${relatedSector.slug}`}
+              to={relatedBlock.to}
               className="font-heading text-[15px] font-medium text-primary hover:underline"
             >
-              {relatedSector.metaTitle.split("|")[0].trim()} →
+              {relatedBlock.label} →
             </Link>
           </div>
         )}

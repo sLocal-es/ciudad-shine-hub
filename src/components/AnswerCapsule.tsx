@@ -14,7 +14,7 @@ export default function AnswerCapsule(props: Props) {
   const items: [string, string][] = [
     ["Qué incluye:", "optimización de tu ficha de Google, de tu web y de tu contenido local, con trabajo constante cada mes."],
     ["Cómo lo medimos:", `un informe mensual con posiciones, llamadas y visitas a tu ficha, para que veas si llegan ${who} y no solo visitas.`],
-    ["Dónde estamos:", `Tenemos sedes en Córdoba, Sevilla y Madrid y damos servicio en toda España${isCity ? `, incluida ${props.city}` : ""}.`],
+    ["Dónde estamos:", `Tenemos sedes en Madrid, Córdoba, Sevilla y Málaga y damos servicio en toda España${isCity ? `, incluida ${props.city}` : ""}.`],
   ];
   return (
     <section data-no-reveal="" className="bg-white py-14 md:py-16 border-b border-black/10">

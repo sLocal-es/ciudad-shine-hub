@@ -11,6 +11,8 @@ export interface BlogPost {
   faqs?: { q: string; a: string }[];
   relatedSectorSlug?: string;
   relatedCitySlug?: string;
+  /** Enlace alternativo del bloque "Artículo relacionado con:" cuando el post no pertenece a un sector. */
+  relatedLink?: { to: string; label: string };
   extraSchema?: Record<string, any>;
 }
 
@@ -140,7 +142,7 @@ export const posts: BlogPost[] = [
   featuredImage: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80",
   altText: "Autónomo español comprobando su posición en Google Maps desde el móvil",
   excerpt: "El 80% de los clics en búsquedas locales van a los 3 primeros resultados de Google Maps. Aprende exactamente cómo llegar a esos puestos con acciones concretas que puedes implementar esta semana.",
-  relatedSectorSlug: "seo-para-fontaneros",
+  relatedLink: { to: "/ficha-google-mi-negocio", label: "Ficha de Google Mi Negocio" },
   content: `
     <p>La mayoría de negocios locales en España pierden clientes cada día por una razón simple: no aparecen cuando alguien los busca en Google Maps. Un fontanero en Valencia, una fisioterapeuta en Bilbao o una empresa de reformas en Madrid compiten por los mismos tres puestos que Google muestra antes que cualquier resultado orgánico. Esta guía te explica exactamente cómo llegar a esos tres primeros puestos con acciones concretas que puedes implementar esta semana.</p>
 
